@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "Bibliotequeando",
-  "short_name": "Bibliotequeando",
+  "name": "Biblioteca",
+  "short_name": "Biblioteca",
   "description": "A private library visual catalog",
   "start_url": ".",
   "scope": ".",
