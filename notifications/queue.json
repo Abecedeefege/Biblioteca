@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-07-03T20:48:08Z",
+  "_updated_at": "2026-07-03T20:48:22.681Z",
   "notifications": [
     {
       "id": "2026-07-04-a",
@@ -69,8 +69,8 @@
       "url": "https://abecedeefege.github.io/Biblioteca/index.html",
       "send_at": "2026-07-03T20:47:08Z",
       "expires_at": "2026-07-03T22:48:08Z",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-03T20:48:22.680Z",
       "fail_reason": null,
       "created_by": "prueba de íconos vía chat 2026-07-03"
     }
