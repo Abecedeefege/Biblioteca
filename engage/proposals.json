@@ -1,0 +1,25 @@
+{
+  "_comment": "Registro y ciclo de vida de las experiencias. pending → promoted (aprobación explícita) | dropped (rechazo o vence 1 día sin aprobar + git rm).",
+  "proposals": [
+    {
+      "id": "2026-07-04-feed",
+      "title": "📱 Feed — mis libros postean en 1ª persona",
+      "page": "engage/2026-07-04-feed.html",
+      "created": "2026-07-04",
+      "status": "pending",
+      "hypothesis": "Prior más fuerte para biblioteca: 1ª persona + humor + culpa posesiva convierte a 😍 y suscripción mejor que cualquier otro ángulo. Señales a mirar: reaction love, suscripción sí, respuestas leido:* (cada una es un dato nuevo del catálogo).",
+      "notified_by": ["2026-07-04-a"],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-04-esta-noche",
+      "title": "🌙 ¿Qué leés esta noche? — ritual del slot nocturno",
+      "page": "engage/2026-07-04-esta-noche.html",
+      "created": "2026-07-04",
+      "status": "pending",
+      "hypothesis": "El slot 20:30 es EL slot de biblioteca: una propuesta concreta de 3 libros con CTA 'leer-esta-noche' produce la señal más valiosa del sistema (compromiso de lectura física). Si hay al menos 1 'sí' o 2 'ya_leido', el formato queda validado como ritual.",
+      "notified_by": ["2026-07-04-b"],
+      "result_notes": null
+    }
+  ]
+}

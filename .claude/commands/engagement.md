@@ -70,7 +70,10 @@ una hora UTC.
    - `leido:<ID>` → `si`→`leido` · `no`→`no_leido` · `abandonado`→`abandonado`
    - `en-estante:<ID>` → `si`/`no` (si `no`: anotalo en `note`, el catálogo quedó viejo ahí)
    - `prestado:<ID>` → `si`→`read_status: prestado` · `no`
+   - `familia:<ID>` → `si`/`no` (¿el autor es familia del dueño? → `note` en enrichment)
    - `<slug>-suscripcion-diaria` → `si`/`no` (señal de formato, va a learnings, no a enrichment)
+   - Cualquier otro `qid` que hayas inventado en una experiencia: interpretalo
+     vos y anotá la señal en learnings.
    Cada consolidación lleva `read_status_source: "answer:<id del evento>"`.
 
 3. **GESTIONAR proposals de ayer** (leé los eventos `proposal_approved` /

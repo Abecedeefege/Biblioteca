@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>🌙 ¿Qué leés esta noche?</title>
+<style>
+  :root {
+    --papel: #f1e8d4; --tinta: #2a1f12; --bordo: #7a1f23;
+    --dorado: #b89348; --papel-claro: #faf5e8; --madera: #4a3524;
+    --noche: #1d1a2b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 0 3rem;
+    background: var(--noche); color: var(--papel);
+    font-family: Georgia, 'Times New Roman', serif; line-height: 1.55;
+  }
+  .back {
+    display: block; padding: .8rem 1rem;
+    background: var(--madera); color: var(--papel);
+    text-decoration: none; font-size: .95rem;
+  }
+  main { max-width: 34rem; margin: 0 auto; padding: 1.2rem 1rem; }
+  h1 { color: var(--dorado); font-size: 1.5rem; margin: .4rem 0 .2rem; }
+  .sub { font-style: italic; opacity: .8; margin: 0 0 1.3rem; font-size: .95rem; }
+  .book {
+    background: var(--papel); color: var(--tinta);
+    border-left: 5px solid var(--bordo); border-radius: 6px;
+    padding: 1rem 1.1rem .8rem; margin: 0 0 1.1rem;
+  }
+  .book h2 { margin: 0 0 .1rem; font-size: 1.15rem; color: var(--bordo); }
+  .where { font-size: .8rem; font-style: italic; opacity: .65; margin: 0 0 .5rem; }
+  .book p { margin: .4rem 0; font-size: .95rem; }
+  .cta-noche { border-top: 1px dotted var(--dorado); margin-top: .7rem; padding-top: .6rem; font-size: .92rem; }
+  button {
+    font-family: inherit; font-size: .92rem; cursor: pointer;
+    background: var(--bordo); color: var(--papel);
+    border: none; border-radius: 4px;
+    padding: .5rem .9rem; margin: .35rem .35rem 0 0;
+  }
+  .react, .cta, .engage-actions {
+    background: rgba(241,232,212,.08); border: 1px dashed var(--dorado);
+    border-radius: 6px; padding: .9rem 1rem; margin: 0 0 1.1rem;
+    font-size: .95rem;
+  }
+  .react button { background: none; font-size: 1.5rem; padding: .1rem .35rem; }
+  .engage-actions button.no { background: var(--madera); }
+  .react-hint, .q-hint { display: block; font-size: .82rem; font-style: italic; margin-top: .3rem; }
+</style>
+</head>
+<body>
+
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+
+  <main>
+    <h1>🌙 ¿Qué leés esta noche?</h1>
+    <p class="sub">Noche de invierno en Montevideo. Tu estantería propone tres
+    candidatos — con un toque me decís cuál gana la mesa de luz.</p>
+
+    <div class="book">
+      <h2>Misery — Stephen King</h2>
+      <p class="where">Estante R4 · lomo blanco · 1987</p>
+      <p>Un escritor postrado, su «fan número uno» y una casa aislada por la
+      nieve. Es EL King de invierno: claustrofóbico, sin monstruos — el
+      terror acá es una persona con una máquina de escribir de más y
+      escrúpulos de menos.</p>
+      <div class="cta-noche">¿Lo vas a leer esta noche?
+        <button onclick="engageAnswer('leer-esta-noche:R4-005','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:R4-005','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:R4-005','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="book">
+      <h2>El Perro de los Baskerville — Arthur Conan Doyle</h2>
+      <p class="where">Estante M5 · 1902</p>
+      <p>Niebla, un páramo, una leyenda familiar con perro demoníaco. Es la
+      novela con la que Doyle calmó a un público que llevaba años de luto
+      por Holmes — y sigue siendo el caso más famoso del detective. Para
+      noche de frío con algo caliente en la otra mano.</p>
+      <div class="cta-noche">¿Lo vas a leer esta noche?
+        <button onclick="engageAnswer('leer-esta-noche:M5-004','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-004','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-004','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="book">
+      <h2>Fuimos canciones — Elísabet Benavent</h2>
+      <p class="where">Estante M6 · 2018</p>
+      <p>Si hoy el cuerpo no está para sustos ni páramos: Benavent, de la que
+      tenés nueve en el M6 (la saga Valeria completa incluida). Macarena,
+      Madrid, un ex que reaparece. Se deja leer como quien se toma algo
+      dulce.</p>
+      <div class="cta-noche">¿Lo vas a leer esta noche?
+        <button onclick="engageAnswer('leer-esta-noche:M6-006','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M6-006','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M6-006','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="react">
+      ¿Sirve que la biblioteca te proponga la lectura de la noche?
+      <button onclick="engageReact('2026-07-04-esta-noche','love',this)">😍</button>
+      <button onclick="engageReact('2026-07-04-esta-noche','like',this)">🙂</button>
+      <button onclick="engageReact('2026-07-04-esta-noche','meh',this)">😐</button>
+      <button onclick="engageReact('2026-07-04-esta-noche','no',this)">🙅</button>
+      <span class="react-hint"></span>
+    </div>
+
+    <div class="cta">
+      ¿Querés este ritual todas las noches a las 20:30?
+      <button onclick="engageAnswer('2026-07-04-esta-noche-suscripcion-diaria','si',this)">Sí, todas las noches</button>
+      <button onclick="engageAnswer('2026-07-04-esta-noche-suscripcion-diaria','no',this)">No hace falta</button>
+      <span class="q-hint"></span>
+    </div>
+
+    <div class="engage-actions">
+      Esta página es un experimento: si no la aprobás, mañana desaparece.
+      <br>
+      <button onclick="engageApprove('2026-07-04-esta-noche')">✅ Aprobar esta mejora</button>
+      <button class="no" onclick="engageRejected('2026-07-04-esta-noche')">✕ No me interesa</button>
+    </div>
+  </main>
+
+  <script src="engage.js"></script>
+</body>
+</html>

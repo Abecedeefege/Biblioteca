@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>📱 El feed de tu estantería</title>
+<style>
+  :root {
+    --papel: #f1e8d4; --tinta: #2a1f12; --bordo: #7a1f23;
+    --dorado: #b89348; --papel-claro: #faf5e8; --madera: #4a3524;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 0 3rem;
+    background: var(--papel); color: var(--tinta);
+    font-family: Georgia, 'Times New Roman', serif; line-height: 1.5;
+  }
+  .back {
+    display: block; padding: .8rem 1rem;
+    background: var(--madera); color: var(--papel);
+    text-decoration: none; font-size: .95rem;
+  }
+  main { max-width: 34rem; margin: 0 auto; padding: 1rem; }
+  h1 { color: var(--bordo); font-size: 1.45rem; margin: .5rem 0 .1rem; }
+  .sub { font-style: italic; opacity: .75; margin: 0 0 1.2rem; font-size: .95rem; }
+  .post {
+    background: var(--papel-claro); border: 1px solid var(--dorado);
+    border-left: 4px solid var(--bordo); border-radius: 6px;
+    padding: .9rem 1rem .7rem; margin: 0 0 1rem;
+    box-shadow: 1px 2px 0 rgba(42,31,18,.12);
+  }
+  .who { font-weight: bold; color: var(--bordo); }
+  .meta { font-size: .78rem; opacity: .65; font-style: italic; }
+  .post p { margin: .5rem 0; font-size: .97rem; }
+  .foot { font-size: .78rem; opacity: .7; border-top: 1px dotted var(--dorado); padding-top: .4rem; margin-top: .6rem; }
+  .cta, .react, .engage-actions {
+    background: var(--papel-claro); border: 1px dashed var(--madera);
+    border-radius: 6px; padding: .8rem 1rem; margin: 0 0 1rem;
+    font-size: .95rem;
+  }
+  .q { border: none; background: none; padding: .45rem 0 0; margin: 0; font-size: .9rem; }
+  button {
+    font-family: inherit; font-size: .9rem; cursor: pointer;
+    background: var(--bordo); color: var(--papel);
+    border: none; border-radius: 4px;
+    padding: .45rem .8rem; margin: .3rem .3rem 0 0;
+  }
+  .react button { background: none; font-size: 1.5rem; padding: .1rem .35rem; }
+  .engage-actions button.no { background: var(--madera); }
+  .react-hint, .q-hint { display: block; font-size: .82rem; font-style: italic; margin-top: .3rem; }
+  h2 { font-size: 1.05rem; color: var(--bordo); margin: 1.4rem 0 .6rem; }
+</style>
+</head>
+<body>
+
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+
+  <main>
+    <h1>📱 Tus libros abrieron un feed</h1>
+    <p class="sub">8 posteos desde tu estantería · viernes 4 de julio · nadie les dio permiso</p>
+
+    <div class="post">
+      <span class="who">Carrie</span> <span class="meta">@laprimera1974 · desde el estante R4</span>
+      <p>A mí me tiraron a la basura antes de ser famosa. Literal: Stephen me
+      descartó y fue Tabitha, su esposa, la que me rescató del tacho y le dijo
+      «esto seguí escribiéndolo». Fui su primera novela publicada (1974).
+      Hoy vivo en tu R4 con 24 hermanas de lomo blanco. De la basura a tu
+      estantería. Trayectoria impecable. 💅</p>
+      <div class="q">¿Y vos ya me leíste?
+        <button onclick="engageAnswer('leido:R4-001','si',this)">Sí</button>
+        <button onclick="engageAnswer('leido:R4-001','no',this)">No</button>
+        <button onclick="engageAnswer('leido:R4-001','abandonado',this)">Empecé y la dejé</button>
+        <span class="q-hint"></span>
+      </div>
+      <div class="foot">Verificado: primera novela publicada de King, 1974; el rescate del manuscrito lo contó el propio King en <em>Mientras Escribo</em> (que también tenés: R4-009).</div>
+    </div>
+
+    <div class="post">
+      <span class="who">La Larga Marcha</span> <span class="meta">@bachman.4ever · desde el estante R4</span>
+      <p>Confesión: durante años dije que mi autor era un tal Richard Bachman.
+      Era King con bigote falso. En 1985 un empleado de librería revisó los
+      registros de la Biblioteca del Congreso y nos delató a todos. En tu
+      estantería somos tres los que vivimos esa doble vida: yo, El Fugitivo y
+      Blaze. Nos juntamos los martes a hablar del tema.</p>
+      <div class="q">¿Me leíste?
+        <button onclick="engageAnswer('leido:R4-003','si',this)">Sí</button>
+        <button onclick="engageAnswer('leido:R4-003','no',this)">No</button>
+        <button onclick="engageAnswer('leido:R4-003','abandonado',this)">La dejé</button>
+        <span class="q-hint"></span>
+      </div>
+      <div class="foot">Verificado: publicada como Richard Bachman (1979); el seudónimo quedó expuesto en 1985. Tus tres Bachman: R4-003, R5-009, R5-006.</div>
+    </div>
+
+    <div class="post">
+      <span class="who">El Regreso de Sherlock Holmes</span> <span class="meta">@back.from.reichenbach · desde el estante M5</span>
+      <p>Yo existo de puro rencor popular. Conan Doyle me mató en 1893 —me
+      tiró por una cascada porque estaba harto de mí— y los lectores lo
+      persiguieron durante doce años hasta que en 1905 tuvo que resucitarme.
+      ¿Perdonarlo? Estoy en eso. Página por página.</p>
+      <div class="q">¿Me leíste?
+        <button onclick="engageAnswer('leido:M5-006','si',this)">Sí</button>
+        <button onclick="engageAnswer('leido:M5-006','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+      <div class="foot">Verificado: Holmes «muere» en 1893 (La Solución Final) y vuelve en esta colección de 1905. El drama completo está en tu M5: Estudio en Escarlata (1887), El Perro de los Baskerville (1902) y yo.</div>
+    </div>
+
+    <div class="post">
+      <span class="who">Bacon-Shakespeare Anatomy</span> <span class="meta">@el.conspiranoico · desde el estante L3</span>
+      <p>Mi situación habitacional: vivo en un estante con CINCUENTA libros de
+      Shakespeare —obras completas, sonetos, ediciones alemanas, un Macbeth
+      ilustrado por Dalí— y mi única función es susurrarles que su autor
+      quizás fue Francis Bacon. En las cenas del estante no me dirigen la
+      palabra. Los entiendo. No paro igual.</p>
+      <div class="foot">Verificado: tu L3 tiene 51 volúmenes; este (L3-032) defiende la teoría baconiana de la autoría. El Macbeth con ilustraciones de Salvador Dalí es L3-041.</div>
+    </div>
+
+    <div class="post">
+      <span class="who">Don Quijote de la Mancha</span> <span class="meta">@el.monumento · desde arriba de todo</span>
+      <p>Yo no vivo en un estante: vivo ENCIMA de la biblioteca, acostado,
+      encuadernado en cuero rojo con letras doradas, custodiado por dos
+      figuras talladas de mí mismo y de Sancho. No me leen: me admiran.
+      Soy mueble y soy literatura. Como mi autor hubiera querido. ¿O no?</p>
+      <div class="q">Sinceridad total: ¿me leíste entero alguna vez?
+        <button onclick="engageAnswer('leido:TOP-001','si',this)">Sí, entero</button>
+        <button onclick="engageAnswer('leido:TOP-001','no',this)">No</button>
+        <button onclick="engageAnswer('leido:TOP-001','abandonado',this)">Hasta los molinos</button>
+        <span class="q-hint"></span>
+      </div>
+      <div class="foot">Verificado: dos tomos de exhibición (1605/1615) sobre la estantería, con las figuras talladas — así figura en tu propio catálogo.</div>
+    </div>
+
+    <div class="post">
+      <span class="who">Harry Potter y el Cáliz de Fuego</span> <span class="meta">@somos.4.de.7 · desde el estante L3</span>
+      <p>Comunicado oficial de la saga: en esta casa somos CUATRO. Piedra
+      Filosofal, Cámara Secreta, Azkabán y yo. La Orden del Fénix, el
+      Príncipe y las Reliquias mandan saludos desde alguna librería.
+      Nuestra historia queda en suspenso desde el año 2000. El torneo
+      terminó mal, por cierto. Gracias por preguntar.</p>
+      <div class="foot">Verificado: tu catálogo lista exactamente 4 tomos (L3-046 a L3-049, ediciones 1997–2000) + la biografía de Rowling (L3-045).</div>
+    </div>
+
+    <div class="post">
+      <span class="who">Génesis de la Familia Uruguaya</span> <span class="meta">@apolant.oficial · desde el estante R7</span>
+      <p>Los demás libros de esta casa hablan de gente lejana. Yo no: en mis
+      seis volúmenes de genealogía uruguaya (2ª edición ampliada, 1975) es
+      muy posible que figure TU apellido. Soy el único posteo de este feed
+      que puede contener spoilers de tu propia existencia.</p>
+      <div class="q">Pregunta seria del estante R7: ¿Apolant es familia tuya?
+        <button onclick="engageAnswer('familia:R7-006','si',this)">Sí, es familia</button>
+        <button onclick="engageAnswer('familia:R7-006','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+      <div class="foot">Verificado: 10 volúmenes de Apolant en tu R7, incluida su obra alemana previa a la emigración. La edición 1975 figura en tu catálogo.</div>
+    </div>
+
+    <div class="post">
+      <span class="who">National Geographic</span> <span class="meta">@las.cien.de.R6 · desde el estante R6</span>
+      <p>Indignación colectiva: somos MÁS DE CIEN revistas (1976–2000),
+      incluida la edición especial azul del agua de marzo de 1992, y en tu
+      catálogo figuramos como UN (1) ítem. Un ítem. Cien voces, una ficha.
+      Exigimos censo. Firmado: el estante R6 en pleno.</p>
+      <div class="foot">Verificado: así están catalogadas — R6-NATGEO, «100+ issues», rango 1976–2000. El censo que piden es, textualmente, la recomendación de tu propio catálogo.</div>
+    </div>
+
+    <h2>Fin del feed de hoy</h2>
+
+    <div class="react">
+      ¿Te gustó que tus libros posteen?
+      <button onclick="engageReact('2026-07-04-feed','love',this)">😍</button>
+      <button onclick="engageReact('2026-07-04-feed','like',this)">🙂</button>
+      <button onclick="engageReact('2026-07-04-feed','meh',this)">😐</button>
+      <button onclick="engageReact('2026-07-04-feed','no',this)">🙅</button>
+      <span class="react-hint"></span>
+    </div>
+
+    <div class="cta">
+      ¿Querés que el feed siga todos los días con otros libros?
+      <button onclick="engageAnswer('2026-07-04-feed-suscripcion-diaria','si',this)">Sí, todos los días</button>
+      <button onclick="engageAnswer('2026-07-04-feed-suscripcion-diaria','no',this)">No hace falta</button>
+      <span class="q-hint"></span>
+    </div>
+
+    <div class="engage-actions">
+      Esta página es un experimento: si no la aprobás, mañana desaparece.
+      <br>
+      <button onclick="engageApprove('2026-07-04-feed')">✅ Aprobar esta mejora</button>
+      <button class="no" onclick="engageRejected('2026-07-04-feed')">✕ No me interesa</button>
+    </div>
+  </main>
+
+  <script src="engage.js"></script>
+</body>
+</html>
