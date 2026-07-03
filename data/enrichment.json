@@ -1,0 +1,600 @@
+{
+ "_meta": {
+  "que_es": "Overlay de enriquecimiento por libro. NO duplica el catálogo: el catálogo canónico vive embebido en index.html (<script id=\"inline-catalog\" type=\"application/json\">) y no se toca. Clave = id del libro (ej. R4-001).",
+  "quien_escribe": "Solo el agente /engagement (consolidando respuestas del usuario desde sync/engagement.json) o el dueño a mano. El browser nunca escribe este archivo.",
+  "campos": {
+   "first_published": "Año de primera publicación de la OBRA (no de la edición física del estante). Negativo = a.C.",
+   "year_confidence": "alta = canónico indiscutido, publicable | aprox = verificar antes de afirmarlo en un push",
+   "read_status": "unknown | leido | leyendo | no_leido | abandonado | prestado — si el libro no tiene entrada o campo, es unknown",
+   "read_status_source": "answer:<id de evento de engagement.json> | chat | manual",
+   "note": "contexto del dato"
+  },
+  "regla_de_honestidad": "Lo que no está acá con confianza alta, no se afirma: se pregunta con botones engageAnswer.",
+  "seeded_by": "auditoría inicial 2026-07-03; años sembrados de conocimiento editorial canónico",
+  "updated_at": "2026-07-03"
+ },
+ "books": {
+  "L2-001": {
+   "first_published": 1907,
+   "year_confidence": "aprox",
+   "note": "Edición Grant Richards; los poemas de Keats son de 1814-1820, murió en 1821 a los 25"
+  },
+  "L2-002": {
+   "first_published": 1829,
+   "year_confidence": "alta",
+   "note": "Les Chouans, primera novela firmada Balzac"
+  },
+  "L2-003": {
+   "first_published": 1833,
+   "year_confidence": "alta",
+   "note": "Eugénie Grandet 1833; Le Père Goriot 1835"
+  },
+  "L3-001": {
+   "first_published": 1599,
+   "year_confidence": "aprox"
+  },
+  "L3-002": {
+   "first_published": 1595,
+   "year_confidence": "aprox",
+   "note": "Fechas de composición shakespeareanas siempre aproximadas"
+  },
+  "L3-003": {
+   "first_published": 1606,
+   "year_confidence": "aprox"
+  },
+  "L3-004": {
+   "first_published": 1601,
+   "year_confidence": "aprox"
+  },
+  "L3-006": {
+   "first_published": 1609,
+   "year_confidence": "alta",
+   "note": "Los Sonetos se publicaron en 1609"
+  },
+  "L3-018": {
+   "first_published": 1603,
+   "year_confidence": "aprox"
+  },
+  "L3-020": {
+   "first_published": 1600,
+   "year_confidence": "aprox"
+  },
+  "L3-022": {
+   "first_published": 1593,
+   "year_confidence": "aprox"
+  },
+  "L3-023": {
+   "first_published": 1606,
+   "year_confidence": "aprox"
+  },
+  "L3-024": {
+   "first_published": 1596,
+   "year_confidence": "aprox"
+  },
+  "L3-027": {
+   "first_published": 1593,
+   "year_confidence": "aprox"
+  },
+  "L3-028": {
+   "first_published": 1596,
+   "year_confidence": "aprox"
+  },
+  "L3-034": {
+   "first_published": 1599,
+   "year_confidence": "aprox"
+  },
+  "L3-037": {
+   "first_published": 1599,
+   "year_confidence": "aprox",
+   "note": "Julius Caesar ~1599; el volumen es un estudio comparado"
+  },
+  "L3-038": {
+   "first_published": 2004,
+   "year_confidence": "alta",
+   "note": "Stephen Greenblatt, biografía"
+  },
+  "L3-041": {
+   "first_published": 1946,
+   "year_confidence": "aprox",
+   "note": "Edición Doubleday con ilustraciones de Salvador Dalí"
+  },
+  "L3-046": {
+   "first_published": 1997,
+   "year_confidence": "alta"
+  },
+  "L3-047": {
+   "first_published": 1998,
+   "year_confidence": "alta"
+  },
+  "L3-048": {
+   "first_published": 1999,
+   "year_confidence": "alta"
+  },
+  "L3-049": {
+   "first_published": 2000,
+   "year_confidence": "alta"
+  },
+  "L4-001": {
+   "first_published": 2020,
+   "year_confidence": "alta"
+  },
+  "L4-002": {
+   "first_published": 2018,
+   "year_confidence": "alta"
+  },
+  "L4-006": {
+   "first_published": 1989,
+   "year_confidence": "alta"
+  },
+  "L4-007": {
+   "first_published": 2017,
+   "year_confidence": "alta"
+  },
+  "L4-008": {
+   "first_published": 2016,
+   "year_confidence": "alta",
+   "note": "Original: It Didn't Start with You"
+  },
+  "L4-010": {
+   "first_published": 1948,
+   "year_confidence": "alta",
+   "note": "Publicado en alemán; Herrigel, arquería zen"
+  },
+  "L4-011": {
+   "first_published": 2007,
+   "year_confidence": "alta"
+  },
+  "L4-012": {
+   "first_published": -500,
+   "year_confidence": "aprox",
+   "note": "Sun Tzu, siglo V a.C. aprox"
+  },
+  "L4-013": {
+   "first_published": 1997,
+   "year_confidence": "alta"
+  },
+  "L4-014": {
+   "first_published": 1954,
+   "year_confidence": "alta"
+  },
+  "L4-015": {
+   "first_published": 1988,
+   "year_confidence": "alta"
+  },
+  "L4-017": {
+   "first_published": 1970,
+   "year_confidence": "alta"
+  },
+  "L4-018": {
+   "first_published": 1923,
+   "year_confidence": "alta"
+  },
+  "L4-019": {
+   "first_published": 2015,
+   "year_confidence": "alta"
+  },
+  "L4-020": {
+   "first_published": 2021,
+   "year_confidence": "alta",
+   "note": "Original: Courage Is Calling"
+  },
+  "L4-021": {
+   "first_published": 1998,
+   "year_confidence": "alta"
+  },
+  "L4-022": {
+   "first_published": 2019,
+   "year_confidence": "alta"
+  },
+  "L4-023": {
+   "first_published": 1922,
+   "year_confidence": "alta"
+  },
+  "L4-024": {
+   "first_published": 1943,
+   "year_confidence": "alta"
+  },
+  "L5-004": {
+   "first_published": 1957,
+   "year_confidence": "aprox",
+   "note": "Antología Munitz: de Platón y Lucrecio a Lemaître y Hoyle"
+  },
+  "L5-007": {
+   "first_published": 1988,
+   "year_confidence": "alta"
+  },
+  "L5-012": {
+   "first_published": 1941,
+   "year_confidence": "aprox",
+   "note": "Gamow, A Biography of Earth"
+  },
+  "L5-013": {
+   "first_published": 1940,
+   "year_confidence": "aprox",
+   "note": "Spencer Jones fue Astrónomo Real"
+  },
+  "L5-016": {
+   "first_published": 1952,
+   "year_confidence": "alta"
+  },
+  "L5-018": {
+   "first_published": 1946,
+   "year_confidence": "aprox",
+   "note": "La ficha dice Buenos Aires 1946"
+  },
+  "L5-019": {
+   "first_published": 1941,
+   "year_confidence": "aprox",
+   "note": "Bart y Priscilla Bok, matrimonio de astrónomos"
+  },
+  "L5-021": {
+   "first_published": 1941,
+   "year_confidence": "aprox"
+  },
+  "L5-024": {
+   "first_published": 1955,
+   "year_confidence": "alta"
+  },
+  "L5-025": {
+   "first_published": 1940,
+   "year_confidence": "alta"
+  },
+  "L5-026": {
+   "first_published": 1965,
+   "year_confidence": "alta"
+  },
+  "L5-032": {
+   "first_published": 1980,
+   "year_confidence": "alta"
+  },
+  "L6-016": {
+   "first_published": 1956,
+   "year_confidence": "aprox",
+   "note": "Dudley Pope sobre el Graf Spee, diciembre de 1939 frente a Montevideo"
+  },
+  "L7-008": {
+   "first_published": 1872,
+   "year_confidence": "alta",
+   "note": "La ida 1872; La vuelta de Martín Fierro 1879"
+  },
+  "M5-003": {
+   "first_published": 2006,
+   "year_confidence": "alta",
+   "note": "Die Therapie, debut de Fitzek"
+  },
+  "M5-004": {
+   "first_published": 1902,
+   "year_confidence": "alta",
+   "note": "Conan Doyle resucitó a Holmes acá tras matarlo en 1893"
+  },
+  "M5-005": {
+   "first_published": 1887,
+   "year_confidence": "alta",
+   "note": "Primera aparición de Sherlock Holmes"
+  },
+  "M5-006": {
+   "first_published": 1905,
+   "year_confidence": "alta",
+   "note": "El regreso oficial de Holmes tras Reichenbach"
+  },
+  "M5-008": {
+   "first_published": 2001,
+   "year_confidence": "alta",
+   "note": "An Offer from a Gentleman"
+  },
+  "M5-020": {
+   "first_published": 1925,
+   "year_confidence": "alta"
+  },
+  "M5-021": {
+   "first_published": 1952,
+   "year_confidence": "alta"
+  },
+  "M5-022": {
+   "first_published": 2008,
+   "year_confidence": "alta"
+  },
+  "M5-023": {
+   "first_published": 2005,
+   "year_confidence": "alta"
+  },
+  "M5-024": {
+   "first_published": 2002,
+   "year_confidence": "alta",
+   "note": "Original: The Analyst"
+  },
+  "M5-025": {
+   "first_published": 2020,
+   "year_confidence": "alta"
+  },
+  "M5-026": {
+   "first_published": 2021,
+   "year_confidence": "alta"
+  },
+  "M5-028": {
+   "first_published": 2006,
+   "year_confidence": "alta"
+  },
+  "M6-001": {
+   "first_published": 2013,
+   "year_confidence": "alta"
+  },
+  "M6-002": {
+   "first_published": 2013,
+   "year_confidence": "alta"
+  },
+  "M6-003": {
+   "first_published": 2013,
+   "year_confidence": "alta"
+  },
+  "M6-004": {
+   "first_published": 2013,
+   "year_confidence": "alta"
+  },
+  "M6-005": {
+   "first_published": 2016,
+   "year_confidence": "alta"
+  },
+  "M6-006": {
+   "first_published": 2018,
+   "year_confidence": "alta"
+  },
+  "M6-007": {
+   "first_published": 2018,
+   "year_confidence": "alta"
+  },
+  "M6-008": {
+   "first_published": 2019,
+   "year_confidence": "aprox"
+  },
+  "M6-009": {
+   "first_published": 2022,
+   "year_confidence": "alta"
+  },
+  "R4-001": {
+   "first_published": 1974,
+   "year_confidence": "alta"
+  },
+  "R4-002": {
+   "first_published": 1979,
+   "year_confidence": "alta"
+  },
+  "R4-003": {
+   "first_published": 1979,
+   "year_confidence": "alta",
+   "note": "Publicada como Richard Bachman"
+  },
+  "R4-004": {
+   "first_published": 2017,
+   "year_confidence": "alta",
+   "note": "Coescrita con Richard Chizmar"
+  },
+  "R4-005": {
+   "first_published": 1987,
+   "year_confidence": "alta"
+  },
+  "R4-006": {
+   "first_published": 2018,
+   "year_confidence": "alta"
+  },
+  "R4-007": {
+   "first_published": 1990,
+   "year_confidence": "alta"
+  },
+  "R4-008": {
+   "first_published": 1987,
+   "year_confidence": "alta"
+  },
+  "R4-009": {
+   "first_published": 2000,
+   "year_confidence": "alta"
+  },
+  "R4-010": {
+   "first_published": 1975,
+   "year_confidence": "alta"
+  },
+  "R4-011": {
+   "first_published": 2016,
+   "year_confidence": "alta"
+  },
+  "R4-012": {
+   "first_published": 1996,
+   "year_confidence": "alta"
+  },
+  "R4-013": {
+   "first_published": 1987,
+   "year_confidence": "alta"
+  },
+  "R4-014": {
+   "first_published": 1996,
+   "year_confidence": "alta",
+   "note": "Publicada por entregas: 6 fascículos mensuales"
+  },
+  "R4-015": {
+   "first_published": 2010,
+   "year_confidence": "alta"
+  },
+  "R4-016": {
+   "first_published": 2015,
+   "year_confidence": "alta"
+  },
+  "R4-017": {
+   "first_published": 2002,
+   "year_confidence": "alta"
+  },
+  "R4-018": {
+   "first_published": 2014,
+   "year_confidence": "alta"
+  },
+  "R4-019": {
+   "first_published": 1981,
+   "year_confidence": "alta"
+  },
+  "R4-020": {
+   "first_published": 2008,
+   "year_confidence": "alta"
+  },
+  "R4-021": {
+   "first_published": 2015,
+   "year_confidence": "alta"
+  },
+  "R4-022": {
+   "first_published": 1983,
+   "year_confidence": "alta"
+  },
+  "R4-023": {
+   "first_published": 2021,
+   "year_confidence": "alta"
+  },
+  "R4-024": {
+   "first_published": 2006,
+   "year_confidence": "alta"
+  },
+  "R4-025": {
+   "first_published": 1986,
+   "year_confidence": "alta"
+  },
+  "R5-001": {
+   "first_published": 1991,
+   "year_confidence": "alta"
+  },
+  "R5-002": {
+   "first_published": 1982,
+   "year_confidence": "alta"
+  },
+  "R5-003": {
+   "first_published": 1982,
+   "year_confidence": "alta"
+  },
+  "R5-004": {
+   "first_published": 2004,
+   "year_confidence": "alta"
+  },
+  "R5-005": {
+   "first_published": 1977,
+   "year_confidence": "alta"
+  },
+  "R5-006": {
+   "first_published": 2007,
+   "year_confidence": "alta",
+   "note": "Publicada como Richard Bachman, manuscrito de ~1973 rescatado"
+  },
+  "R5-007": {
+   "first_published": 1993,
+   "year_confidence": "alta"
+  },
+  "R5-008": {
+   "first_published": 1993,
+   "year_confidence": "alta"
+  },
+  "R5-009": {
+   "first_published": 1982,
+   "year_confidence": "alta",
+   "note": "Publicada como Richard Bachman"
+  },
+  "R5-010": {
+   "first_published": 2006,
+   "year_confidence": "alta"
+  },
+  "R5-011": {
+   "first_published": 1980,
+   "year_confidence": "alta"
+  },
+  "R5-012": {
+   "first_published": 2013,
+   "year_confidence": "alta"
+  },
+  "R5-013": {
+   "first_published": 2018,
+   "year_confidence": "alta",
+   "note": "Antología editada por King y Bev Vincent"
+  },
+  "R5-014": {
+   "first_published": 1989,
+   "year_confidence": "alta"
+  },
+  "R5-015": {
+   "first_published": 2020,
+   "year_confidence": "alta"
+  },
+  "R5-016": {
+   "first_published": 2013,
+   "year_confidence": "alta"
+  },
+  "R5-017": {
+   "first_published": 2022,
+   "year_confidence": "alta"
+  },
+  "R5-018": {
+   "first_published": 2024,
+   "year_confidence": "alta"
+  },
+  "R5-019": {
+   "first_published": 2011,
+   "year_confidence": "alta"
+  },
+  "R5-020": {
+   "first_published": 2021,
+   "year_confidence": "alta"
+  },
+  "R5-021": {
+   "first_published": 2017,
+   "year_confidence": "alta",
+   "note": "Coescrita con su hijo Owen King"
+  },
+  "R5-022": {
+   "first_published": 2018,
+   "year_confidence": "alta"
+  },
+  "R5-024": {
+   "first_published": 2023,
+   "year_confidence": "alta"
+  },
+  "R5-025": {
+   "first_published": 2019,
+   "year_confidence": "alta"
+  },
+  "R7-003": {
+   "first_published": 1975,
+   "year_confidence": "alta",
+   "note": "2a ed. ampliada, Imprenta Vinaak — dato de la propia ficha del catálogo"
+  },
+  "R7-004": {
+   "first_published": 1975,
+   "year_confidence": "alta",
+   "note": "idem"
+  },
+  "R7-005": {
+   "first_published": 1975,
+   "year_confidence": "alta",
+   "note": "idem"
+  },
+  "R7-006": {
+   "first_published": 1975,
+   "year_confidence": "alta",
+   "note": "idem"
+  },
+  "R7-008": {
+   "first_published": 1970,
+   "year_confidence": "aprox"
+  },
+  "R7-012": {
+   "first_published": 1940,
+   "year_confidence": "alta",
+   "note": "El año figura en el título de la ficha"
+  },
+  "R7-014": {
+   "first_published": 1967,
+   "year_confidence": "alta",
+   "note": "El año figura en la ficha"
+  },
+  "TOP-001": {
+   "first_published": 1605,
+   "year_confidence": "alta"
+  },
+  "TOP-002": {
+   "first_published": 1615,
+   "year_confidence": "alta"
+  }
+ }
+}
