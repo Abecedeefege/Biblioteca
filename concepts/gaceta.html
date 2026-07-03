@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Gaceta de la Biblioteca — Concepto III</title>
+<meta name="description" content="La Gaceta: la biblioteca de la casa como suplemento literario. Cada libro es un artículo, cada colección una sección del diario.">
+<meta name="theme-color" content="#f2ecdd">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2ecdd; --paper2:#ece4d0; --ink:#1c1712; --ink2:#4a4237; --faint:#8a7f6d;
+    --rule:#1c1712; --red:#8f2b24; --serif:'Playfair Display',Georgia,serif;
+    --body:'Lora',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.62;
+    background-image:repeating-linear-gradient(0deg,rgba(28,23,18,.012) 0 1px,transparent 1px 3px)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  ::selection{background:var(--red);color:var(--paper)}
+
+  /* ---------- masthead ---------- */
+  .mast{border-bottom:4px double var(--rule);padding:20px 0 12px;text-align:center}
+  .mast .ears{display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--sans);
+    font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink2)}
+  .mast h1{font-family:'UnifrakturMaguntia',var(--serif);font-size:clamp(42px,8vw,84px);font-weight:400;line-height:1;margin:2px 0 6px}
+  .mast .sub{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink2);
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:6px 0;margin-top:8px;
+    display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  nav.secs{display:flex;justify-content:center;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--rule);
+    padding:8px 0;font-family:var(--sans);font-size:10.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;
+    position:sticky;top:0;background:var(--paper);z-index:40}
+  nav.secs a{padding:5px 11px;border-radius:2px}
+  nav.secs a:hover{background:var(--ink);color:var(--paper)}
+  nav.secs a.on{background:var(--red);color:var(--paper)}
+
+  /* ---------- generic newspaper bits ---------- */
+  .kicker{font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:var(--red)}
+  .rule-h{border:none;border-top:1px solid var(--rule);margin:0}
+  .rule-thick{border:none;border-top:3px solid var(--rule);margin:0}
+  h2.head{font-family:var(--serif);font-weight:700;line-height:1.06}
+  .byline{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink2)}
+  .deck{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--ink2);line-height:1.35}
+  .halftone{filter:grayscale(1) contrast(1.12) sepia(.28);mix-blend-mode:multiply}
+  .figcap{font-family:var(--sans);font-size:10.5px;color:var(--ink2);padding-top:6px;border-top:1px solid var(--rule);margin-top:8px;line-height:1.45}
+  .box{border:1px solid var(--rule);padding:16px 18px}
+  .box .bt{font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;
+    text-align:center;border-bottom:1px solid var(--rule);padding-bottom:8px;margin-bottom:12px}
+  .dropcap::first-letter{font-family:var(--serif);font-weight:800;font-size:56px;float:left;line-height:.82;padding:6px 8px 0 0;color:var(--red)}
+  #status{padding:100px 20px;text-align:center;color:var(--ink2);font-family:var(--serif)}
+  #status h2{font-size:30px;margin-bottom:8px}
+  .fade{animation:fd .3s ease}
+  @keyframes fd{from{opacity:0}to{opacity:1}}
+
+  /* ---------- front page ---------- */
+  .front{display:grid;grid-template-columns:1fr 300px;gap:28px;padding:26px 0 10px}
+  @media(max-width:880px){.front{grid-template-columns:1fr}}
+  .lead-story .kicker{margin-bottom:8px}
+  .lead-story h2{font-size:clamp(32px,5vw,52px);margin-bottom:10px}
+  .lead-story .deck{font-size:19px;margin-bottom:12px}
+  .lead-story .byline{margin-bottom:16px}
+  .lead-cols{column-count:2;column-gap:26px;column-rule:1px solid rgba(28,23,18,.35);text-align:justify;hyphens:auto}
+  @media(max-width:640px){.lead-cols{column-count:1}}
+  .lead-cols p{margin-bottom:12px}
+  .continua{font-family:var(--sans);font-size:10.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--red)}
+  .rail>*{margin-bottom:22px}
+  .numbox .row{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--faint);font-family:var(--sans);font-size:12px}
+  .numbox .row b{font-family:var(--serif);font-size:22px}
+  .clima p{font-size:13.5px;font-style:italic}
+  .clima .t{font-family:var(--serif);font-size:34px;font-weight:700;float:right;margin-left:10px}
+  .efem li{font-size:13px;padding:7px 0;border-bottom:1px dotted var(--faint);list-style:none;line-height:1.5}
+  .efem li b{color:var(--red)}
+  .efem li:last-child{border-bottom:none}
+
+  .sec-teasers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:3px solid var(--rule);margin-top:18px}
+  .teaser{padding:18px 20px 22px;border-right:1px solid rgba(28,23,18,.35);border-bottom:1px solid rgba(28,23,18,.2)}
+  .teaser:last-child{border-right:none}
+  .teaser h3{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.1;margin:6px 0 8px}
+  .teaser p{font-size:13px;color:var(--ink2)}
+  .teaser:hover h3{color:var(--red)}
+
+  .breves-wrap{margin:30px 0}
+  .breves{column-count:4;column-gap:24px;column-rule:1px solid rgba(28,23,18,.35);margin-top:14px}
+  @media(max-width:980px){.breves{column-count:2}}
+  @media(max-width:560px){.breves{column-count:1}}
+  .breve{display:block;break-inside:avoid;padding-bottom:14px;margin-bottom:14px;border-bottom:1px dotted var(--faint)}
+  .breve b{font-family:var(--serif);font-size:15.5px;line-height:1.2;display:block}
+  .breve span{font-size:12.5px;color:var(--ink2)}
+  .breve:hover b{color:var(--red)}
+
+  .clasif{margin:10px 0 40px;border:3px double var(--rule);padding:18px 22px}
+  .clasif-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:12px}
+  .aviso{border:1px solid var(--faint);padding:10px 12px;font-size:12px;line-height:1.5;background:var(--paper2)}
+  .aviso b{font-family:var(--serif);display:block;font-size:14px}
+  .aviso .p{color:var(--red);font-weight:700;font-family:var(--sans);font-size:11px}
+
+  /* ---------- section page ---------- */
+  .sec-head{padding:30px 0 14px;text-align:center;border-bottom:3px solid var(--rule)}
+  .sec-head h2{font-size:clamp(34px,6vw,58px)}
+  .sec-head .deck{font-size:18px;margin-top:6px}
+  .sec-body{display:grid;grid-template-columns:1fr 300px;gap:28px;padding:24px 0}
+  @media(max-width:880px){.sec-body{grid-template-columns:1fr}}
+  .essay{text-align:justify;hyphens:auto;font-size:16px}
+  .essay p{margin-bottom:14px}
+  .sec-feats{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:0;border-top:3px solid var(--rule);margin:10px 0 26px}
+  .feat{padding:16px 18px;border-right:1px solid rgba(28,23,18,.35);border-bottom:1px solid rgba(28,23,18,.2);display:flex;gap:12px}
+  .feat .mini{width:52px;flex:none;box-shadow:2px 3px 8px rgba(28,23,18,.3)}
+  .feat h4{font-family:var(--serif);font-size:15.5px;font-weight:700;line-height:1.15}
+  .feat span{font-family:var(--sans);font-size:10.5px;color:var(--ink2)}
+  .feat:hover h4{color:var(--red)}
+  .indice{column-count:3;column-gap:24px;column-rule:1px solid rgba(28,23,18,.35);margin:14px 0 40px}
+  @media(max-width:880px){.indice{column-count:2}}
+  @media(max-width:560px){.indice{column-count:1}}
+  .idx-item{display:flex;justify-content:space-between;gap:8px;font-size:13px;padding:4px 0;break-inside:avoid;border-bottom:1px dotted rgba(138,127,109,.55)}
+  .idx-item i{font-style:normal;color:var(--faint);font-family:var(--sans);font-size:10.5px;flex:none}
+  .idx-item:hover{color:var(--red)}
+
+  /* ---------- article ---------- */
+  .art{display:grid;grid-template-columns:1fr 300px;gap:30px;padding:30px 0 20px}
+  @media(max-width:880px){.art{grid-template-columns:1fr}}
+  .art-head h2{font-size:clamp(30px,5.4vw,50px);margin:8px 0 10px}
+  .art-head .deck{font-size:18px;margin-bottom:12px}
+  .art-head .byline{display:block;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:7px 0;margin-bottom:18px}
+  .art-body{text-align:justify;hyphens:auto;font-size:16px}
+  .art-body p{margin-bottom:14px}
+  .art-body h5{font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+    color:var(--red);margin:20px 0 8px;border-top:1px solid var(--rule);padding-top:12px}
+  .pullq{border-top:3px solid var(--rule);border-bottom:1px solid var(--rule);margin:18px 0;padding:14px 6px;
+    font-family:var(--serif);font-style:italic;font-weight:600;font-size:21px;line-height:1.35;text-align:center;color:var(--ink)}
+  .pullq small{display:block;font-family:var(--sans);font-style:normal;font-weight:800;font-size:9.5px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--red);margin-top:8px}
+  .ficha td{font-size:12.5px;padding:5px 0;border-bottom:1px dotted var(--faint);vertical-align:top}
+  .ficha td:first-child{font-family:var(--sans);font-size:9.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--ink2);padding-right:12px;white-space:nowrap}
+  .ficha{width:100%;border-collapse:collapse}
+  .aviso-uno{background:var(--paper2);border:3px double var(--rule);padding:14px 16px;text-align:center;font-size:12.5px;line-height:1.5}
+  .aviso-uno b{font-family:var(--serif);font-size:15px;display:block}
+  .aviso-uno a{color:var(--red);font-weight:700;text-decoration:underline}
+  .art-nav{display:flex;justify-content:space-between;gap:14px;border-top:3px solid var(--rule);padding:14px 0 44px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+  .art-nav a:hover{color:var(--red)}
+  .otras{margin:0 0 40px}
+  .stamp-fam{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+    color:var(--red);border:2px solid var(--red);padding:4px 10px;transform:rotate(-2deg);margin-bottom:12px}
+
+  footer{border-top:4px double var(--rule);padding:22px 20px 60px;text-align:center;font-family:var(--sans);font-size:11px;color:var(--ink2)}
+  footer b{font-family:'UnifrakturMaguntia',serif;font-size:18px;font-weight:400;color:var(--ink)}
+  .searchbar{display:flex;gap:10px;margin:16px 0}
+  .searchbar input{flex:1;background:var(--paper2);border:1px solid var(--rule);padding:11px 14px;font-family:var(--body);font-size:15px;color:var(--ink);outline:none}
+</style>
+</head>
+<body>
+
+<header class="mast wrap">
+  <div class="ears"><span id="ear-date">Montevideo</span><span>Precio: la voluntad</span></div>
+  <h1><a href="#/">La Gaceta de la Biblioteca</a></h1>
+  <div class="sub"><span>Suplemento literario de la casa · Concepto III</span><span id="ear-ed">Edición Nº —</span><span>400 volúmenes fiscalizados</span></div>
+</header>
+<nav class="secs wrap" id="secnav"></nav>
+
+<div id="status"><h2>Imprimiendo la edición de hoy…</h2><p>La rotativa está cargando el catálogo.</p></div>
+<main id="app" class="wrap" style="display:none"></main>
+
+<footer>
+  <b>La Gaceta de la Biblioteca</b><br>
+  Director: El Bibliotecario · Redacción: los 400 de la casa · Los datos salen del catálogo canónico de <a href="../index.html" style="text-decoration:underline">index.html</a>.
+</footer>
+
+<script>
+'use strict';
+/* ================= data ================= */
+let CAT=null,PHOTOS={},ENRICH={},ED={books:{},authors:{},topics:{}},COLS=[];
+let BOOKS=[],BY_ID={},SHELF_BY_ID={};
+const TOPIC_LABEL=t=>(ED.topics[t]&&ED.topics[t].label)||t;
+async function loadAll(){
+  const res=await fetch('../index.html');
+  if(!res.ok)throw new Error('No pude leer index.html');
+  const html=await res.text();
+  CAT=JSON.parse(html.match(/<script id="inline-catalog"[^>]*>([\s\S]*?)<\/script>/)[1]);
+  const pm=html.match(/<script id="inline-photos">window\.PHOTOS\s*=\s*([\s\S]*?)<\/script>/);
+  if(pm){try{PHOTOS=JSON.parse(pm[1].trim().replace(/;\s*$/,''))}catch(e){}}
+  try{ENRICH=(await(await fetch('../data/enrichment.json')).json()).books||{}}catch(e){}
+  try{ED=await(await fetch('editorial.json')).json()}catch(e){}
+  try{COLS=(await(await fetch('collections.json')).json()).collections||[]}catch(e){}
+  CAT.shelves.forEach(s=>{SHELF_BY_ID[s.id]=s;s.books.forEach((b,i)=>{
+    b._shelf=s.id;b._idx=i;b._n=s.books.length;
+    b._year=ENRICH[b.id]?ENRICH[b.id].first_published:null;
+    b._ed=ED.books[b.id]||null;
+    BOOKS.push(b);BY_ID[b.id]=b;
+  })});
+}
+const photo=k=>PHOTOS[k]?'data:image/jpeg;base64,'+PHOTOS[k]:null;
+const shelfPhoto=id=>photo('shelf_'+id);
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function hsh(s){let h=5381;for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return Math.abs(h)}
+function yearLabel(y){if(y==null)return null;return y<0?Math.abs(y)+' a.C.':String(y)}
+const isFamily=b=>/apolant|villar/i.test(b.author_canonical||b.author||'');
+
+/* collection helpers */
+function colBooks(c){
+  const f=c.filter;
+  if(f.type==='shelf')return SHELF_BY_ID[f.value]?SHELF_BY_ID[f.value].books:[];
+  if(f.type==='shelves')return f.value.flatMap(id=>SHELF_BY_ID[id]?SHELF_BY_ID[id].books:[]);
+  if(f.type==='topic')return BOOKS.filter(b=>b.topics&&b.topics.includes(f.value));
+  if(f.type==='family')return BOOKS.filter(isFamily);
+  return [];
+}
+function colOf(b){
+  for(const c of COLS){ if(colBooks(c).some(x=>x.id===b.id)) return c; }
+  return null;
+}
+function priceNum(b){const m=/USD\s*(\d+)/.exec(b.price||'');return m?+m[1]:null}
+function records(list){
+  const dated=list.filter(b=>b._year!=null);
+  const priced=list.filter(b=>priceNum(b)!=null);
+  return {
+    oldest:dated.length?dated.reduce((a,b)=>b._year<a._year?b:a):null,
+    newest:dated.length?dated.reduce((a,b)=>b._year>a._year?b:a):null,
+    priciest:priced.length?priced.reduce((a,b)=>priceNum(b)>priceNum(a)?b:a):null,
+    langs:[...new Set(list.map(b=>b.language).filter(Boolean))].length
+  };
+}
+function genDesc(b){
+  const t=(b.topics&&b.topics[0])||'miscellaneous',sh=SHELF_BY_ID[b._shelf],bits=[];
+  bits.push(`«${b.title}»${b.author?', de '+b.author+',':''} ocupa su lugar en el estante ${b._shelf} — ${sh?sh.theme.toLowerCase():''}.`);
+  if(ED.topics[t])bits.push(ED.topics[t].desc);
+  return bits.join(' ');
+}
+const bookDesc=b=>(b._ed&&b._ed.desc)||genDesc(b);
+
+/* mini generative cover (reused, mono-friendly) */
+const PAL={'stephen-king':['#181316','#b0413f','#e8ddc8'],'shakespeare':['#22303c','#c9a45c','#efe4cc'],'astronomy':['#0e1c30','#5b8fc9','#dfe4e8'],'art':['#7c3140','#e0b463','#f4ead9'],'travel':['#1d4a52','#d97f45','#efe7d6'],'uruguay':['#2c3a55','#87bfc9','#efe9d8'],'mystery':['#1c1a17','#7f9d82','#e9e2d0'],'wisdom':['#54462f','#d9a441','#f4ecda'],'romance':['#6d3550','#e0a3bd','#f6ecdf'],'classics':['#432a24','#b89348','#f1e8d4'],'latin-american':['#54382a','#dd9a44','#f3ead6'],'genealogy':['#39432f','#a3b18a','#eff0e0'],'young-adult':['#3f2b52','#e8ac3e','#f2ebdd'],'science':['#1f3b36','#6fb98f','#e9efe4'],'reference':['#333f46','#8fa3ad','#e8ecee'],'miscellaneous':['#463f38','#a8988a','#efeae0']};
+function titleLines(t){t=String(t).replace(/\s*\(.*?\)\s*/g,' ').replace(/\s+/g,' ').trim();if(t.length>60)t=t.slice(0,57)+'…';const w=t.split(' '),L=[];let c='';for(const x of w){if((c+' '+x).trim().length>13&&c){L.push(c);c=x}else c=(c+' '+x).trim()}if(c)L.push(c);return L.slice(0,5)}
+function coverSVG(b,w){
+  w=w||52;const h=Math.round(w*1.5);
+  const[bg,ac,ink]=PAL[(b.topics&&b.topics[0])||'miscellaneous']||PAL.miscellaneous;
+  const lines=titleLines(b.title||b.id),fs=15,ty=76-(lines.length*fs)/2+fs;
+  return `<svg viewBox="0 0 200 300" width="${w}" height="${h}" aria-hidden="true">
+    <rect width="200" height="300" fill="${bg}"/><rect x="10" y="10" width="180" height="280" fill="none" stroke="${ac}" stroke-width="2"/>
+    ${lines.map((l,i)=>`<text x="100" y="${ty+i*fs}" text-anchor="middle" font-family="Georgia,serif" font-size="${fs}" fill="${ink}">${esc(l)}</text>`).join('')}
+  </svg>`;
+}
+
+/* ================= chrome ================= */
+const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const DIAS=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+function today(){return new Date()}
+function dayOfYear(d){return Math.floor((d-new Date(d.getFullYear(),0,0))/864e5)}
+function setChrome(){
+  const d=today();
+  document.getElementById('ear-date').textContent=`Montevideo, ${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]} de ${d.getFullYear()}`;
+  document.getElementById('ear-ed').textContent=`Año I · Edición Nº ${dayOfYear(d)}`;
+  document.getElementById('secnav').innerHTML=
+    `<a href="#/" data-s="portada">Portada</a>`+
+    COLS.map(c=>`<a href="#/seccion/${c.key}" data-s="${c.key}">${esc(c.title)}</a>`).join('')+
+    `<a href="#/archivo" data-s="archivo">Hemeroteca</a>`;
+}
+function setNav(k){document.querySelectorAll('#secnav a').forEach(a=>a.classList.toggle('on',a.dataset.s===k))}
+function render(html,nav){
+  const app=document.getElementById('app');
+  app.innerHTML=`<div class="fade">${html}</div>`;app.style.display='block';
+  document.getElementById('status').style.display='none';
+  setNav(nav);window.scrollTo({top:0});
+}
+
+/* ================= front page ================= */
+function seed(){const d=today();return d.getFullYear()*1000+d.getMonth()*50+d.getDate()}
+function climaDeLectura(){
+  const opts=[
+    ['12°','Garúa fina sobre la rambla. Tarde ideal para King: que el miedo lo pase otro.'],
+    ['17°','Ventoso, con hojas sueltas. Clima de cozy mystery y segunda taza.'],
+    ['9°','Frío honesto de biblioteca. Se recomienda Balzac, manta y lámpara baja.'],
+    ['22°','Templado con sol de tarde. Perfecto para fotolibros de viaje en la mesa grande.'],
+    ['14°','Cielo cubierto, presión baja. Los astrónomos del estante L5 no verán estrellas — léalas.'],
+    ['19°','Despejado. El Quijote de exhibición pide visita, aunque no baje del estante.']
+  ];
+  return opts[seed()%opts.length];
+}
+function efemerides(){
+  const y=today().getFullYear();
+  const list=BOOKS.filter(b=>b._year!=null&&b._year>0&&(y-b._year)>0&&(y-b._year)%25===0)
+    .sort((a,b)=>a._year-b._year).slice(0,6);
+  return list;
+}
+function viewFront(){
+  const curated=Object.keys(ED.books).filter(id=>BY_ID[id]);
+  const lead=BY_ID[curated[seed()%curated.length]];
+  const leadCol=colOf(lead);
+  const clima=climaDeLectura();
+  const efem=efemerides();
+  const dated=BOOKS.filter(b=>b._year!=null);
+  const authors=new Set(BOOKS.map(b=>b.author_canonical||b.author).filter(Boolean)).size;
+  const teasers=COLS.slice().sort((a,b)=>hsh(a.key+seed())-hsh(b.key+seed())).slice(0,4);
+  const breves=curated.filter(id=>ED.books[id].dato&&id!==lead.id)
+    .sort((a,b)=>hsh(a+seed())-hsh(b+seed())).slice(0,10).map(id=>BY_ID[id]);
+  const avisos=BOOKS.filter(b=>b.buy_url&&/USD\s*\d/.test(b.price||'')&&!/^UNK/i.test(b.title)).sort((a,b)=>hsh(a.id+seed())-hsh(b.id+seed())).slice(0,8);
+  const ph=shelfPhoto(lead._shelf);
+
+  render(`
+    <section class="front">
+      <article class="lead-story">
+        <div class="kicker">${leadCol?esc(leadCol.title):'La colección'} · Nota de tapa</div>
+        <a href="#/nota/${lead.id}"><h2 class="head">${esc(lead.title)}</h2></a>
+        <p class="deck">${lead.author?esc(lead.author)+' — ':''}${leadCol?esc(leadCol.kicker):''}</p>
+        <span class="byline">Por El Bibliotecario · Crítica de la casa</span>
+        <div class="lead-cols">
+          <p class="dropcap">${esc(bookDesc(lead))}</p>
+          ${lead._ed&&lead._ed.dato?`<p>${esc(lead._ed.dato)}</p>`:''}
+          <p>${esc(cronicaEstante(lead))}</p>
+          <p><a class="continua" href="#/nota/${lead.id}">Continúa en la página del libro →</a></p>
+        </div>
+        ${ph?`<figure style="margin-top:18px"><img class="halftone" src="${ph}" alt="" style="width:100%;height:230px;object-fit:cover">
+          <figcaption class="figcap">FOTOGRAFÍA DE ARCHIVO — El estante ${lead._shelf}, donde la pieza reseñada ocupa la posición ${lead._idx+1} de ${lead._n}.</figcaption></figure>`:''}
+      </article>
+      <aside class="rail">
+        <div class="box numbox">
+          <div class="bt">La biblioteca en números</div>
+          <div class="row"><span>Volúmenes fiscalizados</span><b>${BOOKS.length}</b></div>
+          <div class="row"><span>Autores identificados</span><b>${authors}</b></div>
+          <div class="row"><span>Obras datadas</span><b>${dated.length}</b></div>
+          <div class="row"><span>Siglos cubiertos</span><b>${new Set(dated.map(b=>b._year<0?'aC':Math.floor((b._year-1)/100))).size}</b></div>
+          <div class="row" style="border-bottom:none"><span>Secciones del suplemento</span><b>${COLS.length}</b></div>
+        </div>
+        <div class="box clima">
+          <div class="bt">El clima de lectura</div>
+          <span class="t">${clima[0]}</span>
+          <p>${esc(clima[1])}</p>
+        </div>
+        ${efem.length?`<div class="box efem">
+          <div class="bt">Efemérides</div>
+          <ul>${efem.map(b=>`<li><a href="#/nota/${b.id}"><b>Hace ${today().getFullYear()-b._year} años</b> se publicaba «${esc(b.title.replace(/\s*\(.*?\)/g,''))}»${b.author?', de '+esc(b.author):''}.</a></li>`).join('')}</ul>
+        </div>`:''}
+      </aside>
+    </section>
+
+    <div class="sec-teasers">
+      ${teasers.map(c=>{const n=colBooks(c).length;return `<a class="teaser" href="#/seccion/${c.key}">
+        <span class="kicker">Sección · ${n} títulos</span>
+        <h3>${esc(c.title)}</h3>
+        <p>${esc(c.kicker)}.</p>
+      </a>`}).join('')}
+    </div>
+
+    <section class="breves-wrap">
+      <hr class="rule-thick"><h3 style="font-family:var(--serif);font-size:24px;padding:10px 0 0">Breves de los estantes</h3>
+      <div class="breves">
+        ${breves.map(b=>`<a class="breve" href="#/nota/${b.id}"><b>${esc(b.title.replace(/\s*\(.*?\)/g,''))}</b><span>${esc((ED.books[b.id].dato||'').slice(0,130))}${(ED.books[b.id].dato||'').length>130?'…':''}</span></a>`).join('')}
+      </div>
+    </section>
+
+    <section class="clasif">
+      <div class="bt" style="font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;text-align:center;border-bottom:1px solid var(--rule);padding-bottom:8px">Avisos clasificados — consígalo usted también</div>
+      <div class="clasif-grid">
+        ${avisos.map(b=>`<a class="aviso" href="${esc(b.buy_url)}" target="_blank" rel="noopener"><b>${esc(b.title.replace(/\s*\(.*?\)/g,'').slice(0,42))}</b>${b.author?esc(b.author)+'. ':''}Ejemplar de referencia. <span class="p">${esc(b.price)} ↗</span></a>`).join('')}
+      </div>
+    </section>
+  `,'portada');
+}
+function cronicaEstante(b){
+  const s=SHELF_BY_ID[b._shelf];
+  const vecinos=s.books.filter(x=>x!==b).slice(0,3).map(x=>'«'+x.title.replace(/\s*\(.*?\)/g,'')+'»');
+  return `En los estantes, la pieza convive con ${vecinos.join(', ')} y ${s.books.length-1} vecinos más bajo el rótulo de ${s.theme.toLowerCase()}.`;
+}
+
+/* ================= section page ================= */
+function viewSeccion(key){
+  const c=COLS.find(x=>x.key===key);
+  if(!c)return viewFront();
+  const list=colBooks(c);
+  const r=records(list);
+  const center=BY_ID[c.centerpiece];
+  const feats=(c.highlights||[]).map(id=>BY_ID[id]).filter(Boolean);
+  const ph=center?shelfPhoto(center._shelf):null;
+  render(`
+    <div class="sec-head">
+      <div class="kicker">Sección · ${list.length} títulos en catálogo</div>
+      <h2 class="head">${esc(c.title)}</h2>
+      <p class="deck">${esc(c.kicker)}</p>
+    </div>
+    <div class="sec-body">
+      <div>
+        <div class="essay">
+          ${c.essay.map((p,i)=>`<p class="${i===0?'dropcap':''}">${esc(p)}</p>`).join('')}
+        </div>
+        ${ph?`<figure style="margin:6px 0 10px"><img class="halftone" src="${ph}" alt="" style="width:100%;height:210px;object-fit:cover">
+          <figcaption class="figcap">FOTOGRAFÍA DE ARCHIVO — La sección, tal como está parada hoy en la madera.</figcaption></figure>`:''}
+      </div>
+      <aside class="rail">
+        ${center?`<a class="box" href="#/nota/${center.id}" style="display:block">
+          <div class="bt">La pieza central</div>
+          <div style="display:flex;gap:14px;align-items:center">
+            <span style="flex:none;box-shadow:2px 3px 8px rgba(28,23,18,.3)">${coverSVG(center,64)}</span>
+            <span><b style="font-family:var(--serif);font-size:17px;line-height:1.15;display:block">${esc(center.title)}</b>
+            <span style="font-family:var(--sans);font-size:11px;color:var(--ink2)">${esc(center.author||'')}</span></span>
+          </div>
+        </a>`:''}
+        <div class="box">
+          <div class="bt">Récords de la sección</div>
+          <ul class="efem" style="list-style:none">
+            ${r.oldest?`<li><a href="#/nota/${r.oldest.id}"><b>La más antigua:</b> «${esc(r.oldest.title.replace(/\s*\(.*?\)/g,''))}» (${yearLabel(r.oldest._year)})</a></li>`:''}
+            ${r.newest&&r.newest!==r.oldest?`<li><a href="#/nota/${r.newest.id}"><b>La más nueva:</b> «${esc(r.newest.title.replace(/\s*\(.*?\)/g,''))}» (${yearLabel(r.newest._year)})</a></li>`:''}
+            ${r.priciest?`<li><a href="#/nota/${r.priciest.id}"><b>La más cotizada:</b> «${esc(r.priciest.title.replace(/\s*\(.*?\)/g,''))}» (${esc(r.priciest.price)})</a></li>`:''}
+            <li><b>Idiomas presentes:</b> ${r.langs||'—'}</li>
+            ${c.records_note?`<li>${esc(c.records_note)}</li>`:''}
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <hr class="rule-thick"><h3 style="font-family:var(--serif);font-size:24px;padding:12px 0 2px">Críticas destacadas</h3>
+    <div class="sec-feats">
+      ${feats.map(b=>`<a class="feat" href="#/nota/${b.id}">
+        <span class="mini">${coverSVG(b,52)}</span>
+        <span><h4>${esc(b.title)}</h4><span>${esc(b.author||'')}${b._year?' · '+yearLabel(b._year):''}</span></span>
+      </a>`).join('')}
+    </div>
+
+    <hr class="rule-thick"><h3 style="font-family:var(--serif);font-size:24px;padding:12px 0 2px">Índice completo de la sección</h3>
+    <div class="indice">
+      ${list.map(b=>`<a class="idx-item" href="#/nota/${b.id}"><span>${esc(b.title)}</span><i>${esc(b.id)}</i></a>`).join('')}
+    </div>
+  `,key);
+}
+
+/* ================= article (book page) ================= */
+function sameDecade(b){
+  if(b._year==null||b._year<1500)return[];
+  const d=Math.floor(b._year/10)*10;
+  return BOOKS.filter(x=>x!==b&&x._year!=null&&Math.floor(x._year/10)*10===d).slice(0,4);
+}
+function recomendados(b){
+  const ts=new Set(b.topics||[]);
+  return BOOKS.filter(x=>x!==b&&x.author_canonical!==b.author_canonical&&(x.topics||[]).some(t=>ts.has(t)))
+    .sort((x,y)=>hsh(x.id+b.id)-hsh(y.id+b.id)).slice(0,3);
+}
+function viewNota(id){
+  const b=BY_ID[id];
+  if(!b)return viewFront();
+  const c=colOf(b);
+  const s=SHELF_BY_ID[b._shelf];
+  const bio=b.author_canonical&&ED.authors[b.author_canonical]?ED.authors[b.author_canonical].bio:null;
+  const dec=sameDecade(b);
+  const recs=recomendados(b);
+  const flat=BOOKS,i=flat.indexOf(b);
+  const prev=flat[(i-1+flat.length)%flat.length],next=flat[(i+1)%flat.length];
+  const ph=shelfPhoto(b._shelf);
+  const e=ENRICH[b.id];
+  const otras=(c?colBooks(c):s.books).filter(x=>x!==b).sort((x,y)=>hsh(x.id+b.id)-hsh(y.id+b.id)).slice(0,6);
+
+  render(`
+    <article class="art">
+      <div>
+        <div class="art-head">
+          <div class="kicker">${c?`<a href="#/seccion/${c.key}">Sección ${esc(c.title)}</a>`:esc(TOPIC_LABEL((b.topics&&b.topics[0])||'miscellaneous'))} · Crítica</div>
+          <h2 class="head">${esc(b.title)}</h2>
+          ${b.author?`<p class="deck">${esc(b.author)}${b._year?' · Publicada por primera vez en '+yearLabel(b._year):''}</p>`:''}
+          <span class="byline">Por El Bibliotecario · La Gaceta de la Biblioteca</span>
+        </div>
+        ${isFamily(b)?'<div class="stamp-fam">Autoría familiar — patrimonio de la casa</div>':''}
+        <div class="art-body">
+          <p class="dropcap">${esc(bookDesc(b))}</p>
+          ${b._ed&&b._ed.dato?`<div class="pullq">“${esc(b._ed.dato)}”<small>La marginalia del archivo</small></div>`:''}
+
+          ${bio?`<h5>Sobre ${esc(b.author_canonical)}</h5><p>${esc(bio)}</p>`:''}
+
+          <h5>Crónica de estantería</h5>
+          <p>${esc(cronicaEstante(b))} Ocupa la posición ${b._idx+1} de ${b._n}, contando de izquierda a derecha${b.series?`, y pertenece a la serie «${esc(b.series)}»`:''}.
+          ${b.binding?` La encuadernación registrada por el archivo: ${esc(b.binding)}.`:''}
+          ${e&&e.note?` El fichero de enriquecimiento agrega una nota: ${esc(e.note)}.`:''}</p>
+
+          ${dec.length?`<h5>Su época en esta biblioteca</h5>
+          <p>La casa conserva otras obras nacidas en la misma década: ${dec.map(x=>`<a href="#/nota/${x.id}" style="text-decoration:underline">«${esc(x.title.replace(/\s*\(.*?\)/g,''))}»</a> (${yearLabel(x._year)})`).join(', ')}. Leídas juntas, son el clima de esos años en un solo estante.</p>`:''}
+
+          ${recs.length?`<h5>Para el lector que quiera seguir</h5>
+          <p>La redacción sugiere, sin salir del catálogo: ${recs.map(x=>`<a href="#/nota/${x.id}" style="text-decoration:underline">«${esc(x.title.replace(/\s*\(.*?\)/g,''))}»</a>${x.author?' de '+esc(x.author):''}`).join('; ')}.</p>`:''}
+        </div>
+        ${ph?`<figure style="margin:16px 0"><img class="halftone" src="${ph}" alt="" style="width:100%;height:230px;object-fit:cover">
+          <figcaption class="figcap">FOTOGRAFÍA DE ARCHIVO — Estante ${b._shelf}: ${esc(s.theme)}. La pieza reseñada está en la posición ${b._idx+1} de ${b._n}.</figcaption></figure>`:''}
+      </div>
+      <aside class="rail">
+        <div class="box">
+          <div class="bt">Ficha técnica</div>
+          <table class="ficha">
+            <tr><td>Registro</td><td>${esc(b.id)}</td></tr>
+            <tr><td>Autor</td><td>${esc(b.author||'—')}</td></tr>
+            <tr><td>Primera ed.</td><td>${b._year!=null?yearLabel(b._year)+(e&&e.year_confidence==='aprox'?' (aprox.)':''):'sin datar'}</td></tr>
+            <tr><td>Idioma</td><td>${esc(b.language||'—')}</td></tr>
+            ${b.publisher?`<tr><td>Editorial</td><td>${esc(b.publisher)}</td></tr>`:''}
+            ${b.series?`<tr><td>Serie</td><td>${esc(b.series)}</td></tr>`:''}
+            ${b.binding?`<tr><td>Encuadern.</td><td>${esc(b.binding)}</td></tr>`:''}
+            <tr><td>Ubicación</td><td>Estante ${b._shelf}, nº ${b._idx+1} de ${b._n}</td></tr>
+            <tr><td>Tema</td><td>${(b.topics||[]).map(TOPIC_LABEL).join(', ')||'—'}</td></tr>
+          </table>
+        </div>
+        ${b.buy_url?`<div class="aviso-uno"><b>AVISO</b> ¿Le gustó la crítica? Consiga su propio ejemplar${b.price?` — precio de referencia ${esc(b.price)}`:''}.<br><a href="${esc(b.buy_url)}" target="_blank" rel="noopener">Ver el clasificado ↗</a></div>`:''}
+        ${otras.length?`<div class="box">
+          <div class="bt">${c?'En la misma sección':'En el mismo estante'}</div>
+          <ul class="efem" style="list-style:none">
+            ${otras.map(x=>`<li><a href="#/nota/${x.id}">«${esc(x.title.replace(/\s*\(.*?\)/g,''))}»${x.author?' — '+esc(x.author):''}</a></li>`).join('')}
+          </ul>
+        </div>`:''}
+      </aside>
+    </article>
+    <div class="art-nav">
+      <a href="#/nota/${prev.id}">← ${esc(prev.title.slice(0,38))}</a>
+      <a href="#/nota/${next.id}">${esc(next.title.slice(0,38))} →</a>
+    </div>
+  `,c?c.key:null);
+}
+
+/* ================= hemeroteca (archive + search) ================= */
+const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+function viewArchivo(){
+  render(`
+    <div class="sec-head">
+      <div class="kicker">Hemeroteca</div>
+      <h2 class="head">Los 400, en el índice general</h2>
+      <p class="deck">Todo lo fiscalizado por esta redacción, buscable y en orden de estantería.</p>
+    </div>
+    <div class="searchbar"><input id="arch-q" type="search" placeholder="Buscar por título, autor o registro…"></div>
+    <div class="indice" id="arch-list"></div>
+  `,'archivo');
+  const list=document.getElementById('arch-list');
+  const paint=q=>{
+    q=norm(q);
+    const hits=q?BOOKS.filter(b=>norm(b.title).includes(q)||norm(b.author).includes(q)||norm(b.id).includes(q)):BOOKS;
+    list.innerHTML=hits.map(b=>`<a class="idx-item" href="#/nota/${b.id}"><span>${esc(b.title)}${b.author?' — <em>'+esc(b.author)+'</em>':''}</span><i>${esc(b.id)}</i></a>`).join('')
+      ||'<p style="padding:20px 0;color:var(--ink2)">La hemeroteca no registra nada con ese nombre.</p>';
+  };
+  paint('');
+  document.getElementById('arch-q').addEventListener('input',e=>paint(e.target.value));
+}
+
+/* ================= router ================= */
+function route(){
+  const h=location.hash.replace(/^#\/?/,'');
+  const[v,a]=h.split('/');
+  if(!v)return viewFront();
+  if(v==='seccion')return viewSeccion(a);
+  if(v==='nota')return viewNota(a);
+  if(v==='archivo')return viewArchivo();
+  viewFront();
+}
+window.addEventListener('hashchange',route);
+loadAll().then(()=>{setChrome();route()}).catch(err=>{
+  document.getElementById('status').innerHTML=`<h2>La rotativa se detuvo</h2>
+    <p style="max-width:52ch;margin:0 auto">${esc(err.message)}. La Gaceta lee el catálogo desde <code>../index.html</code>: hay que servirla por HTTP (GitHub Pages o <code>python3 -m http.server</code>).</p>`;
+});
+</script>
+
+<!-- ====== xp-switcher: swap entre experiencias ====== -->
+<div id="xp-switch">
+  <div id="xp-menu" hidden>
+    <div class="xp-h">Experiencias</div>
+    <a class="xp-item" href="../index.html">📚 Clásica <small>el catálogo visual</small></a>
+    <a class="xp-item" href="codice.html">🏛️ Códice <small>museo interactivo</small></a>
+    <a class="xp-item" href="ateneo.html">⭐ Ateneo <small>red de lectura</small></a>
+    <a class="xp-item xp-on" href="gaceta.html">🗞️ La Gaceta <small>suplemento literario</small></a>
+    <a class="xp-item" href="fichero.html">🗃️ El Fichero <small>archivo de fichas</small></a>
+  </div>
+  <button id="xp-btn" type="button" aria-label="Cambiar de experiencia">⇄</button>
+</div>
+<style>
+  #xp-switch{position:fixed;right:16px;bottom:16px;z-index:9999;font-family:'Inter',system-ui,sans-serif;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+  #xp-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(201,164,92,.6);background:#1d1610;color:#e4c987;font-size:19px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.45);transition:transform .15s}
+  #xp-btn:hover{transform:scale(1.08)}
+  #xp-menu{background:#1d1610;border:1px solid rgba(201,164,92,.45);border-radius:16px;padding:10px;box-shadow:0 14px 40px rgba(0,0,0,.55);min-width:230px}
+  #xp-menu .xp-h{font-size:9px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#8d7c5e;padding:4px 10px 8px}
+  #xp-menu .xp-item{display:block;padding:9px 12px;border-radius:10px;color:#eadfca;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1.25}
+  #xp-menu .xp-item small{display:block;font-weight:400;font-size:11px;color:#a3906e}
+  #xp-menu .xp-item:hover{background:rgba(201,164,92,.14)}
+  #xp-menu .xp-on{outline:1px solid rgba(201,164,92,.5);pointer-events:none}
+</style>
+<script>
+  (function(){
+    var b=document.getElementById('xp-btn'),m=document.getElementById('xp-menu');
+    b.addEventListener('click',function(e){e.stopPropagation();m.hidden=!m.hidden;});
+    document.addEventListener('click',function(e){if(!m.hidden&&!m.contains(e.target))m.hidden=true;});
+  })();
+</script>
+</body>
+</html>
