@@ -61,12 +61,13 @@
     <p class="sub">Configuración por única vez — después, la biblioteca te escribe sola.</p>
 
     <section>
-      <h2>1 · Token de GitHub (se guarda solo en este teléfono)</h2>
-      <p class="hint">El token permite que este dispositivo guarde su suscripción y tus
-      reacciones en el repo. Vive únicamente en el <em>localStorage</em> de este
-      navegador; jamás se commitea.</p>
+      <h2>1 · Token de GitHub <em>(opcional para recibir pushes)</em></h2>
+      <p class="hint">Sin token igual podés suscribirte (paso 2, con un pegado manual).
+      El token hace que la suscripción y tus reacciones (😍, "¿lo leíste?") se guarden
+      solas en el repo. Vive únicamente en el <em>localStorage</em> de este navegador;
+      jamás se commitea.</p>
       <ol>
-        <li>GitHub → Settings → Developer settings → <strong>Fine-grained tokens</strong> → Generate new token</li>
+        <li>Abrí <a href="https://github.com/settings/personal-access-tokens/new">github.com/settings/personal-access-tokens/new</a> (link directo al formulario)</li>
         <li>Repository access: <strong>Only select repositories → Abecedeefege/Biblioteca</strong></li>
         <li>Permissions → Repository permissions → <strong>Contents: Read and write</strong>. Nada más.</li>
       </ol>
@@ -84,6 +85,13 @@
       suscripción en el repo para que el dispatcher sepa a dónde mandar.</p>
       <button onclick="enablePush()">Activar notificaciones</button>
       <div class="status" id="push-status"></div>
+      <div id="sub-fallback" style="display:none">
+        <p class="hint">Sin token no puedo guardar esto solo. Copiá el bloque y
+        <strong>pegáselo a Claude en el chat</strong> — él lo commitea al repo:</p>
+        <textarea id="sub-json" readonly rows="6" style="width:100%;font-size:.75rem;font-family:monospace;border:1px solid var(--madera);border-radius:4px;padding:.5rem"></textarea>
+        <button class="sec" onclick="copySub()">Copiar</button>
+        <span class="status" id="copy-status"></span>
+      </div>
     </section>
 
     <section>
@@ -206,24 +214,41 @@ async function enablePush() {
         applicationServerKey: urlBase64ToUint8Array(vapidPublic),
       });
     }
-    const subJson = sub.toJSON();
-    await ghUpdateJson('notifications/subscription.json', () => ({
+    const subDoc = {
       _comment: 'Suscripción Web Push del dueño. La escribe SOLO el browser (engage/setup.html vía GitHub API). El dispatcher solo la invalida si el endpoint devuelve 404/410.',
       device: localStorage.getItem(K_DEV) || 'dispositivo-sin-nombre',
-      subscription: subJson,
+      subscription: sub.toJSON(),
       status: 'active',
       updated_at: new Date().toISOString(),
       invalidated_at: null,
       invalid_reason: null,
-    }), 'push: registrar suscripción');
-    say('push-status', '✓ Notificaciones activadas y suscripción guardada en el repo.', 'ok');
+    };
+    if (localStorage.getItem(K_PAT)) {
+      await ghUpdateJson('notifications/subscription.json', () => subDoc, 'push: registrar suscripción');
+      say('push-status', '✓ Notificaciones activadas y suscripción guardada en el repo.', 'ok');
+    } else {
+      $('sub-json').value = JSON.stringify(subDoc, null, 2);
+      $('sub-fallback').style.display = 'block';
+      say('push-status', '✓ Este dispositivo quedó suscripto. Último paso: copiá el bloque de abajo y pegáselo a Claude.', 'ok');
+    }
     refreshStatus();
   } catch (e) { say('push-status', '⚠️ ' + e.message, 'err'); }
+}
+function copySub() {
+  const t = $('sub-json');
+  t.select(); t.setSelectionRange(0, 999999);
+  const done = () => say('copy-status', '✓ copiado', 'ok');
+  if (navigator.clipboard) navigator.clipboard.writeText(t.value).then(done, () => { document.execCommand('copy'); done(); });
+  else { document.execCommand('copy'); done(); }
 }
 
 /* ---- Paso 3: push de prueba (la fuente encola; encolar = despachar) ---- */
 async function sendTestPush() {
   try {
+    if (!localStorage.getItem(K_PAT)) {
+      say('test-status', 'Sin token en este dispositivo — pedile a Claude en el chat que encole el push de prueba.', 'err');
+      return;
+    }
     say('test-status', 'Encolando push de prueba…');
     const now = Date.now();
     const entry = {
