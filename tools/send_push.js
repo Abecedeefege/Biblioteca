@@ -61,18 +61,22 @@ async function main() {
         console.log(`[${n.id}] enviada (HTTP ${res.statusCode})`);
       } catch (err) {
         const code = err.statusCode || 0;
-        n.status = 'failed';
-        n.fail_reason = (code === 404 || code === 410) ? 'subscription_gone' : `HTTP ${code}`;
         changed = true;
         log.events.push({ type: 'failed', nid: n.id, ts: new Date().toISOString(), status_code: code });
-        console.error(`[${n.id}] falló: ${n.fail_reason}`);
-        if (code === 404 || code === 410) {       // endpoint muerto → invalidar
+        if (code === 404 || code === 410) {       // endpoint muerto → terminal + invalidar
+          n.status = 'failed';
+          n.fail_reason = 'subscription_gone';
+          console.error(`[${n.id}] falló: subscription_gone`);
           subDoc.status = 'invalid';
           subDoc.invalidated_at = new Date().toISOString();
           subDoc.invalid_reason = `HTTP ${code}`;
           writeJson(SUB_PATH, subDoc);
           break;                                  // no insistir contra un endpoint muerto
         }
+        // 5xx/429/red (code 0): transitorio — queda pending y la próxima corrida
+        // (cron cada 30 min) reintenta; expires_at acota los reintentos al día.
+        n.fail_reason = `HTTP ${code} (transitorio, se reintenta)`;
+        console.error(`[${n.id}] error transitorio HTTP ${code} — queda pending`);
       }
     }
     writeJson(SEND_LOG_PATH, log);

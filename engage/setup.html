@@ -172,21 +172,32 @@ function savePat() {
   } catch (e) { say('pat-status', '⚠️ ' + e.message, 'err'); }
 }
 
-/* ---- Paso 2: suscripción ---- */
+/* ---- Paso 2: suscripción ----
+   El SW se registra y la clave pública se prefetchea al CARGAR la página:
+   en iOS Safari, requestPermission() debe correr dentro del gesto del tap,
+   sin awaits previos que consuman la activación transitoria. */
+const swRegPromise = ('serviceWorker' in navigator)
+  ? navigator.serviceWorker.register('../sw.js').catch(() => null) : null;
+const vapidPromise = fetch('../notifications/vapid_public.txt', { cache: 'no-store' })
+  .then((r) => r.text()).then((t) => t.trim()).catch(() => null);
+
 async function enablePush() {
   try {
-    say('push-status', 'Suscribiendo…');
     if (!('serviceWorker' in navigator) || !('PushManager' in window))
       throw new Error('Este navegador no soporta Web Push.');
 
-    const reg = await navigator.serviceWorker.register('../sw.js');
-    await navigator.serviceWorker.ready;
-
-    if ((await Notification.requestPermission()) !== 'granted')
+    const permPromise = Notification.requestPermission();   // PRIMERO, sin awaits previos
+    say('push-status', 'Suscribiendo…');
+    if ((await permPromise) !== 'granted')
       throw new Error('Permiso de notificaciones denegado.');
 
-    const vapidPublic = (await (await fetch('../notifications/vapid_public.txt',
-      { cache: 'no-store' })).text()).trim();
+    let reg = await swRegPromise;
+    if (!reg) reg = await navigator.serviceWorker.register('../sw.js');
+    await navigator.serviceWorker.ready;
+
+    const vapidPublic = (await vapidPromise) ||
+      (await (await fetch('../notifications/vapid_public.txt',
+        { cache: 'no-store' })).text()).trim();
 
     let sub = await reg.pushManager.getSubscription();
     if (!sub) {

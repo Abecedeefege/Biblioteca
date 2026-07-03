@@ -30,7 +30,9 @@
   function readLS(key, fb) {
     try { var v = localStorage.getItem(key); return v ? JSON.parse(v) : fb; } catch (e) { return fb; }
   }
-  function writeLS(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) {} }
+  function writeLS(key, v) {
+    try { localStorage.setItem(key, JSON.stringify(v)); return true; } catch (e) { return false; }
+  }
 
   /* ---------- badge de sync honesto ---------- */
   var badge = null;
@@ -43,30 +45,41 @@
       'pointer-events:none;transition:opacity .4s;opacity:0;');
     document.body.appendChild(badge);
   }
+  var badgeTimer = null;
   function setBadge(text, sticky) {
     ensureBadge(); if (!badge) return;
+    clearTimeout(badgeTimer);                  // un timer viejo no apaga un mensaje nuevo
     badge.textContent = text;
     badge.style.opacity = text ? '1' : '0';
-    if (!sticky && text) setTimeout(function () { badge.style.opacity = '0'; }, 4000);
+    if (!sticky && text) badgeTimer = setTimeout(function () { badge.style.opacity = '0'; }, 4000);
   }
   function refreshBadge(state) {
     var n = outbox().length;
     if (state === 'error') setBadge('⚠️ No se pudo guardar (' + n + ' pendientes — reintenta solo)', true);
+    else if (state === 'mem') setBadge('⚠️ Almacenamiento lleno: ' + n + ' en memoria — no cierres aún', true);
     else if (state === 'nopat') setBadge('⚠️ ' + n + ' sin guardar — falta configurar (setup)', true);
     else if (n > 0) setBadge('⏳ Sincronizando ' + n + '…', true);
     else setBadge('✓ Sincronizado');
   }
 
   /* ---------- outbox ---------- */
-  function outbox() { return readLS(K.outbox, []); }
-  function saveOutbox(list) { writeLS(K.outbox, list); }
+  var memBox = [];                             // respaldo si localStorage falla (cuota)
+  function outbox() { return readLS(K.outbox, []).concat(memBox); }
+  function saveOutbox(list) {
+    if (writeLS(K.outbox, list)) { memBox = []; return true; }
+    var ls = readLS(K.outbox, []), seen = {};
+    ls.forEach(function (e) { seen[e.id] = 1; });
+    memBox = list.filter(function (e) { return !seen[e.id]; });
+    return false;
+  }
 
   function record(type, fields) {
     var ev = { id: uid(), type: type, ts: now(), page: page(),
                device: localStorage.getItem(K.device) || 'sin-nombre' };
     for (var k in fields) if (fields[k] !== undefined) ev[k] = fields[k];
-    var box = outbox(); box.push(ev); saveOutbox(box);   // sincrónico, ANTES de red
-    refreshBadge();
+    var box = outbox(); box.push(ev);
+    var saved = saveOutbox(box);               // sincrónico, ANTES de red
+    refreshBadge(saved ? undefined : 'mem');   // el badge no miente
     flushSoon();
     return ev;
   }
@@ -80,11 +93,11 @@
   function b64encodeUtf8(s) { return btoa(unescape(encodeURIComponent(s))); }
   function b64decodeUtf8(s) { return decodeURIComponent(escape(atob(s.replace(/\n/g, '')))); }
 
-  var flushing = false, flushTimer = null;
+  var flushing = false, flushAgain = false, flushTimer = null;
   function flushSoon() { clearTimeout(flushTimer); flushTimer = setTimeout(flush, 400); }
 
   function flush() {
-    if (flushing) return;
+    if (flushing) { flushAgain = true; return; }  // lo re-agenda el flush en vuelo
     var box = outbox();
     if (!box.length) { refreshBadge(); return; }
     var headers = ghHeaders();
@@ -108,7 +121,10 @@
         doc.events.forEach(function (e) { seen[e.id] = 1; });
         var box2 = outbox();                       // releer: pudo crecer durante el GET
         var fresh = box2.filter(function (e) { return !seen[e.id]; });
-        if (!fresh.length) { saveOutbox([]); return null; }
+        if (!fresh.length) {
+          saveOutbox(outbox().filter(function (e) { return !seen[e.id]; }));
+          return null;
+        }
         doc.events = doc.events.concat(fresh);
         doc._updated_at = now();
         doc.device_last = localStorage.getItem(K.device) || 'sin-nombre';
@@ -125,9 +141,12 @@
           saveOutbox(outbox().filter(function (e) { return !sent[e.id] && !seen[e.id]; }));
         });
       })
-      .then(function () { flushing = false; refreshBadge(); })
+      .then(function () {
+        flushing = false; refreshBadge();
+        if (flushAgain || outbox().length) { flushAgain = false; flushSoon(); }
+      })
       .catch(function () {
-        flushing = false; refreshBadge('error');
+        flushing = false; flushAgain = false; refreshBadge('error');
         setTimeout(flush, 30000);                  // reintento con backoff simple
       });
   }
@@ -197,12 +216,12 @@
   };
   window.engageApprove = function (proposalId, btn) {
     record('proposal_approved', { proposal: proposalId });
-    mark(btn || document.activeElement, '✓');
+    mark(btn, '✓');
     setBadge('✅ Anotado: esta experiencia se queda', false);
   };
   window.engageRejected = function (proposalId, btn) {
     record('proposal_rejected', { proposal: proposalId });
-    mark(btn || document.activeElement, '✓');
+    mark(btn, '✓');
     setBadge('Anotado: no se repite', false);
   };
 

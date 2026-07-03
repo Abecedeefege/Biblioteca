@@ -71,7 +71,7 @@ una hora UTC.
    - `en-estante:<ID>` → `si`/`no` (si `no`: anotalo en `note`, el catálogo quedó viejo ahí)
    - `prestado:<ID>` → `si`→`read_status: prestado` · `no`
    - `familia:<ID>` → `si`/`no` (¿el autor es familia del dueño? → `note` en enrichment)
-   - `<slug>-suscripcion-diaria` → `si`/`no` (señal de formato, va a learnings, no a enrichment)
+   - `<YYYY-MM-DD>-<slug>-suscripcion-diaria` → `si`/`no` (señal de formato, va a learnings, no a enrichment)
    - Cualquier otro `qid` que hayas inventado en una experiencia: interpretalo
      vos y anotá la señal en learnings.
    Cada consolidación lleva `read_status_source: "answer:<id del evento>"`.
@@ -81,11 +81,21 @@ una hora UTC.
    - `approved` → `status: "promoted"`: la página se queda, el formato entra a
      la rotación estable (podés relanzarlo con datos frescos; opcionalmente
      dale URL fija `engage/<slug>.html` que mantenés vos).
-   - `rejected` → `git rm` de la página, `status: "dropped"`, y una línea en
+   - `rejected` → dropear (ver abajo), `status: "dropped"`, y una línea en
      learnings con la hipótesis del porqué.
-   - `pending` creada **antes de hoy** sin aprobación → `git rm` + `status:
+   - `pending` creada **antes de hoy** sin aprobación → dropear + `status:
      "dropped"` con nota `"efímera: venció sin aprobación"`. **Sin aprobación
      explícita no sobreviven. Sin excepciones.**
+   - **Cómo dropear sin romper la bandeja del teléfono**: una notificación
+     entregada puede seguir visible días en la bandeja; si hacés `git rm` el
+     tap tardío cae en un 404. Al dropear, reemplazá el contenido del HTML
+     por este stub (misma ruta) y hacé el `git rm` definitivo recién cuando
+     la página tenga 2+ días desde `created`:
+     ```html
+     <!DOCTYPE html><html lang="es-UY"><head><meta charset="utf-8">
+     <script>location.replace('../index.html' + location.search);</script>
+     </head><body><a href="../index.html">Esta experiencia venció — volver a Bibliotequeando</a></body></html>
+     ```
 
 4. **COMPACTAR**: eventos de `sync/engagement.json` con más de 14 días →
    resumilos en `daily_summary` (por fecha: visitas, reacciones por valor,
@@ -115,8 +125,10 @@ una hora UTC.
      que re-suscribir en `engage/setup.html`.
 
 7. **VERIFICAR + COMMIT + PUSH a main**: valida JSON (`python3 -m json.tool`),
-   revisá que cada URL de la cola exista como archivo en el repo, y que los
-   `send_at` estén en el futuro. `git pull --rebase origin main` antes de
+   revisá que cada URL de las entradas `pending` que encolaste HOY exista
+   como archivo en el repo (las entradas históricas pueden apuntar a páginas
+   ya dropeadas — no las toques), y que los `send_at` de hoy estén en el
+   futuro. `git pull --rebase origin main` antes de
    pushear; hasta 3 reintentos con `git pull --rebase` en el medio. **Nunca
    dejes main roto; nunca fuerces el push.**
 
@@ -155,21 +167,23 @@ Mobile-first (se lee en un teléfono).
     <span class="q-hint"></span>
   </div>
 
-  <!-- 3) Reacción granular al final del contenido -->
+  <!-- 3) Reacción granular al final del contenido.
+       Convención: el primer argumento SIEMPRE es el id completo del proposal
+       (<YYYY-MM-DD>-<slug>), igual que en engageApprove/engageRejected. -->
   <div class="react">
     ¿Te gustó esto?
-    <button onclick="engageReact('<slug>','love',this)">😍</button>
-    <button onclick="engageReact('<slug>','like',this)">🙂</button>
-    <button onclick="engageReact('<slug>','meh',this)">😐</button>
-    <button onclick="engageReact('<slug>','no',this)">🙅</button>
+    <button onclick="engageReact('<YYYY-MM-DD>-<slug>','love',this)">😍</button>
+    <button onclick="engageReact('<YYYY-MM-DD>-<slug>','like',this)">🙂</button>
+    <button onclick="engageReact('<YYYY-MM-DD>-<slug>','meh',this)">😐</button>
+    <button onclick="engageReact('<YYYY-MM-DD>-<slug>','no',this)">🙅</button>
     <span class="react-hint"></span>
   </div>
 
   <!-- 4) CTA de compromiso (separa "lindo" de "lo quiero todos los días") -->
   <div class="cta">
     ¿Querés recibir esto todos los días?
-    <button onclick="engageAnswer('<slug>-suscripcion-diaria','si',this)">Sí, todos los días</button>
-    <button onclick="engageAnswer('<slug>-suscripcion-diaria','no',this)">No hace falta</button>
+    <button onclick="engageAnswer('<YYYY-MM-DD>-<slug>-suscripcion-diaria','si',this)">Sí, todos los días</button>
+    <button onclick="engageAnswer('<YYYY-MM-DD>-<slug>-suscripcion-diaria','no',this)">No hace falta</button>
     <span class="q-hint"></span>
   </div>
 

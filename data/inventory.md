@@ -50,8 +50,9 @@ Bucay (3), John Green (2), Fitzek (2), Quiroga (2).
 
 Vetas ya identificadas (todo dato con ✱ verificar antes de publicar):
 
-- **King/Bachman**: el estante R5 tiene 3 libros publicados bajo el seudónimo
-  Richard Bachman (`La Larga Marcha`, `El Fugitivo`, `Blaze`) — el escándalo
+- **King/Bachman**: los estantes King tienen 3 libros publicados bajo el
+  seudónimo Richard Bachman: `La Larga Marcha` (R4-003), `El Fugitivo`
+  (R5-009) y `Blaze` (R5-006, ya con el seudónimo público) — el escándalo
   del seudónimo descubierto en 1985 es chisme canónico. `Carrie` fue rescatada
   de la basura por Tabitha King. `La Milla Verde` salió por fascículos.
   `Bellas Durmientes` está coescrita con su hijo Owen.
@@ -87,10 +88,11 @@ Vetas ya identificadas (todo dato con ✱ verificar antes de publicar):
 - **Villar (R7)**: química uruguaya 1940–1967, apuntes encuadernados +
   ~20 folletos abrochados. Mismo carácter familiar ✱.
 - **Récords medibles del catálogo**: obra más antigua (Sun Tzu ~s. V a.C.;
-  edición física más vieja: candidatos en M7/M8/R8 sin identificar), el más
-  valioso según `price` (Don Quijote TOP USD 60, NatGeo USD 60), la saga más
-  completa (King 50), el estante más políglota, los 21 libros UNK-* que ni
-  el catálogo sabe qué son.
+  edición física más vieja: candidatos en M7/M8/R8 sin identificar), los más
+  valiosos según `price` (R2-011 «Buenos Aires, Buenos Aires» USD 200, el
+  Macbeth-Dalí L3-041 USD 125, L7-005 «Los Descendientes de Cristóbal Colón»
+  USD 120), la saga más completa (King 50), el estante más políglota, los 21
+  libros UNK-* que ni el catálogo sabe qué son.
 
 ## 3. Dimensión temporal
 
