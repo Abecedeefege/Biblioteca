@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibliotequeando — Dos conceptos de app</title>
+<meta name="description" content="Dos rediseños completos de la app de la biblioteca: Códice (museo interactivo) y Ateneo (red de lectura estilo Goodreads).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#141009;color:#eadfca;font-family:'Inter',system-ui,sans-serif;min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;padding:50px 20px;
+    background-image:radial-gradient(900px 420px at 50% -80px, rgba(201,164,92,.09), transparent)}
+  a{text-decoration:none;color:inherit}
+  .pre{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#c9a45c;margin-bottom:14px;text-align:center}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6vw,56px);font-weight:600;text-align:center;line-height:1.08}
+  h1 em{color:#e4c987}
+  .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#b3a488;
+    text-align:center;max-width:56ch;margin:14px auto 44px}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;width:100%}
+  @media(max-width:720px){.duo{grid-template-columns:1fr}}
+  .concept{border:1px solid #332a20;border-radius:20px;padding:30px 28px;background:#191410;
+    transition:transform .2s,border-color .2s;display:block;position:relative;overflow:hidden}
+  .concept:hover{transform:translateY(-6px);border-color:#c9a45c}
+  .concept .num{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:2px;color:#7d715c;text-transform:uppercase}
+  .concept h2{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;margin:6px 0 4px}
+  .concept .tag{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:14px}
+  .concept p{font-size:13.5px;line-height:1.6;color:#b3a488}
+  .concept ul{margin:14px 0 20px;padding-left:0;list-style:none}
+  .concept li{font-size:12.5px;color:#eadfca;padding:4px 0 4px 22px;position:relative}
+  .concept li::before{content:'✦';position:absolute;left:2px;color:#c9a45c;font-size:10px}
+  .go{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
+    border:1px solid #c9a45c;color:#e4c987;border-radius:99px;padding:10px 20px}
+  .concept:hover .go{background:#c9a45c;color:#1c1206}
+  .concept.codice{border-top:4px solid #c9a45c}
+  .concept.codice h2{color:#e4c987}
+  .concept.codice .tag{color:#c9a45c}
+  .concept.ateneo{border-top:4px solid #b0413f;background:#1b1512}
+  .concept.ateneo h2{color:#d98a85}
+  .concept.ateneo .tag{color:#b0413f}
+  .foot{margin-top:40px;font-size:12px;color:#7d715c;text-align:center;max-width:64ch;line-height:1.7}
+  .foot a{color:#c9a45c;text-decoration:underline}
+</style>
+</head>
+<body>
+  <p class="pre">Bibliotequeando · laboratorio de rediseño · MMXXVI</p>
+  <h1>Una biblioteca,<br><em>dos apps posibles</em></h1>
+  <p class="lede">Los mismos 400 volúmenes, las mismas fotos reales de los estantes — dos maneras completamente distintas de vivirlos.</p>
+
+  <div class="duo">
+    <a class="concept codice" href="codice.html">
+      <div class="num">Concepto I</div>
+      <h2>Códice</h2>
+      <div class="tag">El museo interactivo</div>
+      <p>La biblioteca como colección de piezas: cada libro con su ficha de lujo, su contratapa, su historia y su lugar exacto en el estante.</p>
+      <ul>
+        <li>Tapas generativas con efecto 3D — se dan vuelta para leer la contratapa</li>
+        <li>La Sala: mapa navegable de las 3 columnas × 8 estantes con fotos reales</li>
+        <li>«Dónde vive»: la posición del libro marcada sobre la foto del estante</li>
+        <li>Línea de tiempo por épocas, del siglo V a.C. a hoy</li>
+        <li>Marginalia: el dato curado de cada pieza notable</li>
+      </ul>
+      <span class="go">Entrar al Códice →</span>
+    </a>
+
+    <a class="concept ateneo" href="ateneo.html">
+      <div class="num">Concepto II</div>
+      <h2>Ateneo</h2>
+      <div class="tag">La red de lectura (estilo Goodreads)</div>
+      <p>La biblioteca como app social de una sola socia/o: estanterías personales, calificaciones, reseñas y estadísticas sobre el catálogo real.</p>
+      <ul>
+        <li>Estanterías: quiero leer · leyendo · leído, guardadas en tu dispositivo</li>
+        <li>Calificación con estrellas y reseñas privadas por libro</li>
+        <li>Páginas de autor con biografía y toda su obra en casa</li>
+        <li>Feed con destacado del día, colecciones y joyas con historia</li>
+        <li>Perfil con radiografía de la colección: temas, idiomas, décadas</li>
+      </ul>
+      <span class="go">Entrar al Ateneo →</span>
+    </a>
+  </div>
+
+  <p class="foot">Los dos conceptos leen el catálogo canónico embebido en <a href="../index.html">index.html</a> (no lo duplican ni lo tocan), más el overlay de años de <code>data/enrichment.json</code> y el contenido editorial curado de <code>concepts/editorial.json</code>.</p>
+</body>
+</html>

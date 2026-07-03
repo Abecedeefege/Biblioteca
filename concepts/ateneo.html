@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ateneo — Bibliotequeando · Concepto II</title>
+<meta name="description" content="Ateneo: concepto de app social de lectura para la biblioteca de la casa — estanterías personales, calificaciones, autores y estadísticas, estilo Goodreads.">
+<meta name="theme-color" content="#f7f2e9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f2e9; --card:#fffdf8; --card2:#f1ebdf; --line:#e3dac9; --line2:#d5c9b2;
+    --ink:#292018; --ink2:#6b5d4a; --muted:#9a8b73;
+    --brand:#7a1f23; --brand2:#9c3336; --accent:#8a5a2b; --green:#3e6b52; --gold:#b8860b;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+    --shadow:0 1px 2px rgba(60,45,25,.06),0 6px 18px rgba(60,45,25,.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;padding-bottom:84px}
+  a{color:inherit;text-decoration:none}
+  button{font-family:var(--sans);cursor:pointer}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+  /* ---------- header ---------- */
+  header.hd{position:sticky;top:0;z-index:40;background:rgba(247,242,233,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .hd-in{max-width:1080px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:14px}
+  .logo{font-family:var(--serif);font-weight:700;font-size:25px;color:var(--brand);letter-spacing:.3px}
+  .logo small{display:block;font-family:var(--sans);font-size:8.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);margin-top:-4px}
+  .hd-search{flex:1;max-width:420px;margin-left:auto;position:relative}
+  .hd-search input{width:100%;border:1px solid var(--line2);border-radius:99px;padding:9px 16px 9px 38px;
+    font-size:14px;background:var(--card);color:var(--ink);outline:none;font-family:var(--sans)}
+  .hd-search input:focus{border-color:var(--accent)}
+  .hd-search .ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px}
+  .hd-results{position:absolute;top:44px;left:0;right:0;background:var(--card);border:1px solid var(--line2);
+    border-radius:14px;box-shadow:var(--shadow);overflow:hidden;display:none;max-height:60vh;overflow-y:auto;z-index:50}
+  .hd-results.open{display:block}
+  .hd-hit{display:flex;gap:12px;align-items:center;padding:9px 14px;border-bottom:1px solid var(--line)}
+  .hd-hit:hover{background:var(--card2)}
+  .hd-hit .mini{width:30px;flex:none;border-radius:2px;overflow:hidden}
+  .hd-hit .t{font-weight:600;font-size:13.5px}
+  .hd-hit .s{font-size:11px;color:var(--muted)}
+
+  /* ---------- tabs ---------- */
+  nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--card);border-top:1px solid var(--line);
+    display:flex;justify-content:space-around;padding:6px 4px calc(8px + env(safe-area-inset-bottom))}
+  .tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 14px;border-radius:12px;
+    font-size:10px;font-weight:700;letter-spacing:.4px;color:var(--muted);border:none;background:none}
+  .tab svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .tab.active{color:var(--brand)}
+  @media(min-width:820px){
+    body{padding-bottom:30px}
+    nav.tabs{position:sticky;top:0;bottom:auto;border-top:none;background:transparent;justify-content:center;gap:6px;
+      max-width:1080px;margin:10px auto -4px;padding:0 18px}
+    nav.tabs{position:static}
+    .tab{flex-direction:row;gap:8px;font-size:12px;padding:9px 18px;border-radius:99px;border:1px solid transparent}
+    .tab.active{background:var(--card);border-color:var(--line);box-shadow:var(--shadow)}
+  }
+
+  /* ---------- generic ---------- */
+  main{padding-top:18px}
+  h2.sec{font-family:var(--serif);font-size:26px;font-weight:700;margin:30px 0 4px}
+  p.sub{color:var(--ink2);font-size:13.5px;margin-bottom:14px}
+  .row{display:grid;grid-auto-flow:column;grid-auto-columns:128px;gap:16px;overflow-x:auto;
+    padding:8px 2px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .cover{border-radius:3px 7px 7px 3px;overflow:hidden;box-shadow:var(--shadow);background:#fff;transition:transform .18s}
+  .cover svg{display:block;width:100%;height:auto}
+  a:hover .cover{transform:translateY(-4px)}
+  .bk .t{font-size:12.5px;font-weight:600;line-height:1.3;margin-top:9px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .bk .a{font-size:11px;color:var(--muted);margin-top:2px}
+  .bk .st{margin-top:4px;font-size:10px;font-weight:700}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(122px,1fr));gap:20px 16px;margin:14px 0 30px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+  .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line2);background:var(--card);
+    border-radius:99px;padding:7px 14px;font-size:12.5px;font-weight:600;color:var(--ink2)}
+  .chip:hover{border-color:var(--accent);color:var(--ink)}
+  .chip .n{color:var(--muted);font-size:11px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:11px 18px;
+    font-size:13px;font-weight:700;border:1px solid var(--line2);background:var(--card);color:var(--ink)}
+  .btn:hover{border-color:var(--accent)}
+  .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+  .btn.primary:hover{background:var(--brand2)}
+  .stars{display:inline-flex;gap:2px}
+  .stars button{background:none;border:none;font-size:26px;line-height:1;color:#d8cbb2;padding:2px}
+  .stars button.on{color:var(--gold)}
+  .stars.small{pointer-events:none}
+  .stars.small button{font-size:14px;padding:0}
+  .badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+    padding:3px 9px;border-radius:99px}
+  .badge.leyendo{background:#e8f0e9;color:var(--green)}
+  .badge.leido{background:#efe6e0;color:var(--brand)}
+  .badge.quiero{background:#efeadb;color:var(--accent)}
+  .fade{animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  #status{padding:100px 20px;text-align:center;color:var(--ink2)}
+  #status h2{font-family:var(--serif);font-size:28px;color:var(--brand);margin-bottom:8px}
+  .spinner{width:32px;height:32px;border:2px solid var(--line2);border-top-color:var(--brand);border-radius:50%;margin:0 auto 18px;animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ---------- hero / featured ---------- */
+  .hero-card{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:22px;overflow:hidden;position:relative;margin-top:8px}
+  @media(max-width:560px){.hero-card{grid-template-columns:110px 1fr;gap:16px;padding:16px}}
+  .hero-card .k{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--brand);margin-bottom:8px}
+  .hero-card h3{font-family:var(--serif);font-size:clamp(21px,3.4vw,30px);font-weight:700;line-height:1.12;margin-bottom:2px}
+  .hero-card .au{font-size:13px;color:var(--ink2);font-style:italic;margin-bottom:10px}
+  .hero-card p.d{font-size:13.5px;color:var(--ink2);line-height:1.55;
+    display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+
+  /* ---------- book page ---------- */
+  .bookpage{display:grid;grid-template-columns:250px 1fr;gap:38px;padding:26px 0 10px;align-items:start}
+  @media(max-width:760px){.bookpage{grid-template-columns:1fr;gap:22px}
+    .bookpage .colL{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start}}
+  .bp-title{font-family:var(--serif);font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.1}
+  .bp-author{font-size:16px;color:var(--brand);font-weight:600;margin:6px 0 14px;display:inline-block}
+  .bp-author:hover{text-decoration:underline}
+  .rate-box{padding:16px 18px;margin:16px 0}
+  .rate-box .lbl{font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .status-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .status-btn{border:1.5px solid var(--line2);background:var(--card);border-radius:99px;padding:8px 16px;font-size:12.5px;font-weight:700;color:var(--ink2)}
+  .status-btn.on{border-color:var(--green);background:#e8f0e9;color:var(--green)}
+  .bp-desc{font-size:15.5px;line-height:1.65;max-width:64ch;margin:8px 0 18px}
+  .review{border-left:3px solid var(--gold);background:var(--card);border-radius:0 14px 14px 0;
+    padding:16px 20px;margin:0 0 20px;max-width:64ch;box-shadow:var(--shadow)}
+  .review .who{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .review .who .av{width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;display:flex;
+    align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:17px}
+  .review .who b{font-size:13px}
+  .review .who span{font-size:11px;color:var(--muted);display:block}
+  .review p{font-size:14px;line-height:1.6}
+  .dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;max-width:640px;margin:6px 0 22px}
+  .dl>div{background:var(--card);padding:11px 14px}
+  .dl .k{font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+  .dl .v{font-size:13.5px;font-weight:600;margin-top:3px}
+  textarea.note{width:100%;max-width:640px;background:var(--card);border:1px solid var(--line2);border-radius:14px;
+    padding:14px 16px;font-family:var(--sans);font-size:14px;color:var(--ink);min-height:92px;resize:vertical;outline:none}
+  textarea.note:focus{border-color:var(--accent)}
+  .note-saved{font-size:11px;color:var(--green);font-weight:700;margin-top:6px;height:16px}
+  .shelfphoto{border-radius:16px;overflow:hidden;border:1px solid var(--line);margin:8px 0 26px;position:relative}
+  .shelfphoto img{width:100%;height:230px;object-fit:cover}
+  .shelfphoto .cap{position:absolute;left:0;right:0;bottom:0;padding:10px 16px;font-size:12px;color:#fff;
+    background:linear-gradient(transparent,rgba(20,12,6,.85));font-weight:600}
+
+  /* ---------- author ---------- */
+  .author-hd{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center;padding:26px 0 8px}
+  .author-hd .pic{width:130px;height:130px;border-radius:50%;overflow:hidden;border:3px solid var(--card);
+    box-shadow:var(--shadow);background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-size:52px;font-weight:700}
+  .author-hd .pic img{width:100%;height:100%;object-fit:cover}
+  .author-hd h1{font-family:var(--serif);font-size:clamp(26px,4vw,38px);font-weight:700}
+  .author-hd .meta{font-size:12.5px;color:var(--muted);font-weight:600;margin-top:4px}
+  .author-hd p.bio{font-size:14px;color:var(--ink2);margin-top:10px;max-width:64ch;line-height:1.6}
+  .authors-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin:16px 0 30px}
+  .author-card{display:flex;align-items:center;gap:12px;padding:12px 14px}
+  .author-card .pic{width:48px;height:48px;border-radius:50%;overflow:hidden;flex:none;background:var(--brand);
+    color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:700}
+  .author-card .pic img{width:100%;height:100%;object-fit:cover}
+  .author-card b{font-size:13px;line-height:1.25;display:block}
+  .author-card span{font-size:11px;color:var(--muted)}
+
+  /* ---------- perfil / charts ---------- */
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:14px 0 8px}
+  .kpi{padding:16px 18px;text-align:center}
+  .kpi .n{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--brand);line-height:1}
+  .kpi .l{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-top:6px}
+  .chart{padding:18px 20px 14px;margin-bottom:18px}
+  .chart h3{font-size:13px;font-weight:800;margin-bottom:2px}
+  .chart .cap{font-size:11.5px;color:var(--muted);margin-bottom:14px}
+  .brow{display:grid;grid-template-columns:130px 1fr 42px;gap:10px;align-items:center;margin-bottom:9px}
+  .brow .l{font-size:12px;font-weight:600;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right}
+  .brow .track{height:14px;border-radius:0 4px 4px 0;background:var(--card2);position:relative;overflow:hidden}
+  .brow .fill{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:0 4px 4px 0;min-width:2px}
+  .brow .v{font-size:12px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+  .shelfrow{display:flex;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--line)}
+  .shelfrow:last-child{border-bottom:none}
+  .shelfrow .mini{width:34px;flex:none;border-radius:2px;overflow:hidden}
+  .shelfrow .t{font-weight:600;font-size:13.5px;line-height:1.25}
+  .shelfrow .s{font-size:11px;color:var(--muted)}
+  .shelfrow .right{margin-left:auto;text-align:right}
+  footer{margin-top:40px;padding:26px 18px;text-align:center;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+  footer b{color:var(--brand);font-family:var(--serif);font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hd-in">
+    <a class="logo" href="#/inicio">Ateneo<small>Bibliotequeando · Concepto II</small></a>
+    <div class="hd-search">
+      <span class="ic">⌕</span>
+      <input id="q" type="search" placeholder="Buscar en la biblioteca…" autocomplete="off">
+      <div class="hd-results" id="q-res"></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab" data-tab="inicio" onclick="location.hash='#/inicio'">
+    <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Inicio</button>
+  <button class="tab" data-tab="explorar" onclick="location.hash='#/explorar'">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>Explorar</button>
+  <button class="tab" data-tab="autores" onclick="location.hash='#/autores'">
+    <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3.5 20c.7-3.4 2.8-5 5.5-5s4.8 1.6 5.5 5"/><circle cx="17" cy="9" r="2.6"/><path d="M15.5 14.6c2.9-.3 4.7 1.3 5.2 4.4"/></svg>Autores</button>
+  <button class="tab" data-tab="yo" onclick="location.hash='#/yo'">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c1-4 3.9-6 7.5-6s6.5 2 7.5 6"/></svg>Yo</button>
+</nav>
+
+<div id="status">
+  <div class="spinner"></div>
+  <h2>Abriendo el Ateneo…</h2>
+  <p>Cargando tu biblioteca.</p>
+</div>
+
+<main id="app" class="wrap" style="display:none"></main>
+
+<footer>
+  <b>Ateneo</b> · Concepto II — tu biblioteca como red social de una sola socia/o.<br>
+  Catálogo canónico de <a href="../index.html" style="text-decoration:underline">index.html</a> · calificaciones y estanterías guardadas en este dispositivo.
+</footer>
+
+<script>
+'use strict';
+/* ================= data ================= */
+let CAT=null, PHOTOS={}, ENRICH={}, ED={books:{},authors:{},topics:{}};
+let BOOKS=[], BY_ID={}, SHELF_BY_ID={}, AUTHORS=[];
+const TOPIC_LABEL=t=>(ED.topics[t]&&ED.topics[t].label)||t;
+
+async function loadAll(){
+  const res=await fetch('../index.html');
+  if(!res.ok)throw new Error('No pude leer index.html');
+  const html=await res.text();
+  CAT=JSON.parse(html.match(/<script id="inline-catalog"[^>]*>([\s\S]*?)<\/script>/)[1]);
+  const pm=html.match(/<script id="inline-photos">window\.PHOTOS\s*=\s*([\s\S]*?)<\/script>/);
+  if(pm){try{PHOTOS=JSON.parse(pm[1].trim().replace(/;\s*$/,''))}catch(e){}}
+  try{ENRICH=(await(await fetch('../data/enrichment.json')).json()).books||{}}catch(e){}
+  try{ED=await(await fetch('editorial.json')).json()}catch(e){}
+  CAT.shelves.forEach(s=>{SHELF_BY_ID[s.id]=s;s.books.forEach((b,i)=>{
+    b._shelf=s.id;b._idx=i;b._n=s.books.length;
+    b._year=ENRICH[b.id]?ENRICH[b.id].first_published:null;
+    b._ed=ED.books[b.id]||null;
+    BOOKS.push(b);BY_ID[b.id]=b;
+  })});
+  const byA={};
+  BOOKS.forEach(b=>{const a=b.author_canonical||null;if(!a)return;(byA[a]=byA[a]||[]).push(b)});
+  AUTHORS=Object.entries(byA).map(([name,books])=>({name,books})).sort((x,y)=>y.books.length-x.books.length);
+}
+const photo=k=>PHOTOS[k]?'data:image/jpeg;base64,'+PHOTOS[k]:null;
+const shelfPhoto=id=>photo('shelf_'+id);
+function authorPhoto(name){
+  const meta=ED.authors[name];
+  return meta&&meta.photo?photo(meta.photo):null;
+}
+
+/* ================= user state (localStorage) ================= */
+const LS_KEY='ateneo-v1';
+let U={ratings:{},status:{},notes:{}};
+try{U=Object.assign(U,JSON.parse(localStorage.getItem(LS_KEY)||'{}'))}catch(e){}
+function save(){localStorage.setItem(LS_KEY,JSON.stringify(U))}
+const STATUS_LABEL={quiero:'Quiero leer',leyendo:'Leyendo',leido:'Leído'};
+
+/* ================= covers (procedural) ================= */
+const PAL={
+  'stephen-king':['#181316','#b0413f','#e8ddc8'],'shakespeare':['#22303c','#c9a45c','#efe4cc'],
+  'astronomy':['#0e1c30','#5b8fc9','#dfe4e8'],'art':['#7c3140','#e0b463','#f4ead9'],
+  'travel':['#1d4a52','#d97f45','#efe7d6'],'uruguay':['#2c3a55','#87bfc9','#efe9d8'],
+  'mystery':['#1c1a17','#7f9d82','#e9e2d0'],'wisdom':['#54462f','#d9a441','#f4ecda'],
+  'romance':['#6d3550','#e0a3bd','#f6ecdf'],'classics':['#432a24','#b89348','#f1e8d4'],
+  'latin-american':['#54382a','#dd9a44','#f3ead6'],'genealogy':['#39432f','#a3b18a','#eff0e0'],
+  'young-adult':['#3f2b52','#e8ac3e','#f2ebdd'],'science':['#1f3b36','#6fb98f','#e9efe4'],
+  'reference':['#333f46','#8fa3ad','#e8ecee'],'miscellaneous':['#463f38','#a8988a','#efeae0']};
+function hsh(s){let h=5381;for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return Math.abs(h)}
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function titleLines(t){
+  t=String(t).replace(/\s*\(.*?\)\s*/g,' ').replace(/\s+/g,' ').trim();
+  if(t.length>64)t=t.slice(0,61)+'…';
+  const words=t.split(' '),lines=[];let cur='';
+  for(const w of words){if((cur+' '+w).trim().length>13&&cur){lines.push(cur);cur=w}else cur=(cur+' '+w).trim()}
+  if(cur)lines.push(cur);return lines.slice(0,5);
+}
+function coverSVG(b,w){
+  w=w||128;const h=Math.round(w*1.52);
+  const topic=(b.topics&&b.topics[0])||'miscellaneous';
+  const[bg,ac,ink]=PAL[topic]||PAL.miscellaneous;
+  const H=hsh(b.id),v=H%4;
+  const lines=titleLines(b.title||b.id);
+  const fs=lines.some(l=>l.length>11)?15:(lines.length>3?15:18);
+  const ty=76-(lines.length*fs)/2+fs;
+  let deco='';
+  if(v===0)deco=`<rect x="0" y="14" width="200" height="5" fill="${ac}"/><rect x="0" y="23" width="200" height="1.5" fill="${ac}" opacity=".6"/><rect x="0" y="272" width="200" height="1.5" fill="${ac}" opacity=".6"/><rect x="0" y="277" width="200" height="5" fill="${ac}"/>`;
+  else if(v===1)deco=`<rect x="12" y="12" width="176" height="280" fill="none" stroke="${ac}" stroke-width="2"/><rect x="18" y="18" width="164" height="268" fill="none" stroke="${ac}" stroke-width=".7" opacity=".7"/>`;
+  else if(v===2)deco=`<path d="M0 0 L200 0 L200 34 Q100 56 0 34 Z" fill="${ac}" opacity=".9"/><path d="M0 304 L200 304 L200 276 Q100 258 0 276 Z" fill="${ac}" opacity=".9"/>`;
+  else deco=`<circle cx="100" cy="230" r="26" fill="none" stroke="${ac}" stroke-width="1.4"/><path d="M100 214 L104 226 L116 226 L106 234 L110 246 L100 238 L90 246 L94 234 L84 226 L96 226 Z" fill="${ac}"/>`;
+  const author=(b.author||'').split('&')[0].split(';')[0].trim();
+  const at=author?`<text x="100" y="262" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.6" letter-spacing="1.6" fill="${ink}" opacity=".82">${esc(author.toUpperCase().slice(0,26))}</text>`:'';
+  return `<svg viewBox="0 0 200 304" width="${w}" height="${h}" role="img" aria-label="${esc(b.title)}">
+    <rect width="200" height="304" fill="${bg}"/>
+    <defs><linearGradient id="ag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".13"/><stop offset="1" stop-color="#000" stop-opacity=".26"/></linearGradient></defs>
+    <rect width="200" height="304" fill="url(#ag)"/>
+    ${deco}
+    <rect x="0" y="0" width="7" height="304" fill="#000" opacity=".28"/><rect x="7" y="0" width="2" height="304" fill="#fff" opacity=".09"/>
+    ${lines.map((l,i)=>`<text x="100" y="${ty+i*fs}" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-size="${fs}" font-weight="600" fill="${ink}">${esc(l)}</text>`).join('')}
+    ${at}
+  </svg>`;
+}
+
+/* ================= helpers ================= */
+function yearLabel(y){if(y==null)return null;return y<0?Math.abs(y)+' a.C.':String(y)}
+function genDesc(b){
+  const t=(b.topics&&b.topics[0])||'miscellaneous',sh=SHELF_BY_ID[b._shelf],bits=[];
+  bits.push(`«${b.title}»${b.author?', de '+b.author+',':''} vive en el estante ${b._shelf} — ${sh?sh.theme.toLowerCase():''}.`);
+  if(ED.topics[t])bits.push(ED.topics[t].desc);
+  const e=ENRICH[b.id];
+  if(e&&e.first_published)bits.push(`Primera publicación de la obra: ${yearLabel(e.first_published)}${e.year_confidence==='aprox'?' (aprox.)':''}.`);
+  return bits.join(' ');
+}
+const bookDesc=b=>(b._ed&&b._ed.desc)||genDesc(b);
+const isFamily=b=>/apolant|villar/i.test(b.author_canonical||b.author||'');
+function starsHTML(id,small){
+  const r=U.ratings[id]||0;
+  let out=`<span class="stars${small?' small':''}" ${small?'':`data-rate="${id}"`}>`;
+  for(let i=1;i<=5;i++)out+=`<button type="button" class="${i<=r?'on':''}" data-v="${i}" aria-label="${i} estrellas">★</button>`;
+  return out+'</span>';
+}
+function bkHTML(b){
+  const st=U.status[b.id];
+  return `<a class="bk" href="#/libro/${b.id}">
+    <div class="cover">${coverSVG(b,128)}</div>
+    <div class="t">${esc(b.title)}</div>
+    <div class="a">${esc(b.author||b._shelf)}</div>
+    ${U.ratings[b.id]?`<div class="st">${starsHTML(b.id,true)}</div>`:st?`<div class="st"><span class="badge ${st}">${STATUS_LABEL[st]}</span></div>`:''}
+  </a>`;
+}
+function rowHTML(list){return `<div class="row">${list.map(bkHTML).join('')}</div>`}
+function shelfrowHTML(b,right){
+  return `<a class="shelfrow" href="#/libro/${b.id}">
+    <span class="mini">${coverSVG(b,34)}</span>
+    <span><span class="t">${esc(b.title)}</span><br><span class="s">${esc(b.author||'')}</span></span>
+    <span class="right">${right||''}</span>
+  </a>`;
+}
+const $app=()=>document.getElementById('app');
+function render(html,tab){
+  $app().innerHTML=`<div class="fade">${html}</div>`;
+  $app().style.display='block';
+  document.getElementById('status').style.display='none';
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));
+  window.scrollTo({top:0});
+  bindStars();
+}
+function bindStars(){
+  document.querySelectorAll('.stars[data-rate]').forEach(el=>{
+    el.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',ev=>{
+      ev.preventDefault();ev.stopPropagation();
+      const id=el.dataset.rate,v=+btn.dataset.v;
+      U.ratings[id]=(U.ratings[id]===v)?0:v;
+      if(!U.ratings[id])delete U.ratings[id];
+      save();
+      el.querySelectorAll('button').forEach(b2=>b2.classList.toggle('on',+b2.dataset.v<=(U.ratings[id]||0)));
+      const cap=document.getElementById('rate-cap');
+      if(cap)cap.textContent=rateCaption(id);
+    }));
+  });
+}
+function rateCaption(id){
+  const r=U.ratings[id];
+  return r?['','No era para esta casa','Cumple','Muy bueno','Excelente','Pieza mayor'][r]:'Sin calificar';
+}
+function todaySeed(){const d=new Date();return d.getFullYear()*1000+d.getMonth()*50+d.getDate()}
+
+/* ================= INICIO ================= */
+const LISTS=[
+  {key:'king',title:'Los 50 de King',desc:'Dos ediciones rivales del mismo autor, lomo blanco vs. tapa negra.',filter:b=>b.topics&&b.topics.includes('stephen-king')},
+  {key:'shakespeare',title:'El estante Shakespeare',desc:'Obras, crítica, ediciones alemanas y un hereje anti-Stratford.',filter:b=>b._shelf==='L3'},
+  {key:'cozy',title:'Cozy mysteries de Alma',desc:'Crímenes amables, librerías y té: la repisa más reconfortante.',filter:b=>b._shelf==='M5'},
+  {key:'cosmos',title:'Cosmología de mediados de siglo',desc:'Gamow, Hoyle, los Bok, Sagan y Hawking: el universo según el siglo XX.',filter:b=>b._shelf==='L5'},
+  {key:'valeria',title:'Benavent completa',desc:'La saga Valeria entera más cinco novelas.',filter:b=>b._shelf==='M6'},
+  {key:'uruguay',title:'Montevideo profundo',desc:'Nomenclatura, historia edilicia, el Graf Spee y fotos rescatadas.',filter:b=>b.topics&&b.topics.includes('uruguay')},
+  {key:'familia',title:'Autoría familiar',desc:'Apolant y G.E. Villar: los libros escritos por la propia familia.',filter:b=>isFamily(b)},
+  {key:'arte',title:'La sala de arte',desc:'La serie Mentor-UNESCO casi completa y los grandes monografiados.',filter:b=>b.topics&&b.topics.includes('art')}
+];
+function viewInicio(){
+  const curated=Object.keys(ED.books).filter(id=>BY_ID[id]);
+  const pick=curated[todaySeed()%curated.length];
+  const feat=BY_ID[pick];
+  const leyendo=BOOKS.filter(b=>U.status[b.id]==='leyendo');
+  const quiero=BOOKS.filter(b=>U.status[b.id]==='quiero');
+  const rated=Object.keys(U.ratings).length;
+  const joyas=curated.filter(id=>ED.books[id].dato).sort((a,b)=>hsh(a+todaySeed())-hsh(b+todaySeed())).slice(0,12).map(id=>BY_ID[id]);
+
+  render(`
+    <h2 class="sec" style="margin-top:14px">Hola 👋</h2>
+    <p class="sub">${BOOKS.length} libros en casa · ${rated?rated+' calificados por vos':'todavía no calificaste ninguno'} · ${quiero.length?quiero.length+' en «quiero leer»':'armá tu lista de lectura'}</p>
+
+    ${leyendo.length?`
+      <h2 class="sec">Seguí leyendo</h2>
+      ${rowHTML(leyendo)}
+    `:''}
+
+    <a class="card hero-card" href="#/libro/${feat.id}">
+      <div class="cover">${coverSVG(feat,150)}</div>
+      <div>
+        <div class="k">El destacado de hoy</div>
+        <h3>${esc(feat.title)}</h3>
+        <div class="au">${esc(feat.author||'')}</div>
+        <p class="d">${esc(bookDesc(feat))}</p>
+        <div style="margin-top:12px"><span class="btn primary" style="pointer-events:none">Ver ficha</span></div>
+      </div>
+    </a>
+
+    <h2 class="sec">Colecciones de la casa</h2>
+    <p class="sub">Los bloques que hacen a esta biblioteca lo que es.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+      ${LISTS.map(l=>`<a class="chip" href="#/lista/${l.key}">${esc(l.title)} <span class="n">${BOOKS.filter(l.filter).length}</span></a>`).join('')}
+    </div>
+    ${rowHTML(BOOKS.filter(LISTS[todaySeed()%LISTS.length].filter).slice(0,15))}
+
+    <h2 class="sec">Joyas con historia</h2>
+    <p class="sub">Libros con «dato»: la marginalia de la colección. Rota todos los días.</p>
+    ${rowHTML(joyas)}
+
+    <h2 class="sec">Autores fuertes</h2>
+    <p class="sub">Los que tienen masa crítica en los estantes.</p>
+    <div class="authors-grid">
+      ${AUTHORS.slice(0,6).map(a=>authorCard(a)).join('')}
+    </div>
+  `,'inicio');
+}
+function authorCard(a){
+  const ph=authorPhoto(a.name);
+  return `<a class="card author-card" href="#/autor/${encodeURIComponent(a.name)}">
+    <span class="pic">${ph?`<img src="${ph}" alt="">`:esc(a.name[0])}</span>
+    <span><b>${esc(a.name)}</b><span>${a.books.length} libro${a.books.length>1?'s':''}</span></span>
+  </a>`;
+}
+
+/* ================= EXPLORAR ================= */
+function viewExplorar(){
+  const shelves=CAT.shelves.filter(s=>s.books.length);
+  render(`
+    <h2 class="sec" style="margin-top:14px">Explorar</h2>
+    <p class="sub">Por tema, por estante o al azar — como quieras perderte.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+      <a class="chip" style="border-color:var(--brand);color:var(--brand)" href="#/libro/${BOOKS[Math.floor(Math.random()*BOOKS.length)].id}">🎲 Libro al azar</a>
+      ${Object.keys(ED.topics).map(t=>{
+        const n=BOOKS.filter(b=>b.topics&&b.topics.includes(t)).length;
+        return n?`<a class="chip" href="#/tema/${t}">${esc(TOPIC_LABEL(t))} <span class="n">${n}</span></a>`:'';
+      }).join('')}
+    </div>
+
+    <h2 class="sec">Los estantes, tal cual están</h2>
+    <p class="sub">Fotos reales. Tocá cualquiera para ver qué tiene adentro.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:30px">
+      ${shelves.map(s=>{
+        const ph=shelfPhoto(s.id);
+        return `<a class="card" style="overflow:hidden" href="#/estante/${s.id}">
+          ${ph?`<img src="${ph}" style="width:100%;height:130px;object-fit:cover" alt="Estante ${s.id}">`:''}
+          <div style="padding:11px 14px">
+            <b style="font-size:13.5px">${s.id} — ${esc(s.theme)}</b>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px">${s.books.length} volúmenes</div>
+          </div>
+        </a>`;
+      }).join('')}
+    </div>
+  `,'explorar');
+}
+
+/* ================= list / topic / shelf ================= */
+function viewLista(key){
+  const l=LISTS.find(x=>x.key===key);
+  if(!l)return viewExplorar();
+  const list=BOOKS.filter(l.filter);
+  render(`
+    <h2 class="sec" style="margin-top:14px">${esc(l.title)}</h2>
+    <p class="sub">${esc(l.desc)} · ${list.length} libros</p>
+    <div class="grid">${list.map(bkHTML).join('')}</div>
+  `,'inicio');
+}
+function viewTema(t){
+  const list=BOOKS.filter(b=>b.topics&&b.topics.includes(t));
+  const ph=photo('theme_'+t);
+  render(`
+    ${ph?`<div class="shelfphoto" style="margin-top:14px"><img src="${ph}" alt=""><div class="cap">${esc(TOPIC_LABEL(t))} · ${list.length} libros</div></div>`:`<h2 class="sec" style="margin-top:14px">${esc(TOPIC_LABEL(t))}</h2>`}
+    ${ED.topics[t]?`<p class="sub">${esc(ED.topics[t].desc)}</p>`:''}
+    <div class="grid">${list.map(bkHTML).join('')}</div>
+  `,'explorar');
+}
+function viewEstante(id){
+  const s=SHELF_BY_ID[id];
+  if(!s)return viewExplorar();
+  const ph=shelfPhoto(id);
+  render(`
+    ${ph?`<div class="shelfphoto" style="margin-top:14px"><img src="${ph}" alt=""><div class="cap">Estante ${id} — ${esc(s.theme)} · foto real</div></div>`:`<h2 class="sec" style="margin-top:14px">Estante ${id}</h2>`}
+    <p class="sub">${esc(s.theme)} · ${s.books.length} volúmenes, en el orden en que están parados.</p>
+    <div class="grid">${s.books.map(bkHTML).join('')}</div>
+  `,'explorar');
+}
+
+/* ================= LIBRO ================= */
+function viewBook(id){
+  const b=BY_ID[id];
+  if(!b)return render('<p style="padding:50px 0">No encontré ese libro.</p>','explorar');
+  const s=SHELF_BY_ID[b._shelf];
+  const desc=bookDesc(b),dato=b._ed&&b._ed.dato;
+  const st=U.status[b.id];
+  const e=ENRICH[b.id];
+  const sameAuthor=BOOKS.filter(x=>x!==b&&x.author_canonical&&x.author_canonical===b.author_canonical);
+  const neighbors=s.books.filter(x=>x!==b);
+  const ph=shelfPhoto(b.id&&b._shelf);
+  const meta=[
+    ['Ubicación',`${b._shelf} · nº ${b._idx+1} de ${b._n}`],
+    ['Primera publicación',e&&e.first_published!=null?yearLabel(e.first_published)+(e.year_confidence==='aprox'?' (aprox.)':''):'sin datar'],
+    ['Idioma',b.language||'—'],
+    b.publisher?['Editorial',b.publisher]:null,
+    b.series?['Serie',b.series]:null,
+    b.binding?['Encuadernación',b.binding]:null,
+    b.price?['Precio ref.',b.price]:null,
+    ['Tema',(b.topics||[]).map(TOPIC_LABEL).join(', ')||'—']
+  ].filter(Boolean);
+
+  render(`
+    <article class="bookpage">
+      <div class="colL">
+        <div>
+          <div class="cover" style="max-width:250px">${coverSVG(b,250)}</div>
+        </div>
+        <div class="card rate-box">
+          <div class="lbl">Tu calificación</div>
+          ${starsHTML(b.id)}
+          <div id="rate-cap" style="font-size:12px;color:var(--muted);margin-top:2px">${rateCaption(b.id)}</div>
+          <div class="lbl" style="margin-top:16px">Estantería</div>
+          <div class="status-row">
+            ${['quiero','leyendo','leido'].map(k=>`<button class="status-btn${st===k?' on':''}" data-status="${k}">${STATUS_LABEL[k]}</button>`).join('')}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px">
+          <a href="#/tema/${(b.topics&&b.topics[0])||'miscellaneous'}">${esc(TOPIC_LABEL((b.topics&&b.topics[0])||'miscellaneous'))}</a> · ${esc(b.id)}
+        </div>
+        <h1 class="bp-title">${esc(b.title)}</h1>
+        ${b.author?`<a class="bp-author" href="#/autor/${encodeURIComponent(b.author_canonical||b.author)}">${esc(b.author)}</a>`:''}
+        ${isFamily(b)?`<div style="margin-bottom:10px"><span class="badge leido">✦ autoría familiar</span></div>`:''}
+        <p class="bp-desc">${esc(desc)}</p>
+        ${dato?`<div class="review">
+          <div class="who"><span class="av">B</span><span><b>El Bibliotecario</b><span>reseña de la casa</span></span></div>
+          <p>${esc(dato)}</p>
+        </div>`:''}
+        <div class="dl">${meta.map(m=>`<div><div class="k">${m[0]}</div><div class="v">${esc(m[1])}</div></div>`).join('')}</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px">
+          ${b.buy_url?`<a class="btn" href="${esc(b.buy_url)}" target="_blank" rel="noopener">Conseguir otro ejemplar ↗</a>`:''}
+          <a class="btn" href="#/estante/${b._shelf}">Ver estante ${b._shelf}</a>
+        </div>
+        <div class="lbl" style="font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Tu reseña privada</div>
+        <textarea class="note" id="note" placeholder="¿Qué te dejó este libro? Queda guardado en este dispositivo.">${esc(U.notes[b.id]||'')}</textarea>
+        <div class="note-saved" id="note-saved"></div>
+      </div>
+    </article>
+
+    ${ph?`<div class="shelfphoto"><img src="${ph}" alt="Estante ${b._shelf}"><div class="cap">Vive en el estante ${b._shelf} — ${esc(s.theme)} · posición ${b._idx+1} de ${b._n}</div></div>`:''}
+
+    ${sameAuthor.length?`<h2 class="sec">Más de ${esc(b.author_canonical||b.author)}</h2>${rowHTML(sameAuthor.slice(0,15))}`:''}
+    <h2 class="sec">Vecinos de estante</h2>
+    ${rowHTML(neighbors.slice(0,15))}
+  `,'explorar');
+
+  document.querySelectorAll('[data-status]').forEach(btn=>btn.addEventListener('click',()=>{
+    const k=btn.dataset.status;
+    if(U.status[b.id]===k)delete U.status[b.id];else U.status[b.id]=k;
+    save();
+    document.querySelectorAll('[data-status]').forEach(x=>x.classList.toggle('on',U.status[b.id]===x.dataset.status));
+  }));
+  const note=document.getElementById('note');let t0=null;
+  note.addEventListener('input',()=>{
+    clearTimeout(t0);
+    t0=setTimeout(()=>{
+      if(note.value.trim())U.notes[b.id]=note.value;else delete U.notes[b.id];
+      save();
+      const el=document.getElementById('note-saved');el.textContent='✓ guardado';
+      setTimeout(()=>{el.textContent=''},1600);
+    },500);
+  });
+}
+
+/* ================= AUTORES ================= */
+function viewAutores(){
+  render(`
+    <h2 class="sec" style="margin-top:14px">Autores</h2>
+    <p class="sub">${AUTHORS.length} autores identificados con obra canónica en el catálogo, ordenados por presencia en los estantes.</p>
+    <div class="authors-grid">${AUTHORS.map(authorCard).join('')}</div>
+  `,'autores');
+}
+function viewAutor(name){
+  name=decodeURIComponent(name);
+  let a=AUTHORS.find(x=>x.name===name);
+  if(!a){
+    const books=BOOKS.filter(b=>(b.author||'')===name);
+    if(!books.length)return viewAutores();
+    a={name,books};
+  }
+  const meta=ED.authors[a.name];
+  const ph=authorPhoto(a.name);
+  const rated=a.books.filter(b=>U.ratings[b.id]);
+  render(`
+    <div class="author-hd">
+      <div class="pic">${ph?`<img src="${ph}" alt="">`:esc(a.name[0])}</div>
+      <div>
+        <h1>${esc(a.name)}</h1>
+        <div class="meta">${a.books.length} libro${a.books.length>1?'s':''} en casa${rated.length?` · ${rated.length} calificado${rated.length>1?'s':''} por vos`:''}</div>
+        ${meta?`<p class="bio">${esc(meta.bio)}</p>`:''}
+      </div>
+    </div>
+    <div class="grid">${a.books.map(bkHTML).join('')}</div>
+  `,'autores');
+}
+
+/* ================= YO (perfil) ================= */
+function barChart(title,cap,rows,max){
+  max=max||Math.max(...rows.map(r=>r[1]),1);
+  return `<div class="card chart">
+    <h3>${esc(title)}</h3><div class="cap">${esc(cap)}</div>
+    ${rows.map(r=>`<div class="brow">
+      <span class="l">${esc(r[0])}</span>
+      <span class="track"><span class="fill" style="width:${(r[1]/max*100).toFixed(1)}%"></span></span>
+      <span class="v">${r[1]}</span>
+    </div>`).join('')}
+  </div>`;
+}
+function viewYo(){
+  const leido=BOOKS.filter(b=>U.status[b.id]==='leido');
+  const leyendo=BOOKS.filter(b=>U.status[b.id]==='leyendo');
+  const quiero=BOOKS.filter(b=>U.status[b.id]==='quiero');
+  const ratedIds=Object.keys(U.ratings).filter(id=>BY_ID[id]);
+  const notes=Object.keys(U.notes).filter(id=>BY_ID[id]);
+
+  const byTopic={};
+  BOOKS.forEach(b=>(b.topics||['miscellaneous']).slice(0,1).forEach(t=>byTopic[t]=(byTopic[t]||0)+1));
+  const topicRows=Object.entries(byTopic).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([t,n])=>[TOPIC_LABEL(t),n]);
+
+  const byLang={};
+  BOOKS.forEach(b=>{const l=b.language||'Sin identificar';byLang[l]=(byLang[l]||0)+1});
+  const langRows=Object.entries(byLang).sort((a,b)=>b[1]-a[1]).slice(0,6);
+
+  const byDecade={};
+  BOOKS.filter(b=>b._year!=null&&b._year>1800).forEach(b=>{
+    const d=Math.floor(b._year/10)*10;byDecade[d]=(byDecade[d]||0)+1;
+  });
+  const decadeRows=Object.entries(byDecade).sort((a,b)=>a[0]-b[0]).map(([d,n])=>[d+'s',n]);
+  const antiguos=BOOKS.filter(b=>b._year!=null&&b._year<=1800).length;
+
+  render(`
+    <h2 class="sec" style="margin-top:14px">Tu biblioteca</h2>
+    <p class="sub">Todo lo tuyo — estanterías, calificaciones y reseñas — vive en este dispositivo.</p>
+    <div class="kpis">
+      <div class="card kpi"><div class="n">${leido.length}</div><div class="l">Leídos</div></div>
+      <div class="card kpi"><div class="n">${leyendo.length}</div><div class="l">Leyendo</div></div>
+      <div class="card kpi"><div class="n">${quiero.length}</div><div class="l">Quiero leer</div></div>
+      <div class="card kpi"><div class="n">${ratedIds.length}</div><div class="l">Calificados</div></div>
+    </div>
+
+    ${leyendo.length||quiero.length||leido.length?`
+      ${leyendo.length?`<h2 class="sec">Leyendo ahora</h2>${rowHTML(leyendo)}`:''}
+      ${quiero.length?`<h2 class="sec">Quiero leer</h2>${rowHTML(quiero)}`:''}
+      ${leido.length?`<h2 class="sec">Leídos</h2>${rowHTML(leido)}`:''}
+    `:`<div class="card" style="padding:22px;margin:6px 0 10px">
+        <b style="font-family:var(--serif);font-size:19px">Estanterías vacías (por ahora)</b>
+        <p style="font-size:13.5px;color:var(--ink2);margin-top:6px">Entrá a cualquier libro y marcalo como «Quiero leer», «Leyendo» o «Leído». Acá se arma tu tablero.</p>
+        <div style="margin-top:12px"><a class="btn primary" href="#/libro/${BOOKS[Math.floor(Math.random()*BOOKS.length)].id}">Empezar con uno al azar</a></div>
+      </div>`}
+
+    ${ratedIds.length?`<h2 class="sec">Tus calificaciones</h2>
+      <div class="card" style="overflow:hidden;margin-bottom:8px">
+        ${ratedIds.sort((a,b)=>U.ratings[b]-U.ratings[a]).slice(0,12).map(id=>shelfrowHTML(BY_ID[id],starsHTML(id,true))).join('')}
+      </div>`:''}
+    ${notes.length?`<h2 class="sec">Tus reseñas privadas</h2>
+      <div class="card" style="overflow:hidden;margin-bottom:8px">
+        ${notes.slice(0,12).map(id=>shelfrowHTML(BY_ID[id],`<span style="font-size:11px;color:var(--muted)">${esc(U.notes[id].slice(0,40))}${U.notes[id].length>40?'…':''}</span>`)).join('')}
+      </div>`:''}
+
+    <h2 class="sec">Radiografía de la colección</h2>
+    <p class="sub">Los 400 de la casa, medidos.</p>
+    ${barChart('Por tema','Tema principal de cada volumen — los 8 más grandes',topicRows)}
+    ${barChart('Por idioma','Idioma de la edición física (donde está identificado)',langRows)}
+    ${decadeRows.length?barChart('Por década de primera publicación',`${decadeRows.reduce((a,r)=>a+r[1],0)} obras datadas después de 1800 · ${antiguos} anteriores (hasta el Arte de la Guerra, siglo V a.C.)`,decadeRows):''}
+  `,'yo');
+}
+
+/* ================= search ================= */
+const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const qInput=document.getElementById('q'),qRes=document.getElementById('q-res');
+qInput.addEventListener('input',()=>{
+  const q=norm(qInput.value.trim());
+  if(q.length<2){qRes.classList.remove('open');qRes.innerHTML='';return}
+  const hits=BOOKS.filter(b=>norm(b.title).includes(q)||norm(b.author).includes(q)).slice(0,12);
+  qRes.innerHTML=hits.map(b=>`<a class="hd-hit" href="#/libro/${b.id}">
+    <span class="mini">${coverSVG(b,30)}</span>
+    <span><div class="t">${esc(b.title)}</div><div class="s">${esc(b.author||'')} · ${b._shelf}</div></span>
+  </a>`).join('')||'<div style="padding:14px;font-size:13px;color:var(--muted)">Nada en los estantes con ese nombre.</div>';
+  qRes.classList.add('open');
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.hd-search'))qRes.classList.remove('open')});
+qRes.addEventListener('click',()=>{qRes.classList.remove('open');qInput.value=''});
+
+/* ================= router ================= */
+function route(){
+  const h=location.hash.replace(/^#\/?/,'');
+  const[view,arg]=h.split('/');
+  if(!view||view==='inicio')return viewInicio();
+  if(view==='explorar')return viewExplorar();
+  if(view==='autores')return viewAutores();
+  if(view==='autor')return viewAutor(arg);
+  if(view==='yo')return viewYo();
+  if(view==='libro')return viewBook(arg);
+  if(view==='estante')return viewEstante(arg);
+  if(view==='tema')return viewTema(arg);
+  if(view==='lista')return viewLista(arg);
+  viewInicio();
+}
+window.addEventListener('hashchange',route);
+
+loadAll().then(route).catch(err=>{
+  document.getElementById('status').innerHTML=`<h2>No pude abrir la biblioteca</h2>
+    <p style="max-width:52ch;margin:0 auto">${esc(err.message)}. Este concepto lee el catálogo desde <code>../index.html</code>: abrilo servido por HTTP (GitHub Pages o <code>python3 -m http.server</code>).</p>`;
+});
+</script>
+</body>
+</html>
