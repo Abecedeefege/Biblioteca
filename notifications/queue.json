@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-07-03T20:39:05.250Z",
+  "_updated_at": "2026-07-03T20:43:27.930Z",
   "notifications": [
     {
       "id": "2026-07-04-a",
@@ -49,6 +49,18 @@
       "sent_at": "2026-07-03T20:39:05.249Z",
       "fail_reason": null,
       "created_by": "prueba de badge vía chat 2026-07-03"
+    },
+    {
+      "id": "test-1783111407185",
+      "title": "🔔 Prueba de Bibliotequeando",
+      "body": "Si leés esto, el canal funciona. Tocá para abrir tu biblioteca.",
+      "url": "https://abecedeefege.github.io/Biblioteca/index.html",
+      "send_at": "2026-07-03T20:42:27.185Z",
+      "expires_at": "2026-07-03T22:43:27.185Z",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "setup.html (prueba manual)"
     }
   ]
 }
