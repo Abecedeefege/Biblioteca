@@ -1,0 +1,177 @@
+{
+  "_meta": {
+    "que_es": "Landings editoriales de colecciones para los conceptos de app en /concepts. Cada entrada define un grupo de libros (filter), su pieza central y un ensayo curado. Los récords numéricos (más antiguo, más caro, etc.) se computan en runtime desde el catálogo canónico.",
+    "updated_at": "2026-07-03"
+  },
+  "collections": [
+    {
+      "key": "king",
+      "title": "La sala King",
+      "kicker": "Cincuenta puertas a Castle Rock",
+      "filter": { "type": "shelves", "value": ["R4", "R5"] },
+      "centerpiece": "R4-025",
+      "highlights": ["R4-001", "R4-014", "R5-005", "R5-019", "R4-003", "R5-021"],
+      "essay": [
+        "Cincuenta volúmenes de un mismo autor no son una preferencia: son una relación. Los dos estantes King de la casa cuentan además una guerra editorial silenciosa — la edición de lomo blanco 'Biblioteca Stephen King' en R4 contra las tapas negras modernas en R5 — dos maneras de vestir al mismo monstruo, conviviendo a un estante de distancia.",
+        "Entre los cincuenta hay tres infiltrados: 'La Larga Marcha', 'El Fugitivo' y 'Blaze' se publicaron bajo el seudónimo Richard Bachman, el disfraz que King usó para averiguar si vendía por talento o por nombre. Un librero lo descubrió en 1985 comparando fichas de la Biblioteca del Congreso. La colección de la casa guarda el escándalo completo, más una edición de IT que viene con su propio Pennywise de regalo."
+      ],
+      "records_note": "El bloque de autor más grande de la biblioteca: uno de cada ocho libros de la casa es de King."
+    },
+    {
+      "key": "shakespeare",
+      "title": "El estante Shakespeare",
+      "kicker": "Un autor, veintiún obras y una herejía",
+      "filter": { "type": "shelf", "value": "L3" },
+      "centerpiece": "L3-041",
+      "highlights": ["L3-020", "L3-038", "L3-032", "L3-013", "L3-046", "L3-002"],
+      "essay": [
+        "El estante L3 es un curso completo de Shakespeare en cincuenta y un volúmenes: las obras en inglés, un bloque entero en alemán (donde Shakespeare es casi un autor nacional, vía la traducción legendaria de Schlegel-Tieck), los sonetos, la mejor crítica del siglo XX — Bradley, Greenblatt, Burgess — y la joya: un Macbeth ilustrado por Salvador Dalí en 1946.",
+        "La broma interna más fina de la biblioteca también vive acá: entre veinte obras del Bardo y su crítica más devota está 'Bacon-Shakespeare Anatomy', el libro que sostiene que Shakespeare no escribió nada. Tener al hereje conviviendo con los fieles es la marca de un coleccionista con sentido del humor. De contrabando, al fondo del estante, los primeros cuatro Harry Potter."
+      ],
+      "records_note": "51 volúmenes: el estante individual más poblado de la casa."
+    },
+    {
+      "key": "cosmos",
+      "title": "El observatorio",
+      "kicker": "La cosmología del siglo XX, estante por estante",
+      "filter": { "type": "shelf", "value": "L5" },
+      "centerpiece": "L5-016",
+      "highlights": ["L5-032", "L5-007", "L5-024", "L5-019", "L5-025", "L5-026"],
+      "essay": [
+        "Treinta y tres libros que cuentan, en orden casi arqueológico, cómo el siglo XX aprendió a mirar el cielo: los manuales piadosos de los años 30, la fusión nuclear recién descubierta en Gamow, la resistencia elegante de Hoyle al Big Bang (palabra que él mismo inventó para burlarse), la Vía Láctea del matrimonio Bok, y los dos best sellers que cerraron el siglo: Cosmos y la Breve historia del tiempo.",
+        "Es la colección más coherente de la casa después de King: no son libros sueltos de astronomía, es una biblioteca temática armada con criterio de época. Leídos en orden de publicación, son la historia de la cosmología contada por sus protagonistas — con George Gamow, el físico que se escapó de la URSS remando, como figura repetida tres veces."
+      ],
+      "records_note": "Incluye el libro con la mejor ironía científica: Hoyle bautizó 'Big Bang' a la teoría que combatió toda su vida."
+    },
+    {
+      "key": "montevideo",
+      "title": "Montevideo profundo",
+      "kicker": "La ciudad, calle por calle, foto por foto",
+      "filter": { "type": "topic", "value": "uruguay" },
+      "centerpiece": "L8-006",
+      "highlights": ["L6-002", "L6-007", "L6-016", "L6-019", "L7-006", "L6-001"],
+      "essay": [
+        "El corazón montevideano de la biblioteca son unos sesenta y cinco volúmenes que reconstruyen la ciudad con obsesión de escribano: por qué cada calle se llama como se llama (Castellanos, con suplementos oficiales hasta 1994), cómo creció edificio por edificio entre 1829 y 1914, qué pasó la semana en que el Graf Spee se hundió frente al puerto, y hasta la versión romántica del sitio de Montevideo escrita — sin haber pisado nunca la ciudad — por Alejandro Dumas.",
+        "La colección cierra con los fotolibros: mil fotografías rescatadas de los archivos de El País, el álbum de figuritas del siglo uruguayo, y bultos de diarios viejos esperando su turno. Es historia nacional en primera persona: la parte de la biblioteca que no se compró por gusto sino por identidad."
+      ],
+      "records_note": "El tema más grande del catálogo, y el único con bibliografía oficial: las nomenclaturas municipales."
+    },
+    {
+      "key": "arte",
+      "title": "La pinacoteca de papel",
+      "kicker": "De Lascaux a Calder en cuarenta y cuatro lomos",
+      "filter": { "type": "topic", "value": "art" },
+      "centerpiece": "M2-003",
+      "highlights": ["M3-002", "M4-006", "M2-002", "M3-008", "M4-015", "M7-025"],
+      "essay": [
+        "El bloque de arte ocupa tres estantes del cuerpo central y tiene una espina dorsal clara: la serie Mentor-UNESCO casi completa — veintidós tomos de bolsillo con los que la UNESCO democratizó los museos del mundo en los años 60, de los mosaicos bizantinos a las pinturas aborígenes australianas. Conseguir la serie casi entera es, en sí mismo, una proeza de coleccionista.",
+        "Alrededor orbitan las piezas mayores: los dos tomos del Vincent de Meier-Graefe (la biografía que convirtió a Van Gogh en mito), el Gombrich que enseñó arte a ocho millones de lectores, un Picasso editado en hebreo que se lee de derecha a izquierda, y el catálogo más triste del estante: las obras de Torres-García destruidas en el incendio del MAM de Río en 1978."
+      ],
+      "records_note": "Incluye el club de los alfabetos: un libro en hebreo acá, un lomo en griego en viajes."
+    },
+    {
+      "key": "viajes",
+      "title": "La vuelta al mundo",
+      "kicker": "Cuarenta y tres maneras de no quedarse quieto",
+      "filter": { "type": "topic", "value": "travel" },
+      "centerpiece": "R3-016",
+      "highlights": ["R2-011", "R2-023", "R3-014", "R3-015", "R2-021", "R3-018"],
+      "essay": [
+        "Dos estantes de fotolibros de viaje que son, mirados de corrido, un mapa de deseos del siglo XX: Londres y su abadía, el Berlín subterráneo, Jerusalén y Masada contada por su propio arqueólogo, las ciudades fabulosas de la Ruta de la Seda fotografiadas cuando eran secreto soviético, y el Amazonas remontado por Cousteau.",
+        "Las piezas con más conversación son dos: la Acrópolis con el lomo impreso en griego — el único libro de la casa que exige otro alfabeto para ser encontrado — y el Buenos Aires fotografiado por Sara Facio y Alicia D'Amico con textos que Julio Cortázar escribió desde París, porque la mejor mirada sobre una ciudad siempre es la del que está lejos."
+      ],
+      "records_note": "El estante con más idiomas por metro: inglés, alemán, español, francés y un lomo en griego."
+    },
+    {
+      "key": "misterio",
+      "title": "El salón del crimen",
+      "kicker": "De Baker Street a los cozys de Alma",
+      "filter": { "type": "shelf", "value": "M5" },
+      "centerpiece": "M5-004",
+      "highlights": ["M5-005", "M5-006", "M5-003", "M5-020", "M5-025", "M5-024"],
+      "essay": [
+        "El estante M5 tiene un arco dramático perfecto: empieza con el crimen clásico — el drama completo de Conan Doyle matando a Holmes en 1893 y resucitándolo por presión y dinero, con las tres piezas de esa historia paradas una al lado de la otra — sigue con Christie en sus dos registros, y desemboca en el psicothriller alemán de Fitzek, que destronó al Código Da Vinci en su debut.",
+        "La otra mitad del estante es puro confort: los cozy mysteries de ediciones Alma, donde los crímenes ocurren en librerías, clubes de lectura y cafeterías, y hasta la reina Isabel II investiga entre el té y los corgis. Es el estante para elegir según el día: sangre victoriana o manta y bizcochos."
+      ],
+      "records_note": "El estante con la historia editorial más dramática: un detective asesinado por su propio autor y resucitado a pedido del público."
+    },
+    {
+      "key": "sabiduria",
+      "title": "El botiquín",
+      "kicker": "Veinticuatro caminos a la misma pregunta",
+      "filter": { "type": "shelf", "value": "L4" },
+      "centerpiece": "L4-024",
+      "highlights": ["L4-012", "L4-014", "L4-005", "L4-002", "L4-023", "L4-018"],
+      "essay": [
+        "El estante de autoayuda y filosofía de la casa es más honesto que la mayoría: no disimula el género, lo abraza en todo su espectro. En un metro de madera conviven Sun Tzu (siglo V a.C., el libro más antiguo de toda la biblioteca), la mescalina de Huxley, el LSD de Timothy Leary, los hábitos atómicos de Clear, el estoicismo de gimnasio de Ryan Holiday y el Principito, que es autoayuda para gente que no quiere admitirlo.",
+        "Leído como conjunto, el estante es una pregunta repetida veinticuatro veces — cómo se vive bien — con respuestas que van del tiro con arco zen al mindfulness de divulgación. La distancia entre 'El Arte de la Guerra' y 'How to Give Zero F*cks' es de 2.500 años y quince centímetros."
+      ],
+      "records_note": "Contiene el libro más antiguo del catálogo (siglo V a.C.) y varios de los más nuevos: 25 siglos en un estante."
+    },
+    {
+      "key": "clasicos",
+      "title": "La sala noble",
+      "kicker": "Cuero, vitela y papel biblia",
+      "filter": { "type": "topic", "value": "classics" },
+      "centerpiece": "TOP-001",
+      "highlights": ["L2-002", "L2-001", "L2-007", "M7-006", "M7-009", "M7-013"],
+      "essay": [
+        "Los clásicos de la casa se reconocen antes por el tacto que por el título: seis Balzac encuadernados en vitela, un Keats en cuero de principios de siglo, el Lorca completo en papel biblia de Aguilar, y arriba de todo — literalmente, en el estante de exhibición — los dos tomos del Quijote en cuero rojo custodiados por figuras talladas de don Quijote y Sancho.",
+        "El resto de la sala noble vive disperso en los estantes de antiguos: el Claudio doble de Graves, sus mitos griegos en dos tomos, la conquista del Perú escrita por un historiador casi ciego, y un Who's Who de 1944 impreso mientras caían las bombas — la cápsula de tiempo más involuntaria del catálogo."
+      ],
+      "records_note": "Las únicas piezas de la biblioteca que no se leen: los dos Quijotes de exhibición, que se miran."
+    },
+    {
+      "key": "familia",
+      "title": "Los de la familia",
+      "kicker": "Dieciséis libros con el apellido adentro",
+      "filter": { "type": "family" },
+      "centerpiece": "R7-001",
+      "highlights": ["R7-008", "R7-012", "R7-015", "R7-006", "R7-009", "R7-016"],
+      "essay": [
+        "El estante R7 es el más personal de la biblioteca: acá los autores no son visitas, son parientes. Juan Alejandro Apolant — genealogista alemán radicado en Uruguay — firmó la 'Génesis de la Familia Uruguaya', el registro monumental de las familias fundadoras de Montevideo, y la casa guarda diez volúmenes suyos incluyendo el ejemplar de lujo envuelto en papel.",
+        "El otro apellido es G.E. Villar, químico y docente: seis obras sobre coloides, cinética y energía atómica publicadas entre 1940 y 1967, más una veintena de apuntes de cátedra encuadernados. Ciencia y genealogía hechas en casa: la parte del catálogo que ninguna otra biblioteca del mundo puede repetir."
+      ],
+      "records_note": "La colección literalmente irrepetible: obra de autoría familiar, con el árbol genealógico de la casa adentro."
+    },
+    {
+      "key": "benavent",
+      "title": "El rincón Valeria",
+      "kicker": "Benavent completa, en orden de lectura",
+      "filter": { "type": "shelf", "value": "M6" },
+      "centerpiece": "M6-001",
+      "highlights": ["M6-002", "M6-003", "M6-004", "M6-006", "M6-007"],
+      "essay": [
+        "Nueve novelas de Elísabet Benavent en un estante propio, con la saga Valeria completa y en orden: el fenómeno que empezó autopublicado en 2013, redefinió el romance en español con una honestidad nueva — cuatro amigas, Madrid, sexo sin eufemismos — y terminó en serie de Netflix en 2020.",
+        "Que una colección así tenga estante propio dice algo del criterio de la casa: acá el romance no se esconde detrás de los clásicos ni se disculpa. Se colecciona completo, como King, como Shakespeare. El díptico 'Fuimos canciones / Seremos recuerdos' está parado junto, como corresponde a un díptico."
+      ],
+      "records_note": "La única saga femenina contemporánea completa de la casa — y de las pocas colecciones en orden de lectura exacto."
+    },
+    {
+      "key": "latinoamericana",
+      "title": "La mesa rioplatense",
+      "kicker": "Quiroga, Borges, Gabo y el gaucho escondido",
+      "filter": { "type": "topic", "value": "latin-american" },
+      "centerpiece": "L7-004",
+      "highlights": ["L7-001", "L7-003", "L7-006", "R8-007", "L7-007", "L6-020"],
+      "essay": [
+        "Es la colección más chica con la densidad más alta: los cuentos completos de Quiroga en dos tomos, el Borges en colaboración (los policiales con Bioy, las antologías, los apócrifos), la edición conmemorativa de Cien años de soledad revisada por el propio Gabo, y cuatro Martín Fierro — incluyendo uno encuadernado en cuero de vaca con pelo, la edición más físicamente gaucha posible del poema.",
+        "El detalle de estantería más literario de la casa vive acá: el Martín Fierro del centenario está escondido detrás del set de Quiroga. El gaucho matrero sigue matreriando, ciento cincuenta años después, en un estante de Montevideo."
+      ],
+      "records_note": "Cuatro ediciones del Martín Fierro: ninguna biblioteca rioplatense seria tiene menos de dos."
+    },
+    {
+      "key": "juvenil",
+      "title": "La puerta de entrada",
+      "kicker": "Por donde se empieza a leer",
+      "filter": { "type": "topic", "value": "young-adult" },
+      "centerpiece": "L3-046",
+      "highlights": ["L3-049", "M5-022", "M5-023", "M5-007", "M5-009"],
+      "essay": [
+        "Toda biblioteca seria necesita su puerta de entrada, y la de esta casa son los primeros cuatro Harry Potter en español — conviviendo, por decisión de estantería inexplicable y perfecta, con la colección Shakespeare — más los John Green del estante de misterio: las ciudades de papel que existen de verdad (los cartógrafos las inventan para cazar plagios) y la Alaska que se busca.",
+        "Son pocos volúmenes pero cumplen la función más importante del catálogo: ser el primer libro que alguien saca del estante por gusto propio. Los doce rechazos editoriales de Rowling antes del sí de Bloomsbury son el recordatorio de que las puertas de entrada también tuvieron que pelear para existir."
+      ],
+      "records_note": "La clasificación traviesa de la casa: Harry Potter archivado bajo Shakespeare, John Green bajo misterio."
+    }
+  ]
+}
