@@ -39,10 +39,12 @@ self.addEventListener('push', (event) => {
   try { data = event.data ? event.data.json() : {}; } catch (e) {}
   event.waitUntil(self.registration.showNotification(data.title || 'Bibliotequeando', {
     body: data.body || '',
-    icon: './icon-192.png',
+    // Los paths por default pueden pisarse desde el payload del push, así un
+    // cambio de ícono no exige esperar la actualización del service worker.
+    icon: data.icon || './notification-icon.png',
     // El badge Android usa solo el canal alfa: tiene que ser una silueta
     // monocroma sobre transparente, no el ícono a color (se ve un cuadrado).
-    badge: './notification-badge.png',
+    badge: data.badge || './notification-badge.png',
     tag: data.nid || 'biblioteca',            // collapses retries of the same id
     data: { url: data.url || './', nid: data.nid || '' },
   }));
