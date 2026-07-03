@@ -40,7 +40,9 @@ self.addEventListener('push', (event) => {
   event.waitUntil(self.registration.showNotification(data.title || 'Bibliotequeando', {
     body: data.body || '',
     icon: './icon-192.png',
-    badge: './icon-96.png',
+    // El badge Android usa solo el canal alfa: tiene que ser una silueta
+    // monocroma sobre transparente, no el ícono a color (se ve un cuadrado).
+    badge: './notification-badge.png',
     tag: data.nid || 'biblioteca',            // collapses retries of the same id
     data: { url: data.url || './', nid: data.nid || '' },
   }));
