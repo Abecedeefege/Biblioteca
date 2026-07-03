@@ -1,0 +1,7 @@
+{
+  "_comment": "Feedback del dueño (reacciones, respuestas, dwell, clicks). Lo escribe SOLO el browser vía engage.js; el agente /engagement lo lee cada mañana y compacta eventos viejos en daily_summary.",
+  "device_last": null,
+  "daily_summary": {},
+  "events": [],
+  "_updated_at": null
+}
