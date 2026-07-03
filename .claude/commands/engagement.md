@@ -137,6 +137,7 @@ Mobile-first (se lee en un teléfono).
 <!DOCTYPE html><html lang="es-UY"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="../icon-192.png">
   <title>📱 Nombre de la experiencia</title>
   <style>/* TODO inline. Mobile-first. Paleta de arriba. */</style>
 </head><body>
@@ -174,8 +175,8 @@ Mobile-first (se lee en un teléfono).
 
   <!-- 5) Bloque de decisión de permanencia -->
   <div class="engage-actions">
-    <button onclick="engageApprove('<YYYY-MM-DD>-<slug>')">✅ Aprobar esta mejora</button>
-    <button onclick="engageRejected('<YYYY-MM-DD>-<slug>')">✕ No me interesa</button>
+    <button onclick="engageApprove('<YYYY-MM-DD>-<slug>', this)">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('<YYYY-MM-DD>-<slug>', this)">✕ No me interesa</button>
   </div>
 
   <script src="engage.js"></script>

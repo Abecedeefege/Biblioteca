@@ -180,8 +180,9 @@
 
   /* ---------- API pública para las páginas de experiencia ---------- */
   function mark(btn, txt) {
-    if (!btn) return;
-    var box = btn.parentElement && btn.parentElement.querySelector('.react-hint, .q-hint');
+    // En iOS Safari un tap no enfoca el <button>: si llega body/otro nodo, no marcar nada.
+    if (!btn || btn.tagName !== 'BUTTON' || !btn.parentElement) return;
+    var box = btn.parentElement.querySelector('.react-hint, .q-hint');
     Array.prototype.forEach.call(btn.parentElement ? btn.parentElement.querySelectorAll('button') : [],
       function (b) { b.disabled = true; b.style.opacity = (b === btn) ? '1' : '.35'; });
     if (box) box.textContent = txt || '✓ anotado';
@@ -194,14 +195,14 @@
     record('answer', { qid: qid, value: value });
     mark(btn, '✓ anotado');
   };
-  window.engageApprove = function (proposalId) {
+  window.engageApprove = function (proposalId, btn) {
     record('proposal_approved', { proposal: proposalId });
-    mark(document.activeElement, '✓');
+    mark(btn || document.activeElement, '✓');
     setBadge('✅ Anotado: esta experiencia se queda', false);
   };
-  window.engageRejected = function (proposalId) {
+  window.engageRejected = function (proposalId, btn) {
     record('proposal_rejected', { proposal: proposalId });
-    mark(document.activeElement, '✓');
+    mark(btn || document.activeElement, '✓');
     setBadge('Anotado: no se repite', false);
   };
 

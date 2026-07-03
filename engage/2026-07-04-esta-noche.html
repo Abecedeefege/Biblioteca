@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
 <title>🌙 ¿Qué leés esta noche?</title>
 <style>
   :root {
@@ -122,8 +123,8 @@
     <div class="engage-actions">
       Esta página es un experimento: si no la aprobás, mañana desaparece.
       <br>
-      <button onclick="engageApprove('2026-07-04-esta-noche')">✅ Aprobar esta mejora</button>
-      <button class="no" onclick="engageRejected('2026-07-04-esta-noche')">✕ No me interesa</button>
+      <button onclick="engageApprove('2026-07-04-esta-noche', this)">✅ Aprobar esta mejora</button>
+      <button class="no" onclick="engageRejected('2026-07-04-esta-noche', this)">✕ No me interesa</button>
     </div>
   </main>
 
