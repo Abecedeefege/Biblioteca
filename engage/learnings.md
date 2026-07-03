@@ -17,10 +17,9 @@ Priors heredados de un sistema gemelo en producción (jardín), a validar acá:
   reacción sino `leer-esta-noche:* = si` — compromiso físico con un libro.
 
 ## 📊 Estado del sistema (2026-07-03, bootstrap manual)
-- Suscripción push: **none** — el dueño aún no corrió `engage/setup.html`.
-  Los pushes de mañana quedarán `pending` y expirarán solos si no se
-  suscribe antes. No es error.
-- Secret `VAPID_PRIVATE_KEY`: pendiente de carga por el dueño en Actions.
+- Suscripción push: **activa** desde 2026-07-03 ~17:30 (canal probado: 3
+  pruebas entregadas, íconos de notificación validados por el dueño).
+- Secret `VAPID_PRIVATE_KEY`: cargado y funcionando (envíos 201).
 - Feedback (`sync/engagement.json`): vacío; cutoff de compactación: n/a.
 - `data/enrichment.json`: 136 libros con año sembrado; `read_status` 100%
   unknown — cada respuesta `leido:*` / `leer-esta-noche:*` lo va llenando.
@@ -32,8 +31,10 @@ Priors heredados de un sistema gemelo en producción (jardín), a validar acá:
   de L3, el Quijote-mueble, los 4/7 Harry Potter, Apolant, las 100 NatGeo)
   y `2026-07-04-esta-noche` (ritual nocturno: 3 candidatos con CTA
   leer-esta-noche — Misery/Baskerville/Benavent, invierno).
-- Cola: `2026-07-04-a` 08:30 → feed; `2026-07-04-b` 20:30 → esta-noche.
-  Destinos distintos ✓, expires 23:00 ✓.
+- Cola (adelantada a pedido del dueño): `2026-07-04-a` enviada HOY 2026-07-03
+  ~17:50 → feed; `2026-07-04-b` HOY 20:30 → esta-noche. Destinos distintos ✓,
+  expires hoy 23:00 ✓. Mañana NO hay pushes encolados: la próxima corrida
+  arma su propio día.
 - Preguntas sembradas que enriquecen datos: leido: R4-001, R4-003, M5-006,
   TOP-001 · familia:R7-006 (¿Apolant es familia?).
 - Qué mirar mañana: ¿llegaron los pushes (send_log)? ¿reaction del feed?

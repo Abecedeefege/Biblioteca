@@ -1,14 +1,14 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-07-03T20:48:22.681Z",
+  "_updated_at": "2026-07-03T20:50:07Z",
   "notifications": [
     {
       "id": "2026-07-04-a",
       "title": "📱 Tus libros abrieron un feed",
       "body": "Carrie cuenta cómo la sacaron de la basura y un conspiranoico agita el estante L3. 8 posteos de tu estantería.",
       "url": "https://abecedeefege.github.io/Biblioteca/engage/2026-07-04-feed.html",
-      "send_at": "2026-07-04T08:30:00-03:00",
-      "expires_at": "2026-07-04T23:00:00-03:00",
+      "send_at": "2026-07-03T20:49:07Z",
+      "expires_at": "2026-07-03T23:00:00-03:00",
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
@@ -19,8 +19,8 @@
       "title": "🌙 ¿Qué leés esta noche?",
       "body": "Noche de invierno. Tres candidatos de tu estantería: King con nieve, Holmes con niebla o Benavent sin sustos.",
       "url": "https://abecedeefege.github.io/Biblioteca/engage/2026-07-04-esta-noche.html",
-      "send_at": "2026-07-04T20:30:00-03:00",
-      "expires_at": "2026-07-04T23:00:00-03:00",
+      "send_at": "2026-07-03T20:30:00-03:00",
+      "expires_at": "2026-07-03T23:00:00-03:00",
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
