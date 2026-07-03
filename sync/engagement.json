@@ -45,7 +45,24 @@
       "page": "2026-07-04-feed.html",
       "device": "Andy",
       "proposal": "2026-07-04-feed"
+    },
+    {
+      "id": "mr5ghhik-8djyur",
+      "type": "dwell",
+      "ts": "2026-07-03T21:39:13.772Z",
+      "page": "2026-07-04-feed.html",
+      "device": "Andy",
+      "dwell_s": 108,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mr5ghhiy-m6jdlp",
+      "type": "page_visit",
+      "ts": "2026-07-03T21:39:13.786Z",
+      "page": "2026-07-04-feed.html",
+      "device": "Andy",
+      "nid": "2026-07-04-a"
     }
   ],
-  "_updated_at": "2026-07-03T21:39:09.892Z"
+  "_updated_at": "2026-07-03T21:39:14.689Z"
 }
