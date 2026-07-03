@@ -1,0 +1,52 @@
+name: push-dispatch
+
+on:
+  schedule:
+    # RESPALDO — el cron de Actions deriva y saltea corridas; el timing real
+    # lo da el trigger on:push a la cola (encolar = despachar al instante).
+    # Ventana de envío local (UY, UTC-3 todo el año): 08:00–23:30
+    # → en UTC: 11:00–23:59 y 00:00–02:30 del día siguiente.
+    - cron: '*/30 11-23 * * *'
+    - cron: '0,30 0-2 * * *'
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - 'notifications/queue.json'
+
+concurrency:
+  group: push-dispatch
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Install web-push
+        working-directory: tools
+        run: npm install --no-audit --no-fund
+      - name: Send due notifications
+        run: node tools/send_push.js
+        env:
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+      - name: Commit queue/log updates
+        # El push usa GITHUB_TOKEN, que NO re-dispara workflows → sin loop.
+        run: |
+          if [ -n "$(git status --porcelain notifications)" ]; then
+            git config user.name "push-dispatcher"
+            git config user.email "actions@users.noreply.github.com"
+            git add notifications
+            git commit -m "push: dispatch $(date -u +%FT%TZ)"
+            for i in 1 2 3; do
+              git push origin main && break || git pull --rebase origin main
+            done
+          else
+            echo "Sin cambios."
+          fi

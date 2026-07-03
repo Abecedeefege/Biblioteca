@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>🔔 Bibliotequeando — Activar notificaciones</title>
+<style>
+  :root {
+    --papel: #f1e8d4; --tinta: #2a1f12; --bordo: #7a1f23;
+    --dorado: #b89348; --papel-claro: #faf5e8; --madera: #4a3524;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 0 4rem;
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.55;
+  }
+  .back {
+    display: block; padding: .8rem 1rem;
+    background: var(--madera); color: var(--papel);
+    text-decoration: none; font-size: .95rem;
+  }
+  .back:hover { color: var(--dorado); }
+  main { max-width: 40rem; margin: 0 auto; padding: 1.2rem 1rem; }
+  h1 { color: var(--bordo); font-size: 1.5rem; margin: .4rem 0 .2rem; }
+  .sub { font-style: italic; opacity: .75; margin: 0 0 1.2rem; }
+  section {
+    background: var(--papel-claro); border: 1px solid var(--dorado);
+    border-radius: 6px; padding: 1rem; margin: 0 0 1.1rem;
+  }
+  h2 { font-size: 1.05rem; color: var(--bordo); margin: 0 0 .5rem; }
+  p { margin: .4rem 0; font-size: .95rem; }
+  label { display: block; font-size: .85rem; margin: .6rem 0 .15rem; opacity: .8; }
+  input {
+    width: 100%; padding: .55rem .6rem; font-size: 1rem;
+    border: 1px solid var(--madera); border-radius: 4px;
+    background: #fff; font-family: inherit;
+  }
+  button {
+    display: inline-block; margin: .6rem .4rem 0 0; padding: .65rem 1rem;
+    font-family: inherit; font-size: .98rem; cursor: pointer;
+    background: var(--bordo); color: var(--papel);
+    border: none; border-radius: 4px;
+  }
+  button.sec { background: var(--madera); }
+  button:disabled { opacity: .5; cursor: default; }
+  .hint { font-size: .85rem; opacity: .8; }
+  .status { font-size: .9rem; margin-top: .5rem; white-space: pre-line; }
+  .ok { color: #2d6a2d; } .err { color: var(--bordo); }
+  code { background: #e8dcc0; padding: .05rem .3rem; border-radius: 3px; font-size: .85em; }
+  ol { padding-left: 1.2rem; font-size: .9rem; }
+</style>
+</head>
+<body>
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <main>
+    <h1>🔔 Notificaciones diarias</h1>
+    <p class="sub">Configuración por única vez — después, la biblioteca te escribe sola.</p>
+
+    <section>
+      <h2>1 · Token de GitHub (se guarda solo en este teléfono)</h2>
+      <p class="hint">El token permite que este dispositivo guarde su suscripción y tus
+      reacciones en el repo. Vive únicamente en el <em>localStorage</em> de este
+      navegador; jamás se commitea.</p>
+      <ol>
+        <li>GitHub → Settings → Developer settings → <strong>Fine-grained tokens</strong> → Generate new token</li>
+        <li>Repository access: <strong>Only select repositories → Abecedeefege/Biblioteca</strong></li>
+        <li>Permissions → Repository permissions → <strong>Contents: Read and write</strong>. Nada más.</li>
+      </ol>
+      <label for="pat">Token (empieza con <code>github_pat_…</code>)</label>
+      <input id="pat" type="password" autocomplete="off" placeholder="github_pat_…">
+      <label for="dev">Nombre de este dispositivo</label>
+      <input id="dev" type="text" placeholder="teléfono de Andrés">
+      <button onclick="savePat()">Guardar en este dispositivo</button>
+      <div class="status" id="pat-status"></div>
+    </section>
+
+    <section>
+      <h2>2 · Activar las notificaciones</h2>
+      <p class="hint">Pide permiso al navegador, suscribe este dispositivo y guarda la
+      suscripción en el repo para que el dispatcher sepa a dónde mandar.</p>
+      <button onclick="enablePush()">Activar notificaciones</button>
+      <div class="status" id="push-status"></div>
+    </section>
+
+    <section>
+      <h2>3 · Probar de punta a punta</h2>
+      <p class="hint">Encola un push con fecha en el pasado: el workflow se dispara al
+      instante y en menos de un minuto debería sonar el teléfono, incluso con la app
+      cerrada. Requiere el secret <code>VAPID_PRIVATE_KEY</code> ya cargado en Actions.</p>
+      <button class="sec" onclick="sendTestPush()">Mandar push de prueba</button>
+      <div class="status" id="test-status"></div>
+    </section>
+
+    <section>
+      <h2>Estado</h2>
+      <div class="status" id="global-status">Cargando…</div>
+      <button class="sec" onclick="refreshStatus()">Actualizar</button>
+    </section>
+  </main>
+
+<script>
+const REPO   = 'Abecedeefege/Biblioteca';
+const BRANCH = 'main';
+const SITE   = 'https://abecedeefege.github.io/Biblioteca/';
+const K_PAT  = 'biblioteca_gh_pat';
+const K_DEV  = 'biblioteca_device_name';
+
+function $(id) { return document.getElementById(id); }
+function say(id, msg, cls) { const el = $(id); el.textContent = msg; el.className = 'status ' + (cls || ''); }
+
+function urlBase64ToUint8Array(b64) {
+  const pad = '='.repeat((4 - (b64.length % 4)) % 4);
+  const s = (b64 + pad).replace(/-/g, '+').replace(/_/g, '/');
+  const raw = atob(s); const arr = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
+  return arr;
+}
+
+/* ---- GitHub contents API (el PAT vive solo en localStorage) ---- */
+function ghHeaders() {
+  const token = localStorage.getItem(K_PAT);
+  if (!token) throw new Error('Falta el token — guardalo en el paso 1.');
+  return { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json' };
+}
+async function ghGetJson(path) {
+  const api = `https://api.github.com/repos/${REPO}/contents/${path}?ref=${BRANCH}&_=${Date.now()}`;
+  const r = await fetch(api, { cache: 'no-store', headers: ghHeaders() });
+  if (r.status === 404) return { obj: null, sha: null };
+  if (!r.ok) throw new Error(`GET ${path}: HTTP ${r.status}`);
+  const doc = await r.json();
+  const text = decodeURIComponent(escape(atob(doc.content.replace(/\n/g, ''))));
+  return { obj: JSON.parse(text), sha: doc.sha };
+}
+async function ghPutJson(path, obj, message, sha) {
+  const api = `https://api.github.com/repos/${REPO}/contents/${path}`;
+  const body = {
+    message, branch: BRANCH,
+    content: btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2) + '\n'))),
+  };
+  if (sha) body.sha = sha;
+  const r = await fetch(api, {
+    method: 'PUT',
+    headers: Object.assign({ 'Content-Type': 'application/json' }, ghHeaders()),
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) throw new Error(`PUT ${path}: HTTP ${r.status}`);
+}
+/* PUT con un reintento si otro actor tocó el archivo entre GET y PUT (409/422). */
+async function ghUpdateJson(path, mutate, message) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const { obj, sha } = await ghGetJson(path);
+    try { await ghPutJson(path, mutate(obj), message, sha); return; }
+    catch (e) { if (attempt === 1 || !/409|422/.test(e.message)) throw e; }
+  }
+}
+
+/* ---- Paso 1: PAT ---- */
+function savePat() {
+  try {
+    const pat = $('pat').value.trim();
+    const dev = $('dev').value.trim() || 'dispositivo-sin-nombre';
+    if (!pat) throw new Error('Pegá el token primero.');
+    localStorage.setItem(K_PAT, pat);
+    localStorage.setItem(K_DEV, dev);
+    $('pat').value = '';
+    say('pat-status', '✓ Guardado en este dispositivo (' + dev + ').', 'ok');
+    refreshStatus();
+  } catch (e) { say('pat-status', '⚠️ ' + e.message, 'err'); }
+}
+
+/* ---- Paso 2: suscripción ---- */
+async function enablePush() {
+  try {
+    say('push-status', 'Suscribiendo…');
+    if (!('serviceWorker' in navigator) || !('PushManager' in window))
+      throw new Error('Este navegador no soporta Web Push.');
+
+    const reg = await navigator.serviceWorker.register('../sw.js');
+    await navigator.serviceWorker.ready;
+
+    if ((await Notification.requestPermission()) !== 'granted')
+      throw new Error('Permiso de notificaciones denegado.');
+
+    const vapidPublic = (await (await fetch('../notifications/vapid_public.txt',
+      { cache: 'no-store' })).text()).trim();
+
+    let sub = await reg.pushManager.getSubscription();
+    if (!sub) {
+      sub = await reg.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidPublic),
+      });
+    }
+    const subJson = sub.toJSON();
+    await ghUpdateJson('notifications/subscription.json', () => ({
+      _comment: 'Suscripción Web Push del dueño. La escribe SOLO el browser (engage/setup.html vía GitHub API). El dispatcher solo la invalida si el endpoint devuelve 404/410.',
+      device: localStorage.getItem(K_DEV) || 'dispositivo-sin-nombre',
+      subscription: subJson,
+      status: 'active',
+      updated_at: new Date().toISOString(),
+      invalidated_at: null,
+      invalid_reason: null,
+    }), 'push: registrar suscripción');
+    say('push-status', '✓ Notificaciones activadas y suscripción guardada en el repo.', 'ok');
+    refreshStatus();
+  } catch (e) { say('push-status', '⚠️ ' + e.message, 'err'); }
+}
+
+/* ---- Paso 3: push de prueba (la fuente encola; encolar = despachar) ---- */
+async function sendTestPush() {
+  try {
+    say('test-status', 'Encolando push de prueba…');
+    const now = Date.now();
+    const entry = {
+      id: 'test-' + now,
+      title: '🔔 Prueba de Bibliotequeando',
+      body: 'Si leés esto, el canal funciona. Tocá para abrir tu biblioteca.',
+      url: SITE + 'index.html',
+      send_at: new Date(now - 60000).toISOString(),
+      expires_at: new Date(now + 2 * 3600000).toISOString(),
+      status: 'pending', sent_at: null, fail_reason: null,
+      created_by: 'setup.html (prueba manual)',
+    };
+    await ghUpdateJson('notifications/queue.json', (q) => {
+      q = q || { notifications: [] };
+      q.notifications = q.notifications || [];
+      q.notifications.push(entry);
+      q._updated_at = new Date().toISOString();
+      return q;
+    }, 'push: encolar prueba manual');
+    say('test-status', '✓ Encolado (' + entry.id + '). El workflow corre solo; ' +
+      'el push debería llegar en ~1 minuto. Después mirá notifications/send_log.json.', 'ok');
+  } catch (e) { say('test-status', '⚠️ ' + e.message, 'err'); }
+}
+
+/* ---- Estado ---- */
+async function refreshStatus() {
+  const lines = [];
+  lines.push(localStorage.getItem(K_PAT)
+    ? '✓ Token guardado en este dispositivo (' + (localStorage.getItem(K_DEV) || 'sin nombre') + ')'
+    : '✗ Sin token — completá el paso 1');
+  lines.push('Permiso de notificaciones: ' +
+    (('Notification' in window) ? Notification.permission : 'no soportado'));
+  try {
+    const r = await fetch('../notifications/subscription.json?_=' + Date.now(), { cache: 'no-store' });
+    if (r.ok) {
+      const s = await r.json();
+      lines.push('Suscripción en el repo: ' + (s.status || 'desconocida') +
+        (s.device ? ' (' + s.device + ')' : '') +
+        (s.invalid_reason ? ' — motivo: ' + s.invalid_reason : ''));
+      if (s.status === 'invalid') lines.push('→ El endpoint murió; tocá "Activar notificaciones" de nuevo.');
+    }
+  } catch (e) { lines.push('No pude leer subscription.json (¿deploy pendiente?)'); }
+  say('global-status', lines.join('\n'));
+}
+refreshStatus();
+</script>
+</body>
+</html>

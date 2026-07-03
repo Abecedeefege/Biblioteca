@@ -30,3 +30,31 @@ self.addEventListener('fetch', (e) => {
       .catch(() => caches.match(e.request))
   );
 });
+
+/* Web Push — receives pushes even with the app closed and deep-links on tap.
+   All paths resolve relative to this SW's location (…/Biblioteca/sw.js), so
+   the /Biblioteca/ base path on GitHub Pages is handled automatically. */
+self.addEventListener('push', (event) => {
+  let data = {};
+  try { data = event.data ? event.data.json() : {}; } catch (e) {}
+  event.waitUntil(self.registration.showNotification(data.title || 'Bibliotequeando', {
+    body: data.body || '',
+    icon: './icon-192.png',
+    badge: './icon-96.png',
+    tag: data.nid || 'biblioteca',            // collapses retries of the same id
+    data: { url: data.url || './', nid: data.nid || '' },
+  }));
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const d = event.notification.data || {};
+  let url;
+  try { url = new URL(d.url || './', self.location.href); }
+  catch (e) { url = new URL('./', self.location.href); }
+  if (d.nid) {                                // lets engage.js log the click on open
+    url.searchParams.set('nid', d.nid);
+    url.searchParams.set('src', 'push');
+  }
+  event.waitUntil(clients.openWindow(url.href));
+});

@@ -1,0 +1,4 @@
+{
+  "_comment": "Log de envíos. Lo escribe solo el dispatcher. status_code 201 = aceptada por el push service (NO garantiza entrega al teléfono).",
+  "events": []
+}

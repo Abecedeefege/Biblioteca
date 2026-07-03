@@ -1,0 +1,9 @@
+{
+  "_comment": "Suscripción Web Push del dueño. La escribe SOLO el browser (engage/setup.html vía GitHub API). El dispatcher solo la invalida si el endpoint devuelve 404/410.",
+  "device": null,
+  "subscription": null,
+  "status": "none",
+  "updated_at": null,
+  "invalidated_at": null,
+  "invalid_reason": null
+}

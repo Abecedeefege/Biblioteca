@@ -1,0 +1,5 @@
+{
+  "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
+  "_updated_at": "2026-07-03T12:00:00-03:00",
+  "notifications": []
+}
