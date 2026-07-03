@@ -37,7 +37,15 @@
       "device": "Andy",
       "qid": "2026-07-04-feed-suscripcion-diaria",
       "value": "no"
+    },
+    {
+      "id": "mr5ghdtj-b3fvok",
+      "type": "proposal_approved",
+      "ts": "2026-07-03T21:39:08.983Z",
+      "page": "2026-07-04-feed.html",
+      "device": "Andy",
+      "proposal": "2026-07-04-feed"
     }
   ],
-  "_updated_at": "2026-07-03T21:39:08.015Z"
+  "_updated_at": "2026-07-03T21:39:09.892Z"
 }
