@@ -19,7 +19,16 @@
       "page": "2026-07-04-feed.html",
       "device": "Andy",
       "nid": "2026-07-04-a"
+    },
+    {
+      "id": "mr5gh9ig-hdtptf",
+      "type": "reaction",
+      "ts": "2026-07-03T21:39:03.400Z",
+      "page": "2026-07-04-feed.html",
+      "device": "Andy",
+      "slug": "2026-07-04-feed",
+      "value": "like"
     }
   ],
-  "_updated_at": "2026-07-03T21:37:27.030Z"
+  "_updated_at": "2026-07-03T21:39:04.635Z"
 }
