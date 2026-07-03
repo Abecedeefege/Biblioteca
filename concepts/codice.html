@@ -687,5 +687,34 @@ loadAll().then(route).catch(err=>{
     <p style="max-width:52ch;margin:0 auto">${esc(err.message)}. Este concepto lee el catálogo canónico desde <code>../index.html</code>, así que hay que abrirlo servido por HTTP (GitHub Pages o <code>python3 -m http.server</code>), no como archivo local.</p>`;
 });
 </script>
+
+<!-- ====== xp-switcher: swap entre experiencias ====== -->
+<div id="xp-switch">
+  <div id="xp-menu" hidden>
+    <div class="xp-h">Experiencias</div>
+    <a class="xp-item" href="../index.html">📚 Clásica <small>el catálogo visual</small></a>
+    <a class="xp-item xp-on" href="codice.html">🏛️ Códice <small>museo interactivo</small></a>
+    <a class="xp-item" href="ateneo.html">⭐ Ateneo <small>red de lectura</small></a>
+  </div>
+  <button id="xp-btn" type="button" aria-label="Cambiar de experiencia">⇄</button>
+</div>
+<style>
+  #xp-switch{position:fixed;right:16px;bottom:16px;z-index:9999;font-family:'Inter',system-ui,sans-serif;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+  #xp-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(201,164,92,.6);background:#1d1610;color:#e4c987;font-size:19px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.45);transition:transform .15s}
+  #xp-btn:hover{transform:scale(1.08)}
+  #xp-menu{background:#1d1610;border:1px solid rgba(201,164,92,.45);border-radius:16px;padding:10px;box-shadow:0 14px 40px rgba(0,0,0,.55);min-width:230px}
+  #xp-menu .xp-h{font-size:9px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#8d7c5e;padding:4px 10px 8px}
+  #xp-menu .xp-item{display:block;padding:9px 12px;border-radius:10px;color:#eadfca;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1.25}
+  #xp-menu .xp-item small{display:block;font-weight:400;font-size:11px;color:#a3906e}
+  #xp-menu .xp-item:hover{background:rgba(201,164,92,.14)}
+  #xp-menu .xp-on{outline:1px solid rgba(201,164,92,.5);pointer-events:none}
+</style>
+<script>
+  (function(){
+    var b=document.getElementById('xp-btn'),m=document.getElementById('xp-menu');
+    b.addEventListener('click',function(e){e.stopPropagation();m.hidden=!m.hidden;});
+    document.addEventListener('click',function(e){if(!m.hidden&&!m.contains(e.target))m.hidden=true;});
+  })();
+</script>
 </body>
 </html>
