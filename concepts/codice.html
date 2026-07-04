@@ -207,6 +207,15 @@
 
   footer{border-top:1px solid var(--line);margin-top:40px;padding:34px 22px 60px;text-align:center;color:var(--muted);font-size:12px}
   footer b{color:var(--gold);font-family:var(--serif);font-size:15px}
+  .xrbox{border:1px solid var(--line);border-radius:12px;padding:14px 18px;max-width:640px;margin-bottom:26px;background:var(--panel)}
+  .xrbox-t{font-size:9.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .xr .xr-row{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:7px 0;font-size:13px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .xr .xr-row:last-of-type{border-bottom:none}
+  .xr .xr-name{font-weight:700;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink2)}
+  .xr .xr-stars{color:var(--gold2);letter-spacing:1px}
+  .xr a{color:var(--gold2);text-decoration:underline}
+  .xr .xr-none,.xr .xr-load{color:var(--muted)}
+  .xr .xr-foot{font-size:10.5px;color:var(--muted);padding-top:6px}
   .fade-in{animation:fade .35s ease}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 </style>
@@ -232,6 +241,7 @@
 </div>
 
 <main id="app" class="wrap" style="display:none"></main>
+<script src="reviews.js"></script>
 
 <div class="overlay" id="overlay">
   <button class="ov-close" id="ov-close" type="button">✕</button>
@@ -580,6 +590,7 @@ function viewBook(id){
         <p class="bp-desc">${esc(desc)}</p>
         ${dato?`<div class="marginalia"><div class="k">Marginalia — el dato</div><p>${esc(dato)}</p></div>`:''}
         <div class="meta-grid">${meta.map(m=>`<div class="meta-cell"><div class="k">${m[0]}</div><div class="v">${esc(m[1])}</div></div>`).join('')}</div>
+        <div class="xrbox"><div class="xrbox-t">La crítica de afuera</div><div id="xr-slot"></div></div>
         <div class="bp-actions">
           ${b.buy_url?`<a class="btn ghost" href="${esc(b.buy_url)}" target="_blank" rel="noopener">Conseguir otro ejemplar ↗</a>`:''}
           <a class="btn ghost" href="#/estante/${b._shelf}">Ver el estante ${b._shelf}</a>
@@ -604,6 +615,7 @@ function viewBook(id){
     </div>
   `);
 
+  if(window.ExtReviews)ExtReviews.render(b,document.getElementById('xr-slot'));
   const flip=document.getElementById('flip');
   flip.addEventListener('click',()=>{flip.style.transform='';flip.classList.toggle('flipped');});
   const zone=flip.parentElement;
@@ -688,35 +700,5 @@ loadAll().then(route).catch(err=>{
 });
 </script>
 
-<!-- ====== xp-switcher: swap entre experiencias ====== -->
-<div id="xp-switch">
-  <div id="xp-menu" hidden>
-    <div class="xp-h">Experiencias</div>
-    <a class="xp-item" href="fichero.html">🗃️ El Fichero <small>archivo de fichas · home</small></a>
-    <a class="xp-item" href="../index.html?exp=clasica">📚 Clásica <small>el catálogo visual</small></a>
-    <a class="xp-item xp-on" href="codice.html">🏛️ Códice <small>museo interactivo</small></a>
-    <a class="xp-item" href="ateneo.html">⭐ Ateneo <small>red de lectura</small></a>
-    <a class="xp-item" href="gaceta.html">🗞️ La Gaceta <small>suplemento literario</small></a>
-  </div>
-  <button id="xp-btn" type="button" aria-label="Cambiar de experiencia">⇄</button>
-</div>
-<style>
-  #xp-switch{position:fixed;right:16px;bottom:16px;z-index:9999;font-family:'Inter',system-ui,sans-serif;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-  #xp-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(201,164,92,.6);background:#1d1610;color:#e4c987;font-size:19px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.45);transition:transform .15s}
-  #xp-btn:hover{transform:scale(1.08)}
-  #xp-menu{background:#1d1610;border:1px solid rgba(201,164,92,.45);border-radius:16px;padding:10px;box-shadow:0 14px 40px rgba(0,0,0,.55);min-width:230px}
-  #xp-menu .xp-h{font-size:9px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#8d7c5e;padding:4px 10px 8px}
-  #xp-menu .xp-item{display:block;padding:9px 12px;border-radius:10px;color:#eadfca;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1.25}
-  #xp-menu .xp-item small{display:block;font-weight:400;font-size:11px;color:#a3906e}
-  #xp-menu .xp-item:hover{background:rgba(201,164,92,.14)}
-  #xp-menu .xp-on{outline:1px solid rgba(201,164,92,.5);pointer-events:none}
-</style>
-<script>
-  (function(){
-    var b=document.getElementById('xp-btn'),m=document.getElementById('xp-menu');
-    b.addEventListener('click',function(e){e.stopPropagation();m.hidden=!m.hidden;});
-    document.addEventListener('click',function(e){if(!m.hidden&&!m.contains(e.target))m.hidden=true;});
-  })();
-</script>
 </body>
 </html>
