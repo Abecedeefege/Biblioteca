@@ -8,7 +8,9 @@
 <meta name="theme-color" content="#2c1f16">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap"></noscript>
 <style>
   :root{
     --room:#241811; --wood:#5a3d27; --wood-d:#3c2818; --brass:#c9a227; --brass2:#e6c86a;
@@ -137,6 +139,34 @@
   .bookpage-nav a:hover{color:var(--brass2)}
   footer{padding:26px 18px 70px;text-align:center;font-family:var(--sans);font-size:11px;color:#8a785f}
   footer b{color:var(--brass2);font-family:var(--type);font-size:14px;letter-spacing:2px;text-transform:uppercase}
+  /* ================= intro: la linterna ================= */
+  #intro{position:fixed;inset:0;z-index:10000;background:#000;overflow:hidden;cursor:pointer;
+    transition:opacity .6s ease}
+  #intro.out{opacity:0;pointer-events:none}
+  #intro .in-photo{position:absolute;inset:0;background-repeat:no-repeat;
+    background-size:100% auto;background-position:center center;
+    -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+  #intro .in-glow{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen}
+  #intro .in-vign{position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.55) 100%)}
+  #intro .in-logo{position:absolute;inset:0;background:#f1e8d4;opacity:0;
+    transition:opacity .9s ease;display:flex;align-items:center;justify-content:center}
+  #intro .in-logo.on{opacity:1}
+  #intro .in-logo-inner{text-align:center;transform:scale(1.5);opacity:0;
+    transition:transform 1s cubic-bezier(.22,1,.36,1),opacity .8s ease}
+  #intro .in-logo.on .in-logo-inner{transform:scale(1);opacity:1}
+  #intro .in-logo svg{width:min(200px,38vmin);height:auto;display:block;margin:0 auto}
+  #intro .in-title{font-family:var(--type);color:#3a2a1a;font-size:clamp(20px,4.5vmin,30px);
+    letter-spacing:4px;text-transform:uppercase;margin-top:18px}
+  #intro .in-title small{display:block;font-family:var(--sans);font-size:9px;font-weight:800;
+    letter-spacing:3.5px;color:#8a6f4d;margin-top:8px}
+  #intro .in-skip{position:absolute;right:18px;bottom:calc(16px + env(safe-area-inset-bottom));
+    background:rgba(0,0,0,.45);border:1px solid rgba(244,234,208,.35);color:rgba(244,234,208,.75);
+    border-radius:99px;padding:8px 16px;font-family:var(--sans);font-size:10px;font-weight:800;
+    letter-spacing:2px;text-transform:uppercase;z-index:3}
+  #intro .in-skip:hover{color:#f4ead0;border-color:#f4ead0}
+  @media (prefers-reduced-motion: reduce){#intro{display:none}}
+
   .ficha-wrap{max-width:760px;margin:22px auto 8px}
   .authorcard{margin-top:16px;transform:rotate(.8deg)}
   .xrcard{margin-top:16px;transform:rotate(-.5deg)}
@@ -149,6 +179,159 @@
 </style>
 </head>
 <body>
+
+<!-- ================= intro: sala a oscuras + linterna sobre la biblioteca real ================= -->
+<div id="intro" hidden>
+  <div class="in-photo" id="in-photo"></div>
+  <div class="in-glow" id="in-glow"></div>
+  <div class="in-vign"></div>
+  <div class="in-logo" id="in-logo">
+    <div class="in-logo-inner">
+      <svg viewBox="96 96 320 334" aria-hidden="true">
+        <rect x="128" y="138" width="80" height="272" fill="#7a1f23"/>
+        <rect x="128" y="188" width="80" height="14" fill="#b89348"/>
+        <rect x="128" y="380" width="80" height="3" fill="#b89348" opacity=".55"/>
+        <rect x="208" y="116" width="96" height="294" fill="#2a1f12"/>
+        <rect x="208" y="170" width="96" height="14" fill="#b89348"/>
+        <rect x="208" y="380" width="96" height="3" fill="#b89348" opacity=".55"/>
+        <rect x="304" y="156" width="80" height="254" fill="#7a1f23"/>
+        <rect x="304" y="206" width="80" height="14" fill="#b89348"/>
+        <rect x="304" y="380" width="80" height="3" fill="#b89348" opacity=".55"/>
+        <rect x="100" y="410" width="312" height="10" fill="#2a1f12"/>
+      </svg>
+      <div class="in-title">Bibliotequeando<small>El Fichero · archivo de la casa</small></div>
+    </div>
+  </div>
+  <button class="in-skip" type="button">Saltar →</button>
+</div>
+<script>
+(function(){
+  'use strict';
+  /* La intro corre solo en la home (sin deep-link), una vez por sesión,
+     y nunca con prefers-reduced-motion. La foto de la biblioteca sale del
+     catálogo canónico: loadAll() la entrega vía window.__introHero(). */
+  const intro=document.getElementById('intro');
+  const wantsHome=!location.hash||location.hash==='#/'||location.hash==='#';
+  const seen=(()=>{try{return sessionStorage.getItem('fichero-intro')==='1'}catch(e){return false}})();
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!wantsHome||seen||reduced){window.__introHero=function(){};return;}
+
+  intro.hidden=false;
+  document.documentElement.style.overflow='hidden';
+  let done=false,rafId=0;
+  function finish(){
+    if(done)return;done=true;
+    cancelAnimationFrame(rafId);
+    try{sessionStorage.setItem('fichero-intro','1')}catch(e){}
+    intro.classList.add('out');
+    document.documentElement.style.overflow='';
+    setTimeout(()=>intro.remove(),700);
+  }
+  intro.addEventListener('click',finish);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')finish()});
+  const failSafe=setTimeout(finish,15000);          /* pase lo que pase, la home aparece */
+
+  const photoEl=document.getElementById('in-photo');
+  const glowEl=document.getElementById('in-glow');
+  const logoEl=document.getElementById('in-logo');
+  const AR=1355/1800;                               /* alto/ancho de la foto */
+
+  /* puntos de interés reales de la foto, en % (x,y sobre la imagen):
+     tazas LED → Sagan/Cosmos → Funkos del centro → King lomo blanco →
+     NatGeo amarillo → lomos antiguos del centro (donde nace el logo) */
+  const TOUR=[[50,13],[22,56],[48,37],[72,46],[78,64]];
+  const FINAL=[48,79];
+
+  function geom(){
+    const vw=innerWidth,vh=innerHeight,ih=vw*AR,top=(vh-ih)/2;
+    return {vw,vh,ih,top};
+  }
+  function pt(p){const g=geom();return [p[0]/100*g.vw, g.top+p[1]/100*g.ih];}
+  function setTorch(x,y,r,on){
+    const m=`radial-gradient(circle ${r}px at ${x}px ${y}px, rgba(0,0,0,${on?1:0}) 55%, rgba(0,0,0,0) 100%)`;
+    photoEl.style.webkitMaskImage=m;photoEl.style.maskImage=m;
+    glowEl.style.background=on?`radial-gradient(circle ${r*1.25}px at ${x}px ${y}px, rgba(255,214,140,.20), rgba(255,214,140,.05) 55%, transparent 75%)`:'none';
+  }
+  const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+
+  /* mientras baja la foto: una lucecita tenue vaga por la oscuridad */
+  let heroStarted=false;
+  (function preLoop(){
+    if(done||heroStarted)return;
+    const ms=performance.now()/1000;
+    const x=innerWidth*(0.5+Math.sin(ms*0.7)*0.25);
+    const y=innerHeight*(0.45+Math.cos(ms*0.53)*0.2);
+    const r=Math.min(innerWidth,innerHeight)*0.16;
+    glowEl.style.background=`radial-gradient(circle ${r}px at ${x}px ${y}px, rgba(255,214,140,.07), transparent 70%)`;
+    requestAnimationFrame(preLoop);
+  })();
+
+  window.__introHero=function(src){
+    if(done||heroStarted)return;
+    heroStarted=true;
+    if(!src){finish();return;}
+    photoEl.style.backgroundImage=`url("${src}")`;
+    const R=()=>Math.min(innerWidth,innerHeight);
+    /* guion: [desde_ms, hasta_ms, handler(t 0..1)] */
+    let steps=[];
+    /* 1. encendido con parpadeo sobre las tazas */
+    const flick=[0,90,140,210,260,340];
+    steps.push([0,700,t=>{
+      const [x,y]=pt(TOUR[0]);const ms=t*700;
+      const on=flick.filter(f=>ms>=f).length%2===1||ms>=340;
+      setTorch(x,y,R()*0.28,on);
+    }]);
+    /* 2. recorrida por la biblioteca */
+    const LEG=1050;
+    for(let i=0;i<TOUR.length-1;i++){
+      const a=TOUR[i],b=TOUR[i+1],start=700+i*LEG;
+      steps.push([start,start+LEG,t=>{
+        const e=ease(t);
+        const p=[a[0]+(b[0]-a[0])*e, a[1]+(b[1]-a[1])*e];
+        const [x,y]=pt(p);
+        const wob=Math.sin(t*14)*4;
+        setTorch(x+wob,y+Math.cos(t*11)*4,R()*(0.28+Math.sin(t*Math.PI)*0.03),true);
+      }]);
+    }
+    /* 3. converger y cerrarse sobre los lomos antiguos */
+    const cStart=700+(TOUR.length-1)*LEG;
+    const from=TOUR[TOUR.length-1];
+    steps.push([cStart,cStart+1100,t=>{
+      const e=ease(t);
+      const p=[from[0]+(FINAL[0]-from[0])*e, from[1]+(FINAL[1]-from[1])*e];
+      const [x,y]=pt(p);
+      setTorch(x,y,R()*(0.28-0.17*e),true);
+    }]);
+    /* 4. los lomos se vuelven el logo sobre el fondo crema */
+    const lStart=cStart+1250;
+    let logoShown=false;
+    steps.push([lStart,lStart+100,()=>{
+      if(!logoShown){
+        logoShown=true;logoEl.classList.add('on');
+        glowEl.style.transition='opacity .5s ease';glowEl.style.opacity='0';
+      }
+    }]);
+    const end=lStart+2200;
+
+    /* reloj virtual: si el hilo se congela (el parseo del catálogo sigue
+       de fondo), la coreografía se pausa en vez de saltearse fases */
+    let vt=0,last=null;
+    window.__introVT=()=>vt;
+    function frame(now){
+      if(done)return;
+      if(last==null)last=now;
+      vt+=Math.min(now-last,50);last=now;
+      const ms=vt;
+      for(const [a,b,fn] of steps){
+        if(ms>=a&&ms<=b+40)fn(Math.min(1,(ms-a)/Math.max(1,b-a)));
+      }
+      if(ms>=end){clearTimeout(failSafe);finish();return;}
+      rafId=requestAnimationFrame(frame);
+    }
+    rafId=requestAnimationFrame(frame);
+  };
+})();
+</script>
 
 <div class="plaque-row"><div class="plaque">
   <div class="s">Bibliotequeando · Concepto IV</div>
@@ -180,7 +363,27 @@ const TOPIC_LABEL=t=>(ED.topics[t]&&ED.topics[t].label)||t;
 async function loadAll(){
   const res=await fetch('../index.html');
   if(!res.ok)throw new Error('No pude leer index.html');
-  const html=await res.text();
+  /* streaming: la foto grande (para la intro) vive en el primer ~20% del
+     archivo — se entrega apenas llega, sin esperar los 5MB completos */
+  const HERO_RE=/id="bookcase">\s*<img src="(data:image\/jpeg;base64,[^"]+)"/;
+  let html='',heroSent=false;
+  const tryHero=final=>{
+    if(heroSent||!window.__introHero)return;
+    const hm=HERO_RE.exec(html);
+    if(hm){heroSent=true;window.__introHero(hm[1]);}
+    else if(final){heroSent=true;window.__introHero(null);}
+  };
+  if(res.body&&window.TextDecoder){
+    const rd=res.body.getReader(),dec=new TextDecoder();
+    for(;;){
+      const {done,value}=await rd.read();
+      if(value){html+=dec.decode(value,{stream:true});tryHero(false);}
+      if(done){html+=dec.decode();break;}
+    }
+  }else{
+    html=await res.text();
+  }
+  tryHero(true);
   CAT=JSON.parse(html.match(/<script id="inline-catalog"[^>]*>([\s\S]*?)<\/script>/)[1]);
   const pm=html.match(/<script id="inline-photos">window\.PHOTOS\s*=\s*([\s\S]*?)<\/script>/);
   if(pm){try{PHOTOS=JSON.parse(pm[1].trim().replace(/;\s*$/,''))}catch(e){}}
@@ -478,6 +681,7 @@ function route(){
 }
 window.addEventListener('hashchange',route);
 loadAll().then(route).catch(err=>{
+  if(window.__introHero)window.__introHero(null);
   document.getElementById('status').innerHTML=`<h2>El mueble está trabado</h2>
     <p style="max-width:52ch;margin:0 auto">${esc(err.message)}. El Fichero lee el catálogo desde <code>../index.html</code>: hay que abrirlo servido por HTTP (GitHub Pages o <code>python3 -m http.server</code>).</p>`;
 });
