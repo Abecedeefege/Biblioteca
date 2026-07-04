@@ -139,6 +139,13 @@
   footer b{color:var(--brass2);font-family:var(--type);font-size:14px;letter-spacing:2px;text-transform:uppercase}
   .ficha-wrap{max-width:760px;margin:22px auto 8px}
   .authorcard{margin-top:16px;transform:rotate(.8deg)}
+  .xrcard{margin-top:16px;transform:rotate(-.5deg)}
+  .xr .xr-row{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:6px 0;font-size:13px;border-bottom:1px dotted rgba(92,79,62,.5);flex-wrap:wrap}
+  .xr .xr-name{font-family:var(--sans);font-weight:800;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-soft)}
+  .xr .xr-stars{color:var(--red);letter-spacing:2px}
+  .xr a{color:var(--blue);border-bottom:1px dashed var(--blue)}
+  .xr .xr-none,.xr .xr-load{color:var(--ink-soft)}
+  .xr .xr-foot{font-family:var(--sans);font-size:9.5px;color:var(--ink-soft);padding-top:8px;letter-spacing:.3px}
 </style>
 </head>
 <body>
@@ -156,10 +163,12 @@
 
 <div id="status"><h2>Abriendo el mueble…</h2><p>Ordenando 400 fichas a máquina.</p></div>
 <main id="app" class="wrap" style="display:none"></main>
+<script src="reviews.js"></script>
 
 <footer>
   <b>El Fichero</b><br>
-  Registros mecanografiados sobre el catálogo canónico de <a href="../index.html" style="text-decoration:underline">index.html</a> · sellos guardados en este dispositivo.
+  Registros mecanografiados sobre el catálogo canónico · sellos guardados en este dispositivo.<br>
+  <a href="../index.html?exp=clasica" style="text-decoration:underline">catálogo clásico</a> · <a href="index.html" style="text-decoration:underline">laboratorio de conceptos</a>
 </footer>
 
 <script>
@@ -390,6 +399,12 @@ function viewFicha(id){
       </div>
 
       ${b._ed&&b._ed.dato?`<div class="note"><b>Nota abrochada por el archivista</b>${esc(b._ed.dato)}</div>`:''}
+      <div class="card xrcard">
+        <span class="callnum">EXT/${esc(b.id)}</span>
+        <h3 style="font-size:14px">Circulación externa — la crítica de afuera</h3>
+        <div id="xr-slot" style="margin-top:8px"></div>
+        <div class="holes"></div>
+      </div>
       ${bio?`<div class="card authorcard">
         <span class="callnum">AUT/${esc((b.author_canonical||'').toUpperCase().replace(/[^A-Z]/g,'').slice(0,10))}</span>
         <h3 style="font-size:14px">Ficha de autor — ${esc(b.author_canonical)}</h3>
@@ -411,6 +426,7 @@ function viewFicha(id){
     saveSeals();
     viewFicha(b.id);
   }));
+  if(window.ExtReviews)ExtReviews.render(b,document.getElementById('xr-slot'));
 }
 
 /* ================= índice general ================= */
@@ -467,35 +483,5 @@ loadAll().then(route).catch(err=>{
 });
 </script>
 
-<!-- ====== xp-switcher: swap entre experiencias ====== -->
-<div id="xp-switch">
-  <div id="xp-menu" hidden>
-    <div class="xp-h">Experiencias</div>
-    <a class="xp-item xp-on" href="fichero.html">🗃️ El Fichero <small>archivo de fichas · home</small></a>
-    <a class="xp-item" href="../index.html?exp=clasica">📚 Clásica <small>el catálogo visual</small></a>
-    <a class="xp-item" href="codice.html">🏛️ Códice <small>museo interactivo</small></a>
-    <a class="xp-item" href="ateneo.html">⭐ Ateneo <small>red de lectura</small></a>
-    <a class="xp-item" href="gaceta.html">🗞️ La Gaceta <small>suplemento literario</small></a>
-  </div>
-  <button id="xp-btn" type="button" aria-label="Cambiar de experiencia">⇄</button>
-</div>
-<style>
-  #xp-switch{position:fixed;right:16px;bottom:16px;z-index:9999;font-family:'Inter',system-ui,sans-serif;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-  #xp-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(201,162,39,.6);background:#1d1610;color:#e4c987;font-size:19px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.45);transition:transform .15s}
-  #xp-btn:hover{transform:scale(1.08)}
-  #xp-menu{background:#1d1610;border:1px solid rgba(201,164,92,.45);border-radius:16px;padding:10px;box-shadow:0 14px 40px rgba(0,0,0,.55);min-width:230px}
-  #xp-menu .xp-h{font-size:9px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#8d7c5e;padding:4px 10px 8px}
-  #xp-menu .xp-item{display:block;padding:9px 12px;border-radius:10px;color:#eadfca;text-decoration:none;font-size:13.5px;font-weight:600;line-height:1.25}
-  #xp-menu .xp-item small{display:block;font-weight:400;font-size:11px;color:#a3906e}
-  #xp-menu .xp-item:hover{background:rgba(201,164,92,.14)}
-  #xp-menu .xp-on{outline:1px solid rgba(201,164,92,.5);pointer-events:none}
-</style>
-<script>
-  (function(){
-    var b=document.getElementById('xp-btn'),m=document.getElementById('xp-menu');
-    b.addEventListener('click',function(e){e.stopPropagation();m.hidden=!m.hidden;});
-    document.addEventListener('click',function(e){if(!m.hidden&&!m.contains(e.target))m.hidden=true;});
-  })();
-</script>
 </body>
 </html>
