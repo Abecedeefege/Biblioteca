@@ -88,7 +88,16 @@
       "page": "2026-07-04-esta-noche.html",
       "device": "Andy",
       "nid": "2026-07-04-b"
+    },
+    {
+      "id": "mr5q1b2w-nl1bbf",
+      "type": "answer",
+      "ts": "2026-07-04T02:06:35.096Z",
+      "page": "2026-07-04-esta-noche.html",
+      "device": "Andy",
+      "qid": "leer-esta-noche:R4-005",
+      "value": "ya_leido"
     }
   ],
-  "_updated_at": "2026-07-04T02:06:15.635Z"
+  "_updated_at": "2026-07-04T02:06:36.362Z"
 }
