@@ -133,7 +133,15 @@
       "device": "Andy",
       "qid": "2026-07-04-esta-noche-suscripcion-diaria",
       "value": "si"
+    },
+    {
+      "id": "mr5q1m0x-p0pnc6",
+      "type": "proposal_approved",
+      "ts": "2026-07-04T02:06:49.281Z",
+      "page": "2026-07-04-esta-noche.html",
+      "device": "Andy",
+      "proposal": "2026-07-04-esta-noche"
     }
   ],
-  "_updated_at": "2026-07-04T02:06:48.040Z"
+  "_updated_at": "2026-07-04T02:06:50.335Z"
 }
