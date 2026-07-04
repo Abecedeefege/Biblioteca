@@ -62,7 +62,33 @@
       "page": "2026-07-04-feed.html",
       "device": "Andy",
       "nid": "2026-07-04-a"
+    },
+    {
+      "id": "mr5ghkxt-8fq48e",
+      "type": "dwell",
+      "ts": "2026-07-03T21:39:18.209Z",
+      "page": "2026-07-04-feed.html",
+      "device": "Andy",
+      "dwell_s": 4,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mr5q0v9i-fnqi3b",
+      "type": "notification_clicked",
+      "ts": "2026-07-04T02:06:14.598Z",
+      "page": "2026-07-04-esta-noche.html",
+      "device": "Andy",
+      "nid": "2026-07-04-b",
+      "src": "push"
+    },
+    {
+      "id": "mr5q0v9m-vi6d8a",
+      "type": "page_visit",
+      "ts": "2026-07-04T02:06:14.602Z",
+      "page": "2026-07-04-esta-noche.html",
+      "device": "Andy",
+      "nid": "2026-07-04-b"
     }
   ],
-  "_updated_at": "2026-07-03T21:39:14.689Z"
+  "_updated_at": "2026-07-04T02:06:15.635Z"
 }
