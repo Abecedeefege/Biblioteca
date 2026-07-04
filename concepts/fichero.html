@@ -181,7 +181,8 @@
 <body>
 
 <!-- ================= intro: sala a oscuras + linterna sobre la biblioteca real ================= -->
-<div id="intro" hidden>
+<noscript><style>#intro{display:none}</style></noscript>
+<div id="intro">
   <div class="in-photo" id="in-photo"></div>
   <div class="in-glow" id="in-glow"></div>
   <div class="in-vign"></div>
@@ -214,15 +215,18 @@
   const wantsHome=!location.hash||location.hash==='#/'||location.hash==='#';
   const seen=(()=>{try{return sessionStorage.getItem('fichero-intro')==='1'}catch(e){return false}})();
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!wantsHome||seen||reduced){window.__introHero=function(){};return;}
+  if(!wantsHome||seen||reduced){intro.hidden=true;window.__introHero=function(){};return;}
 
-  intro.hidden=false;
   document.documentElement.style.overflow='hidden';
+  var themeMeta=document.querySelector('meta[name="theme-color"]');
+  var themePrev=themeMeta?themeMeta.content:null;
+  if(themeMeta)themeMeta.content='#000000';
   let done=false,rafId=0;
   function finish(){
     if(done)return;done=true;
     cancelAnimationFrame(rafId);
     try{sessionStorage.setItem('fichero-intro','1')}catch(e){}
+    if(themeMeta&&themePrev)themeMeta.content=themePrev;
     intro.classList.add('out');
     document.documentElement.style.overflow='';
     setTimeout(()=>intro.remove(),700);
