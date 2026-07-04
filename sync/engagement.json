@@ -124,7 +124,16 @@
       "device": "Andy",
       "slug": "2026-07-04-esta-noche",
       "value": "love"
+    },
+    {
+      "id": "mr5q1kb3-yln8g1",
+      "type": "answer",
+      "ts": "2026-07-04T02:06:47.055Z",
+      "page": "2026-07-04-esta-noche.html",
+      "device": "Andy",
+      "qid": "2026-07-04-esta-noche-suscripcion-diaria",
+      "value": "si"
     }
   ],
-  "_updated_at": "2026-07-04T02:06:44.464Z"
+  "_updated_at": "2026-07-04T02:06:48.040Z"
 }
