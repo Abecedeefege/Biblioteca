@@ -85,6 +85,30 @@
       "sent_at": "2026-07-15T21:13:30.642Z",
       "fail_reason": null,
       "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-16-rec",
+      "title": "🌌 Tu estante de cosmos murió en 1988",
+      "body": "Rovelli lo revive: siete lecciones de física en 97 páginas que se leen como poesía. Tu Sagan aprobaría.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-16-rovelli-siete-lecciones.html",
+      "send_at": "2026-07-16T12:30:00-03:00",
+      "expires_at": "2026-07-16T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-17-rec",
+      "title": "🕵️ Hay un infiltrado entre tus policiales",
+      "body": "Expediente M5-029: tu libro de la felicidad vive escondido entre dos Christie y tres Sherlock. Hoy lo rescatamos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-17-bucay-camino-felicidad.html",
+      "send_at": "2026-07-17T12:30:00-03:00",
+      "expires_at": "2026-07-17T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
     }
   ]
 }

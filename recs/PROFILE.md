@@ -89,14 +89,21 @@ con datos). Push diario único a las ~12:30 -03:00.
 ## 📊 Historial de señales (números, no vibes)
 - Todo es PRIOR todavía — cero feedback medido.
 - 2026-07-15 · `2026-07-15-frankl-sentido` · nuevo · positividad/
-  espiritualidad/autosuperación · fundacional (armada en el bootstrap,
-  push `2026-07-15-rec` sujeto a merge del día). Sin datos aún.
+  espiritualidad · push enviado 18:13 (201). Sin datos aún.
+- 2026-07-16 · `2026-07-16-rovelli-siete-lecciones` · nuevo · astronomía
+  moderna · PRE-ARMADA (regla "día pre-armado" del comando: no crear otra).
+- 2026-07-17 · `2026-07-17-bucay-camino-felicidad` · redescubrimiento
+  (M5-029) · PRE-ARMADA. Mezcla de los 3 primeros días: 2 nuevos + 1
+  redescubrimiento ✓.
 
-## 🔭 Qué mirar mañana
-- ¿Salió el push? (`send_log.json`) ¿Click, dwell, veredicto de Frankl?
-- `rec-via:*` (obra/amor/actitud) da el "modo" del lector — usarlo para
-  elegir el ángulo del próximo libro.
-- Apuesta 2 lista: Rovelli (*Siete breves lecciones*) — astronomía moderna,
-  corta y poética; o un redescubrimiento si el veredicto de Frankl fue frío.
-- Si el push de hoy expiró sin enviarse (merge tardío), NO re-encolar a
-  Frankl: la página queda en el archivo y mañana arranca fresco.
+## 🔭 Qué mirar en las próximas corridas
+- 16 y 17/07 son días PRE-ARMADOS: solo procesar feedback y verificar que
+  el push del día esté `pending` en la cola. La primera elección libre es
+  el 2026-07-18.
+- Señales por interpretar: veredicto de Frankl, `rec-via:*` (el "modo" del
+  lector), `rec-leccion:*` (qué física lo tienta), `rec-camino:*` y
+  `rec-tomo1:*=si` (si pide el tomo 1 de Bucay → *El Camino de la
+  Autodependencia* sube al tope del banco de nuevos).
+- Para el 18/07: si Frankl/Rovelli midieron bien → seguir vetas fuertes
+  (estoicismo: *Meditaciones* o Housel). Si el redescubrimiento ganó →
+  subir su proporción en la mezcla.

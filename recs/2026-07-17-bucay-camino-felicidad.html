@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🕵️ Expediente M5-029 · Bibliotequeando te lo recomienda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kraft:#E7D9BB;
+  --kraft2:#DCCBA5;
+  --tinta:#2B2118;
+  --tinta-suave:#5C4E3D;
+  --rojo:#A33B2E;
+  --sello:#8E3324;
+  --linea:rgba(43,33,24,.2);
+  --mono:'Special Elite','Courier New',monospace;
+  --serif:'Spectral',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--kraft);color:var(--tinta);font-family:var(--serif);
+  font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.68;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(43,33,24,.045) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+::selection{background:var(--rojo);color:var(--kraft)}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--rojo);outline-offset:3px;border-radius:4px}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(43,33,24,.1)}
+.progreso i{display:block;height:100%;width:0;background:var(--rojo)}
+
+.back{
+  position:absolute;top:14px;left:14px;z-index:50;color:var(--tinta-suave);text-decoration:none;
+  font-family:var(--mono);font-size:.78rem;padding:.35rem .7rem;border:1px solid var(--linea);
+  border-radius:999px;background:rgba(231,217,187,.7);backdrop-filter:blur(3px);
+}
+.back:hover{color:var(--rojo);border-color:var(--rojo)}
+
+.seccion{padding:clamp(4rem,10vw,6.5rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:780px;margin:0 auto}
+.kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rojo);margin-bottom:1rem}
+.titulo{font-weight:600;font-size:clamp(1.7rem,1.2rem + 3vw,2.7rem);line-height:1.15;margin-bottom:1rem}
+.bajada{color:var(--tinta-suave);max-width:58ch}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+
+/* ---------- hero expediente ---------- */
+.hero{
+  position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;padding:4.5rem 1.5rem 6rem;overflow:hidden;
+}
+.carpeta{
+  position:relative;max-width:620px;width:100%;background:#F2E7CD;border:1px solid var(--linea);
+  border-radius:8px;padding:clamp(2rem,6vw,3.2rem) clamp(1.3rem,5vw,2.6rem);
+  box-shadow:0 24px 60px -18px rgba(43,33,24,.45);
+  transform:rotate(-.6deg);
+}
+.carpeta::before{
+  content:'CONFIDENCIAL';position:absolute;top:18px;right:-34px;transform:rotate(35deg);
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.3em;color:var(--kraft);
+  background:var(--sello);padding:.3rem 2.6rem;
+}
+.carpeta .exp{font-family:var(--mono);font-size:.8rem;color:var(--tinta-suave);margin-bottom:1.1rem}
+.carpeta h1{font-family:var(--mono);font-weight:400;font-size:clamp(1.5rem,1rem + 4.5vw,2.7rem);line-height:1.2;margin-bottom:1rem}
+.carpeta h1 b{color:var(--rojo);font-weight:400}
+.carpeta .sub{color:var(--tinta-suave);font-style:italic;max-width:44ch;margin:0 auto 1.8rem}
+.sello-caja{
+  display:inline-block;font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;color:var(--sello);
+  border:2.5px solid var(--sello);border-radius:6px;padding:.4rem .9rem;transform:rotate(-4deg);
+  margin-bottom:1.6rem;opacity:.85;
+}
+.cta-btn{
+  display:inline-block;background:var(--tinta);color:var(--kraft);border:none;border-radius:999px;
+  padding:.95rem 1.9rem;font-family:var(--mono);font-size:.95rem;text-decoration:none;
+  transition:transform .25s ease,background .25s ease;
+}
+.cta-btn:hover{background:var(--rojo);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;color:var(--tinta-suave);font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.85}}
+
+/* ---------- evidencia ---------- */
+.evidencia{background:var(--kraft2)}
+.pruebas{display:grid;gap:1rem;margin-top:2.2rem}
+.prueba{
+  border:1px solid var(--linea);border-left:4px solid var(--rojo);border-radius:0 12px 12px 0;
+  background:#F2E7CD;padding:1.15rem 1.25rem;
+}
+.prueba .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--rojo);display:block;margin-bottom:.3rem}
+.prueba b{font-weight:600}
+.prueba p{color:var(--tinta-suave);font-size:.95rem}
+
+/* ---------- el libro ---------- */
+.hojas{display:grid;gap:1.1rem;margin-top:2.3rem;counter-reset:hoja}
+.hoja-ruta{
+  position:relative;background:#F2E7CD;border:1px solid var(--linea);border-radius:12px;
+  padding:1.25rem 1.3rem 1.25rem 4.1rem;
+}
+.hoja-ruta::before{
+  counter-increment:hoja;content:counter(hoja);
+  position:absolute;left:1.2rem;top:1.05rem;font-family:var(--mono);font-size:1.5rem;color:var(--rojo);
+}
+.hoja-ruta strong{display:block;font-weight:600;font-size:1.08rem;margin-bottom:.2rem}
+.hoja-ruta p{color:var(--tinta-suave);font-size:.94rem}
+
+/* ---------- brújula ---------- */
+.caminos{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:2.2rem}
+.camino{
+  text-align:left;border:1px solid var(--linea);border-radius:14px;padding:1.25rem 1.15rem;
+  background:#F2E7CD;color:var(--tinta);transition:all .3s ease;min-height:170px;
+  display:flex;flex-direction:column;gap:.5rem;font-family:var(--serif);
+}
+.camino:hover{border-color:var(--rojo)}
+.camino.elegido{border-color:var(--rojo);background:#F7EDD6;transform:translateY(-3px);box-shadow:0 10px 24px -12px rgba(163,59,46,.45)}
+.camino .glifo{font-size:1.6rem;line-height:1}
+.camino strong{font-weight:600;font-size:1.08rem}
+.camino p{color:var(--tinta-suave);font-size:.88rem}
+.camino .estado{margin-top:auto;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;color:var(--rojo)}
+.brujula-hint{margin-top:1.1rem;color:var(--tinta-suave);font-style:italic;min-height:1.6em}
+
+/* ---------- feedback ---------- */
+.cta,.react{
+  border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.25rem;margin-top:1.6rem;
+  background:#F2E7CD;font-size:1.05rem;
+}
+.cta button,.react button{
+  margin:.45rem .3rem 0 0;border:1.5px solid var(--tinta);background:transparent;color:var(--tinta);
+  border-radius:999px;padding:.6rem 1.05rem;font-family:var(--serif);font-size:.92rem;font-weight:600;transition:all .25s ease;
+}
+.cta button:hover,.react button:hover{background:var(--tinta);color:var(--kraft)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--sello);font-style:italic}
+
+.comprar{
+  display:inline-block;margin-top:1.2rem;background:var(--rojo);color:var(--kraft);border-radius:999px;
+  padding:.85rem 1.6rem;font-family:var(--mono);font-size:.9rem;text-decoration:none;
+  transition:transform .25s ease,filter .25s ease;
+}
+.comprar:hover{filter:brightness(1.1);transform:translateY(-2px)}
+
+/* ---------- cierre ---------- */
+.cierre{text-align:center;padding-bottom:5rem}
+.cierre .frase{font-style:italic;font-size:clamp(1.35rem,1rem + 2.2vw,2.1rem);line-height:1.4;max-width:30ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--rojo);font-weight:600}
+
+footer{
+  text-align:center;color:var(--tinta-suave);font-size:.8rem;padding:2.2rem 1.5rem 3rem;
+  border-top:1px solid var(--linea);line-height:1.7;
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .rev{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="carpeta rev visto">
+    <p class="exp">EXPEDIENTE Nº M5-029 · BIBLIOTECA DEL CASO · JULIO 2026</p>
+    <span class="sello-caja">ARCHIVADO EN EL ESTANTE EQUIVOCADO</span>
+    <h1>El libro de la <b>felicidad</b> que vive entre los policiales</h1>
+    <p class="sub">Bibliotequeando te recomienda · Nº 3 — hoy no hay que comprar nada: el libro ya es tuyo. Solo hay que rescatarlo.</p>
+    <a class="cta-btn" href="#evidencia">Abrir el expediente ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<!-- ============ LA EVIDENCIA ============ -->
+<section class="seccion evidencia" id="evidencia">
+  <div class="centro">
+    <p class="kicker rev">La evidencia</p>
+    <h2 class="titulo rev d1">Los hechos del caso</h2>
+    <div class="pruebas">
+      <div class="prueba rev"><span class="tag">PRUEBA A</span><b>El Camino de la Felicidad</b>, Jorge Bucay — visto por última vez en tu estante M5, el de <i>misterio y detectives</i>: a tres lomos de dos Agatha Christie, en la misma fila que tres Sherlock Holmes y <i>El Psicoanalista</i> de Katzenbach.<p></p></div>
+      <div class="prueba rev d1"><span class="tag">PRUEBA B</span><b>No está solo.</b> Sus hermanos <i>El Camino del Encuentro</i> (M5-030) y <i>El Camino de las Lágrimas</i> (M5-031) están con él. Y el vecino de al lado es… <i>El Secreto</i> de Rhonda Byrne (M5-028): toda una célula de autoayuda infiltrada entre los detectives.<p></p></div>
+      <div class="prueba rev d2"><span class="tag">PRUEBA C</span><b>Falta uno.</b> La serie <i>Hojas de Ruta</i> son CUATRO caminos, y el tomo 1 — <i>El Camino de la Autodependencia</i> — no aparece en ningún estante de la casa. Caso abierto (ver al final).<p></p></div>
+    </div>
+    <p class="rev d3" style="margin-top:1.6rem;font-style:italic;color:var(--tinta-suave)">Conclusión del perito: tenés una serie casi completa de uno de los autores más leídos del género… y está tan escondida que hay que mandarte un expediente para que la veas.</p>
+  </div>
+</section>
+
+<!-- ============ EL LIBRO ============ -->
+<section class="seccion" id="libro">
+  <div class="centro">
+    <p class="kicker rev">El objeto del caso</p>
+    <h2 class="titulo rev d1">¿Qué es exactamente este libro?</h2>
+    <p class="bajada rev d2">Jorge Bucay — terapeuta gestáltico argentino, contador de cuentos profesional — cerró en 2002 su serie <i>Hojas de Ruta</i> con este tomo: el último de los cuatro caminos hacia una vida plena. Se lee como él habla: historias, anécdotas y cero solemnidad. Cuatro ideas que te llevás:</p>
+    <div class="hojas">
+      <div class="hoja-ruta rev"><strong>La felicidad no es alegría 24/7</strong><p>La tesis del libro: ser feliz no es estar disfrutando a todas horas — es la serenidad de saberte en el buen camino, el TUYO. Menos fuegos artificiales, más rumbo.</p></div>
+      <div class="hoja-ruta rev d1"><strong>El mapa es personal e intransferible</strong><p>Los cuatro caminos de la serie (autodependencia, encuentro, lágrimas, felicidad) se caminan en tu orden y a tu paso. Bucay da la hoja de ruta; el viaje no se puede delegar.</p></div>
+      <div class="hoja-ruta rev d2"><strong>El último camino es el del sentido</strong><p>Este tomo es el de la contemplación y la búsqueda del sentido de la vida. Sí: exactamente el tema del Frankl que te recomendamos anteayer — Bucay es la versión de sobremesa, con cuentos en vez de campos.</p></div>
+      <div class="hoja-ruta rev d3"><strong>Cuentos como vehículo</strong><p>Bucay enseña como enseñaban antes: narrando. Si tus fábulas de L4 (la gaviota, El Principito, el alquimista) te funcionan, este es el mismo idioma aplicado a la felicidad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA BRÚJULA ============ -->
+<section class="seccion" id="brujula" style="background:var(--kraft2)">
+  <div class="centro">
+    <p class="kicker rev">La brújula</p>
+    <h2 class="titulo rev d1">¿Cuál de los cuatro caminos estás caminando hoy?</h2>
+    <p class="bajada rev d2">Tocá uno. Queda anotado para afinar las próximas recomendaciones — y te dice qué tomo de la serie te toca.</p>
+    <div class="caminos rev d2">
+      <button class="camino" data-c="autodependencia">
+        <span class="glifo">🧍</span><strong>Autodependencia</strong>
+        <p>Hacerte cargo de vos, sin muletas. El punto de partida de la serie.</p>
+        <span class="estado">TOMO 1 — el que te falta</span>
+      </button>
+      <button class="camino" data-c="encuentro">
+        <span class="glifo">🤝</span><strong>El encuentro</strong>
+        <p>El camino de los vínculos: amar sin depender, acompañar sin invadir.</p>
+        <span class="estado">TOMO 2 — lo tenés (M5-030)</span>
+      </button>
+      <button class="camino" data-c="lagrimas">
+        <span class="glifo">💧</span><strong>Las lágrimas</strong>
+        <p>Pérdidas y duelos: el camino que nadie elige pero todos caminan.</p>
+        <span class="estado">TOMO 3 — lo tenés (M5-031)</span>
+      </button>
+      <button class="camino" data-c="felicidad">
+        <span class="glifo">🧭</span><strong>La felicidad</strong>
+        <p>El rumbo propio y el sentido. El libro de este expediente.</p>
+        <span class="estado">TOMO 4 — lo tenés (M5-029)</span>
+      </button>
+    </div>
+    <p class="brujula-hint" id="brujulaHint">La brújula espera tu toque.</p>
+  </div>
+</section>
+
+<!-- ============ EL RESCATE ============ -->
+<section class="seccion" id="rescate">
+  <div class="centro">
+    <p class="kicker rev">El rescate</p>
+    <h2 class="titulo rev d1">Está a un estante de distancia</h2>
+    <p class="bajada rev d2">Sin compras, sin esperas: caminás hasta M5, corrés dos Christie, y esta noche leés sobre felicidad en vez de crímenes. ¿Trato?</p>
+
+    <div class="cta rev d2">
+      ¿Lo rescatás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:M5-029','si',this)">📖 Sí, esta noche</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-029','ya_leido',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-029','no',this)">🙅 Esta noche no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">
+      ¿Y el veredicto del rescate como recomendación?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-17-bucay-camino-felicidad','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-17-bucay-camino-felicidad','ya_lo_lei',this)">✔️ Ya lo había leído</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-17-bucay-camino-felicidad','no_me_va',this)">🙅 No me va Bucay</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">
+      Caso abierto: el tomo 1 (<i>El Camino de la Autodependencia</i>) no está en tu casa. ¿Lo sumamos a la lista de próximas recomendaciones?
+      <div>
+        <button onclick="engageAnswer('rec-tomo1:2026-07-17-bucay-camino-felicidad','si',this)">🕵️ Sí, cerremos el caso</button>
+        <button onclick="engageAnswer('rec-tomo1:2026-07-17-bucay-camino-felicidad','no',this)">No hace falta</button>
+        <span class="q-hint"></span>
+      </div>
+      <a class="comprar" href="https://www.buscalibre.com.uy/libros/search?q=El+camino+de+la+autodependencia+Jorge+Bucay" target="_blank" rel="noopener">Ver el tomo 1 en Buscalibre →</a>
+    </div>
+
+    <div class="react rev d3">
+      ¿Te gustó esta experiencia de recomendación?
+      <div>
+        <button onclick="engageReact('2026-07-17-bucay-camino-felicidad','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-17-bucay-camino-felicidad','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-17-bucay-camino-felicidad','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-17-bucay-camino-felicidad','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="seccion cierre">
+  <p class="frase rev">Ser feliz no es estar disfrutando a todas horas: es la serenidad de saberte <b>en tu camino</b>.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Expediente M5-029: listo para cerrarse esta noche. Mañana, otro libro.</p>
+</section>
+
+</main>
+
+<footer>
+  Recomendación de <em>Bibliotequeando</em> · redescubrimiento de tu propio catálogo (M5-029, fotografiado en mayo 2026 — si ya no está ahí, avisá con los botones).<br>
+  Las ideas son del libro; las palabras y el código, propios.
+</footer>
+
+<script>
+(function(){
+  var $ = function(s,c){return (c||document).querySelector(s)};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  var barra = $('#barra');
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    barra.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  }, {passive:true});
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visto'); io.unobserve(e.target); }
+      });
+    },{threshold:.15});
+    $$('.rev').forEach(function(el){ io.observe(el); });
+  } else {
+    $$('.rev').forEach(function(el){ el.classList.add('visto'); });
+  }
+
+  /* brújula → micro-feedback para el perfil */
+  var hint = $('#brujulaHint');
+  var frases = {
+    autodependencia: 'Anotado. Justo el tomo que no tenés — el recomendador toma nota del caso.',
+    encuentro: 'Anotado: el encuentro. El tomo 2 (M5-030) te espera al lado de este.',
+    lagrimas: 'Anotado. El tomo 3 (M5-031) está en el mismo estante, por si es el momento.',
+    felicidad: 'Anotado: el rumbo propio. Este expediente era para vos.'
+  };
+  $$('.camino').forEach(function(c){
+    c.addEventListener('click', function(){
+      $$('.camino').forEach(function(o){ o.classList.remove('elegido'); });
+      c.classList.add('elegido');
+      if(window.engageAnswer){
+        // botón fantasma en contenedor propio: engageAnswer deshabilita a los
+        // botones hermanos del que recibe, y las tarjetas deben seguir tocables
+        var holder = document.createElement('div');
+        holder.style.display = 'none';
+        var ghost = document.createElement('button');
+        holder.appendChild(ghost);
+        document.body.appendChild(holder);
+        window.engageAnswer('rec-camino:2026-07-17-bucay-camino-felicidad', c.dataset.c, ghost);
+        setTimeout(function(){ holder.remove(); }, 100);
+      }
+      hint.textContent = frases[c.dataset.c] || 'Anotado.';
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

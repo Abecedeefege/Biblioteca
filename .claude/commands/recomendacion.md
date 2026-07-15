@@ -110,6 +110,11 @@ json.dump(cat, open('/tmp/catalog.json','w'), ensure_ascii=False)"
    mañana. Condensado, sin crónica.
 
 4. **ELEGIR el libro de hoy** (uno solo, el mejor — no dos tibios):
+   - **Día pre-armado**: si `recommended.json` ya tiene una entrada con
+     `date` = hoy (experiencia construida de antemano), NO elijas ni
+     construyas nada nuevo: procesá feedback (pasos 1–3), verificá que la
+     página exista y que el push del día esté encolado con `send_at` en el
+     futuro (si falta, encolalo vos), y saltá directo al paso 8.
    - Respetá `MEZCLA VIGENTE` (contá los `kind` de los últimos 7 días en
      `recommended.json` para saber qué toca hoy).
    - **Nuevo**: sacalo del banco de candidatos del PROFILE o investigá con
@@ -188,12 +193,22 @@ Bloques obligatorios (los define `engage.js`; usá exactamente estas firmas):
 
 <!-- 2) ...la experiencia: hero, historia, key insights interactivos... -->
 
-<!-- 3) VEREDICTO (la señal reina). REC_ID = nombre de archivo sin .html -->
+<!-- 3) VEREDICTO (la señal reina). REC_ID = nombre de archivo sin .html
+     Si es NUEVO, los 5 valores completos: -->
 <div class="cta">
   ¿Qué hacemos con este libro?
   <button onclick="engageAnswer('rec-veredicto:REC_ID','lo_quiero',this)">📚 Lo quiero</button>
   <button onclick="engageAnswer('rec-veredicto:REC_ID','me_tienta',this)">🤔 Me tienta</button>
   <button onclick="engageAnswer('rec-veredicto:REC_ID','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+  <button onclick="engageAnswer('rec-veredicto:REC_ID','ya_lo_lei',this)">✔️ Ya lo leí</button>
+  <button onclick="engageAnswer('rec-veredicto:REC_ID','no_me_va',this)">🙅 No me va</button>
+  <span class="q-hint"></span>
+</div>
+<!-- Si es REDESCUBRIMIENTO, el set reducido ('lo_quiero'/'ya_lo_tengo' no
+     tienen sentido para un libro que ya está en casa): -->
+<div class="cta">
+  ¿Y? ¿Valió el rescate?
+  <button onclick="engageAnswer('rec-veredicto:REC_ID','me_tienta',this)">🤔 Me tentaste</button>
   <button onclick="engageAnswer('rec-veredicto:REC_ID','ya_lo_lei',this)">✔️ Ya lo leí</button>
   <button onclick="engageAnswer('rec-veredicto:REC_ID','no_me_va',this)">🙅 No me va</button>
   <span class="q-hint"></span>

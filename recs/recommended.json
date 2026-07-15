@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-15T17:30:00-03:00",
+  "_updated_at": "2026-07-15T18:30:00-03:00",
   "_feedback_cutoff": "2026-07-15T20:00:00Z",
   "recommendations": [
     {
@@ -15,6 +15,36 @@
       "page": "recs/2026-07-15-frankl-sentido.html",
       "notified_by": "2026-07-15-rec",
       "why": "Recomendación fundacional: el clásico que falta en L4 — conecta Solve for Happy, The Art of Happiness y el estoicismo de Holiday con su raíz del siglo XX. Verificado: no está en ninguno de los 400 del catálogo.",
+      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
+      "learning": null
+    },
+    {
+      "id": "2026-07-16-rovelli-siete-lecciones",
+      "date": "2026-07-16",
+      "kind": "nuevo",
+      "title": "Siete breves lecciones de física",
+      "author": "Carlo Rovelli",
+      "language": "es",
+      "topics": ["astronomia", "ciencia", "asombro"],
+      "book_ref": null,
+      "page": "recs/2026-07-16-rovelli-siete-lecciones.html",
+      "notified_by": "2026-07-16-rec",
+      "why": "El estante L5 (32 libros de cosmos) muere en Hawking 1988 — cero astronomía post-1990. Rovelli es la continuación exacta: corto, poético, moderno. Pre-armada en el bootstrap del 15/07.",
+      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
+      "learning": null
+    },
+    {
+      "id": "2026-07-17-bucay-camino-felicidad",
+      "date": "2026-07-17",
+      "kind": "redescubrimiento",
+      "title": "El Camino de la Felicidad",
+      "author": "Jorge Bucay",
+      "language": "es",
+      "topics": ["wellness", "positividad", "sentido"],
+      "book_ref": "M5-029",
+      "page": "recs/2026-07-17-bucay-camino-felicidad.html",
+      "notified_by": "2026-07-17-rec",
+      "why": "Redescubrimiento con historia: 3 Bucay exiliados en M5 (misterio) junto a El Secreto de Byrne; falta el tomo 1 de la serie (semilla de futura rec nueva). Ángulo expediente detective. Pre-armada en el bootstrap del 15/07.",
       "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
       "learning": null
     }
