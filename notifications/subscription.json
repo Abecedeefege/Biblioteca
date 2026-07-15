@@ -1,6 +1,6 @@
 {
   "_comment": "Suscripción Web Push del dueño. La escribe SOLO el browser (engage/setup.html vía GitHub API). El dispatcher solo la invalida si el endpoint devuelve 404/410.",
-  "device": "dispositivo-sin-nombre",
+  "device": "Andy",
   "subscription": {
     "endpoint": "https://fcm.googleapis.com/fcm/send/fbDwTSllxlc:APA91bEdw8hMVtaoAl0QqWbiqHXm0jHGeSvhUG27mh2GsxBpRuBMUVbs2UNfCD8IHJNjaWKmu4yr7vRCsJIOjdyBDAtuh7ISUL7ZWJzzxTi61eNrwGJymEVY2Hav5LW3BaN-EDCL8Zda",
     "expirationTime": null,
@@ -10,7 +10,7 @@
     }
   },
   "status": "active",
-  "updated_at": "2026-07-03T20:27:07.234Z",
+  "updated_at": "2026-07-15T21:29:10.978Z",
   "invalidated_at": null,
   "invalid_reason": null
 }
