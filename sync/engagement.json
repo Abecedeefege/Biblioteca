@@ -230,7 +230,16 @@
       "device": "Andy",
       "slug": "2026-07-15-frankl-sentido",
       "value": "love"
+    },
+    {
+      "id": "mrmm4qgo-pefy4v",
+      "type": "dwell",
+      "ts": "2026-07-15T21:49:21.528Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "device": "Andy",
+      "dwell_s": 466,
+      "scroll_pct": 100
     }
   ],
-  "_updated_at": "2026-07-15T21:49:05.543Z"
+  "_updated_at": "2026-07-15T21:49:24.013Z"
 }
