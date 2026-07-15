@@ -203,7 +203,16 @@
       "device": "Andy",
       "qid": "rec-via:2026-07-15-frankl-sentido",
       "value": "amor"
+    },
+    {
+      "id": "mrmlplyi-77rdpg",
+      "type": "dwell",
+      "ts": "2026-07-15T21:37:35.850Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "device": "Andy",
+      "dwell_s": 419,
+      "scroll_pct": 73
     }
   ],
-  "_updated_at": "2026-07-15T21:35:00.790Z"
+  "_updated_at": "2026-07-15T21:37:37.673Z"
 }
