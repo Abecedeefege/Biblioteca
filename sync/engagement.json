@@ -212,7 +212,16 @@
       "device": "Andy",
       "dwell_s": 419,
       "scroll_pct": 73
+    },
+    {
+      "id": "mrmm4bmk-mym5vt",
+      "type": "answer",
+      "ts": "2026-07-15T21:49:02.300Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-07-15-frankl-sentido",
+      "value": "ya_lo_lei"
     }
   ],
-  "_updated_at": "2026-07-15T21:37:37.673Z"
+  "_updated_at": "2026-07-15T21:49:03.365Z"
 }
