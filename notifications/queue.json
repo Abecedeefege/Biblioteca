@@ -73,6 +73,18 @@
       "sent_at": "2026-07-03T20:48:22.680Z",
       "fail_reason": null,
       "created_by": "prueba de íconos vía chat 2026-07-03"
+    },
+    {
+      "id": "2026-07-15-rec",
+      "title": "🧭 El libro que le falta a tu estante L4",
+      "body": "Frankl salió de Auschwitz con una idea que late en todo tu estante. Sus 7 claves, contadas en 5 minutos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-15-frankl-sentido.html",
+      "send_at": "2026-07-15T17:45:00-03:00",
+      "expires_at": "2026-07-15T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
     }
   ]
 }

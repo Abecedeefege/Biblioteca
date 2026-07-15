@@ -1,0 +1,22 @@
+{
+  "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
+  "_updated_at": "2026-07-15T17:30:00-03:00",
+  "_feedback_cutoff": "2026-07-15T20:00:00Z",
+  "recommendations": [
+    {
+      "id": "2026-07-15-frankl-sentido",
+      "date": "2026-07-15",
+      "kind": "nuevo",
+      "title": "El hombre en busca de sentido",
+      "author": "Viktor E. Frankl",
+      "language": "es",
+      "topics": ["positividad", "espiritualidad", "autosuperacion"],
+      "book_ref": null,
+      "page": "recs/2026-07-15-frankl-sentido.html",
+      "notified_by": "2026-07-15-rec",
+      "why": "Recomendación fundacional: el clásico que falta en L4 — conecta Solve for Happy, The Art of Happiness y el estoicismo de Holiday con su raíz del siglo XX. Verificado: no está en ninguno de los 400 del catálogo.",
+      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
+      "learning": null
+    }
+  ]
+}

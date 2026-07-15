@@ -31,7 +31,8 @@ Este documento es autosuficiente: no dependas de ningún playbook externo.
 | `engage/learnings.md` | **vos** | tu memoria; se REESCRIBE cada día (máx ~150 líneas) |
 | `engage/proposals.json` | **vos** | registro y ciclo de vida de cada experiencia |
 | `engage/<YYYY-MM-DD>-<slug>.html` | **vos** | las experiencias efímeras |
-| `notifications/queue.json` | **vos** (estados: el dispatcher) | la cola de pushes del día |
+| `notifications/queue.json` | compartida (estados: el dispatcher) | tus entradas; las `<fecha>-rec` son del agente `/recomendacion` — NO TOCAR |
+| `recs/**` | agente `/recomendacion` (hermano) | **NO TOCAR** (sus páginas, su perfil y su log viven ahí) |
 | `notifications/send_log.json` | dispatcher | leer (qué salió realmente; 201 = aceptada, no entregada) |
 | `notifications/subscription.json` | browser / dispatcher | leer (estado del canal) |
 | `sync/engagement.json` | browser | leer + **compactar** eventos viejos (>14 días) en `daily_summary` |
@@ -72,6 +73,11 @@ una hora UTC.
    - `prestado:<ID>` → `si`→`read_status: prestado` · `no`
    - `familia:<ID>` → `si`/`no` (¿el autor es familia del dueño? → `note` en enrichment)
    - `<YYYY-MM-DD>-<slug>-suscripcion-diaria` → `si`/`no` (señal de formato, va a learnings, no a enrichment)
+   - Eventos con `qid`/`slug` de prefijo `rec-` o de páginas bajo `recs/`:
+     son del agente hermano `/recomendacion` — **ignoralos** (ni consolidar
+     ni interpretar; él corre a diario y los procesa). Excepción: los qids
+     de TU convención (`leer-esta-noche:`, `leido:`, etc.) se consolidan
+     normal aunque vengan de una página de `recs/`.
    - Cualquier otro `qid` que hayas inventado en una experiencia: interpretalo
      vos y anotá la señal en learnings.
    Cada consolidación lleva `read_status_source: "answer:<id del evento>"`.
@@ -119,6 +125,9 @@ una hora UTC.
      confianza.
    - El slot nocturno (20:30) es EL slot de biblioteca: "¿qué leés esta
      noche?". No lo malgastes en contenido de mañana.
+   - El slot del mediodía (~12:30) es del agente hermano `/recomendacion`
+     (recomendación diaria de libros): no encoles ahí ni toques sus
+     entradas `<fecha>-rec`.
    - Si `subscription.json` dice `paused`: **no encoles nada** (la fatiga se
      respeta) y anotalo en el reporte. Si dice `invalid` o `none`: encolá
      igual (quedan `pending` y expiran solas) y avisá en el reporte que hay
