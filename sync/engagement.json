@@ -194,7 +194,16 @@
       "device": "Andy",
       "qid": "rec-via:2026-07-15-frankl-sentido",
       "value": "obra"
+    },
+    {
+      "id": "mrmlm9nc-gnaj12",
+      "type": "answer",
+      "ts": "2026-07-15T21:34:59.928Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "device": "Andy",
+      "qid": "rec-via:2026-07-15-frankl-sentido",
+      "value": "amor"
     }
   ],
-  "_updated_at": "2026-07-15T21:34:57.620Z"
+  "_updated_at": "2026-07-15T21:35:00.790Z"
 }
