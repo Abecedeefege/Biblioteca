@@ -185,7 +185,16 @@
       "device": "Andy",
       "qid": "rec-via:2026-07-15-frankl-sentido",
       "value": "actitud"
+    },
+    {
+      "id": "mrmlm748-69f6ad",
+      "type": "answer",
+      "ts": "2026-07-15T21:34:56.648Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "device": "Andy",
+      "qid": "rec-via:2026-07-15-frankl-sentido",
+      "value": "obra"
     }
   ],
-  "_updated_at": "2026-07-15T21:34:43.697Z"
+  "_updated_at": "2026-07-15T21:34:57.620Z"
 }
