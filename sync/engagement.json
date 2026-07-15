@@ -158,7 +158,16 @@
       "page": "2026-07-15-frankl-sentido.html",
       "device": "Andy",
       "nid": "2026-07-15-rec"
+    },
+    {
+      "id": "mrmljy9b-jytl0u",
+      "type": "answer",
+      "ts": "2026-07-15T21:33:11.855Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "device": "Andy",
+      "qid": "rec-via:2026-07-15-frankl-sentido",
+      "value": "obra"
     }
   ],
-  "_updated_at": "2026-07-15T21:30:38.125Z"
+  "_updated_at": "2026-07-15T21:33:13.180Z"
 }
