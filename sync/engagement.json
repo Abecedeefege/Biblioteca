@@ -141,7 +141,24 @@
       "page": "2026-07-04-esta-noche.html",
       "device": "Andy",
       "proposal": "2026-07-04-esta-noche"
+    },
+    {
+      "id": "mrmlgmrw-lgkfeu",
+      "type": "notification_clicked",
+      "ts": "2026-07-15T21:30:37.004Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "device": "Andy",
+      "nid": "2026-07-15-rec",
+      "src": "push"
+    },
+    {
+      "id": "mrmlgmrx-9fnhfm",
+      "type": "page_visit",
+      "ts": "2026-07-15T21:30:37.005Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "device": "Andy",
+      "nid": "2026-07-15-rec"
     }
   ],
-  "_updated_at": "2026-07-04T02:06:50.335Z"
+  "_updated_at": "2026-07-15T21:30:38.125Z"
 }
