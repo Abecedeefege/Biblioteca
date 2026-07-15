@@ -176,7 +176,16 @@
       "device": "Andy",
       "qid": "rec-via:2026-07-15-frankl-sentido",
       "value": "amor"
+    },
+    {
+      "id": "mrmllwaa-hucb2k",
+      "type": "answer",
+      "ts": "2026-07-15T21:34:42.610Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "device": "Andy",
+      "qid": "rec-via:2026-07-15-frankl-sentido",
+      "value": "actitud"
     }
   ],
-  "_updated_at": "2026-07-15T21:33:29.550Z"
+  "_updated_at": "2026-07-15T21:34:43.697Z"
 }
