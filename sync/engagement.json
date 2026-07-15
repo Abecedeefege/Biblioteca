@@ -221,7 +221,16 @@
       "device": "Andy",
       "qid": "rec-veredicto:2026-07-15-frankl-sentido",
       "value": "ya_lo_lei"
+    },
+    {
+      "id": "mrmm4dd2-d18gd7",
+      "type": "reaction",
+      "ts": "2026-07-15T21:49:04.550Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "device": "Andy",
+      "slug": "2026-07-15-frankl-sentido",
+      "value": "love"
     }
   ],
-  "_updated_at": "2026-07-15T21:49:03.365Z"
+  "_updated_at": "2026-07-15T21:49:05.543Z"
 }
