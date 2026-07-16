@@ -691,7 +691,16 @@
       "device": "Andy",
       "slug": "2026-07-16-rovelli-siete-lecciones",
       "value": "like"
+    },
+    {
+      "id": "mrnpjzbn-0w7hf7",
+      "type": "dwell",
+      "ts": "2026-07-16T16:12:57.875Z",
+      "page": "2026-07-16-rovelli-siete-lecciones.html",
+      "device": "Andy",
+      "dwell_s": 182,
+      "scroll_pct": 100
     }
   ],
-  "_updated_at": "2026-07-16T16:12:52.635Z"
+  "_updated_at": "2026-07-16T16:12:58.995Z"
 }
