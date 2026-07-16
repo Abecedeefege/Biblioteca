@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Fichero · TV — Bibliotequeando</title>
+<meta name="description" content="El Fichero en la tele: el archivo catalográfico de la casa, navegable solo con el control remoto.">
+<meta name="theme-color" content="#2a211a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- fuentes async: una red lenta no puede bloquear la interactividad del D-pad -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap"></noscript>
+<link rel="icon" href="../icon-192.png">
+<style>
+  /* ====== escala 10-foot: 1rem = 10px en un lienzo lógico de 1920 ====== */
+  html{font-size:calc(100vw / 192)}
+  :root{
+    --room:#2a211a; --room-lift:#332821;
+    --wood:#6b4a33; --wood-sh:#3d2a1d; --interior:#191009;
+    --brass:#c2a35a; --brass-hi:#f3e3ae; --brass-dk:#6f5526;
+    --card:#f2e9d4; --card2:#eadfc3; --ink:#2e2620; --ink-soft:#5c4f3e;
+    --red:#b3372e; --blue:#2b4a8a; --green:#2e6b45;
+    --type:'Special Elite','Courier New',monospace; --sans:'Inter',system-ui,sans-serif;
+    --brass-bar:linear-gradient(180deg,#6f5526 0%,#a8894a 16%,#f3e3ae 32%,#e8d391 44%,#ac8b44 62%,#6f5526 88%,#8a6f35 100%);
+    --brass-plate:linear-gradient(180deg,#8a6f35 0%,#c2a35a 22%,#f3e3ae 36%,#dfc884 48%,#a8894a 70%,#8a6f35 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;overflow:hidden}
+  body{background:var(--room);color:var(--card);font-family:var(--type);
+    background-image:radial-gradient(120rem 62rem at 50% -12rem, rgba(243,227,174,.07), transparent 70%)}
+  button{font-family:inherit;background:none;border:none;color:inherit;cursor:pointer}
+  a{color:inherit;text-decoration:none}
+  ::-webkit-scrollbar{width:0;height:0}
+
+  /* viñeta de sala: lo que hace que parezca fotografiado */
+  #vignette{position:fixed;inset:0;pointer-events:none;z-index:50;
+    background:radial-gradient(115% 95% at 50% 42%, transparent 55%, rgba(8,5,2,.42) 100%)}
+
+  /* ====== escenario con safe area 5% ====== */
+  #stage{height:100%;display:flex;flex-direction:column;padding:5.4rem 9.6rem;position:relative}
+
+  /* ====== placa de latón (cabecera) ====== */
+  #plaque{display:flex;justify-content:center;margin-bottom:2.4rem;flex:none}
+  .plate{background:var(--brass-plate);color:#3a2a08;border-radius:.8rem;padding:1.2rem 4.6rem;text-align:center;
+    box-shadow:0 .6rem 2rem rgba(0,0,0,.5), inset 0 .1rem 0 rgba(255,255,255,.55), inset 0 -.2rem .3rem rgba(58,42,8,.45);
+    border:.1rem solid #8a6b1d}
+  .plate h1{font-family:var(--type);font-weight:400;font-size:3.4rem;letter-spacing:.5rem;text-transform:uppercase;line-height:1.15}
+  .plate .s{font-family:var(--sans);font-size:1.8rem;font-weight:700;letter-spacing:.42rem;text-transform:uppercase;opacity:.72}
+
+  #status{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;color:#c9b48e;text-align:center}
+  #status h2{font-size:3.6rem;letter-spacing:.3rem;text-transform:uppercase;color:var(--brass-hi);font-weight:400}
+  #status p{font-size:2.2rem;max-width:80rem;line-height:1.6}
+
+  #app{flex:1;min-height:0;display:none;position:relative}
+  .view{height:100%;display:flex;flex-direction:column;animation:fadein .28s ease}
+  @keyframes fadein{from{opacity:0}to{opacity:1}}
+  @media (prefers-reduced-motion: reduce){.view{animation:none}}
+
+  /* ====== foco ====== */
+  [data-f]{outline:none}
+  .fring{position:absolute;inset:-.7rem;border:.45rem solid var(--brass);border-radius:inherit;opacity:0;
+    pointer-events:none;box-shadow:0 0 2.2rem rgba(243,227,174,.55), inset 0 0 1rem rgba(243,227,174,.3);
+    transition:opacity .15s ease}
+  .focused > .fring{opacity:1}
+
+  /* ====== el mueble ====== */
+  .cabinet{flex:1;min-height:0;border-radius:1.2rem;padding:2rem;position:relative;
+    background-image:linear-gradient(180deg, rgba(20,11,5,.42), rgba(20,11,5,.5)), url('assets/walnut.webp');
+    background-size:auto,140% 140%;background-position:center;
+    box-shadow:0 3.4rem 7rem rgba(0,0,0,.6), 0 .4rem 1.2rem rgba(0,0,0,.4), inset 0 .15rem 0 rgba(255,240,210,.1)}
+  .cabinet .interior{height:100%;background:var(--interior);border-radius:.6rem;padding:.5rem;
+    box-shadow:inset 0 .5rem 2.6rem rgba(0,0,0,.85), inset 0 -.2rem .8rem rgba(0,0,0,.6)}
+  .drawers{position:relative;height:100%;display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:1fr;gap:.4rem}
+  .drawer{position:relative;border-radius:.35rem;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:1.6rem;padding:1.2rem;background-image:url('assets/walnut.webp');background-repeat:no-repeat;
+    transition:transform .18s ease-out;will-change:transform}
+  .drawer::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:linear-gradient(180deg, rgba(255,244,220,.14) 0, rgba(255,244,220,.03) 8%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 72%, rgba(0,0,0,.3) 100%),
+      linear-gradient(90deg, rgba(0,0,0,.18) 0, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 95%, rgba(0,0,0,.18) 100%)}
+  .drawer.focused{transform:translateY(1rem) scale(1.06);z-index:3}
+  .drawer > .fring{box-shadow:0 2.6rem 5rem rgba(0,0,0,.6), 0 0 2.4rem rgba(243,227,174,.4), inset 0 0 1rem rgba(243,227,174,.25)}
+  .dlabel{background:var(--brass-plate);border-radius:.4rem;padding:.4rem;max-width:95%;
+    box-shadow:0 .25rem .7rem rgba(0,0,0,.45), inset 0 .1rem 0 rgba(255,255,255,.5)}
+  .dcard{background:var(--card);color:var(--ink);border-radius:.15rem;padding:.9rem .8rem;text-align:center;
+    font-size:3.4rem;line-height:1.16;letter-spacing:0;text-transform:uppercase;hyphens:auto;overflow-wrap:break-word}
+  .dcard small{display:block;font-family:var(--sans);font-size:2rem;font-weight:700;letter-spacing:.2rem;
+    text-transform:uppercase;color:var(--ink-soft);margin-top:.6rem}
+  .dhandle{width:11rem;height:1.9rem;border-radius:1rem;background:var(--brass-bar);flex:none;
+    box-shadow:0 .35rem .8rem rgba(0,0,0,.55), 0 .1rem 0 rgba(255,255,255,.2)}
+  .dhandle::after{content:'';display:block;margin:1.9rem auto 0;width:5.4rem;height:.9rem;border-radius:0 0 .6rem .6rem;
+    background:linear-gradient(180deg,#4a3411,#2a1d08);opacity:.55}
+  .homehint{flex:none;text-align:center;font-family:var(--sans);font-size:2rem;color:#a08d6d;letter-spacing:.06rem;
+    padding-top:1.8rem}
+  .homehint b{color:var(--brass);font-weight:700}
+
+  /* ====== vistas interiores (cajón / índice / recs) ====== */
+  .vhead{flex:none;display:flex;align-items:center;gap:2.4rem;margin-bottom:2rem}
+  .backbtn{position:relative;font-family:var(--sans);font-size:2.1rem;font-weight:700;letter-spacing:.18rem;text-transform:uppercase;
+    color:#d8c49a;border:.25rem solid rgba(194,163,90,.5);border-radius:.6rem;padding:1.2rem 2.4rem;background:rgba(0,0,0,.25)}
+  .vtitle{background:var(--brass-plate);border-radius:.4rem;padding:.35rem}
+  .vtitle .in{background:var(--card);color:var(--ink);padding:.7rem 2rem;font-size:3.4rem;text-transform:uppercase;letter-spacing:.08rem;border-radius:.15rem}
+  .vtitle .in small{font-family:var(--sans);font-size:1.7rem;font-weight:700;color:var(--ink-soft);letter-spacing:.2rem;margin-left:1.6rem}
+  .kicker{font-family:var(--sans);font-size:2rem;font-weight:600;letter-spacing:.22rem;text-transform:uppercase;color:#c9b48e;margin-left:auto;text-align:right}
+
+  .scroll{flex:1;min-height:0;overflow-y:auto;padding:1.4rem .8rem 6rem;scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){.scroll{scroll-behavior:auto}}
+
+  .essaycard{background:var(--card2);color:var(--ink);border-radius:.5rem;padding:2.6rem 3.2rem;margin-bottom:2.4rem;position:relative;
+    box-shadow:0 1rem 2.6rem rgba(0,0,0,.45);
+    background-image:repeating-linear-gradient(0deg, transparent 0 4.4rem, rgba(43,74,138,.16) 4.4rem 4.55rem)}
+  .essaycard .cn{font-size:2rem;color:var(--red);letter-spacing:.14rem;display:block;margin-bottom:1rem}
+  .essaycard p{font-size:2.6rem;line-height:4.4rem;margin-bottom:0}
+  .essaycard p + p{margin-top:0}
+
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+  .mini{position:relative;background:var(--card);color:var(--ink);border-radius:.4rem;padding:1.8rem 2rem 2rem;
+    box-shadow:0 .7rem 1.8rem rgba(0,0,0,.4);transition:transform .15s ease-out;
+    background-image:repeating-linear-gradient(0deg, transparent 0 3.6rem, rgba(43,74,138,.14) 3.6rem 3.72rem)}
+  .mini.focused{transform:scale(1.045);z-index:2}
+  .mini .cn{font-size:2rem;color:var(--red);letter-spacing:.12rem}
+  .mini h4{font-weight:400;font-size:2.6rem;line-height:1.25;text-transform:uppercase;letter-spacing:.04rem;margin:.7rem 0 .5rem;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .mini .a{font-family:var(--sans);font-size:2rem;color:var(--ink-soft)}
+  .mini .chip{position:absolute;top:1.2rem;right:1.4rem;font-family:var(--sans);font-size:1.7rem;font-weight:700;letter-spacing:.14rem;
+    text-transform:uppercase;border:.22rem solid currentColor;border-radius:.4rem;padding:.15rem .8rem;transform:rotate(4deg)}
+  .chip.g{color:var(--green)}.chip.b{color:var(--blue)}.chip.r{color:var(--red)}
+
+  /* ====== ficha ====== */
+  .bigcard{position:relative;background:var(--card);color:var(--ink);border-radius:.5rem;padding:3.2rem 4rem 4.2rem;
+    box-shadow:0 1.6rem 4rem rgba(0,0,0,.5);
+    background-image:repeating-linear-gradient(0deg, transparent 0 4.6rem, rgba(43,74,138,.15) 4.6rem 4.76rem)}
+  .bigcard::before{content:'';position:absolute;left:0;right:0;top:8.6rem;height:.3rem;background:rgba(179,55,46,.5)}
+  .bigcard .cn{font-size:2.2rem;color:var(--red);letter-spacing:.16rem}
+  .bigcard h2{font-weight:400;font-size:4.2rem;line-height:1.2;letter-spacing:.06rem;text-transform:uppercase;margin:2.6rem 0 .6rem}
+  .bigcard .au{font-size:2.8rem;color:var(--ink-soft);margin-bottom:2.4rem}
+  .cols{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+  .tfield{display:flex;gap:1.6rem;font-size:2.4rem;padding:.5rem 0;line-height:1.45}
+  .tfield b{font-family:var(--sans);font-weight:700;font-size:2rem;letter-spacing:.18rem;text-transform:uppercase;
+    color:var(--ink-soft);min-width:19rem;padding-top:.45rem;flex:none}
+  .tdesc{font-size:2.6rem;line-height:4.6rem}
+  .pnote{position:relative;background:#f4e9a6;color:#4a4022;padding:2.2rem 2.4rem;margin-top:3rem;
+    box-shadow:0 .8rem 2rem rgba(0,0,0,.3);transform:rotate(-1.2deg);font-size:2.3rem;line-height:1.55;max-width:56rem}
+  .pnote b{font-family:var(--sans);font-size:1.7rem;font-weight:700;letter-spacing:.26rem;text-transform:uppercase;display:block;
+    margin-bottom:.8rem;color:#8a6b1d}
+  .stamp{position:absolute;font-family:var(--sans);font-weight:800;letter-spacing:.4rem;text-transform:uppercase;
+    border:.45rem solid currentColor;border-radius:.8rem;padding:.8rem 2rem;font-size:2.4rem;opacity:.8;pointer-events:none;
+    mix-blend-mode:multiply}
+  .stamp.leido{color:var(--green);transform:rotate(-8deg);top:9.6rem;right:4rem}
+  .stamp.leyendo{color:var(--blue);transform:rotate(-5deg);top:9.6rem;right:4rem}
+  .stamp.prestado{color:var(--blue);transform:rotate(6deg);top:17rem;right:5rem}
+  .stamp.familia{color:var(--red);transform:rotate(-6deg);top:1.4rem;right:3rem;font-size:1.6rem;letter-spacing:.3rem;border-width:.3rem;padding:.4rem 1.2rem}
+  .fnav{flex:none;display:flex;justify-content:space-between;gap:2rem;padding-top:2rem}
+  .fnav .backbtn{font-size:2rem}
+  .fichawrap{max-width:152rem;margin:0 auto;width:100%}
+
+  /* ====== intro ====== */
+  #intro{position:fixed;inset:0;z-index:1000;background:#14100c;display:flex;align-items:center;justify-content:center;
+    transition:opacity .5s ease}
+  #intro.out{opacity:0;pointer-events:none}
+  #intro .inn{text-align:center;opacity:0;transform:scale(1.12);transition:opacity .9s ease, transform 1.1s cubic-bezier(.22,1,.36,1)}
+  #intro.on .inn{opacity:1;transform:scale(1)}
+  #intro svg{width:26rem;height:auto;margin:0 auto 2.8rem;display:block;filter:drop-shadow(0 1rem 3rem rgba(0,0,0,.6))}
+  #intro .t{font-size:4.6rem;letter-spacing:.7rem;text-transform:uppercase;color:var(--card)}
+  #intro .t small{display:block;font-family:var(--sans);font-size:1.8rem;font-weight:700;letter-spacing:.55rem;color:#a08d6d;margin-top:1.6rem}
+  #intro .skip{position:absolute;right:9.6rem;bottom:5.4rem;font-family:var(--sans);font-size:1.8rem;font-weight:700;
+    letter-spacing:.24rem;text-transform:uppercase;color:#8a785f}
+  @media (prefers-reduced-motion: reduce){#intro{display:none}}
+
+  /* ====== sonda de teclas (?debug=keys) ====== */
+  #keylog{display:none;position:fixed;top:5.4rem;right:9.6rem;width:64rem;max-height:88rem;z-index:2000;
+    background:rgba(10,7,4,.92);border:.3rem solid var(--brass);border-radius:1rem;padding:2.4rem;overflow:hidden}
+  #keylog h3{font-family:var(--sans);font-size:2.2rem;letter-spacing:.2rem;text-transform:uppercase;color:var(--brass-hi);margin-bottom:1.2rem}
+  #keylog .ua{font-family:var(--sans);font-size:1.3rem;color:#a08d6d;margin-bottom:1.6rem;word-break:break-all;line-height:1.4}
+  #keylog ol{list-style:none;font-family:var(--sans);font-size:2rem;line-height:1.75;color:var(--card)}
+  #keylog ol b{color:var(--brass-hi)}
+  #keylog ol .act{color:#7fbf8f}
+</style>
+</head>
+<body>
+
+<div id="vignette"></div>
+
+<div id="keylog"><h3>Sonda de teclas</h3><div class="ua" id="kl-ua"></div><ol id="kl-list"></ol></div>
+
+<div id="intro" hidden>
+  <div class="inn">
+    <svg viewBox="96 96 320 334" aria-hidden="true">
+      <rect x="128" y="138" width="80" height="272" fill="#7a1f23"/>
+      <rect x="128" y="188" width="80" height="14" fill="#b89348"/>
+      <rect x="208" y="116" width="96" height="294" fill="#2a1f12"/>
+      <rect x="208" y="170" width="96" height="14" fill="#b89348"/>
+      <rect x="304" y="156" width="80" height="254" fill="#7a1f23"/>
+      <rect x="304" y="206" width="80" height="14" fill="#b89348"/>
+      <rect x="100" y="410" width="312" height="10" fill="#2a1f12"/>
+    </svg>
+    <div class="t">Bibliotequeando<small>El Fichero · edición diez pies</small></div>
+  </div>
+  <div class="skip">OK para entrar</div>
+</div>
+
+<div id="stage">
+  <header id="plaque"><div class="plate">
+    <div class="s">Bibliotequeando · archivo de la casa</div>
+    <h1>El Fichero</h1>
+  </div></header>
+  <div id="status"><h2>Abriendo el mueble…</h2><p>Ordenando 400 fichas a máquina.</p></div>
+  <main id="app"></main>
+</div>
+
+<script>
+'use strict';
+/* =====================================================================
+   El Fichero · TV — navegación 100% D-pad (Fully Kiosk / Google TV).
+   Datos: catálogo canónico embebido en ../index.html (stream + abort),
+   cajones de ../concepts/collections.json, prosa de ../concepts/editorial.json,
+   años/estado de ../data/enrichment.json, recs de ../recs/recommended.json.
+   Nada se duplica: este archivo solo lee.
+   ===================================================================== */
+
+/* ================= sonda de teclas (?debug=keys) ================= */
+const DEBUG_KEYS = /(^|[?&])debug=keys/.test(location.search);
+const klList = document.getElementById('kl-list');
+if (DEBUG_KEYS) {
+  document.getElementById('keylog').style.display = 'block';
+  document.getElementById('kl-ua').textContent = navigator.userAgent;
+}
+function klog(e, action) {
+  if (!DEBUG_KEYS) return;
+  const li = document.createElement('li');
+  li.innerHTML = 'key=<b>' + e.key + '</b> code=<b>' + e.code + '</b> keyCode=<b>' + e.keyCode + '</b>'
+    + (e.repeat ? ' (repeat)' : '') + (action ? ' → <span class="act">' + action + '</span>' : ' → <span style="color:#b3372e">sin mapear</span>');
+  klList.insertBefore(li, klList.firstChild);
+  while (klList.children.length > 16) klList.removeChild(klList.lastChild);
+}
+
+/* ================= mapa de control remoto =================
+   Construido defensivo: cubre lo que mandan los WebView de Android TV
+   (flechas 37-40, OK 13/23, Back 4/27/8/461/10009, Play/Pause 179/85).
+   La tabla REAL del control se documenta con ?debug=keys en la tele. */
+function mapKey(e) {
+  const k = e.key, c = e.keyCode;
+  if (k === 'ArrowUp'    || k === 'Up'    || c === 38) return 'up';
+  if (k === 'ArrowDown'  || k === 'Down'  || c === 40) return 'down';
+  if (k === 'ArrowLeft'  || k === 'Left'  || c === 37) return 'left';
+  if (k === 'ArrowRight' || k === 'Right' || c === 39) return 'right';
+  if (k === 'Enter' || c === 13 || c === 23) return 'ok';
+  if (k === 'Escape' || k === 'Backspace' || k === 'BrowserBack' || k === 'GoBack' ||
+      c === 27 || c === 8 || c === 4 || c === 461 || c === 10009) return 'back';
+  if (k === 'MediaPlayPause' || c === 179 || c === 85) return 'playpause';
+  return null;
+}
+
+/* ================= datos ================= */
+let CAT = null, ENRICH = {}, ED = { books: {}, authors: {}, topics: {} }, COLS = [], RECS = [];
+let BOOKS = [], BY_ID = {}, SHELF_BY_ID = {};
+const LS_CAT = 'tv-cat-v1', CAT_TTL = 24 * 3600 * 1000;
+const TOPIC_LABEL = t => (ED.topics[t] && ED.topics[t].label) || t;
+
+async function fetchCatalog() {
+  try {
+    const c = JSON.parse(localStorage.getItem(LS_CAT));
+    if (c && c.cat && Date.now() - c.t < CAT_TTL) return c.cat;
+  } catch (e) {}
+  /* streaming con corte: el catálogo vive a ~1.2 MB del inicio de index.html;
+     las fotos (3.7 MB) vienen después y nunca se descargan */
+  const res = await fetch('../index.html');
+  if (!res.ok) throw new Error('No pude leer ../index.html (' + res.status + ')');
+  let html = '', cat = null;
+  const MARK = '<script id="inline-catalog"';
+  if (res.body && window.TextDecoder) {
+    const rd = res.body.getReader(), dec = new TextDecoder();
+    for (;;) {
+      const { done, value } = await rd.read();
+      if (value) {
+        html += dec.decode(value, { stream: true });
+        const i = html.indexOf(MARK);
+        if (i >= 0) {
+          const open = html.indexOf('>', i);
+          const close = html.indexOf('<\/script>', open);
+          if (open >= 0 && close > open) {
+            cat = JSON.parse(html.slice(open + 1, close));
+            rd.cancel().catch(() => {});   /* cierre prolijo: no baja las fotos */
+            break;
+          }
+        }
+      }
+      if (done) break;
+    }
+  } else {
+    html = await res.text();
+  }
+  if (!cat) {
+    const m = /<script id="inline-catalog"[^>]*>([\s\S]*?)<\/script>/.exec(html);
+    if (!m) throw new Error('No encontré el catálogo embebido');
+    cat = JSON.parse(m[1]);
+  }
+  try { localStorage.setItem(LS_CAT, JSON.stringify({ t: Date.now(), cat: cat })); } catch (e) {}
+  return cat;
+}
+
+async function loadAll() {
+  const softJson = (url, fb) => fetch(url).then(r => r.ok ? r.json() : fb).catch(() => fb);
+  const [cat, enrich, ed, cols, recs] = await Promise.all([
+    fetchCatalog(),
+    softJson('../data/enrichment.json', {}),
+    softJson('../concepts/editorial.json', ED),
+    softJson('../concepts/collections.json', { collections: [] }),
+    softJson('../recs/recommended.json', { recommendations: [] })
+  ]);
+  CAT = cat;
+  ENRICH = enrich.books || {};
+  ED = ed && ed.books ? ed : ED;
+  COLS = cols.collections || [];
+  RECS = (recs.recommendations || []).slice().reverse(); /* más recientes primero */
+  CAT.shelves.forEach(s => {
+    SHELF_BY_ID[s.id] = s;
+    (s.books || []).forEach((b, i) => {
+      b._shelf = s.id; b._idx = i; b._n = s.books.length;
+      const e = ENRICH[b.id];
+      b._year = e ? e.first_published : null;
+      b._read = e ? e.read_status : null;
+      b._ed = ED.books[b.id] || null;
+      BOOKS.push(b); BY_ID[b.id] = b;
+    });
+  });
+}
+
+const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const yearLabel = y => y == null ? null : (y < 0 ? Math.abs(y) + ' a.C.' : String(y));
+const isFamily = b => /apolant|villar/i.test(b.author_canonical || b.author || '');
+function colBooks(c) {
+  const f = c.filter;
+  if (f.type === 'shelf') return SHELF_BY_ID[f.value] ? SHELF_BY_ID[f.value].books : [];
+  if (f.type === 'shelves') return f.value.flatMap(id => SHELF_BY_ID[id] ? SHELF_BY_ID[id].books : []);
+  if (f.type === 'topic') return BOOKS.filter(b => b.topics && b.topics.includes(f.value));
+  if (f.type === 'family') return BOOKS.filter(isFamily);
+  return [];
+}
+function colOf(b) { for (const c of COLS) { if (colBooks(c).some(x => x.id === b.id)) return c; } return null; }
+function genDesc(b) {
+  const t = (b.topics && b.topics[0]) || 'miscellaneous', sh = SHELF_BY_ID[b._shelf], bits = [];
+  bits.push('Registro mecanografiado: «' + b.title + '»' + (b.author ? ', de ' + b.author + '.' : '.') +
+    ' Archivado bajo ' + (sh ? sh.theme.toLowerCase() : 'clasificación pendiente') + '.');
+  if (ED.topics[t] && ED.topics[t].desc) bits.push(ED.topics[t].desc);
+  return bits.join(' ');
+}
+const bookDesc = b => (b._ed && b._ed.desc) || genDesc(b);
+const readChip = b => b._read === 'leido' ? '<span class="chip g">Leído</span>'
+  : b._read === 'leyendo' ? '<span class="chip b">Leyendo</span>'
+  : b._read === 'prestado' ? '<span class="chip b">Prestado</span>' : '';
+
+/* ================= foco: roving + navegación espacial ================= */
+let FOCUSED = null;
+const FOCUS_MEM = {};   /* hash → data-fid, para volver al mismo lugar con Back */
+let SCROLL_PENDING = null;  /* {sc, top}: destino del scroll suave en vuelo */
+
+/* geometría "asentada": mientras el scroll suave viaja, los rects se corrigen
+   al punto de llegada — así el D-pad rápido nunca se pierde */
+function settledY(el, y) {
+  if (!SCROLL_PENDING || !SCROLL_PENDING.sc.contains(el)) return y;
+  return y - (SCROLL_PENDING.top - SCROLL_PENDING.sc.scrollTop);
+}
+
+function focusables() {
+  return Array.prototype.filter.call(document.querySelectorAll('#app [data-f]'),
+    el => el.offsetParent !== null);
+}
+function setFocus(el, opts) {
+  if (!el) return;
+  if (FOCUSED) { FOCUSED.classList.remove('focused'); FOCUSED.tabIndex = -1; }
+  FOCUSED = el;
+  el.classList.add('focused'); el.tabIndex = 0;
+  try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); }
+  if (!opts || !opts.noScroll) {
+    const sc = el.closest('.scroll');
+    if (sc) {
+      /* ítem enfocado siempre visible, centrado (posición en espacio de
+         contenido: invariante aunque haya un scroll suave en vuelo) */
+      const r = el.getBoundingClientRect(), s = sc.getBoundingClientRect();
+      let target = sc.scrollTop + (r.top + r.height / 2) - (s.top + s.height / 2);
+      target = Math.max(0, Math.min(target, sc.scrollHeight - sc.clientHeight));
+      SCROLL_PENDING = { sc: sc, top: target };
+      sc.scrollTo({ top: target, behavior: prefersReduced() ? 'auto' : 'smooth' });
+    }
+    /* si el foco sale del contenedor, SCROLL_PENDING queda: la compensación
+       se neutraliza sola cuando el scroll en vuelo llega a destino */
+  }
+}
+const prefersReduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function move(dir) {
+  const els = focusables();
+  if (!els.length) return;
+  if (!FOCUSED || els.indexOf(FOCUSED) < 0) { setFocus(els[0]); return; }
+  const cr = FOCUSED.getBoundingClientRect();
+  const cx = cr.left + cr.width / 2, cy = settledY(FOCUSED, cr.top + cr.height / 2);
+  let best = null, bs = Infinity;
+  for (const el of els) {
+    if (el === FOCUSED) continue;
+    const r = el.getBoundingClientRect();
+    const ex = r.left + r.width / 2, ey = settledY(el, r.top + r.height / 2);
+    const dx = ex - cx, dy = ey - cy;
+    let fwd, orth;
+    if (dir === 'left')  { fwd = -dx; orth = Math.abs(dy); }
+    if (dir === 'right') { fwd =  dx; orth = Math.abs(dy); }
+    if (dir === 'up')    { fwd = -dy; orth = Math.abs(dx); }
+    if (dir === 'down')  { fwd =  dy; orth = Math.abs(dx); }
+    if (fwd <= 4) continue;                    /* tiene que estar en esa dirección */
+    const score = fwd + orth * 2.2;
+    if (score < bs) { bs = score; best = el; }
+  }
+  if (best) { setFocus(best); return; }
+  /* sin candidato: si hay un contenedor con scroll, desplazarlo (fichas largas) */
+  if (dir === 'up' || dir === 'down') {
+    const sc = document.querySelector('#app .scroll');
+    if (sc && sc.scrollHeight > sc.clientHeight) {
+      const from = (SCROLL_PENDING && SCROLL_PENDING.sc === sc) ? SCROLL_PENDING.top : sc.scrollTop;
+      let target = from + (dir === 'down' ? 1 : -1) * sc.clientHeight * .45;
+      target = Math.max(0, Math.min(target, sc.scrollHeight - sc.clientHeight));
+      SCROLL_PENDING = { sc: sc, top: target };
+      sc.scrollTo({ top: target, behavior: prefersReduced() ? 'auto' : 'smooth' });
+    }
+  }
+}
+
+/* ================= router con historia real ================= */
+let NAV_DEPTH = 0;  /* profundidad interna: Back nunca se escapa del /tv/ */
+function go(hash) { location.hash = hash; }
+function goBack() {
+  if (location.hash && location.hash !== '#/' && location.hash !== '#') {
+    if (NAV_DEPTH > 0) { NAV_DEPTH -= 2; history.back(); }
+    else location.hash = '#/';
+  }
+  /* en la home, Back no hace nada: la salida es asunto de Fully */
+}
+
+function route() {
+  if (!CAT) return;
+  const h = location.hash.replace(/^#\/?/, '');
+  const [v, a] = h.split('/');
+  if (v === 'cajon') viewCajon(a);
+  else if (v === 'ficha') viewFicha(a);
+  else if (v === 'indice') viewIndice();
+  else if (v === 'recs') viewRecs();
+  else if (v === 'rec') viewRec(a);
+  else viewHome();
+  restoreFocus();
+}
+function restoreFocus() {
+  const want = FOCUS_MEM[location.hash || '#/'];
+  let el = want ? document.querySelector('#app [data-fid="' + want + '"]') : null;
+  if (!el) el = document.querySelector('#app [data-autofocus]') || focusables()[0];
+  setFocus(el, { noScroll: false });
+}
+window.addEventListener('hashchange', () => { NAV_DEPTH++; route(); });
+
+function render(html) {
+  const app = document.getElementById('app');
+  document.getElementById('status').style.display = 'none';
+  app.style.display = 'block';
+  app.innerHTML = '<div class="view">' + html + '</div>';
+  FOCUSED = null;
+  SCROLL_PENDING = null;
+}
+const ring = '<span class="fring"></span>';
+
+/* ================= home: el mueble ================= */
+function drawerHTML(fid, go, title, sub) {
+  return '<div class="drawer" data-f data-fid="' + fid + '" data-go="' + go + '">' + ring +
+    '<div class="dlabel"><div class="dcard">' + title + '<small>' + sub + '</small></div></div>' +
+    '<div class="dhandle"></div></div>';
+}
+function viewHome() {
+  let d = COLS.map(c => drawerHTML('d-' + c.key, '#/cajon/' + c.key, esc(c.title), colBooks(c).length + ' fichas')).join('');
+  d += drawerHTML('d-recs', '#/recs', 'Recomenda&shy;ciones', RECS.length + ' fichas nuevas');
+  d += drawerHTML('d-indice', '#/indice', 'Índice general', BOOKS.length + ' fichas · A–Z');
+  render(
+    '<div class="cabinet"><div class="interior"><div class="drawers" id="drawers">' + d + '</div></div></div>' +
+    '<p class="homehint"><b>Flechas</b> para recorrer el mueble · <b>OK</b> abre el cajón · <b>Atrás</b> lo devuelve</p>'
+  );
+  paintWood();
+}
+
+/* la veta fluye continua: cada frente muestra su ventana de la MISMA placa */
+function paintWood() {
+  const panel = document.getElementById('drawers');
+  if (!panel) return;
+  const w = panel.clientWidth, h = panel.clientHeight;
+  panel.querySelectorAll('.drawer').forEach(d => {
+    d.style.backgroundSize = w + 'px ' + h + 'px';
+    d.style.backgroundPosition = (-d.offsetLeft) + 'px ' + (-d.offsetTop) + 'px';
+  });
+}
+window.addEventListener('resize', paintWood);
+
+/* ================= cajón ================= */
+function miniHTML(b, first) {
+  return '<div class="mini" data-f' + (first ? ' data-autofocus' : '') + ' data-fid="m-' + b.id + '" data-go="#/ficha/' + b.id + '">' + ring +
+    '<span class="cn">' + esc(b.id) + '</span>' + readChip(b) +
+    '<h4>' + esc(b.title) + '</h4>' +
+    '<div class="a">' + esc(b.author || '—') + (b._year ? ' · ' + yearLabel(b._year) : '') + '</div></div>';
+}
+function headHTML(title, sub, kicker) {
+  return '<div class="vhead">' +
+    '<button class="backbtn" data-f data-fid="back" data-back>' + ring + '← Volver</button>' +
+    '<div class="vtitle"><div class="in">' + title + '<small>' + sub + '</small></div></div>' +
+    (kicker ? '<span class="kicker">' + kicker + '</span>' : '') + '</div>';
+}
+function viewCajon(key) {
+  const c = COLS.find(x => x.key === key);
+  if (!c) return viewHome();
+  const list = colBooks(c);
+  const essay = (c.essay && c.essay.length) ?
+    '<div class="essaycard"><span class="cn">CAJÓN/' + esc(c.key).toUpperCase() + ' · NOTA DEL ARCHIVISTA</span>' +
+    c.essay.map(p => '<p>' + esc(p) + '</p>').join('') + '</div>' : '';
+  render(
+    headHTML(esc(c.title).toUpperCase(), list.length + ' fichas', esc(c.kicker || '')) +
+    '<div class="scroll">' + essay + '<div class="grid">' + list.map((b, i) => miniHTML(b, i === 0)).join('') + '</div></div>'
+  );
+}
+
+/* ================= índice general ================= */
+function viewIndice() {
+  const sorted = BOOKS.slice().sort((a, b) => a.title.localeCompare(b.title, 'es'));
+  render(
+    headHTML('ÍNDICE GENERAL', BOOKS.length + ' fichas · A–Z', 'Todo el archivo en orden alfabético') +
+    '<div class="scroll"><div class="grid">' + sorted.map((b, i) => miniHTML(b, i === 0)).join('') + '</div></div>'
+  );
+}
+
+/* ================= recomendaciones ================= */
+function recMiniHTML(r, first) {
+  const go = r.book_ref && BY_ID[r.book_ref] ? '#/ficha/' + r.book_ref : '#/rec/' + r.id;
+  return '<div class="mini" data-f' + (first ? ' data-autofocus' : '') + ' data-fid="r-' + r.id + '" data-go="' + go + '">' + ring +
+    '<span class="cn">' + esc(r.date) + '</span>' +
+    '<span class="chip ' + (r.kind === 'nuevo' ? 'r' : 'g') + '">' + (r.kind === 'nuevo' ? 'Nuevo' : 'Biblioteca') + '</span>' +
+    '<h4>' + esc(r.title) + '</h4>' +
+    '<div class="a">' + esc(r.author || '—') + '</div></div>';
+}
+function viewRecs() {
+  render(
+    headHTML('RECOMENDACIONES', RECS.length + ' fichas', 'Una ficha nueva por día — sin tipear nada') +
+    '<div class="scroll"><div class="grid">' + RECS.map((r, i) => recMiniHTML(r, i === 0)).join('') + '</div></div>'
+  );
+}
+function viewRec(id) {
+  const r = RECS.find(x => x.id === id);
+  if (!r) return viewRecs();
+  render(
+    headHTML('RECOMENDACIÓN', esc(r.date), r.kind === 'nuevo' ? 'Para conseguir' : 'Ya está en casa') +
+    '<div class="scroll"><div class="fichawrap"><div class="bigcard">' +
+      '<span class="cn">REC/' + esc(r.date) + '</span>' +
+      '<span class="stamp familia" style="top:1.4rem">' + (r.kind === 'nuevo' ? 'Fuera de catálogo' : 'En el catálogo') + '</span>' +
+      '<h2>' + esc(r.title) + '</h2>' +
+      '<div class="au">' + esc(r.author || '—') + '</div>' +
+      '<p class="tdesc">' + esc(r.why || '') + '</p>' +
+      ((r.topics && r.topics.length) ? '<div class="tfield" style="margin-top:2rem"><b>Materia</b><span>' + esc(r.topics.join(' · ')) + '</span></div>' : '') +
+    '</div></div></div>'
+  );
+}
+
+/* ================= ficha ================= */
+function viewFicha(id) {
+  const b = BY_ID[id];
+  if (!b) return viewHome();
+  const c = colOf(b), s = SHELF_BY_ID[b._shelf], e = ENRICH[b.id];
+  const flat = c ? colBooks(c) : s.books;
+  const i = flat.findIndex(x => x.id === b.id);
+  const prev = flat[(i - 1 + flat.length) % flat.length], next = flat[(i + 1) % flat.length];
+  const fields = [
+    ['Autor/a', b.author || '— sin identificar —'],
+    ['Primera ed.', b._year != null ? yearLabel(b._year) + (e && e.year_confidence === 'aprox' ? ' (aprox.)' : '') : 'sin datar'],
+    ['Idioma', b.language || '—'],
+    b.publisher ? ['Editorial', b.publisher] : null,
+    b.series ? ['Serie', b.series] : null,
+    b.binding ? ['Encuadernación', b.binding] : null,
+    ['Ubicación', 'Estante ' + b._shelf + ', posición ' + (b._idx + 1) + ' de ' + b._n],
+    ['Materia', (b.topics || []).map(TOPIC_LABEL).join(' · ') || '—'],
+    b.price ? ['Valor de ref.', b.price] : null,
+    e && e.note ? ['Nota del archivo', e.note] : null
+  ].filter(Boolean);
+  render(
+    headHTML(esc(b.id), 'ficha ' + (i + 1) + ' de ' + flat.length, c ? esc(c.title) : esc(s.theme)) +
+    '<div class="scroll"><div class="fichawrap"><div class="bigcard">' +
+      '<span class="cn">' + esc(b.id) + ' / ' + (c ? esc(c.key).toUpperCase() : 'GEN') + '</span>' +
+      (isFamily(b) ? '<span class="stamp familia">Autoría familiar</span>' : '') +
+      (b._read === 'leido' ? '<span class="stamp leido">Leído</span>' :
+       b._read === 'leyendo' ? '<span class="stamp leyendo">En lectura</span>' :
+       b._read === 'prestado' ? '<span class="stamp prestado">Prestado</span>' : '') +
+      '<h2>' + esc(b.title) + '</h2>' +
+      '<div class="au">' + esc(b.author || '— autor sin identificar —') + '</div>' +
+      '<div class="cols"><div>' +
+        fields.map(f => '<div class="tfield"><b>' + esc(f[0]) + '</b><span>' + esc(f[1]) + '</span></div>').join('') +
+      '</div><div>' +
+        '<p class="tdesc">' + esc(bookDesc(b)) + '</p>' +
+        (b._ed && b._ed.dato ? '<div class="pnote"><b>Nota abrochada por el archivista</b>' + esc(b._ed.dato) + '</div>' : '') +
+      '</div></div>' +
+    '</div></div></div>' +
+    '<div class="fnav">' +
+      '<button class="backbtn" data-f data-fid="prev" data-go="#/ficha/' + prev.id + '" data-replace>' + ring + '← Ficha anterior</button>' +
+      '<button class="backbtn" data-f data-fid="next" data-go="#/ficha/' + next.id + '" data-replace data-autofocus>' + ring + 'Ficha siguiente →</button>' +
+    '</div>'
+  );
+}
+
+/* ================= activación ================= */
+function activate(el) {
+  if (!el) return;
+  if (el.hasAttribute('data-back')) { goBack(); return; }
+  const go = el.getAttribute('data-go');
+  if (!go) return;
+  FOCUS_MEM[location.hash || '#/'] = el.getAttribute('data-fid');
+  if (el.hasAttribute('data-replace')) {
+    /* hojear fichas no apila historia: Back siempre devuelve al cajón */
+    NAV_DEPTH--;                       /* compensa el ++ del hashchange */
+    location.replace(go);
+  } else {
+    go === location.hash ? route() : location.hash = go;
+  }
+}
+
+/* ================= teclado ================= */
+document.addEventListener('keydown', e => {
+  const action = mapKey(e);
+  klog(e, action);
+  if (!action) return;
+  if (INTRO_ALIVE) { e.preventDefault(); introFinish(); return; }
+  e.preventDefault();
+  if (e.repeat && (action === 'ok' || action === 'back')) return;
+  if (action === 'ok') activate(FOCUSED);
+  else if (action === 'back') goBack();
+  else if (action === 'playpause') { /* v2: modo vitrina */ }
+  else move(action);
+}, true);
+
+/* click/touch de cortesía (para probar en desktop; en la tele no existe) */
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-f]');
+  if (el) { setFocus(el, { noScroll: true }); activate(el); }
+});
+
+/* ================= intro (≤4 s, salteable con OK, 1 vez por sesión) ================= */
+let INTRO_ALIVE = false, INTRO_T = null;
+const introEl = document.getElementById('intro');
+function introFinish() {
+  if (!INTRO_ALIVE) return;
+  INTRO_ALIVE = false;
+  clearTimeout(INTRO_T);
+  try { sessionStorage.setItem('tv-intro', '1'); } catch (e) {}
+  introEl.classList.add('out');
+  setTimeout(() => introEl.remove(), 600);
+}
+function introStart() {
+  const seen = (() => { try { return sessionStorage.getItem('tv-intro') === '1'; } catch (e) { return false; } })();
+  const home = !location.hash || location.hash === '#/' || location.hash === '#';
+  if (seen || !home || prefersReduced()) { introEl.remove(); return; }
+  INTRO_ALIVE = true;
+  introEl.hidden = false;
+  requestAnimationFrame(() => requestAnimationFrame(() => introEl.classList.add('on')));
+  INTRO_T = setTimeout(introFinish, 3600);
+}
+introStart();
+
+/* ================= arranque ================= */
+loadAll().then(() => {
+  NAV_DEPTH = 0;
+  route();
+}).catch(err => {
+  document.getElementById('status').innerHTML =
+    '<h2>El mueble está trabado</h2>' +
+    '<p>' + esc(err.message) + '. El Fichero TV lee el catálogo desde <b>../index.html</b>: ' +
+    'hay que abrirlo servido por HTTP (GitHub Pages o un server local).</p>' +
+    '<p style="font-family:var(--sans);font-size:1.8rem;color:#8a785f">OK para reintentar</p>';
+  const retry = () => location.reload();
+  document.addEventListener('keydown', e => { if (mapKey(e) === 'ok') retry(); }, { once: true });
+});
+</script>
+
+</body>
+</html>
