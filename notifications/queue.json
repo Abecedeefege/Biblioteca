@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-07-16T16:01:23.463Z",
+  "_updated_at": "2026-07-16T16:15:00.000Z",
   "notifications": [
     {
       "id": "2026-07-04-a",
@@ -262,6 +262,19 @@
       "sent_at": "2026-07-16T14:40:54.152Z",
       "fail_reason": null,
       "created_by": "sync_devices.js (bienvenida)"
+    },
+    {
+      "id": "2026-07-16-rec-sofi",
+      "title": "📖 Ese libro de tu estante tiene un club esperando",
+      "body": "Vos ya elegiste a Joyce. Este club de 4 mujeres investiga una muerte en las vías — y ya lo tenés en M5, sin abrir.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-16-adams-club-lectura.html",
+      "send_at": "2026-07-16T17:30:00-03:00",
+      "expires_at": "2026-07-16T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-16",
+      "to": "Sofi"
     }
   ]
 }

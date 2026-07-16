@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-15T21:30:00-03:00",
-  "_feedback_cutoff": "2026-07-15T20:00:00Z",
+  "_updated_at": "2026-07-16T16:15:00-03:00",
+  "_feedback_cutoff": "2026-07-16T16:48:11.731Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -20,12 +20,12 @@
       "notified_by": "2026-07-15-rec",
       "why": "Recomendación fundacional: el clásico que falta en L4 — conecta Solve for Happy, The Art of Happiness y el estoicismo de Holiday con su raíz del siglo XX. Verificado: no está en ninguno de los 400 del catálogo.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "veredicto": "ya_lo_lei",
+        "reaccion": "love",
+        "clicked": true,
+        "dwell_s": 466
       },
-      "learning": null,
+      "learning": "Ya lo conocía: puntería de veta correcta (positividad/sentido) pero sin descubrimiento. Subir la vara de novedad en esa veta — buscar menos-obvios, no clásicos consagrados.",
       "audience": "andy"
     },
     {
@@ -45,13 +45,39 @@
       "notified_by": "2026-07-16-rec",
       "why": "El estante L5 (32 libros de cosmos) muere en Hawking 1988 — cero astronomía post-1990. Rovelli es la continuación exacta: corto, poético, moderno. Pre-armada en el bootstrap del 15/07.",
       "feedback": {
+        "veredicto": "lo_quiero",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 182
+      },
+      "learning": "ACIERTO PLENO. Astronomía moderna + formato corto/poético es su combo ganador. Profundizar veta: Tyson, Katie Mack, Sean Carroll son los próximos pasos naturales.",
+      "audience": "andy"
+    },
+    {
+      "id": "2026-07-16-adams-club-lectura",
+      "date": "2026-07-16",
+      "kind": "redescubrimiento",
+      "title": "Misterio en el club de lectura",
+      "author": "Ellery Adams",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy",
+        "club",
+        "amistad"
+      ],
+      "book_ref": "M5-018",
+      "audience": "sofi",
+      "page": "recs/2026-07-16-adams-club-lectura.html",
+      "notified_by": "2026-07-16-rec-sofi",
+      "why": "Redescubrimiento M5: el gemelo cozy-terapéutico del Club del Crimen de los Jueves que amó (lo_quiero + love, eligió a Joyce). Mismo formato de cuarteto femenino investigando una muerte ambigua, tono más cálido (bibliotherapy). Ya lo tiene en el estante, sin leer. Par del día: Andy tuvo el 'nuevo' (Rovelli) hoy, a ella le toca 'de la biblioteca'.",
+      "feedback": {
         "veredicto": null,
         "reaccion": null,
         "clicked": false,
         "dwell_s": 0
       },
-      "learning": null,
-      "audience": "andy"
+      "learning": null
     },
     {
       "id": "2026-07-17-bucay-camino-felicidad",
@@ -244,12 +270,12 @@
       "notified_by": "2026-07-24-rec",
       "why": "Primera ficha Para Sofi: su M5 está lleno de cozies de Alma + 2 Christie; este es EL cozy moderno (récord debut UK, peli Netflix ago-2025 Mirren/Brosnan, dir. Columbus). Interacción: conocé al club (4 expedientes) + rec-club.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "veredicto": "lo_quiero",
+        "reaccion": "love",
+        "clicked": true,
+        "dwell_s": 179
       },
-      "learning": null
+      "learning": "ACIERTO PLENO — su primera ficha. Cozy grupal/detectives-amateur es veta ganadora. Eligió a Joyce (rec-club) como favorita: perfil hacia personajes cálidos/chusmas, no fríos/analíticos. Sube la vara: tomo 2 de Osman o cozies ya en casa (M5) antes de gastar otro 'nuevo' ahí."
     },
     {
       "id": "2026-07-25-weir-hail-mary",
