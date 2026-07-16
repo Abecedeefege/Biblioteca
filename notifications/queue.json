@@ -96,7 +96,8 @@
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "bootstrap /recomendacion 2026-07-15"
+      "created_by": "bootstrap /recomendacion 2026-07-15",
+      "to": "Andy"
     },
     {
       "id": "2026-07-17-rec",
@@ -108,7 +109,8 @@
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "bootstrap /recomendacion 2026-07-15"
+      "created_by": "bootstrap /recomendacion 2026-07-15",
+      "to": "Andy"
     },
     {
       "id": "test-1784150958121",
@@ -132,7 +134,8 @@
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "bootstrap /recomendacion 2026-07-15"
+      "created_by": "bootstrap /recomendacion 2026-07-15",
+      "to": "Andy"
     },
     {
       "id": "2026-07-19-rec",
@@ -144,7 +147,8 @@
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "bootstrap /recomendacion 2026-07-15"
+      "created_by": "bootstrap /recomendacion 2026-07-15",
+      "to": "Andy"
     },
     {
       "id": "2026-07-20-rec",
@@ -156,7 +160,8 @@
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "bootstrap /recomendacion 2026-07-15"
+      "created_by": "bootstrap /recomendacion 2026-07-15",
+      "to": "Andy"
     },
     {
       "id": "2026-07-21-rec",
@@ -168,7 +173,8 @@
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "bootstrap /recomendacion 2026-07-15"
+      "created_by": "bootstrap /recomendacion 2026-07-15",
+      "to": "Andy"
     },
     {
       "id": "2026-07-22-rec",
@@ -180,7 +186,8 @@
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "bootstrap /recomendacion 2026-07-15"
+      "created_by": "bootstrap /recomendacion 2026-07-15",
+      "to": "Andy"
     },
     {
       "id": "2026-07-23-rec",
@@ -192,7 +199,8 @@
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "bootstrap /recomendacion 2026-07-15"
+      "created_by": "bootstrap /recomendacion 2026-07-15",
+      "to": "Andy"
     },
     {
       "id": "2026-07-24-rec",

@@ -214,18 +214,32 @@ async function enablePush() {
         applicationServerKey: urlBase64ToUint8Array(vapidPublic),
       });
     }
-    const subDoc = {
-      _comment: 'Suscripción Web Push del dueño. La escribe SOLO el browser (engage/setup.html vía GitHub API). El dispatcher solo la invalida si el endpoint devuelve 404/410.',
-      device: localStorage.getItem(K_DEV) || 'dispositivo-sin-nombre',
+    const devName = localStorage.getItem(K_DEV) || 'dispositivo-sin-nombre';
+    const entry = {
+      device: devName,
       subscription: sub.toJSON(),
       status: 'active',
       updated_at: new Date().toISOString(),
       invalidated_at: null,
       invalid_reason: null,
     };
+    const subDoc = {
+      _comment: 'Suscripciones Web Push de la casa (multi-dispositivo). Las escribe SOLO el browser (engage/setup.html o sofi.html vía GitHub API). El dispatcher invalida un dispositivo si su endpoint devuelve 404/410.',
+      devices: [entry],
+    };
     if (localStorage.getItem(K_PAT)) {
-      await ghUpdateJson('notifications/subscription.json', () => subDoc, 'push: registrar suscripción');
-      say('push-status', '✓ Notificaciones activadas y suscripción guardada en el repo.', 'ok');
+      // upsert del dispositivo: NO pisa a los demás teléfonos de la casa
+      await ghUpdateJson('notifications/subscription.json', (obj) => {
+        obj = obj || {};
+        let devs = Array.isArray(obj.devices) ? obj.devices
+          : (obj.subscription ? [{ device: obj.device, subscription: obj.subscription, status: obj.status,
+              updated_at: obj.updated_at, invalidated_at: obj.invalidated_at || null, invalid_reason: obj.invalid_reason || null }] : []);
+        const ep = entry.subscription.endpoint;
+        const i = devs.findIndex((d) => (d.subscription && d.subscription.endpoint === ep) || d.device === devName);
+        if (i >= 0) devs[i] = entry; else devs.push(entry);
+        return Object.assign({}, subDoc, { devices: devs });
+      }, 'push: registrar dispositivo ' + devName);
+      say('push-status', '✓ Notificaciones activadas: dispositivo "' + devName + '" guardado en el repo (sin pisar a los demás).', 'ok');
     } else {
       $('sub-json').value = JSON.stringify(subDoc, null, 2);
       $('sub-fallback').style.display = 'block';
@@ -285,10 +299,13 @@ async function refreshStatus() {
     const r = await fetch('../notifications/subscription.json?_=' + Date.now(), { cache: 'no-store' });
     if (r.ok) {
       const s = await r.json();
-      lines.push('Suscripción en el repo: ' + (s.status || 'desconocida') +
-        (s.device ? ' (' + s.device + ')' : '') +
-        (s.invalid_reason ? ' — motivo: ' + s.invalid_reason : ''));
-      if (s.status === 'invalid') lines.push('→ El endpoint murió; tocá "Activar notificaciones" de nuevo.');
+      const devs = Array.isArray(s.devices) ? s.devices : (s.subscription ? [s] : []);
+      if (!devs.length) lines.push('Sin dispositivos suscriptos en el repo.');
+      devs.forEach((d) => {
+        lines.push('Dispositivo "' + (d.device || 'sin nombre') + '": ' + (d.status || 'desconocido') +
+          (d.invalid_reason ? ' — motivo: ' + d.invalid_reason : ''));
+        if (d.status === 'invalid') lines.push('→ Ese endpoint murió; reactivar desde ese teléfono.');
+      });
     }
   } catch (e) { lines.push('No pude leer subscription.json (¿deploy pendiente?)'); }
   say('global-status', lines.join('\n'));

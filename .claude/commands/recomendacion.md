@@ -151,6 +151,10 @@ json.dump(cat, open('/tmp/catalog.json','w'), ensure_ascii=False)"
      tarde: ≥75 min después de tu corrida, nunca pasadas las 21:00) ·
      `expires_at`: hoy 23:00 -03:00 · `created_by`:
      `"recomendacion-agent <YYYY-MM-DD>"`.
+   - **Destinatario del push** (`to`, el canal es multi-dispositivo):
+     audiencia `andy` → `"to": "Andy"`; audiencia `sofi` o `todos` →
+     omití `to` (llega a todos los teléfonos de la casa). Los títulos de
+     sofi/todos arrancan con "Para Sofi:" / "Para los dos:".
    - Título ~40 chars con gancho + cuerpo ~110 chars específico. El copy
      cumple lo que promete la página. Posesivo + dato concreto gana
      ("El libro que le falta a tu estante L4" > "Te recomendamos un libro").

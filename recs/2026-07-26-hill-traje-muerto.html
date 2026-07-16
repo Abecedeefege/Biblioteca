@@ -56,10 +56,12 @@ button{font-family:var(--sans);cursor:pointer}
 .puente{background:var(--negro2)}
 /* máscaras */
 .mascaras{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.2rem}
-.mascara{perspective:1100px;background:transparent;border:none;text-align:left;min-height:250px;padding:0}
-.mascara-int{position:relative;width:100%;height:100%;min-height:250px;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.1,.2,1)}
+.mascara{display:block;perspective:1100px;background:transparent;border:none;text-align:left;padding:0}
+/* pila en grid: ambas caras comparten la celda 1/1 — la tarjeta mide lo que
+   mida la cara más alta, sin posicionamiento absoluto que colapse */
+.mascara-int{display:grid;width:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.1,.2,1)}
 .mascara.girada .mascara-int{transform:rotateY(180deg)}
-.cara-m{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:1.35rem;display:flex;flex-direction:column;gap:.6rem}
+.cara-m{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:1.35rem;display:flex;flex-direction:column;gap:.6rem}
 .cara-a{background:#241A1E;border:1px solid var(--linea)}
 .cara-a .tag{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--bruma)}
 .cara-a h3{font-family:var(--serif);font-size:1.3rem}

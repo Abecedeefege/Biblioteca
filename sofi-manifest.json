@@ -1,0 +1,18 @@
+{
+  "id": "./sofi.html",
+  "name": "Para Sofi",
+  "short_name": "Para Sofi",
+  "description": "Fichas de lectura elegidas para Sofi",
+  "start_url": "./sofi.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1E3226",
+  "theme_color": "#1E3226",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

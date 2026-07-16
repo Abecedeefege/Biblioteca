@@ -128,6 +128,10 @@ una hora UTC.
    - El slot del mediodía (~12:30) es del agente hermano `/recomendacion`
      (recomendación diaria de libros): no encoles ahí ni toques sus
      entradas `<fecha>-rec`.
+   - El canal es multi-dispositivo (`subscription.json` → `devices[]`,
+     hay más de un teléfono en la casa). Tus pushes son para el dueño:
+     agregá `"to": "Andy"` a cada entrada que encoles. Considerá el canal
+     pausado solo si el dispositivo "Andy" está `paused`.
    - Si `subscription.json` dice `paused`: **no encoles nada** (la fatiga se
      respeta) y anotalo en el reporte. Si dice `invalid` o `none`: encolá
      igual (quedan `pending` y expiran solas) y avisá en el reporte que hay

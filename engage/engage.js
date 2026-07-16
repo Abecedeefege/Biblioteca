@@ -237,27 +237,45 @@
     document.getElementById('engage-unsub-a').addEventListener('click', function (ev) {
       ev.preventDefault();
       record('push_unsubscribe', {});
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.ready
-          .then(function (reg) { return reg.pushManager.getSubscription(); })
-          .then(function (sub) { if (sub) return sub.unsubscribe(); })
-          .catch(function () {});
-      }
+      // pausar SOLO este dispositivo: capturar su endpoint antes de desuscribir
+      var epPromise = ('serviceWorker' in navigator)
+        ? navigator.serviceWorker.ready
+            .then(function (reg) { return reg.pushManager.getSubscription(); })
+            .then(function (sub) {
+              if (!sub) return null;
+              var ep = sub.endpoint;
+              return sub.unsubscribe().then(function () { return ep; }, function () { return ep; });
+            })
+            .catch(function () { return null; })
+        : Promise.resolve(null);
       var headers = ghHeaders();
       if (headers) {
         var api = 'https://api.github.com/repos/' + REPO + '/contents/notifications/subscription.json';
-        fetch(api + '?ref=' + BRANCH + '&_=' + Date.now(), { cache: 'no-store', headers: headers })
-          .then(function (r) { if (!r.ok) throw 0; return r.json(); })
-          .then(function (doc) {
-            var obj = JSON.parse(b64decodeUtf8(doc.content));
-            obj.status = 'paused'; obj.updated_at = now();
-            return fetch(api, { method: 'PUT',
-              headers: Object.assign({ 'Content-Type': 'application/json' }, headers),
-              body: JSON.stringify({ message: 'push: pausado por el dueño', branch: BRANCH,
-                content: b64encodeUtf8(JSON.stringify(obj, null, 2) + '\n'), sha: doc.sha }) });
-          }).catch(function () {});
+        epPromise.then(function (ep) {
+          return fetch(api + '?ref=' + BRANCH + '&_=' + Date.now(), { cache: 'no-store', headers: headers })
+            .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+            .then(function (doc) {
+              var obj = JSON.parse(b64decodeUtf8(doc.content));
+              var devs = obj.devices || (obj.subscription ? [obj] : []);
+              var target = null, myName = localStorage.getItem(K.device);
+              for (var i = 0; i < devs.length; i++) {
+                if (ep && devs[i].subscription && devs[i].subscription.endpoint === ep) { target = devs[i]; break; }
+              }
+              if (!target && myName) {
+                for (var j = 0; j < devs.length; j++) { if (devs[j].device === myName) { target = devs[j]; break; } }
+              }
+              if (!target && devs.length === 1) target = devs[0];
+              if (target) { target.status = 'paused'; target.updated_at = now(); }
+              else { obj.status = 'paused'; }
+              obj.updated_at = now();
+              return fetch(api, { method: 'PUT',
+                headers: Object.assign({ 'Content-Type': 'application/json' }, headers),
+                body: JSON.stringify({ message: 'push: pausado (' + (target && target.device || 'dispositivo') + ')', branch: BRANCH,
+                  content: b64encodeUtf8(JSON.stringify(obj, null, 2) + '\n'), sha: doc.sha }) });
+            });
+        }).catch(function () {});
       }
-      div.innerHTML = '🔕 Pausado. Para reactivar: <a href="' + SETUP_URL + '" style="color:inherit">ajustes</a>';
+      div.innerHTML = '🔕 Pausado en este dispositivo. Para reactivar: <a href="' + SETUP_URL + '" style="color:inherit">ajustes</a>';
     });
   }
 
