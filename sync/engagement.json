@@ -515,7 +515,139 @@
       "device": "sin-nombre",
       "dwell_s": 6,
       "scroll_pct": 0
+    },
+    {
+      "id": "mrnmapi0-ghc85u",
+      "ts": "2026-07-16T14:41:46.392Z",
+      "nid": "sofi-bienvenida",
+      "src": "push",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrnmapi2-nindse",
+      "ts": "2026-07-16T14:41:46.394Z",
+      "nid": "sofi-bienvenida",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrnmci07-ijqfhk",
+      "ts": "2026-07-16T14:43:09.991Z",
+      "qid": "rec-club:2026-07-24-osman-club-crimen",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "answer",
+      "value": "joyce",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrnmd02f-qy5sgg",
+      "ts": "2026-07-16T14:43:33.399Z",
+      "qid": "rec-veredicto:2026-07-24-osman-club-crimen",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "answer",
+      "value": "lo_quiero",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrnmd3wm-jbbmp6",
+      "ts": "2026-07-16T14:43:38.374Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "slug": "2026-07-24-osman-club-crimen",
+      "type": "reaction",
+      "value": "love",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrnmd93y-02qlco",
+      "ts": "2026-07-16T14:43:45.118Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 119,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnm9vdq-duckhl",
+      "ts": "2026-07-16T14:41:07.358Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 11,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnmflit-gausso",
+      "ts": "2026-07-16T14:45:34.517Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 3,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnmflni-903o5f",
+      "ts": "2026-07-16T14:45:34.686Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnmfy1q-7oan30",
+      "ts": "2026-07-16T14:45:50.750Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 16,
+      "scroll_pct": 79
+    },
+    {
+      "id": "mrnmg68j-u52zic",
+      "ts": "2026-07-16T14:46:01.363Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 179,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnmh4g0-yk3skq",
+      "ts": "2026-07-16T14:46:45.696Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 22,
+      "scroll_pct": 79
+    },
+    {
+      "id": "mrnmhi6p-oaqwye",
+      "ts": "2026-07-16T14:47:03.505Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 7,
+      "scroll_pct": 79
+    },
+    {
+      "id": "mrnmis12-57yh0u",
+      "ts": "2026-07-16T14:48:02.918Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 17,
+      "scroll_pct": 79
+    },
+    {
+      "id": "mrnmji76-lq4fhs",
+      "ts": "2026-07-16T14:48:36.834Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 28,
+      "scroll_pct": 79
     }
   ],
-  "_updated_at": "2026-07-16T14:40:36.656Z"
+  "_updated_at": "2026-07-16T16:01:23.187Z"
 }
