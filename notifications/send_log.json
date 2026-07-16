@@ -48,6 +48,13 @@
       "nid": "test-1784150958121",
       "ts": "2026-07-15T21:29:31.653Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "sofi-bienvenida",
+      "device": "Sofi",
+      "ts": "2026-07-16T14:40:54.151Z",
+      "status_code": 201
     }
   ]
 }
