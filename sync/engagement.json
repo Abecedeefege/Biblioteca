@@ -246,7 +246,16 @@
       "ts": "2026-07-16T00:06:02.046Z",
       "page": "2026-07-17-bucay-camino-felicidad.html",
       "device": "Andy"
+    },
+    {
+      "id": "mrmr1kci-r3an0q",
+      "type": "dwell",
+      "ts": "2026-07-16T00:06:51.714Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "device": "Andy",
+      "dwell_s": 50,
+      "scroll_pct": 39
     }
   ],
-  "_updated_at": "2026-07-16T00:06:03.078Z"
+  "_updated_at": "2026-07-16T00:06:54.077Z"
 }
