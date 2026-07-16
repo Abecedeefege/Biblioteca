@@ -239,7 +239,14 @@
       "device": "Andy",
       "dwell_s": 466,
       "scroll_pct": 100
+    },
+    {
+      "id": "mrmr0i0u-01el1k",
+      "type": "page_visit",
+      "ts": "2026-07-16T00:06:02.046Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "device": "Andy"
     }
   ],
-  "_updated_at": "2026-07-15T21:49:24.013Z"
+  "_updated_at": "2026-07-16T00:06:03.078Z"
 }
