@@ -673,7 +673,16 @@
       "page": "2026-07-16-rovelli-siete-lecciones.html",
       "device": "Andy",
       "nid": "2026-07-16-rec"
+    },
+    {
+      "id": "mrnpjsoe-lwmsp8",
+      "type": "answer",
+      "ts": "2026-07-16T16:12:49.262Z",
+      "page": "2026-07-16-rovelli-siete-lecciones.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-07-16-rovelli-siete-lecciones",
+      "value": "lo_quiero"
     }
   ],
-  "_updated_at": "2026-07-16T16:09:56.707Z"
+  "_updated_at": "2026-07-16T16:12:50.514Z"
 }
