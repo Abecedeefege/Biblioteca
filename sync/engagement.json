@@ -700,7 +700,123 @@
       "device": "Andy",
       "dwell_s": 182,
       "scroll_pct": 100
+    },
+    {
+      "id": "mrnq4dzh-sz7v3x",
+      "ts": "2026-07-16T16:28:49.997Z",
+      "page": "index.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnq4kyw-bnjkfa",
+      "ts": "2026-07-16T16:28:59.048Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 9,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnq4l0b-rn6efx",
+      "ts": "2026-07-16T16:28:59.099Z",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnq5cug-2qvp3w",
+      "ts": "2026-07-16T16:29:35.176Z",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 36,
+      "scroll_pct": 48
+    },
+    {
+      "id": "mrnq5fou-z5giht",
+      "ts": "2026-07-16T16:29:38.862Z",
+      "page": "2026-07-25-weir-hail-mary.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnq5inr-27uw3g",
+      "ts": "2026-07-16T16:29:42.712Z",
+      "page": "2026-07-25-weir-hail-mary.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 4,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnq5qxp-m0cy9l",
+      "ts": "2026-07-16T16:29:53.437Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 9,
+      "scroll_pct": 25
+    },
+    {
+      "id": "mrnq5qy0-5hyiyv",
+      "ts": "2026-07-16T16:29:53.448Z",
+      "page": "2026-07-21-bach-ilusiones.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnq5ug4-8z4fst",
+      "ts": "2026-07-16T16:29:57.988Z",
+      "page": "2026-07-21-bach-ilusiones.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 5,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnq759x-5ub3ul",
+      "ts": "2026-07-16T16:30:58.677Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 22,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnq75az-us8zqt",
+      "ts": "2026-07-16T16:30:58.715Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnq789h-qbdfqu",
+      "ts": "2026-07-16T16:31:02.549Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 4,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnqe160-ttrgf5",
+      "ts": "2026-07-16T16:36:19.944Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 7,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnqtadv-ganwb1",
+      "ts": "2026-07-16T16:48:11.731Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 5,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-07-16T16:12:58.995Z"
+  "_updated_at": "2026-07-16T17:36:53.963Z"
 }
