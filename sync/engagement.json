@@ -647,7 +647,33 @@
       "device": "sin-nombre",
       "dwell_s": 28,
       "scroll_pct": 79
+    },
+    {
+      "id": "mrmr3f5n-alycoc",
+      "type": "dwell",
+      "ts": "2026-07-16T00:08:18.299Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "device": "Andy",
+      "dwell_s": 61,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnpg2ro-2vxrsj",
+      "type": "notification_clicked",
+      "ts": "2026-07-16T16:09:55.716Z",
+      "page": "2026-07-16-rovelli-siete-lecciones.html",
+      "device": "Andy",
+      "nid": "2026-07-16-rec",
+      "src": "push"
+    },
+    {
+      "id": "mrnpg2ro-d8izfv",
+      "type": "page_visit",
+      "ts": "2026-07-16T16:09:55.716Z",
+      "page": "2026-07-16-rovelli-siete-lecciones.html",
+      "device": "Andy",
+      "nid": "2026-07-16-rec"
     }
   ],
-  "_updated_at": "2026-07-16T16:01:23.187Z"
+  "_updated_at": "2026-07-16T16:09:56.707Z"
 }
