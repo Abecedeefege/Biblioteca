@@ -848,7 +848,127 @@
       "device": "sin-nombre",
       "dwell_s": 62,
       "scroll_pct": 15
+    },
+    {
+      "id": "mro1okox-owxkdz",
+      "ts": "2026-07-16T21:52:27.585Z",
+      "page": "index.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mro1p5w9-d41awc",
+      "ts": "2026-07-16T21:52:55.065Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 27,
+      "scroll_pct": 50
+    },
+    {
+      "id": "mro1p5ys-g34v1j",
+      "ts": "2026-07-16T21:52:55.156Z",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mro1pq29-h7rbn7",
+      "ts": "2026-07-16T21:53:21.201Z",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 26,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mro1s8nb-i3g0m8",
+      "ts": "2026-07-16T21:55:18.599Z",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 138,
+      "scroll_pct": 46
+    },
+    {
+      "id": "mro1tyeb-duq3fd",
+      "ts": "2026-07-16T21:56:38.627Z",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 162,
+      "scroll_pct": 77
+    },
+    {
+      "id": "mro1ury8-zcv4g7",
+      "ts": "2026-07-16T21:57:16.928Z",
+      "qid": "rec-veredicto:2026-07-26-hill-traje-muerto",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "answer",
+      "value": "me_tienta",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mro1uwzd-8bo65w",
+      "ts": "2026-07-16T21:57:23.449Z",
+      "qid": "rec-terror:2026-07-26-hill-traje-muerto",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "answer",
+      "value": "cuanto_mas_oscuro_mejor",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mro1w12m-l4rq4v",
+      "ts": "2026-07-16T21:58:15.406Z",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "slug": "2026-07-26-hill-traje-muerto",
+      "type": "reaction",
+      "value": "love",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mro1wong-qek190",
+      "ts": "2026-07-16T21:58:45.964Z",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 258,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mro1ydx5-l6ei1u",
+      "ts": "2026-07-16T22:00:05.369Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 72,
+      "scroll_pct": 89
+    },
+    {
+      "id": "mro1ye0j-61jnu3",
+      "ts": "2026-07-16T22:00:05.491Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mro1yqv1-xkmgnm",
+      "ts": "2026-07-16T22:00:22.141Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 17,
+      "scroll_pct": 13
+    },
+    {
+      "id": "mro1z116-t207i7",
+      "ts": "2026-07-16T22:00:35.322Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 11,
+      "scroll_pct": 97
     }
   ],
-  "_updated_at": "2026-07-16T20:38:37.284Z"
+  "_updated_at": "2026-07-16T22:41:38.510Z"
 }
