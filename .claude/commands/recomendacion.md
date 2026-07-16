@@ -187,6 +187,12 @@ json.dump(cat, open('/tmp/catalog.json','w'), ensure_ascii=False)"
    - `python3 -m json.tool` sobre cada JSON tocado; la URL del push de hoy
      existe como archivo; `send_at` de hoy en el futuro; el HTML carga
      `../engage/engage.js` y tiene los CTAs obligatorios.
+   - **Todo link externo que publiques se verifica ANTES** (`curl -s -o
+     /dev/null -w '%{http_code}'` con User-Agent de browser → 200/30x).
+     El formato de compra es `https://www.buscalibre.uy/libros/search/?q=…`
+     (dominio `.uy`, barra antes del `?q=`) — jamás `buscalibre.com.uy`,
+     que no resuelve. Un link roto en una ficha quema la confianza igual
+     que un dato falso.
    - `git pull --rebase origin main` → commit único
      `rec: <YYYY-MM-DD> <título corto>` → push a main; ante rechazo por
      race: `git pull --rebase` y reintentá (hasta 4 veces, backoff
@@ -244,7 +250,7 @@ Bloques obligatorios (los define `engage.js`; usá exactamente estas firmas):
 </div>
 
 <!-- 4) Si es NUEVO: link de compra (formato buscalibre del catálogo) -->
-<a href="https://www.buscalibre.com.uy/libros/search?q=TITULO+AUTOR">Conseguilo (~USD XX)</a>
+<a href="https://www.buscalibre.uy/libros/search/?q=TITULO+AUTOR">Conseguilo (~USD XX)</a>
 
 <!-- 4bis) Si es REDESCUBRIMIENTO: compromiso físico (convención del hermano) -->
 <div class="cta">
