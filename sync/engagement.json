@@ -682,7 +682,16 @@
       "device": "Andy",
       "qid": "rec-veredicto:2026-07-16-rovelli-siete-lecciones",
       "value": "lo_quiero"
+    },
+    {
+      "id": "mrnpjuat-xmf53a",
+      "type": "reaction",
+      "ts": "2026-07-16T16:12:51.365Z",
+      "page": "2026-07-16-rovelli-siete-lecciones.html",
+      "device": "Andy",
+      "slug": "2026-07-16-rovelli-siete-lecciones",
+      "value": "like"
     }
   ],
-  "_updated_at": "2026-07-16T16:12:50.514Z"
+  "_updated_at": "2026-07-16T16:12:52.635Z"
 }
