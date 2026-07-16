@@ -4,12 +4,14 @@
 Fijada 2026-07-15 (bootstrap; el dueño pidió "mezcla" sin proporción — ajustar
 con datos). Push diario único a las ~12:30 -03:00.
 
-## 👥 DESTINATARIOS (desde 2026-07-15): andy · sofi · todos
-Cada rec lleva `audience` en `recommended.json`; el hub filtra por eso.
-ROTACIÓN VIGENTE (inicial, ajustar con datos): de cada 4 fichas, ~2 andy ·
-1 sofi · 1 todos. El título del push de sofi/todos SIEMPRE arranca con
-"Para Sofi:" / "Para los dos:" (el teléfono es de Andy — el prefijo le dice
-a quién mostrárselo).
+## 👥 RÉGIMEN VIGENTE (fijado por Andy el 2026-07-16): 1 + 1 POR DÍA
+Dos fichas diarias: UNA para Andy y UNA para Sofi, cada una personal según
+su perfil y su feedback. Entre las dos del día: un libro NUEVO y uno DE LA
+BIBLIOTECA (redescubrimiento), alternando cada día quién recibe cuál.
+Pushes ~12:30, personales: `to:"Andy"` / `to:"Sofi"` (cada uno recibe solo
+la suya; Sofi tiene su iPhone suscripto desde el 16/07 — bienvenida
+entregada y abierta ese día a las 11:41). Las fichas `todos` quedan para
+ocasiones especiales y cuentan para ambos.
 
 ### Sofi (pareja del dueño) — perfil inicial 2026-07-15
 - Sus salas del Fichero: **La sala King** (R4+R5, 50 King — al día: tiene
