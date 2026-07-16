@@ -14,6 +14,11 @@
   var BRANCH = 'main';
   var SYNC_PATH = 'sync/engagement.json';
   var SETUP_URL = 'setup.html';
+  // relay público para dispositivos sin PAT (p.ej. el teléfono de Sofi):
+  // los eventos van a Supabase (INSERT anónimo) y el workflow del repo los
+  // baja a sync/engagement.json. La key es pública por diseño (RLS).
+  var SUPA = 'https://jhdwpxttgnravhlnmdgg.supabase.co';
+  var SUPA_KEY = 'sb_publishable_phJdQOO7PUdidexaeUI4vQ_WJpKOgDM';
 
   var K = {
     pat: 'biblioteca_gh_pat',
@@ -96,12 +101,38 @@
   var flushing = false, flushAgain = false, flushTimer = null;
   function flushSoon() { clearTimeout(flushTimer); flushTimer = setTimeout(flush, 400); }
 
+  /* Sin PAT: los eventos van al relay público (mismo dedup por id server-side). */
+  function supaFlush() {
+    if (flushing) { flushAgain = true; return; }
+    var box = outbox();
+    if (!box.length) { refreshBadge(); return; }
+    flushing = true;
+    refreshBadge();
+    var rows = box.map(function (e) { return { id: e.id, payload: e }; });
+    fetch(SUPA + '/rest/v1/biblioteca_events', {
+      method: 'POST',
+      headers: { apikey: SUPA_KEY, Authorization: 'Bearer ' + SUPA_KEY,
+                 'Content-Type': 'application/json',
+                 Prefer: 'resolution=ignore-duplicates,return=minimal' },
+      body: JSON.stringify(rows),
+    }).then(function (r) {
+      if (!r.ok && r.status !== 409) throw new Error('HTTP ' + r.status);
+      var sent = {}; box.forEach(function (e) { sent[e.id] = 1; });
+      saveOutbox(outbox().filter(function (e) { return !sent[e.id]; }));
+      flushing = false; refreshBadge();
+      if (flushAgain || outbox().length) { flushAgain = false; flushSoon(); }
+    }).catch(function () {
+      flushing = false; flushAgain = false; refreshBadge('error');
+      setTimeout(flush, 30000);
+    });
+  }
+
   function flush() {
     if (flushing) { flushAgain = true; return; }  // lo re-agenda el flush en vuelo
     var box = outbox();
     if (!box.length) { refreshBadge(); return; }
     var headers = ghHeaders();
-    if (!headers) { refreshBadge('nopat'); return; }
+    if (!headers) { supaFlush(); return; }
     flushing = true;
     refreshBadge();
     var api = 'https://api.github.com/repos/' + REPO + '/contents/' + SYNC_PATH;

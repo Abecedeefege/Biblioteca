@@ -2,12 +2,15 @@ name: push-dispatch
 
 on:
   schedule:
-    # RESPALDO — el cron de Actions deriva y saltea corridas; el timing real
-    # lo da el trigger on:push a la cola (encolar = despachar al instante).
-    # Ventana de envío local (UY, UTC-3 todo el año): 08:00–23:30
+    # El cron hace dos cosas: (1) respaldo del envío (el timing real lo da el
+    # trigger on:push a la cola) y (2) sincronizar el relay público de
+    # Supabase (dispositivos nuevos sin PAT, p.ej. el teléfono de Sofi, y su
+    # feedback). Cada 10 min para que el alta de un dispositivo nuevo y su
+    # push de bienvenida no esperen media hora.
+    # Ventana local (UY, UTC-3 fijo): 08:00–23:30
     # → en UTC: 11:00–23:59 y 00:00–02:30 del día siguiente.
-    - cron: '*/30 11-23 * * *'
-    - cron: '0,30 0-2 * * *'
+    - cron: '*/10 11-23 * * *'
+    - cron: '*/10 0-2 * * *'
   workflow_dispatch: {}
   push:
     branches: [main]
@@ -32,6 +35,8 @@ jobs:
       - name: Install web-push
         working-directory: tools
         run: npm install --no-audit --no-fund
+      - name: Sync devices & feedback from public relay
+        run: node tools/sync_devices.js
       - name: Send due notifications
         run: node tools/send_push.js
         env:
@@ -39,10 +44,10 @@ jobs:
       - name: Commit queue/log updates
         # El push usa GITHUB_TOKEN, que NO re-dispara workflows → sin loop.
         run: |
-          if [ -n "$(git status --porcelain notifications)" ]; then
+          if [ -n "$(git status --porcelain notifications sync)" ]; then
             git config user.name "push-dispatcher"
             git config user.email "actions@users.noreply.github.com"
-            git add notifications
+            git add notifications sync
             git commit -m "push: dispatch $(date -u +%FT%TZ)"
             # Si el push no llega, el step debe fallar en rojo (no perder 'sent' en verde).
             for i in 1 2 3; do

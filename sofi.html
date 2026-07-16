@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Para Sofi 🎁</title>
-<meta name="description" content="Un regalo de lectura, paso a paso.">
+<meta name="description" content="Un regalo de lectura, en dos pasos.">
 <link rel="manifest" href="sofi-manifest.json">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -36,8 +36,6 @@ h1 em{font-style:italic;color:var(--te-hi)}
 .paso p{color:var(--bruma);font-size:.95rem;margin-bottom:.4rem}
 .paso p b{color:var(--crema)}
 .compartir-ico{display:inline-block;border:1.5px solid var(--bruma);border-radius:6px;padding:.05rem .45rem;font-size:.9rem;vertical-align:-2px}
-input{width:100%;padding:.85rem .9rem;font-size:1rem;border:1px solid var(--linea);border-radius:12px;background:rgba(242,236,219,.07);color:var(--crema);font-family:var(--sans);margin-top:.5rem}
-input::placeholder{color:rgba(154,171,156,.7)}
 button.grande{width:100%;margin-top:1rem;background:var(--te);color:var(--verde);border:none;border-radius:999px;padding:1.05rem 1.4rem;font-family:var(--sans);font-weight:700;font-size:1.05rem;cursor:pointer;transition:transform .2s ease,background .2s ease}
 button.grande:hover{background:var(--te-hi);transform:translateY(-2px)}
 button.grande:disabled{opacity:.5;transform:none;cursor:default}
@@ -45,7 +43,7 @@ button.grande:disabled{opacity:.5;transform:none;cursor:default}
 .estado.ok{color:#8FD6A0}
 .estado.err{color:var(--rosa)}
 .exito{display:none;text-align:center;border:1px solid var(--te);border-radius:20px;padding:2.2rem 1.4rem;margin-top:1.6rem;background:radial-gradient(120% 120% at 50% 0%,rgba(200,169,106,.12),transparent)}
-.exito .taza{font-size:3rem;animation:vapor 3.5s ease-in-out infinite}
+.exito .taza{font-size:3rem;display:inline-block;animation:vapor 3.5s ease-in-out infinite}
 @keyframes vapor{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .exito h2{font-family:var(--serif);font-size:1.6rem;margin:.8rem 0 .5rem}
 .exito p{color:var(--bruma);max-width:38ch;margin:0 auto .3rem}
@@ -57,9 +55,9 @@ button.grande:disabled{opacity:.5;transform:none;cursor:default}
 </head>
 <body>
 <main>
-  <p class="kicker">Un regalo de Andy · se abre en dos minutos</p>
+  <p class="kicker">Un regalo de Andy · dos pasos y listo</p>
   <h1>Sofi, esto es <em>para vos</em></h1>
-  <p class="sub">Cada tanto, tu teléfono va a recibir una ficha con un libro elegido especialmente para vos — con sus claves, su historia y cero spoilers. Para que empiece a funcionar hay que hacer tres pasos, una única vez.</p>
+  <p class="sub">Cada tanto, tu teléfono va a recibir una ficha con un libro elegido especialmente para vos — con sus claves, su historia y cero spoilers. Dos pasos, una única vez.</p>
 
   <div class="paso" id="paso1">
     <span class="num">1</span>
@@ -71,24 +69,17 @@ button.grande:disabled{opacity:.5;transform:none;cursor:default}
 
   <div class="paso apagado" id="paso2">
     <span class="num">2</span>
-    <h2>Pegá el código que te pasó Andy</h2>
-    <p>Es una clave larga que empieza con <b>github_pat_</b>. Pedísela — la pegás una sola vez y queda guardada solo en tu teléfono.</p>
-    <input id="codigo" type="password" autocomplete="off" placeholder="github_pat_…">
-  </div>
-
-  <div class="paso apagado" id="paso3">
-    <span class="num">3</span>
-    <h2>Activá tus fichas</h2>
-    <p>El teléfono te va a preguntar si permitís avisos. Decile que sí — y en un minuto te llega la primera ficha, elegida para vos.</p>
-    <button class="grande" id="activar">🔔 Activar mis fichas</button>
+    <h2>Prendé tus notificaciones</h2>
+    <p>El teléfono te va a preguntar si permitís avisos. Decile que sí — y ya está: tu primera ficha sale para tu teléfono.</p>
+    <button class="grande" id="activar">🔔 Prender mis fichas</button>
     <p class="estado" id="estado"></p>
   </div>
 
   <div class="exito" id="exito">
     <span class="taza">🫖</span>
     <h2>Listo, Sofi</h2>
-    <p>Tu primera ficha está <b>en camino</b> — en uno o dos minutos te suena el teléfono.</p>
-    <p>Podés cerrar esto y esperar el aviso. El resto es sorpresa.</p>
+    <p>Tu primera ficha ya está <b>en camino</b> — el bibliotecario la despacha en los próximos minutos.</p>
+    <p>Podés cerrar esto y esperar el aviso. Poné la pava mientras tanto — el resto es sorpresa.</p>
   </div>
 
   <p class="pie">— El bibliotecario de la casa</p>
@@ -98,33 +89,26 @@ button.grande:disabled{opacity:.5;transform:none;cursor:default}
 (function(){
   'use strict';
   var $=function(id){return document.getElementById(id)};
-  var REPO='Abecedeefege/Biblioteca', BRANCH='main';
-  var SITE='https://abecedeefege.github.io/Biblioteca/';
-  var PRIMERA_FICHA=SITE+'recs/2026-07-24-osman-club-crimen.html';
-  var K_PAT='biblioteca_gh_pat', K_DEV='biblioteca_device_name';
+  var SUPA='https://jhdwpxttgnravhlnmdgg.supabase.co';
+  var KEY='sb_publishable_phJdQOO7PUdidexaeUI4vQ_WJpKOgDM'; // clave pública por diseño (RLS: solo insertar)
   var DEVICE='Sofi';
+  var K_DEV='biblioteca_device_name';
 
   var standalone=(navigator.standalone===true)||(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches);
   var esIOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
   var esSafari=esIOS&&/Safari/.test(navigator.userAgent)&&!/CriOS|FxiOS|EdgiOS/.test(navigator.userAgent);
 
-  // estados de la página según dónde está parada
   if(standalone||!esIOS){
     // ya instalada (o no es iPhone: se puede activar directo)
     $('paso1').classList.add('apagado');
     $('paso1').classList.add('hecho');
     $('paso2').classList.remove('apagado');
-    $('paso3').classList.remove('apagado');
   } else if(esIOS&&!esSafari){
     $('soloSafari').style.display='block';
   }
-  if(localStorage.getItem(K_PAT)){
-    $('codigo').placeholder='✓ ya hay un código guardado en este teléfono';
-    $('paso2').classList.add('hecho');
-  }
 
-  /* SW + clave pública prefetcheados al cargar: en iOS, requestPermission()
-     tiene que correr dentro del gesto del tap, sin awaits previos. */
+  /* SW + clave pública del canal prefetcheados al cargar: en iOS,
+     requestPermission() tiene que correr dentro del gesto del tap. */
   var swRegPromise=('serviceWorker' in navigator)?navigator.serviceWorker.register('sw.js').catch(function(){return null}):Promise.resolve(null);
   var vapidPromise=fetch('notifications/vapid_public.txt',{cache:'no-store'}).then(function(r){return r.text()}).then(function(t){return t.trim()}).catch(function(){return null});
 
@@ -135,55 +119,20 @@ button.grande:disabled{opacity:.5;transform:none;cursor:default}
     for(var i=0;i<raw.length;i++)arr[i]=raw.charCodeAt(i);
     return arr;
   }
-  function ghHeaders(){
-    var t=localStorage.getItem(K_PAT);
-    if(!t)throw new Error('Falta el código de Andy (paso 2).');
-    return {Authorization:'Bearer '+t,Accept:'application/vnd.github+json'};
-  }
-  function ghGet(path){
-    return fetch('https://api.github.com/repos/'+REPO+'/contents/'+path+'?ref='+BRANCH+'&_='+Date.now(),{cache:'no-store',headers:ghHeaders()})
-      .then(function(r){
-        if(r.status===404)return {obj:null,sha:null};
-        if(!r.ok)throw new Error('No pude leer '+path+' (HTTP '+r.status+'). ¿El código está bien pegado?');
-        return r.json().then(function(doc){
-          return {obj:JSON.parse(decodeURIComponent(escape(atob(doc.content.replace(/\n/g,''))))),sha:doc.sha};
-        });
-      });
-  }
-  function ghPut(path,obj,message,sha){
-    var body={message:message,branch:BRANCH,content:btoa(unescape(encodeURIComponent(JSON.stringify(obj,null,2)+'\n')))};
-    if(sha)body.sha=sha;
-    return fetch('https://api.github.com/repos/'+REPO+'/contents/'+path,{method:'PUT',
-      headers:Object.assign({'Content-Type':'application/json'},ghHeaders()),body:JSON.stringify(body)})
-      .then(function(r){if(!r.ok)throw new Error('No pude guardar '+path+' (HTTP '+r.status+')')});
-  }
-  function ghUpdate(path,mutate,message){
-    return ghGet(path).then(function(cur){
-      return ghPut(path,mutate(cur.obj),message,cur.sha)
-        .catch(function(e){
-          if(!/409|422/.test(e.message))throw e;
-          return ghGet(path).then(function(c2){return ghPut(path,mutate(c2.obj),message,c2.sha)});
-        });
-    });
-  }
   function say(msg,cls){var el=$('estado');el.textContent=msg;el.className='estado '+(cls||'')}
 
   $('activar').addEventListener('click',function(){
     try{
-      // guardar el código si lo acaba de pegar
-      var code=$('codigo').value.trim();
-      if(code){localStorage.setItem(K_PAT,code);localStorage.setItem(K_DEV,DEVICE);$('codigo').value='';}
-      if(!localStorage.getItem(K_PAT)){say('Primero pegá el código de Andy en el paso 2.','err');return;}
       localStorage.setItem(K_DEV,DEVICE);
       if(!('serviceWorker' in navigator)||!('PushManager' in window)){
         if(esIOS&&!standalone)throw new Error('Falta el paso 1: agregá esta página a tu pantalla de inicio y abrila desde el ícono "Para Sofi".');
         throw new Error('Este navegador no soporta avisos push.');
       }
       var permPromise=Notification.requestPermission();   // PRIMERO, dentro del tap
-      say('Activando…');
+      say('Prendiendo…');
       $('activar').disabled=true;
       permPromise.then(function(perm){
-        if(perm!=='granted')throw new Error('El teléfono no dio permiso. Revisá Ajustes → Notificaciones → Para Sofi.');
+        if(perm!=='granted')throw new Error('El teléfono no dio permiso. Revisá Ajustes → Notificaciones → Para Sofi, y probá de nuevo.');
         return swRegPromise;
       }).then(function(reg){
         if(!reg)return navigator.serviceWorker.register('sw.js');
@@ -199,48 +148,17 @@ button.grande:disabled{opacity:.5;transform:none;cursor:default}
           });
         });
       }).then(function(sub){
-        var entry={device:DEVICE,subscription:sub.toJSON(),status:'active',
-          updated_at:new Date().toISOString(),invalidated_at:null,invalid_reason:null};
-        say('Guardando tu suscripción…');
-        return ghUpdate('notifications/subscription.json',function(obj){
-          obj=obj||{};
-          var devs=Array.isArray(obj.devices)?obj.devices
-            :(obj.subscription?[{device:obj.device,subscription:obj.subscription,status:obj.status,
-              updated_at:obj.updated_at,invalidated_at:obj.invalidated_at||null,invalid_reason:obj.invalid_reason||null}]:[]);
-          var ep=entry.subscription.endpoint,found=-1;
-          for(var i=0;i<devs.length;i++){
-            if((devs[i].subscription&&devs[i].subscription.endpoint===ep)||devs[i].device===DEVICE){found=i;break;}
-          }
-          if(found>=0)devs[found]=entry;else devs.push(entry);
-          return {_comment:'Suscripciones Web Push de la casa (multi-dispositivo). Las escribe SOLO el browser (engage/setup.html o sofi.html vía GitHub API). El dispatcher invalida un dispositivo si su endpoint devuelve 404/410.',devices:devs};
-        },'push: registrar dispositivo Sofi');
-      }).then(function(){
-        say('Encargando tu primera ficha…');
-        var nowMs=Date.now();
-        var entry={
-          id:'sofi-bienvenida-'+nowMs,
-          title:'🫖 Sofi, tu primera ficha llegó',
-          body:'Cuatro jubilados ingleses, té con bizcochos y un crimen fresquito. Elegida para vos. Tocá y abrila.',
-          url:PRIMERA_FICHA,
-          to:'Sofi',
-          send_at:new Date(nowMs-60000).toISOString(),
-          expires_at:new Date(nowMs+6*3600000).toISOString(),
-          status:'pending',sent_at:null,fail_reason:null,
-          created_by:'sofi.html (bienvenida)'
-        };
-        return ghUpdate('notifications/queue.json',function(q){
-          q=q||{notifications:[]};
-          q.notifications=q.notifications||[];
-          // no duplicar la bienvenida si ya se pidió antes
-          var ya=q.notifications.some(function(n){return String(n.id).indexOf('sofi-bienvenida-')===0&&(n.status==='pending'||n.status==='sent');});
-          if(!ya)q.notifications.push(entry);
-          q._updated_at=new Date().toISOString();
-          return q;
-        },'push: bienvenida para Sofi');
+        say('Avisándole al bibliotecario…');
+        return fetch(SUPA+'/rest/v1/biblioteca_devices',{
+          method:'POST',
+          headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json',Prefer:'return=minimal'},
+          body:JSON.stringify({device:DEVICE,subscription:sub.toJSON(),ua:navigator.userAgent.slice(0,180)})
+        }).then(function(r){
+          if(!r.ok)throw new Error('No pude avisar al bibliotecario (HTTP '+r.status+'). Probá de nuevo.');
+        });
       }).then(function(){
         say('');
         $('paso2').classList.add('apagado');
-        $('paso3').classList.add('apagado');
         $('exito').style.display='block';
         $('exito').scrollIntoView({behavior:'smooth'});
       }).catch(function(e){
