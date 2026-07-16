@@ -255,7 +255,267 @@
       "device": "Andy",
       "dwell_s": 50,
       "scroll_pct": 39
+    },
+    {
+      "id": "mrnikx33-29mei4",
+      "ts": "2026-07-16T12:57:44.319Z",
+      "page": "index.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnilao1-2z6729",
+      "ts": "2026-07-16T12:58:01.921Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 18,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnilzzf-xjmcuf",
+      "ts": "2026-07-16T12:58:34.731Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 23,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnimzgo-oig4ze",
+      "ts": "2026-07-16T12:59:20.712Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 5,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrniobf8-jf6ned",
+      "ts": "2026-07-16T13:00:22.868Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 8,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrniw9tw-iliqjb",
+      "ts": "2026-07-16T13:06:34.052Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 43,
+      "scroll_pct": 80
+    },
+    {
+      "id": "mrniw9yl-cju4hd",
+      "ts": "2026-07-16T13:06:34.221Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnixqnz-std1lf",
+      "ts": "2026-07-16T13:07:42.527Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 68,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnj1eui-m61p9c",
+      "ts": "2026-07-16T13:10:33.834Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 71,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnj83bx-imhcsg",
+      "ts": "2026-07-16T13:15:45.501Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 75,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnjgy78-6taue4",
+      "ts": "2026-07-16T13:22:38.756Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 79,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnk4m3z-tes07i",
+      "ts": "2026-07-16T13:41:02.831Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 14,
+      "scroll_pct": 67
+    },
+    {
+      "id": "mrnk4m8y-lvoy2j",
+      "ts": "2026-07-16T13:41:03.010Z",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnk4yb2-fsk3gc",
+      "ts": "2026-07-16T13:41:18.638Z",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 16,
+      "scroll_pct": 42
+    },
+    {
+      "id": "mrnk5rvk-72mi3z",
+      "ts": "2026-07-16T13:41:56.960Z",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 21,
+      "scroll_pct": 42
+    },
+    {
+      "id": "mrnk60or-imly4a",
+      "ts": "2026-07-16T13:42:08.379Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 10,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnk67a9-737g25",
+      "ts": "2026-07-16T13:42:16.929Z",
+      "page": "2026-07-26-hill-traje-muerto.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 9,
+      "scroll_pct": 86
+    },
+    {
+      "id": "mrnk68x0-l5iwzq",
+      "ts": "2026-07-16T13:42:19.044Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnk6za8-p6nyvd",
+      "ts": "2026-07-16T13:42:53.216Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 34,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnk7b84-cwngsr",
+      "ts": "2026-07-16T13:43:08.692Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 38,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrnk7iff-6g9zrs",
+      "ts": "2026-07-16T13:43:18.027Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 8,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnk998n-wdl2s8",
+      "ts": "2026-07-16T13:44:39.431Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 5,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnk9nxx-qgxk1a",
+      "ts": "2026-07-16T13:44:58.485Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 9,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnk9qxw-43ildx",
+      "ts": "2026-07-16T13:45:02.372Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 3,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnm38v7-8hgqo5",
+      "ts": "2026-07-16T14:35:58.243Z",
+      "page": "index.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrnm3b7f-qtfez3",
+      "ts": "2026-07-16T14:36:01.275Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 3,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnm3d5j-z3x13y",
+      "ts": "2026-07-16T14:36:03.799Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 3,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnm4yk7-5ewe89",
+      "ts": "2026-07-16T14:37:18.199Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 3,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnm50iz-lz4j2n",
+      "ts": "2026-07-16T14:37:20.747Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 3,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrnm5i0b-t5wzd6",
+      "ts": "2026-07-16T14:37:43.403Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 6,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-07-16T00:06:54.077Z"
+  "_updated_at": "2026-07-16T14:40:36.656Z"
 }

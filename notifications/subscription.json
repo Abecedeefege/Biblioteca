@@ -15,6 +15,20 @@
       "updated_at": "2026-07-15T21:29:10.978Z",
       "invalidated_at": null,
       "invalid_reason": null
+    },
+    {
+      "device": "Sofi",
+      "subscription": {
+        "keys": {
+          "auth": "iFfouMTL4D7Dxbw_5SLlCA",
+          "p256dh": "BEdk233yh5ykbrXVR2mJ1ZeU0DPppf-0OD1-VAXkt2d-oKID4m9b-66xfNYW7-CYB5tHunnViYKeyXT8N_JjUZ8"
+        },
+        "endpoint": "https://web.push.apple.com/QAhyzqvHLPwX9tsCq10wlXhnai16cXmBqIS3dDvO0QLTvWoMHnp7rUA8wL9gtEzhFLwwP8tvjhEMBxBupXIYW_hLkBBNBszCzMdK72cTuONv75HVhBht5mZAhZ1cHzpejCsKrnT9Barg7a6MXh_qZgsqbETlxHLPulPLhYTFnQc"
+      },
+      "status": "active",
+      "updated_at": "2026-07-16T14:40:36.654Z",
+      "invalidated_at": null,
+      "invalid_reason": null
     }
   ]
 }
