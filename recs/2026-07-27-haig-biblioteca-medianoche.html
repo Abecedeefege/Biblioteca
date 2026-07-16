@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🕛 La Biblioteca de la Medianoche · Para los dos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0D1712;
+  --noche2:#14211B;
+  --dorado:#D9B65C;
+  --dorado-hi:#F2D68A;
+  --verde:#2E5A44;
+  --verde-hi:#6FAE8C;
+  --crema:#F0EBDC;
+  --bruma:#93A398;
+  --linea:rgba(240,235,220,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--crema);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--dorado);color:var(--noche)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--dorado-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(240,235,220,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--verde-hi),var(--dorado-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(13,23,18,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--dorado-hi);border-color:var(--dorado)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dorado);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(130% 80% at 50% -10%,#1C3226 0%,var(--noche) 62%)}
+.reloj{position:absolute;top:12%;left:50%;transform:translateX(-50%);font-size:2.2rem;opacity:.35}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .para{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#8FD6A0;border:1px solid #8FD6A0;border-radius:999px;padding:.32rem .95rem;margin-bottom:1.3rem;font-weight:700}
+.hero h1{font-size:clamp(1.9rem,1.3rem + 5vw,3.7rem);font-weight:600;line-height:1.12}
+.hero h1 em{font-style:italic;color:var(--dorado-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:48ch}
+.cta-btn{display:inline-block;background:var(--dorado);color:var(--noche);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--dorado-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--noche2)}
+.mitades{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.2rem}
+.mitad{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.2rem;background:rgba(240,235,220,.03)}
+.mitad .quien{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:.3rem}
+.mitad.el .quien{color:var(--verde-hi)}
+.mitad.ella .quien{color:#E08A98}
+.mitad h3{font-family:var(--serif);font-size:1.12rem;margin-bottom:.4rem}
+.mitad p{color:var(--bruma);font-size:.9rem}
+/* estante de vidas */
+.estante-vidas{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.3rem;background:radial-gradient(120% 100% at 50% 0%,rgba(217,182,92,.07),transparent);text-align:center}
+.lomos{display:flex;justify-content:center;gap:.5rem;margin:0 auto 1.4rem;max-width:420px}
+.lomo-v{flex:1;min-width:34px;max-width:52px;height:120px;border-radius:4px 4px 2px 2px;border:1px solid rgba(240,235,220,.2);cursor:pointer;position:relative;transition:transform .25s ease;background:linear-gradient(180deg,#1E3A2C,#16291F)}
+.lomo-v:nth-child(2){background:linear-gradient(180deg,#274734,#1B3126)}
+.lomo-v:nth-child(3){background:linear-gradient(180deg,#1E3A2C,#152820)}
+.lomo-v:nth-child(4){background:linear-gradient(180deg,#2A4A38,#1E3529)}
+.lomo-v:nth-child(5){background:linear-gradient(180deg,#223F30,#182D22)}
+.lomo-v::after{content:'';position:absolute;left:50%;top:12px;transform:translateX(-50%);width:2px;height:26px;background:rgba(217,182,92,.5)}
+.lomo-v:hover{transform:translateY(-8px)}
+.lomo-v.abierto{transform:translateY(-10px);border-color:var(--dorado);box-shadow:0 10px 24px -10px rgba(217,182,92,.5)}
+.vida-panel{min-height:160px;display:flex;flex-direction:column;justify-content:center;gap:.5rem}
+.vida-panel .titulo-v{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--dorado-hi)}
+.vida-panel .luz{color:var(--crema);font-size:.95rem}
+.vida-panel .sombra{color:var(--bruma);font-size:.95rem}
+.vida-panel .moraleja{margin-top:.6rem;font-family:var(--serif);font-style:italic;color:var(--verde-hi);font-size:.95rem}
+.estante-hint{color:var(--bruma);font-size:.86rem;margin-top:1rem}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(240,235,220,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--crema);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--dorado);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:420px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.aviso{border:1px solid var(--linea);border-left:4px solid var(--verde-hi);border-radius:0 12px 12px 0;padding:1.1rem 1.3rem;margin-top:1.8rem;background:rgba(111,174,140,.07)}
+.aviso p{color:var(--bruma);font-size:.9rem}
+.aviso b{color:var(--verde-hi)}
+.cita{border-left:3px solid var(--dorado);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(217,182,92,.06);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(240,235,220,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--dorado);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--dorado);color:var(--noche);border-radius:999px;padding:.9rem 1.7rem;font-weight:600;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--dorado-hi);transform:translateY(-2px)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--crema);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--dorado);color:var(--dorado-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--dorado-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#1C3226 0%,var(--noche) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:31ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--dorado-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.mitades{grid-template-columns:1fr}.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="reloj" aria-hidden="true">🕛</div>
+  <div class="hero-int">
+    <span class="para">Para los dos · Bibliotequeando recomienda · Nº 13</span>
+    <h1>La Biblioteca de la <em>Medianoche</em></h1>
+    <p class="autor">Matt Haig · 2020</p>
+    <p class="sub">Entre la vida y la muerte hay una biblioteca donde cada libro es una vida que pudiste vivir. Nora Seed, en su hora más oscura, llega a esos estantes — y empieza a abrir libros. Una novela que engancha como ficción y trabaja como filosofía.</p>
+    <a class="cta-btn" href="#puente">¿Por qué para los dos? ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué para los dos</p>
+    <h2 class="titulo rev d1">Una premisa, dos lecturas</h2>
+    <div class="mitades rev d2">
+      <div class="mitad ella"><p class="quien">Para Sofi</p><h3>Una novela que no se suelta</h3><p>Capítulos cortos, una premisa fantástica con reglas claras y una protagonista que vas a acompañar vida por vida. Si Ciudades de Papel y tus Benavent te llegan por el lado emocional, esta pega ahí — con un misterio elegante: ¿cuál de todas las vidas es la buena?</p></div>
+      <div class="mitad el"><p class="quien">Para Andy</p><h3>Frankl en forma de novela</h3><p>Los arrepentimientos como carga distorsionada, el sentido en la vida ordinaria, que ninguna vida posible es perfecta. Los críticos trazaron el puente con la logoterapia de Frankl — el libro que te recomendamos hace doce días. Esta es la misma idea, hecha historia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="estante-sec">
+  <div class="centro">
+    <p class="kicker rev">La interacción</p>
+    <h2 class="titulo rev d1">Abrí un libro del estante de Nora</h2>
+    <p class="bajada rev d2">Cada lomo es una vida alternativa. Tocá uno. Vas a notar el patrón enseguida — y el patrón ES la tesis del libro.</p>
+    <div class="estante-vidas rev d2">
+      <div class="lomos" id="lomos">
+        <button class="lomo-v" data-v="0" aria-label="Vida 1"></button>
+        <button class="lomo-v" data-v="1" aria-label="Vida 2"></button>
+        <button class="lomo-v" data-v="2" aria-label="Vida 3"></button>
+        <button class="lomo-v" data-v="3" aria-label="Vida 4"></button>
+        <button class="lomo-v" data-v="4" aria-label="Vida 5"></button>
+      </div>
+      <div class="vida-panel" id="vidaPanel">
+        <p class="titulo-v">El estante espera</p>
+        <p class="sombra">Cinco vidas posibles, cinco libros. Elegí uno.</p>
+      </div>
+      <p class="estante-hint">Las vidas son inventadas para esta página — las de Nora las descubrís leyendo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--noche2)">
+  <div class="centro">
+    <p class="kicker rev">Lo que se llevan</p>
+    <h2 class="titulo rev d1">Cinco claves (sin el final)</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>El Libro de los Arrepentimientos</strong><span class="flecha">›</span></button><div class="clave-body"><p>Nora carga un volumen que registra todo lo que lamenta. La gran jugada del libro: mostrar que ese registro no es objetivo — el arrepentimiento distorsiona la memoria y el juicio sobre la propia vida. Pesa más de lo que dice la verdad.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>Ninguna vida es la perfecta</strong><span class="flecha">›</span></button><div class="clave-body"><p>Estrella de rock, glacióloga, campeona de natación, esposa en un pub rural: cada vida que Nora prueba tiene su propia forma de pérdida. La "vida sin dolor" es un espejismo — y descubrirlo, vida por vida, es el motor de la trama.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>Infinitas opciones ≠ sentido</strong><span class="flecha">›</span></button><div class="clave-body"><p>La biblioteca infinita es también una metáfora de la parálisis de elegir. Tener todas las vidas disponibles no es lo mismo que tener una vida con sentido — esa distinción es el corazón filosófico del libro.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>El autor sabe de qué habla</strong><span class="flecha">›</span></button><div class="clave-body"><p>Matt Haig escribió antes "Razones para seguir viviendo" (2015), la memoria de su propia depresión. Esta novela nace de esa experiencia real — por eso trata su tema más delicado con cuidado y termina siendo, ante todo, un libro esperanzador.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">v</span><strong>Fenómeno global, voto popular</strong><span class="flecha">›</span></button><div class="clave-body"><p>Ganó el Goodreads Choice 2020 a mejor ficción, lleva más de 10 millones de ejemplares (dato 2024) en 40+ idiomas y pasó más de 30 semanas en la lista del New York Times. Y viene película: Florence Pugh protagoniza la adaptación anunciada en mayo — todavía en preproducción, así que llegan antes que el cine.</p></div></div>
+    </div>
+    <div class="aviso rev d1"><p><b>Nota honesta:</b> la historia parte de una crisis profunda de la protagonista — su "último día", como lo dice el propio editor. El libro lo trata con delicadeza y sin morbo, y su destino es luminoso. Si el tema los toca de cerca, sépanlo al entrar.</p></div>
+  </div>
+</section>
+
+<section class="seccion" id="citas">
+  <div class="centro">
+    <p class="kicker rev">Del libro</p>
+    <h2 class="titulo rev d1">La línea que abre todo</h2>
+    <div class="cita rev"><p>"Entre la vida y la muerte hay una biblioteca. Y dentro de esa biblioteca, los estantes no se terminan nunca."</p><span>La premisa, en la primera página (traducción libre)</span></div>
+    <div class="cita rev d1"><p>"A veces la única manera de aprender es vivir."</p><span>La señora Elm, la bibliotecaria (traducción libre)</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha" style="background:var(--noche2)">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2020 (The Midnight Library); Goodreads Choice 2020 a mejor ficción</dd>
+        <dt>Extensión</dt><dd>~330 páginas de capítulos cortos — se lee en pocas noches</dd>
+        <dt>Alcance</dt><dd>+10 millones de ejemplares (2024), 40+ idiomas, 30+ semanas en el NYT</dd>
+        <dt>Película</dt><dd>Anunciada (Florence Pugh, dir. Garth Davis) — en preproducción, sin fecha de estreno</dd>
+        <dt>Edición</dt><dd>Español: AdN (Alianza de Novelas), trad. Miguel Marqués — hay edición de bolsillo más barata</dd>
+      </dl>
+      <a class="comprar" href="https://www.buscalibre.com.uy/libros/search?q=La+biblioteca+de+la+medianoche+Matt+Haig" target="_blank" rel="noopener">Conseguilo — desde ~US$ 20 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">El veredicto de la casa</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Ficha para los dos — y cierre de esta tanda de recomendaciones.</p>
+    <div class="cta rev d2">¿Y? ¿Le damos?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-27-haig-biblioteca-medianoche','lo_quiero',this)">📚 Lo queremos</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-27-haig-biblioteca-medianoche','me_tienta',this)">🤔 Nos tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-27-haig-biblioteca-medianoche','ya_lo_tengo',this)">🏠 Ya lo tenemos</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-27-haig-biblioteca-medianoche','ya_lo_lei',this)">✔️ Ya lo leímos</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-27-haig-biblioteca-medianoche','no_me_va',this)">🙅 No nos va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Quién lo leería primero en casa?
+      <div>
+        <button onclick="engageAnswer('rec-quien:2026-07-27-haig-biblioteca-medianoche','sofi',this)">📔 Sofi</button>
+        <button onclick="engageAnswer('rec-quien:2026-07-27-haig-biblioteca-medianoche','andy',this)">🧭 Andy</button>
+        <button onclick="engageAnswer('rec-quien:2026-07-27-haig-biblioteca-medianoche','a_medias',this)">🤝 Lo peleamos</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Les gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-27-haig-biblioteca-medianoche','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-27-haig-biblioteca-medianoche','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-27-haig-biblioteca-medianoche','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-27-haig-biblioteca-medianoche','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">No hace falta otra vida. Hace falta <b>otra mirada sobre esta</b>.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Fin de la tanda. Desde el 28, el bibliotecario elige solo — entrenado por todos los veredictos de la casa.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--dorado-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--dorado);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · ficha "Para todos" · datos verificados a julio 2026 (Canongate, AdN, Goodreads, Variety).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+  /* estante de vidas (inventadas para la página, no de la trama) */
+  var VIDAS=[
+    {t:'La vida en la que te fuiste a vivir afuera',luz:'✨ Idiomas, amigos nuevos, una ciudad que aprendiste a querer.',sombra:'🌑 Los cumpleaños por videollamada. La abuela que no llegaste a despedir.',m:'Brillante por fuera. Con su propio costo por dentro.'},
+    {t:'La vida en la que seguiste con la música',luz:'✨ Escenarios, canciones tuyas en boca de otros.',sombra:'🌑 Giras vacías, la casa que nunca se armó.',m:'El aplauso no abraza.'},
+    {t:'La vida en la que dijiste que sí',luz:'✨ Esa persona, ese proyecto, esa mudanza.',sombra:'🌑 Todo lo que quedó sin conocer por decir que sí tan pronto.',m:'Cada sí es también mil noes.'},
+    {t:'La vida en la que te quedaste',luz:'✨ Las raíces, los amigos de siempre, los domingos largos.',sombra:'🌑 La pregunta eterna de qué había del otro lado.',m:'Quedarse también es un viaje — el más difícil de ver.'},
+    {t:'La vida ordinaria — esta',luz:'✨ El mate de la mañana. La biblioteca del living. Alguien que te espera.',sombra:'🌑 Sus días grises, como todas.',m:'El giro del libro: quizás el estante entero estaba para traerte de vuelta acá.'}
+  ];
+  var panel=$('#vidaPanel'),lomos=$$('.lomo-v');
+  lomos.forEach(function(l){
+    l.addEventListener('click',function(){
+      lomos.forEach(function(o){o.classList.remove('abierto')});
+      l.classList.add('abierto');
+      var v=VIDAS[parseInt(l.dataset.v,10)];
+      panel.innerHTML='<p class="titulo-v">'+v.t+'</p><p class="luz">'+v.luz+'</p><p class="sombra">'+v.sombra+'</p><p class="moraleja">'+v.m+'</p>';
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

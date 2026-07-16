@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🖤 El traje del muerto · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#100C0E;
+  --negro2:#1A1316;
+  --sangre:#8E2F35;
+  --sangre-hi:#C25560;
+  --vinilo:#C9A227;
+  --vinilo-hi:#E9CB6E;
+  --hueso:#EFE9E2;
+  --bruma:#9C8F94;
+  --linea:rgba(239,233,226,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--negro);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--sangre);color:var(--hueso)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--vinilo-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(239,233,226,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sangre-hi),var(--vinilo-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(16,12,14,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--vinilo-hi);border-color:var(--vinilo)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--vinilo);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(130% 80% at 50% -10%,#241419 0%,var(--negro) 62%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .para{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#E08A98;border:1px solid #E08A98;border-radius:999px;padding:.32rem .95rem;margin-bottom:1.3rem;font-weight:700}
+.hero h1{font-size:clamp(2rem,1.4rem + 5.5vw,4rem);font-weight:600;line-height:1.1}
+.hero h1 em{font-style:italic;color:var(--sangre-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--sangre);color:var(--hueso);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--sangre-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.corazon{position:absolute;bottom:12%;left:50%;transform:translateX(-50%);font-size:2.6rem;opacity:.4;animation:latir 1.8s ease-in-out infinite}
+@keyframes latir{0%,100%{transform:translateX(-50%) scale(1)}12%{transform:translateX(-50%) scale(1.12)}24%{transform:translateX(-50%) scale(1)}}
+.puente{background:var(--negro2)}
+/* máscaras */
+.mascaras{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.2rem}
+.mascara{perspective:1100px;background:transparent;border:none;text-align:left;min-height:250px;padding:0}
+.mascara-int{position:relative;width:100%;height:100%;min-height:250px;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.1,.2,1)}
+.mascara.girada .mascara-int{transform:rotateY(180deg)}
+.cara-m{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:1.35rem;display:flex;flex-direction:column;gap:.6rem}
+.cara-a{background:#241A1E;border:1px solid var(--linea)}
+.cara-a .tag{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--bruma)}
+.cara-a h3{font-family:var(--serif);font-size:1.3rem}
+.cara-a p{color:var(--bruma);font-size:.9rem}
+.cara-a .toca{margin-top:auto;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--vinilo)}
+.cara-b{background:var(--sangre);transform:rotateY(180deg)}
+.cara-b .tag{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:.7}
+.cara-b h3{font-family:var(--serif);font-size:1.25rem}
+.cara-b p{font-size:.9rem;opacity:.92}
+.mascara-remate{margin-top:1.4rem;font-family:var(--serif);font-style:italic;font-size:1.12rem;color:var(--vinilo-hi);text-align:center}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(239,233,226,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--hueso);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--vinilo);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:400px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.cita{border-left:3px solid var(--vinilo);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(201,162,39,.06);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(239,233,226,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--vinilo);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--vinilo);color:var(--negro);border-radius:999px;padding:.9rem 1.7rem;font-weight:600;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--vinilo-hi);transform:translateY(-2px)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--vinilo);color:var(--vinilo-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--vinilo-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#241419 0%,var(--negro) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:30ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--vinilo-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:620px){.mascaras{grid-template-columns:1fr}.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="corazon" aria-hidden="true">🖤</div>
+  <div class="hero-int">
+    <span class="para">Para Sofi · Bibliotequeando recomienda · Nº 12</span>
+    <h1>El traje del <em>muerto</em></h1>
+    <p class="autor">Joe Hill · 2007</p>
+    <p class="sub">Una estrella de rock retirada compra un fantasma por internet. Le llega en una caja con forma de corazón. Lo escribió el HIJO de Stephen King — y el apellido lo escondió durante diez años, igual que su padre con Bachman. Vos tenés esa historia en tu estante.</p>
+    <a class="cta-btn" href="#mascaras-sec">La historia de las dos máscaras ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="mascaras-sec">
+  <div class="centro">
+    <p class="kicker rev">El chisme que ya tenés en tu estante</p>
+    <h2 class="titulo rev d1">Dos escritores escondieron el mismo apellido</h2>
+    <p class="bajada rev d2">Tocá cada tarjeta para dar vuelta la máscara. La primera historia ya la conocés — los tres libros están en tu sala King.</p>
+    <div class="mascaras rev d2">
+      <button class="mascara" aria-pressed="false">
+        <span class="mascara-int">
+          <span class="cara-m cara-a"><span class="tag">Años 80 · el padre</span><h3>"Richard Bachman"</h3><p>Un autor desconocido publica La Larga Marcha, El Fugitivo, Blaze… Quería saber si vendía por talento o por nombre. Un librero lo descubrió en 1985 comparando fichas de la Biblioteca del Congreso.</p><span class="toca">Tocá para revelar →</span></span>
+          <span class="cara-m cara-b"><span class="tag">Revelado</span><h3>Era Stephen King</h3><p>El experimento terminó cuando un tercero lo destapó. Los tres Bachman de tu estante (R4/R5) son la evidencia física de esta historia.</p></span>
+        </span>
+      </button>
+      <button class="mascara" aria-pressed="false">
+        <span class="mascara-int">
+          <span class="cara-m cara-a"><span class="tag">Años 2000 · el hijo</span><h3>"Joe Hill"</h3><p>Un cuentista desconocido gana el Bram Stoker y el World Fantasy Award sin que nadie sepa quién es. "Mi arma secreta fue el fracaso: mientras no vendía nada, era fácil guardar el secreto."</p><span class="toca">Tocá para revelar →</span></span>
+          <span class="cara-m cara-b"><span class="tag">Revelado</span><h3>Era Joseph Hillström King</h3><p>Hijo de Stephen y Tabitha King. Lo destapó un artículo de Variety en 2006 — por un negocio de Hollywood, no por la escritura. Los premios ya eran suyos.</p></span>
+        </span>
+      </button>
+    </div>
+    <p class="mascara-remate rev d3">Mismo experimento, misma pregunta, mismo final: el talento se probó primero, la sangre se supo después.</p>
+  </div>
+</section>
+
+<section class="seccion" id="libro" style="background:var(--negro2)">
+  <div class="centro">
+    <p class="kicker rev">El libro</p>
+    <h2 class="titulo rev d1">Cinco razones para una fan de King (sin spoilers)</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>La premisa es puro King clásico</strong><span class="flecha">›</span></button><div class="clave-body"><p>Judas Coyne, rockero retirado, colecciona cosas macabras: una soga de ahorcado, un cuadro de brujería. Un día compra en una subasta online el fantasma de un muerto, adjunto a su traje funerario. El traje llega en una caja con forma de corazón. Y deja de ser un souvenir.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>Premiada, no de favor</strong><span class="flecha">›</span></button><div class="clave-body"><p>Ganó el Bram Stoker 2007 a mejor primera novela — el premio grande del terror. Llegó al puesto 8 de la lista del New York Times. Y todo eso con un autor que la industria creía un desconocido total.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>Terror de objeto maldito, tu especialidad</strong><span class="flecha">›</span></button><div class="clave-body"><p>Si Christine y La Tienda te funcionaron, este es el mismo mecanismo: algo que se compra y no se puede devolver. Contenido, doméstico, con un protagonista al que primero vas a odiar y después vas a defender.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>Padre e hijo ya escribieron juntos</strong><span class="flecha">›</span></button><div class="clave-body"><p>Dos veces: "Throttle" (2009) y "En la hierba alta" (2012). Si viste la película de Netflix de En la hierba alta, ya conocés al equipo sin saberlo.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">v</span><strong>Si te gusta, el siguiente paso es un caramelo</strong><span class="flecha">›</span></button><div class="clave-body"><p>NOS4A2, su novela de 2013, tiene guiños directos al universo de tu estante: el circo de Pennywise, Shawshank, la Torre Oscura, el Nudo Verdadero de Doctor Sueño. Un juego de "encontrá la referencia" hecho a medida para alguien que se sabe la bibliografía completa. (Hoy está sin stock en Uruguay — por eso empezamos por este.)</p></div></div>
+    </div>
+    <div class="cita rev d1"><p>"Mi arma secreta fue el fracaso. Mientras no vendía ningún cuento ni ningún libro, era muy fácil mantener en secreto quiénes eran mis padres."</p><span>Joe Hill, sobre sus diez años de anonimato (traducción propia)</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2007 (Heart-Shaped Box); Bram Stoker Award a mejor primera novela</dd>
+        <dt>Extensión</dt><dd>~490 páginas de terror que no suelta</dd>
+        <dt>El autor</dt><dd>Joe Hill = Joseph Hillström King (1972), hijo de Stephen y Tabitha; ganó premios de terror años antes de que se supiera</dd>
+        <dt>Ojo</dt><dd>Sin película ni serie (la opción de Warner quedó en el limbo) — acá no hay atajo: se lee</dd>
+        <dt>Edición</dt><dd>Español: "El traje del muerto" (Punto de Lectura). En buscalibre quedaba ÚLTIMA unidad al armar esta ficha — si te tienta, no lo pienses tanto</dd>
+      </dl>
+      <a class="comprar" href="https://www.buscalibre.com.uy/libros/search?q=El+traje+del+muerto+Joe+Hill" target="_blank" rel="noopener">Conseguilo (quedaban últimas unidades) →</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--negro2)">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Sofi</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Tu respuesta entrena al recomendador — la próxima "Para Sofi" sale de acá.</p>
+    <div class="cta rev d2">¿Y? ¿Le damos?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-26-hill-traje-muerto','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-26-hill-traje-muerto','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-26-hill-traje-muerto','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-26-hill-traje-muerto','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-26-hill-traje-muerto','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Qué tan King-style te gusta el terror?
+      <div>
+        <button onclick="engageAnswer('rec-terror:2026-07-26-hill-traje-muerto','cuanto_mas_oscuro_mejor',this)">🌑 Cuanto más oscuro mejor</button>
+        <button onclick="engageAnswer('rec-terror:2026-07-26-hill-traje-muerto','suspenso_sin_sangre',this)">🕯️ Suspenso, sin tanta sangre</button>
+        <button onclick="engageAnswer('rec-terror:2026-07-26-hill-traje-muerto','misterio_mas_que_terror',this)">🔍 Más misterio que terror</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-26-hill-traje-muerto','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-26-hill-traje-muerto','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-26-hill-traje-muerto','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-26-hill-traje-muerto','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Los muertos arrastran cadenas. Este llega <b>por correo, en una caja con forma de corazón</b>.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Mañana a las 12:30, la última de esta tanda — para los dos.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--vinilo-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--vinilo);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · ficha "Para Sofi" · datos verificados a julio 2026 (Bram Stoker Awards, Variety 2006, buscalibre).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.mascara').forEach(function(m){m.addEventListener('click',function(){
+    var g=m.classList.toggle('girada');
+    m.setAttribute('aria-pressed',g?'true':'false');
+  });});
+  $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

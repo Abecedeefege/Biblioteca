@@ -345,7 +345,7 @@
 <nav class="topnav wrap">
   <a href="#/" data-n="cajones">Los cajones</a>
   <a href="#/indice" data-n="indice">Índice general</a>
-  <a href="#/sellados" data-n="sellados">Fichas selladas</a>
+  <a href="../recs/">Recomendaciones</a>
 </nav>
 
 <div id="status"><h2>Abriendo el mueble…</h2><p>Ordenando 400 fichas a máquina.</p></div>
@@ -454,7 +454,6 @@ function minicardHTML(b){
 
 /* ================= home: the cabinet ================= */
 function viewCajones(){
-  const sealed=Object.keys(SEALS).filter(id=>BY_ID[id]&&Object.values(SEALS[id]).some(Boolean)).length;
   render(`
     <div class="searchslot"><input id="q" type="search" placeholder="ESCRIBIR CONSULTA Y TIRAR DEL CAJÓN…" autocomplete="off"></div>
     <div class="cardstack" id="q-res" style="margin:0 0 8px"></div>
@@ -469,10 +468,6 @@ function viewCajones(){
         }).join('')}
         <div class="drawer" onclick="location.hash='#/indice'">
           <div class="label-holder"><div class="label-card">ÍNDICE GENERAL<small>${BOOKS.length} fichas · A–Z</small></div></div>
-          <div class="handle"></div>
-        </div>
-        <div class="drawer" onclick="location.hash='#/sellados'">
-          <div class="label-holder"><div class="label-card">FICHAS SELLADAS<small>${sealed} con sello suyo</small></div></div>
           <div class="handle"></div>
         </div>
       </div>
@@ -652,26 +647,6 @@ function viewIndice(){
   `,'indice');
 }
 
-/* ================= fichas selladas ================= */
-function viewSellados(){
-  const ids=Object.keys(SEALS).filter(id=>BY_ID[id]&&Object.values(SEALS[id]).some(Boolean));
-  render(`
-    <div class="drawer-open">
-      <div class="drawer-title">
-        <div class="label-holder"><div class="label-card">FICHAS SELLADAS<small>${ids.length} registros</small></div></div>
-        <span class="meta">Sus sellos de tinta: leído, favorito, prestado</span>
-        <a class="meta" style="margin-left:auto" href="#/">← cerrar el cajón</a>
-      </div>
-      ${ids.length?`<div class="cardstack" style="margin-bottom:6px">${ids.map(id=>minicardHTML(BY_ID[id])).join('')}</div>`
-        :`<div class="card" style="max-width:520px"><span class="callnum">ARCH/000</span>
-          <h3 style="font-size:15px">Cajón vacío</h3>
-          <p class="tdesc">Todavía no selló ninguna ficha. Abra cualquier registro del archivo y use los sellos de tinta al pie: LEÍDO, FAVORITO o PRESTADO. Lo sellado queda guardado en este dispositivo.</p>
-          <div class="holes"></div></div>`}
-    </div>
-    <div style="height:36px"></div>
-  `,'sellados');
-}
-
 /* ================= router ================= */
 function route(){
   const h=location.hash.replace(/^#\/?/,'');
@@ -680,7 +655,6 @@ function route(){
   if(v==='cajon')return viewCajon(a);
   if(v==='ficha')return viewFicha(a);
   if(v==='indice')return viewIndice();
-  if(v==='sellados')return viewSellados();
   viewCajones();
 }
 window.addEventListener('hashchange',route);

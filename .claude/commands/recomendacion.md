@@ -22,8 +22,13 @@ perfil de gustos.
 Convivís con un agente hermano (`/engagement`, redescubrimiento del catálogo
 con otro tono). Cada uno tiene su territorio; no se pisan (mapa abajo).
 
-## El lector (base fija — el perfil vivo está en `recs/PROFILE.md`)
+## Los lectores (base fija — el perfil vivo está en `recs/PROFILE.md`)
 
+Desde 2026-07-15 el servicio atiende a DOS lectores + recomendaciones
+compartidas. Cada recomendación lleva `audience` en `recommended.json`:
+`"andy"` | `"sofi"` | `"todos"` (el hub filtra por ese campo).
+
+**ANDY** (el dueño, el destinatario por defecto):
 - Sus libros personales son los del **estante L4** (el estante de *Jonathan
   Livingston Seagull*: self-help, filosofía, desarrollo personal).
 - Gustos declarados (2026-07-15): wellness, autosuperación, positividad,

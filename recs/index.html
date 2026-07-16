@@ -1,226 +1,255 @@
 <!DOCTYPE html>
-<html lang="es-UY">
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recomendaciones — Bibliotequeando</title>
+<meta name="description" content="El cajón de recomendaciones de Bibliotequeando: una ficha mecanografiada por día, con su experiencia y su sello.">
+<meta name="theme-color" content="#2c1f16">
 <link rel="icon" href="../icon-192.png">
-<title>📚 Sugerencias · Bibliotequeando</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap">
 <style>
-:root{
-  --papel:#F1E8D4;
-  --papel2:#E8DBBE;
-  --tinta:#2A1F12;
-  --tinta-suave:#5C4E3D;
-  --bordo:#7A1F23;
-  --dorado:#B89348;
-  --dorado-osc:#8A6E31;
-  --madera:#4A3524;
-  --verde:#4B6B4A;
-  --linea:rgba(42,31,18,.16);
-  --serif:'Spectral',Georgia,'Times New Roman',serif;
-  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  background:var(--papel);color:var(--tinta);font-family:var(--sans);
-  line-height:1.6;-webkit-font-smoothing:antialiased;
-  background-image:radial-gradient(rgba(42,31,18,.04) 1px,transparent 1px);background-size:22px 22px;
-  min-height:100vh;
-}
-::selection{background:var(--bordo);color:var(--papel)}
-h1,h2,h3,.serif{font-family:var(--serif)}
-a{color:inherit}
-button{font-family:var(--sans);cursor:pointer}
-:focus-visible{outline:2px solid var(--bordo);outline-offset:3px;border-radius:4px}
+  :root{
+    --room:#241811; --wood:#5a3d27; --wood-d:#3c2818; --brass:#c9a227; --brass2:#e6c86a;
+    --card:#f4ead0; --card2:#efe2c2; --ink:#33291f; --ink-soft:#5c4f3e; --red:#b3372e; --blue:#2b4a8a; --green:#2e6b45;
+    --type:'Special Elite','Courier New',monospace; --sans:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--room);color:var(--card);font-family:var(--type);font-size:15px;line-height:1.6;
+    background-image:radial-gradient(1000px 500px at 50% -100px, rgba(201,162,39,.07), transparent),
+      repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 2px, transparent 2px 90px)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 18px}
+  button{font-family:inherit;cursor:pointer}
 
-.back{
-  display:inline-block;margin:1.1rem 0 0 1.1rem;color:var(--tinta-suave);text-decoration:none;
-  font-size:.82rem;letter-spacing:.03em;padding:.35rem .7rem;border:1px solid var(--linea);
-  border-radius:999px;background:rgba(241,232,212,.6);
-}
-.back:hover{color:var(--bordo);border-color:var(--bordo)}
+  /* ---------- plaque header ---------- */
+  .plaque-row{display:flex;justify-content:center;padding:34px 0 8px}
+  .plaque{background:linear-gradient(180deg,#e8ca74,#b8912e 55%,#d9b856);color:#3a2a08;border-radius:8px;
+    padding:14px 34px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.55);
+    border:1px solid #8a6b1d}
+  .plaque h1{font-family:var(--type);font-size:clamp(22px,4.5vw,34px);font-weight:400;letter-spacing:3px;text-transform:uppercase}
+  .plaque .s{font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;opacity:.75}
+  nav.topnav{display:flex;justify-content:center;gap:8px;padding:10px 0 4px;flex-wrap:wrap;font-family:var(--sans)}
+  .topnav a{font-size:10.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#c9b48e;
+    padding:7px 14px;border:1px solid rgba(201,162,39,.35);border-radius:3px}
+  .topnav a:hover{background:rgba(201,162,39,.16);color:var(--brass2)}
 
-header.hero{text-align:center;padding:2.6rem 1.25rem 1.6rem;max-width:760px;margin:0 auto}
-.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bordo);font-weight:700;margin-bottom:.7rem}
-header h1{font-size:clamp(2rem,1.4rem + 3.5vw,3rem);font-weight:600;line-height:1.1;letter-spacing:-.01em}
-header p.lede{color:var(--tinta-suave);max-width:52ch;margin:1rem auto 0;font-size:1.02rem}
+  .lede{text-align:center;font-family:var(--sans);font-size:11.5px;color:#c9b48e;max-width:520px;margin:10px auto 0;line-height:1.7;padding:0 18px}
 
-.filtros{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;max-width:760px;margin:1.6rem auto .4rem;padding:0 1.1rem}
-.chip{
-  border:1.5px solid var(--linea);background:transparent;color:var(--tinta-suave);
-  border-radius:999px;padding:.4rem .9rem;font-size:.82rem;font-weight:600;transition:all .2s ease;
-}
-.chip:hover{border-color:var(--dorado)}
-.chip.on{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+  /* ---------- filtros ---------- */
+  .filtros{margin:22px auto 4px;text-align:center}
+  .fil-label{font-family:var(--sans);font-size:8.5px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:#8a785f;display:block;margin:12px 0 7px}
+  .fil-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+  .stampbtn{background:none;border:2px solid rgba(201,162,39,.5);color:#c9b48e;border-radius:6px;padding:7px 14px;
+    font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;transition:all .15s}
+  .stampbtn:hover{border-color:var(--brass2);color:var(--brass2)}
+  .stampbtn.on{background:rgba(201,162,39,.18);border-color:var(--brass2);color:var(--brass2)}
+  .stampbtn.sofi.on{border-color:#e08a98;color:#e08a98;background:rgba(224,138,152,.12)}
+  .stampbtn.andy.on{border-color:#8fb8e6;color:#8fb8e6;background:rgba(143,184,230,.12)}
+  .stampbtn.todos.on{border-color:#8fd6a0;color:#8fd6a0;background:rgba(143,214,160,.12)}
+  .contador{text-align:center;font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#8a785f;margin:14px 0 2px}
 
-.contador{text-align:center;color:var(--tinta-suave);font-style:italic;font-family:var(--serif);font-size:.95rem;margin:.8rem 0 .2rem}
+  /* ---------- gabinete + fichas ---------- */
+  .cabinet{background:linear-gradient(180deg,#6b4a2e,#4a3018);border:10px solid #382514;border-radius:10px;
+    padding:22px;margin:16px 0 30px;box-shadow:0 24px 60px rgba(0,0,0,.55), inset 0 2px 0 rgba(255,255,255,.08)}
+  .cardstack{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px}
+  .ficha{display:block;background:var(--card);color:var(--ink);border-radius:3px;padding:14px 16px 30px;position:relative;
+    box-shadow:0 4px 12px rgba(0,0,0,.4);cursor:pointer;transition:transform .14s;
+    background-image:repeating-linear-gradient(0deg,transparent 0 24px, rgba(43,74,138,.16) 24px 25px)}
+  .ficha:hover{transform:translateY(-4px) rotate(-.5deg)}
+  .ficha::before{content:'';position:absolute;left:0;right:0;top:38px;height:2px;background:rgba(179,55,46,.5)}
+  .ficha .cn{font-size:10.5px;color:var(--red);letter-spacing:1px}
+  .ficha h4{font-weight:400;font-size:15.5px;text-transform:uppercase;letter-spacing:.4px;line-height:1.35;margin:16px 0 2px;padding-right:84px}
+  .ficha .a{font-size:12.5px;color:var(--ink-soft)}
+  .ficha .temas{font-family:var(--sans);font-size:8.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-soft);margin-top:9px}
+  .ficha .abrir{display:block;font-size:12px;color:var(--blue);border-bottom:1px dashed var(--blue);width:max-content;margin-top:10px}
+  .ficha .holes{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;
+    background:var(--room);box-shadow:inset 0 2px 4px rgba(0,0,0,.7)}
+  /* sellos de la ficha */
+  .mk{position:absolute;font-family:var(--sans);font-size:8px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+    border:1.5px solid currentColor;border-radius:3px;padding:1.5px 6px;background:rgba(244,234,208,.7)}
+  .mk.tipo{top:9px;right:12px;transform:rotate(3deg)}
+  .mk.tipo.nuevo{color:var(--brass);border-color:#a8842c}
+  .mk.tipo.redescubrimiento{color:var(--green)}
+  .mk.aud{top:46px;right:10px;transform:rotate(-4deg)}
+  .mk.aud.sofi{color:#b3475c}
+  .mk.aud.andy{color:var(--blue)}
+  .mk.aud.todos{color:var(--green)}
+  .mk.hoy{top:9px;left:12px;transform:rotate(-3deg);color:var(--red);animation:stampin .3s cubic-bezier(.2,2.2,.4,1)}
+  @keyframes stampin{from{transform:scale(2) rotate(-3deg);opacity:0}to{transform:scale(1) rotate(-3deg);opacity:1}}
+  .mk.ver{bottom:26px;right:12px;transform:rotate(2deg);color:var(--green)}
+  .mk.ver.neg{color:var(--red)}
 
-main{max-width:900px;margin:0 auto;padding:1.2rem 1.1rem 4rem}
-.grid{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+  .vacio{background:var(--card);color:var(--ink);border-radius:4px;max-width:520px;margin:0 auto;padding:18px 22px 30px;position:relative;
+    box-shadow:0 8px 22px rgba(0,0,0,.5)}
+  .vacio h3{font-weight:400;font-size:15px;text-transform:uppercase;margin-bottom:6px}
+  .vacio p{font-size:13.5px;color:var(--ink-soft)}
+  .vacio .holes{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:var(--room);box-shadow:inset 0 2px 4px rgba(0,0,0,.7)}
 
-.card{
-  position:relative;display:flex;flex-direction:column;gap:.6rem;text-decoration:none;color:inherit;
-  background:#F7EFDC;border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.3rem 1.15rem;
-  box-shadow:0 10px 26px -18px rgba(42,31,18,.5);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
-  border-left:5px solid var(--dorado);
-}
-.card.redescubrimiento{border-left-color:var(--verde)}
-.card:hover{transform:translateY(-4px);box-shadow:0 18px 34px -18px rgba(42,31,18,.55);border-color:var(--dorado)}
-.card .top{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
-.card .fecha{font-family:var(--sans);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave);font-weight:700}
-.card .badge{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:.22rem .55rem;border-radius:999px;white-space:nowrap}
-.badge.nuevo{background:rgba(184,147,72,.2);color:var(--dorado-osc)}
-.badge.redescubrimiento{background:rgba(75,107,74,.18);color:var(--verde)}
-.card h2{font-size:1.28rem;font-weight:600;line-height:1.2;color:var(--tinta)}
-.card .autor{font-family:var(--serif);font-style:italic;color:var(--tinta-suave);font-size:.98rem;margin-top:-.2rem}
-.card .topics{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.15rem}
-.card .topic{font-size:.7rem;color:var(--tinta-suave);background:rgba(42,31,18,.06);border-radius:999px;padding:.2rem .55rem}
-.card .pie{display:flex;justify-content:space-between;align-items:center;margin-top:.6rem;padding-top:.7rem;border-top:1px dashed var(--linea)}
-.card .abrir{font-weight:700;font-size:.86rem;color:var(--bordo)}
-.card .veredicto{font-size:.76rem;font-weight:700;color:var(--verde)}
-.card .veredicto.neg{color:var(--bordo)}
-.card .hoy-pill{
-  display:inline-block;background:var(--bordo);color:var(--papel);border-radius:999px;
-  font-size:.64rem;letter-spacing:.14em;font-weight:700;padding:.2rem .6rem;margin-right:.5rem;
-}
+  .hint{text-align:center;font-family:var(--sans);font-size:11px;color:#8a785f;margin:0 0 36px;padding:0 18px}
 
-.vacio,.errbox{text-align:center;color:var(--tinta-suave);font-style:italic;font-family:var(--serif);padding:3rem 1rem}
+  footer{text-align:center;font-family:var(--sans);font-size:10px;color:#8a785f;line-height:1.9;padding:10px 18px 46px}
+  footer b{letter-spacing:2px;text-transform:uppercase;color:#c9b48e}
+  footer a{text-decoration:underline}
 
-footer{text-align:center;color:var(--tinta-suave);font-size:.78rem;padding:1.5rem 1.25rem 3rem;border-top:1px solid var(--linea);max-width:900px;margin:0 auto;line-height:1.7}
-footer em{font-family:var(--serif)}
-
-@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+  #status{padding:70px 20px;text-align:center;color:#c9b48e}
+  #status h2{font-size:20px;letter-spacing:2px;text-transform:uppercase;color:var(--brass2)}
+  .fade{animation:fd .3s ease}
+  @keyframes fd{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
 </style>
 </head>
 <body>
 
-<a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+<div class="plaque-row"><div class="plaque">
+  <div class="s">Bibliotequeando · Servicio de lecturas</div>
+  <h1>Recomendaciones</h1>
+  <div class="s">Una ficha nueva por día — 12:30</div>
+</div></div>
 
-<header class="hero">
-  <p class="kicker">Bibliotequeando</p>
-  <h1>Sugerencias</h1>
-  <p class="lede">Un libro por día, elegido para vos y contado en una experiencia de cinco minutos. Acá viven todas — las de hoy y las de antes. Tu veredicto en cada una afina la próxima.</p>
-</header>
+<nav class="topnav wrap">
+  <a href="../concepts/fichero.html">← El Fichero</a>
+  <a href="../index.html?exp=clasica">Catálogo clásico</a>
+</nav>
 
-<div class="filtros" id="filtros" role="tablist" aria-label="Filtrar sugerencias"></div>
+<p class="lede">El bibliotecario deja cada mediodía una ficha nueva en este cajón: un libro elegido para la casa, con su experiencia de cinco minutos. Los sellos de veredicto que usted ponga adentro afinan la próxima.</p>
+
+<div class="filtros wrap">
+  <span class="fil-label">Destinatario</span>
+  <div class="fil-row" id="fil-aud"></div>
+  <span class="fil-label">Tipo y veta</span>
+  <div class="fil-row" id="fil-tipo"></div>
+</div>
 <p class="contador" id="contador"></p>
 
-<main>
-  <div class="grid" id="grid"></div>
-  <div class="vacio" id="vacio" hidden>Todavía no hay sugerencias publicadas. Volvé mañana al mediodía.</div>
-  <div class="errbox" id="errbox" hidden>No se pudo cargar la lista de sugerencias. Probá recargar la página.</div>
+<div id="status"><h2>Abriendo el cajón…</h2></div>
+
+<main class="wrap" id="app" style="display:none">
+  <div class="cabinet">
+    <div class="cardstack" id="grid"></div>
+    <div class="vacio" id="vacio" hidden>
+      <span class="cn" style="color:var(--red);font-size:10.5px">REC/000</span>
+      <h3>Cajón vacío bajo ese filtro</h3>
+      <p>Pruebe con otro sello del tablero de arriba, o espere a la ficha de mañana al mediodía.</p>
+      <div class="holes"></div>
+    </div>
+  </div>
+  <p class="hint">Tire de una ficha para abrir su experiencia. Adentro: las claves del libro, sus citas verificadas y los sellos de veredicto.</p>
 </main>
 
 <footer>
-  <em>Bibliotequeando</em> · las sugerencias se arman solas cada día y se archivan acá.<br>
-  ¿Una te gustó y otra no? Decilo con los botones dentro de cada experiencia: así el próximo libro te queda mejor.
+  <b>Recomendaciones</b><br>
+  Fichas mecanografiadas a diario por el bibliotecario automático · el veredicto de cada una entrena a la siguiente.<br>
+  <a href="../concepts/fichero.html">el fichero</a> · <a href="../index.html?exp=clasica">catálogo clásico</a> · <a href="../engage/setup.html">ajustes de avisos</a>
 </footer>
 
 <script>
 (function(){
-  var $ = function(s){return document.querySelector(s)};
-  var grid = $('#grid'), vacio = $('#vacio'), errbox = $('#errbox'),
-      filtros = $('#filtros'), contador = $('#contador');
+  'use strict';
+  var $=function(s){return document.querySelector(s)};
 
-  var MESES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-  var TOPIC_LABEL = {
-    positividad:'positividad', espiritualidad:'espiritualidad', autosuperacion:'autosuperación',
-    astronomia:'astronomía', ciencia:'ciencia', asombro:'asombro', wellness:'wellness',
-    sentido:'sentido', estoicismo:'estoicismo', finanzas:'finanzas', neurociencia:'neurociencia',
-    conciencia:'conciencia', fabula:'fábula', oriental:'oriental'
-  };
-  var VER_LABEL = {
-    lo_quiero:'📚 Lo querés', me_tienta:'🤔 Te tienta', ya_lo_tengo:'🏠 Ya lo tenés',
-    ya_lo_lei:'✔️ Ya lo leíste', ya_lo_leido:'✔️ Ya lo leíste', no_me_va:'🙅 No te va'
-  };
+  var MESES=['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
+  var TOPIC_LABEL={positividad:'positividad',espiritualidad:'espiritualidad',autosuperacion:'autosuperación',
+    astronomia:'astronomía',ciencia:'ciencia',asombro:'asombro',wellness:'wellness',sentido:'sentido',
+    estoicismo:'estoicismo',finanzas:'finanzas',neurociencia:'neurociencia',conciencia:'conciencia',
+    fabula:'fábula',oriental:'oriental',misterio:'misterio',terror:'terror','ciencia-ficcion':'ciencia ficción'};
+  var VER_LABEL={lo_quiero:'Lo quiere',me_tienta:'Le tienta',ya_lo_tengo:'Ya lo tiene',
+    ya_lo_lei:'Ya leído',ya_lo_leido:'Ya leído',no_me_va:'No le va'};
+  var AUD_LABEL={sofi:'Para Sofi',andy:'Para Andy',todos:'Para todos'};
 
-  function fmtFecha(d){
-    var p = (d||'').split('-'); if(p.length!==3) return d||'';
-    return parseInt(p[2],10) + ' ' + (MESES[parseInt(p[1],10)-1]||'');
-  }
-  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-  function hoyISO(){
-    // fecha local de Montevideo (UTC-3 fijo) para marcar "hoy"
-    var n = new Date(Date.now() - 3*3600*1000);
-    return n.toISOString().slice(0,10);
-  }
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+  function fmtFecha(d){var p=(d||'').split('-');if(p.length!==3)return d||'';return parseInt(p[2],10)+' '+(MESES[parseInt(p[1],10)-1]||'')}
+  function hoyISO(){return new Date(Date.now()-3*3600*1000).toISOString().slice(0,10)}
+  var audOf=function(r){return r.audience||'andy'};
 
-  var TODOS = [], filtroActivo = 'todas';
+  var TODOS=[],fAud='todas',fTipo='todas';
 
   function pinta(){
-    var hoy = hoyISO();
-    var lista = TODOS.filter(function(r){
-      if(filtroActivo==='todas') return true;
-      if(filtroActivo==='nuevo') return r.kind==='nuevo';
-      if(filtroActivo==='redescubrimiento') return r.kind==='redescubrimiento';
-      return (r.topics||[]).indexOf(filtroActivo) !== -1;
+    var hoy=hoyISO();
+    var lista=TODOS.filter(function(r){
+      if(fAud!=='todas'&&audOf(r)!==fAud)return false;
+      if(fTipo==='todas')return true;
+      if(fTipo==='nuevo')return r.kind==='nuevo';
+      if(fTipo==='redescubrimiento')return r.kind==='redescubrimiento';
+      return (r.topics||[]).indexOf(fTipo)!==-1;
     });
-    grid.innerHTML = '';
-    if(!lista.length){ vacio.hidden = false; contador.textContent=''; return; }
-    vacio.hidden = true;
-    contador.textContent = lista.length + (lista.length===1?' sugerencia':' sugerencias') +
-      (filtroActivo==='todas' ? ' hasta hoy' : '');
-    lista.forEach(function(r, i){
-      var href = (r.page||'').replace(/^recs\//,'');
-      var kind = r.kind==='redescubrimiento' ? 'redescubrimiento' : 'nuevo';
-      var a = document.createElement('a');
-      a.className = 'card ' + kind;
-      a.href = href;
-      var topics = (r.topics||[]).slice(0,3).map(function(t){
-        return '<span class="topic">'+esc(TOPIC_LABEL[t]||t)+'</span>';
-      }).join('');
-      var ver = r.feedback && r.feedback.veredicto;
-      var verHtml = ver ? '<span class="veredicto'+(ver==='no_me_va'?' neg':'')+'">'+esc(VER_LABEL[ver]||ver)+'</span>' : '<span></span>';
-      var esHoy = (r.date === hoy);
-      a.innerHTML =
-        '<div class="top"><span class="fecha">'+
-          (esHoy ? '<span class="hoy-pill">hoy</span>' : '') + esc(fmtFecha(r.date))+'</span>'+
-          '<span class="badge '+kind+'">'+(kind==='redescubrimiento'?'De tu estante':'Nuevo')+'</span></div>'+
-        '<h2>'+esc(r.title)+'</h2>'+
-        '<p class="autor">'+esc(r.author)+'</p>'+
-        '<div class="topics">'+topics+'</div>'+
-        '<div class="pie">'+verHtml+'<span class="abrir">Abrir experiencia →</span></div>';
+    var grid=$('#grid'),vacio=$('#vacio');
+    grid.innerHTML='';
+    if(!lista.length){vacio.hidden=false;$('#contador').textContent='';return}
+    vacio.hidden=true;
+    $('#contador').textContent=lista.length+(lista.length===1?' FICHA':' FICHAS')+' EN EL CAJÓN';
+    lista.forEach(function(r){
+      var href=(r.page||'').replace(/^recs\//,'');
+      var kind=r.kind==='redescubrimiento'?'redescubrimiento':'nuevo';
+      var aud=audOf(r);
+      var ver=r.feedback&&r.feedback.veredicto;
+      var a=document.createElement('a');
+      a.className='ficha';a.href=href;
+      a.innerHTML=
+        (r.date===hoy?'<span class="mk hoy">Hoy</span>':'')+
+        '<span class="cn">REC/'+esc((r.date||'').replace(/-/g,'.'))+' · '+esc(fmtFecha(r.date))+'</span>'+
+        '<span class="mk tipo '+kind+'">'+(kind==='redescubrimiento'?'De su estante':'Nuevo')+'</span>'+
+        '<span class="mk aud '+esc(aud)+'">'+esc(AUD_LABEL[aud]||aud)+'</span>'+
+        '<h4>'+esc(r.title)+'</h4>'+
+        '<div class="a">'+esc(r.author||'—')+'</div>'+
+        '<div class="temas">'+(r.topics||[]).slice(0,3).map(function(t){return esc(TOPIC_LABEL[t]||t)}).join(' · ')+'</div>'+
+        (ver?'<span class="mk ver'+(ver==='no_me_va'?' neg':'')+'">'+esc(VER_LABEL[ver]||ver)+'</span>':'')+
+        '<span class="abrir">Abrir la experiencia →</span>'+
+        '<div class="holes"></div>';
       grid.appendChild(a);
     });
   }
 
+  function chip(label,val,extra){
+    var b=document.createElement('button');
+    b.className='stampbtn'+(extra?' '+extra:'');
+    b.textContent=label;b.dataset.v=val;
+    return b;
+  }
   function armaFiltros(){
-    var chips = [['todas','Todas'],['nuevo','Nuevos'],['redescubrimiento','De tu estante']];
-    var topicsPresentes = {};
-    TODOS.forEach(function(r){ (r.topics||[]).forEach(function(t){ topicsPresentes[t]=1; }); });
-    ['astronomia','estoicismo','wellness','finanzas','espiritualidad','conciencia'].forEach(function(t){
-      if(topicsPresentes[t]) chips.push([t, TOPIC_LABEL[t]||t]);
-    });
-    filtros.innerHTML = '';
-    chips.forEach(function(c){
-      var b = document.createElement('button');
-      b.className = 'chip' + (c[0]===filtroActivo?' on':'');
-      b.textContent = c[1];
-      b.setAttribute('role','tab');
-      b.addEventListener('click', function(){
-        filtroActivo = c[0];
-        Array.prototype.forEach.call(filtros.children, function(x){ x.classList.remove('on'); });
-        b.classList.add('on');
-        pinta();
+    var fa=$('#fil-aud');
+    [['Todas','todas',''],['Para Sofi','sofi','sofi'],['Para Andy','andy','andy'],['Para todos','todos','todos']].forEach(function(c){
+      var b=chip(c[0],c[1],c[2]);
+      if(c[1]===fAud)b.classList.add('on');
+      b.addEventListener('click',function(){
+        fAud=c[1];
+        Array.prototype.forEach.call(fa.children,function(x){x.classList.remove('on')});
+        b.classList.add('on');pinta();
       });
-      filtros.appendChild(b);
+      fa.appendChild(b);
+    });
+    var ft=$('#fil-tipo');
+    var present={};TODOS.forEach(function(r){(r.topics||[]).forEach(function(t){present[t]=1})});
+    var tipoChips=[['Todas','todas'],['Nuevos','nuevo'],['De su estante','redescubrimiento']];
+    ['misterio','terror','astronomia','estoicismo','wellness','finanzas','espiritualidad','conciencia','ciencia-ficcion'].forEach(function(t){
+      if(present[t])tipoChips.push([TOPIC_LABEL[t]||t,t]);
+    });
+    tipoChips.forEach(function(c){
+      var b=chip(c[0],c[1],'');
+      if(c[1]===fTipo)b.classList.add('on');
+      b.addEventListener('click',function(){
+        fTipo=c[1];
+        Array.prototype.forEach.call(ft.children,function(x){x.classList.remove('on')});
+        b.classList.add('on');pinta();
+      });
+      ft.appendChild(b);
     });
   }
 
-  fetch('recommended.json?_=' + Date.now(), { cache:'no-store' })
-    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+  fetch('recommended.json?_='+Date.now(),{cache:'no-store'})
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
     .then(function(doc){
-      var recs = (doc.recommendations||[]).slice();
-      // más nuevas primero
-      recs.sort(function(a,b){ return (b.date||'').localeCompare(a.date||''); });
-      TODOS = recs;
-      if(!TODOS.length){ vacio.hidden = false; return; }
-      armaFiltros();
-      pinta();
+      TODOS=(doc.recommendations||[]).slice().sort(function(a,b){return (b.date||'').localeCompare(a.date||'')});
+      $('#status').style.display='none';
+      $('#app').style.display='block';
+      $('#app').classList.add('fade');
+      armaFiltros();pinta();
     })
-    .catch(function(){ errbox.hidden = false; });
+    .catch(function(){
+      $('#status').innerHTML='<h2>El cajón está trabado</h2><p style="font-family:var(--sans);font-size:11px">No se pudo leer el registro de recomendaciones. Pruebe recargar.</p>';
+    });
 })();
 </script>
 <script src="../engage/engage.js"></script>

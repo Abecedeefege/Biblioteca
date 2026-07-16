@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-15T19:20:00-03:00",
+  "_updated_at": "2026-07-15T21:30:00-03:00",
   "_feedback_cutoff": "2026-07-15T20:00:00Z",
   "recommendations": [
     {
@@ -10,13 +10,23 @@
       "title": "El hombre en busca de sentido",
       "author": "Viktor E. Frankl",
       "language": "es",
-      "topics": ["positividad", "espiritualidad", "autosuperacion"],
+      "topics": [
+        "positividad",
+        "espiritualidad",
+        "autosuperacion"
+      ],
       "book_ref": null,
       "page": "recs/2026-07-15-frankl-sentido.html",
       "notified_by": "2026-07-15-rec",
       "why": "Recomendación fundacional: el clásico que falta en L4 — conecta Solve for Happy, The Art of Happiness y el estoicismo de Holiday con su raíz del siglo XX. Verificado: no está en ninguno de los 400 del catálogo.",
-      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
-      "learning": null
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null,
+      "audience": "andy"
     },
     {
       "id": "2026-07-16-rovelli-siete-lecciones",
@@ -25,13 +35,23 @@
       "title": "Siete breves lecciones de física",
       "author": "Carlo Rovelli",
       "language": "es",
-      "topics": ["astronomia", "ciencia", "asombro"],
+      "topics": [
+        "astronomia",
+        "ciencia",
+        "asombro"
+      ],
       "book_ref": null,
       "page": "recs/2026-07-16-rovelli-siete-lecciones.html",
       "notified_by": "2026-07-16-rec",
       "why": "El estante L5 (32 libros de cosmos) muere en Hawking 1988 — cero astronomía post-1990. Rovelli es la continuación exacta: corto, poético, moderno. Pre-armada en el bootstrap del 15/07.",
-      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
-      "learning": null
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null,
+      "audience": "andy"
     },
     {
       "id": "2026-07-17-bucay-camino-felicidad",
@@ -40,13 +60,23 @@
       "title": "El Camino de la Felicidad",
       "author": "Jorge Bucay",
       "language": "es",
-      "topics": ["wellness", "positividad", "sentido"],
+      "topics": [
+        "wellness",
+        "positividad",
+        "sentido"
+      ],
       "book_ref": "M5-029",
       "page": "recs/2026-07-17-bucay-camino-felicidad.html",
       "notified_by": "2026-07-17-rec",
       "why": "Redescubrimiento con historia: 3 Bucay exiliados en M5 (misterio) junto a El Secreto de Byrne; falta el tomo 1 de la serie (semilla de futura rec nueva). Ángulo expediente detective. Pre-armada en el bootstrap del 15/07.",
-      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
-      "learning": null
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null,
+      "audience": "andy"
     },
     {
       "id": "2026-07-18-marco-aurelio-meditaciones",
@@ -55,13 +85,23 @@
       "title": "Meditaciones",
       "author": "Marco Aurelio",
       "language": "es",
-      "topics": ["estoicismo", "autosuperacion", "sentido"],
+      "topics": [
+        "estoicismo",
+        "autosuperacion",
+        "sentido"
+      ],
       "book_ref": null,
       "page": "recs/2026-07-18-marco-aurelio-meditaciones.html",
       "notified_by": "2026-07-18-rec",
       "why": "El hueco de estoicismo más obvio: solo tiene 1 Holiday (L4-020) y ningún clásico. Meditaciones es la fuente. Interacción: dicotomía del control. Pre-armada 15/07. Citas apócrifas descartadas por verificación.",
-      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
-      "learning": null
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null,
+      "audience": "andy"
     },
     {
       "id": "2026-07-19-hesse-siddhartha",
@@ -70,13 +110,23 @@
       "title": "Siddhartha",
       "author": "Hermann Hesse",
       "language": "es",
-      "topics": ["espiritualidad", "fabula", "oriental"],
+      "topics": [
+        "espiritualidad",
+        "fabula",
+        "oriental"
+      ],
       "book_ref": "L4-023",
       "page": "recs/2026-07-19-hesse-siddhartha.html",
       "notified_by": "2026-07-19-rec",
       "why": "Redescubrimiento L4: la fábula de sus dos vetas favoritas (oriental + fábula corta) en un solo libro que ya tiene. Interacción: el río donde todo es simultáneo. Pre-armada 15/07.",
-      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
-      "learning": null
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null,
+      "audience": "andy"
     },
     {
       "id": "2026-07-20-housel-psicologia-dinero",
@@ -85,13 +135,22 @@
       "title": "La psicología del dinero",
       "author": "Morgan Housel",
       "language": "es",
-      "topics": ["finanzas", "autosuperacion"],
+      "topics": [
+        "finanzas",
+        "autosuperacion"
+      ],
       "book_ref": null,
       "page": "recs/2026-07-20-housel-psicologia-dinero.html",
       "notified_by": "2026-07-20-rec",
       "why": "Match doble finanzas+psicología; en finanzas solo tiene Kiyosaki 1997 (L4-013). Interacción: simulador de interés compuesto de Buffett. Pre-armada 15/07.",
-      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
-      "learning": null
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null,
+      "audience": "andy"
     },
     {
       "id": "2026-07-21-bach-ilusiones",
@@ -100,13 +159,23 @@
       "title": "Ilusiones",
       "author": "Richard Bach",
       "language": "es",
-      "topics": ["fabula", "positividad", "espiritualidad"],
+      "topics": [
+        "fabula",
+        "positividad",
+        "espiritualidad"
+      ],
       "book_ref": null,
       "page": "recs/2026-07-21-bach-ilusiones.html",
       "notified_by": "2026-07-21-rec",
       "why": "Autor identitario: su estante se llama por Jonathan Livingston (L4-017); Ilusiones es la otra fábula de Bach y no la tiene. Interacción: el Manual del Mesías al azar (citas verificadas). Pre-armada 15/07.",
-      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
-      "learning": null
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null,
+      "audience": "andy"
     },
     {
       "id": "2026-07-22-sagan-cosmos",
@@ -115,13 +184,23 @@
       "title": "Cosmos",
       "author": "Carl Sagan",
       "language": "es",
-      "topics": ["astronomia", "ciencia", "asombro"],
+      "topics": [
+        "astronomia",
+        "ciencia",
+        "asombro"
+      ],
       "book_ref": "L5-032",
       "page": "recs/2026-07-22-sagan-cosmos.html",
       "notified_by": "2026-07-22-rec",
       "why": "Redescubrimiento L5: la joya moderna de su estante de astronomía; releer el capítulo 1. Interacción: el calendario cósmico. Pale Blue Dot separado de Cosmos por verificación. Pre-armada 15/07.",
-      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
-      "learning": null
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null,
+      "audience": "andy"
     },
     {
       "id": "2026-07-23-pollan-cambiar-mente",
@@ -130,12 +209,120 @@
       "title": "Cómo cambiar tu mente",
       "author": "Michael Pollan",
       "language": "es",
-      "topics": ["neurociencia", "conciencia", "wellness"],
+      "topics": [
+        "neurociencia",
+        "conciencia",
+        "wellness"
+      ],
       "book_ref": null,
       "page": "recs/2026-07-23-pollan-cambiar-mente.html",
       "notified_by": "2026-07-23-rec",
       "why": "Puente exacto entre Huxley (L4-014), Leary (L4-005) y Doidge (L4-011). Interacción: mente en surcos vs nieve fresca. Con aviso de honestidad (ciencia, no apología). Pre-armada 15/07.",
-      "feedback": { "veredicto": null, "reaccion": null, "clicked": false, "dwell_s": 0 },
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null,
+      "audience": "andy"
+    },
+    {
+      "id": "2026-07-24-osman-club-crimen",
+      "date": "2026-07-24",
+      "kind": "nuevo",
+      "title": "El Club del Crimen de los Jueves",
+      "author": "Richard Osman",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-07-24-osman-club-crimen.html",
+      "notified_by": "2026-07-24-rec",
+      "why": "Primera ficha Para Sofi: su M5 está lleno de cozies de Alma + 2 Christie; este es EL cozy moderno (récord debut UK, peli Netflix ago-2025 Mirren/Brosnan, dir. Columbus). Interacción: conocé al club (4 expedientes) + rec-club.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-25-weir-hail-mary",
+      "date": "2026-07-25",
+      "kind": "nuevo",
+      "title": "Proyecto Hail Mary",
+      "author": "Andy Weir",
+      "language": "es",
+      "topics": [
+        "ciencia-ficcion",
+        "astronomia",
+        "misterio"
+      ],
+      "book_ref": null,
+      "audience": "todos",
+      "page": "recs/2026-07-25-weir-hail-mary.html",
+      "notified_by": "2026-07-25-rec",
+      "why": "Para todos: astronomía/ciencia real (él) + estructura de misterio con amnesia (ella). Peli Gosling US$684M, en Prime desde 3-jul-2026. Sin spoiler de Rocky. Interacción: resolvé como Grace (mini-deducción propia) + rec-peli.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-26-hill-traje-muerto",
+      "date": "2026-07-26",
+      "kind": "nuevo",
+      "title": "El traje del muerto",
+      "author": "Joe Hill",
+      "language": "es",
+      "topics": [
+        "terror",
+        "misterio"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-07-26-hill-traje-muerto.html",
+      "notified_by": "2026-07-26-rec",
+      "why": "Para Sofi: el HIJO de King (Bram Stoker a mejor debut 2007). Elegido sobre NOS4A2 por stock en UY. Interacción: doble máscara Bachman/Hill (ella tiene los 3 Bachman). Micro: rec-terror (calibra su gusto). NOS4A2 queda de paso 2 si mide bien.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-27-haig-biblioteca-medianoche",
+      "date": "2026-07-27",
+      "kind": "nuevo",
+      "title": "La Biblioteca de la Medianoche",
+      "author": "Matt Haig",
+      "language": "es",
+      "topics": [
+        "positividad",
+        "sentido",
+        "fabula"
+      ],
+      "book_ref": null,
+      "audience": "todos",
+      "page": "recs/2026-07-27-haig-biblioteca-medianoche.html",
+      "notified_by": "2026-07-27-rec",
+      "why": "Para todos: ficción emotiva con enganche (ella) + filosofía de arrepentimientos/sentido que dialoga con Frankl (él). Tema sensible manejado con el registro del editor. Peli Pugh solo ANUNCIADA (no estrenada). Interacción: estante de vidas + rec-quien.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
       "learning": null
     }
   ]

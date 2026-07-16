@@ -193,6 +193,54 @@
       "sent_at": null,
       "fail_reason": null,
       "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-24-rec",
+      "title": "🫖 Para Sofi: cuatro jubilados y un crimen",
+      "body": "El cozy que redefinió el género: récord británico, linaje Christie y peli con Helen Mirren. Tu salón M5 lo pide.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-24-osman-club-crimen.html",
+      "send_at": "2026-07-24T12:30:00-03:00",
+      "expires_at": "2026-07-24T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-25-rec",
+      "title": "🚀 Para los dos: un policial con escafandra",
+      "body": "Amnesia, una nave, la Tierra en juego. Ciencia real para él, deducción pura para ella. La peli ya está en Prime.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-25-weir-hail-mary.html",
+      "send_at": "2026-07-25T12:30:00-03:00",
+      "expires_at": "2026-07-25T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-26-rec",
+      "title": "🖤 Para Sofi: el hijo de King escribió esto",
+      "body": "Un fantasma comprado por internet llega en una caja con forma de corazón. Y el apellido escondido 10 años, como Bachman.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-26-hill-traje-muerto.html",
+      "send_at": "2026-07-26T12:30:00-03:00",
+      "expires_at": "2026-07-26T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-27-rec",
+      "title": "🕛 Para los dos: la biblioteca de las otras vidas",
+      "body": "Cada libro, una vida que pudieron vivir. Engancha como novela, trabaja como el Frankl. Cierre de la tanda.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-27-haig-biblioteca-medianoche.html",
+      "send_at": "2026-07-27T12:30:00-03:00",
+      "expires_at": "2026-07-27T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
     }
   ]
 }

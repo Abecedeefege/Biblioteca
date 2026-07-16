@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🚀 Proyecto Hail Mary · Para los dos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nave:#0B0F1A;
+  --nave2:#121828;
+  --ambar:#E8A33D;
+  --ambar-hi:#FFC46B;
+  --cian:#6FC4D8;
+  --tiza:#EDEFF4;
+  --bruma:#8C95AB;
+  --linea:rgba(237,239,244,.13);
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nave);color:var(--tiza);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--ambar);color:var(--nave)}
+h1,h2,h3{font-family:var(--display)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--ambar-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,239,244,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cian),var(--ambar-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(11,15,26,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--ambar-hi);border-color:var(--ambar)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ambar);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:700;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(120% 80% at 50% -10%,#1A2440 0%,var(--nave) 60%)}
+.cielo{position:absolute;inset:0;pointer-events:none}
+.estrella{position:absolute;border-radius:50%;background:var(--tiza);opacity:.5;animation:titilar 5s ease-in-out infinite}
+@keyframes titilar{0%,100%{opacity:.1}50%{opacity:.7}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .para{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#8FD6A0;border:1px solid #8FD6A0;border-radius:999px;padding:.32rem .95rem;margin-bottom:1.3rem;font-weight:700}
+.hero h1{font-size:clamp(2.1rem,1.4rem + 6vw,4.4rem);font-weight:700;line-height:1.05;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--ambar-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--display);font-size:1.05rem;color:var(--bruma)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:48ch}
+.cta-btn{display:inline-block;background:var(--ambar);color:var(--nave);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:700;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--ambar-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--nave2)}
+.mitades{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.2rem}
+.mitad{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.2rem;background:rgba(237,239,244,.03)}
+.mitad .quien{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:.3rem}
+.mitad.el .quien{color:var(--cian)}
+.mitad.ella .quien{color:#E08A98}
+.mitad h3{font-size:1.1rem;margin-bottom:.4rem}
+.mitad p{color:var(--bruma);font-size:.9rem}
+.union{border:1px solid var(--ambar);border-radius:16px;padding:1.2rem 1.3rem;background:rgba(232,163,61,.08);text-align:center;margin-top:1rem}
+.union b{font-family:var(--display);font-size:1.1rem;color:var(--ambar-hi)}
+.union p{color:var(--bruma);font-size:.92rem;margin-top:.3rem}
+/* deducción */
+.lab{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.3rem;background:radial-gradient(120% 100% at 50% 0%,rgba(232,163,61,.07),transparent)}
+.lab .paso{font-family:var(--display);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cian);margin-bottom:.4rem}
+.lab .pista{font-family:var(--display);font-size:1.15rem;line-height:1.5;min-height:4.2em;color:var(--tiza)}
+.lab .ops{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem}
+.lab .ops button{border:1px solid var(--linea);background:transparent;color:var(--tiza);border-radius:999px;padding:.65rem 1.15rem;font-size:.92rem;font-weight:600;transition:all .25s ease}
+.lab .ops button:hover{border-color:var(--ambar);color:var(--ambar-hi)}
+.lab .ops button.ok{background:var(--ambar);color:var(--nave);border-color:var(--ambar)}
+.lab .nota{color:var(--bruma);font-size:.88rem;margin-top:1rem;min-height:2.6em}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(237,239,244,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--tiza);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--display);font-size:1.15rem;color:var(--ambar);min-width:1.8rem;font-weight:700}
+.clave-head strong{font-family:var(--display);font-weight:600;font-size:1.08rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:420px}
+.clave-body p{padding:0 1.25rem 1.25rem 4.05rem;color:var(--bruma);font-size:.95rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(237,239,244,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--ambar);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--ambar);color:var(--nave);border-radius:999px;padding:.9rem 1.7rem;font-weight:700;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--ambar-hi);transform:translateY(-2px)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-size:1.02rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--tiza);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease}
+.cta button:hover,.react button:hover{border-color:var(--ambar);color:var(--ambar-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--ambar-hi)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#1A2440 0%,var(--nave) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--display);font-size:clamp(1.35rem,1rem + 2.3vw,2.1rem);line-height:1.35;max-width:32ch;margin:0 auto 1.3rem;font-weight:600}
+.cierre .frase b{color:var(--ambar-hi)}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+@media (max-width:560px){.mitades{grid-template-columns:1fr}.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="cielo" id="cielo" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="para">Para los dos · Bibliotequeando recomienda · Nº 11</span>
+    <h1>Proyecto <em>Hail Mary</em></h1>
+    <p class="autor">Andy Weir · 2021 · del autor de El Marciano</p>
+    <p class="sub">Un tipo despierta en una nave sin saber quién es, con dos cadáveres al lado y una misión: salvar la Tierra. Es un policial disfrazado de ciencia ficción — el libro exacto donde los gustos de los dos se dan la mano.</p>
+    <a class="cta-btn" href="#puente">¿Por qué para los dos? ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué para los dos</p>
+    <h2 class="titulo rev d1">Un libro, dos lectores, cero concesiones</h2>
+    <div class="mitades rev d2">
+      <div class="mitad el"><p class="quien">Para Andy</p><h3>La ciencia es real</h3><p>Weir calcula TODO con planillas: órbitas, relatividad, consumo de combustible. Una sola licencia se permite en 500 páginas. Es la continuación natural de tu estante de cosmos — Sagan aprobaría el rigor, y el tono es puro optimismo ingenieril: problema → método → solución.</p></div>
+      <div class="mitad ella"><p class="quien">Para Sofi</p><h3>Es un misterio con amnesia</h3><p>El protagonista no sabe ni su nombre. Cada capítulo es una deducción: pistas físicas, memoria que vuelve de a pedazos, y un suspenso de dos líneas temporales que corta como tus thrillers. La estructura es de policial puro — solo que la escena del crimen es una nave.</p></div>
+    </div>
+    <div class="union rev d3"><b>Y hay algo más.</b><p>Grace no está tan solo como cree. Hay un encuentro que cambia la misión por completo — y no te vamos a decir ni una palabra más. (Si ya viste la película, sabés de qué hablamos. El libro lo cuenta mejor.)</p></div>
+  </div>
+</section>
+
+<section class="seccion" id="lab-sec">
+  <div class="centro">
+    <p class="kicker rev">La interacción</p>
+    <h2 class="titulo rev d1">Resolvé como Grace</h2>
+    <p class="bajada rev d2">Así funciona el libro entero: datos, deducción, siguiente pregunta. Probalo con un mini-caso (que NO es de la trama — cero spoilers).</p>
+    <div class="lab rev d2">
+      <p class="paso" id="labPaso">Registro de bitácora · 1 de 3</p>
+      <p class="pista" id="labPista"></p>
+      <div class="ops" id="labOps"></div>
+      <p class="nota" id="labNota"></p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--nave2)">
+  <div class="centro">
+    <p class="kicker rev">Lo que se llevan</p>
+    <h2 class="titulo rev d1">Cinco razones (sin spoilers)</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">01</span><strong>Un policial con escafandra</strong><span class="flecha">›</span></button><div class="clave-body"><p>La trama entera es una investigación: quién soy, qué pasó con la tripulación, qué está apagando al Sol. Grace deduce con pistas físicas y químicas, como cualquier detective — el placer de resolver es el mismo de un buen misterio.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">02</span><strong>Ciencia de verdad, cero magia</strong><span class="flecha">›</span></button><div class="clave-body"><p>Weir declaró su método: "encontrar la mínima forma posible de romper las reglas de la física, y después atenerse solo a eso". Todo lo demás — mecánica orbital, relatividad, gravedad por centrifugado — es real y calculado. Fue asesor científico de su propia película.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">03</span><strong>Optimismo aplicado</strong><span class="flecha">›</span></button><div class="clave-body"><p>No hay drama por el drama: hay un obstáculo, ciencia y una salida, capítulo tras capítulo, con humor. Kirkus lo llamó "un relato inolvidable de supervivencia y el poder de la amistad". Bill Gates y Obama lo pusieron en sus listas de 2021.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">04</span><strong>Premiado por los lectores</strong><span class="flecha">›</span></button><div class="clave-body"><p>Ganó el Goodreads Choice 2021 de ciencia ficción con más de 92.000 votos y fue finalista del premio Hugo 2022. Más de 45 semanas en la lista del New York Times — y volvió a subir con la película.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">05</span><strong>La película está en Prime desde hace dos semanas</strong><span class="flecha">›</span></button><div class="clave-body"><p>Ryan Gosling, dirigida por Lord & Miller: US$ 684 millones de taquilla y 94% en Rotten Tomatoes; entró a Prime Video el 3 de julio. Plan perfecto de pareja: uno lee primero, después la ven juntos — o al revés, y el libro les da toda la ciencia que el cine no pudo mostrar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2021 (Project Hail Mary); en español por Nova, trad. Javier Guerrero</dd>
+        <dt>Extensión</dt><dd>~540 páginas que se leen como 200 — capítulos cortos, dos líneas de tiempo</dd>
+        <dt>Premios</dt><dd>Goodreads Choice 2021 (ganador) · finalista del Hugo 2022 · Audiolibro del Año 2022</dd>
+        <dt>Película</dt><dd>Estrenada en marzo 2026 (Gosling); en Prime Video desde el 3 de julio</dd>
+        <dt>Nota</dt><dd>Hay edición ilustrada 2026 por el estreno — más linda, más cara</dd>
+      </dl>
+      <a class="comprar" href="https://www.buscalibre.com.uy/libros/search?q=Proyecto+Hail+Mary+Andy+Weir" target="_blank" rel="noopener">Conseguilo — desde ~US$ 23 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--nave2)">
+  <div class="centro">
+    <p class="kicker rev">El veredicto de la casa</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Esta ficha es para los dos — cualquiera de los dos veredictos vale (y si no se ponen de acuerdo, mejor: eso también es dato).</p>
+    <div class="cta rev d2">¿Y? ¿Le damos?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-25-weir-hail-mary','lo_quiero',this)">📚 Lo queremos</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-25-weir-hail-mary','me_tienta',this)">🤔 Nos tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-25-weir-hail-mary','ya_lo_tengo',this)">🏠 Ya lo tenemos</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-25-weir-hail-mary','ya_lo_lei',this)">✔️ Ya lo leímos</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-25-weir-hail-mary','no_me_va',this)">🙅 No nos va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Cómo vienen con la película?
+      <div>
+        <button onclick="engageAnswer('rec-peli:2026-07-25-weir-hail-mary','libro_primero',this)">📖 Libro primero</button>
+        <button onclick="engageAnswer('rec-peli:2026-07-25-weir-hail-mary','ya_vimos_la_peli',this)">🎬 Ya la vimos</button>
+        <button onclick="engageAnswer('rec-peli:2026-07-25-weir-hail-mary','peli_primero',this)">🍿 Peli primero</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Les gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-25-weir-hail-mary','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-25-weir-hail-mary','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-25-weir-hail-mary','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-25-weir-hail-mary','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Así piensa un científico. Así piensa un detective. Este libro es <b>las dos cosas a la vez</b>.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Mañana a las 12:30, otra para Sofi.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--ambar-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--ambar);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer>Bibliotequeando · ficha "Para todos" · datos verificados a julio 2026 (Nova/PRH, Box Office Mojo, Hugo Awards).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if(!reduced){var cielo=$('#cielo');for(var i=0;i<60;i++){var s=document.createElement('i');s.className='estrella';var sz=(Math.random()*2+1).toFixed(1);s.style.width=s.style.height=sz+'px';s.style.left=(Math.random()*100)+'%';s.style.top=(Math.random()*80)+'%';s.style.animationDelay=(Math.random()*5)+'s';cielo.appendChild(s);}}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+  /* mini-deducción (caso propio, no del libro) */
+  var PASOS=[
+    {pista:'Despertás en un cuarto cerrado. Sobre la mesa: una taza de café FRÍO por la mitad, una estufa PRENDIDA y una ventana con escarcha del lado de adentro. ¿Hace cuánto que el cuarto está vacío?',ops:['Minutos','Horas','Días'],ok:1,
+     nota:'Horas: el café frío dice que pasó tiempo, pero la estufa prendida y la escarcha solo del lado de adentro dicen que no TANTO — días de estufa habrían secado el vidrio. Datos → hipótesis.'},
+    {pista:'En el piso hay dos vasos: uno con agua limpia, otro con agua turbia y un sedimento blanco. Los dos se llenaron de la misma canilla. ¿Qué probás primero?',ops:['El limpio','El turbio','Ninguno'],ok:2,
+     nota:'Ninguno: si la misma fuente dio resultados distintos, algo cambió entre medio — y no sabés qué. Primero entender, después tomar. Grace hace esto unas 40 veces por capítulo.'},
+    {pista:'Última: encontrás una nota escrita por vos mismo que no recordás haber escrito. Dice "confiá en el método, no en la memoria". ¿Qué acabás de aprender?',ops:['Que estás perdido','Que ya estuviste acá','Que el pasado no importa'],ok:1,
+     nota:'Ya estuviste acá — y el vos del pasado te dejó un protocolo. Eso ES Proyecto Hail Mary: la memoria falla, el método no. Caso cerrado: así se lee este libro.'}
+  ];
+  var idx=0,paso=$('#labPaso'),pista=$('#labPista'),ops=$('#labOps'),nota=$('#labNota');
+  function pinta(){
+    var p=PASOS[idx];
+    paso.textContent='Registro de bitácora · '+(idx+1)+' de 3';
+    pista.textContent=p.pista;nota.textContent='';ops.innerHTML='';
+    p.ops.forEach(function(o,i){
+      var b=document.createElement('button');b.textContent=o;
+      b.addEventListener('click',function(){
+        Array.prototype.forEach.call(ops.children,function(x){x.disabled=true;x.style.opacity=(x===b)?'1':'.4';});
+        b.classList.add('ok');
+        nota.textContent=(i===p.ok?'✓ ':'La bitácora sugiere otra cosa: ')+p.nota;
+        if(idx<PASOS.length-1){setTimeout(function(){idx++;pinta();},3600);}
+      });
+      ops.appendChild(b);
+    });
+  }
+  pinta();
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

@@ -4,6 +4,33 @@
 Fijada 2026-07-15 (bootstrap; el dueño pidió "mezcla" sin proporción — ajustar
 con datos). Push diario único a las ~12:30 -03:00.
 
+## 👥 DESTINATARIOS (desde 2026-07-15): andy · sofi · todos
+Cada rec lleva `audience` en `recommended.json`; el hub filtra por eso.
+ROTACIÓN VIGENTE (inicial, ajustar con datos): de cada 4 fichas, ~2 andy ·
+1 sofi · 1 todos. El título del push de sofi/todos SIEMPRE arranca con
+"Para Sofi:" / "Para los dos:" (el teléfono es de Andy — el prefijo le dice
+a quién mostrárselo).
+
+### Sofi (pareja del dueño) — perfil inicial 2026-07-15
+- Sus salas del Fichero: **La sala King** (R4+R5, 50 King — al día: tiene
+  Holly y No tengas miedo), **El salón del crimen** (M5: cozies de Alma,
+  2 Christie, 3 Sherlock, Fitzek, Katzenbach) y **El rincón Valeria**
+  (M6: 9 Benavent). Le encantan: detectives, misterio, King-style.
+- Señales secundarias: John Green (M5-022/023) y Alice Kellen en M5 →
+  ficción emotiva también le llega.
+- Guardia Sofi: NUNCA recomendar un King como nuevo sin chequear R4/R5
+  (tiene 50); los 3 Bachman los tiene; Joe Hill NOS4A2 sin stock UY
+  (queda como paso 2 si El traje del muerto mide bien).
+- Banco Sofi: NOS4A2 (Hill), Y no quedó ninguno (Christie — solo tiene 2),
+  La verdad sobre el caso Harry Quebert (Dicker), La asistenta (McFadden),
+  tomo 2 de Osman (El hombre que murió dos veces), Fitzek (tiene 2, van más).
+
+### Todos (cruces Sofi × Andy) — qué funciona
+- Fórmula: enganche narrativo/misterio (ella) × ciencia/sentido/positividad
+  (él). Sembrados: Hail Mary (ciencia+whodunit), Midnight Library
+  (emoción+Frankl). Banco: Piranesi (Clarke), Un verdor terrible (Labatut),
+  El curioso incidente del perro a medianoche, Recursion (Crouch).
+
 ## 👤 El lector (datos duros, 2026-07-15)
 - Libros personales = **estante L4** (el de *Jonathan Livingston Seagull*).
   El resto de los ~400 comparten casa pero no son su colección núcleo.
@@ -88,8 +115,11 @@ con datos). Push diario único a las ~12:30 -03:00.
 
 ## 📊 Historial de señales (números, no vibes)
 - Todo es PRIOR todavía — cero feedback medido.
-- **9 experiencias PRE-ARMADAS (15→23/07)** en el bootstrap. La primera
-  elección LIBRE del agente es el **2026-07-24**. Mezcla de la tanda:
+- **13 experiencias PRE-ARMADAS (15→27/07)** en el bootstrap. La primera
+  elección LIBRE del agente es el **2026-07-28**. Tanda 2 (24-27/07):
+  Osman (sofi) · Hail Mary (todos) · Joe Hill (sofi) · Midnight Library
+  (todos) — micro-señales nuevas: `rec-club`, `rec-peli`, `rec-terror`,
+  `rec-quien`. Tanda 1 (15-23/07), mezcla:
   6 nuevos + 3 redescubrimientos (2:1, la mezcla vigente ✓). Días
   pre-armados: solo procesar feedback y verificar que el push esté `pending`.
   | Fecha | id | tipo | veta | interacción |
@@ -111,7 +141,7 @@ con datos). Push diario único a las ~12:30 -03:00.
   masthead. Cada experiencia linkea al hub en su cierre. Nada de esto se
   edita a mano al agregar recomendaciones: alcanza con registrar en el log.
 
-## 🔭 Qué mirar (primera corrida libre: 2026-07-24)
+## 🔭 Qué mirar (primera corrida libre: 2026-07-28)
 - Micro-señales sembradas por interpretar: `rec-via:*` (Frankl: obra/amor/
   actitud), `rec-leccion:*` (Rovelli), `rec-camino:*`/`rec-tomo1:*=si`
   (Bucay → si pide el tomo 1, *El Camino de la Autodependencia* sube al tope).

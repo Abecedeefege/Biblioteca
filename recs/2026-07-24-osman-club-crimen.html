@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🫖 El Club del Crimen de los Jueves · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#1E3226;
+  --verde2:#27402F;
+  --te:#C8A96A;
+  --te-hi:#E8CE96;
+  --burdeos:#7E2D3C;
+  --burdeos-hi:#B25468;
+  --crema:#F2ECDB;
+  --bruma:#9AAB9C;
+  --linea:rgba(242,236,219,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--verde);color:var(--crema);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--te);color:var(--verde)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--te-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(242,236,219,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--burdeos-hi),var(--te-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(30,50,38,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--te-hi);border-color:var(--te)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--te);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(130% 80% at 50% -10%,#2E4A38 0%,var(--verde) 62%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .para{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--burdeos-hi);border:1px solid var(--burdeos-hi);border-radius:999px;padding:.32rem .95rem;margin-bottom:1.3rem;font-weight:700}
+.hero h1{font-size:clamp(2rem,1.4rem + 5.5vw,4rem);font-weight:600;line-height:1.1}
+.hero h1 em{font-style:italic;color:var(--te-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--te);color:var(--verde);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--te-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.vapor{position:absolute;bottom:14%;left:50%;transform:translateX(-50%);font-size:3rem;opacity:.5;animation:vapor 4s ease-in-out infinite}
+@keyframes vapor{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
+.puente{background:var(--verde2)}
+.estante{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.libro-chip{font-size:.82rem;color:var(--te-hi);border:1px solid var(--linea);border-radius:999px;padding:.4rem .9rem}
+.remate{margin-top:1.6rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--te-hi)}
+/* el club */
+.club{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:2.2rem}
+.miembro{text-align:left;border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.15rem;background:rgba(242,236,219,.04);color:var(--crema);transition:all .3s ease;min-height:220px;display:flex;flex-direction:column;gap:.5rem}
+.miembro:hover{border-color:var(--te)}
+.miembro.abierto{border-color:var(--te);background:rgba(200,169,106,.1);transform:translateY(-3px)}
+.miembro .glifo{font-size:1.7rem;line-height:1}
+.miembro strong{font-family:var(--serif);font-weight:600;font-size:1.15rem}
+.miembro .rol{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--burdeos-hi);font-weight:700}
+.miembro p{color:var(--bruma);font-size:.88rem}
+.miembro .secreto{color:var(--te-hi);font-size:.86rem;font-style:italic;font-family:var(--serif);max-height:0;overflow:hidden;transition:max-height .5s ease}
+.miembro.abierto .secreto{max-height:120px}
+.miembro .toca{margin-top:auto;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bruma)}
+.club-micro{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.club-micro button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--crema);border-radius:999px;padding:.6rem 1.05rem;font-size:.9rem;font-weight:600;transition:all .25s ease}
+.club-micro button:hover{border-color:var(--te);color:var(--te-hi)}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(242,236,219,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--crema);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--te);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:400px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(242,236,219,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--te);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--te);color:var(--verde);border-radius:999px;padding:.9rem 1.7rem;font-weight:600;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--te-hi);transform:translateY(-2px)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--crema);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease}
+.cta button:hover,.react button:hover{border-color:var(--te);color:var(--te-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--te-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#2E4A38 0%,var(--verde) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:30ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--te-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="vapor" aria-hidden="true">🫖</div>
+  <div class="hero-int">
+    <span class="para">Para Sofi · Bibliotequeando recomienda · Nº 10</span>
+    <h1>El Club del Crimen de los <em>Jueves</em></h1>
+    <p class="autor">Richard Osman · 2020</p>
+    <p class="sub">Cuatro jubilados ingleses se juntan los jueves con té y bizcochos a revisar asesinatos sin resolver. Hasta que les cae uno fresquito. La novela de crimen debut más vendida de la historia británica — y tu estante M5 la está pidiendo a gritos.</p>
+    <a class="cta-btn" href="#puente">¿Por qué para vos? ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué a vos, Sofi</p>
+    <h2 class="titulo rev d1">Tu salón del crimen tiene una silla vacía</h2>
+    <p class="bajada rev d2">Mirá tu estante M5: los cozy mysteries de Alma, dos Agatha Christie, tres Sherlock. Este libro es el heredero directo de Christie — pero con humor británico de sitcom y capítulos cortitos que cortan justo donde no debían.</p>
+    <div class="estante rev d2">
+      <span class="libro-chip">Elemental, querida lectora</span>
+      <span class="libro-chip">Asesinato entre libros</span>
+      <span class="libro-chip">Misterio en el club de lectura</span>
+      <span class="libro-chip">Agatha Christie ×2</span>
+      <span class="libro-chip">Sherlock ×3</span>
+    </div>
+    <p class="remate rev d3">Si esos te gustan, este es EL cozy: el que redefinió el género entero en 2020.</p>
+  </div>
+</section>
+
+<section class="seccion" id="club">
+  <div class="centro">
+    <p class="kicker rev">La interacción</p>
+    <h2 class="titulo rev d1">Conocé al Club</h2>
+    <p class="bajada rev d2">Cuatro socios, cuatro armas secretas. Tocá cada ficha para abrir su expediente (sin spoilers — palabra de bibliotecario).</p>
+    <div class="club rev d2">
+      <button class="miembro" data-m="elizabeth">
+        <span class="glifo">🕶️</span>
+        <strong>Elizabeth</strong>
+        <span class="rol">Pasado… clasificado</span>
+        <p>Nadie sabe bien qué hizo antes de jubilarse. Inteligencia, seguro. ¿MI5? ¿MI6? El libro jamás lo confirma — y eso es parte del chiste.</p>
+        <span class="secreto">Su arma: contactos imposibles y una agenda de favores de toda una vida de espía.</span>
+        <span class="toca">Tocá para abrir el expediente</span>
+      </button>
+      <button class="miembro" data-m="joyce">
+        <span class="glifo">📔</span>
+        <strong>Joyce</strong>
+        <span class="rol">Ex enfermera</span>
+        <p>La nueva del grupo. Narra parte del libro en su diario — dulce, chusma y con un humor involuntario que te va a hacer reír en voz alta.</p>
+        <span class="secreto">Su arma: nadie sospecha de la señora que trae la torta. Ve todo.</span>
+        <span class="toca">Tocá para abrir el expediente</span>
+      </button>
+      <button class="miembro" data-m="ron">
+        <span class="glifo">✊</span>
+        <strong>Ron</strong>
+        <span class="rol">Ex sindicalista</span>
+        <p>"Ron el Rojo": toda una vida peleando contra el poder. Dos divorcios, cero filtro, y una hinchada de fútbol en el corazón.</p>
+        <span class="secreto">Su arma: la calle. Sabe apretar, negociar y no dejarse pisar.</span>
+        <span class="toca">Tocá para abrir el expediente</span>
+      </button>
+      <button class="miembro" data-m="ibrahim">
+        <span class="glifo">🧠</span>
+        <strong>Ibrahim</strong>
+        <span class="rol">Ex psiquiatra</span>
+        <p>Metódico, elegante, incapaz de dejar un dato sin planilla. El que arma los perfiles psicológicos del club.</p>
+        <span class="secreto">Su arma: te lee la cabeza en dos preguntas. Y toma nota.</span>
+        <span class="toca">Tocá para abrir el expediente</span>
+      </button>
+    </div>
+    <div class="club-micro rev d3">
+      ¿Con cuál del club te tomás el té?
+      <div>
+        <button onclick="engageAnswer('rec-club:2026-07-24-osman-club-crimen','elizabeth',this)">🕶️ Elizabeth</button>
+        <button onclick="engageAnswer('rec-club:2026-07-24-osman-club-crimen','joyce',this)">📔 Joyce</button>
+        <button onclick="engageAnswer('rec-club:2026-07-24-osman-club-crimen','ron',this)">✊ Ron</button>
+        <button onclick="engageAnswer('rec-club:2026-07-24-osman-club-crimen','ibrahim',this)">🧠 Ibrahim</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--verde2)">
+  <div class="centro">
+    <p class="kicker rev">Lo que te llevás</p>
+    <h2 class="titulo rev d1">Cinco razones (sin spoilers)</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>El fenómeno que redefinió el cozy</strong><span class="flecha">›</span></button><div class="clave-body"><p>45.000 copias en tres días. Primera novela debut de la historia británica en ser el Nº1 navideño. Más de un millón de copias en Reino Unido solo el primer año. No es "otro cozy": es el que cambió la escala del género.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>Cuatro detectives, no uno</strong><span class="flecha">›</span></button><div class="clave-body"><p>Tus cozies de Alma tienen una protagonista y su comparsa. Acá investiga un equipo entero con roles complementarios: la espía, la enfermera, el sindicalista y el psiquiatra. La química entre los cuatro es la mitad del libro.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>El diario de Joyce</strong><span class="flecha">›</span></button><div class="clave-body"><p>El libro alterna la narración con las entradas del diario de Joyce — íntimas, chusmas y desopilantes. Es un recurso que ninguno de los autores de tu estante usa así, y es lo que más se extraña cuando el libro se termina.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>La vejez como superpoder</strong><span class="flecha">›</span></button><div class="clave-body"><p>Resuelven crímenes PORQUE son viejos, no a pesar de eso: nadie los ve venir, tienen contactos de toda una vida, y ya no les importa nada el qué dirán. Ternura y filo en partes iguales — el crimen está bien construido, no es solo té y tejido.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">v</span><strong>Si te gusta, hay MÁS</strong><span class="flecha">›</span></button><div class="clave-body"><p>Es una serie de cinco libros (2020-2025) con un sexto anunciado para 2027. Y la película está en Netflix desde agosto 2025: Helen Mirren, Pierce Brosnan, Ben Kingsley, dirigida por Chris Columbus y producida por la Amblin de Spielberg. Libro primero, peli después: plan redondo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2020 (The Thursday Murder Club); debut literario de Richard Osman, presentador de la BBC</dd>
+        <dt>Extensión</dt><dd>~460 páginas en capítulos cortitos de ritmo televisivo — se devora</dd>
+        <dt>Escenario</dt><dd>Coopers Chase, residencia de lujo para jubilados en Kent, Inglaterra</dd>
+        <dt>Saga</dt><dd>5 libros hasta 2026, el 6º anunciado para 2027 (ojo: "We Solve Murders" es OTRA serie de Osman)</dd>
+        <dt>Edición</dt><dd>Español: Espasa, trad. Claudia Conde Fisas</dd>
+      </dl>
+      <a class="comprar" href="https://www.buscalibre.com.uy/libros/search?q=El+club+del+crimen+de+los+jueves+Richard+Osman" target="_blank" rel="noopener">Conseguilo (chequeá precio) →</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--verde2)">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Sofi</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Tu respuesta entrena al recomendador: la próxima ficha "Para Sofi" sale de acá.</p>
+    <div class="cta rev d2">¿Y? ¿Le damos?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-24-osman-club-crimen','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-24-osman-club-crimen','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-24-osman-club-crimen','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-24-osman-club-crimen','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-24-osman-club-crimen','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia de recomendación?
+      <div>
+        <button onclick="engageReact('2026-07-24-osman-club-crimen','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-24-osman-club-crimen','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-24-osman-club-crimen','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-24-osman-club-crimen','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Nadie sospecha de cuatro jubilados con té y bizcochos. <b>Grave error.</b></p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Mañana a las 12:30, una para los dos.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--te-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--te);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · primera ficha "Para Sofi" · datos verificados a julio 2026 (Espasa, Netflix, prensa británica).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.miembro').forEach(function(m){m.addEventListener('click',function(){m.classList.toggle('abierto');});});
+  $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
