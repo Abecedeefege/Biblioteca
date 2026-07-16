@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🪷 Siddhartha · Bibliotequeando te lo recuerda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --agua:#0E1E22;
+  --agua2:#132A2E;
+  --jade:#6FA8A0;
+  --jade-hi:#A6D6CD;
+  --oro:#C9A44C;
+  --oro-hi:#E6C878;
+  --selva:#22403A;
+  --hueso:#EAE6D9;
+  --bruma:#8CA09B;
+  --linea:rgba(234,230,217,.13);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--agua);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--oro);color:var(--agua)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--jade-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(234,230,217,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--jade),var(--oro-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(14,30,34,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--jade-hi);border-color:var(--jade)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.9rem,1.3rem + 3vw,3rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:linear-gradient(180deg,#0A171A 0%,var(--agua) 55%,#0C2420 100%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--jade-hi);border:1px solid var(--jade);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(2.4rem,1.5rem + 7vw,5rem);font-weight:400;font-style:italic;line-height:1.04;color:var(--oro-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--oro);color:var(--agua);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--oro-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.olas{position:absolute;bottom:0;left:0;right:0;width:100%;height:auto;z-index:1;opacity:.5}
+.puente{background:var(--agua2)}
+.tuyo-caja{border:1px solid var(--linea);border-left:4px solid var(--oro);border-radius:0 14px 14px 0;padding:1.3rem 1.4rem;background:rgba(201,164,76,.06);margin-top:1.8rem}
+.tuyo-caja p{color:var(--hueso)}
+.tuyo-caja b{color:var(--oro-hi);font-family:var(--serif);font-size:1.15rem}
+.estante{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.libro-chip{font-size:.82rem;color:var(--jade-hi);border:1px solid var(--linea);border-radius:999px;padding:.4rem .9rem}
+/* río de etapas */
+.rio-wrap{margin-top:2.4rem}
+.rio-svg{width:100%;height:auto;display:block;overflow:visible}
+.rio-svg .corriente{fill:none;stroke:var(--jade);stroke-width:2;opacity:.4}
+.rio-svg .corriente2{fill:none;stroke:var(--jade-hi);stroke-width:1;opacity:.25}
+.rio-svg .etapa{cursor:pointer}
+.rio-svg .etapa circle.hit{fill:transparent;pointer-events:all}
+.rio-svg .etapa circle.pt{fill:var(--hueso);opacity:.55;transition:all .4s ease;pointer-events:none}
+.rio-svg .etapa circle.aura{fill:none;stroke:var(--oro);stroke-width:1.5;opacity:0;transition:opacity .5s ease;pointer-events:none}
+.rio-svg.resuena .etapa circle.pt{fill:var(--oro-hi);opacity:1}
+.rio-svg.resuena .etapa circle.aura{opacity:.8;animation:latir 2.4s ease-in-out infinite}
+.rio-svg .etapa.sel circle.pt{fill:var(--oro-hi);opacity:1;r:8}
+@keyframes latir{0%,100%{stroke-width:1.5}50%{stroke-width:3.5}}
+.rio-svg .etapa text{fill:var(--bruma);font-family:var(--sans);font-size:8px;font-weight:700}
+.rio-panel{border:1px solid var(--linea);border-radius:16px;padding:1.4rem;margin-top:1.2rem;background:linear-gradient(180deg,rgba(234,230,217,.04),transparent);min-height:150px}
+.rio-panel .et{font-family:var(--serif);font-style:italic;color:var(--jade-hi);font-size:1rem;margin-bottom:.3rem}
+.rio-panel h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin-bottom:.5rem}
+.rio-panel p{color:var(--bruma);font-size:.95rem}
+.rio-hint{margin-top:1rem;color:var(--oro-hi);font-family:var(--serif);font-style:italic;text-align:center;min-height:1.6em}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(234,230,217,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--hueso);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--oro);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:400px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.cita{border-left:3px solid var(--oro);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(201,164,76,.06);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.12rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(234,230,217,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--oro);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease}
+.cta button:hover,.react button:hover{border-color:var(--oro);color:var(--oro-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--oro-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#0C2420 0%,var(--agua) 70%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:30ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--oro-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="hero-int">
+    <span class="rotulo">De tu estante · L4-023 · redescubrimiento</span>
+    <h1>Siddhartha</h1>
+    <p class="autor">Hermann Hesse · 1922</p>
+    <p class="sub">No hay que comprar nada: ya está en tu estante. Pero hace cuánto no lo abrís. En una noche de invierno, este libro corto rinde distinto a los 40 que a los 20.</p>
+    <a class="cta-btn" href="#puente">Por qué esta noche ↓</a>
+  </div>
+  <svg class="olas" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 Q 180 20 360 60 T 720 60 T 1080 60 T 1440 60 V120 H0 Z" fill="#0C2420"/></svg>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo recordamos</p>
+    <h2 class="titulo rev d1">La fábula de tus dos vetas favoritas, en un solo libro</h2>
+    <p class="bajada rev d2">Mirá tu estante L4: por un lado la espiritualidad oriental, por el otro las fábulas cortas. Siddhartha es el libro donde esas dos cosas son la misma.</p>
+    <div class="estante rev d2">
+      <span class="libro-chip">Budismo para principiantes (L4-016)</span>
+      <span class="libro-chip">Zen en el arte del tiro con arco (L4-010)</span>
+      <span class="libro-chip">The Art of Happiness (L4-021)</span>
+      <span class="libro-chip">El Alquimista (L4-015)</span>
+      <span class="libro-chip">El Principito (L4-024)</span>
+      <span class="libro-chip">Jonathan Livingston (L4-017)</span>
+    </div>
+    <div class="tuyo-caja rev d3">
+      <p><b>El giro que casi nadie recuerda:</b> Siddhartha, el protagonista, NO es Buda. Es un contemporáneo que se cruza con Buda —"el Sublime"— y decide, con todo respeto, no seguirlo. Ninguna doctrina, ni siquiera la verdadera, reemplaza el propio camino. Ese es el corazón del libro.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="rio">
+  <div class="centro">
+    <p class="kicker rev">La vida entera, contada como un río</p>
+    <h2 class="titulo rev d1">Tocá cualquier momento — y escuchá cómo todos suenan a la vez</h2>
+    <p class="bajada rev d2">La lección final de Vasudeva el barquero: en el río, el origen y la desembocadura son simultáneos. No hay antes ni después. Todo es uno. Tocá una etapa de la vida de Siddhartha y vas a ver a las demás encenderse con ella.</p>
+    <div class="rio-wrap rev d2">
+      <svg class="rio-svg" id="rioSvg" viewBox="0 0 360 150" aria-label="El río de la vida de Siddhartha">
+        <path class="corriente" d="M6 40 C 60 20 90 70 140 60 C 195 48 210 100 270 88 C 315 78 335 110 354 100"/>
+        <path class="corriente2" d="M6 52 C 60 34 92 84 142 74 C 197 62 212 112 272 100 C 316 90 336 120 354 112"/>
+        <g class="etapa" data-i="0"><circle class="aura" cx="14" cy="41" r="12"/><circle class="hit" cx="14" cy="41" r="16"/><circle class="pt" cx="14" cy="41" r="5.5"/><text x="4" y="24">brahmán</text></g>
+        <g class="etapa" data-i="1"><circle class="aura" cx="70" cy="27" r="12"/><circle class="hit" cx="70" cy="27" r="16"/><circle class="pt" cx="70" cy="27" r="5.5"/><text x="56" y="14">samana</text></g>
+        <g class="etapa" data-i="2"><circle class="aura" cx="140" cy="60" r="12"/><circle class="hit" cx="140" cy="60" r="16"/><circle class="pt" cx="140" cy="60" r="5.5"/><text x="120" y="80">el mundo</text></g>
+        <g class="etapa" data-i="3"><circle class="aura" cx="210" cy="94" r="12"/><circle class="hit" cx="210" cy="94" r="16"/><circle class="pt" cx="210" cy="94" r="5.5"/><text x="192" y="114">el fondo</text></g>
+        <g class="etapa" data-i="4"><circle class="aura" cx="272" cy="89" r="12"/><circle class="hit" cx="272" cy="89" r="16"/><circle class="pt" cx="272" cy="89" r="5.5"/><text x="256" y="72">el río</text></g>
+        <g class="etapa" data-i="5"><circle class="aura" cx="346" cy="101" r="12"/><circle class="hit" cx="346" cy="101" r="16"/><circle class="pt" cx="346" cy="101" r="5.5"/><text x="330" y="122">Om</text></g>
+      </svg>
+      <div class="rio-panel" id="rioPanel" aria-live="polite"></div>
+      <p class="rio-hint" id="rioHint">Tocá una etapa del río.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--agua2)">
+  <div class="centro">
+    <p class="kicker rev">Lo que te vuelve a dar</p>
+    <h2 class="titulo rev d1">Cuatro ideas que releídas pegan distinto</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>La sabiduría no se enseña, se vive</strong><span class="flecha">›</span></button><div class="clave-body"><p>Siddhartha distingue el saber (que se transmite, cita hechos) de la sabiduría (que solo se alcanza viviéndola). Por eso no puede volverse discípulo de nadie. Es la razón por la que un libro no te "da" la vida: te la recuerda.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>"Sé pensar, sé esperar, sé ayunar"</strong><span class="flecha">›</span></button><div class="clave-body"><p>Cuando le preguntan qué sabe hacer, esas tres capacidades —aprendidas como asceta— son toda su fortuna. La disciplina interior vale más que cualquier oficio, y es justo lo que le permite atravesar después los años de riqueza sin perderse del todo.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>Hay que perderse para encontrarse</strong><span class="flecha">›</span></button><div class="clave-body"><p>Los años de placer, dinero y hastío junto a Kamala no son un desvío: son un paso obligado. Siddhartha necesita "morir" como asceta orgulloso para renacer. La caída y el fondo son parte de la búsqueda, no su fracaso.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>Amar el mundo, no explicarlo</strong><span class="flecha">›</span></button><div class="clave-body"><p>Frente a la tentación de juzgar o analizar la realidad, Siddhartha elige otra cosa: contemplarla —y contemplarse— con amor y respeto. A los 40, con hijos y una vida ya vivida, esa elección se lee distinto que a los 20.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="citas">
+  <div class="centro">
+    <p class="kicker rev">Del libro (la redacción varía según tu edición)</p>
+    <h2 class="titulo rev d1">Dos frases para reencontrarte con él</h2>
+    <div class="cita rev"><p>"Yo sé pensar. Yo sé esperar. Yo sé ayunar."</p><span>Siddhartha, presentándose ante Kamala y el mercader</span></div>
+    <div class="cita rev d1"><p>"La sabiduría no es comunicable. La sabiduría que un sabio intenta transmitir suena siempre a necedad."</p><span>Siddhartha a su amigo Govinda, hacia el final</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha" style="background:var(--agua2)">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>1922 (Hesse ganó el Nobel de Literatura en 1946)</dd>
+        <dt>Extensión</dt><dd>Nouvelle breve, 12 capítulos — se relee entero en una noche o dos</dd>
+        <dt>Dato</dt><dd>Hesse nunca pisó la India continental: la India del libro es imaginada, construida desde los Vedas, las Upanishad y los sutras que leía</dd>
+        <dt>Vigencia</dt><dd>Fue libro de cabecera de la contracultura de los 60; sigue siendo puerta de entrada a la espiritualidad oriental</dd>
+        <dt>Dónde</dt><dd>Ya lo tenés — estante L4, entre tus libros de sabiduría</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">El rescate</p>
+    <h2 class="titulo rev d1">Está en tu estante, esperándote</h2>
+    <p class="bajada rev d2">Sugerencia concreta: no hace falta releerlo entero. Empezá por los capítulos "En el río" y "Om" — funcionan solos, como una meditación de veinte minutos.</p>
+    <div class="cta rev d2">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L4-023','si',this)">📖 Sí, esta noche</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-023','ya_leido',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-023','no',this)">🙅 Esta noche no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Y como recomendación de redescubrimiento?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-19-hesse-siddhartha','me_tienta',this)">🤔 Me dieron ganas</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-19-hesse-siddhartha','ya_lo_lei',this)">✔️ Ya lo había leído</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-19-hesse-siddhartha','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-19-hesse-siddhartha','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-19-hesse-siddhartha','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-19-hesse-siddhartha','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-19-hesse-siddhartha','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">El saber se comunica. La sabiduría, no: se <b>vive</b>. Por eso el libro te espera, no te la entrega.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Mañana a las 12:30, otro libro.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--oro-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--oro);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante L4 · datos verificados a julio 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+  var ETAPAS=[
+    {e:'El hijo del brahmán',t:'Nace en la casta sacerdotal, con todo resuelto — y aun así siente que la sabiduría de los padres no le alcanza. Se va.'},
+    {e:'El asceta samana',t:'Ayuna, espera, piensa. Aprende a domar el cuerpo y el deseo. Se cruza con Buda y, con respeto, decide no seguirlo.'},
+    {e:'El mundo',t:'Kamala le enseña el amor; Kamaswami, el comercio. Riqueza, juego, placer — y poco a poco, el hastío. Casi se pierde del todo.'},
+    {e:'El fondo',t:'Vacío y asqueado de sí mismo, llega al río dispuesto a terminar. Ahí, en el punto más bajo, algo se rompe y algo empieza.'},
+    {e:'El río y el barquero',t:'Vasudeva le enseña a escuchar el agua: en el río, todos los tiempos son uno. La paternidad y su dolor son la última prueba.'},
+    {e:'Om',t:'La iluminación no llega como doctrina sino como aceptación: todo está enlazado, todo es uno, y esa unidad tiene una sola palabra.'}
+  ];
+  var svg=$('#rioSvg'),panel=$('#rioPanel'),hint=$('#rioHint'),etapas=$$('.etapa');
+  function sel(i){
+    svg.classList.add('resuena');
+    etapas.forEach(function(g,k){g.classList.toggle('sel',k===i);});
+    var e=ETAPAS[i];
+    panel.innerHTML='<p class="et">Etapa '+(i+1)+' de 6</p><h3>'+e.e+'</h3><p>'+e.t+'</p>';
+    hint.textContent='Todas las etapas siguen encendidas: en el río, ninguna quedó atrás.';
+  }
+  etapas.forEach(function(g){g.addEventListener('click',function(){sel(parseInt(g.dataset.i,10));});});
+  panel.innerHTML='<p class="et">El río de una vida</p><h3>De brahmán a la iluminación</h3><p>Seis momentos de la misma corriente. Tocá cualquiera para empezar.</p>';
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🧠 Cómo cambiar tu mente · Bibliotequeando te lo recomienda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --carbon:#0A0E16;
+  --carbon2:#111725;
+  --violeta:#6E5BC4;
+  --violeta-hi:#A895F0;
+  --magenta:#C05A9A;
+  --ambar:#D98A3D;
+  --ambar-hi:#EEB260;
+  --hueso:#E9EBF2;
+  --bruma:#828BA3;
+  --linea:rgba(233,235,242,.12);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--carbon);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--violeta);color:var(--hueso)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--violeta-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(233,235,242,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--violeta),var(--magenta),var(--ambar))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(10,14,22,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--violeta-hi);border-color:var(--violeta)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--violeta-hi);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#1C1836 0%,var(--carbon) 60%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero h1{font-size:clamp(2rem,1.4rem + 6vw,4.3rem);font-weight:600;line-height:1.08}
+.hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--violeta-hi),var(--magenta),var(--ambar-hi));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--violeta);color:var(--hueso);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--violeta-hi);color:var(--carbon);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--carbon2)}
+.trio{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:2.1rem}
+.pieza{border:1px solid var(--linea);border-radius:14px;padding:1.15rem 1.15rem;background:rgba(233,235,242,.03)}
+.pieza .id{font-size:.7rem;letter-spacing:.1em;color:var(--bruma);font-weight:700}
+.pieza h3{font-family:var(--serif);font-size:1.05rem;margin:.2rem 0 .3rem}
+.pieza p{color:var(--bruma);font-size:.86rem}
+.flecha-abajo{text-align:center;color:var(--violeta-hi);font-size:1.6rem;margin:1.2rem 0 .2rem}
+.union{border:1px solid var(--violeta);border-radius:14px;padding:1.2rem 1.3rem;background:rgba(110,91,196,.1);text-align:center}
+.union b{font-family:var(--serif);font-size:1.1rem;color:var(--violeta-hi)}
+.union p{color:var(--bruma);font-size:.92rem;margin-top:.3rem}
+/* toggle surcos / nieve */
+.mente{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.3rem;background:radial-gradient(120% 100% at 50% 0%,rgba(110,91,196,.1),transparent);text-align:center}
+.mente svg{width:100%;max-width:420px;height:auto;margin:0 auto;display:block}
+.surco{fill:none;stroke:var(--bruma);stroke-width:2;opacity:.55;transition:opacity .7s ease}
+.rama{fill:none;stroke-width:1.6;opacity:0;transition:opacity .9s ease}
+.nodo-n{opacity:0;transition:opacity .9s ease}
+.mente.fresca .surco{opacity:.08}
+.mente.fresca .rama{opacity:.9}
+.mente.fresca .nodo-n{opacity:1}
+.mente .estado{margin-top:1.2rem;font-family:var(--serif);font-size:1.25rem;font-weight:600;min-height:1.4em}
+.mente .desc{color:var(--bruma);font-size:.92rem;margin-top:.4rem;min-height:3em;max-width:44ch;margin-left:auto;margin-right:auto}
+.mente .toggle{margin-top:1.3rem;background:var(--violeta);color:var(--hueso);border:none;border-radius:999px;padding:.8rem 1.6rem;font-weight:600;font-size:.98rem;transition:transform .25s ease,background .25s ease}
+.mente .toggle:hover{background:var(--violeta-hi);color:var(--carbon);transform:translateY(-2px)}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(233,235,242,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--hueso);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--violeta-hi);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:420px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.aviso{border:1px solid var(--linea);border-left:4px solid var(--ambar);border-radius:0 12px 12px 0;padding:1.1rem 1.3rem;margin-top:1.8rem;background:rgba(217,138,61,.06)}
+.aviso p{color:var(--bruma);font-size:.9rem}
+.aviso b{color:var(--ambar-hi)}
+.cita{border-left:3px solid var(--violeta);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(110,91,196,.08);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(233,235,242,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--violeta-hi);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--violeta);color:var(--hueso);border-radius:999px;padding:.9rem 1.7rem;font-weight:600;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--violeta-hi);color:var(--carbon);transform:translateY(-2px)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease}
+.cta button:hover,.react button:hover{border-color:var(--violeta);color:var(--violeta-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--violeta-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#1C1836 0%,var(--carbon) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:32ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--violeta-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="hero-int">
+    <p class="kicker">Bibliotequeando te recomienda · Nº 9</p>
+    <h1>Cómo cambiar tu <em>mente</em></h1>
+    <p class="autor">Michael Pollan · 2018</p>
+    <p class="sub">Tenés a Huxley y a Leary en el estante — la mente en sus bordes. Y tenés a Doidge, la neuroplasticidad en serio. Este libro los une: la misma pregunta, contestada con resonancia magnética y ensayos clínicos.</p>
+    <a class="cta-btn" href="#puente">Por qué a vos ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué a vos</p>
+    <h2 class="titulo rev d1">El eslabón que le falta a tres de tus libros</h2>
+    <p class="bajada rev d2">Tu estante ya tiene los dos polos de esta historia. Pollan (2018) es el que los cierra, con bata de laboratorio.</p>
+    <div class="trio">
+      <div class="pieza rev"><p class="id">L4-014</p><h3>The Doors of Perception</h3><p>Huxley, 1954: la experiencia contada por un literato, en clave casi mística.</p></div>
+      <div class="pieza rev d1"><p class="id">L4-005</p><h3>Your Brain is God</h3><p>Leary: la versión radical y contracultural — el que ayudó a cerrar 30 años de investigación.</p></div>
+      <div class="pieza rev d2"><p class="id">L4-011</p><h3>The Brain That Changes Itself</h3><p>Doidge, 2007: la neuroplasticidad tomada en serio, con evidencia clínica.</p></div>
+    </div>
+    <p class="flecha-abajo rev d2">↓</p>
+    <div class="union rev d2"><b>Cómo cambiar tu mente (2018)</b><p>Retoma la pregunta de Huxley y Leary —¿qué le hacen estas sustancias a la mente?— y la responde con el estándar de evidencia que ya le exigías a Doidge: fMRI, ensayos aleatorizados, Johns Hopkins, NYU. Y lo escribe un escéptico de 60 años que, hasta entonces, escribía sobre comida.</p></div>
+  </div>
+</section>
+
+<section class="seccion" id="mente-sec">
+  <div class="centro">
+    <p class="kicker rev">La metáfora central del libro</p>
+    <h2 class="titulo rev d1">La mente adulta es una colina nevada</h2>
+    <p class="bajada rev d2">Uno de los investigadores que entrevista Pollan lo explica así: los pensamientos son trineos que, de tanto repetirse, cavan los mismos surcos hasta que es casi imposible bajar por otro lado. Tocá el botón y mirá qué pasa cuando cae nieve fresca.</p>
+    <div class="mente rev d2" id="mente">
+      <svg viewBox="0 0 400 200" aria-label="Surcos de la mente vs caminos nuevos">
+        <!-- surcos: líneas paralelas que convergen -->
+        <g>
+          <path class="surco" d="M40 20 C 140 70 160 120 200 190"/>
+          <path class="surco" d="M120 15 C 175 70 185 120 200 190"/>
+          <path class="surco" d="M200 12 C 200 70 200 120 200 190"/>
+          <path class="surco" d="M280 15 C 225 70 215 120 200 190"/>
+          <path class="surco" d="M360 20 C 260 70 240 120 200 190"/>
+        </g>
+        <!-- red: nuevas conexiones -->
+        <g>
+          <path class="rama" stroke="#A895F0" d="M200 100 L110 55"/>
+          <path class="rama" stroke="#C05A9A" d="M200 100 L300 60"/>
+          <path class="rama" stroke="#EEB260" d="M200 100 L150 150"/>
+          <path class="rama" stroke="#A895F0" d="M200 100 L270 150"/>
+          <path class="rama" stroke="#C05A9A" d="M110 55 L60 110"/>
+          <path class="rama" stroke="#EEB260" d="M300 60 L350 120"/>
+          <path class="rama" stroke="#A895F0" d="M150 150 L90 175"/>
+          <path class="rama" stroke="#EEB260" d="M270 150 L330 175"/>
+          <circle class="nodo-n" cx="200" cy="100" r="6" fill="#A895F0"/>
+          <circle class="nodo-n" cx="110" cy="55" r="4" fill="#C05A9A"/>
+          <circle class="nodo-n" cx="300" cy="60" r="4" fill="#EEB260"/>
+          <circle class="nodo-n" cx="150" cy="150" r="4" fill="#A895F0"/>
+          <circle class="nodo-n" cx="270" cy="150" r="4" fill="#C05A9A"/>
+          <circle class="nodo-n" cx="60" cy="110" r="3" fill="#EEB260"/>
+          <circle class="nodo-n" cx="350" cy="120" r="3" fill="#A895F0"/>
+          <circle class="nodo-n" cx="90" cy="175" r="3" fill="#C05A9A"/>
+          <circle class="nodo-n" cx="330" cy="175" r="3" fill="#EEB260"/>
+        </g>
+      </svg>
+      <p class="estado" id="menteEstado">Mente en surcos</p>
+      <p class="desc" id="menteDesc">Los mismos pensamientos, siempre por el mismo canal. Eficiente — y por eso también rígida, rumiante, en piloto automático. Es la "red neuronal por defecto" dominando.</p>
+      <button class="toggle" id="menteToggle">Que caiga nieve fresca ❄️</button>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--carbon2)">
+  <div class="centro">
+    <p class="kicker rev">Lo que te llevás</p>
+    <h2 class="titulo rev d1">Cuatro claves — con la ciencia, no el misticismo</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>La red neuronal por defecto y el ego</strong><span class="flecha">›</span></button><div class="clave-body"><p>Hay un circuito cerebral (la "default mode network") que se activa cuando estás en piloto automático: pensando en vos mismo, rumiando, proyectando. Es, en buena parte, el sustrato del "yo". Los estudios de neuroimagen muestran que cuando su actividad cae, la frontera entre el yo y el mundo se difumina. Es una correlación medida, no una prueba filosófica.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>Valor terapéutico serio, no recreativo</strong><span class="flecha">›</span></button><div class="clave-body"><p>El corazón del libro son ensayos clínicos controlados en Johns Hopkins y NYU: pacientes de cáncer con angustia terminal que, tras una sola sesión guiada, reportan una caída duradera del miedo a morir. Estudios revisados por pares, con seguimiento a seis meses. Todo bajo supervisión médica y psicológica.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>La conciencia normal ya es una construcción</strong><span class="flecha">›</span></button><div class="clave-body"><p>Pollan usa la investigación para argumentar que la percepción cotidiana no es una ventana a la realidad sino "una especie de alucinación controlada" que arma tu cerebro. Alterarla químicamente no rompe la realidad: expone cuánto de construido tiene tu día normal.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>El giro de un autor de comida</strong><span class="flecha">›</span></button><div class="clave-body"><p>Pollan es, ante todo, el autor de <em>El dilema del omnívoro</em>. Llegó a este tema escéptico, con más de 60 años, como un "psiconauta reacio" que probó las sustancias solo como parte de un reporteo inmersivo. No es un libro hippie: es periodismo científico riguroso que pasa por laboratorios, no por festivales.</p></div></div>
+    </div>
+    <div class="aviso rev d1"><p><b>Aclaración honesta:</b> el libro documenta ciencia clínica en contextos controlados; no es una apología ni un manual. Los psicodélicos no son inocuos (hay contraindicaciones psiquiátricas reales), y varios reseñistas señalan que Pollan a veces presenta hallazgos preliminares con más seguridad de la que la evidencia todavía sostiene. Lo recomendamos como lo que es: una gran obra de divulgación sobre un campo en construcción.</p></div>
+  </div>
+</section>
+
+<section class="seccion" id="citas">
+  <div class="centro">
+    <p class="kicker rev">Del libro</p>
+    <h2 class="titulo rev d1">La frase que resume su tesis</h2>
+    <div class="cita rev"><p>"La conciencia normal de vigilia se siente perfectamente transparente y, sin embargo, es menos una ventana a la realidad que un producto de nuestra imaginación: una especie de alucinación controlada."</p><span>Michael Pollan, Cómo cambiar tu mente (2018)</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha" style="background:var(--carbon2)">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2018 (How to Change Your Mind); #1 en la lista del New York Times</dd>
+        <dt>Subtítulo</dt><dd>Lo que la nueva ciencia de los psicodélicos nos enseña sobre la conciencia, la muerte, la adicción, la depresión y la trascendencia</dd>
+        <dt>Extensión</dt><dd>~480 páginas — periodismo científico, no manual</dd>
+        <dt>Extra</dt><dd>Docuserie de Netflix (2022, 4 episodios), con Pollan de conductor</dd>
+        <dt>Edición</dt><dd>Español: Debate, trad. Manuel Manzano</dd>
+      </dl>
+      <a class="comprar" href="https://www.buscalibre.com.uy/libros/search?q=Como+cambiar+tu+mente+Michael+Pollan" target="_blank" rel="noopener">Conseguilo — desde ~US$ 28 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Último de esta tanda. Tu respuesta entrena al recomendador para lo que viene.</p>
+    <div class="cta rev d2">¿Y? ¿Le damos?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-23-pollan-cambiar-mente','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-23-pollan-cambiar-mente','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-23-pollan-cambiar-mente','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-23-pollan-cambiar-mente','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-23-pollan-cambiar-mente','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia de recomendación?
+      <div>
+        <button onclick="engageReact('2026-07-23-pollan-cambiar-mente','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-23-pollan-cambiar-mente','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-23-pollan-cambiar-mente','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-23-pollan-cambiar-mente','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Tu día normal ya es, en parte, <b>una alucinación controlada</b>. Este libro te muestra quién la arma.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Y con este cerramos la tanda. El recomendador sigue, un libro por día.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--violeta-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--violeta);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · datos verificados a julio 2026 (Debate/Penguin; ensayos de Johns Hopkins y NYU).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+  var mente=$('#mente'),estado=$('#menteEstado'),desc=$('#menteDesc'),btn=$('#menteToggle');
+  btn.addEventListener('click',function(){
+    var fresca=mente.classList.toggle('fresca');
+    if(fresca){
+      estado.textContent='Nieve fresca';
+      desc.textContent='Los surcos se aplanan un rato. Aparecen conexiones que antes no existían — la red se reconfigura y se puede trazar otro camino. No es magia: es una ventana temporal de plasticidad.';
+      btn.textContent='Volver a los surcos';
+    }else{
+      estado.textContent='Mente en surcos';
+      desc.textContent='Los mismos pensamientos, siempre por el mismo canal. Eficiente — y por eso también rígida, rumiante, en piloto automático. Es la "red neuronal por defecto" dominando.';
+      btn.textContent='Que caiga nieve fresca ❄️';
+    }
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

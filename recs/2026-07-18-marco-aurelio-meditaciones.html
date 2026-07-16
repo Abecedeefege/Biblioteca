@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🏛️ Meditaciones · Bibliotequeando te lo recomienda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#17141F;
+  --noche2:#201B2C;
+  --purpura:#6E4B8E;
+  --purpura-hi:#A883C9;
+  --bronce:#B8923F;
+  --bronce-hi:#E1BE6E;
+  --marmol:#EDE7DC;
+  --bruma:#9A93A6;
+  --linea:rgba(237,231,220,.13);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--marmol);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--bronce);color:var(--noche)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--bronce-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,231,220,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--purpura),var(--bronce-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(23,20,31,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--bronce-hi);border-color:var(--bronce)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronce);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.9rem,1.3rem + 3vw,3rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(130% 80% at 50% -10%,#2C2340 0%,var(--noche) 62%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero h1{font-size:clamp(2.3rem,1.5rem + 6.5vw,4.8rem);font-weight:400;line-height:1.06;color:var(--marmol)}
+.hero h1 em{font-style:italic;color:var(--bronce-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--bronce);color:var(--noche);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--bronce-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--noche2)}
+.beats{display:grid;gap:1rem;margin-top:2.2rem;counter-reset:beat}
+.beat{position:relative;border:1px solid var(--linea);border-radius:14px;padding:1.25rem 1.3rem 1.25rem 4.2rem;background:linear-gradient(180deg,rgba(237,231,220,.035),transparent)}
+.beat::before{counter-increment:beat;content:counter(beat);position:absolute;left:1.25rem;top:1.1rem;font-family:var(--serif);font-size:1.65rem;font-style:italic;color:var(--bronce);line-height:1}
+.beat strong{display:block;font-family:var(--serif);font-weight:600;font-size:1.1rem;margin-bottom:.2rem}
+.beat p{color:var(--bruma);font-size:.94rem}
+/* dicotomía */
+.dico{margin-top:2.4rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.2rem}
+.col{border:1px dashed var(--linea);border-radius:14px;padding:.9rem;text-align:center;min-height:60px}
+.col.mine{border-color:var(--bronce)}
+.col.notmine{border-color:var(--purpura)}
+.col h4{font-family:var(--serif);font-size:1.05rem;font-weight:600;margin-bottom:.2rem}
+.col.mine h4{color:var(--bronce-hi)}
+.col.notmine h4{color:var(--purpura-hi)}
+.col .sub{font-size:.72rem;color:var(--bruma)}
+.tarjeta{border:1px solid var(--linea);border-radius:12px;padding:.9rem 1rem;margin-top:.7rem;background:rgba(237,231,220,.03);display:flex;flex-direction:column;gap:.6rem}
+.tarjeta.resuelta{opacity:.5}
+.tarjeta .txt{font-family:var(--serif);font-size:1.08rem}
+.tarjeta .ops{display:flex;gap:.5rem}
+.tarjeta .ops button{flex:1;border:1px solid var(--linea);background:transparent;color:var(--marmol);border-radius:999px;padding:.5rem;font-size:.82rem;font-weight:600;transition:all .2s ease}
+.tarjeta .ops button.mine:hover{border-color:var(--bronce);color:var(--bronce-hi)}
+.tarjeta .ops button.notmine:hover{border-color:var(--purpura);color:var(--purpura-hi)}
+.tarjeta .ops button.ok{background:var(--bronce);color:var(--noche);border-color:var(--bronce)}
+.tarjeta .ops button.bad{border-color:var(--purpura);opacity:.5}
+.dico-premio{margin-top:1.4rem;border-left:3px solid var(--bronce);background:rgba(184,146,63,.08);border-radius:0 12px 12px 0;padding:1.2rem 1.3rem;opacity:0;max-height:0;overflow:hidden;transition:opacity .6s ease,max-height .6s ease}
+.dico-premio.on{opacity:1;max-height:300px}
+.dico-premio p{font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.5}
+.dico-premio span{display:block;margin-top:.5rem;color:var(--bruma);font-size:.82rem}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(237,231,220,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--marmol);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--bronce);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:400px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.cita{border-left:3px solid var(--bronce);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(184,146,63,.06);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(237,231,220,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--bronce);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--bronce);color:var(--noche);border-radius:999px;padding:.9rem 1.7rem;font-weight:600;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--bronce-hi);transform:translateY(-2px)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--marmol);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease}
+.cta button:hover,.react button:hover{border-color:var(--bronce);color:var(--bronce-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--bronce-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#2C2340 0%,var(--noche) 70%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:30ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--bronce-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="hero-int">
+    <p class="kicker">Bibliotequeando te recomienda · Nº 4</p>
+    <h1>Meditaciones</h1>
+    <p class="autor">Marco Aurelio · escrito ~170-180 d.C.</p>
+    <p class="sub">Tenés a Ryan Holiday en el estante, pero no la fuente de la que bebe. El hombre más poderoso del mundo se escribía, de noche y en campaña, recordatorios para no volverse un soberbio. Nunca quiso que lo leyeras.</p>
+    <a class="cta-btn" href="#puente">Por qué a vos ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué a vos</p>
+    <h2 class="titulo rev d1">Es el manantial de tu estante de estoicismo</h2>
+    <p class="bajada rev d2">Tu <em>La Llamada del Coraje</em> (Holiday, L4-020) es agua que corre de una fuente que quizá nunca leíste. Holiday tituló <em>El obstáculo es el camino</em> con una frase literal de este libro. Acá está el original.</p>
+    <div class="beats">
+      <div class="beat rev"><strong>Un emperador, un diario</strong><p>Marco Aurelio gobernaba el imperio más grande de Occidente. En vez de escribir su gloria, se escribía a sí mismo, en griego, cómo no dejarse corromper por el poder. El título — "A sí mismo" — no lo puso él.</p></div>
+      <div class="beat rev d1"><strong>En una carpa, en el Danubio</strong><p>Buena parte se escribió en campaña militar contra las tribus germánicas, en campamentos como Sirmium. No es filosofía de escritorio: es un hombre agotado ordenándose la cabeza antes de otra batalla.</p></div>
+      <div class="beat rev d2"><strong>Sobrevivió por un hilo</strong><p>Pasó casi 700 años transmitiéndose en la oscuridad. La primera mención que tenemos (~año 900) es un obispo bizantino describiendo su copia como "tan vieja que se cae a pedazos". Estuvo a un manuscrito de desaparecer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="dico-sec">
+  <div class="centro">
+    <p class="kicker rev">El ejercicio que hacía Marco Aurelio</p>
+    <h2 class="titulo rev d1">La dicotomía del control</h2>
+    <p class="bajada rev d2">La base de todo el libro: separar lo que depende de vos de lo que no, y gastar energía solo en lo primero. Clasificá estas cinco. Cuando termines, se abre un pasaje real del libro.</p>
+    <div class="dico rev d2">
+      <div class="cols">
+        <div class="col mine"><h4>Depende de mí</h4><span class="sub">mis juicios, mi esfuerzo, mi actitud</span></div>
+        <div class="col notmine"><h4>No depende de mí</h4><span class="sub">lo externo, lo ajeno, el afuera</span></div>
+      </div>
+      <div id="tarjetas"></div>
+      <div class="dico-premio" id="premio">
+        <p>"El impedimento para la acción hace avanzar la acción. Lo que se interpone en el camino se convierte en el camino."</p>
+        <span>Meditaciones, Libro 5 · la frase que Ryan Holiday convirtió en título</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--noche2)">
+  <div class="centro">
+    <p class="kicker rev">Lo que te llevás</p>
+    <h2 class="titulo rev d1">Cinco ideas del libro</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>Memento mori: recordá que vas a morir</strong><span class="flecha">›</span></button><div class="clave-body"><p>No para asustarte: para filtrar lo trivial. "Podrías dejar la vida ahora mismo; que eso determine lo que hacés, decís y pensás." Saber que el tiempo se acaba es lo que le da peso a cómo lo usás hoy.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>La vista desde arriba</strong><span class="flecha">›</span></button><div class="clave-body"><p>Imaginarte observando tu propia vida desde el espacio, para achicar los dramas a su tamaño real. La misma mirada cósmica que te gusta en tu estante de astronomía — pero aplicada a la bronca del día.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>El obstáculo es el camino</strong><span class="flecha">›</span></button><div class="clave-body"><p>Lo que se interpone no es lo que te frena: es el material con el que avanzás. Cada traba es una oportunidad de practicar una virtud (paciencia, coraje, ingenio) que sin la traba no tendrías dónde ejercer.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>La mejor venganza</strong><span class="flecha">›</span></button><div class="clave-body"><p>Ante quien te ofende, la mejor respuesta es no volverte como él. No imitar la injuria. Es una idea del Libro 6 — y desactiva la mitad de las peleas antes de que empiecen.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">v</span><strong>Solo tenés el presente</strong><span class="flecha">›</span></button><div class="clave-body"><p>El pasado ya no existe, el futuro es incierto: lo único que realmente poseés — o perdés — es este momento. El cuerpo es un río, decía, todo fluye. Vivir bien es vivir ahora, según la razón.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="citas">
+  <div class="centro">
+    <p class="kicker rev">Del libro (Libro y sección; la redacción varía por traducción)</p>
+    <h2 class="titulo rev d1">Dos frases, autodirigidas</h2>
+    <p class="bajada rev d2" style="margin-bottom:.4rem">Recordá: se las escribía a sí mismo, no a vos.</p>
+    <div class="cita rev"><p>"No pierdas más tiempo discutiendo cómo debe ser un hombre bueno. Sé uno."</p><span>Libro 10, 16</span></div>
+    <div class="cita rev d1"><p>"Podrías dejar la vida ahora mismo. Que eso determine lo que hacés, decís y pensás."</p><span>Libro 2, 11 · el memento mori más citado</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha" style="background:var(--noche2)">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Escrito</dt><dd>~170-180 d.C., en griego, como diario privado (título original: <em>Ta eis heauton</em>, "A sí mismo")</dd>
+        <dt>Estructura</dt><dd>12 libros breves de anotaciones sueltas; el Libro 1 son agradecimientos a sus maestros y familia. Se lee salteado</dd>
+        <dt>Extensión</dt><dd>Obra corta (~230 páginas con notas en la edición Gredos)</dd>
+        <dt>Autor</dt><dd>Emperador romano 161-180, el último de los "cinco buenos emperadores"</dd>
+        <dt>Edición</dt><dd>Español: Gredos (trad. Bach Pellicer, intro. García Gual) es la de referencia; Cátedra otra buena opción</dd>
+      </dl>
+      <a class="comprar" href="https://www.buscalibre.com.uy/libros/search?q=Meditaciones+Marco+Aurelio+Gredos" target="_blank" rel="noopener">Conseguilo — desde ~US$ 26 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Tu respuesta entrena al recomendador — así el próximo te queda mejor.</p>
+    <div class="cta rev d2">¿Y? ¿Le damos?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-18-marco-aurelio-meditaciones','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-18-marco-aurelio-meditaciones','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-18-marco-aurelio-meditaciones','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-18-marco-aurelio-meditaciones','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-18-marco-aurelio-meditaciones','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia de recomendación?
+      <div>
+        <button onclick="engageReact('2026-07-18-marco-aurelio-meditaciones','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-18-marco-aurelio-meditaciones','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-18-marco-aurelio-meditaciones','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-18-marco-aurelio-meditaciones','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">No pierdas más tiempo discutiendo cómo debe ser un hombre bueno. <b>Sé uno.</b></p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Mañana a las 12:30, otro libro.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--bronce-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--bronce);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · datos y citas verificados a julio 2026 (ediciones Gredos/Hays; citas apócrifas descartadas).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+  // dicotomía del control
+  var CASOS=[
+    {t:'La opinión que otros tienen de mí', mine:false},
+    {t:'El esfuerzo que le pongo hoy', mine:true},
+    {t:'El tránsito de camino al trabajo', mine:false},
+    {t:'Mi actitud ante un fracaso', mine:true},
+    {t:'Que llueva el día del asado', mine:false}
+  ];
+  var cont=$('#tarjetas'),premio=$('#premio'),resueltas=0;
+  CASOS.forEach(function(c,i){
+    var d=document.createElement('div');d.className='tarjeta';
+    d.innerHTML='<div class="txt">'+c.t+'</div><div class="ops"><button class="mine">🧍 Depende de mí</button><button class="notmine">🌐 No depende</button></div>';
+    var bMine=d.querySelector('.mine'),bNot=d.querySelector('.notmine');
+    function resolver(eligioMine,btn){
+      if(d.classList.contains('resuelta'))return;
+      var correcto=(eligioMine===c.mine);
+      btn.classList.add(correcto?'ok':'bad');
+      d.classList.add('resuelta');
+      resueltas++;
+      if(resueltas===CASOS.length){premio.classList.add('on');}
+    }
+    bMine.addEventListener('click',function(){resolver(true,bMine);});
+    bNot.addEventListener('click',function(){resolver(false,bNot);});
+    cont.appendChild(d);
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

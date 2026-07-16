@@ -41,6 +41,7 @@ con otro tono). Cada uno tiene su territorio; no se pisan (mapa abajo).
 | `recs/PROFILE.md` | **vos** | tu memoria de gustos; se REESCRIBE cada día (máx ~120 líneas) |
 | `recs/recommended.json` | **vos** | log de cada recomendación + su feedback (anti-repetición) |
 | `recs/<YYYY-MM-DD>-<slug>.html` | **vos** | las experiencias (PERMANENTES: son el archivo de recomendaciones) |
+| `recs/index.html` | infraestructura | **NO TOCAR** — hub de "Sugerencias"; se automantiene leyendo `recommended.json` por fetch. Al registrar una recomendación nueva ahí, aparece sola en el hub. |
 | `recs/setup.html` | infraestructura | NO TOCAR (stub de redirect) |
 | `notifications/queue.json` | compartida | SOLO tus entradas `<fecha>-rec`; las del hermano y los estados del dispatcher no se tocan |
 | `notifications/send_log.json` | dispatcher | leer (qué salió; 201 = aceptada) |
@@ -238,6 +239,12 @@ Bloques obligatorios (los define `engage.js`; usá exactamente estas firmas):
 
 <script src="../engage/engage.js"></script>
 ```
+
+**Link obligatorio al hub**: en el cierre de cada página, incluí un enlace
+`<a href="./">📚 Ver todas las sugerencias →</a>` al hub de Sugerencias
+(`recs/index.html`). Es el índice desde el que el dueño navega el archivo;
+el hub se actualiza solo con lo que registres en `recommended.json` (y la
+home del sitio ya linkea al hub desde la masthead — no hace falta tocarla).
 
 Podés sumar micro-preguntas propias con `engageAnswer('rec-<algo>:REC_ID',
 '<valor>', this)` — las interpretás vos mañana. NO uses `engageApprove` /

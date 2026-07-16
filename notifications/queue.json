@@ -121,6 +121,78 @@
       "sent_at": "2026-07-15T21:29:31.653Z",
       "fail_reason": null,
       "created_by": "setup.html (prueba manual)"
+    },
+    {
+      "id": "2026-07-18-rec",
+      "title": "🏛️ El emperador que te falta en el estante",
+      "body": "Marco Aurelio se escribía, en plena campaña, cómo no volverse soberbio. La fuente de tu Ryan Holiday, en 5 minutos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-18-marco-aurelio-meditaciones.html",
+      "send_at": "2026-07-18T12:30:00-03:00",
+      "expires_at": "2026-07-18T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-19-rec",
+      "title": "🪷 Tenés un clásico juntando polvo en L4",
+      "body": "Siddhartha: la fábula de tus dos vetas favoritas, ya en tu estante. Esta noche de invierno rinde distinto que a los 20.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-19-hesse-siddhartha.html",
+      "send_at": "2026-07-19T12:30:00-03:00",
+      "expires_at": "2026-07-19T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-20-rec",
+      "title": "💰 Dos hombres murieron en 2014. Uno era conserje",
+      "body": "Y dejó 8 millones. El otro, ejecutivo de Harvard, quebró. Housel cruza finanzas y psicología: tus dos cabezas juntas.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-20-housel-psicologia-dinero.html",
+      "send_at": "2026-07-20T12:30:00-03:00",
+      "expires_at": "2026-07-20T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-21-rec",
+      "title": "🛩️ El hermano de Juan Salvador Gaviota",
+      "body": "La otra fábula de Bach, la que te falta. Con un Manual del Mesías que se abre justo en la página que necesitás.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-21-bach-ilusiones.html",
+      "send_at": "2026-07-21T12:30:00-03:00",
+      "expires_at": "2026-07-21T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-22-rec",
+      "title": "🌌 Toda tu historia entra en 14 segundos",
+      "body": "Sagan lo prueba en el capítulo 1 de Cosmos — que ya tenés en L5. Reset de asombro de 20 minutos, esta noche.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-22-sagan-cosmos.html",
+      "send_at": "2026-07-22T12:30:00-03:00",
+      "expires_at": "2026-07-22T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
+    },
+    {
+      "id": "2026-07-23-rec",
+      "title": "🧠 El eslabón que le falta a 3 de tus libros",
+      "body": "Huxley + Leary + Doidge, unidos por Pollan con resonancia magnética y ensayos clínicos. La mente en sus bordes, en serio.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-23-pollan-cambiar-mente.html",
+      "send_at": "2026-07-23T12:30:00-03:00",
+      "expires_at": "2026-07-23T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "bootstrap /recomendacion 2026-07-15"
     }
   ]
 }

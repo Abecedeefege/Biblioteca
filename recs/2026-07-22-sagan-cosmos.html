@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🌌 Cosmos · Bibliotequeando te lo recuerda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --espacio:#060B1C;
+  --espacio2:#0B1330;
+  --azul:#3E5C9A;
+  --azul-hi:#7FA0D8;
+  --oro:#E8B84A;
+  --oro-hi:#F4D06F;
+  --arena:#E9E2CF;
+  --hueso:#EAEEF6;
+  --bruma:#8593AE;
+  --linea:rgba(234,238,246,.13);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--espacio);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--oro);color:var(--espacio)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--oro-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(234,238,246,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--azul),var(--oro-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(6,11,28,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--oro-hi);border-color:var(--oro)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.9rem,1.3rem + 3vw,3rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(120% 75% at 50% 0%,#12224A 0%,var(--espacio) 60%)}
+.cielo{position:absolute;inset:0;pointer-events:none}
+.estrella{position:absolute;border-radius:50%;background:var(--hueso);opacity:.6;animation:titilar 5s ease-in-out infinite}
+@keyframes titilar{0%,100%{opacity:.12}50%{opacity:.85}}
+.orilla{position:absolute;bottom:0;left:0;right:0;height:110px;background:linear-gradient(180deg,transparent,rgba(232,184,74,.14));pointer-events:none}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--oro-hi);border:1px solid var(--oro);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(2.6rem,1.6rem + 8vw,5.6rem);font-weight:400;line-height:1.02;letter-spacing:.02em;color:var(--oro-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--oro);color:var(--espacio);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--oro-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--espacio2)}
+.linea-tiempo{position:relative;margin-top:2.2rem;padding-left:1.4rem;border-left:2px solid var(--linea)}
+.hito{position:relative;padding:0 0 1.4rem 1.2rem}
+.hito::before{content:'';position:absolute;left:-1.83rem;top:.45em;width:11px;height:11px;border-radius:50%;background:var(--espacio);border:2px solid var(--bruma)}
+.hito.tuyo::before{border-color:var(--azul-hi);background:var(--azul-hi)}
+.hito.joya::before{border-color:var(--oro);background:var(--oro);box-shadow:0 0 12px var(--oro)}
+.hito .año{font-size:.75rem;letter-spacing:.12em;color:var(--azul-hi);font-weight:700}
+.hito.joya .año{color:var(--oro)}
+.hito b{font-family:var(--serif);font-size:1.1rem;font-weight:600}
+.hito p{color:var(--bruma);font-size:.92rem}
+/* calendario cósmico */
+.cal{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.3rem;background:radial-gradient(120% 120% at 50% 0%,rgba(62,92,154,.12),transparent);text-align:center}
+.cal .mes{font-family:var(--serif);font-style:italic;color:var(--azul-hi);font-size:1rem;letter-spacing:.05em}
+.cal .evento{font-family:var(--serif);font-size:clamp(1.4rem,1.1rem + 2vw,2.1rem);font-weight:600;color:var(--oro-hi);line-height:1.15;margin:.3rem 0 .1rem;min-height:2.3em;display:flex;align-items:center;justify-content:center}
+.cal .cuando{color:var(--bruma);font-size:.9rem;min-height:2.6em}
+.cal input[type=range]{width:100%;margin:1.4rem 0 .3rem;accent-color:var(--oro)}
+.cal .escala{display:flex;justify-content:space-between;color:var(--bruma);font-size:.72rem;letter-spacing:.04em}
+.cal .remate{margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid var(--linea);color:var(--arena);font-family:var(--serif);font-style:italic;font-size:1.08rem}
+.cal .remate b{color:var(--oro-hi);font-style:normal;font-weight:600}
+.cita{border-left:3px solid var(--oro);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(232,184,74,.06);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.12rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(234,238,246,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--oro);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease}
+.cta button:hover,.react button:hover{border-color:var(--oro);color:var(--oro-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--oro-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#12224A 0%,var(--espacio) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:30ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--oro-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="cielo" id="cielo" aria-hidden="true"></div>
+  <div class="orilla" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">De tu estante · L5-032 · redescubrimiento</span>
+    <h1>Cosmos</h1>
+    <p class="autor">Carl Sagan · 1980</p>
+    <p class="sub">La joya de tu estante de astronomía. No hace falta releerlo entero: el capítulo 1 solo, de una sentada, sigue siendo el mejor reset de asombro de veinte minutos que hay en una biblioteca.</p>
+    <a class="cta-btn" href="#puente">Por qué esta semana ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo recordamos</p>
+    <h2 class="titulo rev d1">Es la pieza moderna de tu estante L5</h2>
+    <p class="bajada rev d2">Tu colección de astronomía es divulgación magnífica pero vintage: Gamow, los Bok, Hoyle. Cosmos es la bisagra hacia lo contemporáneo — y le pasó el tono de asombro a Rovelli, que te recomendamos la semana pasada.</p>
+    <div class="linea-tiempo rev d2">
+      <div class="hito tuyo"><span class="año">1940–1965</span><b> El grueso de tu L5</b><p>Divulgación clásica de posguerra, en ediciones que hoy son reliquias.</p></div>
+      <div class="hito joya"><span class="año">1980</span><b> Cosmos, Carl Sagan</b><p>Acompañó la serie de la PBS que vieron 500+ millones de personas. Asombro y rigor en la misma página.</p></div>
+      <div class="hito tuyo"><span class="año">1988</span><b> A Brief History of Time, Hawking</b><p>El que le sacó a Cosmos el récord de ciencia más vendida.</p></div>
+      <div class="hito"><span class="año">2014</span><b> Siete breves lecciones (Rovelli)</b><p>Tu recomendación del 16/07 — hereda directo el tono de Sagan.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="cal-sec">
+  <div class="centro">
+    <p class="kicker rev">El capítulo 1, hecho interacción</p>
+    <h2 class="titulo rev d1">El calendario cósmico</h2>
+    <p class="bajada rev d2">Sagan comprime toda la historia del universo en un solo año. Si el Big Bang fue el 1° de enero, ¿cuándo aparece cada cosa? Movéte por el año y fijate dónde entramos nosotros.</p>
+    <div class="cal rev d2">
+      <p class="mes" id="calMes">1 de enero</p>
+      <div class="evento" id="calEvento">El Big Bang</div>
+      <p class="cuando" id="calCuando">Hace ~13.800 millones de años. Empieza todo.</p>
+      <input type="range" id="calRange" min="0" max="365" value="0" step="1" aria-label="Día del año cósmico">
+      <div class="escala"><span>1 ene</span><span>1 jul</span><span>31 dic</span></div>
+      <p class="remate" id="calRemate">Arrastrá hasta el final del año y mirá qué poco ocupamos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="citas" style="background:var(--espacio2)">
+  <div class="centro">
+    <p class="kicker rev">Del capítulo 1, palabra por palabra</p>
+    <h2 class="titulo rev d1">La postal más famosa de la ciencia</h2>
+    <div class="cita rev"><p>"El nitrógeno de nuestro ADN, el calcio de nuestros dientes, el hierro de nuestra sangre, el carbono de nuestros pasteles de manzana se fabricaron en el interior de estrellas que colapsaron. Estamos hechos de materia estelar."</p><span>Cosmos, cap. 1 · "En la orilla del océano cósmico"</span></div>
+    <div class="cita rev d1"><p>"La superficie de la Tierra es la orilla del océano cósmico. Hace poco nos metimos en el agua, quizá hasta los tobillos, y nos parece tentadora. Algo en nosotros sabe que de ahí venimos."</p><span>Cosmos, cap. 1</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>1980; libro compañero de la serie de la PBS (con Ann Druyan y Steven Soter)</dd>
+        <dt>Estructura</dt><dd>13 capítulos; el 1 ("En la orilla del océano cósmico") funciona solo como experiencia de asombro</dd>
+        <dt>Alcance</dt><dd>Fue el libro de ciencia más vendido en inglés de su época (~5 millones), destronado recién por Hawking en el 88</dd>
+        <dt>Ojo</dt><dd>El "punto azul pálido" NO es de Cosmos — es de otro libro de Sagan, <em>Pale Blue Dot</em> (1994)</dd>
+        <dt>Dónde</dt><dd>Ya lo tenés — estante L5, entre tus libros de astronomía</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--espacio2)">
+  <div class="centro">
+    <p class="kicker rev">El rescate</p>
+    <h2 class="titulo rev d1">Está en tu estante, a un capítulo de distancia</h2>
+    <p class="bajada rev d2">No hace falta el libro entero. El capítulo 1 esta noche es una recarga de humildad cósmica de veinte minutos.</p>
+    <div class="cta rev d2">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L5-032','si',this)">📖 Sí, esta noche</button>
+        <button onclick="engageAnswer('leer-esta-noche:L5-032','ya_leido',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L5-032','no',this)">🙅 Esta noche no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Y como recomendación de redescubrimiento?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-22-sagan-cosmos','me_tienta',this)">🤔 Me dieron ganas</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-22-sagan-cosmos','ya_lo_lei',this)">✔️ Ya lo había leído</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-22-sagan-cosmos','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-22-sagan-cosmos','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-22-sagan-cosmos','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-22-sagan-cosmos','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-22-sagan-cosmos','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Estamos hechos de <b>materia estelar</b>. Somos una forma que tiene el cosmos de conocerse a sí mismo.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Mañana a las 12:30, el último de esta tanda.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--oro-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--oro);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante L5 · datos verificados a julio 2026 (Pale Blue Dot separado de Cosmos).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if(!reduced){var cielo=$('#cielo');for(var i=0;i<70;i++){var s=document.createElement('i');s.className='estrella';var sz=(Math.random()*2+1).toFixed(1);s.style.width=s.style.height=sz+'px';s.style.left=(Math.random()*100)+'%';s.style.top=(Math.random()*80)+'%';s.style.animationDelay=(Math.random()*5)+'s';cielo.appendChild(s);}}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  // calendario cósmico (valores clásicos de Sagan, escala 1 año = ~13.800 M años)
+  var HITOS=[
+    {d:0,mes:'1 de enero',ev:'El Big Bang',cu:'Hace ~13.800 millones de años. Empieza el espacio, el tiempo, todo.'},
+    {d:120,mes:'principios de mayo',ev:'Nace la Vía Láctea',cu:'Nuestra galaxia toma forma. Todavía falta muchísimo para el Sol.'},
+    {d:252,mes:'9 de septiembre',ev:'Se forma el Sistema Solar',cu:'El Sol y sus planetas, incluida una Tierra todavía en llamas.'},
+    {d:266,mes:'~21 de septiembre',ev:'Primera vida en la Tierra',cu:'Microbios. Durante meses (cósmicos) la vida será solo eso: diminuta.'},
+    {d:358,mes:'24 de diciembre',ev:'Los dinosaurios',cu:'Aparecen recién en Nochebuena. Reinan una semana cósmica y se van.'},
+    {d:362,mes:'28 de diciembre',ev:'Se extinguen los dinosaurios',cu:'Un asteroide. Se abre la cancha para los mamíferos.'},
+    {d:365,mes:'31 de diciembre, 22:30',ev:'Aparecen los humanos',cu:'El género Homo llega en los últimos minutos de la última noche del año.'}
+  ];
+  var range=$('#calRange'),mesEl=$('#calMes'),evEl=$('#calEvento'),cuEl=$('#calCuando'),remate=$('#calRemate');
+  function actual(d){var h=HITOS[0];for(var i=0;i<HITOS.length;i++){if(d>=HITOS[i].d)h=HITOS[i];}return h;}
+  function upd(){
+    var d=parseInt(range.value,10);
+    var h=actual(d);
+    mesEl.textContent=h.mes;evEl.textContent=h.ev;cuEl.textContent=h.cu;
+    if(d>=364){remate.innerHTML='Toda la historia escrita — Egipto, Roma, internet, vos — entra en los <b>últimos ~14 segundos</b> del 31 de diciembre. Eso es lo que Cosmos te hace sentir en el capítulo 1.';}
+    else{remate.textContent='Arrastrá hasta el final del año y mirá qué poco ocupamos.';}
+  }
+  range.addEventListener('input',upd);upd();
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

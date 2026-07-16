@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>📚 Sugerencias · Bibliotequeando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#F1E8D4;
+  --papel2:#E8DBBE;
+  --tinta:#2A1F12;
+  --tinta-suave:#5C4E3D;
+  --bordo:#7A1F23;
+  --dorado:#B89348;
+  --dorado-osc:#8A6E31;
+  --madera:#4A3524;
+  --verde:#4B6B4A;
+  --linea:rgba(42,31,18,.16);
+  --serif:'Spectral',Georgia,'Times New Roman',serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--papel);color:var(--tinta);font-family:var(--sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(42,31,18,.04) 1px,transparent 1px);background-size:22px 22px;
+  min-height:100vh;
+}
+::selection{background:var(--bordo);color:var(--papel)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+a{color:inherit}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--bordo);outline-offset:3px;border-radius:4px}
+
+.back{
+  display:inline-block;margin:1.1rem 0 0 1.1rem;color:var(--tinta-suave);text-decoration:none;
+  font-size:.82rem;letter-spacing:.03em;padding:.35rem .7rem;border:1px solid var(--linea);
+  border-radius:999px;background:rgba(241,232,212,.6);
+}
+.back:hover{color:var(--bordo);border-color:var(--bordo)}
+
+header.hero{text-align:center;padding:2.6rem 1.25rem 1.6rem;max-width:760px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bordo);font-weight:700;margin-bottom:.7rem}
+header h1{font-size:clamp(2rem,1.4rem + 3.5vw,3rem);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+header p.lede{color:var(--tinta-suave);max-width:52ch;margin:1rem auto 0;font-size:1.02rem}
+
+.filtros{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;max-width:760px;margin:1.6rem auto .4rem;padding:0 1.1rem}
+.chip{
+  border:1.5px solid var(--linea);background:transparent;color:var(--tinta-suave);
+  border-radius:999px;padding:.4rem .9rem;font-size:.82rem;font-weight:600;transition:all .2s ease;
+}
+.chip:hover{border-color:var(--dorado)}
+.chip.on{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+
+.contador{text-align:center;color:var(--tinta-suave);font-style:italic;font-family:var(--serif);font-size:.95rem;margin:.8rem 0 .2rem}
+
+main{max-width:900px;margin:0 auto;padding:1.2rem 1.1rem 4rem}
+.grid{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+
+.card{
+  position:relative;display:flex;flex-direction:column;gap:.6rem;text-decoration:none;color:inherit;
+  background:#F7EFDC;border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.3rem 1.15rem;
+  box-shadow:0 10px 26px -18px rgba(42,31,18,.5);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+  border-left:5px solid var(--dorado);
+}
+.card.redescubrimiento{border-left-color:var(--verde)}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 34px -18px rgba(42,31,18,.55);border-color:var(--dorado)}
+.card .top{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.card .fecha{font-family:var(--sans);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave);font-weight:700}
+.card .badge{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:.22rem .55rem;border-radius:999px;white-space:nowrap}
+.badge.nuevo{background:rgba(184,147,72,.2);color:var(--dorado-osc)}
+.badge.redescubrimiento{background:rgba(75,107,74,.18);color:var(--verde)}
+.card h2{font-size:1.28rem;font-weight:600;line-height:1.2;color:var(--tinta)}
+.card .autor{font-family:var(--serif);font-style:italic;color:var(--tinta-suave);font-size:.98rem;margin-top:-.2rem}
+.card .topics{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.15rem}
+.card .topic{font-size:.7rem;color:var(--tinta-suave);background:rgba(42,31,18,.06);border-radius:999px;padding:.2rem .55rem}
+.card .pie{display:flex;justify-content:space-between;align-items:center;margin-top:.6rem;padding-top:.7rem;border-top:1px dashed var(--linea)}
+.card .abrir{font-weight:700;font-size:.86rem;color:var(--bordo)}
+.card .veredicto{font-size:.76rem;font-weight:700;color:var(--verde)}
+.card .veredicto.neg{color:var(--bordo)}
+.card .hoy-pill{
+  display:inline-block;background:var(--bordo);color:var(--papel);border-radius:999px;
+  font-size:.64rem;letter-spacing:.14em;font-weight:700;padding:.2rem .6rem;margin-right:.5rem;
+}
+
+.vacio,.errbox{text-align:center;color:var(--tinta-suave);font-style:italic;font-family:var(--serif);padding:3rem 1rem}
+
+footer{text-align:center;color:var(--tinta-suave);font-size:.78rem;padding:1.5rem 1.25rem 3rem;border-top:1px solid var(--linea);max-width:900px;margin:0 auto;line-height:1.7}
+footer em{font-family:var(--serif)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+
+<header class="hero">
+  <p class="kicker">Bibliotequeando</p>
+  <h1>Sugerencias</h1>
+  <p class="lede">Un libro por día, elegido para vos y contado en una experiencia de cinco minutos. Acá viven todas — las de hoy y las de antes. Tu veredicto en cada una afina la próxima.</p>
+</header>
+
+<div class="filtros" id="filtros" role="tablist" aria-label="Filtrar sugerencias"></div>
+<p class="contador" id="contador"></p>
+
+<main>
+  <div class="grid" id="grid"></div>
+  <div class="vacio" id="vacio" hidden>Todavía no hay sugerencias publicadas. Volvé mañana al mediodía.</div>
+  <div class="errbox" id="errbox" hidden>No se pudo cargar la lista de sugerencias. Probá recargar la página.</div>
+</main>
+
+<footer>
+  <em>Bibliotequeando</em> · las sugerencias se arman solas cada día y se archivan acá.<br>
+  ¿Una te gustó y otra no? Decilo con los botones dentro de cada experiencia: así el próximo libro te queda mejor.
+</footer>
+
+<script>
+(function(){
+  var $ = function(s){return document.querySelector(s)};
+  var grid = $('#grid'), vacio = $('#vacio'), errbox = $('#errbox'),
+      filtros = $('#filtros'), contador = $('#contador');
+
+  var MESES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  var TOPIC_LABEL = {
+    positividad:'positividad', espiritualidad:'espiritualidad', autosuperacion:'autosuperación',
+    astronomia:'astronomía', ciencia:'ciencia', asombro:'asombro', wellness:'wellness',
+    sentido:'sentido', estoicismo:'estoicismo', finanzas:'finanzas', neurociencia:'neurociencia',
+    conciencia:'conciencia', fabula:'fábula', oriental:'oriental'
+  };
+  var VER_LABEL = {
+    lo_quiero:'📚 Lo querés', me_tienta:'🤔 Te tienta', ya_lo_tengo:'🏠 Ya lo tenés',
+    ya_lo_lei:'✔️ Ya lo leíste', ya_lo_leido:'✔️ Ya lo leíste', no_me_va:'🙅 No te va'
+  };
+
+  function fmtFecha(d){
+    var p = (d||'').split('-'); if(p.length!==3) return d||'';
+    return parseInt(p[2],10) + ' ' + (MESES[parseInt(p[1],10)-1]||'');
+  }
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function hoyISO(){
+    // fecha local de Montevideo (UTC-3 fijo) para marcar "hoy"
+    var n = new Date(Date.now() - 3*3600*1000);
+    return n.toISOString().slice(0,10);
+  }
+
+  var TODOS = [], filtroActivo = 'todas';
+
+  function pinta(){
+    var hoy = hoyISO();
+    var lista = TODOS.filter(function(r){
+      if(filtroActivo==='todas') return true;
+      if(filtroActivo==='nuevo') return r.kind==='nuevo';
+      if(filtroActivo==='redescubrimiento') return r.kind==='redescubrimiento';
+      return (r.topics||[]).indexOf(filtroActivo) !== -1;
+    });
+    grid.innerHTML = '';
+    if(!lista.length){ vacio.hidden = false; contador.textContent=''; return; }
+    vacio.hidden = true;
+    contador.textContent = lista.length + (lista.length===1?' sugerencia':' sugerencias') +
+      (filtroActivo==='todas' ? ' hasta hoy' : '');
+    lista.forEach(function(r, i){
+      var href = (r.page||'').replace(/^recs\//,'');
+      var kind = r.kind==='redescubrimiento' ? 'redescubrimiento' : 'nuevo';
+      var a = document.createElement('a');
+      a.className = 'card ' + kind;
+      a.href = href;
+      var topics = (r.topics||[]).slice(0,3).map(function(t){
+        return '<span class="topic">'+esc(TOPIC_LABEL[t]||t)+'</span>';
+      }).join('');
+      var ver = r.feedback && r.feedback.veredicto;
+      var verHtml = ver ? '<span class="veredicto'+(ver==='no_me_va'?' neg':'')+'">'+esc(VER_LABEL[ver]||ver)+'</span>' : '<span></span>';
+      var esHoy = (r.date === hoy);
+      a.innerHTML =
+        '<div class="top"><span class="fecha">'+
+          (esHoy ? '<span class="hoy-pill">hoy</span>' : '') + esc(fmtFecha(r.date))+'</span>'+
+          '<span class="badge '+kind+'">'+(kind==='redescubrimiento'?'De tu estante':'Nuevo')+'</span></div>'+
+        '<h2>'+esc(r.title)+'</h2>'+
+        '<p class="autor">'+esc(r.author)+'</p>'+
+        '<div class="topics">'+topics+'</div>'+
+        '<div class="pie">'+verHtml+'<span class="abrir">Abrir experiencia →</span></div>';
+      grid.appendChild(a);
+    });
+  }
+
+  function armaFiltros(){
+    var chips = [['todas','Todas'],['nuevo','Nuevos'],['redescubrimiento','De tu estante']];
+    var topicsPresentes = {};
+    TODOS.forEach(function(r){ (r.topics||[]).forEach(function(t){ topicsPresentes[t]=1; }); });
+    ['astronomia','estoicismo','wellness','finanzas','espiritualidad','conciencia'].forEach(function(t){
+      if(topicsPresentes[t]) chips.push([t, TOPIC_LABEL[t]||t]);
+    });
+    filtros.innerHTML = '';
+    chips.forEach(function(c){
+      var b = document.createElement('button');
+      b.className = 'chip' + (c[0]===filtroActivo?' on':'');
+      b.textContent = c[1];
+      b.setAttribute('role','tab');
+      b.addEventListener('click', function(){
+        filtroActivo = c[0];
+        Array.prototype.forEach.call(filtros.children, function(x){ x.classList.remove('on'); });
+        b.classList.add('on');
+        pinta();
+      });
+      filtros.appendChild(b);
+    });
+  }
+
+  fetch('recommended.json?_=' + Date.now(), { cache:'no-store' })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(function(doc){
+      var recs = (doc.recommendations||[]).slice();
+      // más nuevas primero
+      recs.sort(function(a,b){ return (b.date||'').localeCompare(a.date||''); });
+      TODOS = recs;
+      if(!TODOS.length){ vacio.hidden = false; return; }
+      armaFiltros();
+      pinta();
+    })
+    .catch(function(){ errbox.hidden = false; });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

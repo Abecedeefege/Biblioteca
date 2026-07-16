@@ -88,22 +88,39 @@ con datos). Push diario único a las ~12:30 -03:00.
 
 ## 📊 Historial de señales (números, no vibes)
 - Todo es PRIOR todavía — cero feedback medido.
-- 2026-07-15 · `2026-07-15-frankl-sentido` · nuevo · positividad/
-  espiritualidad · push enviado 18:13 (201). Sin datos aún.
-- 2026-07-16 · `2026-07-16-rovelli-siete-lecciones` · nuevo · astronomía
-  moderna · PRE-ARMADA (regla "día pre-armado" del comando: no crear otra).
-- 2026-07-17 · `2026-07-17-bucay-camino-felicidad` · redescubrimiento
-  (M5-029) · PRE-ARMADA. Mezcla de los 3 primeros días: 2 nuevos + 1
-  redescubrimiento ✓.
+- **9 experiencias PRE-ARMADAS (15→23/07)** en el bootstrap. La primera
+  elección LIBRE del agente es el **2026-07-24**. Mezcla de la tanda:
+  6 nuevos + 3 redescubrimientos (2:1, la mezcla vigente ✓). Días
+  pre-armados: solo procesar feedback y verificar que el push esté `pending`.
+  | Fecha | id | tipo | veta | interacción |
+  |---|---|---|---|---|
+  | 15/07 | frankl-sentido | nuevo | positividad | 7 claves + cita apócrifa Covey |
+  | 16/07 | rovelli-siete-lecciones | nuevo | astronomía | constelación 7 lecciones |
+  | 17/07 | bucay-camino-felicidad | redescub M5-029 | wellness | expediente detective |
+  | 18/07 | marco-aurelio-meditaciones | nuevo | estoicismo | dicotomía del control |
+  | 19/07 | hesse-siddhartha | redescub L4-023 | oriental/fábula | el río simultáneo |
+  | 20/07 | housel-psicologia-dinero | nuevo | finanzas | simulador Buffett |
+  | 21/07 | bach-ilusiones | nuevo | fábula/autor | Manual del Mesías al azar |
+  | 22/07 | sagan-cosmos | redescub L5-032 | astronomía | calendario cósmico |
+  | 23/07 | pollan-cambiar-mente | nuevo | neuro/conciencia | surcos vs nieve |
+- Frankl: push enviado 15/07 18:13 (201). Resto `pending` a las 12:30.
 
-## 🔭 Qué mirar en las próximas corridas
-- 16 y 17/07 son días PRE-ARMADOS: solo procesar feedback y verificar que
-  el push del día esté `pending` en la cola. La primera elección libre es
-  el 2026-07-18.
-- Señales por interpretar: veredicto de Frankl, `rec-via:*` (el "modo" del
-  lector), `rec-leccion:*` (qué física lo tienta), `rec-camino:*` y
-  `rec-tomo1:*=si` (si pide el tomo 1 de Bucay → *El Camino de la
-  Autodependencia* sube al tope del banco de nuevos).
-- Para el 18/07: si Frankl/Rovelli midieron bien → seguir vetas fuertes
-  (estoicismo: *Meditaciones* o Housel). Si el redescubrimiento ganó →
-  subir su proporción en la mezcla.
+## 🧭 Sugerencias hub
+- `recs/index.html` lista todas las experiencias leyendo `recommended.json`
+  por fetch (cero mantenimiento). La home del sitio linkea al hub desde la
+  masthead. Cada experiencia linkea al hub en su cierre. Nada de esto se
+  edita a mano al agregar recomendaciones: alcanza con registrar en el log.
+
+## 🔭 Qué mirar (primera corrida libre: 2026-07-24)
+- Micro-señales sembradas por interpretar: `rec-via:*` (Frankl: obra/amor/
+  actitud), `rec-leccion:*` (Rovelli), `rec-camino:*`/`rec-tomo1:*=si`
+  (Bucay → si pide el tomo 1, *El Camino de la Autodependencia* sube al tope).
+- Banco ya consumido de esta tanda (NO repetir): Meditaciones, Housel,
+  Bach Ilusiones, Pollan (nuevos); Siddhartha, Cosmos (redescub).
+  Siguientes candidatos fuertes libres: Rovelli ya usado→ Tyson/Rovelli otro,
+  Tao Te Ching, El Poder del Ahora (Tolle), Flow, Breath (Nestor),
+  The Midnight Library (Haig), Ilusiones II NO. Redescub libres: The Prophet
+  (L4-018), Zen tiro con arco (L4-010), Doors of Perception (L4-014).
+- Leer el feedback de los 9 días antes de elegir: si estoicismo/astronomía
+  midieron alto, profundizar esa veta; si un redescubrimiento ganó, subir
+  su proporción en la mezcla.
