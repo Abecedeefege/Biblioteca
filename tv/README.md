@@ -70,9 +70,13 @@ Botón «⌕ Buscar» arriba a la derecha en todas las vistas (también: apretar
 
 ## Experiencias
 
-Dos fuentes, un mismo visor de pantalla completa (marco de papel; la página
-se renderiza a ancho de teléfono y se escala ×1.7 para leerse a 3 m;
-**↑/↓ scrollean la lectura**, Back sale):
+Dos fuentes, un mismo visor de **pantalla completa** (llena el 100% del
+área segura, sin marco ni tarjeta flotando en medio de la sala: la página
+se renderiza a ancho de teléfono — donde calzan sus tipografías responsive
+en `vw` — y ese render se estira ×1.7 hasta cubrir todo el contenedor.
+**↑/↓ scrollean la lectura**, Back sale). El link propio de cada página
+("← Volver a Bibliotequeando") se oculta al cargar — mismo origen, sin foco
+de D-pad de todos modos — para que no se superponga con nuestro pill.
 
 - **Cajón «Recomendaciones»**: OK sobre una rec abre su experiencia diaria
   (`recs/*.html`); ←/→ alternan con «Ficha del catálogo» si la rec apunta a

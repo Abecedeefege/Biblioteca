@@ -122,15 +122,31 @@
   .searchhint b{color:var(--brass)}
   .noresult{font-size:2.6rem;color:#c9b48e;padding:2rem .4rem}
 
-  /* ====== visor de experiencias ====== */
-  .expstage{flex:1;min-height:0;position:relative;display:flex;justify-content:center}
-  .exppaper{position:relative;height:100%;width:96rem;background:var(--card);border-radius:.6rem;
-    box-shadow:0 2rem 5rem rgba(0,0,0,.55), 0 .2rem 0 rgba(255,255,255,.08);overflow:hidden;padding:1rem}
-  /* la página se renderiza a ancho de teléfono y se escala ×1.7: texto legible a 3 m */
-  .exppaper iframe{border:0;width:calc((96rem - 2rem)/1.7);height:calc(100%/1.7);
-    transform:scale(1.7);transform-origin:0 0;background:var(--card);border-radius:.2rem}
-  .expscrollhint{position:absolute;right:2.4rem;bottom:1.6rem;font-family:var(--sans);font-size:1.8rem;
-    font-weight:700;letter-spacing:.2rem;text-transform:uppercase;color:#a08d6d}
+  /* ====== visor de experiencias: pantalla completa (dentro del safe area) ======
+     Las páginas de recs/engage son responsive (clamp() en base a vw, pensadas
+     para lectura a distancia de brazo): se renderizan a ancho de teléfono para
+     que esa tipografía calce, y ESE render se estira ×1.7 hasta cubrir el 100%
+     del contenedor — no una tarjeta chica flotando en medio de la sala. */
+  body.route-exp #plaque{display:none}
+  /* la viñeta de sala es para el mueble fotografiado, no para contenido que
+     hay que leer: apagarla evita ensombrecer los bordes de la experiencia */
+  body.route-exp #vignette{opacity:0}
+  .expfull{position:relative;flex:1;min-height:0;width:100%;background:var(--card);overflow:hidden}
+  .expfull iframe{position:absolute;top:0;left:0;border:0;background:var(--card);
+    width:calc(100% / 1.7);height:calc(100% / 1.7);transform:scale(1.7);transform-origin:0 0}
+  /* opacas del todo: la página incrustada trae su propio nav ("Volver a
+     Bibliotequeando") en esa misma esquina — si el pill fuera translúcido
+     se leerían las dos capas superpuestas */
+  .exppill{position:absolute;z-index:5;background:var(--room);
+    border:.25rem solid var(--brass);border-radius:.6rem;color:#f2e9d4;
+    font-family:var(--sans);font-size:1.9rem;font-weight:700;letter-spacing:.14rem;
+    text-transform:uppercase;padding:1rem 2rem;box-shadow:0 .6rem 1.6rem rgba(0,0,0,.5)}
+  .exppill.back{top:1.6rem;left:1.6rem}
+  .exppill.ficha{top:1.6rem;right:1.6rem}
+  .expscrollhint{position:absolute;right:1.6rem;bottom:1.6rem;z-index:5;font-family:var(--sans);
+    font-size:1.7rem;font-weight:700;letter-spacing:.2rem;text-transform:uppercase;color:#f2e9d4;
+    background:var(--room);border:.15rem solid rgba(194,163,90,.5);border-radius:.5rem;
+    padding:.7rem 1.4rem;box-shadow:0 .4rem 1rem rgba(0,0,0,.4)}
 
   .essaycard{background:var(--card2);color:var(--ink);border-radius:.5rem;padding:2.6rem 3.2rem;margin-bottom:2.4rem;position:relative;
     box-shadow:0 1rem 2.6rem rgba(0,0,0,.45);
@@ -692,35 +708,35 @@ function viewBuscar() {
   run();
 }
 
-/* ================= visor de experiencias (recs) ================= */
+/* ================= visor de experiencias (recs + engage), pantalla completa ================= */
 function viewExp(id) {
   const r = RECS.find(x => x.id === id);
   const p = r ? null : PROPS.find(x => x.id === id);
   const it = r || p;
   if (!it || !it.page) return r ? viewRecs() : viewHome();
   const fichaBtn = (r && r.book_ref && BY_ID[r.book_ref])
-    ? '<button class="backbtn" data-f data-fid="exp-ficha" data-go="#/ficha/' + r.book_ref + '">' + ring + 'Ficha del catálogo</button>'
+    ? '<button class="exppill ficha" data-f data-fid="exp-ficha" data-go="#/ficha/' + r.book_ref + '">' + ring + 'Ficha del catálogo</button>'
     : '';
-  const kicker = r ? (r.kind === 'nuevo' ? 'Experiencia · para conseguir' : 'Experiencia · ya está en casa')
-    : 'Experiencia efímera del agente';
   render(
-    '<div class="vhead">' +
-      '<button class="backbtn" data-f data-fid="back" data-back data-autofocus>' + ring + '← Volver</button>' +
-      '<div class="vtitle"><div class="in">' + esc(it.title) + '<small>' + esc(r ? r.date : (p.created || '')) + '</small></div></div>' +
-      fichaBtn +
-      '<span class="kicker">' + kicker + '</span>' +
-    '</div>' +
-    '<div class="expstage"><div class="exppaper">' +
+    '<div class="expfull">' +
       '<iframe id="expframe" src="../' + esc(it.page) + '" tabindex="-1"></iframe>' +
-    '</div><span class="expscrollhint">↑ ↓ para leer</span></div>'
+      '<button class="exppill back" data-f data-fid="back" data-back data-autofocus>' + ring + '← Volver</button>' +
+      fichaBtn +
+      '<span class="expscrollhint">↑ ↓ para leer</span>' +
+    '</div>'
   );
   const fr = document.getElementById('expframe');
   fr.addEventListener('load', () => {
-    /* mismo origen: esconder la scrollbar interna de la experiencia */
+    /* mismo origen: esconder la scrollbar interna y el link "← Volver a
+       Bibliotequeando" que trae toda experiencia (recs/engage) — es
+       redundante con nuestro pill y, sin foco propio, no se puede activar
+       de todos modos en un visor de solo D-pad */
     try {
-      const st = fr.contentDocument.createElement('style');
+      const doc = fr.contentDocument;
+      const st = doc.createElement('style');
       st.textContent = '::-webkit-scrollbar{width:0;height:0}';
-      fr.contentDocument.head.appendChild(st);
+      doc.head.appendChild(st);
+      doc.querySelectorAll('a.back, a[href="../index.html"]').forEach(a => { a.style.display = 'none'; });
     } catch (e) {}
   });
 }
