@@ -41,7 +41,9 @@
   #stage{height:100%;display:flex;flex-direction:column;padding:5.4rem 9.6rem;position:relative}
 
   /* ====== placa de latón (cabecera) ====== */
-  #plaque{display:flex;justify-content:center;margin-bottom:2.4rem;flex:none}
+  #plaque{display:flex;justify-content:center;margin-bottom:2.4rem;flex:none;position:relative}
+  #searchbtn{position:absolute;right:0;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:1.2rem}
+  body.route-buscar #searchbtn{display:none}
   .plate{background:var(--brass-plate);color:#3a2a08;border-radius:.8rem;padding:1.2rem 4.6rem;text-align:center;
     box-shadow:0 .6rem 2rem rgba(0,0,0,.5), inset 0 .1rem 0 rgba(255,255,255,.55), inset 0 -.2rem .3rem rgba(58,42,8,.45);
     border:.1rem solid #8a6b1d}
@@ -62,7 +64,7 @@
   .fring{position:absolute;inset:-.7rem;border:.45rem solid var(--brass);border-radius:inherit;opacity:0;
     pointer-events:none;box-shadow:0 0 2.2rem rgba(243,227,174,.55), inset 0 0 1rem rgba(243,227,174,.3);
     transition:opacity .15s ease}
-  .focused > .fring{opacity:1}
+  .focused > .fring, .searchslot:focus-within .fring{opacity:1}
 
   /* ====== el mueble ====== */
   .cabinet{flex:1;min-height:0;border-radius:1.2rem;padding:2rem;position:relative;
@@ -105,6 +107,26 @@
 
   .scroll{flex:1;min-height:0;overflow-y:auto;padding:1.4rem .8rem 6rem;scroll-behavior:smooth}
   @media (prefers-reduced-motion: reduce){.scroll{scroll-behavior:auto}}
+
+  /* ====== buscar (voz / teclado de la tele) ====== */
+  .searchrow{flex:none;display:flex;gap:2rem;align-items:center;margin-bottom:2.4rem}
+  .searchslot{position:relative;flex:1;background:var(--brass-plate);border-radius:.6rem;padding:.5rem}
+  .searchslot input{width:100%;background:var(--card);border:none;border-radius:.3rem;padding:1.6rem 2.4rem;
+    font-family:var(--type);font-size:3rem;color:var(--ink);outline:none;letter-spacing:.05rem}
+  .searchslot input::placeholder{color:#9a8b70;font-size:2.4rem;letter-spacing:.1rem}
+  .searchhint{flex:none;font-family:var(--sans);font-size:2rem;color:#a08d6d;line-height:1.5;max-width:44rem}
+  .searchhint b{color:var(--brass)}
+  .noresult{font-size:2.6rem;color:#c9b48e;padding:2rem .4rem}
+
+  /* ====== visor de experiencias ====== */
+  .expstage{flex:1;min-height:0;position:relative;display:flex;justify-content:center}
+  .exppaper{position:relative;height:100%;width:96rem;background:var(--card);border-radius:.6rem;
+    box-shadow:0 2rem 5rem rgba(0,0,0,.55), 0 .2rem 0 rgba(255,255,255,.08);overflow:hidden;padding:1rem}
+  /* la página se renderiza a ancho de teléfono y se escala ×1.7: texto legible a 3 m */
+  .exppaper iframe{border:0;width:calc((96rem - 2rem)/1.7);height:calc(100%/1.7);
+    transform:scale(1.7);transform-origin:0 0;background:var(--card);border-radius:.2rem}
+  .expscrollhint{position:absolute;right:2.4rem;bottom:1.6rem;font-family:var(--sans);font-size:1.8rem;
+    font-weight:700;letter-spacing:.2rem;text-transform:uppercase;color:#a08d6d}
 
   .essaycard{background:var(--card2);color:var(--ink);border-radius:.5rem;padding:2.6rem 3.2rem;margin-bottom:2.4rem;position:relative;
     box-shadow:0 1rem 2.6rem rgba(0,0,0,.45);
@@ -203,7 +225,9 @@
   <header id="plaque"><div class="plate">
     <div class="s">Bibliotequeando · archivo de la casa</div>
     <h1>El Fichero</h1>
-  </div></header>
+  </div>
+  <button id="searchbtn" class="backbtn" data-f data-fid="buscar" data-go="#/buscar" style="display:none"><span class="fring"></span>⌕ Buscar</button>
+  </header>
   <div id="status"><h2>Abriendo el mueble…</h2><p>Ordenando 400 fichas a máquina.</p></div>
   <main id="app"></main>
 </div>
@@ -363,12 +387,19 @@ function settledY(el, y) {
 }
 
 function focusables() {
-  return Array.prototype.filter.call(document.querySelectorAll('#app [data-f]'),
+  return Array.prototype.filter.call(document.querySelectorAll('#app [data-f], #searchbtn'),
     el => el.offsetParent !== null);
+}
+function fullyVisible(el) {
+  const sc = el.closest('.scroll');
+  if (!sc) return true;
+  const r = el.getBoundingClientRect(), s = sc.getBoundingClientRect();
+  return r.top >= s.top - 2 && r.bottom <= s.bottom + 2;
 }
 function setFocus(el, opts) {
   if (!el) return;
-  if (FOCUSED) { FOCUSED.classList.remove('focused'); FOCUSED.tabIndex = -1; }
+  /* defensivo: el botón Buscar vive fuera de #app y sobrevive a los render() */
+  document.querySelectorAll('.focused').forEach(x => { x.classList.remove('focused'); x.tabIndex = -1; });
   FOCUSED = el;
   el.classList.add('focused'); el.tabIndex = 0;
   try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); }
@@ -395,22 +426,40 @@ function move(dir) {
   if (!FOCUSED || els.indexOf(FOCUSED) < 0) { setFocus(els[0]); return; }
   const cr = FOCUSED.getBoundingClientRect();
   const cx = cr.left + cr.width / 2, cy = settledY(FOCUSED, cr.top + cr.height / 2);
-  let best = null, bs = Infinity;
+  const cTop = settledY(FOCUSED, cr.top), cBot = settledY(FOCUSED, cr.bottom);
+  const horiz = dir === 'left' || dir === 'right';
+  /* dos pasadas: primero candidatos cuya proyección se solapa con el actual
+     (navegación de grilla honesta); si no hay, cono de 45° (saltos diagonales
+     razonables). Nunca un elemento lejanísimo fuera de eje. */
+  let best = null, bs = Infinity, best2 = null, bs2 = Infinity;
   for (const el of els) {
     if (el === FOCUSED) continue;
     const r = el.getBoundingClientRect();
     const ex = r.left + r.width / 2, ey = settledY(el, r.top + r.height / 2);
     const dx = ex - cx, dy = ey - cy;
-    let fwd, orth;
-    if (dir === 'left')  { fwd = -dx; orth = Math.abs(dy); }
-    if (dir === 'right') { fwd =  dx; orth = Math.abs(dy); }
-    if (dir === 'up')    { fwd = -dy; orth = Math.abs(dx); }
-    if (dir === 'down')  { fwd =  dy; orth = Math.abs(dx); }
+    let fwd, orth, overlap;
+    if (horiz) {
+      fwd = dir === 'left' ? -dx : dx; orth = Math.abs(dy);
+      overlap = Math.min(cBot, settledY(el, r.bottom)) - Math.max(cTop, settledY(el, r.top));
+    } else {
+      fwd = dir === 'up' ? -dy : dy; orth = Math.abs(dx);
+      overlap = Math.min(cr.right, r.right) - Math.max(cr.left, r.left);
+    }
     if (fwd <= 4) continue;                    /* tiene que estar en esa dirección */
-    const score = fwd + orth * 2.2;
-    if (score < bs) { bs = score; best = el; }
+    if (overlap > 6) {
+      const score = fwd + orth * 1.2;
+      if (score < bs) { bs = score; best = el; }
+    } else if (fwd > orth) {
+      const score = fwd + orth * 2.2;
+      if (score < bs2) { bs2 = score; best2 = el; }
+    }
   }
-  if (best) { setFocus(best); return; }
+  if (best || best2) { setFocus(best || best2); return; }
+  /* arista explícita: Arriba sin candidatos lleva al mostrador de búsqueda */
+  if (dir === 'up') {
+    const sb = document.getElementById('searchbtn');
+    if (sb && sb.offsetParent !== null && FOCUSED !== sb) { setFocus(sb); return; }
+  }
   /* sin candidato: si hay un contenedor con scroll, desplazarlo (fichas largas) */
   if (dir === 'up' || dir === 'down') {
     const sc = document.querySelector('#app .scroll');
@@ -439,19 +488,26 @@ function route() {
   if (!CAT) return;
   const h = location.hash.replace(/^#\/?/, '');
   const [v, a] = h.split('/');
+  document.body.className = 'route-' + (v || 'home');
+  document.getElementById('searchbtn').style.display = '';
   if (v === 'cajon') viewCajon(a);
   else if (v === 'ficha') viewFicha(a);
   else if (v === 'indice') viewIndice();
   else if (v === 'recs') viewRecs();
   else if (v === 'rec') viewRec(a);
+  else if (v === 'buscar') viewBuscar();
+  else if (v === 'exp') viewExp(a);
   else viewHome();
   restoreFocus();
 }
 function restoreFocus() {
   const want = FOCUS_MEM[location.hash || '#/'];
-  let el = want ? document.querySelector('#app [data-fid="' + want + '"]') : null;
-  if (!el) el = document.querySelector('#app [data-autofocus]') || focusables()[0];
-  setFocus(el, { noScroll: false });
+  let el = want ? (focusables().find(x => x.getAttribute('data-fid') === want) || null) : null;
+  if (!el) el = document.querySelector('#app [data-autofocus]') || document.querySelector('#app [data-f]') || focusables()[0];
+  if (!el) return;
+  /* al abrir una vista, el contenido se muestra desde el principio: solo se
+     scrollea si el elemento a enfocar no está ya a la vista */
+  setFocus(el, { noScroll: fullyVisible(el) });
 }
 window.addEventListener('hashchange', () => { NAV_DEPTH++; route(); });
 
@@ -531,7 +587,9 @@ function viewIndice() {
 
 /* ================= recomendaciones ================= */
 function recMiniHTML(r, first) {
-  const go = r.book_ref && BY_ID[r.book_ref] ? '#/ficha/' + r.book_ref : '#/rec/' + r.id;
+  /* OK abre la experiencia completa; si no hay página, la ficha o el resumen */
+  const go = r.page ? '#/exp/' + r.id
+    : (r.book_ref && BY_ID[r.book_ref] ? '#/ficha/' + r.book_ref : '#/rec/' + r.id);
   return '<div class="mini" data-f' + (first ? ' data-autofocus' : '') + ' data-fid="r-' + r.id + '" data-go="' + go + '">' + ring +
     '<span class="cn">' + esc(r.date) + '</span>' +
     '<span class="chip ' + (r.kind === 'nuevo' ? 'r' : 'g') + '">' + (r.kind === 'nuevo' ? 'Nuevo' : 'Biblioteca') + '</span>' +
@@ -560,6 +618,89 @@ function viewRec(id) {
   );
 }
 
+/* ================= buscar (voz o teclado de la tele) ================= */
+const norm = s => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+let Q_LAST = '';   /* la consulta sobrevive al ir y volver de una ficha */
+function viewBuscar() {
+  render(
+    headHTML('BUSCAR', 'todo el archivo', 'OK sobre el campo abre el teclado — el micrófono dicta') +
+    '<div class="searchrow">' +
+      '<div class="searchslot"><input id="q" data-f data-fid="q" data-autofocus type="search" ' +
+        'placeholder="TÍTULO, AUTOR O SIGNATURA…" autocomplete="off"><span class="fring"></span></div>' +
+      '<div class="searchhint"><b>OK</b> abre el teclado de la tele (con voz) · <b>↓</b> baja a los resultados</div>' +
+    '</div>' +
+    '<div class="scroll"><div class="grid" id="q-res"></div></div>'
+  );
+  const q = document.getElementById('q');
+  const box = document.getElementById('q-res');
+  q.value = Q_LAST;
+  const run = () => {
+    Q_LAST = q.value;
+    const t = norm(q.value.trim());
+    if (t.length < 2) { box.innerHTML = ''; return; }
+    const hits = BOOKS.filter(b =>
+      norm(b.title).includes(t) || norm(b.author).includes(t) || norm(b.id).includes(t)
+    ).slice(0, 12);
+    box.innerHTML = hits.length ? hits.map(b => miniHTML(b)).join('')
+      : '<p class="noresult">Sin registros bajo esa voz. Probá con menos letras.</p>';
+  };
+  q.addEventListener('input', run);
+  run();
+}
+
+/* ================= visor de experiencias (recs) ================= */
+function viewExp(id) {
+  const r = RECS.find(x => x.id === id);
+  if (!r || !r.page) return viewRecs();
+  const fichaBtn = (r.book_ref && BY_ID[r.book_ref])
+    ? '<button class="backbtn" data-f data-fid="exp-ficha" data-go="#/ficha/' + r.book_ref + '">' + ring + 'Ficha del catálogo</button>'
+    : '';
+  render(
+    '<div class="vhead">' +
+      '<button class="backbtn" data-f data-fid="back" data-back data-autofocus>' + ring + '← Volver</button>' +
+      '<div class="vtitle"><div class="in">' + esc(r.title) + '<small>' + esc(r.date) + '</small></div></div>' +
+      fichaBtn +
+      '<span class="kicker">' + (r.kind === 'nuevo' ? 'Experiencia · para conseguir' : 'Experiencia · ya está en casa') + '</span>' +
+    '</div>' +
+    '<div class="expstage"><div class="exppaper">' +
+      '<iframe id="expframe" src="../' + esc(r.page) + '" tabindex="-1"></iframe>' +
+    '</div><span class="expscrollhint">↑ ↓ para leer</span></div>'
+  );
+  const fr = document.getElementById('expframe');
+  fr.addEventListener('load', () => {
+    /* mismo origen: esconder la scrollbar interna de la experiencia */
+    try {
+      const st = fr.contentDocument.createElement('style');
+      st.textContent = '::-webkit-scrollbar{width:0;height:0}';
+      fr.contentDocument.head.appendChild(st);
+    } catch (e) {}
+  });
+}
+/* en fichas más altas que la pantalla, ↑↓ primero leen (scroll) y recién en
+   los topes vuelven a mover el foco */
+function fichaScrollStep(dir) {
+  if (document.body.className !== 'route-ficha') return false;
+  const sc = document.querySelector('#app .scroll');
+  if (!sc || sc.scrollHeight <= sc.clientHeight + 4) return false;
+  const from = (SCROLL_PENDING && SCROLL_PENDING.sc === sc) ? SCROLL_PENDING.top : sc.scrollTop;
+  if (dir === 'down' && from >= sc.scrollHeight - sc.clientHeight - 4) return false;
+  if (dir === 'up' && from <= 4) return false;
+  let target = from + (dir === 'down' ? 1 : -1) * sc.clientHeight * .45;
+  target = Math.max(0, Math.min(target, sc.scrollHeight - sc.clientHeight));
+  SCROLL_PENDING = { sc: sc, top: target };
+  sc.scrollTo({ top: target, behavior: prefersReduced() ? 'auto' : 'smooth' });
+  return true;
+}
+function expScroll(dir) {
+  const fr = document.getElementById('expframe');
+  if (!fr) return false;
+  try {
+    fr.contentWindow.scrollBy({ top: (dir === 'down' ? 1 : -1) * 420,
+      behavior: prefersReduced() ? 'auto' : 'smooth' });
+  } catch (e) {}
+  return true;
+}
+
 /* ================= ficha ================= */
 function viewFicha(id) {
   const b = BY_ID[id];
@@ -568,6 +709,7 @@ function viewFicha(id) {
   const flat = c ? colBooks(c) : s.books;
   const i = flat.findIndex(x => x.id === b.id);
   const prev = flat[(i - 1 + flat.length) % flat.length], next = flat[(i + 1) % flat.length];
+  const expRec = RECS.find(r => r.book_ref === b.id && r.page);
   const fields = [
     ['Autor/a', b.author || '— sin identificar —'],
     ['Primera ed.', b._year != null ? yearLabel(b._year) + (e && e.year_confidence === 'aprox' ? ' (aprox.)' : '') : 'sin datar'],
@@ -599,6 +741,7 @@ function viewFicha(id) {
     '</div></div></div>' +
     '<div class="fnav">' +
       '<button class="backbtn" data-f data-fid="prev" data-go="#/ficha/' + prev.id + '" data-replace>' + ring + '← Ficha anterior</button>' +
+      (expRec ? '<button class="backbtn" data-f data-fid="exp" data-go="#/exp/' + expRec.id + '">' + ring + 'Abrir experiencia</button>' : '') +
       '<button class="backbtn" data-f data-fid="next" data-go="#/ficha/' + next.id + '" data-replace data-autofocus>' + ring + 'Ficha siguiente →</button>' +
     '</div>'
   );
@@ -608,6 +751,7 @@ function viewFicha(id) {
 function activate(el) {
   if (!el) return;
   if (el.hasAttribute('data-back')) { goBack(); return; }
+  if (el.tagName === 'INPUT') { el.focus(); return; }   /* re-invocar el teclado */
   const go = el.getAttribute('data-go');
   if (!go) return;
   FOCUS_MEM[location.hash || '#/'] = el.getAttribute('data-fid');
@@ -626,11 +770,20 @@ document.addEventListener('keydown', e => {
   klog(e, action);
   if (!action) return;
   if (INTRO_ALIVE) { e.preventDefault(); introFinish(); return; }
+  /* dentro del campo de búsqueda, el WebView manda: OK abre el teclado de la
+     tele (con dictado por voz), Backspace borra, ←/→ mueven el cursor */
+  if (e.target && e.target.tagName === 'INPUT') {
+    if (action === 'ok' || e.key === 'Backspace' || action === 'left' || action === 'right') return;
+  }
   e.preventDefault();
   if (e.repeat && (action === 'ok' || action === 'back')) return;
   if (action === 'ok') activate(FOCUSED);
   else if (action === 'back') goBack();
   else if (action === 'playpause') { /* v2: modo vitrina */ }
+  else if (action === 'up' || action === 'down') {
+    if (document.getElementById('expframe')) expScroll(action);
+    else if (!fichaScrollStep(action)) move(action);
+  }
   else move(action);
 }, true);
 
