@@ -56,6 +56,28 @@ El WebView cachea: ante la duda, Reload desde el panel de Fully
 `localStorage` (`tv-cat-v1`); para forzar catálogo fresco, borrar datos web
 en Fully o esperar el TTL.
 
+## Buscar (voz o teclado de la tele)
+
+Botón «⌕ Buscar» arriba a la derecha en todas las vistas (también: apretar
+**↑** cuando no hay nada más arriba lleva al buscador). Dentro de la vista:
+
+- **OK sobre el campo** abre el teclado en pantalla de Google TV, que trae
+  **micrófono para dictar** (no se usa Web Speech API: el WebView no la
+  soporta; el dictado lo pone el teclado del sistema).
+- Los resultados aparecen en vivo (título, autor o signatura, máx. 12);
+  **↓** baja a los resultados y OK abre la ficha.
+- La consulta sobrevive al ir y volver de una ficha.
+
+## Experiencias
+
+Las experiencias diarias de las recomendaciones (`recs/*.html`) se leen en
+la tele: OK sobre una recomendación abre su experiencia completa en un
+visor con marco de papel (la página se renderiza a ancho de teléfono y se
+escala ×1.7 para leerse a 3 m). **↑/↓ scrollean la lectura**, ←/→ mueven el
+foco entre «Volver» y «Ficha del catálogo» (si la rec apunta a un libro de
+la casa). Las fichas del catálogo que tienen experiencia asociada muestran
+el botón «Abrir experiencia».
+
 ## Datos: compartidos, nunca duplicados
 
 - **Catálogo canónico**: se lee por streaming desde `../index.html`
@@ -65,8 +87,8 @@ en Fully o esperar el TTL.
 - **Prosa** (notas del archivista, datos abrochados): `../concepts/editorial.json`.
 - **Años y estado de lectura** (sellos LEÍDO / EN LECTURA / PRESTADO):
   `../data/enrichment.json`.
-- **Cajón Recomendaciones** (reemplaza a la búsqueda tipeada en 10 pies):
-  `../recs/recommended.json`.
+- **Cajón Recomendaciones y experiencias**: `../recs/recommended.json`
+  (campos `page` → experiencia, `book_ref` → ficha del catálogo).
 
 ## Presupuesto 10 pies (medido)
 
