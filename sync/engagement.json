@@ -1115,7 +1115,142 @@
       "page": "2026-07-15-frankl-sentido.html",
       "type": "page_visit",
       "device": "sin-nombre"
+    },
+    {
+      "id": "mrnmgwj0-lv6upa",
+      "ts": "2026-07-16T14:46:35.436Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 182,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrpey17l-ste2ed",
+      "ts": "2026-07-17T20:51:30.081Z",
+      "nid": "2026-07-17-rec-sofi",
+      "src": "push",
+      "page": "2026-07-17-dicker-harry-quebert.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrpey17n-xvt5gz",
+      "ts": "2026-07-17T20:51:30.083Z",
+      "nid": "2026-07-17-rec-sofi",
+      "page": "2026-07-17-dicker-harry-quebert.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrpeyf4c-35rhj4",
+      "ts": "2026-07-17T20:51:48.108Z",
+      "page": "2026-07-17-dicker-harry-quebert.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 18,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrpf0uau-ohrtqu",
+      "ts": "2026-07-17T20:53:41.094Z",
+      "qid": "rec-veredicto:2026-07-17-dicker-harry-quebert",
+      "page": "2026-07-17-dicker-harry-quebert.html",
+      "type": "answer",
+      "value": "lo_quiero",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrpf11in-0wtxni",
+      "ts": "2026-07-17T20:53:50.447Z",
+      "qid": "rec-nivel-oscuro:2026-07-17-dicker-harry-quebert",
+      "page": "2026-07-17-dicker-harry-quebert.html",
+      "type": "answer",
+      "value": "justo_asi",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrpf132i-4o6n88",
+      "ts": "2026-07-17T20:53:52.458Z",
+      "page": "2026-07-17-dicker-harry-quebert.html",
+      "slug": "2026-07-17-dicker-harry-quebert",
+      "type": "reaction",
+      "value": "love",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrpf16j4-s5wj3w",
+      "ts": "2026-07-17T20:53:56.944Z",
+      "page": "2026-07-17-dicker-harry-quebert.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 134,
+      "scroll_pct": 97
+    },
+    {
+      "id": "mrpg7us4-qqm0on",
+      "ts": "2026-07-17T21:27:07.924Z",
+      "page": "2026-07-04-feed.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrpg81ep-i0qx9i",
+      "ts": "2026-07-17T21:27:16.513Z",
+      "page": "2026-07-04-feed.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 9,
+      "scroll_pct": 34
+    },
+    {
+      "id": "mrpg82lg-cku7gy",
+      "ts": "2026-07-17T21:27:18.052Z",
+      "page": "2026-07-04-esta-noche.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrpg8841-cf9w77",
+      "ts": "2026-07-17T21:27:25.201Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrpg8fxo-mj497q",
+      "ts": "2026-07-17T21:27:35.340Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 10,
+      "scroll_pct": 9
+    },
+    {
+      "id": "mrpg8j4o-mb6449",
+      "ts": "2026-07-17T21:27:39.480Z",
+      "page": "2026-07-22-sagan-cosmos.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrpg8o0p-i3qpox",
+      "ts": "2026-07-17T21:27:45.817Z",
+      "page": "2026-07-22-sagan-cosmos.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 6,
+      "scroll_pct": 17
+    },
+    {
+      "id": "mrpg8xt8-uu5fhy",
+      "ts": "2026-07-17T21:27:58.508Z",
+      "page": "2026-07-22-sagan-cosmos.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 9,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-07-17T17:44:56.908Z"
+  "_updated_at": "2026-07-17T21:50:19.539Z"
 }
