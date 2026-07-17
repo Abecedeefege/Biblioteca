@@ -1250,7 +1250,16 @@
       "device": "sin-nombre",
       "dwell_s": 9,
       "scroll_pct": 0
+    },
+    {
+      "id": "mrpiv4kk-01t2c9",
+      "ts": "2026-07-17T22:41:12.932Z",
+      "page": "2026-07-22-sagan-cosmos.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 16,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-07-17T21:50:19.539Z"
+  "_updated_at": "2026-07-17T22:45:40.277Z"
 }
