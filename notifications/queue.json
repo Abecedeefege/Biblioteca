@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-07-16T20:38:37.541Z",
+  "_updated_at": "2026-07-17T16:39:48.117Z",
   "notifications": [
     {
       "id": "2026-07-04-a",
@@ -106,8 +106,8 @@
       "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-17-bucay-camino-felicidad.html",
       "send_at": "2026-07-17T12:30:00-03:00",
       "expires_at": "2026-07-17T23:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-17T16:39:48.117Z",
       "fail_reason": null,
       "created_by": "bootstrap /recomendacion 2026-07-15",
       "to": "Andy"
