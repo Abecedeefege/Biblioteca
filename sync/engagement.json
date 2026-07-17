@@ -1076,7 +1076,46 @@
       "page": "2026-07-17-bucay-camino-felicidad.html",
       "device": "Andy",
       "nid": "2026-07-17-rec"
+    },
+    {
+      "id": "mrp66gav-wa9arr",
+      "ts": "2026-07-17T16:46:06.344Z",
+      "page": "2026-07-04-esta-noche.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrp66rfk-bqqyvv",
+      "ts": "2026-07-17T16:46:20.768Z",
+      "page": "2026-07-04-esta-noche.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 14,
+      "scroll_pct": 59
+    },
+    {
+      "id": "mrp66t63-hpcodo",
+      "ts": "2026-07-17T16:46:23.019Z",
+      "page": "2026-07-04-feed.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrp66vfr-6iyha1",
+      "ts": "2026-07-17T16:46:25.959Z",
+      "page": "2026-07-04-feed.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 3,
+      "scroll_pct": 8
+    },
+    {
+      "id": "mrp673qn-c152qk",
+      "ts": "2026-07-17T16:46:36.719Z",
+      "page": "2026-07-15-frankl-sentido.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
     }
   ],
-  "_updated_at": "2026-07-17T16:42:01.688Z"
+  "_updated_at": "2026-07-17T17:44:56.908Z"
 }
