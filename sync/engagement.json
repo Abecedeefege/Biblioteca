@@ -1059,7 +1059,24 @@
       "page": "2026-07-04-feed.html",
       "type": "page_visit",
       "device": "sin-nombre"
+    },
+    {
+      "id": "mrp616ky-77bkmv",
+      "type": "notification_clicked",
+      "ts": "2026-07-17T16:42:00.466Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "device": "Andy",
+      "nid": "2026-07-17-rec",
+      "src": "push"
+    },
+    {
+      "id": "mrp616l1-98pd5g",
+      "type": "page_visit",
+      "ts": "2026-07-17T16:42:00.469Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "device": "Andy",
+      "nid": "2026-07-17-rec"
     }
   ],
-  "_updated_at": "2026-07-17T15:20:27.147Z"
+  "_updated_at": "2026-07-17T16:42:01.688Z"
 }
