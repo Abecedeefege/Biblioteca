@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-16T16:15:00-03:00",
-  "_feedback_cutoff": "2026-07-16T16:48:11.731Z",
+  "_updated_at": "2026-07-17T17:30:00-03:00",
+  "_feedback_cutoff": "2026-07-17T16:46:36.719Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -319,12 +319,12 @@
       "notified_by": "2026-07-26-rec",
       "why": "Para Sofi: el HIJO de King (Bram Stoker a mejor debut 2007). Elegido sobre NOS4A2 por stock en UY. Interacción: doble máscara Bachman/Hill (ella tiene los 3 Bachman). Micro: rec-terror (calibra su gusto). NOS4A2 queda de paso 2 si mide bien.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
+        "veredicto": "me_tienta",
+        "reaccion": "love",
         "clicked": false,
-        "dwell_s": 0
+        "dwell_s": 258
       },
-      "learning": null
+      "learning": "Acierto (me_tienta + love + dwell alto). Micro rec-terror respondida: 'cuanto_mas_oscuro_mejor' — señal explícita y fuerte de que quiere MÁS oscuro, no menos. Confirma que Sofi tiene una segunda veta ganadora (oscuro/thriller) además de la cozy cálida de Osman. Usar esta señal para el próximo nuevo de esa veta."
     },
     {
       "id": "2026-07-27-haig-biblioteca-medianoche",
@@ -343,6 +343,31 @@
       "page": "recs/2026-07-27-haig-biblioteca-medianoche.html",
       "notified_by": "2026-07-27-rec",
       "why": "Para todos: ficción emotiva con enganche (ella) + filosofía de arrepentimientos/sentido que dialoga con Frankl (él). Tema sensible manejado con el registro del editor. Peli Pugh solo ANUNCIADA (no estrenada). Interacción: estante de vidas + rec-quien.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-17-dicker-harry-quebert",
+      "date": "2026-07-17",
+      "kind": "nuevo",
+      "title": "La verdad sobre el caso Harry Quebert",
+      "author": "Joël Dicker",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "thriller",
+        "oscuro"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-07-17-dicker-harry-quebert.html",
+      "notified_by": "2026-07-17-rec-sofi",
+      "why": "Respuesta directa a su rec-terror de Hill: 'cuanto_mas_oscuro_mejor'. Un cadáver de 15 años enterrado en el jardín de un escritor famoso, investigación en 3 tiempos (1975/1998/2008), mucho más oscuro y denso que sus cozies. Verificado: no está en el catálogo. Par del día: Andy tuvo el redescubrimiento (Bucay) pre-armado, a ella le toca 'nuevo'.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
