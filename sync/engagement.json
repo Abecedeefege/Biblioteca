@@ -1011,7 +1011,55 @@
       "device": "sin-nombre",
       "dwell_s": 168,
       "scroll_pct": 100
+    },
+    {
+      "id": "mrozlzz2-67cq3d",
+      "ts": "2026-07-17T13:42:14.366Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 173,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrp1guoh-wymav4",
+      "ts": "2026-07-17T14:34:13.457Z",
+      "page": "index.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrp1gvrl-w490g2",
+      "ts": "2026-07-17T14:34:14.865Z",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrp1h2xq-45juw1",
+      "ts": "2026-07-17T14:34:24.158Z",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 9,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrp1h5qb-l2v3tx",
+      "ts": "2026-07-17T14:34:27.779Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 4,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mrp2rrkt-clk1el",
+      "ts": "2026-07-17T15:10:42.269Z",
+      "page": "2026-07-04-feed.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
     }
   ],
-  "_updated_at": "2026-07-17T13:59:31.504Z"
+  "_updated_at": "2026-07-17T15:20:27.147Z"
 }
