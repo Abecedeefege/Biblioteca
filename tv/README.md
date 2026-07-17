@@ -70,13 +70,17 @@ Botón «⌕ Buscar» arriba a la derecha en todas las vistas (también: apretar
 
 ## Experiencias
 
-Las experiencias diarias de las recomendaciones (`recs/*.html`) se leen en
-la tele: OK sobre una recomendación abre su experiencia completa en un
-visor con marco de papel (la página se renderiza a ancho de teléfono y se
-escala ×1.7 para leerse a 3 m). **↑/↓ scrollean la lectura**, ←/→ mueven el
-foco entre «Volver» y «Ficha del catálogo» (si la rec apunta a un libro de
-la casa). Las fichas del catálogo que tienen experiencia asociada muestran
-el botón «Abrir experiencia».
+Dos fuentes, un mismo visor de pantalla completa (marco de papel; la página
+se renderiza a ancho de teléfono y se escala ×1.7 para leerse a 3 m;
+**↑/↓ scrollean la lectura**, Back sale):
+
+- **Cajón «Recomendaciones»**: OK sobre una rec abre su experiencia diaria
+  (`recs/*.html`); ←/→ alternan con «Ficha del catálogo» si la rec apunta a
+  un libro de la casa. Las fichas del catálogo con experiencia asociada
+  muestran el botón «Abrir experiencia».
+- **Cajón «Experiencias»**: las efímeras del agente de engagement
+  (`engage/proposals.json`, status ≠ dropped). El cajón solo aparece si hay
+  experiencias vivas; con 16 cajones el mueble pasa solo de 5×3 a 4×4.
 
 ## Datos: compartidos, nunca duplicados
 
