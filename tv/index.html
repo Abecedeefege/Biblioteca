@@ -95,6 +95,10 @@
   .homehint{flex:none;text-align:center;font-family:var(--sans);font-size:2rem;color:#a08d6d;letter-spacing:.06rem;
     padding-top:1.8rem}
   .homehint b{color:var(--brass);font-weight:700}
+  /* mueble de 4 filas (16 cajones): compactar para que cierre en 1080p */
+  .drawers.c4 .drawer{gap:1rem;padding:1rem}
+  .drawers.c4 .dcard{padding:.7rem .8rem}
+  .drawers.c4 .dhandle::after{display:none}
 
   /* ====== vistas interiores (cajón / índice / recs) ====== */
   .vhead{flex:none;display:flex;align-items:center;gap:2.4rem;margin-bottom:2rem}
@@ -276,7 +280,7 @@ function mapKey(e) {
 }
 
 /* ================= datos ================= */
-let CAT = null, ENRICH = {}, ED = { books: {}, authors: {}, topics: {} }, COLS = [], RECS = [];
+let CAT = null, ENRICH = {}, ED = { books: {}, authors: {}, topics: {} }, COLS = [], RECS = [], PROPS = [];
 let BOOKS = [], BY_ID = {}, SHELF_BY_ID = {};
 const LS_CAT = 'tv-cat-v1', CAT_TTL = 24 * 3600 * 1000;
 const TOPIC_LABEL = t => (ED.topics[t] && ED.topics[t].label) || t;
@@ -325,18 +329,21 @@ async function fetchCatalog() {
 
 async function loadAll() {
   const softJson = (url, fb) => fetch(url).then(r => r.ok ? r.json() : fb).catch(() => fb);
-  const [cat, enrich, ed, cols, recs] = await Promise.all([
+  const [cat, enrich, ed, cols, recs, props] = await Promise.all([
     fetchCatalog(),
     softJson('../data/enrichment.json', {}),
     softJson('../concepts/editorial.json', ED),
     softJson('../concepts/collections.json', { collections: [] }),
-    softJson('../recs/recommended.json', { recommendations: [] })
+    softJson('../recs/recommended.json', { recommendations: [] }),
+    softJson('../engage/proposals.json', { proposals: [] })
   ]);
   CAT = cat;
   ENRICH = enrich.books || {};
   ED = ed && ed.books ? ed : ED;
   COLS = cols.collections || [];
   RECS = (recs.recommendations || []).slice().reverse(); /* más recientes primero */
+  /* experiencias efímeras de engagement vivas (las dropped se borran del repo) */
+  PROPS = (props.proposals || []).filter(p => p.page && p.status !== 'dropped').reverse();
   CAT.shelves.forEach(s => {
     SHELF_BY_ID[s.id] = s;
     (s.books || []).forEach((b, i) => {
@@ -390,11 +397,11 @@ function focusables() {
   return Array.prototype.filter.call(document.querySelectorAll('#app [data-f], #searchbtn'),
     el => el.offsetParent !== null);
 }
-function fullyVisible(el) {
+function partVisible(el) {
   const sc = el.closest('.scroll');
   if (!sc) return true;
   const r = el.getBoundingClientRect(), s = sc.getBoundingClientRect();
-  return r.top >= s.top - 2 && r.bottom <= s.bottom + 2;
+  return r.top < s.bottom - 40 && r.bottom > s.top + 40;   /* asoma lo suficiente */
 }
 function setFocus(el, opts) {
   if (!el) return;
@@ -406,13 +413,23 @@ function setFocus(el, opts) {
   if (!opts || !opts.noScroll) {
     const sc = el.closest('.scroll');
     if (sc) {
-      /* ítem enfocado siempre visible, centrado (posición en espacio de
-         contenido: invariante aunque haya un scroll suave en vuelo) */
       const r = el.getBoundingClientRect(), s = sc.getBoundingClientRect();
-      let target = sc.scrollTop + (r.top + r.height / 2) - (s.top + s.height / 2);
-      target = Math.max(0, Math.min(target, sc.scrollHeight - sc.clientHeight));
-      SCROLL_PENDING = { sc: sc, top: target };
-      sc.scrollTo({ top: target, behavior: prefersReduced() ? 'auto' : 'smooth' });
+      let target;
+      if (opts && opts.nearest) {
+        /* scroll mínimo: solo lo justo para que el ítem entre en pantalla */
+        if (r.bottom > s.bottom - 8) target = sc.scrollTop + (r.bottom - s.bottom) + 24;
+        else if (r.top < s.top + 8) target = sc.scrollTop + (r.top - s.top) - 24;
+        else target = null;
+      } else {
+        /* ítem enfocado siempre visible, centrado (posición en espacio de
+           contenido: invariante aunque haya un scroll suave en vuelo) */
+        target = sc.scrollTop + (r.top + r.height / 2) - (s.top + s.height / 2);
+      }
+      if (target != null) {
+        target = Math.max(0, Math.min(target, sc.scrollHeight - sc.clientHeight));
+        SCROLL_PENDING = { sc: sc, top: target };
+        sc.scrollTo({ top: target, behavior: prefersReduced() ? 'auto' : 'smooth' });
+      }
     }
     /* si el foco sale del contenedor, SCROLL_PENDING queda: la compensación
        se neutraliza sola cuando el scroll en vuelo llega a destino */
@@ -496,6 +513,7 @@ function route() {
   else if (v === 'recs') viewRecs();
   else if (v === 'rec') viewRec(a);
   else if (v === 'buscar') viewBuscar();
+  else if (v === 'exps') viewExps();
   else if (v === 'exp') viewExp(a);
   else viewHome();
   restoreFocus();
@@ -503,11 +521,19 @@ function route() {
 function restoreFocus() {
   const want = FOCUS_MEM[location.hash || '#/'];
   let el = want ? (focusables().find(x => x.getAttribute('data-fid') === want) || null) : null;
+  const fromMem = !!el;
   if (!el) el = document.querySelector('#app [data-autofocus]') || document.querySelector('#app [data-f]') || focusables()[0];
   if (!el) return;
-  /* al abrir una vista, el contenido se muestra desde el principio: solo se
-     scrollea si el elemento a enfocar no está ya a la vista */
-  setFocus(el, { noScroll: fullyVisible(el) });
+  if (fromMem) {
+    /* Back: volvés exactamente adonde estabas, centrado */
+    setFocus(el);
+  } else {
+    /* vista nueva: el contenido SIEMPRE arranca desde el principio; el foco
+       solo scrollea lo mínimo si el primer ítem quedara fuera de pantalla */
+    const sc = document.querySelector('#app .scroll');
+    if (sc) { sc.scrollTop = 0; SCROLL_PENDING = null; }
+    setFocus(el, partVisible(el) ? { noScroll: true } : { nearest: true });
+  }
 }
 window.addEventListener('hashchange', () => { NAV_DEPTH++; route(); });
 
@@ -529,11 +555,15 @@ function drawerHTML(fid, go, title, sub) {
 }
 function viewHome() {
   let d = COLS.map(c => drawerHTML('d-' + c.key, '#/cajon/' + c.key, esc(c.title), colBooks(c).length + ' fichas')).join('');
-  d += drawerHTML('d-recs', '#/recs', 'Recomenda&shy;ciones', RECS.length + ' fichas nuevas');
+  d += drawerHTML('d-recs', '#/recs', 'Recomenda&shy;ciones', RECS.length + ' experiencias');
+  if (PROPS.length) d += drawerHTML('d-exps', '#/exps', 'Experiencias', PROPS.length + ' vivas · efímeras');
   d += drawerHTML('d-indice', '#/indice', 'Índice general', BOOKS.length + ' fichas · A–Z');
+  const n = COLS.length + 2 + (PROPS.length ? 1 : 0);
+  const four = n === 16;
   render(
-    '<div class="cabinet"><div class="interior"><div class="drawers" id="drawers">' + d + '</div></div></div>' +
-    '<p class="homehint"><b>Flechas</b> para recorrer el mueble · <b>OK</b> abre el cajón · <b>Atrás</b> lo devuelve</p>'
+    '<div class="cabinet"><div class="interior"><div class="drawers' + (four ? ' c4' : '') +
+      '" id="drawers" style="grid-template-columns:repeat(' + (four ? 4 : 5) + ',1fr)">' + d + '</div></div></div>' +
+    (four ? '' : '<p class="homehint"><b>Flechas</b> para recorrer el mueble · <b>OK</b> abre el cajón · <b>Atrás</b> lo devuelve</p>')
   );
   paintWood();
 }
@@ -598,8 +628,22 @@ function recMiniHTML(r, first) {
 }
 function viewRecs() {
   render(
-    headHTML('RECOMENDACIONES', RECS.length + ' fichas', 'Una ficha nueva por día — sin tipear nada') +
+    headHTML('RECOMENDACIONES', RECS.length + ' fichas', 'OK abre la experiencia completa del día') +
     '<div class="scroll"><div class="grid">' + RECS.map((r, i) => recMiniHTML(r, i === 0)).join('') + '</div></div>'
+  );
+}
+
+/* ================= experiencias efímeras (engage) ================= */
+function viewExps() {
+  render(
+    headHTML('EXPERIENCIAS', PROPS.length + ' vivas', 'Efímeras del agente — OK las abre en pantalla') +
+    '<div class="scroll"><div class="grid">' + PROPS.map((p, i) =>
+      '<div class="mini" data-f' + (i === 0 ? ' data-autofocus' : '') + ' data-fid="x-' + p.id + '" data-go="#/exp/' + p.id + '">' + ring +
+      '<span class="cn">' + esc(p.created || '') + '</span>' +
+      '<span class="chip ' + (p.status === 'promoted' ? 'g' : 'b') + '">' + (p.status === 'promoted' ? 'Fija' : 'A prueba') + '</span>' +
+      '<h4>' + esc(p.title) + '</h4>' +
+      '<div class="a">experiencia efímera</div></div>'
+    ).join('') + '</div></div>'
   );
 }
 function viewRec(id) {
@@ -651,19 +695,23 @@ function viewBuscar() {
 /* ================= visor de experiencias (recs) ================= */
 function viewExp(id) {
   const r = RECS.find(x => x.id === id);
-  if (!r || !r.page) return viewRecs();
-  const fichaBtn = (r.book_ref && BY_ID[r.book_ref])
+  const p = r ? null : PROPS.find(x => x.id === id);
+  const it = r || p;
+  if (!it || !it.page) return r ? viewRecs() : viewHome();
+  const fichaBtn = (r && r.book_ref && BY_ID[r.book_ref])
     ? '<button class="backbtn" data-f data-fid="exp-ficha" data-go="#/ficha/' + r.book_ref + '">' + ring + 'Ficha del catálogo</button>'
     : '';
+  const kicker = r ? (r.kind === 'nuevo' ? 'Experiencia · para conseguir' : 'Experiencia · ya está en casa')
+    : 'Experiencia efímera del agente';
   render(
     '<div class="vhead">' +
       '<button class="backbtn" data-f data-fid="back" data-back data-autofocus>' + ring + '← Volver</button>' +
-      '<div class="vtitle"><div class="in">' + esc(r.title) + '<small>' + esc(r.date) + '</small></div></div>' +
+      '<div class="vtitle"><div class="in">' + esc(it.title) + '<small>' + esc(r ? r.date : (p.created || '')) + '</small></div></div>' +
       fichaBtn +
-      '<span class="kicker">' + (r.kind === 'nuevo' ? 'Experiencia · para conseguir' : 'Experiencia · ya está en casa') + '</span>' +
+      '<span class="kicker">' + kicker + '</span>' +
     '</div>' +
     '<div class="expstage"><div class="exppaper">' +
-      '<iframe id="expframe" src="../' + esc(r.page) + '" tabindex="-1"></iframe>' +
+      '<iframe id="expframe" src="../' + esc(it.page) + '" tabindex="-1"></iframe>' +
     '</div><span class="expscrollhint">↑ ↓ para leer</span></div>'
   );
   const fr = document.getElementById('expframe');
