@@ -1259,7 +1259,51 @@
       "device": "sin-nombre",
       "dwell_s": 16,
       "scroll_pct": 0
+    },
+    {
+      "id": "mrqz2eoy-62fwm9",
+      "ts": "2026-07-18T23:02:32.674Z",
+      "nid": "2026-07-18-rec-sofi",
+      "src": "push",
+      "page": "2026-07-18-king-si-te-gusta-la-oscuridad.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrqz2eoz-b4muhn",
+      "ts": "2026-07-18T23:02:32.675Z",
+      "nid": "2026-07-18-rec-sofi",
+      "page": "2026-07-18-king-si-te-gusta-la-oscuridad.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrqz338s-otmfpv",
+      "ts": "2026-07-18T23:03:04.492Z",
+      "qid": "rec-veredicto:2026-07-18-king-si-te-gusta-la-oscuridad",
+      "page": "2026-07-18-king-si-te-gusta-la-oscuridad.html",
+      "type": "answer",
+      "value": "ya_lo_lei",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrqz34fa-e0mosg",
+      "ts": "2026-07-18T23:03:06.022Z",
+      "qid": "leer-esta-noche:R5-018",
+      "page": "2026-07-18-king-si-te-gusta-la-oscuridad.html",
+      "type": "answer",
+      "value": "ya_leido",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrqz36ei-dcwhpp",
+      "ts": "2026-07-18T23:03:08.586Z",
+      "page": "2026-07-18-king-si-te-gusta-la-oscuridad.html",
+      "slug": "2026-07-18-king-si-te-gusta-la-oscuridad",
+      "type": "reaction",
+      "value": "like",
+      "device": "Sofi"
     }
   ],
-  "_updated_at": "2026-07-17T22:45:40.277Z"
+  "_updated_at": "2026-07-18T23:29:19.721Z"
 }
