@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🚪 Si te gusta la oscuridad · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#0B0D0B;
+  --negro2:#151815;
+  --musgo:#3E5C3F;
+  --musgo-hi:#6E9B6A;
+  --brasa:#A33422;
+  --brasa-hi:#D65A3F;
+  --hueso:#EDEAE0;
+  --bruma:#948E85;
+  --linea:rgba(237,234,224,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Courier Prime',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--negro);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--brasa);color:var(--hueso)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--musgo-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,234,224,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brasa-hi),var(--musgo-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(11,13,11,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--musgo-hi);border-color:var(--musgo)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--musgo-hi);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(130% 80% at 50% -10%,#1C1610 0%,var(--negro) 62%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .para{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#E8A88F;border:1px solid #E8A88F;border-radius:999px;padding:.32rem .95rem;margin-bottom:1.3rem;font-weight:700}
+.hero h1{font-size:clamp(1.8rem,1.1rem + 5vw,3.5rem);font-weight:600;line-height:1.12}
+.hero h1 em{font-style:italic;color:var(--brasa-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:50ch}
+.cta-btn{display:inline-block;background:var(--brasa);color:var(--hueso);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--brasa-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.estante{position:absolute;top:20%;right:6%;font-family:var(--mono);font-weight:700;font-size:.78rem;letter-spacing:.08em;color:var(--musgo-hi);border:2px dashed var(--musgo-hi);border-radius:8px;padding:.5rem .85rem;transform:rotate(-7deg);opacity:.6;text-align:center}
+.puente{background:var(--negro2)}
+/* puertas del cuento */
+.puertas{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:2.2rem}
+.puerta{aspect-ratio:2/3;border-radius:10px;border:1px solid var(--linea);background:linear-gradient(155deg,#1C1F1C,#0F110F);position:relative;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--musgo-hi);font-size:1.1rem;font-weight:700;transition:transform .25s ease,border-color .25s ease}
+.puerta:hover{transform:translateY(-3px);border-color:var(--musgo)}
+.puerta.abierta{background:linear-gradient(155deg,#2B1512,#160B09);border-color:var(--brasa)}
+.puerta-num{position:absolute;top:.4rem;left:.5rem;font-size:.65rem;color:var(--bruma)}
+.revela{margin-top:1.6rem;border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.4rem;background:rgba(237,234,224,.03);min-height:120px}
+.revela .titulo-cuento{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--brasa-hi);margin-bottom:.5rem}
+.revela p{color:var(--bruma);font-size:.94rem}
+.revela .vacio{color:var(--bruma);opacity:.7;font-style:italic}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(237,234,224,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--hueso);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--musgo-hi);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:400px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.cita{border-left:3px solid var(--musgo-hi);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(110,155,106,.07);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.aviso{border:1px dashed var(--brasa-hi);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2.2rem;background:rgba(163,52,34,.08)}
+.aviso .tag{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brasa-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.aviso p{color:var(--bruma);font-size:.92rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(237,234,224,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--musgo-hi);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--musgo);color:var(--musgo-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--musgo-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#1C1610 0%,var(--negro) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:32ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--brasa-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:620px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}.estante{display:none}.puertas{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="estante" aria-hidden="true">R5-018<br>SIN ABRIR</div>
+  <div class="hero-int">
+    <span class="para">Para Sofi · Bibliotequeando recomienda · Nº 16</span>
+    <h1>Si te gusta <em>la oscuridad</em></h1>
+    <p class="autor">Stephen King · 2024</p>
+    <p class="sub">Dijiste "cuanto más oscuro, mejor" y después de Dicker dijiste "justo así". King te contestó hace dos años con un libro que se llama literalmente como tu pedido — y ya está en tu propio estante, R5, sin abrir.</p>
+    <a class="cta-btn" href="#puertas">Abrí las puertas ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puertas">
+  <div class="centro">
+    <p class="kicker rev">El título no es casualidad</p>
+    <h2 class="titulo rev d1">Doce cuentos, ningún relleno</h2>
+    <p class="bajada rev d2">No es una novela: son 12 historias independientes, cada una de un tamaño distinto — desde 10 páginas hasta una nouvelle. Perfecto para leer una por noche, sin arrastrar la trama del día anterior. Tocá una puerta para ver qué hay atrás (sin spoiler del final).</p>
+    <div class="puertas rev d2" id="puertas-grid">
+      <button class="puerta" data-i="0"><span class="puerta-num">I</span>🚪</button>
+      <button class="puerta" data-i="1"><span class="puerta-num">II</span>🚪</button>
+      <button class="puerta" data-i="2"><span class="puerta-num">III</span>🚪</button>
+      <button class="puerta" data-i="3"><span class="puerta-num">IV</span>🚪</button>
+      <button class="puerta" data-i="4" style="opacity:.35;pointer-events:none"><span class="puerta-num">+8</span>🔒</button>
+    </div>
+    <div class="revela rev d3" id="revela"><p class="vacio">Elegí una puerta ↑</p></div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--negro2)">
+  <div class="centro">
+    <p class="kicker rev">Por qué este, y por qué ahora</p>
+    <h2 class="titulo rev d1">Cinco razones para agarrarlo esta noche</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>Debutó Nº1 en ventas, no es un libro menor de la vejez de King</strong><span class="flecha">›</span></button><div class="clave-body"><p>Salió en mayo de 2024 (Scribner) y esa misma semana fue Nº1 en la lista de ficción del New York Times. A los 76 años, King sigue vendiendo como en los 80.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>No todo es sangre — hay un cuento que te va a doler distinto</strong><span class="flecha">›</span></button><div class="clave-body"><p>"Laurie": un viudo de 65 años en Florida recibe un cachorro de regalo de su hermana, se resiste, se engancha, y termina salvando (y siendo salvado por) esa perra en un ataque de un yacaré de 3 metros. Reseñas la describen como "atípicamente dulce para King" — un respiro real entre lo oscuro, no relleno.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>Vuelve a un libro que ya conocés de su estante</strong><span class="flecha">›</span></button><div class="clave-body"><p>"Rattlesnakes" es secuela directa de <em>Cujo</em> (1981, R5 lo tiene): un viudo en duelo viaja a Florida a descansar y recibe una herencia inesperada con una condición que no le va a gustar. No hace falta haber leído Cujo para entrarle.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>El más corto es el más filoso</strong><span class="flecha">›</span></button><div class="clave-body"><p>"The Fifth Step" tiene apenas 10 páginas: un ingeniero jubilado en un banco de Central Park escucha la confesión de un desconocido que dice haber dejado la violencia atrás. Varias reseñas la marcan como la más oscura de las doce — la vas a leer en el tiempo que tarda un café en enfriarse.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">v</span><strong>Formato a tu medida de julio</strong><span class="flecha">›</span></button><div class="clave-body"><p>Cuentos autoconclusivos = ideal para las noches cortas de invierno acá. Ningún cliffhanger te obliga a seguir leyendo hasta las 2 de la mañana... salvo que quieras.</p></div></div>
+    </div>
+    <div class="cita rev d2"><p>"An atypically sweet tale for King."</p><span>Greg Fleming, The New Zealand Herald, sobre "Laurie" — la excepción que confirma que no todo el libro pega igual de fuerte</span></div>
+    <div class="aviso rev d3">
+      <span class="tag">Antes de decidir</span>
+      <p>"The Fifth Step" termina en una vuelta de tuerca violenta y deliberada — no es un giro sorpresa gratuito, pero sí es el cuento más crudo del libro. Si después de Dicker sentiste que "justo así" era el límite, arrancá por otro cuento primero (Laurie o Danny Coughlin's Bad Dream) y dejá el Fifth Step para el final.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>Mayo 2024 (Scribner), edición en español "Si te gusta la oscuridad" (Plaza & Janés)</dd>
+        <dt>Formato</dt><dd>Antología de 12 cuentos independientes, de 10 páginas a nouvelle</dd>
+        <dt>Recepción</dt><dd>Nº1 en ficción, New York Times, semana del 25 de mayo de 2024</dd>
+        <dt>Destacados</dt><dd>"Rattlesnakes" (secuela de Cujo), "The Fifth Step", "Laurie", "Danny Coughlin's Bad Dream"</dd>
+        <dt>En tu estante</dt><dd>R5-018 — ya lo tenés, sin leer</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--negro2)">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Sofi</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+    <p class="bajada rev d2">Tu respuesta entrena al recomendador — la próxima "Para Sofi" sale de acá.</p>
+    <div class="cta rev d2">
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-18-king-si-te-gusta-la-oscuridad','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-18-king-si-te-gusta-la-oscuridad','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-18-king-si-te-gusta-la-oscuridad','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:R5-018','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:R5-018','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:R5-018','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-18-king-si-te-gusta-la-oscuridad','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-18-king-si-te-gusta-la-oscuridad','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-18-king-si-te-gusta-la-oscuridad','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-18-king-si-te-gusta-la-oscuridad','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">No hace falta comprar nada. <b>Solo estirar la mano al estante R5.</b></p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Hoy también hay ficha para Andy: un clásico nuevo para su estante de filosofía de vida.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--musgo-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--musgo);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · ficha "Para Sofi" · datos verificados a julio 2026 (Wikipedia EN "You Like It Darker" y "The Fifth Step (short story)", stephenking.com).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  var cuentos=[
+    {t:'Danny Coughlin’s Bad Dream',d:'Un flash psíquico, apenas un segundo, le cambia la vida a un tipo común — y a varias personas más, algunas de formas mucho peores que a él.'},
+    {t:'Rattlesnakes',d:'Secuela de Cujo (la tenés en R5): un viudo viaja a Florida a descansar y termina con una herencia que no pidió y no puede devolver.'},
+    {t:'Laurie',d:'Un viudo de 65 se resiste a quedarse con un cachorro. Se queda. Meses después esa perra lo salva de un yacaré. El cuento menos oscuro del libro — y el que más se recuerda.'},
+    {t:'The Fifth Step',d:'Diez páginas. Un banco de Central Park. Un desconocido que quiere confesarse. No spoileamos el final — solo decimos que es el cuento más crudo de los doce.'}
+  ];
+  $$('.puerta[data-i]').forEach(function(p){
+    p.addEventListener('click',function(){
+      var i=parseInt(p.getAttribute('data-i'),10);
+      var c=cuentos[i];
+      if(!c)return;
+      $$('.puerta').forEach(function(x){x.classList.remove('abierta')});
+      p.classList.add('abierta');
+      var r=$('#revela');
+      r.innerHTML='<p class="titulo-cuento">'+c.t+'</p><p>'+c.d+'</p>';
+    });
+  });
+  $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

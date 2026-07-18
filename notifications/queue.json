@@ -288,6 +288,19 @@
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-07-17",
       "to": "Sofi"
+    },
+    {
+      "id": "2026-07-18-rec-sofi",
+      "title": "🚪 King ya te contestó, Sofi",
+      "body": "Doce cuentos. El título es tu pedido, literal. Uno es secuela de Cujo — y ya está en tu estante R5, sin abrir.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-18-king-si-te-gusta-la-oscuridad.html",
+      "send_at": "2026-07-18T17:30:00-03:00",
+      "expires_at": "2026-07-18T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-18",
+      "to": "Sofi"
     }
   ]
 }

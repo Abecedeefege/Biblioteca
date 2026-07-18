@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-17T17:30:00-03:00",
-  "_feedback_cutoff": "2026-07-17T16:46:36.719Z",
+  "_updated_at": "2026-07-18T16:10:00-03:00",
+  "_feedback_cutoff": "2026-07-17T22:41:12.932Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -368,6 +368,31 @@
       "page": "recs/2026-07-17-dicker-harry-quebert.html",
       "notified_by": "2026-07-17-rec-sofi",
       "why": "Respuesta directa a su rec-terror de Hill: 'cuanto_mas_oscuro_mejor'. Un cadáver de 15 años enterrado en el jardín de un escritor famoso, investigación en 3 tiempos (1975/1998/2008), mucho más oscuro y denso que sus cozies. Verificado: no está en el catálogo. Par del día: Andy tuvo el redescubrimiento (Bucay) pre-armado, a ella le toca 'nuevo'.",
+      "feedback": {
+        "veredicto": "lo_quiero",
+        "reaccion": "love",
+        "clicked": true,
+        "dwell_s": 134
+      },
+      "learning": "ACIERTO PLENO — lo_quiero + love + dwell 134s/97% scroll. Micro rec-nivel-oscuro respondida 'justo_asi': el nivel de oscuridad de Dicker es el punto justo, no hace falta ir más oscuro todavía. Confirma la veta thriller/investigación oscura como segunda veta ganadora, calibrada (no escalar más por ahora, mantener ese nivel)."
+    },
+    {
+      "id": "2026-07-18-king-si-te-gusta-la-oscuridad",
+      "date": "2026-07-18",
+      "kind": "redescubrimiento",
+      "title": "Si te gusta la oscuridad (You Like It Darker)",
+      "author": "Stephen King",
+      "language": "es",
+      "topics": [
+        "terror",
+        "misterio",
+        "oscuro"
+      ],
+      "book_ref": "R5-018",
+      "audience": "sofi",
+      "page": "recs/2026-07-18-king-si-te-gusta-la-oscuridad.html",
+      "notified_by": "2026-07-18-rec-sofi",
+      "why": "Redescubrimiento R5: el título del libro es literalmente su pedido ('cuanto más oscuro mejor' → 'You Like It Darker'), y calibrado por su 'justo_asi' de ayer con Dicker — no escala más, ofrece variedad dentro del mismo nivel (antología de 12 cuentos, no todos igual de oscuros, incluye 'Laurie' como respiro). Ya lo tiene sin leer (R5-018), identificado como prioridad alta desde el hallazgo del 17/07. Par del día: Andy tiene el 'nuevo' (Marco Aurelio) pre-armado, a ella le toca 'de la biblioteca'.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
