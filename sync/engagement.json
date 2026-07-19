@@ -1338,7 +1338,16 @@
       "device": "Andy",
       "dwell_s": 57,
       "scroll_pct": 26
+    },
+    {
+      "id": "mrr2286y-b3gxul",
+      "type": "answer",
+      "ts": "2026-07-19T00:26:23.098Z",
+      "page": "2026-07-18-marco-aurelio-meditaciones.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-07-18-marco-aurelio-meditaciones",
+      "value": "ya_lo_lei"
     }
   ],
-  "_updated_at": "2026-07-19T00:21:34.515Z"
+  "_updated_at": "2026-07-19T00:26:24.324Z"
 }
