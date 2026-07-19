@@ -1347,7 +1347,16 @@
       "device": "Andy",
       "qid": "rec-veredicto:2026-07-18-marco-aurelio-meditaciones",
       "value": "ya_lo_lei"
+    },
+    {
+      "id": "mrr22bdb-citbci",
+      "type": "reaction",
+      "ts": "2026-07-19T00:26:27.215Z",
+      "page": "2026-07-18-marco-aurelio-meditaciones.html",
+      "device": "Andy",
+      "slug": "2026-07-18-marco-aurelio-meditaciones",
+      "value": "like"
     }
   ],
-  "_updated_at": "2026-07-19T00:26:24.324Z"
+  "_updated_at": "2026-07-19T00:26:28.155Z"
 }
