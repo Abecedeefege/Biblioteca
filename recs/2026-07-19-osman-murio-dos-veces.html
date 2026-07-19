@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>💎 El hombre que murió dos veces · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#1E3226;
+  --verde2:#27402F;
+  --te:#C8A96A;
+  --te-hi:#E8CE96;
+  --burdeos:#7E2D3C;
+  --burdeos-hi:#B25468;
+  --crema:#F2ECDB;
+  --bruma:#9AAB9C;
+  --linea:rgba(242,236,219,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--verde);color:var(--crema);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--te);color:var(--verde)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--te-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(242,236,219,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--burdeos-hi),var(--te-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(30,50,38,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--te-hi);border-color:var(--te)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--te);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(130% 80% at 50% -10%,#2E4A38 0%,var(--verde) 62%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .para{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--burdeos-hi);border:1px solid var(--burdeos-hi);border-radius:999px;padding:.32rem .95rem;margin-bottom:1.3rem;font-weight:700}
+.hero h1{font-size:clamp(2rem,1.4rem + 5.5vw,4rem);font-weight:600;line-height:1.1}
+.hero h1 em{font-style:italic;color:var(--te-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--te);color:var(--verde);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--te-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.vapor{position:absolute;bottom:14%;left:50%;transform:translateX(-50%);font-size:3rem;opacity:.5;animation:vapor 4s ease-in-out infinite}
+@keyframes vapor{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
+.puente{background:var(--verde2)}
+.estante{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.libro-chip{font-size:.82rem;color:var(--te-hi);border:1px solid var(--linea);border-radius:999px;padding:.4rem .9rem}
+.remate{margin-top:1.6rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--te-hi)}
+/* frases de Joyce */
+.frases{display:grid;gap:1rem;margin-top:2.2rem}
+.frase-card{text-align:left;border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.4rem;background:rgba(242,236,219,.04);color:var(--crema);transition:all .3s ease}
+.frase-card:hover,.frase-card.elegida{border-color:var(--te);background:rgba(200,169,106,.1)}
+.frase-card p{font-family:var(--serif);font-style:italic;font-size:1.08rem;color:var(--te-hi);line-height:1.5}
+.frase-card span{display:block;margin-top:.5rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bruma)}
+.frase-micro{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.frase-micro button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--crema);border-radius:999px;padding:.6rem 1.05rem;font-size:.9rem;font-weight:600;transition:all .25s ease}
+.frase-micro button:hover{border-color:var(--te);color:var(--te-hi)}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(242,236,219,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--crema);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--te);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:400px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(242,236,219,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--te);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--te);color:var(--verde);border-radius:999px;padding:.9rem 1.7rem;font-weight:600;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--te-hi);transform:translateY(-2px)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--crema);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease}
+.cta button:hover,.react button:hover{border-color:var(--te);color:var(--te-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--te-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#2E4A38 0%,var(--verde) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:30ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--te-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="vapor" aria-hidden="true">💎</div>
+  <div class="hero-int">
+    <span class="para">Para Sofi · Bibliotequeando recomienda · Nº 17</span>
+    <h1>El hombre que murió <em>dos veces</em></h1>
+    <p class="autor">Richard Osman · 2021 · Club del Crimen de los Jueves, tomo 2</p>
+    <p class="sub">Elegiste a Joyce la vez pasada. Bueno: en esta entrega ella escribe más diario todavía, y el club entero se mete con 20 millones de libras en diamantes, un ex-espía escondido y un pasado de Elizabeth que ni el libro 1 se animó a contar.</p>
+    <a class="cta-btn" href="#puente">¿Por qué para vos? ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué a vos, Sofi</p>
+    <h2 class="titulo rev d1">El club no se disuelve. Se expande.</h2>
+    <p class="bajada rev d2">El Club del Crimen de los Jueves te dio un acierto pleno — y Joyce fue tu favorita. Esta secuela no reinventa nada: agarra exactamente lo que funcionó (el cuarteto, el diario, el humor de sitcom) y le suma algo nuevo, más filoso: espionaje real, un ex-marido de Elizabeth prófugo y un capo del crimen que no juega en la liga de los cozies de tu M5.</p>
+    <div class="estante rev d2">
+      <span class="libro-chip">Mismo club: Elizabeth, Joyce, Ron, Ibrahim</span>
+      <span class="libro-chip">+ MI5 real</span>
+      <span class="libro-chip">+ 20 millones en diamantes</span>
+      <span class="libro-chip">+ un capo peligroso de verdad</span>
+    </div>
+    <p class="remate rev d3">Sube la apuesta sin perder la calidez. Justo la variedad que le faltaba a tu semana de oscuro puro.</p>
+  </div>
+</section>
+
+<section class="seccion" id="frases">
+  <div class="centro">
+    <p class="kicker rev">La interacción</p>
+    <h2 class="titulo rev d1">El diario de Joyce sigue</h2>
+    <p class="bajada rev d2">Tres líneas reales de sus entradas en este libro. Elegí la que más te robó una sonrisa (sin spoilers de trama, palabra de bibliotecario).</p>
+    <div class="frases rev d2">
+      <div class="frase-card" data-f="sausage">
+        <p>"¿Por qué hacer dieta a los ochenta y dos? ¿Qué te va a hacer un sausage roll? ¿Matarte? Bueno, hacé la cola."</p>
+        <span>Joyce, en su diario</span>
+      </div>
+      <div class="frase-card" data-f="drink">
+        <p>"Estoy aprendiendo que es importante parar a veces y simplemente tomar algo y chusmear con amigos, incluso mientras se amontonan los cadáveres alrededor tuyo."</p>
+        <span>Joyce, en su diario</span>
+      </div>
+      <div class="frase-card" data-f="mi5">
+        <p>"El MI5 ya sabe quién soy, así que eso va para la carta de Navidad."</p>
+        <span>Joyce, en su diario</span>
+      </div>
+    </div>
+    <div class="frase-micro rev d3">
+      ¿Cuál te sacó una carcajada?
+      <div>
+        <button onclick="engageAnswer('rec-frase:2026-07-19-osman-murio-dos-veces','sausage',this)">🌭 El sausage roll</button>
+        <button onclick="engageAnswer('rec-frase:2026-07-19-osman-murio-dos-veces','drink',this)">🍸 El trago con amigos</button>
+        <button onclick="engageAnswer('rec-frase:2026-07-19-osman-murio-dos-veces','mi5',this)">📮 La carta de Navidad</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--verde2)">
+  <div class="centro">
+    <p class="kicker rev">Lo que te llevás</p>
+    <h2 class="titulo rev d1">Cinco razones (sin spoilers)</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>Un fenómeno más grande que el primero</strong><span class="flecha">›</span></button><div class="clave-body"><p>114.202 copias vendidas en sus primeros tres días — más rápido que el debut. La saga no perdió fuerza en la segunda entrega, algo raro en este género.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>Elizabeth deja de ser un misterio total</strong><span class="flecha">›</span></button><div class="clave-body"><p>En el libro 1 nunca queda claro qué hizo antes de jubilarse. Acá aparece Douglas, su ex-marido y agente del MI5, y por primera vez el libro empieza a levantar el telón de su pasado — sin agotarlo del todo.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>El crimen sube de escala</strong><span class="flecha">›</span></button><div class="clave-body"><p>Ya no es un archivo viejo de la comisaría local: son 20 millones de libras en diamantes robados a un capo de verdad, con el servicio de inteligencia británico metido de por medio. El té y los bizcochos siguen, pero el peligro es otro nivel.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>El diario de Joyce, todavía mejor</strong><span class="flecha">›</span></button><div class="clave-body"><p>Lo que más se extraña del libro 1 vuelve reforzado: las entradas de Joyce entre capítulo y capítulo, con ese humor involuntario que ya conocés y que la sostiene como corazón del grupo.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">v</span><strong>Debajo de la comedia, algo tierno</strong><span class="flecha">›</span></button><div class="clave-body"><p>Sin spoiler: además del caper de diamantes, el libro guarda una veta más silenciosa sobre el paso del tiempo, la vejez y lo que se pierde — el tipo de capa emocional que Osman mete sin golpe bajo, con la comedia todavía funcionando arriba.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>16 de septiembre de 2021 (Viking / Penguin), tomo 2 de la saga</dd>
+        <dt>Extensión</dt><dd>~460 páginas, mismo ritmo de capítulos cortos que el libro 1</dd>
+        <dt>Escenario</dt><dd>Sigue en Coopers Chase, Kent — con escapadas a Londres por el lado del espionaje</dd>
+        <dt>Saga</dt><dd>Tomo 2 de 5 (2020-2025); no hace falta releer el 1 para seguirlo, pero lo enriquece</dd>
+        <dt>Edición</dt><dd>Español: misma colección que el libro 1 (Espasa) — verificá stock y traductor al comprar</dd>
+      </dl>
+      <a class="comprar" href="https://www.buscalibre.uy/libros/search/?q=El+hombre+que+murio+dos+veces+Richard+Osman" target="_blank" rel="noopener">Conseguilo (chequeá precio) →</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--verde2)">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Sofi</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Tu respuesta entrena al recomendador: la próxima ficha "Para Sofi" sale de acá.</p>
+    <div class="cta rev d2">¿Y? ¿Le damos?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-19-osman-murio-dos-veces','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-19-osman-murio-dos-veces','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-19-osman-murio-dos-veces','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-19-osman-murio-dos-veces','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-19-osman-murio-dos-veces','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia de recomendación?
+      <div>
+        <button onclick="engageReact('2026-07-19-osman-murio-dos-veces','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-19-osman-murio-dos-veces','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-19-osman-murio-dos-veces','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-19-osman-murio-dos-veces','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Nadie sospecha de cuatro jubilados con té y bizcochos. <b>Esta vez, con diamantes de por medio.</b></p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Redescubrimientos y libros nuevos, alternando, uno por día.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--te-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--te);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · segunda ficha "Para Sofi" con libro nuevo · datos verificados a julio 2026 (Penguin/Viking, prensa británica, Goodreads).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.frase-card').forEach(function(f){f.addEventListener('click',function(){$$('.frase-card').forEach(function(o){o.classList.remove('elegida');});f.classList.add('elegida');});});
+  $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

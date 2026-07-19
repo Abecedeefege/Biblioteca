@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-18T16:10:00-03:00",
-  "_feedback_cutoff": "2026-07-17T22:41:12.932Z",
+  "_updated_at": "2026-07-19T16:30:00-03:00",
+  "_feedback_cutoff": "2026-07-19T19:02:42.785Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -98,10 +98,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 14
       },
-      "learning": null,
+      "learning": "Clickeó el push (14s/24% scroll) pero nunca votó ni reaccionó — segundo redescubrimiento seguido de Andy sin veredicto, muy por debajo de sus 'nuevos' (Frankl 466s, Meditaciones 318s). Señal de que el gancho de redescubrimiento no está funcionando tan bien como el de 'nuevo' para él; vigilar si se repite con Siddhartha (19/07) antes de tocar la MEZCLA VIGENTE.",
       "audience": "andy"
     },
     {
@@ -121,12 +121,12 @@
       "notified_by": "2026-07-18-rec",
       "why": "El hueco de estoicismo más obvio: solo tiene 1 Holiday (L4-020) y ningún clásico. Meditaciones es la fuente. Interacción: dicotomía del control. Pre-armada 15/07. Citas apócrifas descartadas por verificación.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "veredicto": "ya_lo_lei",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 318
       },
-      "learning": null,
+      "learning": "SEGUNDA vez 'ya_lo_lei' seguida en un 'nuevo' de Andy (después de Frankl). Patrón claro: está eligiendo clásicos consagrados que ya conoce de antes. Puntería de veta correcta (estoicismo/autosuperación) pero sin descubrimiento. Subir la vara de novedad: evitar los títulos más obvios/masivos de cada veta (Meditaciones, Frankl) y priorizar autores menos trillados dentro del mismo interés — el banco ya tiene candidatos de segunda línea (Holiday más específico, Kahneman, Sapolsky, Eagleman, Walker, Anil Seth) que conviene priorizar sobre los clásicos de librería de aeropuerto.",
       "audience": "andy"
     },
     {
@@ -148,10 +148,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 200
       },
-      "learning": null,
+      "learning": "En curso al momento de esta corrida (clickeó, dwell 200s/52% scroll) — todavía sin veredicto ni reacción. Revisar mañana.",
       "audience": "andy"
     },
     {
@@ -393,6 +393,32 @@
       "page": "recs/2026-07-18-king-si-te-gusta-la-oscuridad.html",
       "notified_by": "2026-07-18-rec-sofi",
       "why": "Redescubrimiento R5: el título del libro es literalmente su pedido ('cuanto más oscuro mejor' → 'You Like It Darker'), y calibrado por su 'justo_asi' de ayer con Dicker — no escala más, ofrece variedad dentro del mismo nivel (antología de 12 cuentos, no todos igual de oscuros, incluye 'Laurie' como respiro). Ya lo tiene sin leer (R5-018), identificado como prioridad alta desde el hallazgo del 17/07. Par del día: Andy tiene el 'nuevo' (Marco Aurelio) pre-armado, a ella le toca 'de la biblioteca'.",
+      "feedback": {
+        "veredicto": "ya_lo_lei",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 0
+      },
+      "learning": "Respondió 'ya_lo_lei' Y 'ya_leido' en el compromiso físico en apenas ~36s desde que abrió la página (sin evento de dwell formal) — ya había leído este libro antes, R5-018 NO estaba 'sin leer' como asumía enrichment. Puntería de veta correcta (oscuro/King, reaccionó 'like' al formato) pero CERO descubrimiento. Guardia: marcar R5-018 como ya leído por Sofi, no reofrecerlo. Con 50 King en el estante, chequear antes cuáles leyó realmente en vez de asumir por el enrichment.",
+      "audience": "sofi"
+    },
+    {
+      "id": "2026-07-19-osman-murio-dos-veces",
+      "date": "2026-07-19",
+      "kind": "nuevo",
+      "title": "El hombre que murió dos veces",
+      "author": "Richard Osman",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy",
+        "espionaje"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-07-19-osman-murio-dos-veces.html",
+      "notified_by": "2026-07-19-rec-sofi",
+      "why": "Para Sofi: tomo 2 de su ACIERTO PLENO (Club del Crimen de los Jueves), donde eligió a Joyce como favorita. Después de 2 días seguidos de oscuro (Dicker lo_quiero, King ya_lo_lei/ya conocido), toca variedad: vuelve a su otra veta ganadora (cozy grupal cálido) con más apuesta (diamantes, MI5, el pasado de Elizabeth). Verificado: no está en el catálogo de 400. Par del día: Andy tuvo el redescubrimiento (Siddhartha) hoy, a ella le toca 'nuevo'.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

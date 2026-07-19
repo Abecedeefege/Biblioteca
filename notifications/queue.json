@@ -301,6 +301,19 @@
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-07-18",
       "to": "Sofi"
+    },
+    {
+      "id": "2026-07-19-rec-sofi",
+      "title": "💎 Volvió el club que elegiste, Sofi",
+      "body": "Tomo 2: 20 millones en diamantes, un ex-espía prófugo y más diario de Joyce. Tu club de los jueves, ahora más grande.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-19-osman-murio-dos-veces.html",
+      "send_at": "2026-07-19T17:30:00-03:00",
+      "expires_at": "2026-07-19T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-19",
+      "to": "Sofi"
     }
   ]
 }
