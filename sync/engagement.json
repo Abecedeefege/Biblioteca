@@ -1329,7 +1329,16 @@
       "page": "2026-07-18-marco-aurelio-meditaciones.html",
       "device": "Andy",
       "nid": "2026-07-18-rec"
+    },
+    {
+      "id": "mrr1vzsf-lal97x",
+      "type": "dwell",
+      "ts": "2026-07-19T00:21:32.271Z",
+      "page": "2026-07-18-marco-aurelio-meditaciones.html",
+      "device": "Andy",
+      "dwell_s": 57,
+      "scroll_pct": 26
     }
   ],
-  "_updated_at": "2026-07-19T00:20:36.425Z"
+  "_updated_at": "2026-07-19T00:21:34.515Z"
 }
