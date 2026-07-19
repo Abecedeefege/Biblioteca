@@ -1400,7 +1400,69 @@
       "device": "Andy",
       "dwell_s": 200,
       "scroll_pct": 52
+    },
+    {
+      "id": "mrqz3c1a-6gk7jn",
+      "ts": "2026-07-18T23:03:15.886Z",
+      "page": "2026-07-18-king-si-te-gusta-la-oscuridad.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 43,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrs97bsq-npuhwr",
+      "ts": "2026-07-19T20:34:04.538Z",
+      "nid": "2026-07-19-rec-sofi",
+      "src": "push",
+      "page": "2026-07-19-osman-murio-dos-veces.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrs97bss-knh95u",
+      "ts": "2026-07-19T20:34:04.540Z",
+      "nid": "2026-07-19-rec-sofi",
+      "page": "2026-07-19-osman-murio-dos-veces.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrs9946q-vtc65b",
+      "ts": "2026-07-19T20:35:27.986Z",
+      "qid": "rec-frase:2026-07-19-osman-murio-dos-veces",
+      "page": "2026-07-19-osman-murio-dos-veces.html",
+      "type": "answer",
+      "value": "sausage",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrs99s1q-2ockw0",
+      "ts": "2026-07-19T20:35:58.910Z",
+      "page": "2026-07-19-osman-murio-dos-veces.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 114,
+      "scroll_pct": 76
+    },
+    {
+      "id": "mrs9ak2l-yeqmmw",
+      "ts": "2026-07-19T20:36:35.229Z",
+      "qid": "rec-veredicto:2026-07-19-osman-murio-dos-veces",
+      "page": "2026-07-19-osman-murio-dos-veces.html",
+      "type": "answer",
+      "value": "lo_quiero",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrs9am37-n59r5u",
+      "ts": "2026-07-19T20:36:37.843Z",
+      "page": "2026-07-19-osman-murio-dos-veces.html",
+      "slug": "2026-07-19-osman-murio-dos-veces",
+      "type": "reaction",
+      "value": "love",
+      "device": "Sofi"
     }
   ],
-  "_updated_at": "2026-07-19T19:02:45.166Z"
+  "_updated_at": "2026-07-19T21:31:50.167Z"
 }
