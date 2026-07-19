@@ -1303,7 +1303,33 @@
       "type": "reaction",
       "value": "like",
       "device": "Sofi"
+    },
+    {
+      "id": "mrp61h81-p4dkjq",
+      "type": "dwell",
+      "ts": "2026-07-17T16:42:14.257Z",
+      "page": "2026-07-17-bucay-camino-felicidad.html",
+      "device": "Andy",
+      "dwell_s": 14,
+      "scroll_pct": 24
+    },
+    {
+      "id": "mrr1ursq-h1it2f",
+      "type": "notification_clicked",
+      "ts": "2026-07-19T00:20:35.259Z",
+      "page": "2026-07-18-marco-aurelio-meditaciones.html",
+      "device": "Andy",
+      "nid": "2026-07-18-rec",
+      "src": "push"
+    },
+    {
+      "id": "mrr1urst-hom1v1",
+      "type": "page_visit",
+      "ts": "2026-07-19T00:20:35.261Z",
+      "page": "2026-07-18-marco-aurelio-meditaciones.html",
+      "device": "Andy",
+      "nid": "2026-07-18-rec"
     }
   ],
-  "_updated_at": "2026-07-18T23:29:19.721Z"
+  "_updated_at": "2026-07-19T00:20:36.425Z"
 }
