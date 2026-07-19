@@ -1382,7 +1382,16 @@
       "page": "2026-07-19-hesse-siddhartha.html",
       "device": "Andy",
       "nid": "2026-07-19-rec"
+    },
+    {
+      "id": "mrs5vvjt-82onex",
+      "type": "dwell",
+      "ts": "2026-07-19T19:01:11.417Z",
+      "page": "2026-07-19-hesse-siddhartha.html",
+      "device": "Andy",
+      "dwell_s": 161,
+      "scroll_pct": 52
     }
   ],
-  "_updated_at": "2026-07-19T18:58:31.513Z"
+  "_updated_at": "2026-07-19T19:01:13.373Z"
 }
