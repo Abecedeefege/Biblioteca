@@ -1356,7 +1356,33 @@
       "device": "Andy",
       "slug": "2026-07-18-marco-aurelio-meditaciones",
       "value": "like"
+    },
+    {
+      "id": "mrr22ps2-x9e5aw",
+      "type": "dwell",
+      "ts": "2026-07-19T00:26:45.890Z",
+      "page": "2026-07-18-marco-aurelio-meditaciones.html",
+      "device": "Andy",
+      "dwell_s": 318,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrs5sf8s-hdj35c",
+      "type": "notification_clicked",
+      "ts": "2026-07-19T18:58:30.316Z",
+      "page": "2026-07-19-hesse-siddhartha.html",
+      "device": "Andy",
+      "nid": "2026-07-19-rec",
+      "src": "push"
+    },
+    {
+      "id": "mrs5sf8u-sti49a",
+      "type": "page_visit",
+      "ts": "2026-07-19T18:58:30.318Z",
+      "page": "2026-07-19-hesse-siddhartha.html",
+      "device": "Andy",
+      "nid": "2026-07-19-rec"
     }
   ],
-  "_updated_at": "2026-07-19T00:26:28.155Z"
+  "_updated_at": "2026-07-19T18:58:31.513Z"
 }
