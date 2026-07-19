@@ -1391,7 +1391,16 @@
       "device": "Andy",
       "dwell_s": 161,
       "scroll_pct": 52
+    },
+    {
+      "id": "mrs5xu1t-ubkzlj",
+      "type": "dwell",
+      "ts": "2026-07-19T19:02:42.785Z",
+      "page": "2026-07-19-hesse-siddhartha.html",
+      "device": "Andy",
+      "dwell_s": 200,
+      "scroll_pct": 52
     }
   ],
-  "_updated_at": "2026-07-19T19:01:13.373Z"
+  "_updated_at": "2026-07-19T19:02:45.166Z"
 }
