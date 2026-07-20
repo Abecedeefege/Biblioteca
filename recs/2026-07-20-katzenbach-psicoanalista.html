@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🛋️ El Psicoanalista · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#0F1614;
+  --tinta2:#182420;
+  --alarma:#B33A2E;
+  --alarma-hi:#E0604F;
+  --diva:#C9AB6E;
+  --diva-hi:#E7CC97;
+  --papel:#EDE7DA;
+  --niebla:#93A199;
+  --linea:rgba(237,231,218,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Courier Prime',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--tinta);color:var(--papel);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--alarma);color:var(--papel)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--diva-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,231,218,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--alarma-hi),var(--diva-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--niebla);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(15,22,20,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--diva-hi);border-color:var(--diva)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--diva);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--niebla);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(130% 80% at 50% -10%,#1E2B26 0%,var(--tinta) 62%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .para{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--diva-hi);border:1px solid var(--diva-hi);border-radius:999px;padding:.32rem .95rem;margin-bottom:1.3rem;font-weight:700}
+.hero h1{font-size:clamp(1.8rem,1.2rem + 5vw,3.6rem);font-weight:600;line-height:1.12}
+.hero h1 em{font-style:italic;color:var(--alarma-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--niebla);margin:1.4rem auto 2.3rem;max-width:48ch}
+.cta-btn{display:inline-block;background:var(--alarma);color:var(--papel);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--alarma-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--niebla);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.sobre{position:absolute;top:20%;right:6%;font-family:var(--mono);font-weight:700;font-size:.8rem;letter-spacing:.08em;color:var(--alarma-hi);border:2px dashed var(--alarma-hi);border-radius:6px;padding:.5rem .9rem;transform:rotate(6deg);opacity:.6}
+.puente{background:var(--tinta2)}
+/* cuenta regresiva de los 14 dias */
+.cuenta{margin-top:2.4rem;text-align:center}
+.cuenta-num{font-family:var(--mono);font-weight:700;font-size:clamp(3.5rem,2rem + 8vw,6rem);color:var(--diva-hi);line-height:1;transition:opacity .3s ease}
+.cuenta-label{color:var(--niebla);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.4rem}
+.cuenta-btn{display:inline-block;margin-top:1.6rem;background:transparent;border:1px solid var(--diva);color:var(--diva-hi);border-radius:999px;padding:.7rem 1.5rem;font-weight:600;font-size:.92rem}
+.cuenta-btn:hover{background:var(--diva);color:var(--tinta)}
+/* reglas del juego, acordeon */
+.reglas{display:grid;gap:1.1rem;margin-top:2.4rem}
+.regla{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(237,231,218,.03),transparent)}
+.regla-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--papel);padding:1.15rem 1.25rem}
+.regla-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--diva);min-width:1.6rem}
+.regla-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.regla-head .flecha{color:var(--niebla);transition:transform .3s ease}
+.regla.abierta .flecha{transform:rotate(90deg)}
+.regla-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.regla.abierta .regla-body{max-height:400px}
+.regla-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--niebla);font-size:.95rem}
+/* identidades - tarjetas volteables */
+.identidades{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.2rem}
+.identidad{display:block;perspective:1100px;background:transparent;border:none;text-align:left;padding:0}
+.identidad-int{display:grid;width:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.1,.2,1)}
+.identidad.girada .identidad-int{transform:rotateY(180deg)}
+.cara-i{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.5rem;min-height:190px}
+.cara-ia{background:#1C2925;border:1px solid var(--linea)}
+.cara-ia .nombre{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--diva-hi)}
+.cara-ia .tag{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--niebla)}
+.cara-ia .toca{margin-top:auto;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--diva)}
+.cara-ib{background:var(--alarma);transform:rotateY(180deg)}
+.cara-ib p{font-size:.85rem;opacity:.95;line-height:1.45}
+.identidad-remate{margin-top:1.4rem;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--diva-hi);text-align:center}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(237,231,218,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--papel);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--diva);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--niebla);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:400px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--niebla);font-size:.95rem}
+.cita{border-left:3px solid var(--diva);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(201,171,110,.06);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--niebla);font-size:.82rem}
+.aviso{border:1px dashed var(--alarma-hi);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2.2rem;background:rgba(179,58,46,.08)}
+.aviso .tag{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--alarma-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.aviso p{color:var(--niebla);font-size:.92rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(237,231,218,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--diva);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--niebla)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--papel);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--diva);color:var(--diva-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--diva-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#1E2B26 0%,var(--tinta) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:32ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--diva-hi);font-weight:600}
+footer{text-align:center;color:var(--niebla);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:620px){.identidades{grid-template-columns:1fr}.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}.sobre{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="sobre" aria-hidden="true">ADIVINÁ<br>MI NOMBRE</div>
+  <div class="hero-int">
+    <span class="para">Para Sofi · Bibliotequeando redescubre · ya lo tenés en M5</span>
+    <h1>El <em>Psicoanalista</em></h1>
+    <p class="autor">John Katzenbach · 2002</p>
+    <p class="sub">Un psicoanalista de Nueva York recibe una carta el día de su cumpleaños número 53. La firma alguien que se hace llamar Rumplestiltskin — y le da dos semanas para adivinar quién es, antes de destruir todo lo que quiere.</p>
+    <a class="cta-btn" href="#carta">Abrí la carta ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="carta">
+  <div class="centro">
+    <p class="kicker rev">El cuento que ya conocés, dado vuelta</p>
+    <h2 class="titulo rev d1">Rumplestiltskin, pero al revés</h2>
+    <p class="bajada rev d2">En el cuento de los hermanos Grimm, la molinera se salva si adivina el nombre del duende. Katzenbach agarra esa idea y la invierte: acá el que tiene que adivinar un nombre para salvarse es el terapeuta. Y el reloj corre en su contra, no en la de un duende.</p>
+    <div class="cuenta rev d2">
+      <div class="cuenta-num" id="cuentaNum">14</div>
+      <div class="cuenta-label">días para adivinar quién es Rumplestiltskin</div>
+      <button class="cuenta-btn" id="cuentaBtn" type="button">Que pase un día ↓</button>
+    </div>
+    <p class="identidad-remate rev d3" id="cuentaFrase">Día 1: Ricky recibe la carta y todavía cree que es una broma de mal gusto.</p>
+  </div>
+</section>
+
+<section class="seccion" id="reglas" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">Las reglas del juego</p>
+    <h2 class="titulo rev d1">Rumplestiltskin no juega sucio. Juega peor: juega limpio</h2>
+    <p class="bajada rev d2">Le da a Ricky un trato con reglas fijas — y las cumple todas, lo que lo hace más aterrador, no menos. Tocá cada una.</p>
+    <div class="reglas rev d1">
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">i</span><strong>El plazo: dos semanas</strong><span class="flecha">›</span></button><div class="regla-body"><p>Ricky tiene catorce días para descubrir quién es Rumplestiltskin. Si falla, alguien que quiere paga el precio — o tiene que quitarse la vida él mismo. La carta llega, sin casualidad, el día de su cumpleaños 53.</p></div></div>
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">ii</span><strong>Tres preguntas de sí o no</strong><span class="flecha">›</span></button><div class="regla-body"><p>Rumplestiltskin le concede a Ricky tres preguntas sobre su identidad, contestables solo con sí o no. Todo el resto del juego, Ricky tiene que armarlo con lo que sabe de veinte años de pacientes.</p></div></div>
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">iii</span><strong>No está solo: tiene ayudantes</strong><span class="flecha">›</span></button><div class="regla-body"><p>Un abogado que se hace llamar Merlin y una mujer que se hace llamar Virgil (como el guía de Dante en el Infierno) aparecen para hostigar a Ricky en persona. Los nombres no son casuales: todo el juego está construido sobre mitología y cuentos, a propósito.</p></div></div>
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">iv</span><strong>La motivación: un paciente que Ricky abandonó</strong><span class="flecha">›</span></button><div class="regla-body"><p>Esto no es al azar. Rumplestiltskin dice actuar en nombre de alguien a quien Ricky, años atrás, no supo — o no quiso — ayudar. El terapeuta tiene que revisar dos décadas de casos para encontrar a quién le falló.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="identidades">
+  <div class="centro">
+    <p class="kicker rev">El giro que separa este libro de un thriller cualquiera</p>
+    <h2 class="titulo rev d1">A mitad de libro, Ricky deja de correr</h2>
+    <p class="bajada rev d2">La novela se parte en dos actos bien distintos. En el primero, Ricky es la presa. En el segundo, decide algo drástico. Tocá las tres tarjetas en orden — sin spoiler de cómo termina.</p>
+    <div class="identidades rev d2">
+      <button class="identidad" aria-pressed="false">
+        <span class="identidad-int">
+          <span class="cara-i cara-ia"><span class="nombre">Dr. Frederick Starks</span><span class="tag">Acto I</span><p style="color:var(--niebla);font-size:.85rem">El terapeuta real, acorralado.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-i cara-ib"><p>Rumplestiltskin lo va aislando en serio: le arruina la reputación, le congela las cuentas, lo saca de su propia ciudad. Ricky pasa de escuchar problemas ajenos a no tener a quién contarle los propios.</p></span>
+        </span>
+      </button>
+      <button class="identidad" aria-pressed="false">
+        <span class="identidad-int">
+          <span class="cara-i cara-ia"><span class="nombre">Ricky Lively</span><span class="tag">El giro</span><p style="color:var(--niebla);font-size:.85rem">Una identidad nueva, fabricada.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-i cara-ib"><p>Ricky finge su propio suicidio en su casa de Cape Cod. Con esa muerte falsa se compra el tiempo que Rumplestiltskin no le iba a dar: casi nueve meses para investigar sin que lo estén cazando.</p></span>
+        </span>
+      </button>
+      <button class="identidad" aria-pressed="false">
+        <span class="identidad-int">
+          <span class="cara-i cara-ia"><span class="nombre">Richard Lazarus</span><span class="tag">Acto II</span><p style="color:var(--niebla);font-size:.85rem">El que ya no es presa.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-i cara-ib"><p>Con dos identidades nuevas armadas, Ricky dedica esos meses a investigar quién es Rumplestiltskin en la vida real — y a preparar el terreno para el reencuentro final. El terapeuta pasivo del principio ya no existe.</p></span>
+        </span>
+      </button>
+    </div>
+    <p class="identidad-remate rev d3">Un hombre acostumbrado a escuchar se convierte, a la fuerza, en el que actúa.</p>
+    <div class="cita rev d3"><p>"Hokey, gimmicky, and flatly unbelievable" — pero el mismo crítico admite que el lector queda "powerless to stop after page ten".</p><span>Kirkus Reviews, sobre The Analyst — la reseña lo destroza y lo recomienda en el mismo párrafo</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">Por qué este, de tu propio estante</p>
+    <h2 class="titulo rev d1">Cuatro razones para agarrarlo hoy</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>El nivel de oscuro que vos calibraste</strong><span class="flecha">›</span></button><div class="clave-body"><p>Dijiste "justo así" con Harry Quebert: investigación densa, sin gore gratuito, con un villano que juega con la mente más que con el cuchillo. Rumplestiltskin es un juego psicológico de principio a fin — mismo nivel, otro autor.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>Terapeuta protagonista, no policía</strong><span class="flecha">›</span></button><div class="clave-body"><p>Como Marcus Goldman investigando sin placa en Harry Quebert, acá el que resuelve el caso no es un detective: es un psicoanalista usando lo único que sabe hacer — leer a la gente — para salvar su propia vida.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>Ya está en tu estante M5, sin abrir</strong><span class="flecha">›</span></button><div class="clave-body"><p>Convive ahí con tus cozies de Alma y tus Christie hace quién sabe cuánto. Ningún libro nuevo que comprar: esta noche podés simplemente estirar la mano.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>576 páginas que se leen en dos noches, según la crítica</strong><span class="flecha">›</span></button><div class="clave-body"><p>La reseña de Kirkus lo acusa de tramposo y previsible en su segundo acto — y en la misma frase admite que no lo pudiste soltar. Ese contraste es, literalmente, la razón por la que sigue vendiéndose desde 2002.</p></div></div>
+    </div>
+    <div class="aviso rev d2">
+      <span class="tag">Antes de decidir</span>
+      <p>El origen del plan de Rumplestiltskin involucra abuso infantil y un padre adoptivo psicópata que crió a sus hijos para la venganza — está contado, no mostrado en detalle gráfico, pero es un trasfondo pesado, no un cozy con té.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2002 (Ballantine Books), en inglés como <em>The Analyst</em></dd>
+        <dt>Extensión</dt><dd>~576 páginas en la edición original; se parte en dos actos bien marcados</dd>
+        <dt>El autor</dt><dd>John Katzenbach (Estados Unidos, 1950) — ex periodista policial, especialista en thrillers psicológicos</dd>
+        <dt>Dónde vive</dt><dd>Tu estante M5-024, entre tus cozies de Alma y tus Christie</dd>
+        <dt>Estado</dt><dd>Sin leer, según nuestro registro — avisanos si no es así</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Sofi</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+    <p class="bajada rev d2">Tu respuesta entrena al recomendador — la próxima "Para Sofi" sale de acá.</p>
+    <div class="cta rev d2">
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-20-katzenbach-psicoanalista','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-20-katzenbach-psicoanalista','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-20-katzenbach-psicoanalista','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:M5-024','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-024','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-024','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Qué te generó más intriga?
+      <div>
+        <button onclick="engageAnswer('rec-gancho:2026-07-20-katzenbach-psicoanalista','el_juego',this)">🎲 El juego de adivinar el nombre</button>
+        <button onclick="engageAnswer('rec-gancho:2026-07-20-katzenbach-psicoanalista','el_giro',this)">🔄 Que se convierta en cazador</button>
+        <button onclick="engageAnswer('rec-gancho:2026-07-20-katzenbach-psicoanalista','el_pasado',this)">🗂️ Qué paciente le falló</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-20-katzenbach-psicoanalista','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-20-katzenbach-psicoanalista','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-20-katzenbach-psicoanalista','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-20-katzenbach-psicoanalista','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Un cuento de hadas, dado vuelta: <b>el que tiene que adivinar el nombre para salvarse sos vos.</b></p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Hoy también hay ficha para Andy: La psicología del dinero, de Morgan Housel.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--diva-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--diva);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · ficha "Para Sofi" · datos verificados a julio 2026 (Kirkus Reviews, Penguin Random House, reseñas de estructura de John Katzenbach).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.identidad').forEach(function(t){t.addEventListener('click',function(){
+    var g=t.classList.toggle('girada');
+    t.setAttribute('aria-pressed',g?'true':'false');
+  });});
+  $$('.clave-head,.regla-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+  var dias=[14,10,6,3,1];
+  var frases=[
+    'Día 1: Ricky recibe la carta y todavía cree que es una broma de mal gusto.',
+    'Día 4: la primera prueba de que Rumplestiltskin cumple lo que promete.',
+    'Día 8: Ricky ya no tiene a quién llamar. Empieza a jugar distinto.',
+    'Día 11: la cuenta regresiva real empieza — para los dos lados.',
+    'Día 14: el plazo se cumple. Acá arranca el libro de verdad.'
+  ];
+  var i=0;var num=$('#cuentaNum');var frase=$('#cuentaFrase');var btn=$('#cuentaBtn');
+  btn.addEventListener('click',function(){
+    i=(i+1)%dias.length;
+    num.style.opacity=0;
+    setTimeout(function(){
+      num.textContent=dias[i];
+      frase.textContent=frases[i];
+      num.style.opacity=1;
+      btn.textContent = dias[i]===1 ? 'Día 14: el plazo se cumple ↺' : 'Que pase un día ↓';
+    },220);
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

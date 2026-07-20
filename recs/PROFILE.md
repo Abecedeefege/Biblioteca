@@ -9,40 +9,40 @@ su perfil y su feedback. Entre las dos del día: un libro NUEVO y uno DE LA
 BIBLIOTECA (redescubrimiento), alternando cada día quién recibe cuál.
 Pushes ~12:30, personales: `to:"Andy"` / `to:"Sofi"`. Las fichas `todos`
 quedan para ocasiones especiales y cuentan para ambos. Pre-armadas del
-bootstrap (15→27/07): 17/07, 18/07 y 19/07 de Sofi ya se construyeron
-libres, fuera del bootstrap. Restantes: housel20-andy, bach21-andy,
-sagan22-andy, pollan23-andy, osman24-sofi(ya enviada, vista adelantada),
-weir25-todos, hill26-sofi(ya enviada), haig27-todos. Si el día ya tiene
-pre-armada de un destinatario, construir SOLO la del otro. Libre 100% para
-ambos: 2026-07-28.
+bootstrap (15→27/07) ya consumidas hasta 20/07 inclusive (housel20-andy
+enviado hoy). Restantes: bach21-andy, sagan22-andy, pollan23-andy,
+osman24-sofi(ya enviada), weir25-todos, hill26-sofi(ya enviada),
+haig27-todos. Si el día ya tiene pre-armada de un destinatario, construir
+SOLO la del otro. Libre 100% para ambos: 2026-07-28.
 
 ### Sofi (pareja del dueño) — vetas confirmadas
 Sus salas: **sala King** (R4+R5, 50 King), **salón del crimen** (M5:
 cozies de Alma, Christie, Sherlock, Fitzek, Katzenbach), **rincón Valeria**
-(M6: 9 Benavent). DOS vetas ganadoras (ver Señales): (1) cozy grupal
-cálido — personajes chusmas/cálidos > fríos/analíticos (Osman, eligió a
-Joyce); (2) oscuro/thriller intenso, CALIBRADO en "justo así" con Dicker
-— no escalar más, dar variedad dentro de ese nivel. 19/07: rotamos a cozy
-(Osman tomo 2) tras 2 días seguidos de oscuro.
+(M6: 9 Benavent). DOS vetas ganadoras, ambas sin fallo (ver Señales): (1)
+cozy grupal cálido — personajes chusmas/cálidos > fríos/analíticos (le
+encanta el humor filoso/deadpan de Joyce específicamente, no la calidez
+genérica del grupo); (2) oscuro/thriller intenso, CALIBRADO en "justo así"
+con Dicker — no escalar más, dar variedad dentro de ese nivel. Alternamos
+entre ambas cada vez que toca "nuevo" o "redescub" para ella.
 Guardia: NUNCA King como nuevo sin chequear R4/R5 (tiene 50); los 3
 Bachman los tiene; Joe Hill NOS4A2 sin stock UY; **R5-018 (*Si te gusta la
 oscuridad*) YA LO LEYÓ** — enrichment lo tenía mal como no_leido: no
 confiar ciegamente en `read_status` sin cruzarlo con feedback previo.
 - Consumido (NO repetir): Osman *Club del Crimen* (nuevo), Hill *El traje
   del muerto* (nuevo), Dicker *Harry Quebert* (nuevo), Osman tomo 2 *El
-  hombre que murió dos veces* (nuevo, 19/07), King *Si te gusta la
-  oscuridad*/R5-018 (redescub, YA LO HABÍA LEÍDO), Adams *Misterio en el
-  club de lectura*/M5-018 (redescub).
+  hombre que murió dos veces* (nuevo, 19/07, ACIERTO PLENO), King *Si te
+  gusta la oscuridad*/R5-018 (redescub, YA LO HABÍA LEÍDO), Adams *Misterio
+  en el club de lectura*/M5-018 (redescub), Katzenbach *El Psicoanalista*/
+  M5-024 (redescub, 20/07, pendiente veredicto).
 - Banco nuevos: **Dicker *El libro de los Baltimore*** (PRIORIDAD para su
   próximo turno de oscuro — mismo autor del ACIERTO PLENO), La asistenta
   (McFadden, oscuro), NOS4A2 (Hill, revisar stock), Osman tomo 3 *El
-  hombre bomba* (cozy, si el tomo 2 mide bien).
-- Banco redescub: **M5-024 *El Psicoanalista*** (Katzenbach, oscuro —
-  candidato fuerte, PERO confirmar que no la haya leído ya, mismo error
-  que con King), M5-012 *Asesinato entre libros* (Carlisle), M5-013
+  hombre bomba* (cozy, ya con 2/2 confirmado, buen próximo turno cozy).
+- Banco redescub: M5-012 *Asesinato entre libros* (Carlisle), M5-013
   *Secretos entre libros* (Adams), M5-014 *Elemental, querida lectora*
   (Delany), M5-015 *El enigma del diario secreto* (Adams), M5-016 *Un
-  cadáver en Baker Street* (Delany).
+  cadáver en Baker Street* (Delany). Repuesto tras usar M5-024 hoy — sigue
+  con 5, no reponer todavía.
 
 ### Todos (cruces Sofi × Andy) — qué funciona
 Fórmula: enganche narrativo/misterio (ella) × ciencia/sentido/positividad
@@ -68,11 +68,9 @@ invierno en Montevideo (lecturas de una sentada, comfort books).
 - Consumido (NO repetir): Frankl, Meditaciones, Housel, Bach Ilusiones,
   Pollan, Rovelli (nuevos); Siddhartha, Cosmos, Bucay Camino Felicidad
   (redescub).
-- Redescubrimientos flojos: Bucay (17/07) clickeó pero 14s de dwell y
-  nunca votó; Siddhartha (19/07) en curso (200s dwell, sin veredicto aún)
-  al cierre de esta corrida. Muy por debajo de sus "nuevos" (Frankl 466s,
-  Meditaciones 318s). Si Siddhartha también queda sin veredicto, probar
-  otro ángulo de push para redescub o correr la MEZCLA hacia más "nuevo".
+- Redescubrimientos muy por debajo de sus "nuevos" en engagement (ver
+  Señales) — si Siddhartha sigue sin veredicto, probar otro ángulo de
+  push para redescub o correr la MEZCLA hacia más "nuevo".
 
 ## 🛡️ Guardia (errores que no se cometen)
 - Antes de todo "nuevo": título Y autor contra el catálogo completo
@@ -115,28 +113,38 @@ Brief History of Time*, L5-026 *Of Time and Space...* (Asimov), L5-019 *La
 Vía Láctea* (Bok).
 
 ## 📊 Señales medidas (números, no vibes)
-- **Frankl** (15/07, andy, nuevo): `ya_lo_lei` + love, dwell 466s/100%.
-- **Rovelli** (16/07, andy, nuevo): `lo_quiero` + like, dwell 182s/100%. ACIERTO PLENO.
-- **Osman** (24/07, sofi, nuevo, vista adelantada): `lo_quiero` + love, dwell 179s/100%, `rec-club`→joyce. ACIERTO PLENO.
-- **Hill traje del muerto** (26/07, sofi, nuevo, vista adelantada): `me_tienta` + love, dwell 258s/100%, `rec-terror`→"cuanto_mas_oscuro_mejor". ACIERTO + calibración.
-- **Dicker Harry Quebert** (17/07, sofi, nuevo): `lo_quiero` + love, dwell 134s/97% scroll, `rec-nivel-oscuro`→"justo_asi". ACIERTO PLENO + techo calibrado.
-- **Bucay Camino Felicidad** (17/07, andy, redescub): clickeó, dwell 14s/24% — sin veredicto ni reacción. Engagement bajo.
-- **Meditaciones** (18/07, andy, nuevo): `ya_lo_lei` + like, dwell 318s/100%. Puntería correcta, sin descubrimiento — 2do consagrado seguido.
-- **King Si te gusta la oscuridad** (18/07, sofi, redescub, R5-018): `ya_lo_lei` + like, ~36s, también `ya_leido` en compromiso físico. Ya lo había leído.
-- **Siddhartha** (19/07, andy, redescub): en curso al cierre de esta corrida — dwell 200s/52%, sin veredicto todavía.
-- **Osman tomo 2** (19/07, sofi, nuevo): construida hoy, pendiente.
-- Resto de pre-armadas (20→27/07): sin feedback aún, `pending` en cola.
+- **Andy nuevos**: Frankl (15/07) `ya_lo_lei`+love 466s; Rovelli (16/07)
+  `lo_quiero`+like 182s ACIERTO PLENO; Meditaciones (18/07) `ya_lo_lei`+like
+  318s. Housel (20/07) enviado 16:48 UTC, pendiente.
+- **Andy redescub**: Bucay (17/07) clic pero 14s, sin veredicto; Siddhartha
+  (19/07) 200s/52%, sin veredicto — 2 seguidos flojos, vigilar.
+- **Sofi nuevos (veta oscuro)**: Dicker Harry Quebert (17/07) `lo_quiero`+
+  love 134s, `rec-nivel-oscuro`→justo_asi ACIERTO PLENO+techo calibrado;
+  Hill traje del muerto `me_tienta`+love 258s, `rec-terror`→cuanto_mas_
+  oscuro_mejor.
+- **Sofi nuevos (veta cozy)**: Osman tomo1 `lo_quiero`+love 179s
+  `rec-club`→joyce ACIERTO PLENO; Osman tomo2 (19/07) `lo_quiero`+love
+  114s/76%, `rec-frase`→sausage (el chiste más filoso de Joyce). 2/2.
+- **Sofi redescub**: King (18/07, R5-018) `ya_lo_lei`+like ~36s, YA LO
+  HABÍA LEÍDO. Katzenbach *El Psicoanalista* (20/07, M5-024) construida
+  hoy, pendiente.
+- Resto de pre-armadas (21→27/07): sin feedback aún, `pending` en cola.
 
 ## 🧭 Sugerencias hub
 `recs/index.html` lista todo leyendo `recommended.json` por fetch — cero
 mantenimiento manual al agregar recomendaciones.
 
-## 🔭 Qué mirar (próxima corrida: 2026-07-20)
-- Andy 20/07 ya pre-armado (Housel, nuevo) → construir SOLO la de Sofi.
-  Por mezcla (19/07 fue "nuevo"), a Sofi le toca "biblioteca" — priorizar
-  M5-024 *El Psicoanalista*, confirmando antes que no la haya leído ya.
-- Revisar veredicto de Siddhartha (Andy) y de Osman tomo 2 (Sofi).
+## 🔭 Qué mirar (próxima corrida: 2026-07-21)
+- Andy 21/07 ya pre-armado (Bach *Ilusiones*, nuevo) → construir SOLO la
+  de Sofi. Por mezcla (20/07 fue "biblioteca" para ella), a Sofi le toca
+  "nuevo" — priorizar Dicker *El libro de los Baltimore* (mismo autor de
+  su ACIERTO PLENO Harry Quebert, veta oscuro).
+- Revisar veredicto de Housel (Andy, enviado hoy) y de Katzenbach *El
+  Psicoanalista* (Sofi, construida hoy) — si Siddhartha sigue sin
+  veredicto, van 3 redescubrimientos de Andy sin señal: considerar
+  cambiar el ángulo de push o correr su MEZCLA hacia más "nuevo".
 - Andy: PRÓXIMO "nuevo" debe ser menos obvio dentro de su veta (banco
   reordenado arriba), no otro clásico consagrado.
-- Sofi: no confiar en `read_status` de enrichment sin cruzar con feedback
-  previo antes de ofrecer un redescubrimiento como "sin leer".
+- Sofi: sus dos vetas (cozy Osman, oscuro Dicker/King) están en racha
+  perfecta — mantener la alternancia entre ambas, no forzar una tercera
+  veta todavía.

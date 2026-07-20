@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-19T16:30:00-03:00",
-  "_feedback_cutoff": "2026-07-19T19:02:42.785Z",
+  "_updated_at": "2026-07-20T17:00:00-03:00",
+  "_feedback_cutoff": "2026-07-19T20:36:37.843Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -419,6 +419,32 @@
       "page": "recs/2026-07-19-osman-murio-dos-veces.html",
       "notified_by": "2026-07-19-rec-sofi",
       "why": "Para Sofi: tomo 2 de su ACIERTO PLENO (Club del Crimen de los Jueves), donde eligió a Joyce como favorita. Después de 2 días seguidos de oscuro (Dicker lo_quiero, King ya_lo_lei/ya conocido), toca variedad: vuelve a su otra veta ganadora (cozy grupal cálido) con más apuesta (diamantes, MI5, el pasado de Elizabeth). Verificado: no está en el catálogo de 400. Par del día: Andy tuvo el redescubrimiento (Siddhartha) hoy, a ella le toca 'nuevo'.",
+      "feedback": {
+        "veredicto": "lo_quiero",
+        "reaccion": "love",
+        "clicked": true,
+        "dwell_s": 114
+      },
+      "learning": "ACIERTO PLENO — tercer 'lo_quiero' en su veta cozy (tras Osman tomo 1). Micro rec-frase respondida 'sausage': se rió con la línea más irreverente/deadpan de Joyce sobre la vejez, no con la de amistad ni la de espionaje — confirma que lo que la engancha de Joyce es el humor filoso sin filtro, más que la calidez genérica del grupo. Con esto, cozy grupal (Osman) queda confirmada como veta de máxima consistencia: 2/2 'lo_quiero' + love."
+    },
+    {
+      "id": "2026-07-20-katzenbach-psicoanalista",
+      "date": "2026-07-20",
+      "kind": "redescubrimiento",
+      "title": "El Psicoanalista",
+      "author": "John Katzenbach",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "thriller",
+        "oscuro",
+        "psicologico"
+      ],
+      "book_ref": "M5-024",
+      "audience": "sofi",
+      "page": "recs/2026-07-20-katzenbach-psicoanalista.html",
+      "notified_by": "2026-07-20-rec-sofi",
+      "why": "Redescubrimiento M5 priorizado en la corrida anterior: thriller psicológico (Rumplestiltskin, 2002) calibrado en el mismo nivel de oscuro que Dicker (su 'justo así'), con protagonista no-detective como Harry Quebert. Confirmado sin señal de lectura previa (sin read_status ni feedback en enrichment/recommended.json) antes de ofrecerlo — guardia especial tras el error con King R5-018. Par del día: Andy tiene el 'nuevo' (Housel) pre-armado hoy, a ella le toca 'de la biblioteca'.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

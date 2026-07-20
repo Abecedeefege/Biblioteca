@@ -251,6 +251,19 @@
       "created_by": "bootstrap /recomendacion 2026-07-15"
     },
     {
+      "id": "2026-07-20-rec-sofi",
+      "title": "🛋️ Rumplestiltskin, pero al revés, Sofi",
+      "body": "Un psicoanalista tiene 14 días para adivinar el nombre de quien lo amenaza — o pierde todo. Ya está en tu M5, sin abrir.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-20-katzenbach-psicoanalista.html",
+      "to": "Sofi",
+      "send_at": "2026-07-20T17:30:00-03:00",
+      "expires_at": "2026-07-20T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-20"
+    },
+    {
       "id": "sofi-bienvenida",
       "title": "🫖 Sofi, tu primera ficha llegó",
       "body": "Cuatro jubilados ingleses, té con bizcochos y un crimen fresquito. Elegida para vos. Tocá y abrila.",
