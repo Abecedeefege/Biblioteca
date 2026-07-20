@@ -1462,7 +1462,60 @@
       "type": "reaction",
       "value": "love",
       "device": "Sofi"
+    },
+    {
+      "id": "mrs9aup0-v1a2ln",
+      "ts": "2026-07-19T20:36:48.996Z",
+      "page": "2026-07-19-osman-murio-dos-veces.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 133,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrtsojvb-zfdha3",
+      "ts": "2026-07-20T22:27:07.031Z",
+      "nid": "2026-07-20-rec-sofi",
+      "src": "push",
+      "page": "2026-07-20-katzenbach-psicoanalista.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrtsojve-q5cvvg",
+      "ts": "2026-07-20T22:27:07.034Z",
+      "nid": "2026-07-20-rec-sofi",
+      "page": "2026-07-20-katzenbach-psicoanalista.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrtspley-3a4xdx",
+      "ts": "2026-07-20T22:27:55.690Z",
+      "qid": "rec-veredicto:2026-07-20-katzenbach-psicoanalista",
+      "page": "2026-07-20-katzenbach-psicoanalista.html",
+      "type": "answer",
+      "value": "ya_lo_lei",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrtspmt5-wjkd3p",
+      "ts": "2026-07-20T22:27:57.497Z",
+      "qid": "leer-esta-noche:M5-024",
+      "page": "2026-07-20-katzenbach-psicoanalista.html",
+      "type": "answer",
+      "value": "ya_leido",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrtsppa8-apqnns",
+      "ts": "2026-07-20T22:28:00.704Z",
+      "page": "2026-07-20-katzenbach-psicoanalista.html",
+      "slug": "2026-07-20-katzenbach-psicoanalista",
+      "type": "reaction",
+      "value": "like",
+      "device": "Sofi"
     }
   ],
-  "_updated_at": "2026-07-19T21:31:50.167Z"
+  "_updated_at": "2026-07-20T22:33:55.605Z"
 }
