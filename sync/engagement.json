@@ -1568,7 +1568,16 @@
       "device": "Andy",
       "dwell_s": 245,
       "scroll_pct": 59
+    },
+    {
+      "id": "mruvdtev-xua7b5",
+      "type": "dwell",
+      "ts": "2026-07-21T16:30:31.207Z",
+      "page": "2026-07-21-bach-ilusiones.html",
+      "device": "Andy",
+      "dwell_s": 276,
+      "scroll_pct": 59
     }
   ],
-  "_updated_at": "2026-07-21T16:29:59.549Z"
+  "_updated_at": "2026-07-21T16:30:33.454Z"
 }
