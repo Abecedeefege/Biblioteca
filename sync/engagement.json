@@ -1515,7 +1515,33 @@
       "type": "reaction",
       "value": "like",
       "device": "Sofi"
+    },
+    {
+      "id": "mrs60b2v-axxh1i",
+      "type": "dwell",
+      "ts": "2026-07-19T19:04:38.167Z",
+      "page": "2026-07-19-hesse-siddhartha.html",
+      "device": "Andy",
+      "dwell_s": 314,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mruut287-lgd96c",
+      "type": "notification_clicked",
+      "ts": "2026-07-21T16:14:22.855Z",
+      "page": "2026-07-21-bach-ilusiones.html",
+      "device": "Andy",
+      "nid": "2026-07-21-rec",
+      "src": "push"
+    },
+    {
+      "id": "mruut28a-bw8z9w",
+      "type": "page_visit",
+      "ts": "2026-07-21T16:14:22.858Z",
+      "page": "2026-07-21-bach-ilusiones.html",
+      "device": "Andy",
+      "nid": "2026-07-21-rec"
     }
   ],
-  "_updated_at": "2026-07-20T22:33:55.605Z"
+  "_updated_at": "2026-07-21T16:14:24.099Z"
 }
