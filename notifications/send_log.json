@@ -132,6 +132,13 @@
       "device": "Andy",
       "ts": "2026-07-21T16:05:11.863Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-21-rec-sofi",
+      "device": "Sofi",
+      "ts": "2026-07-21T21:36:47.285Z",
+      "status_code": 201
     }
   ]
 }
