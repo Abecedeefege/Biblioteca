@@ -1613,7 +1613,16 @@
       "device": "Andy",
       "slug": "2026-07-21-bach-ilusiones",
       "value": "like"
+    },
+    {
+      "id": "mruvik1f-d66bvo",
+      "type": "dwell",
+      "ts": "2026-07-21T16:34:12.339Z",
+      "page": "2026-07-21-bach-ilusiones.html",
+      "device": "Andy",
+      "dwell_s": 404,
+      "scroll_pct": 100
     }
   ],
-  "_updated_at": "2026-07-21T16:33:42.523Z"
+  "_updated_at": "2026-07-21T16:34:13.871Z"
 }
