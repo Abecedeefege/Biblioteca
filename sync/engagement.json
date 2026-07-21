@@ -1604,7 +1604,16 @@
       "device": "Andy",
       "qid": "rec-veredicto:2026-07-21-bach-ilusiones",
       "value": "me_tienta"
+    },
+    {
+      "id": "mruvhvbz-estoxv",
+      "type": "reaction",
+      "ts": "2026-07-21T16:33:40.319Z",
+      "page": "2026-07-21-bach-ilusiones.html",
+      "device": "Andy",
+      "slug": "2026-07-21-bach-ilusiones",
+      "value": "like"
     }
   ],
-  "_updated_at": "2026-07-21T16:33:40.294Z"
+  "_updated_at": "2026-07-21T16:33:42.523Z"
 }
