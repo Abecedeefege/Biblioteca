@@ -1541,7 +1541,16 @@
       "page": "2026-07-21-bach-ilusiones.html",
       "device": "Andy",
       "nid": "2026-07-21-rec"
+    },
+    {
+      "id": "mruuuavr-s2vldy",
+      "type": "dwell",
+      "ts": "2026-07-21T16:15:20.727Z",
+      "page": "2026-07-21-bach-ilusiones.html",
+      "device": "Andy",
+      "dwell_s": 58,
+      "scroll_pct": 27
     }
   ],
-  "_updated_at": "2026-07-21T16:14:24.099Z"
+  "_updated_at": "2026-07-21T16:15:22.704Z"
 }
