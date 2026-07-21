@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-20T17:00:00-03:00",
-  "_feedback_cutoff": "2026-07-19T20:36:37.843Z",
+  "_updated_at": "2026-07-21T16:40:00-03:00",
+  "_feedback_cutoff": "2026-07-21T16:34:12.339Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -195,12 +195,12 @@
       "notified_by": "2026-07-21-rec",
       "why": "Autor identitario: su estante se llama por Jonathan Livingston (L4-017); Ilusiones es la otra fábula de Bach y no la tiene. Interacción: el Manual del Mesías al azar (citas verificadas). Pre-armada 15/07.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "veredicto": "me_tienta",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 404
       },
-      "learning": null,
+      "learning": "Acierto claro: me_tienta + like + dwell 404s/100% scroll (el dwell más alto registrado hasta ahora en un 'nuevo' de Andy, y con scroll completo). Rompe la racha de 2 'ya_lo_lei' seguidos (Frankl, Meditaciones) — ser un autor identitario de su propio estante (Bach, dueño del nombre L4) más que un clásico consagrado de librería parece ser la diferencia. Confirma la estrategia de ir a autores de segunda línea/menos obvios dentro de cada veta en vez de los títulos más masivos.",
       "audience": "andy"
     },
     {
@@ -423,7 +423,7 @@
         "veredicto": "lo_quiero",
         "reaccion": "love",
         "clicked": true,
-        "dwell_s": 114
+        "dwell_s": 133
       },
       "learning": "ACIERTO PLENO — tercer 'lo_quiero' en su veta cozy (tras Osman tomo 1). Micro rec-frase respondida 'sausage': se rió con la línea más irreverente/deadpan de Joyce sobre la vejez, no con la de amistad ni la de espionaje — confirma que lo que la engancha de Joyce es el humor filoso sin filtro, más que la calidez genérica del grupo. Con esto, cozy grupal (Osman) queda confirmada como veta de máxima consistencia: 2/2 'lo_quiero' + love."
     },
@@ -445,6 +445,31 @@
       "page": "recs/2026-07-20-katzenbach-psicoanalista.html",
       "notified_by": "2026-07-20-rec-sofi",
       "why": "Redescubrimiento M5 priorizado en la corrida anterior: thriller psicológico (Rumplestiltskin, 2002) calibrado en el mismo nivel de oscuro que Dicker (su 'justo así'), con protagonista no-detective como Harry Quebert. Confirmado sin señal de lectura previa (sin read_status ni feedback en enrichment/recommended.json) antes de ofrecerlo — guardia especial tras el error con King R5-018. Par del día: Andy tiene el 'nuevo' (Housel) pre-armado hoy, a ella le toca 'de la biblioteca'.",
+      "feedback": {
+        "veredicto": "ya_lo_lei",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 0
+      },
+      "learning": "SEGUNDO 'ya_lo_lei' seguido en un redescubrimiento de Sofi (tras King R5-018). Puntería de veta correcta (oscuro/thriller psicológico, reaccionó 'like') pero cero descubrimiento otra vez — M5-024 tampoco estaba realmente 'sin leer'. Patrón: el read_status de enrichment para libros de misterio/oscuro no es confiable en general para ella, no solo para King. Compromiso físico respondido 'ya_leido' también. De acá en más, tratar cualquier redescubrimiento de misterio/oscuro de Sofi con la misma sospecha que los King: si no hay señal previa explícita de que NO lo leyó, preferir un libro de esas vetas con menos probabilidad de haber pasado ya por sus manos (menos consagrado, comprado más reciente) antes que el más obvio del estante."
+    },
+    {
+      "id": "2026-07-21-dicker-libro-baltimore",
+      "date": "2026-07-21",
+      "kind": "nuevo",
+      "title": "El libro de los Baltimore",
+      "author": "Joël Dicker",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "drama-familiar",
+        "oscuro"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-07-21-dicker-libro-baltimore.html",
+      "notified_by": "2026-07-21-rec-sofi",
+      "why": "Banco prioritario: mismo autor y narrador (Marcus Goldman) de su ACIERTO PLENO Harry Quebert. Por mezcla, hoy le toca 'nuevo' (ayer fue redescubrimiento con Katzenbach). Registro distinto dentro del mismo nivel de oscuro calibrado ('justo así', no escalar): menos crimen puro, más drama familiar con estructura de misterio — variedad honesta, con aviso explícito de que no es tan sangriento como Harry Quebert para no generar expectativa falsa. Verificado: no está en el catálogo de 400 (ni como 'Baltimore' ni como 'Dicker' fuera de Harry Quebert) ni en recommended.json.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

@@ -327,6 +327,19 @@
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-07-19",
       "to": "Sofi"
+    },
+    {
+      "id": "2026-07-21-rec-sofi",
+      "title": "👪 El otro caso de Marcus Goldman, Sofi",
+      "body": "El mismo narrador de Harry Quebert vuelve — pero esta vez el expediente es su propia familia. Ya está en la ficha.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-21-dicker-libro-baltimore.html",
+      "to": "Sofi",
+      "send_at": "2026-07-21T17:45:00-03:00",
+      "expires_at": "2026-07-21T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-21"
     }
   ]
 }

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>👪 El libro de los Baltimore · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#100C0E;
+  --negro2:#1A1316;
+  --sangre:#8E2F35;
+  --sangre-hi:#C25560;
+  --vinilo:#C9A227;
+  --vinilo-hi:#E9CB6E;
+  --hueso:#EFE9E2;
+  --bruma:#9C8F94;
+  --linea:rgba(239,233,226,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Courier Prime',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--negro);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--sangre);color:var(--hueso)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--vinilo-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(239,233,226,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sangre-hi),var(--vinilo-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(16,12,14,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--vinilo-hi);border-color:var(--vinilo)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--vinilo);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(130% 80% at 50% -10%,#241a14 0%,var(--negro) 62%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .para{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#E0B08A;border:1px solid #E0B08A;border-radius:999px;padding:.32rem .95rem;margin-bottom:1.3rem;font-weight:700}
+.hero h1{font-size:clamp(1.8rem,1.2rem + 5vw,3.6rem);font-weight:600;line-height:1.12}
+.hero h1 em{font-style:italic;color:var(--vinilo-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:48ch}
+.cta-btn{display:inline-block;background:var(--sangre);color:var(--hueso);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--sangre-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.sello{position:absolute;top:22%;right:6%;font-family:var(--mono);font-weight:700;font-size:.85rem;letter-spacing:.1em;color:var(--vinilo-hi);border:3px solid var(--vinilo-hi);border-radius:8px;padding:.5rem 1rem;transform:rotate(-9deg);opacity:.55}
+.puente{background:var(--negro2)}
+.tiempos{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.2rem}
+.tiempo{display:block;perspective:1100px;background:transparent;border:none;text-align:left;padding:0}
+.tiempo-int{display:grid;width:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.1,.2,1)}
+.tiempo.girada .tiempo-int{transform:rotateY(180deg)}
+.cara-t{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:1.15rem 1rem;display:flex;flex-direction:column;gap:.5rem;min-height:190px}
+.cara-ta{background:#241A1E;border:1px solid var(--linea)}
+.cara-ta .anio{font-family:var(--mono);font-size:1.35rem;font-weight:700;color:var(--vinilo)}
+.cara-ta .tag{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bruma)}
+.cara-ta .toca{margin-top:auto;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--vinilo)}
+.cara-tb{background:var(--sangre);transform:rotateY(180deg)}
+.cara-tb p{font-size:.85rem;opacity:.95;line-height:1.45}
+.expediente-remate{margin-top:1.4rem;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--vinilo-hi);text-align:center}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(239,233,226,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--hueso);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--vinilo);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:400px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.cita{border-left:3px solid var(--vinilo);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(201,162,39,.06);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.aviso{border:1px dashed var(--sangre-hi);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2.2rem;background:rgba(142,47,53,.08)}
+.aviso .tag{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sangre-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.aviso p{color:var(--bruma);font-size:.92rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(239,233,226,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--vinilo);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--vinilo);color:var(--negro);border-radius:999px;padding:.9rem 1.7rem;font-weight:600;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--vinilo-hi);transform:translateY(-2px)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--vinilo);color:var(--vinilo-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--vinilo-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#241a14 0%,var(--negro) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:34ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--vinilo-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:620px){.tiempos{grid-template-columns:1fr}.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}.sello{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="sello" aria-hidden="true">EL<br>DRAMA</div>
+  <div class="hero-int">
+    <span class="para">Para Sofi · Bibliotequeando recomienda</span>
+    <h1>El libro de los <em>Baltimore</em></h1>
+    <p class="autor">Joël Dicker · 2015</p>
+    <p class="sub">Marcus Goldman vuelve — el mismo narrador de Harry Quebert, pero esta vez el caso es su propia familia. Hay un "Drama" que la separó en dos ramas para siempre, y él todavía no sabe bien qué pasó esa noche.</p>
+    <a class="cta-btn" href="#clan">Conocé al clan ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="clan">
+  <div class="centro">
+    <p class="kicker rev">Antes de nada, quiénes son</p>
+    <h2 class="titulo rev d1">Dos ramas, un solo apellido</h2>
+    <p class="bajada rev d2">Hasta que pasó el Drama, existían los Goldman de Baltimore y los Goldman de Montclair. Tocá cada tarjeta.</p>
+    <div class="tiempos rev d2">
+      <button class="tiempo" aria-pressed="false">
+        <span class="tiempo-int">
+          <span class="cara-t cara-ta"><span class="anio">Montclair</span><span class="tag">Nueva Jersey, clase media</span><p style="color:var(--bruma);font-size:.85rem">Marcus y sus padres. La rama que mira a la otra con envidia declarada.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-t cara-tb"><p>Marcus adora a sus primos ricos y quiere ser uno de ellos. Ese deseo es el motor silencioso de todo el libro.</p></span>
+        </span>
+      </button>
+      <button class="tiempo" aria-pressed="false">
+        <span class="tiempo-int">
+          <span class="cara-t cara-ta"><span class="anio">Baltimore</span><span class="tag">Mansión, alta sociedad</span><p style="color:var(--bruma);font-size:.85rem">El tío médico, la tía y el primo Hillel. A los que "la suerte siempre les sonrió".</p><span class="toca">Tocá →</span></span>
+          <span class="cara-t cara-tb"><p>Con ellos vive Woody, que no es sangre Goldman pero es de la familia igual. Los tres — Marcus, Hillel, Woody — se llaman a sí mismos "la Banda de los Goldman".</p></span>
+        </span>
+      </button>
+      <button class="tiempo" aria-pressed="false">
+        <span class="tiempo-int">
+          <span class="cara-t cara-ta"><span class="anio">Alexandra</span><span class="tag">La chica de la banda</span><p style="color:var(--bruma);font-size:.85rem">Se suma al grupo — y los tres primos se enamoran de ella al mismo tiempo.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-t cara-tb"><p>Uno de los tres queda con ella en secreto. Ese secreto, guardado años, es la grieta que el Drama termina de partir.</p></span>
+        </span>
+      </button>
+    </div>
+    <p class="expediente-remate rev d3">Una banda de tres que se juró inseparable — y una noche que la separó para siempre.</p>
+  </div>
+</section>
+
+<section class="seccion" id="estructura" style="background:var(--negro2)">
+  <div class="centro">
+    <p class="kicker rev">Cómo está armado</p>
+    <h2 class="titulo rev d1">Ocho años buscando la verdad de la propia sangre</h2>
+    <p class="bajada rev d2">Mismo truco narrativo que Harry Quebert: el Marcus del presente (ya escritor consagrado) intercala capítulos del pasado — la infancia y adolescencia con sus primos, entre los 90 y los 2000 — con el momento en que decide, ocho años después del Drama, investigar qué pasó de verdad esa noche. El libro nunca te dice qué fue el Drama hasta que decide contártelo.</p>
+    <div class="cita rev d1"><p>"Los dramas son inevitables. En el fondo, tampoco tienen mucha importancia. Lo que cuenta es cómo conseguimos superarlos."</p><span>Del libro — citado en recopilaciones de frases y reseñas en español desde 2016</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="claves">
+  <div class="centro">
+    <p class="kicker rev">Por qué este, después de Harry Quebert</p>
+    <h2 class="titulo rev d1">Cinco razones para seguir con Marcus</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>Es una continuación real, no una precuela forzada</strong><span class="flecha">›</span></button><div class="clave-body"><p>Dicker rescata a Marcus Goldman apenas termina de escribir sobre Harry Quebert. Mismo narrador, mismo tono de "voy a contarte la verdad", pero el expediente ahora es su propia familia.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>Cambia el registro: menos crimen, más envidia y amor</strong><span class="flecha">›</span></button><div class="clave-body"><p>No hay una chica de 15 enterrada en un jardín esta vez. El misterio central es más lento y más familiar — celos entre primos, un amor de tres, una familia que se hunde. Si Harry Quebert fue "cuanto más oscuro mejor", esto es la misma calidad de escritura pero un giro de tuerca distinto: variedad dentro del mismo nivel, no un escalón más arriba.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>La Banda de los Goldman</strong><span class="flecha">›</span></button><div class="clave-body"><p>Marcus, Hillel y Woody se consideran una sola cosa de tres caras. La novela vive de esa lealtad — y de todo lo que un secreto de amor puede hacerle a una lealtad así.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>El mismo mecanismo de revelación tardía</strong><span class="flecha">›</span></button><div class="clave-body"><p>El "Drama" se nombra desde la primera página y no se revela hasta bien entrado el libro. Es el mismo control de la información que te enganchó con el jardín de Harry Quebert, aplicado a una cena familiar.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">v</span><strong>Todavía queda un tercero</strong><span class="flecha">›</span></button><div class="clave-body"><p>Si este funciona, "El caso Alaska Sanders" (2022) cierra la trilogía de Marcus Goldman — banco de próximos "nuevos", tampoco está en tu estante.</p></div></div>
+    </div>
+    <div class="aviso rev d2">
+      <span class="tag">Antes de decidir</span>
+      <p>Ojo con la expectativa: esto NO es un thriller de crimen con la misma intensidad de sangre que Harry Quebert. Es más drama familiar con estructura de misterio — celos, herencia, un secreto de amor. Si lo que te enganchó de Dicker fue puramente el cadáver y la investigación policial, este es un registro más emocional del mismo autor.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha" style="background:var(--negro2)">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2015 en francés; traducción al español, 2015-2016</dd>
+        <dt>El autor</dt><dd>Joël Dicker (Ginebra, 1985) — segunda novela de la serie Marcus Goldman</dd>
+        <dt>Narrador</dt><dd>Marcus Goldman, el mismo de "La verdad sobre el caso Harry Quebert"</dd>
+        <dt>Serie</dt><dd>Segunda de la trilogía Marcus Goldman (se puede leer sola, sin spoilers del primero)</dd>
+        <dt>Tono</dt><dd>Drama familiar con estructura de misterio — menos crimen, más secreto y culpa</dd>
+      </dl>
+      <a class="comprar" href="https://www.buscalibre.uy/libros/search/?q=el+libro+de+los+baltimore+joel+dicker" target="_blank" rel="noopener">Conseguilo — desde $587 (Debolsillo) →</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Sofi</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Tu respuesta entrena al recomendador — la próxima "Para Sofi" sale de acá.</p>
+    <div class="cta rev d2">¿Y? ¿Le damos?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-21-dicker-libro-baltimore','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-21-dicker-libro-baltimore','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-21-dicker-libro-baltimore','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-21-dicker-libro-baltimore','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-21-dicker-libro-baltimore','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Te sirve este cambio de registro (menos crimen, más drama familiar) o preferís que el próximo oscuro sea más de sangre y menos de sentimiento?
+      <div>
+        <button onclick="engageAnswer('rec-tono:2026-07-21-dicker-libro-baltimore','me_gusta_el_giro',this)">💛 Me gusta el giro</button>
+        <button onclick="engageAnswer('rec-tono:2026-07-21-dicker-libro-baltimore','prefiero_mas_crimen',this)">🔪 Prefiero más crimen</button>
+        <button onclick="engageAnswer('rec-tono:2026-07-21-dicker-libro-baltimore','me_da_igual',this)">🤷 Me da igual</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-21-dicker-libro-baltimore','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-21-dicker-libro-baltimore','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-21-dicker-libro-baltimore','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-21-dicker-libro-baltimore','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Toda familia con suerte esconde algo. <b>Esta esconde una noche entera.</b></p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Hoy también hay ficha para Andy: un rescate de su propio estante L4.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--vinilo-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--vinilo);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · ficha "Para Sofi" · datos verificados a julio 2026 (Lecturalia, Babelio, reseñas de estructura y personajes, Buscalibre para precio).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.tiempo').forEach(function(t){t.addEventListener('click',function(){
+    var g=t.classList.toggle('girada');
+    t.setAttribute('aria-pressed',g?'true':'false');
+  });});
+  $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
