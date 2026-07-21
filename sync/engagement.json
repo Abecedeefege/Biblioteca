@@ -1595,7 +1595,16 @@
       "device": "Andy",
       "dwell_s": 363,
       "scroll_pct": 66
+    },
+    {
+      "id": "mruvhuae-62cnzv",
+      "type": "answer",
+      "ts": "2026-07-21T16:33:38.966Z",
+      "page": "2026-07-21-bach-ilusiones.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-07-21-bach-ilusiones",
+      "value": "me_tienta"
     }
   ],
-  "_updated_at": "2026-07-21T16:32:25.445Z"
+  "_updated_at": "2026-07-21T16:33:40.294Z"
 }
