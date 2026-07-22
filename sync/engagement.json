@@ -1666,7 +1666,23 @@
       "device": "Andy",
       "slug": "2026-07-22-sagan-cosmos",
       "value": "like"
+    },
+    {
+      "id": "mrweu2fa-9lembl",
+      "type": "dwell",
+      "ts": "2026-07-22T18:22:48.262Z",
+      "page": "2026-07-22-sagan-cosmos.html",
+      "device": "Andy",
+      "dwell_s": 187,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrweu2ix-4kbtcv",
+      "type": "page_visit",
+      "ts": "2026-07-22T18:22:48.393Z",
+      "page": "index.html",
+      "device": "Andy"
     }
   ],
-  "_updated_at": "2026-07-22T18:22:46.332Z"
+  "_updated_at": "2026-07-22T18:22:49.443Z"
 }
