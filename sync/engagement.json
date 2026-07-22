@@ -1657,7 +1657,16 @@
       "device": "Andy",
       "qid": "rec-veredicto:2026-07-22-sagan-cosmos",
       "value": "me_tienta"
+    },
+    {
+      "id": "mrwetzt8-r2k4kp",
+      "type": "reaction",
+      "ts": "2026-07-22T18:22:44.876Z",
+      "page": "2026-07-22-sagan-cosmos.html",
+      "device": "Andy",
+      "slug": "2026-07-22-sagan-cosmos",
+      "value": "like"
     }
   ],
-  "_updated_at": "2026-07-22T18:22:41.676Z"
+  "_updated_at": "2026-07-22T18:22:46.332Z"
 }
