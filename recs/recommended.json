@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-21T16:40:00-03:00",
-  "_feedback_cutoff": "2026-07-21T16:34:12.339Z",
+  "_updated_at": "2026-07-22T16:20:00-03:00",
+  "_feedback_cutoff": "2026-07-22T18:22:48.393Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -198,9 +198,9 @@
         "veredicto": "me_tienta",
         "reaccion": "like",
         "clicked": true,
-        "dwell_s": 404
+        "dwell_s": 410
       },
-      "learning": "Acierto claro: me_tienta + like + dwell 404s/100% scroll (el dwell más alto registrado hasta ahora en un 'nuevo' de Andy, y con scroll completo). Rompe la racha de 2 'ya_lo_lei' seguidos (Frankl, Meditaciones) — ser un autor identitario de su propio estante (Bach, dueño del nombre L4) más que un clásico consagrado de librería parece ser la diferencia. Confirma la estrategia de ir a autores de segunda línea/menos obvios dentro de cada veta en vez de los títulos más masivos.",
+      "learning": "Acierto claro: me_tienta + like + dwell 410s/100% scroll (el dwell más alto registrado hasta ahora en un 'nuevo' de Andy, y con scroll completo). Rompe la racha de 2 'ya_lo_lei' seguidos (Frankl, Meditaciones) — ser un autor identitario de su propio estante (Bach, dueño del nombre L4) más que un clásico consagrado de librería parece ser la diferencia. Confirma la estrategia de ir a autores de segunda línea/menos obvios dentro de cada veta en vez de los títulos más masivos.",
       "audience": "andy"
     },
     {
@@ -220,12 +220,12 @@
       "notified_by": "2026-07-22-rec",
       "why": "Redescubrimiento L5: la joya moderna de su estante de astronomía; releer el capítulo 1. Interacción: el calendario cósmico. Pale Blue Dot separado de Cosmos por verificación. Pre-armada 15/07.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "veredicto": "me_tienta",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 187
       },
-      "learning": null,
+      "learning": "Acierto — me_tienta + like + dwell 187s/100% scroll. Rompe la racha floja de redescubrimientos de Andy (Bucay 14s sin veredicto, Siddhartha 200s sin veredicto): esta vez SÍ hubo veredicto y con scroll completo. Astronomía moderna (su veta más consistente, ACIERTO PLENO con Rovelli) parece funcionar también en formato redescubrimiento, no solo en 'nuevo'. Con esto, ya no hace falta correr la MEZCLA hacia más 'nuevo' por señal débil de redescub — el problema no era el formato, era el libro/veta elegido.",
       "audience": "andy"
     },
     {
@@ -470,6 +470,31 @@
       "page": "recs/2026-07-21-dicker-libro-baltimore.html",
       "notified_by": "2026-07-21-rec-sofi",
       "why": "Banco prioritario: mismo autor y narrador (Marcus Goldman) de su ACIERTO PLENO Harry Quebert. Por mezcla, hoy le toca 'nuevo' (ayer fue redescubrimiento con Katzenbach). Registro distinto dentro del mismo nivel de oscuro calibrado ('justo así', no escalar): menos crimen puro, más drama familiar con estructura de misterio — variedad honesta, con aviso explícito de que no es tan sangriento como Harry Quebert para no generar expectativa falsa. Verificado: no está en el catálogo de 400 (ni como 'Baltimore' ni como 'Dicker' fuera de Harry Quebert) ni en recommended.json.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-22-carlisle-asesinato-libros",
+      "date": "2026-07-22",
+      "kind": "redescubrimiento",
+      "title": "Asesinato entre libros",
+      "author": "Kate Carlisle",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy",
+        "libros"
+      ],
+      "book_ref": "M5-012",
+      "audience": "sofi",
+      "page": "recs/2026-07-22-carlisle-asesinato-libros.html",
+      "notified_by": "2026-07-22-rec-sofi",
+      "why": "Redescubrimiento M5 con guardia reforzada: después de 2/2 redescub reales fallidos por 'ya_lo_lei' (King R5-018, Katzenbach M5-024), se cambia de estrategia — autora nueva para ella (Kate Carlisle, nunca antes recomendada ni con señal de lectura previa), no un nombre consagrado como King/Katzenbach. Cozy de encuadernadora-amateur con un muerto real (mentor asesinado, libro maldito) y acusador atractivo: combina su veta cozy (protagonista amateur, humor) con algo de tensión real. Verificado título+autor contra catálogo completo y recommended.json: sin coincidencias. Andy ya tuvo su ficha del día (Cosmos, redescub, enviada 13:05) con veredicto real (me_tienta+like); esta es la única ficha pendiente de hoy.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

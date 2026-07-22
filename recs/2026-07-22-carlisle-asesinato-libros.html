@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>📖 Asesinato entre libros · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#1C120E;
+  --tinta2:#251A14;
+  --sangre:#7A2E22;
+  --sangre-hi:#B0523E;
+  --oro:#C6A15B;
+  --oro-hi:#E8C888;
+  --papel:#F1E6D3;
+  --niebla:#B8A48E;
+  --linea:rgba(241,230,211,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Courier Prime',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--tinta);color:var(--papel);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--sangre);color:var(--papel)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--oro-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(241,230,211,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sangre-hi),var(--oro-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--niebla);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(28,18,14,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--oro-hi);border-color:var(--oro)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--niebla);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(130% 80% at 50% -10%,#2E1D15 0%,var(--tinta) 62%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .para{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--oro-hi);border:1px solid var(--oro-hi);border-radius:999px;padding:.32rem .95rem;margin-bottom:1.3rem;font-weight:700}
+.hero h1{font-size:clamp(1.8rem,1.2rem + 5vw,3.6rem);font-weight:600;line-height:1.12}
+.hero h1 em{font-style:italic;color:var(--sangre-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--niebla);margin:1.4rem auto 2.3rem;max-width:48ch}
+.cta-btn{display:inline-block;background:var(--sangre);color:var(--papel);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--sangre-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--niebla);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.sello{position:absolute;top:20%;right:6%;font-family:var(--mono);font-weight:700;font-size:.8rem;letter-spacing:.08em;color:var(--sangre-hi);border:2px dashed var(--sangre-hi);border-radius:6px;padding:.5rem .9rem;transform:rotate(6deg);opacity:.6}
+.puente{background:var(--tinta2)}
+.pagina{margin-top:2.4rem;text-align:center}
+.pagina-txt{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1rem + 1vw,1.5rem);color:var(--oro-hi);line-height:1.5;min-height:5.5em;display:flex;align-items:center;justify-content:center;transition:opacity .3s ease}
+.pagina-label{color:var(--niebla);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.6rem}
+.pagina-btn{display:inline-block;margin-top:1.6rem;background:transparent;border:1px solid var(--oro);color:var(--oro-hi);border-radius:999px;padding:.7rem 1.5rem;font-weight:600;font-size:.92rem}
+.pagina-btn:hover{background:var(--oro);color:var(--tinta)}
+.reglas{display:grid;gap:1.1rem;margin-top:2.4rem}
+.regla{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(241,230,211,.03),transparent)}
+.regla-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--papel);padding:1.15rem 1.25rem}
+.regla-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--oro);min-width:1.6rem}
+.regla-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.regla-head .flecha{color:var(--niebla);transition:transform .3s ease}
+.regla.abierta .flecha{transform:rotate(90deg)}
+.regla-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.regla.abierta .regla-body{max-height:400px}
+.regla-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--niebla);font-size:.95rem}
+.identidades{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.2rem}
+.identidad{display:block;perspective:1100px;background:transparent;border:none;text-align:left;padding:0}
+.identidad-int{display:grid;width:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.1,.2,1)}
+.identidad.girada .identidad-int{transform:rotateY(180deg)}
+.cara-i{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.5rem;min-height:190px}
+.cara-ia{background:#2A1D16;border:1px solid var(--linea)}
+.cara-ia .nombre{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--oro-hi)}
+.cara-ia .tag{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--niebla)}
+.cara-ia .toca{margin-top:auto;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--oro)}
+.cara-ib{background:var(--sangre);transform:rotateY(180deg)}
+.cara-ib p{font-size:.85rem;opacity:.95;line-height:1.45}
+.identidad-remate{margin-top:1.4rem;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--oro-hi);text-align:center}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(241,230,211,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--papel);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--oro);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--niebla);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:400px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--niebla);font-size:.95rem}
+.cita{border-left:3px solid var(--oro);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(198,161,91,.06);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--niebla);font-size:.82rem}
+.aviso{border:1px dashed var(--sangre-hi);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2.2rem;background:rgba(122,46,34,.1)}
+.aviso .tag{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sangre-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.aviso p{color:var(--niebla);font-size:.92rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(241,230,211,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--oro);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--niebla)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--papel);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--oro);color:var(--oro-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--oro-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#2E1D15 0%,var(--tinta) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:32ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--oro-hi);font-weight:600}
+footer{text-align:center;color:var(--niebla);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:620px){.identidades{grid-template-columns:1fr}.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}.sello{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="sello" aria-hidden="true">RECORDÁ<br>AL DIABLO</div>
+  <div class="hero-int">
+    <span class="para">Para Sofi · Bibliotequeando redescubre · ya lo tenés en M5</span>
+    <h1>Asesinato <em>entre libros</em></h1>
+    <p class="autor">Kate Carlisle · 2009</p>
+    <p class="sub">La noche en que su restauración de un Fausto maldito se iba a exhibir en San Francisco, Brooklyn Wainwright encuentra a su mentor agonizando. Le alcanza a decir tres palabras — "Recordá al diablo" — y le pone en las manos el libro que, según la leyenda, cobra deudas.</p>
+    <a class="cta-btn" href="#pacto">Abrí el libro ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="pacto">
+  <div class="centro">
+    <p class="kicker rev">El objeto que dispara todo</p>
+    <h2 class="titulo rev d1">Un Fausto que ya mató una vez, dice la leyenda</h2>
+    <p class="bajada rev d2">Brooklyn es encuadernadora y restauradora de libros raros — no detective. Pero la pieza que estaba reparando para la gala de esa noche es una edición carísima de <em>Fausto</em>, de Goethe: el pacto con el diablo hecho libro. Su mentor, Abraham Karastovsky, se lo confía con la sangre todavía fresca. Ella no pidió este caso; el libro se lo trajo.</p>
+    <div class="pagina rev d2">
+      <div class="pagina-txt" id="paginaTxt">"Recordá al diablo." Eso es todo lo que Abraham alcanza a decirle antes de morir en el piso de su propio taller.</div>
+      <div class="pagina-label">la última pista que deja</div>
+      <button class="pagina-btn" id="paginaBtn" type="button">Seguir leyendo la pista ↓</button>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="oficio" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">El oficio que la mete en problemas</p>
+    <h2 class="titulo rev d1">Restaurar libros viejos, resulta, es peligroso</h2>
+    <p class="bajada rev d2">Cada capítulo mezcla el detalle real del oficio de encuadernadora con la investigación. Tocá cada ficha.</p>
+    <div class="reglas rev d1">
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">i</span><strong>La sospechosa obvia es ella</strong><span class="flecha">›</span></button><div class="regla-body"><p>Derek Stone, el jefe de seguridad británico de la exhibición, la encuentra arrodillada junto al cuerpo de Abraham con las manos manchadas. Antes de la medianoche ya es la principal sospechosa de asesinato y robo — y él es quien la acusa.</p></div></div>
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">ii</span><strong>Hereda el libro y el trabajo</strong><span class="flecha">›</span></button><div class="regla-body"><p>Con Abraham muerto, la restauración del Fausto maldito queda en manos de Brooklyn. Eso la deja con la pieza que todos quieren — y con el blanco pintado en la espalda.</p></div></div>
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">iii</span><strong>El taller, revuelto</strong><span class="flecha">›</span></button><div class="regla-body"><p>Alguien entra a su estudio de encuadernación buscando algo puntual. No es un robo cualquiera: quien lo hizo sabe exactamente qué forma tiene un libro valioso y dónde podría estar escondido algo adentro.</p></div></div>
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">iv</span><strong>La siguen, y los cuerpos no paran</strong><span class="flecha">›</span></button><div class="regla-body"><p>Abraham no queda como la única víctima. A medida que Brooklyn tira del hilo del Fausto, el número de sospechosos —y de cadáveres— sigue subiendo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="identidades">
+  <div class="centro">
+    <p class="kicker rev">Quién es quién en el taller</p>
+    <h2 class="titulo rev d1">Tres nombres para no perderte</h2>
+    <p class="bajada rev d2">Tocá cada tarjeta.</p>
+    <div class="identidades rev d2">
+      <button class="identidad" aria-pressed="false">
+        <span class="identidad-int">
+          <span class="cara-i cara-ia"><span class="nombre">Brooklyn Wainwright</span><span class="tag">La protagonista</span><p style="color:var(--niebla);font-size:.85rem">Encuadernadora, no policía.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-i cara-ib"><p>Experta en restaurar libros raros en San Francisco. Nunca investigó un crimen — pero conoce los libros mejor que nadie, y este caso empieza y termina en uno.</p></span>
+        </span>
+      </button>
+      <button class="identidad" aria-pressed="false">
+        <span class="identidad-int">
+          <span class="cara-i cara-ia"><span class="nombre">Abraham Karastovsky</span><span class="tag">El mentor</span><p style="color:var(--niebla);font-size:.85rem">La víctima, su maestro.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-i cara-ib"><p>El hombre que le enseñó el oficio. Muere restaurando el Fausto para la gala — y deja apenas tres palabras como pista antes de irse.</p></span>
+        </span>
+      </button>
+      <button class="identidad" aria-pressed="false">
+        <span class="identidad-int">
+          <span class="cara-i cara-ia"><span class="nombre">Derek Stone</span><span class="tag">El que la acusa</span><p style="color:var(--niebla);font-size:.85rem">Seguridad británica, sin gracia — y atractivo, según ella.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-i cara-ib"><p>La encuentra junto al cuerpo y la marca como sospechosa número uno. De ahí en más, Brooklyn tiene que investigar el crimen con el propio hombre que cree que lo cometió pisándole los talones.</p></span>
+        </span>
+      </button>
+    </div>
+    <p class="identidad-remate rev d3">Una amateur, un muerto que confía en ella y un acusador que no la suelta: la fórmula del cozy, servida con tapa dura.</p>
+    <div class="cita rev d3"><p>Finalista al National Readers' Choice Award y #1 en la lista de bestsellers de la Independent Mystery Booksellers Association en su mes de salida.</p><span>Sobre "Homicide in Hardcover", el original en inglés (2009) — el primero de 17 libros de la serie Bibliophile Mystery</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">Por qué este, de tu propio estante</p>
+    <h2 class="titulo rev d1">Cuatro razones para agarrarlo hoy</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>Cozy con un muerto de verdad, no un té con pistas</strong><span class="flecha">›</span></button><div class="clave-body"><p>Como en tus Osman, acá hay humor y una protagonista amateur — pero el crimen pesa: alguien murió de verdad, la persiguen, y el peligro es real. Ese balance es justo el que te viene funcionando 2 de 2 con la veta cozy.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>Autora que todavía no probaste</strong><span class="flecha">›</span></button><div class="clave-body"><p>Ni King ni Katzenbach ni Adams: Kate Carlisle es una firma nueva en tu estante. Con dos redescubrimientos seguidos que resultaron "ya lo leí", esta vez vamos por lo menos consagrado — más chances de que sea realmente nuevo para vos.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>El mundo del libro, adentro del libro</strong><span class="flecha">›</span></button><div class="clave-body"><p>Encuadernación, restauración, ediciones raras: la investigación se resuelve con conocimiento de libros, no con placa de policía. Para alguien que vive rodeada de estantes, es un ángulo hecho a medida.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>Si engancha, hay 16 más</strong><span class="flecha">›</span></button><div class="clave-body"><p>Es el primero de una serie de 17 títulos con Brooklyn Wainwright. Si esta noche te tienta, no es un libro suelto: es una veta entera para los próximos meses.</p></div></div>
+    </div>
+    <div class="aviso rev d2">
+      <span class="tag">Antes de decidir</span>
+      <p>Hay muertes y ella misma queda en peligro (allanan su taller, la siguen), pero está narrado en tono liviano y con humor — nada gráfico ni denso. Es cozy de verdad, no un thriller disfrazado.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2009 (Obsidian/NAL), en inglés como <em>Homicide in Hardcover</em> · edición en español de Alma, 2023</dd>
+        <dt>Extensión</dt><dd>~320 páginas en la edición de Alma</dd>
+        <dt>La autora</dt><dd>Kate Carlisle (Estados Unidos) — su fascinación por la encuadernación artesanal dio origen a toda la serie</dd>
+        <dt>Dónde vive</dt><dd>Tu estante M5-012, entre tus Alma y tus cozies de librería</dd>
+        <dt>Estado</dt><dd>Sin leer, según nuestro registro — avisanos si no es así</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Sofi</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+    <p class="bajada rev d2">Tu respuesta entrena al recomendador — la próxima "Para Sofi" sale de acá.</p>
+    <div class="cta rev d2">
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-22-carlisle-asesinato-libros','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-22-carlisle-asesinato-libros','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-22-carlisle-asesinato-libros','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:M5-012','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-012','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-012','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Qué te generó más intriga?
+      <div>
+        <button onclick="engageAnswer('rec-gancho:2026-07-22-carlisle-asesinato-libros','el_libro_maldito',this)">📜 El Fausto maldito</button>
+        <button onclick="engageAnswer('rec-gancho:2026-07-22-carlisle-asesinato-libros','la_acusacion',this)">🕵️ Que la acusen a ella</button>
+        <button onclick="engageAnswer('rec-gancho:2026-07-22-carlisle-asesinato-libros','el_oficio',this)">📚 El oficio de encuadernar</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-22-carlisle-asesinato-libros','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-22-carlisle-asesinato-libros','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-22-carlisle-asesinato-libros','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-22-carlisle-asesinato-libros','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Un libro maldito, una encuadernadora acusada y tres palabras como única pista: <b>"recordá al diablo".</b></p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Hoy la ficha de Andy ya salió temprano: Cosmos, de Carl Sagan.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--oro-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--oro);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · ficha "Para Sofi" · datos verificados a julio 2026 (Goodreads, Penguin Random House, editorialalma.com sobre la edición en español).<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.identidad').forEach(function(t){t.addEventListener('click',function(){
+    var g=t.classList.toggle('girada');
+    t.setAttribute('aria-pressed',g?'true':'false');
+  });});
+  $$('.clave-head,.regla-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+  var frases=[
+    '"Recordá al diablo." Eso es todo lo que Abraham alcanza a decirle antes de morir en el piso de su propio taller.',
+    'La leyenda dice que el Fausto que restauraba cobra las deudas de quien lo posee sin merecerlo — Abraham parece haber sido el primero.',
+    'Derek Stone la encuentra arrodillada junto al cuerpo. Para él, eso alcanza para sospechar. Para ella, empieza la peor semana de su vida.',
+    'El taller queda revuelto esa misma noche. Quien busca algo, sabe exactamente qué forma tiene.',
+    'Brooklyn entiende, tarde, que "recordá al diablo" no era una metáfora: era una dirección.'
+  ];
+  var i=0;var txt=$('#paginaTxt');var btn=$('#paginaBtn');
+  btn.addEventListener('click',function(){
+    i=(i+1)%frases.length;
+    txt.style.opacity=0;
+    setTimeout(function(){
+      txt.textContent=frases[i];
+      txt.style.opacity=1;
+      btn.textContent = i===frases.length-1 ? 'Volver al principio ↺' : 'Seguir leyendo la pista ↓';
+    },220);
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
