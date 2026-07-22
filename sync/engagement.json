@@ -1622,7 +1622,33 @@
       "device": "Andy",
       "dwell_s": 404,
       "scroll_pct": 100
+    },
+    {
+      "id": "mruvkyyn-gqkycl",
+      "type": "dwell",
+      "ts": "2026-07-21T16:36:04.991Z",
+      "page": "2026-07-21-bach-ilusiones.html",
+      "device": "Andy",
+      "dwell_s": 410,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrweq2i6-kdlj4r",
+      "type": "notification_clicked",
+      "ts": "2026-07-22T18:19:41.742Z",
+      "page": "2026-07-22-sagan-cosmos.html",
+      "device": "Andy",
+      "nid": "2026-07-22-rec",
+      "src": "push"
+    },
+    {
+      "id": "mrweq2i7-4b1vd9",
+      "type": "page_visit",
+      "ts": "2026-07-22T18:19:41.743Z",
+      "page": "2026-07-22-sagan-cosmos.html",
+      "device": "Andy",
+      "nid": "2026-07-22-rec"
     }
   ],
-  "_updated_at": "2026-07-21T16:34:13.871Z"
+  "_updated_at": "2026-07-22T18:19:42.987Z"
 }
