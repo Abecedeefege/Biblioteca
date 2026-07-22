@@ -1648,7 +1648,16 @@
       "page": "2026-07-22-sagan-cosmos.html",
       "device": "Andy",
       "nid": "2026-07-22-rec"
+    },
+    {
+      "id": "mrwetw83-hcwon9",
+      "type": "answer",
+      "ts": "2026-07-22T18:22:40.227Z",
+      "page": "2026-07-22-sagan-cosmos.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-07-22-sagan-cosmos",
+      "value": "me_tienta"
     }
   ],
-  "_updated_at": "2026-07-22T18:19:42.987Z"
+  "_updated_at": "2026-07-22T18:22:41.676Z"
 }
