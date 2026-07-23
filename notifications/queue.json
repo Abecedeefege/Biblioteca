@@ -3,6 +3,19 @@
   "_updated_at": "2026-07-23T16:15:37.870Z",
   "notifications": [
     {
+      "id": "2026-07-23-rec-sofi",
+      "title": "📖 Ella inventa asesinatos para vivir, Sofi",
+      "body": "Ahora tiene que resolver uno real y salvar a un amigo acusado. Ya está en tu M5, sin abrir.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-23-minix-librera-detective.html",
+      "to": "Sofi",
+      "send_at": "2026-07-23T17:30:00-03:00",
+      "expires_at": "2026-07-23T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-23"
+    },
+    {
       "id": "2026-07-22-rec-sofi",
       "title": "📖 El diablo cobra deudas, Sofi",
       "body": "Una encuadernadora, un mentor muerto y un Fausto maldito. Ya lo tenés en M5 — recordá al diablo.",

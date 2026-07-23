@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-22T16:20:00-03:00",
-  "_feedback_cutoff": "2026-07-22T18:22:48.393Z",
+  "_updated_at": "2026-07-23T16:30:00-03:00",
+  "_feedback_cutoff": "2026-07-22T22:33:05.725Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -495,6 +495,31 @@
       "page": "recs/2026-07-22-carlisle-asesinato-libros.html",
       "notified_by": "2026-07-22-rec-sofi",
       "why": "Redescubrimiento M5 con guardia reforzada: después de 2/2 redescub reales fallidos por 'ya_lo_lei' (King R5-018, Katzenbach M5-024), se cambia de estrategia — autora nueva para ella (Kate Carlisle, nunca antes recomendada ni con señal de lectura previa), no un nombre consagrado como King/Katzenbach. Cozy de encuadernadora-amateur con un muerto real (mentor asesinado, libro maldito) y acusador atractivo: combina su veta cozy (protagonista amateur, humor) con algo de tensión real. Verificado título+autor contra catálogo completo y recommended.json: sin coincidencias. Andy ya tuvo su ficha del día (Cosmos, redescub, enviada 13:05) con veredicto real (me_tienta+like); esta es la única ficha pendiente de hoy.",
+      "feedback": {
+        "veredicto": "ya_lo_lei",
+        "reaccion": "meh",
+        "clicked": true,
+        "dwell_s": 0
+      },
+      "learning": "TERCER 'ya_lo_lei' seguido en un redescubrimiento de Sofi (tras King R5-018 y Katzenbach M5-024) — y esta vez con una autora sin ninguna señal previa (Kate Carlisle, nunca antes recomendada). El ajuste 'autora nueva > nombre consagrado' NO alcanzó: el problema no es solo la fama del autor, es que su estante de misterio/oscuro en general ya está muy leído, sin importar quién lo escribió. Primera reacción 'meh' de Sofi en toda la serie (antes solo love/like) — la experiencia también empezó a sentirse repetitiva con el mismo desenlace. Respuesta en 25 segundos, sin dwell registrado: leyó poco, votó rápido, ya sabía la respuesta. Acción para el próximo redescub de Sofi: no alcanza con cambiar el nombre del autor dentro del mismo tipo de estante (M5/R4/R5 misterio/oscuro) — probar una fuente de señal más dura (compra muy reciente, o directamente otro tipo de contenido/estante que no sea 'misterio consagrado') antes de gastar otro redescubrimiento ahí."
+    },
+    {
+      "id": "2026-07-23-minix-librera-detective",
+      "date": "2026-07-23",
+      "kind": "redescubrimiento",
+      "title": "La librera detective",
+      "author": "Sue Minix",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy",
+        "libros"
+      ],
+      "book_ref": "M5-001",
+      "audience": "sofi",
+      "page": "recs/2026-07-23-minix-librera-detective.html",
+      "notified_by": "2026-07-23-rec-sofi",
+      "why": "Redescubrimiento M5 tras el tercer fallo de guardia seguido (Carlisle, 22/07, ya_lo_lei + primer 'meh'): cambio de estrategia real, no solo de nombre de autor. Sue Minix es autora indie sin ninguna huella en el catálogo, recommended.json ni enrichment — probablemente la compra más reciente de su estante de misterio, edición española de 2024. Protagonista novelista de misterio que investiga un crimen real (gancho meta, mismo registro autoconsciente que Joyce de Osman), y la propia reseña la compara con Christie, Osman y S.J. Bennett (a quien también tiene en M5). Régimen del día: Andy ya tuvo su 'nuevo' (Pollan) pre-armado hoy, así que a Sofi le toca 'de la biblioteca' para completar el par nuevo+redescub de la jornada. Verificado título+autor contra catálogo completo y recommended.json: sin coincidencias.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

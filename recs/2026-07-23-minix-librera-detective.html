@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>📚 La librera detective · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#241A0F;
+  --tinta2:#2E2214;
+  --miel:#B9782E;
+  --miel-hi:#E3A659;
+  --azul:#2F5D62;
+  --azul-hi:#6AA8AE;
+  --papel:#F3E9D2;
+  --bruma:#B8A68C;
+  --linea:rgba(243,233,210,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Courier Prime',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--tinta);color:var(--papel);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--miel);color:var(--tinta)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--miel-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(243,233,210,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--azul-hi),var(--miel-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(36,26,15,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--miel-hi);border-color:var(--miel)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--miel);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(130% 80% at 50% -10%,#3A2C18 0%,var(--tinta) 62%)}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .para{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--miel-hi);border:1px solid var(--miel-hi);border-radius:999px;padding:.32rem .95rem;margin-bottom:1.3rem;font-weight:700}
+.hero h1{font-size:clamp(1.8rem,1.2rem + 5vw,3.6rem);font-weight:600;line-height:1.12}
+.hero h1 em{font-style:italic;color:var(--azul-hi)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:48ch}
+.cta-btn{display:inline-block;background:var(--azul);color:var(--papel);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--azul-hi);color:var(--tinta);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.sello{position:absolute;top:20%;right:6%;font-family:var(--mono);font-weight:700;font-size:.8rem;letter-spacing:.08em;color:var(--azul-hi);border:2px dashed var(--azul-hi);border-radius:6px;padding:.5rem .9rem;transform:rotate(6deg);opacity:.6}
+.puente{background:var(--tinta2)}
+.pagina{margin-top:2.4rem;text-align:center}
+.pagina-txt{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,1rem + .8vw,1.4rem);color:var(--miel-hi);line-height:1.5;min-height:6em;display:flex;align-items:center;justify-content:center;transition:opacity .3s ease}
+.pagina-label{color:var(--bruma);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.6rem}
+.pagina-btn{display:inline-block;margin-top:1.6rem;background:transparent;border:1px solid var(--miel);color:var(--miel-hi);border-radius:999px;padding:.7rem 1.5rem;font-weight:600;font-size:.92rem}
+.pagina-btn:hover{background:var(--miel);color:var(--tinta)}
+.reglas{display:grid;gap:1.1rem;margin-top:2.4rem}
+.regla{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(243,233,210,.03),transparent)}
+.regla-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--papel);padding:1.15rem 1.25rem}
+.regla-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--miel);min-width:1.6rem}
+.regla-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.regla-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.regla.abierta .flecha{transform:rotate(90deg)}
+.regla-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.regla.abierta .regla-body{max-height:400px}
+.regla-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.identidades{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.2rem}
+.identidad{display:block;perspective:1100px;background:transparent;border:none;text-align:left;padding:0}
+.identidad-int{display:grid;width:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.1,.2,1)}
+.identidad.girada .identidad-int{transform:rotateY(180deg)}
+.cara-i{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.5rem;min-height:190px}
+.cara-ia{background:#33260F;border:1px solid var(--linea)}
+.cara-ia .nombre{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--miel-hi)}
+.cara-ia .tag{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bruma)}
+.cara-ia .toca{margin-top:auto;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--miel)}
+.cara-ib{background:var(--azul);transform:rotateY(180deg)}
+.cara-ib p{font-size:.85rem;opacity:.95;line-height:1.45;color:var(--papel)}
+.identidad-remate{margin-top:1.4rem;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--miel-hi);text-align:center}
+.claves{display:grid;gap:1.1rem;margin-top:2.4rem}
+.clave{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(243,233,210,.03),transparent)}
+.clave-head{width:100%;display:flex;align-items:baseline;gap:1rem;text-align:left;background:transparent;border:none;color:var(--papel);padding:1.15rem 1.25rem}
+.clave-num{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--miel);min-width:1.6rem}
+.clave-head strong{font-family:var(--serif);font-weight:600;font-size:1.1rem;flex:1}
+.clave-head .flecha{color:var(--bruma);transition:transform .3s ease}
+.clave.abierta .flecha{transform:rotate(90deg)}
+.clave-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.clave.abierta .clave-body{max-height:400px}
+.clave-body p{padding:0 1.25rem 1.25rem 3.85rem;color:var(--bruma);font-size:.95rem}
+.cita{border-left:3px solid var(--miel);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(185,120,46,.08);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.aviso{border:1px dashed var(--azul-hi);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2.2rem;background:rgba(47,93,98,.12)}
+.aviso .tag{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--azul-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.aviso p{color:var(--bruma);font-size:.92rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(243,233,210,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--miel);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--papel);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--miel);color:var(--miel-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--miel-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#3A2C18 0%,var(--tinta) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:34ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--miel-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:620px){.identidades{grid-template-columns:1fr}.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}.sello{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="sello" aria-hidden="true">CASO<br>ABIERTO</div>
+  <div class="hero-int">
+    <span class="para">Para Sofi · Bibliotequeando redescubre · ya lo tenés en M5</span>
+    <h1>La librera <em>detective</em></h1>
+    <p class="autor">Sue Minix · edición española 2024</p>
+    <p class="sub">Jen Dawson escribe novelas de misterio para vivir y heredó la librería de su pueblo, Riddleton. Una mañana el jefe de policía local aparece muerto — presunto envenenamiento — y las pruebas empiezan a señalar a Eric, uno de sus amigos más cercanos. Jen tiene que investigar de verdad, mientras su editora sigue reclamando el manuscrito que le debe.</p>
+    <a class="cta-btn" href="#expediente">Abrí el libro ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="expediente">
+  <div class="centro">
+    <p class="kicker rev">El caso que no pidió</p>
+    <h2 class="titulo rev d1">Escribe crímenes para vivir. Ahora tiene que resolver uno real</h2>
+    <p class="bajada rev d2">Jen inventa móviles y coartadas hace años, en sus propias novelas. Nunca pensó que iba a necesitar ese oficio para algo que no puede reescribir a su gusto.</p>
+    <div class="pagina rev d2">
+      <div class="pagina-txt" id="paginaTxt">Jen todavía no entrega el manuscrito que su editora reclama hace semanas — y esa mañana, antes del café, se entera de que el jefe de policía de Riddleton apareció muerto.</div>
+      <div class="pagina-label">el arranque</div>
+      <button class="pagina-btn" id="paginaBtn" type="button">Seguir el hilo ↓</button>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="oficio" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">El doble oficio que la mete en problemas</p>
+    <h2 class="titulo rev d1">Escritora de día, detective de la nada</h2>
+    <p class="bajada rev d2">Cuatro piezas del arranque. Tocá cada una.</p>
+    <div class="reglas rev d1">
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">i</span><strong>La acusan a él, no a ella</strong><span class="flecha">›</span></button><div class="regla-body"><p>Todo apunta a un envenenamiento. Y todo, cada vez más, apunta a Eric — el policía que es uno de los amigos más cercanos de Jen. Ella no está dispuesta a dejarlo solo con eso encima.</p></div></div>
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">ii</span><strong>La editora no da tregua</strong><span class="flecha">›</span></button><div class="regla-body"><p>En paralelo al crimen, Jen sigue debiendo el manuscrito de su propia novela. El detalle de humor cotidiano que corre por dentro de todo el libro: ni un asesinato le compra una prórroga.</p></div></div>
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">iii</span><strong>Riddleton entero, bajo sospecha</strong><span class="flecha">›</span></button><div class="regla-body"><p>El pueblo es chico: todos se conocen, todos tienen algo para esconder, y a casi todos les toca pasar en algún momento por el mostrador de Lectores Voraces, la librería que Jen heredó.</p></div></div>
+      <div class="regla"><button class="regla-head" aria-expanded="false"><span class="regla-num">iv</span><strong>Conoce el manual del crimen mejor que nadie</strong><span class="flecha">›</span></button><div class="regla-body"><p>Como novelista de misterio, sabe exactamente qué preguntas hacen los detectives de ficción para resolver un caso — y empieza a hacérselas en serio, en la vida real.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="identidades">
+  <div class="centro">
+    <p class="kicker rev">Quién es quién en Riddleton</p>
+    <h2 class="titulo rev d1">Tres nombres para no perderte</h2>
+    <p class="bajada rev d2">Tocá cada tarjeta.</p>
+    <div class="identidades rev d2">
+      <button class="identidad" aria-pressed="false">
+        <span class="identidad-int">
+          <span class="cara-i cara-ia"><span class="nombre">Jen Dawson</span><span class="tag">La protagonista</span><p style="color:var(--bruma);font-size:.85rem">Novelista de misterio, librera por herencia.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-i cara-ib"><p>Corre dos carreras contra el reloj a la vez: cerrar su próxima novela y encontrar al verdadero asesino antes de que Eric termine preso por algo que no hizo.</p></span>
+        </span>
+      </button>
+      <button class="identidad" aria-pressed="false">
+        <span class="identidad-int">
+          <span class="cara-i cara-ia"><span class="nombre">Eric</span><span class="tag">El amigo acusado</span><p style="color:var(--bruma);font-size:.85rem">Policía local, uno de los más cercanos a Jen.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-i cara-ib"><p>Las pruebas lo señalan primero. Jen se niega a creer que haya sido él y arma su propia investigación, en paralelo a la oficial.</p></span>
+        </span>
+      </button>
+      <button class="identidad" aria-pressed="false">
+        <span class="identidad-int">
+          <span class="cara-i cara-ia"><span class="nombre">Savannah</span><span class="tag">La que roba escenas</span><p style="color:var(--bruma);font-size:.85rem">Cachorra pastor alemán.</p><span class="toca">Tocá →</span></span>
+          <span class="cara-i cara-ib"><p>No resuelve nada, pero las reseñas la nombran una y otra vez: el respiro tierno en medio de un pueblo lleno de sospechosos.</p></span>
+        </span>
+      </button>
+    </div>
+    <p class="identidad-remate rev d3">Una escritora de misterios investigando uno real, en un pueblo donde todos se conocen: la fórmula que llevó a la serie a su sexto libro.</p>
+    <div class="cita rev d3"><p>"Giros insospechados, colocados justo en el lugar perfecto."</p><span>Christina Romeril, reseña sobre "La librera detective" — libro 2 de la serie, publicado originalmente en inglés como "The Murderous Type" (2023)</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="claves" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">Por qué este, de tu propio estante</p>
+    <h2 class="titulo rev d1">Cuatro razones para agarrarlo hoy</h2>
+    <div class="claves rev d1">
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">i</span><strong>Ninguna señal marca este como leído</strong><span class="flecha">›</span></button><div class="clave-body"><p>King, Katzenbach y Carlisle — tus últimos tres redescubrimientos — resultaron "ya lo leí". Todos eran firmas consagradas. Sue Minix es una autora indie, sin ninguna reseña ni voto previo tuyo: la edición española es de 2024, probablemente tu compra más reciente de esa veta.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">ii</span><strong>La propia reseña te nombra a vos</strong><span class="flecha">›</span></button><div class="clave-body"><p>La comparan con Christie, con Osman y con S. J. Bennett — y a los dos Bennett (El nudo de Windsor, A Three Dog Problem) los tenés en el mismo estante M5. No es casualidad: es exactamente tu veta cozy.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iii</span><strong>El gancho meta que conecta con lo que amaste de Joyce</strong><span class="flecha">›</span></button><div class="clave-body"><p>Una novelista de misterio que tiene que resolver uno real, esquivando a su propia editora: el mismo humor autoconsciente y un poco filoso que te hizo elegir a Joyce como favorita en el Club del Crimen.</p></div></div>
+      <div class="clave"><button class="clave-head" aria-expanded="false"><span class="clave-num">iv</span><strong>Si prende, hay un mundo servido</strong><span class="flecha">›</span></button><div class="clave-body"><p>Es el libro 2 de una serie de 6 (con Jen Dawson y Riddleton). Si te tienta, el primero — "Asesinato en la librería" — está para conseguir después.</p></div></div>
+    </div>
+    <div class="aviso rev d2">
+      <span class="tag">Antes de decidir</span>
+      <p>Hay una muerte y tensión real por el amigo acusado, pero es cozy liviano de principio a fin — sin nada gráfico ni denso. Más cerca del registro de tus Osman que del de tu Dicker o tu King.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2023 en inglés, como <em>The Murderous Type</em> (The Bookstore Mystery, libro 2) · edición en español de HarperCollins Ibérica, 2024</dd>
+        <dt>Extensión</dt><dd>384 páginas en la edición española</dd>
+        <dt>La autora</dt><dd>Sue Minix (Estados Unidos) — miembro de Sisters in Crime y Mystery Writers of America</dd>
+        <dt>Dónde vive</dt><dd>Tu estante M5-001</dd>
+        <dt>Estado</dt><dd>Sin leer, según nuestro registro — avisanos si no es así</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Sofi</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+    <p class="bajada rev d2">Tu respuesta entrena al recomendador — la próxima "Para Sofi" sale de acá.</p>
+    <div class="cta rev d2">
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-23-minix-librera-detective','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-23-minix-librera-detective','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-23-minix-librera-detective','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:M5-001','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-001','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-001','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Qué te generó más intriga?
+      <div>
+        <button onclick="engageAnswer('rec-gancho:2026-07-23-minix-librera-detective','jen_investigando',this)">✍️ Jen jugando a detective</button>
+        <button onclick="engageAnswer('rec-gancho:2026-07-23-minix-librera-detective','eric_acusado',this)">🚓 Que acusen a Eric</button>
+        <button onclick="engageAnswer('rec-gancho:2026-07-23-minix-librera-detective','savannah',this)">🐾 Savannah, la cachorra</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-23-minix-librera-detective','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-23-minix-librera-detective','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-23-minix-librera-detective','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-23-minix-librera-detective','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Una escritora de misterios que tiene que resolver uno real, en un pueblo donde todos se conocen — y una fecha de entrega que no perdona a <b>nadie, ni a ella misma</b>.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Hoy la ficha de Andy ya salió temprano: Cómo cambiar tu mente, de Michael Pollan.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--miel-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--miel);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · ficha "Para Sofi" · datos verificados a julio 2026 (Goodreads, HarperCollins Ibérica/Casa del Libro, reseñas de Christina Romeril y Jamie L. Adams sobre "La librera detective").<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  $$('.identidad').forEach(function(t){t.addEventListener('click',function(){
+    var g=t.classList.toggle('girada');
+    t.setAttribute('aria-pressed',g?'true':'false');
+  });});
+  $$('.clave-head,.regla-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
+  var frases=[
+    'Jen todavía no entrega el manuscrito que su editora reclama hace semanas — y esa mañana, antes del café, se entera de que el jefe de policía de Riddleton apareció muerto.',
+    'Todo apunta a un envenenamiento. Y todo, también, apunta cada vez más cerca de Eric — uno de sus amigos más cercanos.',
+    'Ella pasó años inventando móviles y coartadas en sus propias novelas. Ahora tiene que usar ese oficio para algo que no puede reescribir.',
+    'El pueblo entero es sospechoso. La librería, mientras tanto, sigue necesitando que alguien atienda el mostrador.',
+    'Cuanto más tira del hilo, más entiende que salvar a Eric depende de una sola cosa: llegar antes que la policía a la verdad.'
+  ];
+  var i=0;var txt=$('#paginaTxt');var btn=$('#paginaBtn');
+  btn.addEventListener('click',function(){
+    i=(i+1)%frases.length;
+    txt.style.opacity=0;
+    setTimeout(function(){
+      txt.textContent=frases[i];
+      txt.style.opacity=1;
+      btn.textContent = i===frases.length-1 ? 'Volver al principio ↺' : 'Seguir el hilo ↓';
+    },220);
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
