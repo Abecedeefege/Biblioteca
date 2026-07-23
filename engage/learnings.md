@@ -1,9 +1,12 @@
 # Learnings del agente — Bibliotequeando
 
-## ⏱️ CADENCIA VIGENTE: 2 pushes/día — 08:30 y 20:30 (-03:00)
-Fijada por el dueño el 2026-07-03 al montar el sistema. El slot de las 20:30
-es EL slot de biblioteca ("¿qué leés esta noche?") — no malgastarlo con
-contenido de mañana. `expires_at` siempre el mismo día 23:00.
+## ⏱️ CADENCIA VIGENTE: 2 pushes/día — 11:15 y 20:30 (-03:00)
+Fijada por el dueño el 2026-07-03 al montar el sistema; el slot de la mañana
+se corrió de 08:30 a 11:15 el 2026-07-23 por pedido del dueño: **ninguna
+notificación de la casa sale antes de las 11:00 UY** (piso duro reforzado en
+`tools/send_push.js`, no solo convención). El slot de las 20:30 es EL slot
+de biblioteca ("¿qué leés esta noche?") — no malgastarlo con contenido de
+mañana. `expires_at` siempre el mismo día 23:00.
 
 ## 🚀 SÍNTESIS: qué convierte (todo PRIOR aún — cero datos medidos)
 Priors heredados de un sistema gemelo en producción (jardín), a validar acá:

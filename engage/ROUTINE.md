@@ -30,10 +30,12 @@ sobre el entorno que tiene **Abecedeefege/Biblioteca** como source y pegale:
 
 ## Por qué a las 06:00
 
-El agente corre antes de la primera ventana de envío (08:30): le da tiempo a
-leer el feedback de anoche, construir las experiencias, pushear, que Pages
-deploye, y que el primer push (≥60 min después de la corrida) linkee a
-páginas que ya existen.
+El agente corre antes de la primera ventana de envío (11:15 — piso duro:
+ninguna notificación de la casa sale antes de las 11:00 UY, reforzado en
+`tools/send_push.js`): le da tiempo a leer el feedback de anoche, construir
+las experiencias, pushear, que Pages deploye, y que el primer push (≥60 min
+después de la corrida, y nunca antes de las 11:00) linkee a páginas que ya
+existen.
 
 ## Control sin intervenir
 

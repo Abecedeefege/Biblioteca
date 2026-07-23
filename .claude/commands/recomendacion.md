@@ -166,6 +166,9 @@ json.dump(cat, open('/tmp/catalog.json','w'), ensure_ascii=False)"
    - `id`: `<YYYY-MM-DD>-rec-andy` / `<YYYY-MM-DD>-rec-sofi` (una `todos`
      usa `<YYYY-MM-DD>-rec`) · `send_at`: hoy 12:30 -03:00 (si corrés
      tarde: ≥75 min después de tu corrida, nunca pasadas las 21:00) ·
+     **nunca antes de las 11:00 -03:00** (piso duro, pedido del dueño
+     2026-07-23, reforzado en `tools/send_push.js`: un `send_at` más
+     temprano que pongas simplemente queda pendiente hasta esa hora) ·
      `expires_at`: hoy 23:00 -03:00 · `created_by`:
      `"recomendacion-agent <YYYY-MM-DD>"`.
    - **Destinatario** (`to`, el canal es multi-dispositivo): audiencia
@@ -323,8 +326,9 @@ son proposals, son recomendaciones permanentes.
    recomendado; nunca presentar como "nuevo" algo que está en el catálogo.
 3. **Honestidad dura**: insights fieles al libro, citas verificadas, datos
    chequeados. Sin urgencias inventadas. Si un dato no cierra, afuera.
-4. Máximo 1 push tuyo por día (slot ~12:30). Los slots 08:30 y 20:30 son
-   del hermano. La fatiga (`paused`) se respeta SIEMPRE.
+4. Máximo 1 push tuyo por día (slot ~12:30). Los slots 11:15 y 20:30 son
+   del hermano. Ninguna notificación de la casa sale antes de las 11:00
+   -03:00 (piso duro). La fatiga (`paused`) se respeta SIEMPRE.
 5. Territorio: no toques `engage/**`, `data/enrichment.json`, `index.html`,
    `sw.js`, `tools/`, `.github/`, ni entradas ajenas de la cola.
 6. Todo tuyo es aditivo y estático: nada de build steps ni dependencias.

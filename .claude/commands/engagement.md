@@ -120,14 +120,20 @@ una hora UTC.
    - **Cada push del día a un destino DISTINTO** (assert anti-duplicados:
      dos entradas del mismo día no pueden compartir `url`).
    - El primer `send_at` del día ≥ 60 minutos después de tu corrida (margen
-     para el deploy de Pages de las páginas que linkeás).
+     para el deploy de Pages de las páginas que linkeás) **y nunca antes de
+     las 11:00 -03:00**, sea cual sea la hora de tu corrida: es un piso
+     duro (pedido del dueño, 2026-07-23), reforzado además en
+     `tools/send_push.js` — cualquier `send_at` más temprano que pongas
+     simplemente queda pendiente hasta esa hora, así que no tiene sentido
+     encolarlo antes.
    - `expires_at` = mismo día a las 23:00 -03:00. Un push trasnochado quema
      confianza.
    - El slot nocturno (20:30) es EL slot de biblioteca: "¿qué leés esta
      noche?". No lo malgastes en contenido de mañana.
    - El slot del mediodía (~12:30) es del agente hermano `/recomendacion`
      (recomendación diaria de libros): no encoles ahí ni toques sus
-     entradas `<fecha>-rec`.
+     entradas `<fecha>-rec`. Tu propio slot de mañana se corrió a 11:15
+     (antes 08:30) por el piso horario nuevo — dejá margen entre ambos.
    - El canal es multi-dispositivo (`subscription.json` → `devices[]`,
      hay más de un teléfono en la casa). Tus pushes son para el dueño:
      agregá `"to": "Andy"` a cada entrada que encoles. Considerá el canal
@@ -247,7 +253,7 @@ dueño pidió explícitamente.
       "title": "Título con gancho (~40 chars)",
       "body": "Cuerpo concreto y específico (~110 chars).",
       "url": "https://abecedeefege.github.io/Biblioteca/engage/2026-07-04-feed.html",
-      "send_at": "2026-07-04T08:30:00-03:00",
+      "send_at": "2026-07-04T11:15:00-03:00",
       "expires_at": "2026-07-04T23:00:00-03:00",
       "status": "pending", "sent_at": null, "fail_reason": null,
       "created_by": "engagement-agent 2026-07-04"

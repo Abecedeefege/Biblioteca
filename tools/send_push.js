@@ -28,6 +28,17 @@ const VAPID_SUBJECT = 'https://abecedeefege.github.io/Biblioteca/';
 const readJson  = (p, fb) => { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return fb; } };
 const writeJson = (p, d)  => fs.writeFileSync(p, JSON.stringify(d, null, 2) + '\n');
 
+// Piso horario duro: ninguna notificación sale antes de las 11:00 en
+// Uruguay (UTC-3 fijo, sin DST), sin importar qué send_at haya puesto la
+// fuente de contenido. Protege contra un send_at mal calculado (corrida
+// tardía, error de zona horaria, prueba manual) que mandaría un push a
+// deshora.
+const MONTEVIDEO_UTC_OFFSET = -3;
+const MIN_LOCAL_HOUR = 11;
+function montevideoHour(date) {
+  return (date.getUTCHours() + MONTEVIDEO_UTC_OFFSET + 24) % 24;
+}
+
 function deviceList(subDoc) {
   if (!subDoc) return [];
   if (Array.isArray(subDoc.devices)) return subDoc.devices;
@@ -54,9 +65,14 @@ async function main() {
     }
   }
 
-  const due = queue.notifications.filter(
+  const pastFloor = montevideoHour(new Date(now)) >= MIN_LOCAL_HOUR;
+  const vencidas = queue.notifications.filter(
     (n) => n.status === 'pending' && n.send_at && Date.parse(n.send_at) <= now
   );
+  const due = pastFloor ? vencidas : [];
+  if (vencidas.length && !pastFloor) {
+    console.log(`${vencidas.length} vencidas pero antes de las 11:00 UY — se posponen hasta el piso horario.`);
+  }
 
   const subDoc = readJson(SUB_PATH, null);
   const devices = deviceList(subDoc);
