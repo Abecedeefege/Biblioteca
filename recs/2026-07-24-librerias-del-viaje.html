@@ -93,6 +93,25 @@ button{font-family:var(--sans);cursor:pointer;color:inherit}
   color:var(--ac2);font-weight:700;margin-bottom:3vmin}
 .ciudad .linea{color:var(--bruma);font-size:calc(var(--u)*1.3);max-width:40ch;font-family:var(--serif);font-style:italic}
 
+/* ---------- ciudad sin nada que recomendar ---------- */
+.vacia .kicker{font-size:calc(var(--u)*.8);letter-spacing:.26em;text-transform:uppercase;
+  color:var(--ac);font-weight:700;margin-bottom:1.6vmin}
+.vacia .titulo{font-family:var(--serif);font-weight:800;font-size:calc(var(--u)*3.4);
+  line-height:1.04;letter-spacing:-.02em;margin-bottom:2.6vmin;max-width:20ch}
+.vacia .cuerpo{font-size:calc(var(--u)*1.1);color:var(--bruma);max-width:52ch;
+  line-height:1.5;margin-bottom:2.6vmin}
+.vacia .cuerpo b{color:var(--papel);font-weight:600}
+.vacia .remate{border-left:.35vmin solid var(--ac);padding-left:2vmin;
+  font-family:var(--serif);font-size:calc(var(--u)*1.2);line-height:1.4;max-width:46ch}
+.vacia .remate b{color:var(--ac2);font-weight:700}
+@media (min-width:900px){
+  .vacia .int{display:grid;grid-template-columns:1.05fr .95fr;gap:5vmin;align-items:start;
+    max-width:min(150rem,90vw)}
+  .vacia .kicker,.vacia .titulo{grid-column:1}
+  .vacia .cuerpo{grid-column:2;grid-row:1 / span 3;margin-bottom:0}
+  .vacia .remate{grid-column:1}
+}
+
 /* ---------- ficha de parada ---------- */
 /* En pantalla apaisada (TV) va a dos columnas: el 16:9 sobra de ancho y falta de alto. */
 .parada .int{display:grid;grid-template-columns:1fr;gap:3vmin;align-items:start}
@@ -208,6 +227,9 @@ body.qr-abierto #qr .tirador .flecha{transform:rotate(180deg)}
   pointer-events:none}
 #pie .izq{display:flex;align-items:center;gap:2vmin;min-width:0}
 #pie .ayuda{font-size:calc(var(--u)*.78);color:var(--bruma);letter-spacing:.06em}
+/* las teclas de ficha sólo se anuncian donde existen */
+#pie .ayuda .solo-qr{display:none}
+body.qr-hay #pie .ayuda .solo-qr{display:inline}
 /* el banner de engage.js se inyecta suelto en el body: acá le damos un lugar fijo */
 #engage-unsub{position:fixed!important;left:50%;transform:translateX(-50%);
   bottom:.4vmin;margin:0!important;z-index:41;opacity:.4!important;font-size:calc(var(--u)*.68)!important}
@@ -269,7 +291,7 @@ body.qr-abierto #qr .tirador .flecha{transform:rotate(180deg)}
 <div id="pie">
   <div class="izq">
     <a class="back" href="../index.html">← Bibliotequeando</a>
-    <p class="ayuda"><kbd>←</kbd> <kbd>→</kbd> moverte · <kbd>↓</kbd> cómo llegar · <kbd>Enter</kbd> "quiero ir" · <kbd>P</kbd> modo TV</p>
+    <p class="ayuda"><kbd>←</kbd> <kbd>→</kbd> moverte<span class="solo-qr"> · <kbd>↓</kbd> cómo llegar · <kbd>Enter</kbd> "quiero ir"</span> · <kbd>P</kbd> modo TV</p>
   </div>
   <div class="mandos">
     <button id="bPrev" aria-label="Anterior" title="Anterior">‹</button>
@@ -288,147 +310,97 @@ var REC='2026-07-24-librerias-del-viaje';
 
 var CIUDADES=[
  {id:'dubrovnik',nombre:'Dubrovnik',pais:'Croacia',
-  lema:'Una farmacia que despacha desde 1317 y una biblioteca de frailes con 137 incunables.',
+  lema:'Dos claustros medievales. Uno guarda la farmacia más vieja de Europa en actividad.',
   ac:'#E8843D',ac2:'#F7B77E',c1:'#3A1F16',c2:'#120A08',arte:'muralla',
   paradas:[
    {n:'Biblioteca del Monasterio Franciscano',tipo:'Biblioteca + farmacia',
-    porque:'La parada obligada. La farmacia del claustro <b>funciona sin interrupción desde 1317</b>: la más antigua de Europa en actividad. Al lado, la biblioteca de los frailes.',
+    porque:'Si sólo hacés una parada en todo el viaje, es ésta. La farmacia del claustro <b>despacha sin interrupción desde 1317</b>: la más antigua de Europa en actividad, la tercera del mundo.',
     datos:[['Desde','El complejo, hacia 1317'],['La biblioteca','20.000 volúmenes · 1.200 manuscritos · 137 incunables'],['Además','7.000+ partituras, más de 100 únicas en el mundo'],['Dónde','Entrada por el Stradun, junto a la Puerta Pile']],
-    dir:"Placa 2, casco antiguo · Dubrovnik",
-    maps:"https://maps.google.com/?q=Male+brace+2%2C+Dubrovnik",
+    dir:'Placa 2, junto a la Puerta Pile · Dubrovnik',
+    maps:'https://maps.google.com/?q=Male+brace+2%2C+Dubrovnik',
     ojo:'Entrada al monasterio y museo <b>€10</b> por adulto (2026); la iglesia sobre el Stradun es gratis. En verano abre 9 a 18.'},
-   {n:'Knjižara Algebra',tipo:'Librería',
-    porque:'La librería viva del casco antiguo, <b>abierta todo el año</b> y la que usan los de acá — no solo los cruceristas. Estanterías del piso al techo y pilas en el suelo.',
-    datos:[['Dónde','Placa 8, sobre el Stradun'],['Ojo','Tiene dos locales: uno pasando la Puerta Pile, otro antes de la Torre del Reloj'],['Idiomas','Croata e inglés, algo de francés y alemán'],['Horario','9 a 21, todos los días']],
-    dir:"Placa 8, sobre el Stradun · Dubrovnik",
-    maps:"https://maps.google.com/?q=Knjizara+Algebra%2C+Placa+8%2C+Dubrovnik",
-    ojo:'Honestidad: promedia <b>3,5 de 5</b> en reseñas y varias se quejan de precios de zona turística. Andá por el hallazgo local, no por la ganga.'},
-   {n:'Monasterio Dominico',tipo:'Museo + claustro',
-    porque:'El que casi nadie encuentra: se entra por un pasaje detrás del Palacio Sponza. Su biblioteca guarda <b>216 incunables</b> y brilló en toda Europa entre los siglos XV y XVII.',
-    datos:[['Fundado','Biblioteca del siglo XII'],['El tesoro','216 incunables y manuscritos iluminados'],['Se ve','Claustro, museo de arte sacro y pinturas'],['Dónde','Pasaje detrás del Palacio Sponza']],
-    dir:"Sv. Dominika 4 · Dubrovnik",
-    maps:"https://maps.google.com/?q=Sv.+Dominika+4%2C+Dubrovnik",
-    ojo:'<b>La biblioteca en sí no está abierta al público</b> — se visitan el museo y el claustro. Aun así el claustro solo justifica la entrada.'}
+   {n:'Monasterio Dominico',tipo:'Claustro + museo',
+    porque:'El claustro más bello del casco antiguo y el que casi nadie encuentra: se entra por un pasaje detrás del Palacio Sponza. La biblioteca del convento guarda <b>216 incunables</b>.',
+    datos:[['Fundado','Biblioteca del siglo XII'],['El tesoro','216 incunables y manuscritos iluminados'],['Se ve','Claustro gótico-renacentista y museo de arte sacro'],['Dónde','Pasaje detrás del Palacio Sponza']],
+    dir:'Sv. Dominika 4, detrás del Palacio Sponza',
+    maps:'https://maps.google.com/?q=Sv.+Dominika+4%2C+Dubrovnik',
+    ojo:'Sinceridad: <b>la biblioteca no se visita</b>. Vas por el claustro y el museo. Aun así el claustro solo ya justifica la entrada.'}
   ]},
 
  {id:'split',nombre:'Split',pais:'Croacia',
-  lema:'Una librería de 1860 que resucitó, y la más grande de la ciudad dentro de un palacio barroco.',
+  lema:'Una librería de 1860 que volvió de la muerte, y otra dentro de un palacio barroco.',
   ac:'#D9B26A',ac2:'#EBD6A4',c1:'#2E2A20',c2:'#0F0E0B',arte:'columnas',
   paradas:[
    {n:'Knjižara Morpurgo',tipo:'Librería histórica',
-    porque:'Abrió en 1860 y <b>nunca se mudó de dirección</b> — una de las más viejas de Europa en su sitio original. Cerró en 2017 y estuvo seis años muerta; volvió a abrir en abril de 2023.',
-    datos:[['Fundada','1860, por Vid Morpurgo'],['Dónde','Narodni trg 16 — la Pjaca'],['Reabrió','Abril de 2023, gestionada por Tisak media'],['Dato','Es bien cultural protegido: quien la tenga está obligado a mantenerla como librería']],
-    dir:"Narodni trg 16 — la Pjaca · Split",
-    maps:"https://maps.google.com/?q=Narodni+trg+16%2C+Split",
-    ojo:'Fue punto de reunión de los intelectuales del renacimiento croata: acá se compraba un libro y se discutía política.'},
-   {n:'Znanstvena knjižara Marko Marulić',tipo:'Librería en palacio',
-    porque:'La librería más grande de Split ocupa <b>toda la planta baja del Palacio Milesi</b>, un palacio barroco protegido de fines del siglo XVII. Abrió recién en agosto de 2024.',
-    datos:[['Abrió','13 de agosto de 2024'],['Tamaño','208 m² — la mayor de la ciudad'],['Dónde','Palacio Milesi, Voćni trg (Trg braće Radića 7)'],['Quién','Školska knjiga junto a la Academia Croata de Ciencias y Artes']],
-    dir:"Trg braće Radić 7 — Voćni trg · Split",
-    maps:"https://maps.google.com/?q=Trg+brace+Radic+7%2C+Split",
-    ojo:'Fuerte en libros científicos, diccionarios y ediciones de la Academia — más que en novedades de best-seller.'},
-   {n:'Antikvarijat Nostrimus',tipo:'Anticuario',
-    porque:'El antídoto al brillo del centro turístico: una librería de viejo, silenciosa, con música y café. <b>Acá se revuelve</b>, no se compra rápido.',
-    datos:[['Dónde','Križeva ulica 4'],['Idiomas','Croata, con algo de inglés, alemán, sueco, francés e italiano'],['Horario','Lun a vie 9–20 · sáb 9–13'],['Ambiente','Tranquilo, con música y café']],
-    dir:"Križeva ulica 4 · Split",
-    maps:"https://maps.google.com/?q=Krizeva+ulica+4%2C+Split",
-    ojo:'Alguna reseña vieja menciona un dueño de pocas pulgas. Entrá con paciencia y ganas de mirar estante por estante.'}
+    porque:'Abrió en 1860 y <b>nunca se mudó de dirección</b> — se la nombra junto a las de Lisboa y París entre las más viejas de Europa. Cerró en 2017, estuvo seis años muerta y reabrió en 2023.',
+    datos:[['Fundada','1860, por Vid Morpurgo'],['Dónde','Narodni trg 16 — la Pjaca'],['Reabrió','2023, gestionada por Tisak media'],['Dato','Bien cultural protegido: quien tenga el local está obligado a mantenerlo como librería']],
+    dir:'Narodni trg 16 — la Pjaca · Split',
+    maps:'https://maps.google.com/?q=Narodni+trg+16%2C+Split',
+    ojo:'Vas por <b>el local y su historia</b>, no por el catálogo: desde que reabrió la oferta es bastante más comercial que antes. Acá se reunían los intelectuales del renacimiento croata.'},
+   {n:'Librería del Palacio Milesi',tipo:'Librería en palacio',
+    porque:'Ocupa <b>toda la planta baja de un palacio barroco</b> de fines del siglo XVII, en la plaza de la fruta. Es la librería más grande de Split y abrió recién en agosto de 2024.',
+    datos:[['Abrió','13 de agosto de 2024'],['El edificio','Palacio Milesi, barroco, siglo XVII'],['Dónde','Voćni trg (Trg braće Radić 7)'],['Quién','Školska knjiga con la Academia Croata de Ciencias y Artes']],
+    dir:'Trg braće Radić 7 — Voćni trg · Split',
+    maps:'https://maps.google.com/?q=Trg+brace+Radic+7%2C+Split',
+    ojo:'Fuerte en libros científicos, diccionarios y ediciones de la Academia — <b>no es una librería de novedades</b>. La joya es el edificio.'}
   ]},
 
  {id:'darmstadt',nombre:'Darmstadt',pais:'Alemania',
-  lema:'La ciudad del premio Büchner: su librería más vieja lleva ese nombre.',
-  ac:'#5FAE86',ac2:'#9BD6B7',c1:'#16302A',c2:'#080F0D',arte:'jugendstil',
-  paradas:[
-   {n:'Georg-Büchner-Buchladen',tipo:'Librería independiente',
-    porque:'<b>La librería más antigua de Darmstadt</b>, con unos 45 años encima. Literatura y poesía, filosofía, política, arquitectura y diseño — el catálogo de una ciudad que se toma la lengua en serio.',
-    datos:[['Dónde','Lauteschlägerstraße 18'],['Horario','Lun a vie 10–19 · sáb 10–16'],['Fuerte en','Literatura y poesía, filosofía y sociedad, arquitectura'],['También','Sección de libros para chicos']],
-    dir:"Lauteschlägerstraße 18 · Darmstadt",
-    maps:"https://maps.google.com/?q=Lauteschlaegerstr+18%2C+Darmstadt",
-    ojo:'El nombre no es casual: Darmstadt es la sede de la Academia Alemana de Lengua y Poesía, la que entrega el <b>Premio Georg Büchner</b>, el más importante de las letras alemanas.'},
-   {n:'Universitäts- und Landesbibliothek',tipo:'Biblioteca',
-    porque:'Una biblioteca moderna enorme que guarda joyas medievales: el <b>Códice Hitda</b> del siglo XI y el Códice Gero están inscritos en el registro Memoria del Mundo de la UNESCO.',
-    datos:[['Edificio','Abrió el 12 de noviembre de 2012'],['Escala','78 km de estanterías · más de 1.000 lugares para sentarse'],['Tesoros','Códice Hitda, Códice Gero, Bula de Oro de 1356'],['Dónde','Magdalenenstraße 8, en pleno centro']],
-    dir:"Magdalenenstraße 8 · Darmstadt",
-    maps:"https://maps.google.com/?q=Magdalenenstr+8%2C+Darmstadt",
-    ojo:'Es abierta al público, no solo a estudiantes. Los códices no están siempre expuestos — <b>preguntá por exposiciones del momento</b> antes de ir.'},
-   {n:'Bessunger Buchladen',tipo:'Librería de barrio',
-    porque:'Abrió el <b>1 de septiembre de 1978</b> y sigue siendo lo que era: la librería del barrio de Bessungen, de novela y libros para chicos. Nada de vidriera de aeropuerto.',
-    datos:[['Desde','1978'],['Dónde','Heidelberger Straße 81B'],['Fuerte en','Narrativa y literatura infantil y juvenil'],['Escala','Chica, de barrio']],
-    dir:"Heidelberger Straße 81B · Darmstadt",
-    maps:"https://maps.google.com/?q=Heidelberger+Str+81%2C+Darmstadt",
-    ojo:'Junto con la Büchner, forma parte del circuito de librerías independientes que arma eventos con la Casa de la Literatura de Darmstadt.'}
-  ]},
+  lema:'Miramos con ganas y no encontramos nada que justifique gastarle horas del viaje.',
+  ac:'#7E8794',ac2:'#B3BAC4',c1:'#242A33',c2:'#0C0E12',arte:'jugendstil',
+  vacia:{
+    titulo:'Acá no te mandamos a ninguna',
+    texto:'Darmstadt tiene librerías de barrio simpáticas y una biblioteca universitaria con tesoros de verdad — el Códice Hitda del siglo XI, inscrito en la Memoria del Mundo de la UNESCO. El problema es que <b>esos tesoros no están expuestos</b>: se ven en exposiciones que van rotando, y el resto son locales normales, del tipo que ya tienen a la vuelta de casa.',
+    remate:'Con poco tiempo, la ficha honesta es ésta: <b>no le des un día a los libros en Darmstadt</b>. Frankfurt está a media hora y Heidelberg a tres cuartos, y ahí sí hay algo que ver. Si igual te sobra un rato, la Mathildenhöhe (patrimonio UNESCO) vale más la pena que cualquier librería de la ciudad.'
+  },
+  paradas:[]},
 
  {id:'frankfurt',nombre:'Frankfurt am Main',pais:'Alemania',
-  lema:'La ciudad de la feria del libro más grande del mundo — y de dos librerías premiadas con historia política.',
+  lema:'La casa donde nació Goethe, con la biblioteca de su padre todavía en pie.',
   ac:'#6E8FE0',ac2:'#A8BEF0',c1:'#1A2340',c2:'#080B14',arte:'skyline',
   paradas:[
-   {n:'Land in Sicht',tipo:'Librería colectiva',
-    porque:'Funciona desde <b>junio de 1978 como colectivo</b> — hoy siete personas alrededor de la librera Lyda Petzel. Literatura fuera del mainstream, la que no llega sola a tu mesa de novedades.',
-    datos:[['Desde','23 de junio de 1978'],['Dónde','An der Eisernen Hand 3, barrio Nordend'],['Se mudó','En 2024, tras 46 años en Rotteckstraße'],['Premio','Distinguida en el Premio Alemán de Librerías 2025']],
-    dir:"An der Eisernen Hand 3 — Nordend",
-    maps:"https://maps.google.com/?q=An+der+Eisernen+Hand+3%2C+Frankfurt",
-    ojo:'La mudanza de 2024 se hizo con <b>150 vecinos y clientes pasándose los libros en cadena humana</b> de un local al otro.'},
-   {n:'Karl-Marx-Buchhandlung',tipo:'Librería histórica',
-    porque:'Nació en 1970 dentro del movimiento estudiantil alemán. Entre sus socios fundadores figuraba un joven <b>Joschka Fischer</b>, que treinta años después sería ministro de Exteriores de Alemania.',
-    datos:[['Fundada','1970, en Bockenheim'],['Dónde','Jordanstraße 11'],['Hoy','Librería universitaria: estudios culturales y política'],['Premio','Distinguida en el Premio Alemán de Librerías 2025']],
-    dir:"Jordanstraße 11 — Bockenheim",
-    maps:"https://maps.google.com/?q=Jordanstr+11%2C+Frankfurt",
-    ojo:'No es un museo ni una pose: sigue siendo la librería de referencia de la zona universitaria.'},
-   {n:'Deutsche Nationalbibliothek',tipo:'Biblioteca nacional',
-    porque:'La <b>Biblioteca Nacional Alemana</b> tiene su sede en Frankfurt: recibe por ley un ejemplar de todo lo que se publica en alemán. Una catedral moderna del depósito legal.',
-    datos:[['Qué es','Archivo central de todas las publicaciones en lengua alemana'],['Dónde','Adickesallee 1'],['Se puede','Salas de lectura y exposiciones abiertas al público'],['Ojo','El acceso a salas suele requerir carné de usuario']],
-    dir:"Adickesallee 1 · Frankfurt",
-    maps:"https://maps.google.com/?q=Adickesallee+1%2C+Frankfurt",
-    ojo:'Chequeá en la web qué exposición hay y las condiciones de acceso del día — <b>no es una biblioteca de entrar y curiosear</b> sin más.'}
+   {n:'Goethe-Haus',tipo:'Casa natal + Museo del Romanticismo',
+    porque:'La casa donde nació Goethe en 1749, reconstruida cuarto por cuarto tras la guerra. Se visita <b>la biblioteca donde trabajaba su padre</b> y el escritorio de sus primeras obras.',
+    datos:[['Qué es','Casa natal de Goethe + Museo del Romanticismo'],['El museo','Colección de literatura romántica alemana única en el mundo'],['Detrás','40.000 manuscritos y 120.000 libros de archivo'],['Dónde','Großer Hirschgraben 23–25']],
+    dir:'Großer Hirschgraben 23–25 · Frankfurt',
+    maps:'https://maps.google.com/?q=Grosser+Hirschgraben+23%2C+Frankfurt',
+    ojo:'Primero la casa, después el museo de al lado. <b>El archivo y la biblioteca de investigación son aparte</b> y piden gestión previa.'}
   ]},
 
  {id:'heidelberg',nombre:'Heidelberg',pais:'Alemania',
-  lema:'Una universidad de 1386 y una calle entera de libreros de viejo.',
+  lema:'La universidad es de 1386, pero su biblioteca está de obra. Queda una librería que sí vale.',
   ac:'#D9694E',ac2:'#F0A188',c1:'#3A1B18',c2:'#120807',arte:'castillo',
   paradas:[
-   {n:'Antiquariat Hatry',tipo:'Anticuario',
-    porque:'Para muchos <b>la mejor librería de Heidelberg</b>. Desde afuera parece un local chico sobre la calle principal; adentro son varios pisos de libros raros.',
+   {n:'Antiquariat Hatry',tipo:'Librería de viejo',
+    porque:'Desde la vereda parece un local mínimo sobre la calle principal. Adentro son <b>varios pisos de libros raros</b> — para mucha gente, la mejor librería de la ciudad.',
     datos:[['Desde','1986'],['Dónde','Hauptstraße 119, en el casco antiguo'],['Horario','9 a 17'],['Idiomas','Sobre todo alemán, con bastante inglés']],
-    dir:"Hauptstraße 119 · Heidelberg",
-    maps:"https://maps.google.com/?q=Hauptstr+119%2C+Heidelberg",
-    ojo:'Está metida en plena calle comercial más transitada del casco antiguo: es fácil pasar de largo por la puerta.'},
-   {n:'Universitätsbibliothek Heidelberg',tipo:'Biblioteca',
-    porque:'El edificio de arenisca roja de <b>1905</b>, art nouveau, levantado para dialogar con el castillo. Custodia el <b>Códice Manesse</b>, el cancionero medieval más bello que existe, y la Bibliotheca Palatina.',
-    datos:[['Universidad','Fundada en 1386'],['El edificio','1905, arenisca roja con elementos Jugendstil'],['El tesoro','Códice Manesse — Memoria del Mundo UNESCO desde el 18 de mayo de 2023'],['Dónde','Plöck 107–109']],
-    dir:"Plöck 107–109 · Heidelberg",
-    maps:"https://maps.google.com/?q=Ploeck+107%2C+Heidelberg",
-    ojo:'<b>Importante: las salas de exposición del edificio viejo están cerradas por obras de restauración.</b> El original del Manesse casi nunca se expone; lo que suele verse es un facsímil. Confirmá antes de ir.'},
-   {n:'Los anticuarios de la Plöck',tipo:'Circuito de librerías',
-    porque:'La calle Plöck, la paralela tranquila a la principal, concentra <b>librerías de viejo a metros una de otra</b> — y desemboca justo en la biblioteca universitaria. Un paseo, no una parada.',
-    datos:[['Antiquariat Hoffschult','Plöck 64a'],['Buchhandlung & Antiquariat Schöbel','Plöck 56a'],['Al final de la calle','La Universitätsbibliothek, en el 107–109'],['Cómo','A pie, sin apuro']],
-    dir:"Plöck 64a (y Schöbel en el 56a)",
-    maps:"https://maps.google.com/?q=Ploeck+64%2C+Heidelberg",
-    ojo:'Heidelberg tiene tradición de <b>red de libreros de segunda mano</b>, no solo de librerías de novedades. Este es el eje donde se nota.'}
+    dir:'Hauptstraße 119, casco antiguo · Heidelberg',
+    maps:'https://maps.google.com/?q=Hauptstr+119%2C+Heidelberg',
+    ojo:'Está sobre la calle comercial más transitada del casco antiguo: <b>es facilísimo pasarle por delante sin verla</b>. Mirá el número.'}
   ]},
 
  {id:'amsterdam',nombre:'Amsterdam',pais:'Países Bajos',
-  lema:'Una biblioteca hermética en la Casa de las Cabezas y un mercado de libros de 1879 bajo techo.',
+  lema:'La ciudad fuerte del viaje: tres paradas y las tres valen el desvío.',
   ac:'#E0654F',ac2:'#F4A08D',c1:'#33161B',c2:'#0E0709',arte:'canal',
   paradas:[
+   {n:'Biblioteca Cuypers',tipo:'Biblioteca dentro del Rijksmuseum',
+    porque:'Una de las bibliotecas más lindas del mundo, y está <b>adentro del Rijksmuseum</b>: bóveda con claraboya, balcones de hierro y una escalera caracol. La ves desde el balcón con la entrada común del museo.',
+    datos:[['Qué es','La biblioteca de historia del arte más grande y antigua de Holanda'],['Desde','1885, en el edificio de Cuypers'],['La colección','400.000+ libros · 3.400 revistas · 90.000 catálogos de subastas'],['Cómo verla','Desde el balcón de la sala 2.16 — sin reserva']],
+    dir:'Museumstraat 1 — dentro del Rijksmuseum',
+    maps:'https://maps.google.com/?q=Museumstraat+1%2C+Amsterdam',
+    ojo:'Con la entrada del museo alcanza para verla desde arriba. <b>Bajar a la sala de lectura sí pide reserva</b>. Está en el nivel 1, pasando la sala de Goya.'},
    {n:'Embassy of the Free Mind',tipo:'Biblioteca + museo',
-    porque:'La joya rara del viaje. La biblioteca hermética de Joost Ritman vive en la <b>Huis met de Hoofden</b> — la Casa de las Cabezas, monumento nacional sobre un canal. La abrió al público <b>Dan Brown</b> en persona.',
-    datos:[['La colección','Bibliotheca Philosophica Hermetica, empezada en 1957'],['Abrió al público','Como biblioteca en 1984; como museo en 2017'],['Dónde','Keizersgracht 123'],['Qué guarda','Manuscritos e impresos de la tradición hermética cristiana']],
-    dir:"Keizersgracht 123 · Amsterdam",
-    maps:"https://maps.google.com/?q=Keizersgracht+123%2C+Amsterdam",
-    ojo:'Abre de <b>miércoles a sábado, 10 a 17</b>. Es chica y muy visitada: conviene mirar entradas con anticipación.'},
-   {n:'Athenaeum Boekhandel',tipo:'Librería',
-    porque:'Una de las independientes más grandes de Holanda, en la esquina del Spui. <b>Ventanales curvos de vidrio</b> y un interior de escaleras y entrepisos donde uno se pierde de nivel en nivel.',
-    datos:[['Dónde','Spui 14–16'],['Qué es','Librería y centro de prensa internacional'],['Idiomas','Neerlandés, inglés y más'],['Al lado','El American Book Center, en Spui 12, con su "Treehouse"']],
-    dir:"Spui 14–16 · Amsterdam",
-    maps:"https://maps.google.com/?q=Spui+14%2C+Amsterdam",
-    ojo:'Los viernes, la plaza del Spui de la puerta arma su <b>mercado de libros usados y antiguos</b>, de 10 a 18. Va hace más de veinte años.'},
+    porque:'La biblioteca hermética de Joost Ritman vive en la <b>Huis met de Hoofden</b>, la Casa de las Cabezas: un monumento nacional sobre un canal, con seis dioses romanos asomados a la fachada. La abrió al público Dan Brown en persona.',
+    datos:[['La colección','Bibliotheca Philosophica Hermetica, empezada en 1957'],['Abrió','Como biblioteca en 1984; como museo en 2017'],['Dónde','Keizersgracht 123'],['Qué guarda','Manuscritos e impresos de la tradición hermética cristiana']],
+    dir:'Keizersgracht 123 · Amsterdam',
+    maps:'https://maps.google.com/?q=Keizersgracht+123%2C+Amsterdam',
+    ojo:'Abre de <b>miércoles a sábado, 10 a 17</b>. Es chica y muy visitada: conviene mirar entradas antes de caminar hasta allá.'},
    {n:'Oudemanhuispoort',tipo:'Mercado de libros',
-    porque:'Un <b>pasaje cubierto</b> entre dos canales con puestos de libros usados, mapas antiguos, partituras y grabados. El mercado está ahí <b>desde 1879</b>.',
-    datos:[['Desde','1879, cuando los libreros se mudaron del Botermarkt'],['Dónde','Pasaje entre Oudezijds Achterburgwal y Kloveniersburgwal'],['Qué hay','Libros usados, mapas, partituras, grabados y estampas'],['El edificio','400 años de historia: convento, hospital, asilo de ancianos y hoy universidad']],
-    dir:"Pasaje Oudemanhuispoort · Amsterdam",
-    maps:"https://maps.google.com/?q=Oudemanhuispoort%2C+Amsterdam",
-    ojo:'A pasos está <b>The Book Exchange</b>, tres pisos angostos de usados en inglés — el mejor lugar de la ciudad para eso. Cae de camino.'}
+    porque:'Un <b>pasaje cubierto</b> entre dos canales, con puestos de libros usados, mapas antiguos, partituras y grabados. El mercado está ahí <b>desde 1879</b> y sigue igual.',
+    datos:[['Desde','1879, cuando los libreros se mudaron del Botermarkt'],['Dónde','Entre Oudezijds Achterburgwal y Kloveniersburgwal'],['Qué hay','Libros usados, mapas, partituras, grabados y estampas'],['El edificio','400 años: convento, hospital, asilo de ancianos y hoy universidad']],
+    dir:'Pasaje Oudemanhuispoort · Amsterdam',
+    maps:'https://maps.google.com/?q=Oudemanhuispoort%2C+Amsterdam',
+    ojo:'Es un pasaje de paso, no un local: <b>los puestos abren días de semana</b> y bajan la persiana temprano. A pasos está The Book Exchange, tres pisos de usados en inglés.'}
   ]}
 ];
 
@@ -451,11 +423,13 @@ var ARTE={
 /* ============================================================ */
 var deck=document.getElementById('deck');
 var barras=document.getElementById('barras');
-var slides=[],meta=[];
+var slides=[],meta=[],INICIO=[];
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 /* el texto de los datos es nuestro y controlado: permite <b> a propósito */
 function tema(c){return 'style="--ac:'+c.ac+';--ac2:'+c.ac2+';--c1:'+c.c1+';--c2:'+c.c2+'"'}
 function lienzo(c){return '<div class="lienzo" style="color:'+c.ac+'">'+(ARTE[c.arte]||'')+'</div><div class="grano"></div>'}
+
+var TOTAL_PARADAS=CIUDADES.reduce(function(a,c){return a+c.paradas.length},0);
 
 function armar(){
   var html='';
@@ -463,16 +437,32 @@ function armar(){
   html+='<section class="slide portada" '+tema(CIUDADES[0])+'>'+lienzo(CIUDADES[0])+
     '<div class="int"><p class="kicker">Bibliotequeando · edición de viaje</p>'+
     '<h1>Librerías<em>del viaje</em></h1>'+
-    '<p class="sub">Las 3 paradas que sí valen en cada ciudad. Elegidas por historia, rareza o belleza — no por estar cerca del hotel.</p>'+
-    '<div class="ruta"><span><b>6</b> ciudades</span><span><b>18</b> paradas</span><span><b>3</b> países</span></div></div></section>';
+    '<p class="sub">Sólo las que valen el desvío con poco tiempo: icónicas, hermosas o importantes de verdad. Donde no había ninguna a la altura, lo decimos y no inventamos relleno.</p>'+
+    '<div class="ruta"><span><b>'+CIUDADES.length+'</b> ciudades</span><span><b>'+TOTAL_PARADAS+'</b> paradas que valen</span>'+
+    '<span><b>1</b> ciudad sin nada que recomendar</span></div></div></section>';
   meta.push({tipo:'portada',ciudad:-1});
 
   CIUDADES.forEach(function(c,ci){
+    var cuenta = c.paradas.length
+      ? (c.paradas.length===1?'1 parada':c.paradas.length+' paradas')
+      : 'ninguna';
     html+='<section class="slide ciudad" '+tema(c)+'>'+lienzo(c)+
-      '<div class="int"><p class="num">CIUDAD '+(ci+1)+' DE 6</p>'+
+      '<div class="int"><p class="num">CIUDAD '+(ci+1)+' DE '+CIUDADES.length+' · '+esc(cuenta)+'</p>'+
       '<h2>'+esc(c.nombre)+'</h2><p class="pais">'+esc(c.pais)+'</p>'+
       '<p class="linea">'+esc(c.lema)+'</p></div></section>';
     meta.push({tipo:'ciudad',ciudad:ci});
+
+    /* ciudad sin nada a la altura: se dice, no se rellena */
+    if(!c.paradas.length && c.vacia){
+      html+='<section class="slide vacia" '+tema(c)+'>'+lienzo(c)+
+        '<div class="int">'+
+        '<p class="kicker">Veredicto</p>'+
+        '<h2 class="titulo">'+esc(c.vacia.titulo)+'</h2>'+
+        '<p class="cuerpo">'+c.vacia.texto+'</p>'+
+        '<p class="remate">'+c.vacia.remate+'</p>'+
+        '</div></section>';
+      meta.push({tipo:'vacia',ciudad:ci});
+    }
 
     c.paradas.forEach(function(p,pi){
       var id=c.id+'-'+(pi+1);
@@ -526,14 +516,23 @@ function armar(){
   deck.innerHTML=html;
   slides=Array.prototype.slice.call(deck.querySelectorAll('.slide'));
 
-  /* barra de progreso: un grupo por ciudad */
+  /* barra de progreso: un grupo por ciudad, con tantos segmentos como
+     diapositivas tenga esa ciudad (portadilla + paradas, o portadilla + veredicto) */
   var bh='';
-  CIUDADES.forEach(function(c){
-    bh+='<div class="grupo" data-c="'+c.id+'"><div class="riel">'+
-      '<i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i>'+
-      '</div><span class="et">'+esc(c.nombre)+'</span></div>';
+  CIUDADES.forEach(function(c,ci){
+    var n=1+(c.paradas.length||(c.vacia?1:0));
+    var segs='';
+    for(var k=0;k<n;k++)segs+='<i class="seg"></i>';
+    /* el ancho del grupo sigue a la cantidad de diapositivas: no engaña sobre cuánto falta */
+    bh+='<div class="grupo" data-c="'+c.id+'" style="flex:'+n+'"><div class="riel">'+
+      segs+'</div><span class="et">'+esc(c.nombre)+'</span></div>';
   });
   barras.innerHTML=bh;
+  /* índice de la primera diapositiva de cada ciudad, para pintar la barra sin suponer nada */
+  INICIO=[];
+  meta.forEach(function(m,idx){
+    if(m.tipo==='ciudad'&&INICIO[m.ciudad]===undefined)INICIO[m.ciudad]=idx;
+  });
 }
 
 /* ---------- navegación ---------- */
@@ -557,11 +556,9 @@ function pintarBarras(){
   Array.prototype.forEach.call(grupos,function(g,gi){
     g.classList.toggle('act',gi===ci);
     var segs=g.querySelectorAll('.seg');
-    /* índice de la diapositiva dentro de la ciudad: 0=portadilla, 1..3=paradas */
-    var base=1+gi*4;
+    var base=INICIO[gi];                       /* dónde arranca esta ciudad, medido de verdad */
     Array.prototype.forEach.call(segs,function(s,si){
-      var idx=base+si;
-      s.classList.toggle('v', i>=idx || (ci>gi) || (meta[i].tipo==='cierre'));
+      s.classList.toggle('v', i>=base+si || meta[i].tipo==='cierre');
     });
   });
 }
