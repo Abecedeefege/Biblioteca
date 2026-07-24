@@ -2009,7 +2009,41 @@
       "device": "Sofi",
       "dwell_s": 206,
       "scroll_pct": 100
+    },
+    {
+      "id": "mrryll3j-jiplw5",
+      "ts": "2026-07-19T15:37:13.999Z",
+      "page": "2026-07-22-sagan-cosmos.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 32,
+      "scroll_pct": 68
+    },
+    {
+      "id": "mrzif49e-47sfiu",
+      "ts": "2026-07-24T22:26:27.794Z",
+      "page": "2026-07-24-librerias-del-viaje.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrzifi2t-v8xawl",
+      "ts": "2026-07-24T22:26:45.701Z",
+      "qid": "viaje-libreria:dubrovnik-1",
+      "page": "2026-07-24-librerias-del-viaje.html",
+      "type": "answer",
+      "value": "quiero_ir",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mrzifylq-sw3p6m",
+      "ts": "2026-07-24T22:27:07.118Z",
+      "page": "2026-07-24-librerias-del-viaje.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 39,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-07-24T21:18:04.337Z"
+  "_updated_at": "2026-07-24T22:31:40.524Z"
 }
