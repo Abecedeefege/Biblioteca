@@ -1866,7 +1866,16 @@
       "page": "2026-07-24-encuesta-feedback.html",
       "device": "Andy",
       "nid": "2026-07-24-encuesta"
+    },
+    {
+      "id": "mrze8rdg-5ashmz",
+      "type": "answer",
+      "ts": "2026-07-24T20:29:32.692Z",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "device": "Andy",
+      "qid": "rec-encuesta-punteria:2026-07-24-encuesta-feedback",
+      "value": "mas_o_menos"
     }
   ],
-  "_updated_at": "2026-07-24T20:29:18.155Z"
+  "_updated_at": "2026-07-24T20:29:33.839Z"
 }
