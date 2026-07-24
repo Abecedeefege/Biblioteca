@@ -159,6 +159,14 @@ Perception* (con L4-005 Leary), L4-021 *The Art of Happiness*, L4-022
   ir dentro de un contenedor recortado por encima del pie; si no, se dibuja
   por detrás de los controles. Y el alto reservado en `.slide` sube con lo
   que asome, o el módulo tapa los botones de la ficha.
+- **CURADURÍA (pedido de Andy, 24/07 — vale para todo lo que recomiende):**
+  la vara es *icónico, muy hermoso o importante de verdad*. Con poco tiempo,
+  **una sola parada buena vale más que tres de relleno, y cero es una
+  respuesta legítima**: si no hay nada a la altura, decirlo explícito y
+  sugerir qué hacer en su lugar. Aplicado el 24/07 bajando la guía de viaje
+  de 18 paradas (3 fijas por ciudad) a 9 con cantidad variable, con Darmstadt
+  en cero y una ficha de veredicto que lo explica. No forzar cupos por
+  simetría: la estructura se acomoda a lo que hay, no al revés.
 
 ## 🧭 Sugerencias hub
 `recs/index.html` lista todo leyendo `recommended.json` por fetch — cero

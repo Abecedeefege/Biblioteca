@@ -557,7 +557,7 @@
       "id": "2026-07-24-librerias-del-viaje",
       "date": "2026-07-24",
       "kind": "viaje",
-      "title": "Librerías del viaje — 18 paradas en 6 ciudades",
+      "title": "Librerías del viaje — 9 paradas que valen el desvío",
       "author": "Croacia · Alemania · Países Bajos",
       "language": "es",
       "topics": [
@@ -569,7 +569,7 @@
       "audience": "todos",
       "page": "recs/2026-07-24-librerias-del-viaje.html",
       "notified_by": null,
-      "why": "Pedido puntual de Andy: guía de librerías y bibliotecas para el viaje por Dubrovnik, Split, Darmstadt, Frankfurt, Heidelberg y Amsterdam. Top 3 por ciudad, elegidas por historia, rareza o belleza — no por cercanía. Formato tipo historias de Instagram, pensado para ver en la TV: navegación con flechas del control, tipografía escalada a vmin, dos columnas en pantalla apaisada y arte SVG propio (sin imágenes externas). Cada parada se puede marcar con 'Quiero ir' y la última pantalla arma la lista. Segunda iteración (pedido en vivo): cada parada tiene un módulo 'Cómo llegar' que asoma abajo y se abre con la flecha ↓, con un QR a Google Maps para escanear desde la pantalla de la TV. Los 18 QR son SVG generados y guardados en recs/qr/ (nada externo), y los 18 fueron decodificados con un lector independiente para confirmar que abren la dirección correcta. Datos verificados con fuentes públicas en julio 2026; los casos dudosos van declarados en la ficha (obra en la UB Heidelberg, precios de Dubrovnik, reseñas mixtas de Algebra y Nostrimus).",
+      "why": "Pedido puntual de Andy: guía de librerías y bibliotecas para el viaje por Dubrovnik, Split, Darmstadt, Frankfurt, Heidelberg y Amsterdam. TERCERA versión, tras el pedido de subir la vara: sólo entran lugares icónicos, muy hermosos o importantes de verdad, con la consigna explícita de que es mejor una sola parada buena que tres de relleno. Se pasó de 18 paradas fijas (3 por ciudad) a 9 con cantidad variable: Dubrovnik 2, Split 2, Darmstadt 0, Frankfurt 1, Heidelberg 1, Amsterdam 3. Cortadas por no llegar a la vara: Algebra (Dubrovnik, reseñas 3,5 y precios de zona turística), Nostrimus (Split), los 3 de Darmstadt, Land in Sicht y Karl-Marx (Frankfurt), los anticuarios de la Plöck y la UB Heidelberg (salas de exposición cerradas por obra, el Manesse no se expone). Entraron por investigación nueva: la Biblioteca Cuypers del Rijksmuseum (se ve desde el balcón con la entrada común) y la Goethe-Haus con el Museo del Romanticismo. Darmstadt tiene una ficha de veredicto explícita que dice que no hay nada a la altura y sugiere darle ese tiempo a Frankfurt o Heidelberg. Formato tipo historias de Instagram, pensado para ver en la TV: navegación con flechas del control, tipografía escalada a vmin, dos columnas en pantalla apaisada y arte SVG propio (sin imágenes externas). Cada parada se puede marcar con 'Quiero ir' y la última pantalla arma la lista. Segunda iteración (pedido en vivo): cada parada tiene un módulo 'Cómo llegar' que asoma abajo y se abre con la flecha ↓, con un QR a Google Maps para escanear desde la pantalla de la TV. Los 18 QR son SVG generados y guardados en recs/qr/ (nada externo), y los 18 fueron decodificados con un lector independiente para confirmar que abren la dirección correcta. Datos verificados con fuentes públicas en julio 2026; los casos dudosos van declarados en la ficha (obra en la UB Heidelberg, precios de Dubrovnik, reseñas mixtas de Algebra y Nostrimus).",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
