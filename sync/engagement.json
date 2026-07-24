@@ -1875,7 +1875,16 @@
       "device": "Andy",
       "qid": "rec-encuesta-punteria:2026-07-24-encuesta-feedback",
       "value": "mas_o_menos"
+    },
+    {
+      "id": "mrze8zi4-64pvjk",
+      "type": "answer",
+      "ts": "2026-07-24T20:29:43.228Z",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "device": "Andy",
+      "qid": "rec-encuesta-formato:2026-07-24-encuesta-feedback",
+      "value": "justas"
     }
   ],
-  "_updated_at": "2026-07-24T20:29:33.839Z"
+  "_updated_at": "2026-07-24T20:29:44.409Z"
 }
