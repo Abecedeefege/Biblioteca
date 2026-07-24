@@ -1920,7 +1920,16 @@
       "device": "Andy",
       "qid": "rec-nota:2026-07-24-encuesta-feedback",
       "value": "En muchas de tus preguntas hubiera elegido más de una opción... Ojo"
+    },
+    {
+      "id": "mrzea1ti-medbe9",
+      "type": "dwell",
+      "ts": "2026-07-24T20:30:32.886Z",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "device": "Andy",
+      "dwell_s": 76,
+      "scroll_pct": 97
     }
   ],
-  "_updated_at": "2026-07-24T20:30:29.467Z"
+  "_updated_at": "2026-07-24T20:30:34.826Z"
 }
