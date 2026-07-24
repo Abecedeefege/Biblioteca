@@ -114,6 +114,17 @@ json.dump(cat, open('/tmp/catalog.json','w'), ensure_ascii=False)"
      de compromiso físico — el hermano la consolida en enrichment; vos solo
      anotá el acierto en PROFILE.
    - Cualquier micro-pregunta propia (`rec-*`): interpretala vos y anotala.
+   - **`rec-nota:<REC_ID>` (PRIORIDAD MÁXIMA) → mensaje de texto libre del
+     dueño o de Sofi hablándote directo** (el `value` es lo que escribieron
+     en la caja de feedback de la ficha; el `device` dice quién). Es el canal
+     que pidió Andy el 2026-07-24 para comunicarse con vos cada corrida.
+     Leelo SIEMPRE al procesar feedback, tratalo como instrucción/pedido:
+     si es un ajuste accionable (cambiar veta, tono, formato, corregir un
+     dato, sacar un libro), aplicalo en ESTA corrida o anotalo explícito en
+     PROFILE con la acción concreta; si es una pregunta, contestala dentro de
+     la próxima experiencia. Nunca lo ignores ni lo trates como una
+     micro-pregunta más. Citá en el reporte final qué nota llegó y qué
+     hiciste con ella.
    - Sin feedback en 3+ recomendaciones seguidas → probá cambio fuerte
      (otra veta, otro tono de push, otro tipo de experiencia) y anotalo.
 
@@ -273,6 +284,33 @@ Bloques obligatorios (los define `engage.js`; usá exactamente estas firmas):
   <button onclick="engageReact('REC_ID','no',this)">🙅</button>
   <span class="react-hint"></span>
 </div>
+
+<!-- 6) OBLIGATORIO: caja de texto libre para hablarle al agente.
+     Es el canal directo del dueño (y de Sofi) con vos: lo leés al inicio de
+     CADA corrida y ajustás. Va al final de toda experiencia, después de la
+     reacción. NO toca engage.js (territorio ajeno): se apoya en el
+     engageAnswer que ya existe, con qid 'rec-nota:REC_ID'. El botón NO debe
+     ser un <button> hijo directo del mismo contenedor que el textarea sin el
+     wrapper enviarNota, para poder validar vacío antes de mandar. -->
+<div class="cta">
+  <label for="nota-REC_ID" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+  <textarea id="nota-REC_ID" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+    style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+  <div style="margin-top:.6rem">
+    <button type="button" onclick="enviarNota('REC_ID',this)">Enviarme este comentario</button>
+    <span class="q-hint"></span>
+  </div>
+</div>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);   // viaja a sync/engagement.json
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
 
 <script src="../engage/engage.js"></script>
 ```

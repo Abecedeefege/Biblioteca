@@ -241,6 +241,15 @@ footer em{font-family:var(--serif)}
         <span class="react-hint"></span>
       </div>
     </div>
+    <div class="cta rev d3">¿Algo para decirme, Sofi? Lo lee el recomendador en su próxima corrida y ajusta.
+      <div style="margin-top:.7rem">
+        <textarea id="nota-2026-07-24-osman-club-crimen" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…" style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid var(--linea);background:rgba(255,255,255,.05);color:inherit;font-family:inherit;font-size:.95rem"></textarea>
+        <div style="margin-top:.6rem">
+          <button type="button" onclick="enviarNota('2026-07-24-osman-club-crimen',this)">Enviar este comentario</button>
+          <span class="q-hint"></span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -262,6 +271,9 @@ footer em{font-family:var(--serif)}
   $$('.miembro').forEach(function(m){m.addEventListener('click',function(){m.classList.toggle('abierto');});});
   $$('.clave-head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentElement;var ab=c.classList.toggle('abierta');h.setAttribute('aria-expanded',ab?'true':'false');});});
 })();
+</script>
+<script>
+function enviarNota(recId,btn){var ta=document.getElementById('nota-'+recId);var txt=(ta&&ta.value||'').trim();var hint=btn.parentElement.querySelector('.q-hint');if(!txt){if(hint)hint.textContent='Escribí algo primero ✍️';return;}window.engageAnswer('rec-nota:'+recId,txt,btn);if(ta){ta.setAttribute('disabled','disabled');ta.style.opacity='.5';}}
 </script>
 <script src="../engage/engage.js"></script>
 </body>
