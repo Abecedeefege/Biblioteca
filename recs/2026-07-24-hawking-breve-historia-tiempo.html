@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🕳️ Una breve historia del tiempo · Bibliotequeando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vacio:#07060B;
+  --vacio2:#120A1E;
+  --horizonte:#1B0F2E;
+  --disco:#FF7A45;
+  --disco-hi:#FFA36C;
+  --violeta:#8B7CF6;
+  --violeta-hi:#B3A8FA;
+  --hueso:#EFEAF2;
+  --bruma:#9C93AE;
+  --linea:rgba(239,234,242,.13);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--vacio);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--disco);color:var(--vacio)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--disco-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(239,234,242,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--violeta),var(--disco))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(7,6,11,.55);backdrop-filter:blur(4px)}
+.back:hover{color:var(--disco-hi);border-color:var(--disco)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--disco);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.9rem,1.3rem + 3vw,3rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(60% 50% at 50% 55%,var(--horizonte) 0%,var(--vacio) 62%)}
+.agujero{position:absolute;left:50%;top:52%;width:min(70vw,420px);height:min(70vw,420px);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 50% 50%,#000 0%,#000 38%,rgba(139,124,246,.35) 42%,rgba(255,122,69,.5) 48%,transparent 62%);pointer-events:none;animation:pulso 7s ease-in-out infinite}
+@keyframes pulso{0%,100%{opacity:.75}50%{opacity:1}}
+.orilla{position:absolute;bottom:0;left:0;right:0;height:110px;background:linear-gradient(180deg,transparent,rgba(255,122,69,.1));pointer-events:none}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--disco-hi);border:1px solid var(--disco);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(2.2rem,1.4rem + 6vw,4.4rem);font-weight:400;line-height:1.05;letter-spacing:.01em;color:var(--hueso)}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--violeta-hi)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--disco);color:var(--vacio);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--disco-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--vacio2)}
+.linea-tiempo{position:relative;margin-top:2.2rem;padding-left:1.4rem;border-left:2px solid var(--linea)}
+.hito{position:relative;padding:0 0 1.4rem 1.2rem}
+.hito::before{content:'';position:absolute;left:-1.83rem;top:.45em;width:11px;height:11px;border-radius:50%;background:var(--vacio);border:2px solid var(--bruma)}
+.hito.tuyo::before{border-color:var(--violeta-hi);background:var(--violeta-hi)}
+.hito.joya::before{border-color:var(--disco);background:var(--disco);box-shadow:0 0 12px var(--disco)}
+.hito .año{font-size:.75rem;letter-spacing:.12em;color:var(--violeta-hi);font-weight:700}
+.hito.joya .año{color:var(--disco)}
+.hito b{font-family:var(--serif);font-size:1.1rem;font-weight:600}
+.hito p{color:var(--bruma);font-size:.92rem}
+/* la única ecuación */
+.eq{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.3rem;background:radial-gradient(120% 120% at 50% 0%,rgba(139,124,246,.12),transparent);text-align:center}
+.eq .formula{font-family:var(--serif);font-size:clamp(2.4rem,1.8rem + 3vw,3.6rem);color:var(--disco-hi);font-weight:600;letter-spacing:.02em}
+.eq .subt{color:var(--bruma);font-size:.85rem;margin-top:.3rem}
+.eq .opciones{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1.6rem}
+.eq button{border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.1rem;font-size:.88rem;font-weight:600;transition:all .25s ease}
+.eq button:hover,.eq button.activo{border-color:var(--disco);color:var(--disco-hi)}
+.eq .respuesta{margin-top:1.3rem;padding-top:1.2rem;border-top:1px solid var(--linea);color:var(--arena,var(--hueso));font-size:.98rem;min-height:3.6em;text-align:left}
+.eq .respuesta b{color:var(--violeta-hi)}
+.cita{border-left:3px solid var(--disco);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(255,122,69,.06);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.12rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(239,234,242,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--disco);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease}
+.cta button:hover,.react button:hover{border-color:var(--disco);color:var(--disco-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--disco-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,var(--horizonte) 0%,var(--vacio) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:32ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--disco-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="agujero" aria-hidden="true"></div>
+  <div class="orilla" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">De tu estante · L5-007 · redescubrimiento</span>
+    <h1>Una breve historia del tiempo</h1>
+    <p class="autor">Stephen Hawking · 1988</p>
+    <p class="sub">El libro que cerró tu estante de cosmos durante casi cuarenta años, hasta que Rovelli lo reabrió este mes. Sigue ahí, en L5, probablemente sin abrir.</p>
+    <a class="cta-btn" href="#puente">Por qué justo hoy ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo recordamos</p>
+    <h2 class="titulo rev d1">La última pieza antes del silencio</h2>
+    <p class="bajada rev d2">Tu L5 es una colección de divulgación de posguerra — Gamow, los Bok, Hoyle — y termina justo acá: 1988, el libro que le arrebató a Cosmos el récord de ciencia más vendida. Después de este no entró nada nuevo al estante durante 26 años, hasta que llegó Rovelli hace unas semanas. Este es el eslabón que faltaba en el medio.</p>
+    <div class="linea-tiempo rev d2">
+      <div class="hito tuyo"><span class="año">1940–1965</span><b> El grueso de tu L5</b><p>Divulgación clásica de posguerra, en ediciones que hoy son reliquias.</p></div>
+      <div class="hito tuyo"><span class="año">1980</span><b> Cosmos, Carl Sagan</b><p>Tu redescubrimiento del 22/07 — el prólogo de este libro lo escribió él mismo.</p></div>
+      <div class="hito joya"><span class="año">1988</span><b> Una breve historia del tiempo, Hawking</b><p>El punto final de tu estante durante casi tres décadas. Nunca lo abriste.</p></div>
+      <div class="hito"><span class="año">2014</span><b> Siete breves lecciones (Rovelli)</b><p>Tu "lo quiero" del 16/07 — la primera pieza nueva desde Hawking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="eq-sec">
+  <div class="centro">
+    <p class="kicker rev">La apuesta del libro</p>
+    <h2 class="titulo rev d1">Una sola ecuación en 200 páginas</h2>
+    <p class="bajada rev d2">En 1983 su editor en Cambridge University Press le advirtió: cada fórmula que metiera en el manuscrito le iba a costar la mitad de los lectores. Hawking se propuso no poner ninguna — y al final cedió con exactamente una. Elegí qué querés que te explique con ella.</p>
+    <div class="eq rev d2">
+      <p class="formula">E = mc²</p>
+      <p class="subt">la única ecuación del libro</p>
+      <div class="opciones">
+        <button data-r="fusion">☀️ Por qué brilla el Sol</button>
+        <button data-r="antimateria">⚛️ Qué es la antimateria</button>
+        <button data-r="agujero">🕳️ Por qué un agujero negro pesa</button>
+      </div>
+      <div class="respuesta" id="eqResp">Tocá una opción — la misma línea explica las tres cosas.</div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="citas" style="background:var(--vacio2)">
+  <div class="centro">
+    <p class="kicker rev">Del libro, palabra por palabra</p>
+    <h2 class="titulo rev d1">Lo que dice, y lo que en verdad quiso decir</h2>
+    <div class="cita rev"><p>"Alguien me dijo que cada ecuación que incluyera en el libro reduciría las ventas a la mitad. Resolví entonces no poner ninguna. Al final, sin embargo, incluí una: la famosa ecuación de Einstein, E=mc²."</p><span>Una breve historia del tiempo, agradecimientos · traducción propia del original en inglés</span></div>
+    <div class="cita rev d1"><p>"Si encontráramos esa respuesta, sería el triunfo definitivo de la razón humana — porque entonces conoceríamos la mente de Dios."</p><span>Última línea del libro. Hawking aclaró después que era metáfora: ateo declarado, quiso decir "sabríamos todo lo que un Dios sabría, si existiera uno — que no existe".</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>1988, Bantam Books; prólogo de Carl Sagan (el mismo autor de tu Cosmos)</dd>
+        <dt>Estructura</dt><dd>12 capítulos, de "Nuestra imagen del universo" a "Los agujeros negros no son tan negros" hasta "La unificación de la física"</dd>
+        <dt>Contexto</dt><dd>Lo escribió mientras vivía con ELA, ya sin poder hablar, dictado con un sintetizador de voz</dd>
+        <dt>Alcance</dt><dd>Más de 10 millones de copias; 264 semanas en la lista de más vendidos del Sunday Times (récord). En 2024 el propio Sunday Times lo nombró el libro más vendido de sus últimos 50 años</dd>
+        <dt>Dónde</dt><dd>Ya lo tenés — estante L5, junto al resto de tu astronomía</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--vacio2)">
+  <div class="centro">
+    <p class="kicker rev">El rescate</p>
+    <h2 class="titulo rev d1">Lleva 38 años esperando en tu estante</h2>
+    <p class="bajada rev d2">No hace falta el libro entero de una sentada. El capítulo 6, "Agujeros negros", funciona solo — la idea de que algo puede evaporarse aunque nada escape de adentro.</p>
+    <div class="cta rev d2">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L5-007','si',this)">📖 Sí, esta noche</button>
+        <button onclick="engageAnswer('leer-esta-noche:L5-007','ya_leido',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L5-007','no',this)">🙅 Esta noche no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-24-hawking-breve-historia-tiempo','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-24-hawking-breve-historia-tiempo','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-24-hawking-breve-historia-tiempo','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-24-hawking-breve-historia-tiempo','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-24-hawking-breve-historia-tiempo','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-24-hawking-breve-historia-tiempo','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-24-hawking-breve-historia-tiempo','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-07-24-hawking-breve-historia-tiempo" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-07-24-hawking-breve-historia-tiempo" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-07-24-hawking-breve-historia-tiempo',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"Entonces <b>conoceríamos la mente de Dios</b>." No hacía falta creer en uno para escribirlo.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Mañana a las 12:30, la próxima ficha.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--disco-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--disco);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante L5 · datos verificados a julio 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+  var RESP={
+    fusion:'El Sol convierte cada segundo <b>~4 millones de toneladas</b> de su propia masa en energía pura al fusionar hidrógeno en helio. Esa masa "perdida" es exactamente la que predice E=mc²: así calienta la Tierra desde hace 4.600 millones de años.',
+    antimateria:'Cada partícula tiene su gemela de antimateria, con la misma masa. Cuando se encuentran, se aniquilan y esa masa se convierte enteramente en energía — la conversión más eficiente que existe, y sigue el mismo E=mc².',
+    agujero:'Un agujero negro no "pesa" por tener más materia adentro, sino por cuánta energía quedó comprimida en su horizonte. Es el mismo E=mc² leído al revés: energía concentrada que se comporta como masa extrema.'
+  };
+  $$('.eq button').forEach(function(b){
+    b.addEventListener('click',function(){
+      $$('.eq button').forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      $('#eqResp').innerHTML=RESP[b.getAttribute('data-r')];
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

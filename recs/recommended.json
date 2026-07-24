@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-23T16:30:00-03:00",
-  "_feedback_cutoff": "2026-07-22T22:33:05.725Z",
+  "_updated_at": "2026-07-24T17:30:00-03:00",
+  "_feedback_cutoff": "2026-07-24T16:07:39.456Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -247,10 +247,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
+        "clicked": true,
         "dwell_s": 0
       },
-      "learning": null,
+      "learning": "Clickeó el push (24/07 00:02, notification_clicked) pero todavía sin dwell ni veredicto. Revisar en la próxima corrida.",
       "audience": "andy"
     },
     {
@@ -275,7 +275,7 @@
         "clicked": true,
         "dwell_s": 179
       },
-      "learning": "ACIERTO PLENO — su primera ficha. Cozy grupal/detectives-amateur es veta ganadora. Eligió a Joyce (rec-club) como favorita: perfil hacia personajes cálidos/chusmas, no fríos/analíticos. Sube la vara: tomo 2 de Osman o cozies ya en casa (M5) antes de gastar otro 'nuevo' ahí."
+      "learning": "ACIERTO PLENO — su primera ficha. Cozy grupal/detectives-amateur es veta ganadora. Eligió a Joyce (rec-club) como favorita: perfil hacia personajes cálidos/chusmas, no fríos/analíticos. Sube la vara: tomo 2 de Osman o cozies ya en casa (M5) antes de gastar otro 'nuevo' ahí. ANOMALÍA 24/07: el push oficial de hoy (id 2026-07-24-rec, notified_by de esta ficha) reabrió la MISMA página y ella votó de nuevo — esta vez 'ya_lo_tengo'+'meh'+dwell 26s — contradiciendo el 'lo_quiero'+love+179s original del 16/07 (welcome push adelantado). No se interpreta como fallo de guardia de catálogo ni se sobreescribe el veredicto original (que ya informó decisiones posteriores, todas exitosas): es un artefacto de exposición duplicada — vio la misma ficha dos veces con semanas de diferencia y la segunda vez, sin novedad, reaccionó con hastío. Causa raíz: la cola envió el 'welcome' de Sofi (16/07) y el push regular del día (24/07) apuntando a la misma URL. Guardia nueva: no reutilizar como push regular una página que ya salió como welcome/adelantada."
     },
     {
       "id": "2026-07-25-weir-hail-mary",
@@ -520,6 +520,31 @@
       "page": "recs/2026-07-23-minix-librera-detective.html",
       "notified_by": "2026-07-23-rec-sofi",
       "why": "Redescubrimiento M5 tras el tercer fallo de guardia seguido (Carlisle, 22/07, ya_lo_lei + primer 'meh'): cambio de estrategia real, no solo de nombre de autor. Sue Minix es autora indie sin ninguna huella en el catálogo, recommended.json ni enrichment — probablemente la compra más reciente de su estante de misterio, edición española de 2024. Protagonista novelista de misterio que investiga un crimen real (gancho meta, mismo registro autoconsciente que Joyce de Osman), y la propia reseña la compara con Christie, Osman y S.J. Bennett (a quien también tiene en M5). Régimen del día: Andy ya tuvo su 'nuevo' (Pollan) pre-armado hoy, así que a Sofi le toca 'de la biblioteca' para completar el par nuevo+redescub de la jornada. Verificado título+autor contra catálogo completo y recommended.json: sin coincidencias.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-24-hawking-breve-historia-tiempo",
+      "date": "2026-07-24",
+      "kind": "redescubrimiento",
+      "title": "Una breve historia del tiempo",
+      "author": "Stephen Hawking",
+      "language": "es",
+      "topics": [
+        "astronomia",
+        "ciencia",
+        "tiempo"
+      ],
+      "book_ref": "L5-007",
+      "audience": "andy",
+      "page": "recs/2026-07-24-hawking-breve-historia-tiempo.html",
+      "notified_by": "2026-07-24-rec-andy",
+      "why": "Redescubrimiento L5 priorizado en PROFILE tras Cosmos (ACIERTO en redescub de la misma veta): Hawking es el libro que cerró su estante de astronomía en 1988, hasta que Rovelli lo reabrió este mes. Prólogo del propio Sagan (Cosmos, su redescub anterior). Ángulo: la única ecuación del libro (E=mc²) y la historia verificada del editor que le pidió sacarlas todas. Verificado contra catálogo y recommended.json: sin coincidencias previas de 'Hawking'/'A Brief History of Time'. Par del día: Sofi ya tuvo su 'nuevo' (Osman, pre-armado) hoy, a Andy le toca 'de la biblioteca'.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

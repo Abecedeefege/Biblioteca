@@ -66,16 +66,29 @@ con: Kahneman, Sapolsky, Eagleman, Walker, Anil Seth, Tyson/Katie Mack.
 CONTEXTO: lee *El monje que vendió su Ferrari* (Sharma) — no recomendarlo.
 Julio = invierno en Montevideo (lecturas de una sentada, comfort books).
 - Consumido: Frankl, Meditaciones, Housel, Bach *Ilusiones* (ACIERTO),
-  Pollan (23/07, pendiente), Rovelli (nuevos, ACIERTO); Siddhartha (sin
-  veredicto), Cosmos (ACIERTO — `me_tienta`+like 187s/100%, primer
-  veredicto real en redescub suyo), Bucay *Camino Felicidad* (sin
-  veredicto, redescub).
+  Pollan (23/07, clickeó, sin veredicto), Rovelli (nuevos, ACIERTO);
+  Siddhartha (sin veredicto), Cosmos (ACIERTO — redescub), Bucay *Camino
+  Felicidad* (sin veredicto, redescub), Hawking *Breve historia del tiempo*
+  (24/07, L5-007, redescub — sin veredicto todavía).
 - Astronomía (su veta más fuerte) funciona también releída — priorizar
-  para próximos redescubs: L5-007, L5-026, L5-019.
+  para próximos redescubs: L5-026, L5-019.
+- Riesgo a vigilar con Hawking: es bestseller masivo (~10M copias), podría
+  repetir el "ya_lo_lei" de sus clásicos consagrados como *nuevos* (Frankl,
+  Meditaciones) — pero Cosmos (igual de famoso, redescub) no tuvo ese
+  problema, así que no está claro si aplica a formato redescub.
 
 ## 🛡️ Guardia (errores que no se cometen)
 - Antes de todo "nuevo": título Y autor contra el catálogo completo
   (matching laxo, sin tildes) y contra `recommended.json`.
+- **Nueva (24/07)**: no reutilizar como push oficial del día una página que
+  ya salió como welcome/adelantada — el `2026-07-24-rec` (Osman) reabrió
+  la URL del welcome de Sofi (16/07) y ella votó dos veces, contradictorio
+  (lo_quiero+love vs. ya_lo_tengo+meh — la 2ª es fatiga por repetición, no
+  señal nueva). Chequear `send_log.json` por URL repetida antes de encolar.
+- **Nueva (24/07)**: revisar el campo `to` en toda entrada nueva de
+  `queue.json` — el bootstrap del 24/07 lo omitió en el push de Sofi y
+  salió también al dispositivo de Andy. Obligatorio con audiencia
+  `andy`/`sofi`; se omite solo con `todos`.
 - `R4-015` (King, *Todo Oscuro, Sin Estrellas*) tiene tag `astronomy`
   ERRÓNEO en el catálogo — no es señal de astronomía.
 - `L4-004` (*Count Down*, Olson) es outlier de L4 con confidence media.
@@ -106,30 +119,26 @@ Julio = invierno en Montevideo (lecturas de una sentada, comfort books).
 L4-017 *Jonathan Livingston Seagull* (relectura identitaria), L4-018 *The
 Prophet*, L4-010 *Zen en el arte del tiro con arco*, L4-014 *The Doors of
 Perception* (con L4-005 Leary), L4-021 *The Art of Happiness*, L4-022
-*The Boy, the Mole...*, L5-007 *A Brief History of Time*, L5-026 *Of Time
-and Space...* (Asimov), L5-019 *La Vía Láctea* (Bok).
+*The Boy, the Mole...*, L5-026 *Of Time and Space...* (Asimov), L5-019
+*La Vía Láctea* (Bok).
 
-## 📊 Señales medidas — nuevos (números, no vibes)
-- **Andy**: Frankl `ya_lo_lei`+love 466s; Rovelli `lo_quiero`+like 182s
-  ACIERTO PLENO; Meditaciones `ya_lo_lei`+like 318s; Bach *Ilusiones*
-  `me_tienta`+like 410s/100%. Housel y Pollan enviados, sin veredicto.
-- **Sofi oscuro**: Dicker Harry Quebert `lo_quiero`+love 134s, `rec-nivel-
-  oscuro`→justo_asi ACIERTO PLENO; Hill traje del muerto `me_tienta`+love
-  258s, `rec-terror`→cuanto_mas_oscuro_mejor; Baltimore (21/07, pendiente).
-- **Sofi cozy**: Osman t1 `lo_quiero`+love 179s `rec-club`→joyce ACIERTO
-  PLENO; Osman t2 `lo_quiero`+love 133s/100%, `rec-frase`→sausage. 2/2.
-
-## 🔭 Qué mirar (próxima corrida: 2026-07-24)
-- 24/07 ya pre-armado para Sofi (Osman *Club del Crimen*, nuevo — id real
-  `2026-07-24-osman-club-crimen`, ya con feedback histórico ACIERTO PLENO)
-  → construir SOLO la de Andy, "de la biblioteca" (Sofi tiene nuevo hoy).
-  Banco redescub: L5-007, L5-026 o L5-019 (astronomía).
-- Revisar veredicto de Housel (Andy, 20/07), Baltimore (Sofi, 21/07 +
-  `rec-tono`) y Minix *La librera detective* (Sofi, 23/07 + `rec-gancho`)
-  — este último es el test clave de la guardia escalada tras 3/3 fallos.
+## 🔭 Qué mirar (próxima corrida: 2026-07-25)
+- 25/07 ya pre-armado como `todos` (Weir, *Proyecto Hail Mary*, id real
+  `2026-07-25-weir-hail-mary`, pending) → cuenta para AMBOS. No construir
+  nada nuevo el 25/07: solo procesar feedback y confirmar que el push
+  (`2026-07-25-rec`, sin `to`, correcto para `todos`) salió bien.
+- Revisar veredicto de: Pollan (Andy, 23/07, clickeó 24/07 00:02 sin
+  veredicto aún), Hawking *Breve historia del tiempo* (Andy, 24/07, ficha
+  de hoy), Minix *La librera detective* (Sofi, 23/07 + `rec-gancho`) — este
+  último sigue siendo el test clave de la guardia escalada tras 3/3 fallos
+  de redescub — y Baltimore (Sofi, 21/07 + `rec-tono`), todavía sin
+  veredicto pese a varios días.
   Si Minix TAMBIÉN da `ya_lo_lei`: parar de rotar nombres en M5/R4/R5 y
   correr la mezcla de Sofi hacia más "nuevo", o probar redescub fuera de
   misterio puro (M6 Benavent, sin señal previa de gusto ni de lectura).
+- 26/07 y 27/07 ya pre-armados (Hill *nuevo* sofi con feedback histórico
+  ACIERTO ya cargado; Haig `todos` pending) — el 28/07 queda 100% libre
+  para ambos, primera vez sin pre-armados desde el bootstrap.
 
 ## 🧭 Sugerencias hub
 `recs/index.html` lista todo leyendo `recommended.json` por fetch — cero

@@ -1,7 +1,20 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-07-24T15:48:10.603Z",
+  "_updated_at": "2026-07-24T17:30:00-03:00",
   "notifications": [
+    {
+      "id": "2026-07-24-rec-andy",
+      "title": "🕳️ El libro que cerró tu estante en el 88",
+      "body": "Antes de Rovelli, tu L5 terminaba en Hawking. Sigue ahí sin abrir — la única ecuación de todo el libro.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-24-hawking-breve-historia-tiempo.html",
+      "to": "Andy",
+      "send_at": "2026-07-24T17:30:00-03:00",
+      "expires_at": "2026-07-24T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-24"
+    },
     {
       "id": "2026-07-23-rec-sofi",
       "title": "📖 Ella inventa asesinatos para vivir, Sofi",
@@ -233,12 +246,14 @@
       "title": "🫖 Para Sofi: cuatro jubilados y un crimen",
       "body": "El cozy que redefinió el género: récord británico, linaje Christie y peli con Helen Mirren. Tu salón M5 lo pide.",
       "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-24-osman-club-crimen.html",
+      "to": "Sofi",
       "send_at": "2026-07-24T12:30:00-03:00",
       "expires_at": "2026-07-24T23:00:00-03:00",
       "status": "sent",
       "sent_at": "2026-07-24T15:48:10.602Z",
       "fail_reason": null,
-      "created_by": "bootstrap /recomendacion 2026-07-15"
+      "created_by": "bootstrap /recomendacion 2026-07-15",
+      "_nota_recomendacion": "Al 'to' le faltaba 'Sofi' en el bootstrap original — por eso salió también al dispositivo de Andy (ver send_log.json, dos entradas para este nid). Se corrige el campo para el registro; no se puede des-enviar el push ya salido. Guardia agregada en PROFILE."
     },
     {
       "id": "2026-07-25-rec",
