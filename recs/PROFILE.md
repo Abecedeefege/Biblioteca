@@ -148,10 +148,17 @@ Perception* (con L4-005 Leary), L4-021 *The Art of Happiness*, L4-022
 - 24/07: `2026-07-24-librerias-del-viaje` (audiencia `todos`) — guía de
   librerías y bibliotecas para el viaje Dubrovnik / Split / Darmstadt /
   Frankfurt / Heidelberg / Amsterdam. Pedida en vivo por Andy. Formato para
-  TV (flechas, dos columnas en apaisado, arte SVG propio). Micro-señal nueva:
-  `viaje-libreria:<ciudad>-<n>` = "quiero ir" por parada — mirar cuáles
-  marcan para saber qué tipo de local les tira (histórico, anticuario,
-  biblioteca-monumento o librería viva).
+  TV (flechas, dos columnas en apaisado, arte SVG propio). Cada parada tiene
+  un módulo "Cómo llegar" que asoma abajo y se abre con ↓, con QR a Google
+  Maps para escanear desde la tele; los SVG viven en `recs/qr/` (uno por
+  parada, mismo slug que el id) y se verificaron con un decodificador
+  independiente. Micro-señal nueva: `viaje-libreria:<ciudad>-<n>` = "quiero
+  ir" por parada — mirar cuáles marcan para saber qué tipo de local les tira
+  (histórico, anticuario, biblioteca-monumento o librería viva).
+- Aprendido: para pantalla de TV, todo módulo que asome desde abajo tiene que
+  ir dentro de un contenedor recortado por encima del pie; si no, se dibuja
+  por detrás de los controles. Y el alto reservado en `.slide` sube con lo
+  que asome, o el módulo tapa los botones de la ficha.
 
 ## 🧭 Sugerencias hub
 `recs/index.html` lista todo leyendo `recommended.json` por fetch — cero

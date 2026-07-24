@@ -155,6 +155,46 @@ button{font-family:var(--sans);cursor:pointer;color:inherit}
 .cierre a.hub{color:var(--ac2);text-decoration:none;font-weight:700;border-bottom:2px solid var(--ac);
   padding-bottom:.3vmin;font-size:calc(var(--u)*1)}
 
+/* ---------- módulo de QR: asoma abajo y se abre bajando ---------- */
+/* El recorte va hasta donde arranca el pie: así el módulo asomado nunca
+   se dibuja por detrás de los controles. */
+#qrClip{
+  position:fixed;left:0;right:0;top:0;bottom:var(--pie,10.5vmin);
+  z-index:38;overflow:hidden;pointer-events:none}
+#qr{
+  position:absolute;left:max(7vmin,env(safe-area-inset-left));right:max(7vmin,env(safe-area-inset-right));
+  bottom:0;
+  border:1px solid var(--linea);border-radius:2.2vmin 2.2vmin 0 0;border-bottom:0;
+  background:linear-gradient(180deg,rgba(20,23,31,.97),rgba(11,13,18,.99));
+  backdrop-filter:blur(10px);box-shadow:0 -1.4vmin 4vmin rgba(0,0,0,.55);
+  /* asoma la barra + el borde superior de la tarjeta del QR */
+  transform:translateY(calc(100% - 13vmin));
+  transition:transform .45s cubic-bezier(.22,.75,.3,1),opacity .3s ease;
+  opacity:0;pointer-events:none;
+}
+body.qr-hay #qr{opacity:1;pointer-events:auto}
+/* el módulo asomado no debe tapar el botón "quiero ir": le reservamos el sitio */
+body.qr-hay .slide{padding-bottom:26vmin}
+body.qr-abierto .slide{overflow:hidden}
+body.qr-abierto #qr{transform:translateY(0)}
+#qr .tirador{display:flex;align-items:center;justify-content:center;gap:1.4vmin;
+  height:7.4vmin;cursor:pointer;font-size:calc(var(--u)*.85);font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ac2);width:100%;
+  background:transparent;border:0;border-radius:2.2vmin 2.2vmin 0 0}
+#qr .tirador .flecha{display:inline-block;transition:transform .45s ease;font-size:calc(var(--u)*1.1)}
+body.qr-abierto #qr .tirador .flecha{transform:rotate(180deg)}
+#qr .cuerpo{display:flex;align-items:center;gap:4vmin;padding:0 3.5vmin 3.5vmin;flex-wrap:wrap}
+#qr .tarjeta{background:#fff;border-radius:1.6vmin;padding:1.6vmin;line-height:0;flex:0 0 auto;
+  box-shadow:0 1vmin 3vmin rgba(0,0,0,.4)}
+#qr .tarjeta img{display:block;width:30vmin;height:30vmin;max-width:44vw}
+#qr .texto{min-width:0;flex:1 1 24ch}
+#qr .texto .n{font-family:var(--serif);font-weight:800;font-size:calc(var(--u)*1.7);
+  line-height:1.1;margin-bottom:1.2vmin}
+#qr .texto .dir{color:var(--ac2);font-size:calc(var(--u)*1.05);font-weight:600;margin-bottom:1.6vmin}
+#qr .texto .como{color:var(--bruma);font-size:calc(var(--u)*.92);line-height:1.45}
+#qr .texto .como b{color:var(--papel)}
+#qr .texto a{color:var(--ac2);font-size:calc(var(--u)*.85);word-break:break-all}
+
 /* ---------- controles ---------- */
 /* "Volver" vive en el pie: arriba pisaba la última etiqueta de la barra de progreso */
 .back{color:var(--bruma);text-decoration:none;font-size:calc(var(--u)*.8);
@@ -190,6 +230,10 @@ button{font-family:var(--sans);cursor:pointer;color:inherit}
   .marcar{align-items:flex-start;margin-top:1vmin}
   #pie .ayuda{display:none}
   #barras .et{font-size:calc(var(--u)*.6)}
+  /* en el teléfono el pie ocupa más alto: el recorte del módulo sube con él */
+  #qrClip{--pie:19vmin}
+  #qr .tarjeta img{width:38vmin}
+  #qr .cuerpo{gap:3vmin;padding:0 2.5vmin 3vmin}
 }
 /* apaisado bajito (teléfono de costado): dos columnas para no apilar tanto */
 @media (min-width:800px) and (max-height:560px){
@@ -207,10 +251,25 @@ button{font-family:var(--sans);cursor:pointer;color:inherit}
 <div id="barras" aria-hidden="true"></div>
 <div id="deck"></div>
 
+<div id="qrClip"><section id="qr" aria-label="Cómo llegar">
+  <button class="tirador" type="button" id="qrTirador" aria-expanded="false" aria-controls="qrCuerpo">
+    <span class="flecha" aria-hidden="true">↓</span><span id="qrRotulo">Cómo llegar</span>
+  </button>
+  <div class="cuerpo" id="qrCuerpo">
+    <div class="tarjeta"><img id="qrImg" src="" alt="Código QR con la ubicación en Google Maps" width="300" height="300"></div>
+    <div class="texto">
+      <p class="n" id="qrNombre"></p>
+      <p class="dir" id="qrDir"></p>
+      <p class="como">Apuntá la cámara del teléfono al código y se abre en <b>Google Maps</b>.</p>
+      <p style="margin-top:1vmin"><a id="qrLink" href="#" target="_blank" rel="noopener">o abrilo acá</a></p>
+    </div>
+  </div>
+</section></div>
+
 <div id="pie">
   <div class="izq">
     <a class="back" href="../index.html">← Bibliotequeando</a>
-    <p class="ayuda"><kbd>←</kbd> <kbd>→</kbd> para moverte · <kbd>Enter</kbd> marca "quiero ir" · <kbd>P</kbd> modo TV</p>
+    <p class="ayuda"><kbd>←</kbd> <kbd>→</kbd> moverte · <kbd>↓</kbd> cómo llegar · <kbd>Enter</kbd> "quiero ir" · <kbd>P</kbd> modo TV</p>
   </div>
   <div class="mandos">
     <button id="bPrev" aria-label="Anterior" title="Anterior">‹</button>
@@ -235,14 +294,20 @@ var CIUDADES=[
    {n:'Biblioteca del Monasterio Franciscano',tipo:'Biblioteca + farmacia',
     porque:'La parada obligada. La farmacia del claustro <b>funciona sin interrupción desde 1317</b>: la más antigua de Europa en actividad. Al lado, la biblioteca de los frailes.',
     datos:[['Desde','El complejo, hacia 1317'],['La biblioteca','20.000 volúmenes · 1.200 manuscritos · 137 incunables'],['Además','7.000+ partituras, más de 100 únicas en el mundo'],['Dónde','Entrada por el Stradun, junto a la Puerta Pile']],
+    dir:"Placa 2, casco antiguo · Dubrovnik",
+    maps:"https://maps.google.com/?q=Male+brace+2%2C+Dubrovnik",
     ojo:'Entrada al monasterio y museo <b>€10</b> por adulto (2026); la iglesia sobre el Stradun es gratis. En verano abre 9 a 18.'},
    {n:'Knjižara Algebra',tipo:'Librería',
     porque:'La librería viva del casco antiguo, <b>abierta todo el año</b> y la que usan los de acá — no solo los cruceristas. Estanterías del piso al techo y pilas en el suelo.',
     datos:[['Dónde','Placa 8, sobre el Stradun'],['Ojo','Tiene dos locales: uno pasando la Puerta Pile, otro antes de la Torre del Reloj'],['Idiomas','Croata e inglés, algo de francés y alemán'],['Horario','9 a 21, todos los días']],
+    dir:"Placa 8, sobre el Stradun · Dubrovnik",
+    maps:"https://maps.google.com/?q=Knjizara+Algebra%2C+Placa+8%2C+Dubrovnik",
     ojo:'Honestidad: promedia <b>3,5 de 5</b> en reseñas y varias se quejan de precios de zona turística. Andá por el hallazgo local, no por la ganga.'},
    {n:'Monasterio Dominico',tipo:'Museo + claustro',
     porque:'El que casi nadie encuentra: se entra por un pasaje detrás del Palacio Sponza. Su biblioteca guarda <b>216 incunables</b> y brilló en toda Europa entre los siglos XV y XVII.',
     datos:[['Fundado','Biblioteca del siglo XII'],['El tesoro','216 incunables y manuscritos iluminados'],['Se ve','Claustro, museo de arte sacro y pinturas'],['Dónde','Pasaje detrás del Palacio Sponza']],
+    dir:"Sv. Dominika 4 · Dubrovnik",
+    maps:"https://maps.google.com/?q=Sv.+Dominika+4%2C+Dubrovnik",
     ojo:'<b>La biblioteca en sí no está abierta al público</b> — se visitan el museo y el claustro. Aun así el claustro solo justifica la entrada.'}
   ]},
 
@@ -253,14 +318,20 @@ var CIUDADES=[
    {n:'Knjižara Morpurgo',tipo:'Librería histórica',
     porque:'Abrió en 1860 y <b>nunca se mudó de dirección</b> — una de las más viejas de Europa en su sitio original. Cerró en 2017 y estuvo seis años muerta; volvió a abrir en abril de 2023.',
     datos:[['Fundada','1860, por Vid Morpurgo'],['Dónde','Narodni trg 16 — la Pjaca'],['Reabrió','Abril de 2023, gestionada por Tisak media'],['Dato','Es bien cultural protegido: quien la tenga está obligado a mantenerla como librería']],
+    dir:"Narodni trg 16 — la Pjaca · Split",
+    maps:"https://maps.google.com/?q=Narodni+trg+16%2C+Split",
     ojo:'Fue punto de reunión de los intelectuales del renacimiento croata: acá se compraba un libro y se discutía política.'},
    {n:'Znanstvena knjižara Marko Marulić',tipo:'Librería en palacio',
     porque:'La librería más grande de Split ocupa <b>toda la planta baja del Palacio Milesi</b>, un palacio barroco protegido de fines del siglo XVII. Abrió recién en agosto de 2024.',
     datos:[['Abrió','13 de agosto de 2024'],['Tamaño','208 m² — la mayor de la ciudad'],['Dónde','Palacio Milesi, Voćni trg (Trg braće Radića 7)'],['Quién','Školska knjiga junto a la Academia Croata de Ciencias y Artes']],
+    dir:"Trg braće Radić 7 — Voćni trg · Split",
+    maps:"https://maps.google.com/?q=Trg+brace+Radic+7%2C+Split",
     ojo:'Fuerte en libros científicos, diccionarios y ediciones de la Academia — más que en novedades de best-seller.'},
    {n:'Antikvarijat Nostrimus',tipo:'Anticuario',
     porque:'El antídoto al brillo del centro turístico: una librería de viejo, silenciosa, con música y café. <b>Acá se revuelve</b>, no se compra rápido.',
     datos:[['Dónde','Križeva ulica 4'],['Idiomas','Croata, con algo de inglés, alemán, sueco, francés e italiano'],['Horario','Lun a vie 9–20 · sáb 9–13'],['Ambiente','Tranquilo, con música y café']],
+    dir:"Križeva ulica 4 · Split",
+    maps:"https://maps.google.com/?q=Krizeva+ulica+4%2C+Split",
     ojo:'Alguna reseña vieja menciona un dueño de pocas pulgas. Entrá con paciencia y ganas de mirar estante por estante.'}
   ]},
 
@@ -271,14 +342,20 @@ var CIUDADES=[
    {n:'Georg-Büchner-Buchladen',tipo:'Librería independiente',
     porque:'<b>La librería más antigua de Darmstadt</b>, con unos 45 años encima. Literatura y poesía, filosofía, política, arquitectura y diseño — el catálogo de una ciudad que se toma la lengua en serio.',
     datos:[['Dónde','Lauteschlägerstraße 18'],['Horario','Lun a vie 10–19 · sáb 10–16'],['Fuerte en','Literatura y poesía, filosofía y sociedad, arquitectura'],['También','Sección de libros para chicos']],
+    dir:"Lauteschlägerstraße 18 · Darmstadt",
+    maps:"https://maps.google.com/?q=Lauteschlaegerstr+18%2C+Darmstadt",
     ojo:'El nombre no es casual: Darmstadt es la sede de la Academia Alemana de Lengua y Poesía, la que entrega el <b>Premio Georg Büchner</b>, el más importante de las letras alemanas.'},
    {n:'Universitäts- und Landesbibliothek',tipo:'Biblioteca',
     porque:'Una biblioteca moderna enorme que guarda joyas medievales: el <b>Códice Hitda</b> del siglo XI y el Códice Gero están inscritos en el registro Memoria del Mundo de la UNESCO.',
     datos:[['Edificio','Abrió el 12 de noviembre de 2012'],['Escala','78 km de estanterías · más de 1.000 lugares para sentarse'],['Tesoros','Códice Hitda, Códice Gero, Bula de Oro de 1356'],['Dónde','Magdalenenstraße 8, en pleno centro']],
+    dir:"Magdalenenstraße 8 · Darmstadt",
+    maps:"https://maps.google.com/?q=Magdalenenstr+8%2C+Darmstadt",
     ojo:'Es abierta al público, no solo a estudiantes. Los códices no están siempre expuestos — <b>preguntá por exposiciones del momento</b> antes de ir.'},
    {n:'Bessunger Buchladen',tipo:'Librería de barrio',
     porque:'Abrió el <b>1 de septiembre de 1978</b> y sigue siendo lo que era: la librería del barrio de Bessungen, de novela y libros para chicos. Nada de vidriera de aeropuerto.',
     datos:[['Desde','1978'],['Dónde','Heidelberger Straße 81B'],['Fuerte en','Narrativa y literatura infantil y juvenil'],['Escala','Chica, de barrio']],
+    dir:"Heidelberger Straße 81B · Darmstadt",
+    maps:"https://maps.google.com/?q=Heidelberger+Str+81%2C+Darmstadt",
     ojo:'Junto con la Büchner, forma parte del circuito de librerías independientes que arma eventos con la Casa de la Literatura de Darmstadt.'}
   ]},
 
@@ -289,14 +366,20 @@ var CIUDADES=[
    {n:'Land in Sicht',tipo:'Librería colectiva',
     porque:'Funciona desde <b>junio de 1978 como colectivo</b> — hoy siete personas alrededor de la librera Lyda Petzel. Literatura fuera del mainstream, la que no llega sola a tu mesa de novedades.',
     datos:[['Desde','23 de junio de 1978'],['Dónde','An der Eisernen Hand 3, barrio Nordend'],['Se mudó','En 2024, tras 46 años en Rotteckstraße'],['Premio','Distinguida en el Premio Alemán de Librerías 2025']],
+    dir:"An der Eisernen Hand 3 — Nordend",
+    maps:"https://maps.google.com/?q=An+der+Eisernen+Hand+3%2C+Frankfurt",
     ojo:'La mudanza de 2024 se hizo con <b>150 vecinos y clientes pasándose los libros en cadena humana</b> de un local al otro.'},
    {n:'Karl-Marx-Buchhandlung',tipo:'Librería histórica',
     porque:'Nació en 1970 dentro del movimiento estudiantil alemán. Entre sus socios fundadores figuraba un joven <b>Joschka Fischer</b>, que treinta años después sería ministro de Exteriores de Alemania.',
     datos:[['Fundada','1970, en Bockenheim'],['Dónde','Jordanstraße 11'],['Hoy','Librería universitaria: estudios culturales y política'],['Premio','Distinguida en el Premio Alemán de Librerías 2025']],
+    dir:"Jordanstraße 11 — Bockenheim",
+    maps:"https://maps.google.com/?q=Jordanstr+11%2C+Frankfurt",
     ojo:'No es un museo ni una pose: sigue siendo la librería de referencia de la zona universitaria.'},
    {n:'Deutsche Nationalbibliothek',tipo:'Biblioteca nacional',
     porque:'La <b>Biblioteca Nacional Alemana</b> tiene su sede en Frankfurt: recibe por ley un ejemplar de todo lo que se publica en alemán. Una catedral moderna del depósito legal.',
     datos:[['Qué es','Archivo central de todas las publicaciones en lengua alemana'],['Dónde','Adickesallee 1'],['Se puede','Salas de lectura y exposiciones abiertas al público'],['Ojo','El acceso a salas suele requerir carné de usuario']],
+    dir:"Adickesallee 1 · Frankfurt",
+    maps:"https://maps.google.com/?q=Adickesallee+1%2C+Frankfurt",
     ojo:'Chequeá en la web qué exposición hay y las condiciones de acceso del día — <b>no es una biblioteca de entrar y curiosear</b> sin más.'}
   ]},
 
@@ -307,14 +390,20 @@ var CIUDADES=[
    {n:'Antiquariat Hatry',tipo:'Anticuario',
     porque:'Para muchos <b>la mejor librería de Heidelberg</b>. Desde afuera parece un local chico sobre la calle principal; adentro son varios pisos de libros raros.',
     datos:[['Desde','1986'],['Dónde','Hauptstraße 119, en el casco antiguo'],['Horario','9 a 17'],['Idiomas','Sobre todo alemán, con bastante inglés']],
+    dir:"Hauptstraße 119 · Heidelberg",
+    maps:"https://maps.google.com/?q=Hauptstr+119%2C+Heidelberg",
     ojo:'Está metida en plena calle comercial más transitada del casco antiguo: es fácil pasar de largo por la puerta.'},
    {n:'Universitätsbibliothek Heidelberg',tipo:'Biblioteca',
     porque:'El edificio de arenisca roja de <b>1905</b>, art nouveau, levantado para dialogar con el castillo. Custodia el <b>Códice Manesse</b>, el cancionero medieval más bello que existe, y la Bibliotheca Palatina.',
     datos:[['Universidad','Fundada en 1386'],['El edificio','1905, arenisca roja con elementos Jugendstil'],['El tesoro','Códice Manesse — Memoria del Mundo UNESCO desde el 18 de mayo de 2023'],['Dónde','Plöck 107–109']],
+    dir:"Plöck 107–109 · Heidelberg",
+    maps:"https://maps.google.com/?q=Ploeck+107%2C+Heidelberg",
     ojo:'<b>Importante: las salas de exposición del edificio viejo están cerradas por obras de restauración.</b> El original del Manesse casi nunca se expone; lo que suele verse es un facsímil. Confirmá antes de ir.'},
    {n:'Los anticuarios de la Plöck',tipo:'Circuito de librerías',
     porque:'La calle Plöck, la paralela tranquila a la principal, concentra <b>librerías de viejo a metros una de otra</b> — y desemboca justo en la biblioteca universitaria. Un paseo, no una parada.',
     datos:[['Antiquariat Hoffschult','Plöck 64a'],['Buchhandlung & Antiquariat Schöbel','Plöck 56a'],['Al final de la calle','La Universitätsbibliothek, en el 107–109'],['Cómo','A pie, sin apuro']],
+    dir:"Plöck 64a (y Schöbel en el 56a)",
+    maps:"https://maps.google.com/?q=Ploeck+64%2C+Heidelberg",
     ojo:'Heidelberg tiene tradición de <b>red de libreros de segunda mano</b>, no solo de librerías de novedades. Este es el eje donde se nota.'}
   ]},
 
@@ -325,14 +414,20 @@ var CIUDADES=[
    {n:'Embassy of the Free Mind',tipo:'Biblioteca + museo',
     porque:'La joya rara del viaje. La biblioteca hermética de Joost Ritman vive en la <b>Huis met de Hoofden</b> — la Casa de las Cabezas, monumento nacional sobre un canal. La abrió al público <b>Dan Brown</b> en persona.',
     datos:[['La colección','Bibliotheca Philosophica Hermetica, empezada en 1957'],['Abrió al público','Como biblioteca en 1984; como museo en 2017'],['Dónde','Keizersgracht 123'],['Qué guarda','Manuscritos e impresos de la tradición hermética cristiana']],
+    dir:"Keizersgracht 123 · Amsterdam",
+    maps:"https://maps.google.com/?q=Keizersgracht+123%2C+Amsterdam",
     ojo:'Abre de <b>miércoles a sábado, 10 a 17</b>. Es chica y muy visitada: conviene mirar entradas con anticipación.'},
    {n:'Athenaeum Boekhandel',tipo:'Librería',
     porque:'Una de las independientes más grandes de Holanda, en la esquina del Spui. <b>Ventanales curvos de vidrio</b> y un interior de escaleras y entrepisos donde uno se pierde de nivel en nivel.',
     datos:[['Dónde','Spui 14–16'],['Qué es','Librería y centro de prensa internacional'],['Idiomas','Neerlandés, inglés y más'],['Al lado','El American Book Center, en Spui 12, con su "Treehouse"']],
+    dir:"Spui 14–16 · Amsterdam",
+    maps:"https://maps.google.com/?q=Spui+14%2C+Amsterdam",
     ojo:'Los viernes, la plaza del Spui de la puerta arma su <b>mercado de libros usados y antiguos</b>, de 10 a 18. Va hace más de veinte años.'},
    {n:'Oudemanhuispoort',tipo:'Mercado de libros',
     porque:'Un <b>pasaje cubierto</b> entre dos canales con puestos de libros usados, mapas antiguos, partituras y grabados. El mercado está ahí <b>desde 1879</b>.',
     datos:[['Desde','1879, cuando los libreros se mudaron del Botermarkt'],['Dónde','Pasaje entre Oudezijds Achterburgwal y Kloveniersburgwal'],['Qué hay','Libros usados, mapas, partituras, grabados y estampas'],['El edificio','400 años de historia: convento, hospital, asilo de ancianos y hoy universidad']],
+    dir:"Pasaje Oudemanhuispoort · Amsterdam",
+    maps:"https://maps.google.com/?q=Oudemanhuispoort%2C+Amsterdam",
     ojo:'A pasos está <b>The Book Exchange</b>, tres pisos angostos de usados en inglés — el mejor lugar de la ciudad para eso. Cae de camino.'}
   ]}
 ];
@@ -401,7 +496,8 @@ function armar(){
         '</div>'+
         '</div>'+
         '</section>';
-      meta.push({tipo:'parada',ciudad:ci,id:id});
+      /* el id de la parada es también el nombre del archivo del QR: dubrovnik-1, split-2… */
+      meta.push({tipo:'parada',ciudad:ci,id:id,qr:id,nombre:p.n,dir:p.dir,maps:p.maps});
     });
   });
 
@@ -448,6 +544,8 @@ function ir(n){
   slides.forEach(function(s){s.classList.remove('on')});
   slides[n].classList.add('on');
   i=n;
+  qrCerrar();
+  qrCargar();
   pintarBarras();
   if(meta[i].tipo==='cierre')pintarLista();
   /* replaceState y no location.hash: no ensucia el historial ni rompe el botón "atrás" del control */
@@ -469,6 +567,36 @@ function pintarBarras(){
 }
 function next(){ir(i+1)}
 function prev(){ir(i-1)}
+
+/* ---------- módulo "cómo llegar" (QR a Google Maps) ---------- */
+var qrEl=document.getElementById('qr');
+function qrCargar(){
+  var m=meta[i];
+  var hay = m.tipo==='parada' && m.qr;
+  document.body.classList.toggle('qr-hay',hay);
+  if(!hay)return;
+  document.getElementById('qrImg').src='qr/'+m.qr+'.svg';
+  document.getElementById('qrImg').alt='Código QR con la ubicación de '+m.nombre+' en Google Maps';
+  document.getElementById('qrNombre').textContent=m.nombre;
+  document.getElementById('qrDir').textContent=m.dir||'';
+  var a=document.getElementById('qrLink');
+  a.href=m.maps||'#';
+  document.getElementById('qrRotulo').textContent='Cómo llegar';
+}
+function qrAbrir(){
+  if(!document.body.classList.contains('qr-hay'))return false;
+  document.body.classList.add('qr-abierto');
+  document.getElementById('qrTirador').setAttribute('aria-expanded','true');
+  return true;
+}
+function qrCerrar(){
+  if(!document.body.classList.contains('qr-abierto'))return false;
+  document.body.classList.remove('qr-abierto');
+  document.getElementById('qrTirador').setAttribute('aria-expanded','false');
+  return true;
+}
+function qrAlternar(){ document.body.classList.contains('qr-abierto')?qrCerrar():qrAbrir() }
+document.getElementById('qrTirador').addEventListener('click',qrAlternar);
 
 /* ---------- "quiero ir" ---------- */
 var SEL={};
@@ -526,8 +654,12 @@ document.addEventListener('keydown',function(e){
   var t=e.target,tag=t&&t.tagName;
   if(tag==='TEXTAREA'||tag==='INPUT')return;              /* no robar teclas al escribir */
   var k=e.key;
-  if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '||k==='Spacebar'){e.preventDefault();next()}
-  else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){e.preventDefault();prev()}
+  /* abajo abre el módulo de cómo llegar; arriba lo cierra. Izq/der siempre navegan. */
+  if(k==='ArrowDown'){e.preventDefault(); if(!qrAbrir())next(); }
+  else if(k==='ArrowUp'){e.preventDefault(); if(!qrCerrar())prev(); }
+  else if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='Spacebar'){e.preventDefault();next()}
+  else if(k==='ArrowLeft'||k==='PageUp'){e.preventDefault();prev()}
+  else if(k==='Escape'){ if(qrCerrar())e.preventDefault(); }
   else if(k==='Home'){e.preventDefault();ir(0)}
   else if(k==='End'){e.preventDefault();ir(slides.length-1)}
   else if(k==='Enter'){
