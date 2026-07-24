@@ -3,6 +3,18 @@
   "_updated_at": "2026-07-24T19:40:23.469Z",
   "notifications": [
     {
+      "id": "2026-07-24-encuesta",
+      "title": "💬 Desde hoy me pueden contestar",
+      "body": "Hay una caja para escribirme con todas las letras. Más 5 preguntas cortas para afinar la puntería. 30 segundos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-24-encuesta-feedback.html",
+      "send_at": "2026-07-24T16:45:00-03:00",
+      "expires_at": "2026-07-24T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-24 (encuesta pedida por Andy, sin `to`: va a los dos)"
+    },
+    {
       "id": "2026-07-24-rec-andy",
       "title": "🕳️ El libro que cerró tu estante en el 88",
       "body": "Antes de Rovelli, tu L5 terminaba en Hawking. Sigue ahí sin abrir — la única ecuación de todo el libro.",
