@@ -1735,7 +1735,33 @@
       "type": "reaction",
       "value": "meh",
       "device": "Sofi"
+    },
+    {
+      "id": "mrwevaea-q0ajl6",
+      "type": "dwell",
+      "ts": "2026-07-22T18:23:45.250Z",
+      "page": "index.html",
+      "device": "Andy",
+      "dwell_s": 57,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mry6e90o-e4fsh8",
+      "type": "notification_clicked",
+      "ts": "2026-07-24T00:02:05.736Z",
+      "page": "2026-07-23-pollan-cambiar-mente.html",
+      "device": "Andy",
+      "nid": "2026-07-23-rec",
+      "src": "push"
+    },
+    {
+      "id": "mry6e90p-vupnef",
+      "type": "page_visit",
+      "ts": "2026-07-24T00:02:05.737Z",
+      "page": "2026-07-23-pollan-cambiar-mente.html",
+      "device": "Andy",
+      "nid": "2026-07-23-rec"
     }
   ],
-  "_updated_at": "2026-07-22T23:31:56.945Z"
+  "_updated_at": "2026-07-24T00:02:06.853Z"
 }
