@@ -1840,7 +1840,33 @@
       "page": "2026-07-24-hawking-breve-historia-tiempo.html",
       "device": "Andy",
       "nid": "2026-07-24-rec-andy"
+    },
+    {
+      "id": "mrzcjgvs-hxfvfa",
+      "type": "dwell",
+      "ts": "2026-07-24T19:41:53.081Z",
+      "page": "2026-07-24-hawking-breve-historia-tiempo.html",
+      "device": "Andy",
+      "dwell_s": 78,
+      "scroll_pct": 88
+    },
+    {
+      "id": "mrze8f72-dae472",
+      "type": "notification_clicked",
+      "ts": "2026-07-24T20:29:16.910Z",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "device": "Andy",
+      "nid": "2026-07-24-encuesta",
+      "src": "push"
+    },
+    {
+      "id": "mrze8f74-yy5p35",
+      "type": "page_visit",
+      "ts": "2026-07-24T20:29:16.912Z",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "device": "Andy",
+      "nid": "2026-07-24-encuesta"
     }
   ],
-  "_updated_at": "2026-07-24T19:40:36.166Z"
+  "_updated_at": "2026-07-24T20:29:18.155Z"
 }
