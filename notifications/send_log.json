@@ -188,6 +188,20 @@
       "device": "Andy",
       "ts": "2026-07-24T19:40:23.468Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-24-encuesta",
+      "device": "Andy",
+      "ts": "2026-07-24T20:06:00.707Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-24-encuesta",
+      "device": "Sofi",
+      "ts": "2026-07-24T20:06:00.880Z",
+      "status_code": 201
     }
   ]
 }
