@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-07-23T21:30:17.642Z",
+  "_updated_at": "2026-07-24T15:48:10.603Z",
   "notifications": [
     {
       "id": "2026-07-23-rec-sofi",
@@ -235,8 +235,8 @@
       "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-24-osman-club-crimen.html",
       "send_at": "2026-07-24T12:30:00-03:00",
       "expires_at": "2026-07-24T23:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-24T15:48:10.602Z",
       "fail_reason": null,
       "created_by": "bootstrap /recomendacion 2026-07-15"
     },
