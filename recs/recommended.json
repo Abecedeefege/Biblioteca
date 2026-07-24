@@ -552,6 +552,31 @@
         "dwell_s": 0
       },
       "learning": null
+    },
+    {
+      "id": "2026-07-24-librerias-del-viaje",
+      "date": "2026-07-24",
+      "kind": "viaje",
+      "title": "Librerías del viaje — 18 paradas en 6 ciudades",
+      "author": "Croacia · Alemania · Países Bajos",
+      "language": "es",
+      "topics": [
+        "viaje",
+        "librerias",
+        "bibliotecas"
+      ],
+      "book_ref": null,
+      "audience": "todos",
+      "page": "recs/2026-07-24-librerias-del-viaje.html",
+      "notified_by": null,
+      "why": "Pedido puntual de Andy: guía de librerías y bibliotecas para el viaje por Dubrovnik, Split, Darmstadt, Frankfurt, Heidelberg y Amsterdam. Top 3 por ciudad, elegidas por historia, rareza o belleza — no por cercanía. Formato tipo historias de Instagram, pensado para ver en la TV: navegación con flechas del control, tipografía escalada a vmin, dos columnas en pantalla apaisada y arte SVG propio (sin imágenes externas). Cada parada se puede marcar con 'Quiero ir' y la última pantalla arma la lista. Datos verificados con fuentes públicas en julio 2026; los casos dudosos van declarados en la ficha (obra en la UB Heidelberg, precios de Dubrovnik, reseñas mixtas de Algebra y Nostrimus).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
     }
   ]
 }

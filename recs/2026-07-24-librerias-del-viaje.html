@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🗺️ Librerías del viaje · Bibliotequeando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..900;1,9..144,500..700&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0D12;
+  --papel:#F4F1EA;
+  --bruma:#9AA3B2;
+  --linea:rgba(244,241,234,.16);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  /* acento: lo pisa cada ciudad */
+  --ac:#E8A33D;
+  --ac2:#F3C572;
+  --c1:#1B2436;
+  --c2:#0B0D12;
+  /* tipografía escalada a la pantalla: en TV manda vmin */
+  --u: clamp(14px, 2.1vmin, 34px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--bg);color:var(--papel);font-family:var(--sans);
+  line-height:1.5;-webkit-font-smoothing:antialiased;
+  font-size:calc(var(--u)*1.15);
+}
+::selection{background:var(--ac);color:#0B0D12}
+button{font-family:var(--sans);cursor:pointer;color:inherit}
+:focus-visible{outline:3px solid var(--ac2);outline-offset:4px;border-radius:8px}
+
+/* ---------- escenario ---------- */
+#deck{position:fixed;inset:0}
+.slide{
+  position:absolute;inset:0;
+  /* flex-start + margin auto en el hijo: centra cuando entra, y no recorta arriba cuando no entra */
+  display:flex;flex-direction:column;justify-content:flex-start;
+  /* safe area: los televisores recortan los bordes (overscan) */
+  padding:6vmin max(7vmin,env(safe-area-inset-left)) 11vmin max(7vmin,env(safe-area-inset-right));
+  opacity:0;visibility:hidden;transform:scale(1.03);
+  /* visibility conmuta recién al terminar el fundido al ocultar, y al instante al mostrar */
+  transition:opacity .55s ease,transform .55s ease,visibility 0s linear .55s;
+  background:radial-gradient(120% 90% at 50% 0%,var(--c1) 0%,var(--c2) 70%);
+  overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.slide.on{opacity:1;visibility:visible;transform:none;z-index:2;
+  transition:opacity .55s ease,transform .55s ease,visibility 0s linear 0s}
+.slide .lienzo{position:absolute;inset:0;pointer-events:none;opacity:.32}
+.slide .lienzo svg{position:absolute;bottom:0;left:0;width:100%;height:auto;max-height:34vh;display:block;
+  /* se funde con el fondo en vez de cortar en un bloque duro */
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 55%,#000 100%);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 55%,#000 100%)}
+.slide .grano{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.014) 0 1px,transparent 1px 3px)}
+.int{position:relative;z-index:3;max-width:min(112rem,88vw);margin-block:auto}
+
+/* ---------- barra de progreso tipo historias ---------- */
+#barras{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;gap:.5vmin;
+  padding:2.2vmin max(7vmin,env(safe-area-inset-left)) 0;pointer-events:none}
+/* min-width:0 es lo que permite que la etiqueta larga se recorte en vez de pisar a la vecina */
+#barras .grupo{flex:1;min-width:0;display:flex;flex-direction:column;gap:.7vmin}
+#barras .riel{height:.55vmin;border-radius:99px;background:rgba(244,241,234,.2);overflow:hidden;display:flex;gap:.35vmin}
+#barras .seg{flex:1;background:rgba(244,241,234,.14);border-radius:99px;transition:background .3s ease}
+#barras .seg.v{background:var(--papel)}
+#barras .et{font-size:calc(var(--u)*.72);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--bruma);font-weight:700;text-align:center;transition:color .3s ease;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#barras .grupo.act .et{color:var(--ac2)}
+
+/* ---------- portada ---------- */
+.portada .kicker{font-size:calc(var(--u)*.85);letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ac);font-weight:700;margin-bottom:3vmin}
+.portada h1{font-family:var(--serif);font-weight:800;font-size:calc(var(--u)*5.2);
+  line-height:.98;letter-spacing:-.02em;margin-bottom:3vmin}
+.portada h1 em{font-style:italic;color:var(--ac2);display:block}
+.portada .sub{color:var(--bruma);font-size:calc(var(--u)*1.25);max-width:42ch;margin-bottom:5vmin}
+.ruta{display:flex;flex-wrap:wrap;gap:1.2vmin}
+.ruta span{border:1px solid var(--linea);border-radius:99px;padding:.9vmin 2.2vmin;
+  font-size:calc(var(--u)*.92);font-weight:600;color:var(--papel);background:rgba(244,241,234,.05)}
+.ruta span b{color:var(--ac2);font-weight:700}
+
+/* ---------- portadilla de ciudad ---------- */
+.ciudad .num{font-family:var(--serif);font-size:calc(var(--u)*2);color:var(--ac);
+  font-weight:700;letter-spacing:.2em;margin-bottom:2vmin}
+.ciudad h2{font-family:var(--serif);font-weight:800;font-size:calc(var(--u)*6.4);
+  line-height:.94;letter-spacing:-.025em;margin-bottom:2.5vmin}
+.ciudad .pais{font-size:calc(var(--u)*1.1);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ac2);font-weight:700;margin-bottom:3vmin}
+.ciudad .linea{color:var(--bruma);font-size:calc(var(--u)*1.3);max-width:40ch;font-family:var(--serif);font-style:italic}
+
+/* ---------- ficha de parada ---------- */
+/* En pantalla apaisada (TV) va a dos columnas: el 16:9 sobra de ancho y falta de alto. */
+.parada .int{display:grid;grid-template-columns:1fr;gap:3vmin;align-items:start}
+.parada .top{display:flex;align-items:baseline;gap:2.5vmin;margin-bottom:1.8vmin;flex-wrap:wrap}
+.parada .rank{font-family:var(--serif);font-weight:800;font-size:calc(var(--u)*3.2);
+  color:var(--ac);line-height:1}
+.parada .donde{font-size:calc(var(--u)*.85);letter-spacing:.24em;text-transform:uppercase;
+  color:var(--bruma);font-weight:700}
+.parada h3{font-family:var(--serif);font-weight:800;font-size:calc(var(--u)*3);
+  line-height:1.03;letter-spacing:-.02em;margin-bottom:1.4vmin;max-width:18ch}
+.parada .tipo{display:inline-block;font-size:calc(var(--u)*.78);letter-spacing:.18em;
+  text-transform:uppercase;font-weight:700;color:#0B0D12;background:var(--ac2);
+  border-radius:99px;padding:.65vmin 1.7vmin;margin-bottom:2.4vmin}
+.parada .porque{font-family:var(--serif);font-style:italic;font-size:calc(var(--u)*1.45);
+  line-height:1.32;max-width:24ch;color:var(--papel)}
+.parada .porque b{font-style:normal;font-weight:700;color:var(--ac2)}
+.datos{display:grid;gap:1.1vmin;margin-bottom:2.4vmin}
+.datos div{border:1px solid var(--linea);border-radius:1.2vmin;padding:1.1vmin 1.8vmin;
+  background:rgba(244,241,234,.05);min-width:0}
+.datos dt{font-size:calc(var(--u)*.68);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ac);font-weight:700;margin-bottom:.25vmin}
+.datos dd{font-size:calc(var(--u)*.92);color:var(--papel);font-weight:600;line-height:1.4}
+.ojo{display:flex;gap:1.2vmin;align-items:flex-start;border-left:.35vmin solid var(--ac);
+  padding-left:1.8vmin;color:var(--bruma);font-size:calc(var(--u)*.88);line-height:1.45;margin-bottom:2.4vmin}
+.ojo b{color:var(--ac2)}
+
+/* marcador "quiero ir" — en el flujo, nada lo puede tapar */
+.marcar{display:flex;align-items:center;gap:1.4vmin}
+.marcar button{border:.28vmin solid var(--linea);background:rgba(11,13,18,.5);
+  border-radius:99px;padding:1.3vmin 2.6vmin;font-size:calc(var(--u)*1);font-weight:700;
+  display:flex;align-items:center;gap:1.1vmin;transition:all .25s ease;backdrop-filter:blur(6px)}
+.marcar button:hover{border-color:var(--ac);color:var(--ac2)}
+.marcar button.si{background:var(--ac);border-color:var(--ac);color:#0B0D12}
+.marcar .tecla{font-size:calc(var(--u)*.7);color:var(--bruma);letter-spacing:.1em}
+
+@media (min-width:900px){
+  .parada .int{grid-template-columns:1.08fr .92fr;gap:6vmin;max-width:min(150rem,90vw)}
+  .parada h3{font-size:calc(var(--u)*3.2)}
+  .parada .porque{font-size:calc(var(--u)*1.5)}
+}
+
+/* ---------- cierre ---------- */
+.cierre h2{font-family:var(--serif);font-weight:800;font-size:calc(var(--u)*3.6);
+  line-height:1;margin-bottom:2.5vmin}
+.cierre .sub{color:var(--bruma);font-size:calc(var(--u)*1.1);max-width:46ch;margin-bottom:3vmin}
+#listaSel{display:flex;flex-wrap:wrap;gap:1.2vmin;margin-bottom:3.5vmin;max-width:80vw}
+#listaSel span{border:1px solid var(--ac);color:var(--ac2);border-radius:99px;
+  padding:.9vmin 2vmin;font-size:calc(var(--u)*.92);font-weight:600}
+#listaSel .vacio{border-color:var(--linea);color:var(--bruma)}
+.cierre .fila{display:flex;flex-wrap:wrap;gap:1.4vmin;align-items:center;margin-bottom:2.5vmin}
+.cierre .fila button{border:1px solid var(--linea);background:rgba(244,241,234,.05);
+  border-radius:99px;padding:1.2vmin 2.4vmin;font-size:calc(var(--u)*1);font-weight:600;transition:all .25s ease}
+.cierre .fila button:hover{border-color:var(--ac);color:var(--ac2)}
+.cierre .rot{font-size:calc(var(--u)*.8);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ac);font-weight:700;margin-bottom:1.2vmin}
+.q-hint,.react-hint{display:inline-block;margin-left:1.4vmin;font-size:calc(var(--u)*.9);color:var(--ac2)}
+#nota{width:min(58rem,78vw);box-sizing:border-box;resize:none;padding:1.4vmin 1.8vmin;
+  border-radius:1.4vmin;border:1px solid var(--linea);background:rgba(244,241,234,.06);
+  color:inherit;font-family:inherit;font-size:calc(var(--u)*1);margin-bottom:1.4vmin}
+.cierre a.hub{color:var(--ac2);text-decoration:none;font-weight:700;border-bottom:2px solid var(--ac);
+  padding-bottom:.3vmin;font-size:calc(var(--u)*1)}
+
+/* ---------- controles ---------- */
+/* "Volver" vive en el pie: arriba pisaba la última etiqueta de la barra de progreso */
+.back{color:var(--bruma);text-decoration:none;font-size:calc(var(--u)*.8);
+  padding:.8vmin 1.8vmin;border:1px solid var(--linea);border-radius:99px;
+  background:rgba(11,13,18,.6);backdrop-filter:blur(6px);font-weight:600;
+  white-space:nowrap;pointer-events:auto}
+.back:hover{color:var(--ac2);border-color:var(--ac)}
+#pie{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;align-items:center;
+  justify-content:space-between;gap:2vmin;
+  padding:0 max(7vmin,env(safe-area-inset-right)) 3.2vmin max(7vmin,env(safe-area-inset-left));
+  pointer-events:none}
+#pie .izq{display:flex;align-items:center;gap:2vmin;min-width:0}
+#pie .ayuda{font-size:calc(var(--u)*.78);color:var(--bruma);letter-spacing:.06em}
+/* el banner de engage.js se inyecta suelto en el body: acá le damos un lugar fijo */
+#engage-unsub{position:fixed!important;left:50%;transform:translateX(-50%);
+  bottom:.4vmin;margin:0!important;z-index:41;opacity:.4!important;font-size:calc(var(--u)*.68)!important}
+#pie .ayuda kbd{background:rgba(244,241,234,.12);border:1px solid var(--linea);
+  border-radius:.6vmin;padding:.25vmin .9vmin;font-family:var(--sans);font-size:calc(var(--u)*.74);font-weight:700}
+#pie .mandos{display:flex;gap:1.2vmin;pointer-events:auto}
+#pie .mandos button{border:1px solid var(--linea);background:rgba(11,13,18,.6);
+  border-radius:99px;width:6.4vmin;height:6.4vmin;min-width:44px;min-height:44px;
+  font-size:calc(var(--u)*1.1);display:flex;align-items:center;justify-content:center;
+  backdrop-filter:blur(6px);transition:all .25s ease}
+#pie .mandos button:hover{border-color:var(--ac);color:var(--ac2)}
+
+@media (max-width:760px){
+  :root{--u:clamp(12px,3.1vmin,20px)}
+  .slide{padding:11vmin 7vw 16vmin}
+  .parada h3{font-size:calc(var(--u)*2.5)}
+  .parada .porque{font-size:calc(var(--u)*1.35)}
+  .ciudad h2{font-size:calc(var(--u)*4.2)}
+  .portada h1{font-size:calc(var(--u)*3.6)}
+  .marcar{align-items:flex-start;margin-top:1vmin}
+  #pie .ayuda{display:none}
+  #barras .et{font-size:calc(var(--u)*.6)}
+}
+/* apaisado bajito (teléfono de costado): dos columnas para no apilar tanto */
+@media (min-width:800px) and (max-height:560px){
+  .parada .int{grid-template-columns:1.08fr .92fr;gap:4vmin}
+  .slide{padding:8vmin 6vmin 12vmin}
+}
+@media (prefers-reduced-motion:reduce){
+  .slide{transition:opacity .01s linear}
+  *,*::before,*::after{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<div id="barras" aria-hidden="true"></div>
+<div id="deck"></div>
+
+<div id="pie">
+  <div class="izq">
+    <a class="back" href="../index.html">← Bibliotequeando</a>
+    <p class="ayuda"><kbd>←</kbd> <kbd>→</kbd> para moverte · <kbd>Enter</kbd> marca "quiero ir" · <kbd>P</kbd> modo TV</p>
+  </div>
+  <div class="mandos">
+    <button id="bPrev" aria-label="Anterior" title="Anterior">‹</button>
+    <button id="bPlay" aria-label="Modo TV: avance automático" title="Modo TV">▶</button>
+    <button id="bNext" aria-label="Siguiente" title="Siguiente">›</button>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   DATOS — todo verificado con fuentes públicas en julio 2026.
+   Los horarios y precios cambian: la ficha avisa que se
+   chequean antes de ir.
+   ============================================================ */
+var REC='2026-07-24-librerias-del-viaje';
+
+var CIUDADES=[
+ {id:'dubrovnik',nombre:'Dubrovnik',pais:'Croacia',
+  lema:'Una farmacia que despacha desde 1317 y una biblioteca de frailes con 137 incunables.',
+  ac:'#E8843D',ac2:'#F7B77E',c1:'#3A1F16',c2:'#120A08',arte:'muralla',
+  paradas:[
+   {n:'Biblioteca del Monasterio Franciscano',tipo:'Biblioteca + farmacia',
+    porque:'La parada obligada. La farmacia del claustro <b>funciona sin interrupción desde 1317</b>: la más antigua de Europa en actividad. Al lado, la biblioteca de los frailes.',
+    datos:[['Desde','El complejo, hacia 1317'],['La biblioteca','20.000 volúmenes · 1.200 manuscritos · 137 incunables'],['Además','7.000+ partituras, más de 100 únicas en el mundo'],['Dónde','Entrada por el Stradun, junto a la Puerta Pile']],
+    ojo:'Entrada al monasterio y museo <b>€10</b> por adulto (2026); la iglesia sobre el Stradun es gratis. En verano abre 9 a 18.'},
+   {n:'Knjižara Algebra',tipo:'Librería',
+    porque:'La librería viva del casco antiguo, <b>abierta todo el año</b> y la que usan los de acá — no solo los cruceristas. Estanterías del piso al techo y pilas en el suelo.',
+    datos:[['Dónde','Placa 8, sobre el Stradun'],['Ojo','Tiene dos locales: uno pasando la Puerta Pile, otro antes de la Torre del Reloj'],['Idiomas','Croata e inglés, algo de francés y alemán'],['Horario','9 a 21, todos los días']],
+    ojo:'Honestidad: promedia <b>3,5 de 5</b> en reseñas y varias se quejan de precios de zona turística. Andá por el hallazgo local, no por la ganga.'},
+   {n:'Monasterio Dominico',tipo:'Museo + claustro',
+    porque:'El que casi nadie encuentra: se entra por un pasaje detrás del Palacio Sponza. Su biblioteca guarda <b>216 incunables</b> y brilló en toda Europa entre los siglos XV y XVII.',
+    datos:[['Fundado','Biblioteca del siglo XII'],['El tesoro','216 incunables y manuscritos iluminados'],['Se ve','Claustro, museo de arte sacro y pinturas'],['Dónde','Pasaje detrás del Palacio Sponza']],
+    ojo:'<b>La biblioteca en sí no está abierta al público</b> — se visitan el museo y el claustro. Aun así el claustro solo justifica la entrada.'}
+  ]},
+
+ {id:'split',nombre:'Split',pais:'Croacia',
+  lema:'Una librería de 1860 que resucitó, y la más grande de la ciudad dentro de un palacio barroco.',
+  ac:'#D9B26A',ac2:'#EBD6A4',c1:'#2E2A20',c2:'#0F0E0B',arte:'columnas',
+  paradas:[
+   {n:'Knjižara Morpurgo',tipo:'Librería histórica',
+    porque:'Abrió en 1860 y <b>nunca se mudó de dirección</b> — una de las más viejas de Europa en su sitio original. Cerró en 2017 y estuvo seis años muerta; volvió a abrir en abril de 2023.',
+    datos:[['Fundada','1860, por Vid Morpurgo'],['Dónde','Narodni trg 16 — la Pjaca'],['Reabrió','Abril de 2023, gestionada por Tisak media'],['Dato','Es bien cultural protegido: quien la tenga está obligado a mantenerla como librería']],
+    ojo:'Fue punto de reunión de los intelectuales del renacimiento croata: acá se compraba un libro y se discutía política.'},
+   {n:'Znanstvena knjižara Marko Marulić',tipo:'Librería en palacio',
+    porque:'La librería más grande de Split ocupa <b>toda la planta baja del Palacio Milesi</b>, un palacio barroco protegido de fines del siglo XVII. Abrió recién en agosto de 2024.',
+    datos:[['Abrió','13 de agosto de 2024'],['Tamaño','208 m² — la mayor de la ciudad'],['Dónde','Palacio Milesi, Voćni trg (Trg braće Radića 7)'],['Quién','Školska knjiga junto a la Academia Croata de Ciencias y Artes']],
+    ojo:'Fuerte en libros científicos, diccionarios y ediciones de la Academia — más que en novedades de best-seller.'},
+   {n:'Antikvarijat Nostrimus',tipo:'Anticuario',
+    porque:'El antídoto al brillo del centro turístico: una librería de viejo, silenciosa, con música y café. <b>Acá se revuelve</b>, no se compra rápido.',
+    datos:[['Dónde','Križeva ulica 4'],['Idiomas','Croata, con algo de inglés, alemán, sueco, francés e italiano'],['Horario','Lun a vie 9–20 · sáb 9–13'],['Ambiente','Tranquilo, con música y café']],
+    ojo:'Alguna reseña vieja menciona un dueño de pocas pulgas. Entrá con paciencia y ganas de mirar estante por estante.'}
+  ]},
+
+ {id:'darmstadt',nombre:'Darmstadt',pais:'Alemania',
+  lema:'La ciudad del premio Büchner: su librería más vieja lleva ese nombre.',
+  ac:'#5FAE86',ac2:'#9BD6B7',c1:'#16302A',c2:'#080F0D',arte:'jugendstil',
+  paradas:[
+   {n:'Georg-Büchner-Buchladen',tipo:'Librería independiente',
+    porque:'<b>La librería más antigua de Darmstadt</b>, con unos 45 años encima. Literatura y poesía, filosofía, política, arquitectura y diseño — el catálogo de una ciudad que se toma la lengua en serio.',
+    datos:[['Dónde','Lauteschlägerstraße 18'],['Horario','Lun a vie 10–19 · sáb 10–16'],['Fuerte en','Literatura y poesía, filosofía y sociedad, arquitectura'],['También','Sección de libros para chicos']],
+    ojo:'El nombre no es casual: Darmstadt es la sede de la Academia Alemana de Lengua y Poesía, la que entrega el <b>Premio Georg Büchner</b>, el más importante de las letras alemanas.'},
+   {n:'Universitäts- und Landesbibliothek',tipo:'Biblioteca',
+    porque:'Una biblioteca moderna enorme que guarda joyas medievales: el <b>Códice Hitda</b> del siglo XI y el Códice Gero están inscritos en el registro Memoria del Mundo de la UNESCO.',
+    datos:[['Edificio','Abrió el 12 de noviembre de 2012'],['Escala','78 km de estanterías · más de 1.000 lugares para sentarse'],['Tesoros','Códice Hitda, Códice Gero, Bula de Oro de 1356'],['Dónde','Magdalenenstraße 8, en pleno centro']],
+    ojo:'Es abierta al público, no solo a estudiantes. Los códices no están siempre expuestos — <b>preguntá por exposiciones del momento</b> antes de ir.'},
+   {n:'Bessunger Buchladen',tipo:'Librería de barrio',
+    porque:'Abrió el <b>1 de septiembre de 1978</b> y sigue siendo lo que era: la librería del barrio de Bessungen, de novela y libros para chicos. Nada de vidriera de aeropuerto.',
+    datos:[['Desde','1978'],['Dónde','Heidelberger Straße 81B'],['Fuerte en','Narrativa y literatura infantil y juvenil'],['Escala','Chica, de barrio']],
+    ojo:'Junto con la Büchner, forma parte del circuito de librerías independientes que arma eventos con la Casa de la Literatura de Darmstadt.'}
+  ]},
+
+ {id:'frankfurt',nombre:'Frankfurt am Main',pais:'Alemania',
+  lema:'La ciudad de la feria del libro más grande del mundo — y de dos librerías premiadas con historia política.',
+  ac:'#6E8FE0',ac2:'#A8BEF0',c1:'#1A2340',c2:'#080B14',arte:'skyline',
+  paradas:[
+   {n:'Land in Sicht',tipo:'Librería colectiva',
+    porque:'Funciona desde <b>junio de 1978 como colectivo</b> — hoy siete personas alrededor de la librera Lyda Petzel. Literatura fuera del mainstream, la que no llega sola a tu mesa de novedades.',
+    datos:[['Desde','23 de junio de 1978'],['Dónde','An der Eisernen Hand 3, barrio Nordend'],['Se mudó','En 2024, tras 46 años en Rotteckstraße'],['Premio','Distinguida en el Premio Alemán de Librerías 2025']],
+    ojo:'La mudanza de 2024 se hizo con <b>150 vecinos y clientes pasándose los libros en cadena humana</b> de un local al otro.'},
+   {n:'Karl-Marx-Buchhandlung',tipo:'Librería histórica',
+    porque:'Nació en 1970 dentro del movimiento estudiantil alemán. Entre sus socios fundadores figuraba un joven <b>Joschka Fischer</b>, que treinta años después sería ministro de Exteriores de Alemania.',
+    datos:[['Fundada','1970, en Bockenheim'],['Dónde','Jordanstraße 11'],['Hoy','Librería universitaria: estudios culturales y política'],['Premio','Distinguida en el Premio Alemán de Librerías 2025']],
+    ojo:'No es un museo ni una pose: sigue siendo la librería de referencia de la zona universitaria.'},
+   {n:'Deutsche Nationalbibliothek',tipo:'Biblioteca nacional',
+    porque:'La <b>Biblioteca Nacional Alemana</b> tiene su sede en Frankfurt: recibe por ley un ejemplar de todo lo que se publica en alemán. Una catedral moderna del depósito legal.',
+    datos:[['Qué es','Archivo central de todas las publicaciones en lengua alemana'],['Dónde','Adickesallee 1'],['Se puede','Salas de lectura y exposiciones abiertas al público'],['Ojo','El acceso a salas suele requerir carné de usuario']],
+    ojo:'Chequeá en la web qué exposición hay y las condiciones de acceso del día — <b>no es una biblioteca de entrar y curiosear</b> sin más.'}
+  ]},
+
+ {id:'heidelberg',nombre:'Heidelberg',pais:'Alemania',
+  lema:'Una universidad de 1386 y una calle entera de libreros de viejo.',
+  ac:'#D9694E',ac2:'#F0A188',c1:'#3A1B18',c2:'#120807',arte:'castillo',
+  paradas:[
+   {n:'Antiquariat Hatry',tipo:'Anticuario',
+    porque:'Para muchos <b>la mejor librería de Heidelberg</b>. Desde afuera parece un local chico sobre la calle principal; adentro son varios pisos de libros raros.',
+    datos:[['Desde','1986'],['Dónde','Hauptstraße 119, en el casco antiguo'],['Horario','9 a 17'],['Idiomas','Sobre todo alemán, con bastante inglés']],
+    ojo:'Está metida en plena calle comercial más transitada del casco antiguo: es fácil pasar de largo por la puerta.'},
+   {n:'Universitätsbibliothek Heidelberg',tipo:'Biblioteca',
+    porque:'El edificio de arenisca roja de <b>1905</b>, art nouveau, levantado para dialogar con el castillo. Custodia el <b>Códice Manesse</b>, el cancionero medieval más bello que existe, y la Bibliotheca Palatina.',
+    datos:[['Universidad','Fundada en 1386'],['El edificio','1905, arenisca roja con elementos Jugendstil'],['El tesoro','Códice Manesse — Memoria del Mundo UNESCO desde el 18 de mayo de 2023'],['Dónde','Plöck 107–109']],
+    ojo:'<b>Importante: las salas de exposición del edificio viejo están cerradas por obras de restauración.</b> El original del Manesse casi nunca se expone; lo que suele verse es un facsímil. Confirmá antes de ir.'},
+   {n:'Los anticuarios de la Plöck',tipo:'Circuito de librerías',
+    porque:'La calle Plöck, la paralela tranquila a la principal, concentra <b>librerías de viejo a metros una de otra</b> — y desemboca justo en la biblioteca universitaria. Un paseo, no una parada.',
+    datos:[['Antiquariat Hoffschult','Plöck 64a'],['Buchhandlung & Antiquariat Schöbel','Plöck 56a'],['Al final de la calle','La Universitätsbibliothek, en el 107–109'],['Cómo','A pie, sin apuro']],
+    ojo:'Heidelberg tiene tradición de <b>red de libreros de segunda mano</b>, no solo de librerías de novedades. Este es el eje donde se nota.'}
+  ]},
+
+ {id:'amsterdam',nombre:'Amsterdam',pais:'Países Bajos',
+  lema:'Una biblioteca hermética en la Casa de las Cabezas y un mercado de libros de 1879 bajo techo.',
+  ac:'#E0654F',ac2:'#F4A08D',c1:'#33161B',c2:'#0E0709',arte:'canal',
+  paradas:[
+   {n:'Embassy of the Free Mind',tipo:'Biblioteca + museo',
+    porque:'La joya rara del viaje. La biblioteca hermética de Joost Ritman vive en la <b>Huis met de Hoofden</b> — la Casa de las Cabezas, monumento nacional sobre un canal. La abrió al público <b>Dan Brown</b> en persona.',
+    datos:[['La colección','Bibliotheca Philosophica Hermetica, empezada en 1957'],['Abrió al público','Como biblioteca en 1984; como museo en 2017'],['Dónde','Keizersgracht 123'],['Qué guarda','Manuscritos e impresos de la tradición hermética cristiana']],
+    ojo:'Abre de <b>miércoles a sábado, 10 a 17</b>. Es chica y muy visitada: conviene mirar entradas con anticipación.'},
+   {n:'Athenaeum Boekhandel',tipo:'Librería',
+    porque:'Una de las independientes más grandes de Holanda, en la esquina del Spui. <b>Ventanales curvos de vidrio</b> y un interior de escaleras y entrepisos donde uno se pierde de nivel en nivel.',
+    datos:[['Dónde','Spui 14–16'],['Qué es','Librería y centro de prensa internacional'],['Idiomas','Neerlandés, inglés y más'],['Al lado','El American Book Center, en Spui 12, con su "Treehouse"']],
+    ojo:'Los viernes, la plaza del Spui de la puerta arma su <b>mercado de libros usados y antiguos</b>, de 10 a 18. Va hace más de veinte años.'},
+   {n:'Oudemanhuispoort',tipo:'Mercado de libros',
+    porque:'Un <b>pasaje cubierto</b> entre dos canales con puestos de libros usados, mapas antiguos, partituras y grabados. El mercado está ahí <b>desde 1879</b>.',
+    datos:[['Desde','1879, cuando los libreros se mudaron del Botermarkt'],['Dónde','Pasaje entre Oudezijds Achterburgwal y Kloveniersburgwal'],['Qué hay','Libros usados, mapas, partituras, grabados y estampas'],['El edificio','400 años de historia: convento, hospital, asilo de ancianos y hoy universidad']],
+    ojo:'A pasos está <b>The Book Exchange</b>, tres pisos angostos de usados en inglés — el mejor lugar de la ciudad para eso. Cae de camino.'}
+  ]}
+];
+
+/* ---------- arte por ciudad (SVG dibujado, sin imágenes externas) ---------- */
+var ARTE={
+ /* almenas: 20 módulos de 60 = exactamente los 1200 del viewBox (si no llega al borde, queda un corte duro) */
+ muralla:'<svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 300V170'+
+   new Array(20).join('|').split('|').map(function(){return 'v-30h34v30h26'}).join('')+
+   'V300Z"/><path fill="currentColor" opacity=".5" d="M0 300v-72h1200v72z"/>'+
+   '<g fill="currentColor" opacity=".75"><path d="M150 228V120h74v108z"/><path d="M150 120v-26h14v14h16v-14h14v14h16v-14h14v26z"/>'+
+   '<path d="M640 228V96h84v132z"/><path d="M640 96V68h16v14h18V68h16v14h18V68h16v28z"/>'+
+   '<path d="M1010 228V140h68v88z"/><path d="M1010 140v-24h14v12h14v-12h14v12h14v-12h12v24z"/></g></svg>',
+ columnas:'<svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" opacity=".4" d="M0 300v-46h1200v46z"/><g fill="currentColor"><rect x="90" y="96" width="42" height="158" rx="4"/><rect x="74" y="80" width="74" height="18" rx="4"/><rect x="230" y="96" width="42" height="158" rx="4"/><rect x="214" y="80" width="74" height="18" rx="4"/><rect x="370" y="96" width="42" height="158" rx="4"/><rect x="354" y="80" width="74" height="18" rx="4"/><rect x="510" y="96" width="42" height="158" rx="4"/><rect x="494" y="80" width="74" height="18" rx="4"/><rect x="650" y="96" width="42" height="158" rx="4"/><rect x="634" y="80" width="74" height="18" rx="4"/><rect x="790" y="96" width="42" height="158" rx="4"/><rect x="774" y="80" width="74" height="18" rx="4"/><rect x="930" y="96" width="42" height="158" rx="4"/><rect x="914" y="80" width="74" height="18" rx="4"/><rect x="1070" y="96" width="42" height="158" rx="4"/><rect x="1054" y="80" width="74" height="18" rx="4"/></g><path fill="currentColor" opacity=".7" d="M40 74h1120l-40-30H80z"/></svg>',
+ jugendstil:'<svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" opacity=".4" d="M0 300v-58h1200v58z"/><g fill="currentColor"><path d="M470 242V70h120v172z"/><path d="M470 70q30-40 60-40t60 40z"/><path d="M494 96h24v40h-24zm48 0h24v40h-24z" opacity=".35"/></g><path fill="currentColor" opacity=".8" d="M180 242v-92h70v92zm140 0v-64h56v64zm500 0v-78h64v78zm150 0v-56h70v56zM60 242v-48h58v48z"/></svg>',
+ skyline:'<svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" opacity=".35" d="M0 300v-40h1200v40z"/><g fill="currentColor"><path d="M120 260V130h64v130zm90 0V88h56v172zm82 0V160h48v100zm400 0V60h58v200zm74 0V112h52v148zm70 0V150h60v110zM380 260V178h60v82zm80 0V140h44v120z"/><path d="M636 60l29-40 29 40z"/><path d="M760 112l26-34 26 34z"/></g><path fill="currentColor" opacity=".75" d="M900 260v-70l40-30 40 30v70zm140 0v-52h64v52z"/></svg>',
+ castillo:'<svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" opacity=".35" d="M0 300v-52h1200v52z"/><g fill="currentColor"><path d="M300 248V120h30v-26h30v26h150v-26h30v26h30v128z"/><path d="M470 248V150h34v-30h30v30h34v98z"/><path d="M348 168h34v40h-34zm76 0h34v40h-34z" opacity=".35"/></g><path fill="currentColor" opacity=".7" d="M0 248v-22q140-34 300-34t320 34q170 34 320 20t260-40v42z"/><g fill="currentColor" opacity=".55"><path d="M760 248v-56h44v56zm70 0v-40h36v40zm60 0v-64h40v64z"/></g></svg>',
+ canal:'<svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" opacity=".35" d="M0 300v-46h1200v46z"/><g fill="currentColor"><path d="M60 254V120l32-34 32 34v134zm76 0V104l34-36 34 36v150zm80 0V132l30-32 30 32v122zm76 0V96l36-38 36 38v158zm84 0V140l28-30 28 30v114zm72 0V110l34-36 34 36v144zm80 0V128l30-32 30 32v126zm78 0V92l36-38 36 38v162zm84 0V136l30-32 30 32v118zm76 0V108l34-36 34 36v146zm80 0V126l30-32 30 32v128zm78 0V98l34-36 34 36v156z"/></g><path fill="currentColor" opacity=".3" d="M0 300v-30q150 16 300 0t300 0 300 0 300 0v30z"/></svg>'
+};
+
+/* ============================================================ */
+var deck=document.getElementById('deck');
+var barras=document.getElementById('barras');
+var slides=[],meta=[];
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+/* el texto de los datos es nuestro y controlado: permite <b> a propósito */
+function tema(c){return 'style="--ac:'+c.ac+';--ac2:'+c.ac2+';--c1:'+c.c1+';--c2:'+c.c2+'"'}
+function lienzo(c){return '<div class="lienzo" style="color:'+c.ac+'">'+(ARTE[c.arte]||'')+'</div><div class="grano"></div>'}
+
+function armar(){
+  var html='';
+  /* portada */
+  html+='<section class="slide portada" '+tema(CIUDADES[0])+'>'+lienzo(CIUDADES[0])+
+    '<div class="int"><p class="kicker">Bibliotequeando · edición de viaje</p>'+
+    '<h1>Librerías<em>del viaje</em></h1>'+
+    '<p class="sub">Las 3 paradas que sí valen en cada ciudad. Elegidas por historia, rareza o belleza — no por estar cerca del hotel.</p>'+
+    '<div class="ruta"><span><b>6</b> ciudades</span><span><b>18</b> paradas</span><span><b>3</b> países</span></div></div></section>';
+  meta.push({tipo:'portada',ciudad:-1});
+
+  CIUDADES.forEach(function(c,ci){
+    html+='<section class="slide ciudad" '+tema(c)+'>'+lienzo(c)+
+      '<div class="int"><p class="num">CIUDAD '+(ci+1)+' DE 6</p>'+
+      '<h2>'+esc(c.nombre)+'</h2><p class="pais">'+esc(c.pais)+'</p>'+
+      '<p class="linea">'+esc(c.lema)+'</p></div></section>';
+    meta.push({tipo:'ciudad',ciudad:ci});
+
+    c.paradas.forEach(function(p,pi){
+      var id=c.id+'-'+(pi+1);
+      var datos=p.datos.map(function(d){
+        return '<div><dt>'+esc(d[0])+'</dt><dd>'+d[1]+'</dd></div>';
+      }).join('');
+      html+='<section class="slide parada" '+tema(c)+'>'+lienzo(c)+
+        '<div class="int">'+
+        '<div class="col-a">'+
+          '<div class="top"><span class="rank">0'+(pi+1)+'</span><span class="donde">'+esc(c.nombre)+' · '+esc(c.pais)+'</span></div>'+
+          '<h3>'+esc(p.n)+'</h3>'+
+          '<span class="tipo">'+esc(p.tipo)+'</span>'+
+          '<p class="porque">'+p.porque+'</p>'+
+        '</div>'+
+        '<div class="col-b">'+
+          '<dl class="datos">'+datos+'</dl>'+
+          '<p class="ojo"><span aria-hidden="true">👁️</span><span>'+p.ojo+'</span></p>'+
+          '<div class="marcar"><button type="button" data-ir="'+id+'" data-nombre="'+esc(p.n)+'" data-ciudad="'+esc(c.nombre)+'">'+
+          '<span class="ic">☆</span><span class="tx">Quiero ir</span></button>'+
+          '<span class="tecla">Enter</span></div>'+
+        '</div>'+
+        '</div>'+
+        '</section>';
+      meta.push({tipo:'parada',ciudad:ci,id:id});
+    });
+  });
+
+  /* cierre: vuelve a la paleta de la casa, no a la de una ciudad */
+  var c0={ac:'#E8A33D',ac2:'#F3C572',c1:'#1B2436',c2:'#0B0D12',arte:'canal'};
+  html+='<section class="slide cierre" '+tema(c0)+'>'+lienzo(c0)+
+    '<div class="int">'+
+    '<p class="rot">Tu lista</p>'+
+    '<h2>Las que marcaste</h2>'+
+    '<div id="listaSel"><span class="vacio">Todavía no marcaste ninguna — volvé con ← y tocá "Quiero ir".</span></div>'+
+    '<p class="rot">¿Sirvió esta guía?</p>'+
+    '<div class="fila">'+
+      '<button onclick="engageReact(\''+REC+'\',\'love\',this)">😍</button>'+
+      '<button onclick="engageReact(\''+REC+'\',\'like\',this)">🙂</button>'+
+      '<button onclick="engageReact(\''+REC+'\',\'meh\',this)">😐</button>'+
+      '<button onclick="engageReact(\''+REC+'\',\'no\',this)">🙅</button>'+
+      '<span class="react-hint"></span>'+
+    '</div>'+
+    '<p class="rot">¿Falta alguna ciudad o querés otra vuelta?</p>'+
+    '<textarea id="nota" rows="2" placeholder="Escribime acá: otra ciudad, otro tipo de librería, lo que sea."></textarea>'+
+    '<div class="fila"><button type="button" onclick="enviarNota(this)">Enviarme esto</button><span class="q-hint"></span></div>'+
+    '<p style="margin-top:1.5vmin"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>'+
+    '</div></section>';
+  meta.push({tipo:'cierre',ciudad:-1});
+
+  deck.innerHTML=html;
+  slides=Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+
+  /* barra de progreso: un grupo por ciudad */
+  var bh='';
+  CIUDADES.forEach(function(c){
+    bh+='<div class="grupo" data-c="'+c.id+'"><div class="riel">'+
+      '<i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i>'+
+      '</div><span class="et">'+esc(c.nombre)+'</span></div>';
+  });
+  barras.innerHTML=bh;
+}
+
+/* ---------- navegación ---------- */
+var i=0,auto=null;
+function ir(n){
+  n=Math.max(0,Math.min(slides.length-1,n));
+  if(n===i&&slides[i].classList.contains('on'))return;
+  slides.forEach(function(s){s.classList.remove('on')});
+  slides[n].classList.add('on');
+  i=n;
+  pintarBarras();
+  if(meta[i].tipo==='cierre')pintarLista();
+  /* replaceState y no location.hash: no ensucia el historial ni rompe el botón "atrás" del control */
+  try{history.replaceState(null,'','#p'+i)}catch(e){}
+}
+function pintarBarras(){
+  var ci=meta[i].ciudad;
+  var grupos=barras.querySelectorAll('.grupo');
+  Array.prototype.forEach.call(grupos,function(g,gi){
+    g.classList.toggle('act',gi===ci);
+    var segs=g.querySelectorAll('.seg');
+    /* índice de la diapositiva dentro de la ciudad: 0=portadilla, 1..3=paradas */
+    var base=1+gi*4;
+    Array.prototype.forEach.call(segs,function(s,si){
+      var idx=base+si;
+      s.classList.toggle('v', i>=idx || (ci>gi) || (meta[i].tipo==='cierre'));
+    });
+  });
+}
+function next(){ir(i+1)}
+function prev(){ir(i-1)}
+
+/* ---------- "quiero ir" ---------- */
+var SEL={};
+try{SEL=JSON.parse(localStorage.getItem('viaje-librerias')||'{}')||{}}catch(e){SEL={}}
+function pintarBotones(){
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ir]'),function(b){
+    var on=!!SEL[b.getAttribute('data-ir')];
+    b.classList.toggle('si',on);
+    b.querySelector('.ic').textContent=on?'★':'☆';
+    b.querySelector('.tx').textContent=on?'En la lista':'Quiero ir';
+    b.setAttribute('aria-pressed',on?'true':'false');
+  });
+}
+function alternar(b){
+  var id=b.getAttribute('data-ir');
+  if(SEL[id]){delete SEL[id]}
+  else{SEL[id]={n:b.getAttribute('data-nombre'),c:b.getAttribute('data-ciudad')};
+    if(window.engageAnswer)window.engageAnswer('viaje-libreria:'+id,'quiero_ir',b);}
+  try{localStorage.setItem('viaje-librerias',JSON.stringify(SEL))}catch(e){}
+  pintarBotones();
+}
+function pintarLista(){
+  var cont=document.getElementById('listaSel');if(!cont)return;
+  var ks=Object.keys(SEL);
+  if(!ks.length){cont.innerHTML='<span class="vacio">Todavía no marcaste ninguna — volvé con ← y tocá "Quiero ir".</span>';return}
+  cont.innerHTML=ks.map(function(k){
+    return '<span>'+esc(SEL[k].n)+' <b style="opacity:.6">· '+esc(SEL[k].c)+'</b></span>';
+  }).join('');
+}
+
+/* ---------- nota libre al agente ---------- */
+function enviarNota(btn){
+  var ta=document.getElementById('nota');
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){if(hint)hint.textContent='Escribí algo primero ✍️';return}
+  if(window.engageAnswer)window.engageAnswer('rec-nota:'+REC,txt,btn);
+  if(ta){ta.setAttribute('disabled','disabled');ta.style.opacity='.5'}
+}
+
+/* ---------- modo TV (avance automático) ---------- */
+function playPause(){
+  var b=document.getElementById('bPlay');
+  if(auto){clearInterval(auto);auto=null;b.textContent='▶';b.setAttribute('aria-label','Modo TV: avance automático')}
+  else{auto=setInterval(function(){ if(i>=slides.length-1){clearInterval(auto);auto=null;document.getElementById('bPlay').textContent='▶';return} next(); },11000);
+    b.textContent='❚❚';b.setAttribute('aria-label','Pausar avance automático');next()}
+}
+
+/* ---------- arranque ---------- */
+armar();
+pintarBotones();
+ir(0);
+
+document.addEventListener('keydown',function(e){
+  var t=e.target,tag=t&&t.tagName;
+  if(tag==='TEXTAREA'||tag==='INPUT')return;              /* no robar teclas al escribir */
+  var k=e.key;
+  if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '||k==='Spacebar'){e.preventDefault();next()}
+  else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){e.preventDefault();prev()}
+  else if(k==='Home'){e.preventDefault();ir(0)}
+  else if(k==='End'){e.preventDefault();ir(slides.length-1)}
+  else if(k==='Enter'){
+    var b=slides[i].querySelector('[data-ir]');
+    if(b){e.preventDefault();alternar(b)}
+  }
+  else if(k==='p'||k==='P'){e.preventDefault();playPause()}
+});
+
+deck.addEventListener('click',function(e){
+  var b=e.target.closest?e.target.closest('[data-ir]'):null;
+  if(b){alternar(b)}
+});
+document.getElementById('bPrev').addEventListener('click',prev);
+document.getElementById('bNext').addEventListener('click',next);
+document.getElementById('bPlay').addEventListener('click',playPause);
+
+/* gestos en teléfono */
+var x0=null,y0=null;
+document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+document.addEventListener('touchend',function(e){
+  if(x0===null)return;
+  var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0;
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){dx<0?next():prev()}
+  x0=y0=null;
+},{passive:true});
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

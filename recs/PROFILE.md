@@ -140,6 +140,19 @@ Perception* (con L4-005 Leary), L4-021 *The Art of Happiness*, L4-022
   ACIERTO ya cargado; Haig `todos` pending) — el 28/07 queda 100% libre
   para ambos, primera vez sin pre-armados desde el bootstrap.
 
+## 🧳 Piezas fuera del ciclo diario
+- `kind: "viaje"` en `recommended.json` marca experiencias puntuales que NO
+  son recomendación de libro: **no cuentan para la MEZCLA VIGENTE ni para el
+  par nuevo+redescub del día**, y no consumen la ficha de nadie. Excluirlas
+  al contar los `kind` de los últimos 7 días.
+- 24/07: `2026-07-24-librerias-del-viaje` (audiencia `todos`) — guía de
+  librerías y bibliotecas para el viaje Dubrovnik / Split / Darmstadt /
+  Frankfurt / Heidelberg / Amsterdam. Pedida en vivo por Andy. Formato para
+  TV (flechas, dos columnas en apaisado, arte SVG propio). Micro-señal nueva:
+  `viaje-libreria:<ciudad>-<n>` = "quiero ir" por parada — mirar cuáles
+  marcan para saber qué tipo de local les tira (histórico, anticuario,
+  biblioteca-monumento o librería viva).
+
 ## 🧭 Sugerencias hub
 `recs/index.html` lista todo leyendo `recommended.json` por fetch — cero
 mantenimiento manual al agregar recomendaciones.
