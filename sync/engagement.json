@@ -1911,7 +1911,16 @@
       "device": "Andy",
       "qid": "rec-encuesta-felicidad:2026-07-24-encuesta-feedback",
       "value": "sorpresas"
+    },
+    {
+      "id": "mrze9y35-8gi7ex",
+      "type": "answer",
+      "ts": "2026-07-24T20:30:28.049Z",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "device": "Andy",
+      "qid": "rec-nota:2026-07-24-encuesta-feedback",
+      "value": "En muchas de tus preguntas hubiera elegido más de una opción... Ojo"
     }
   ],
-  "_updated_at": "2026-07-24T20:30:04.557Z"
+  "_updated_at": "2026-07-24T20:30:29.467Z"
 }
