@@ -1929,7 +1929,87 @@
       "device": "Andy",
       "dwell_s": 76,
       "scroll_pct": 97
+    },
+    {
+      "id": "mrzdemkq-0gmuyj",
+      "ts": "2026-07-24T20:06:06.794Z",
+      "nid": "2026-07-24-encuesta",
+      "src": "push",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrzdemkr-7hrh1u",
+      "ts": "2026-07-24T20:06:06.795Z",
+      "nid": "2026-07-24-encuesta",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrzdftrl-f57az2",
+      "ts": "2026-07-24T20:07:02.769Z",
+      "qid": "rec-encuesta-punteria:2026-07-24-encuesta-feedback",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "type": "answer",
+      "value": "mas_o_menos",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrzdfype-v5n0ig",
+      "ts": "2026-07-24T20:07:09.170Z",
+      "qid": "rec-encuesta-formato:2026-07-24-encuesta-feedback",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "type": "answer",
+      "value": "justas",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrzdg7ev-qyf5la",
+      "ts": "2026-07-24T20:07:20.455Z",
+      "qid": "rec-encuesta-contenido:2026-07-24-encuesta-feedback",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "type": "answer",
+      "value": "insights",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrzdgdk9-zaq73p",
+      "ts": "2026-07-24T20:07:28.425Z",
+      "qid": "rec-encuesta-ritmo:2026-07-24-encuesta-feedback",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "type": "answer",
+      "value": "mas",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrzdgjko-qs443m",
+      "ts": "2026-07-24T20:07:36.216Z",
+      "qid": "rec-encuesta-felicidad:2026-07-24-encuesta-feedback",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "type": "answer",
+      "value": "sorpresas",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrzdih3l-1aek9z",
+      "ts": "2026-07-24T20:09:06.321Z",
+      "qid": "rec-nota:2026-07-24-encuesta-feedback",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "type": "answer",
+      "value": "Si bien le estás RE pegando con el terror/misterio/investigación me gustaría que me recomendaras más cosas, conociéndome un poquito, sabes que los libros de autoayuda o cosas parecidas NO me van, me gustan las historias, las novelas. El terror, el misterio, pero también el romance y los finales felices, llorar un poco también hace bien ♥️",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrzdj1pd-678ktn",
+      "ts": "2026-07-24T20:09:33.025Z",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 206,
+      "scroll_pct": 100
     }
   ],
-  "_updated_at": "2026-07-24T20:30:34.826Z"
+  "_updated_at": "2026-07-24T21:18:04.337Z"
 }
