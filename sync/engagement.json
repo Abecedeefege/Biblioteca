@@ -1814,7 +1814,33 @@
       "device": "Sofi",
       "dwell_s": 26,
       "scroll_pct": 94
+    },
+    {
+      "id": "mry6fpsw-w2kcjr",
+      "type": "dwell",
+      "ts": "2026-07-24T00:03:14.144Z",
+      "page": "2026-07-23-pollan-cambiar-mente.html",
+      "device": "Andy",
+      "dwell_s": 68,
+      "scroll_pct": 37
+    },
+    {
+      "id": "mrzchsiv-ehrt9b",
+      "type": "notification_clicked",
+      "ts": "2026-07-24T19:40:34.855Z",
+      "page": "2026-07-24-hawking-breve-historia-tiempo.html",
+      "device": "Andy",
+      "nid": "2026-07-24-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mrzchsiw-quf18n",
+      "type": "page_visit",
+      "ts": "2026-07-24T19:40:34.856Z",
+      "page": "2026-07-24-hawking-breve-historia-tiempo.html",
+      "device": "Andy",
+      "nid": "2026-07-24-rec-andy"
     }
   ],
-  "_updated_at": "2026-07-24T16:56:36.391Z"
+  "_updated_at": "2026-07-24T19:40:36.166Z"
 }
