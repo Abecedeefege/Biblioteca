@@ -218,9 +218,13 @@
 
   /* visor */
   .lb{position:fixed;inset:0;z-index:9000;background:rgba(10,7,4,.88);display:flex;align-items:center;justify-content:center;
-    padding:20px;animation:fd .2s ease}
+    padding:20px;animation:fd .2s ease;perspective:1300px}
   .lb-inner{background:linear-gradient(180deg,#fdfaf1,#eee5d1);border-radius:3px;padding:14px 14px 16px;
-    max-width:min(560px,94vw);box-shadow:0 30px 80px rgba(0,0,0,.75)}
+    max-width:min(560px,94vw);max-height:88vh;overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.75);
+    transition:transform .17s ease}
+  .lb-inner.flip-out{transform:rotateY(90deg)}
+  .lb-inner.flip-in{transform:rotateY(-90deg);transition:none}
+  @media(prefers-reduced-motion:reduce){.lb-inner{transition:none}}
   .lb-inner img{max-width:100%;max-height:64vh;margin:0 auto;object-fit:contain;filter:sepia(.18) contrast(1.03)}
   .lb-cap{width:100%;margin-top:12px;background:none;border:none;border-bottom:1px dashed rgba(92,79,62,.55);
     font-family:var(--type);font-size:14px;color:var(--ink);padding:5px 2px;outline:none}
@@ -232,6 +236,40 @@
     font-family:var(--sans);font-size:9.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
   .lb-btn:hover{border-color:var(--ink);color:var(--ink)}
   .lb-btn[data-act="del"]:hover{border-color:var(--red);color:var(--red)}
+
+  /* el dorso: reseña propia, puntajes de afuera y el dato */
+  .dorso{color:var(--ink);text-align:left}
+  .dorso-head{border-bottom:2px solid rgba(179,55,46,.5);padding-bottom:10px;margin-bottom:14px}
+  .dorso-cn{font-size:11px;color:var(--red);letter-spacing:1px}
+  .dorso h4{font-weight:400;font-size:17px;line-height:1.25;text-transform:uppercase;letter-spacing:.5px;margin:7px 0 3px}
+  .dorso-au{font-size:13px;color:var(--ink-soft)}
+  .dorso-sec{margin-bottom:16px}
+  .dorso-tit{font-family:var(--sans);font-weight:800;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;
+    color:var(--red);margin-bottom:7px}
+  .dorso-stars{display:flex;align-items:center;gap:2px;flex-wrap:wrap}
+  .dorso-stars .star{background:none;border:none;padding:0 2px;font-size:24px;line-height:1.1;
+    color:rgba(92,79,62,.3);transition:color .12s,transform .12s}
+  .dorso-stars .star.on{color:var(--red)}
+  .dorso-stars .star:hover{transform:scale(1.16)}
+  .dorso-stars .star:focus-visible{outline:2px solid var(--red);outline-offset:2px;border-radius:3px}
+  .dorso-lbl{font-family:var(--sans);font-size:9.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--ink-soft);margin-left:10px}
+  .dorso-ta{width:100%;border:1px solid rgba(92,79,62,.3);border-radius:2px;padding:9px 12px;resize:vertical;outline:none;
+    font-family:var(--type);font-size:13.5px;line-height:24px;color:var(--ink);background:rgba(255,255,255,.42);
+    background-image:repeating-linear-gradient(0deg,transparent 0 23px, rgba(43,74,138,.15) 23px 24px)}
+  .dorso-ta:focus{border-color:var(--red)}
+  .dorso-note{font-family:var(--sans);font-size:9px;letter-spacing:.4px;color:var(--ink-soft);margin-top:5px}
+  .dorso-fact p{font-size:13px;line-height:22px;background:#f7edb0;padding:11px 13px;
+    box-shadow:0 3px 8px rgba(0,0,0,.18);transform:rotate(-.5deg)}
+  .dorso .xr-row{padding:5px 0}
+  .dorso .lb-bar{border-top:1px dotted rgba(92,79,62,.5);padding-top:12px}
+  .dorso .lb-date{color:var(--red);letter-spacing:2px;font-family:var(--type);font-size:13px;text-transform:none}
+
+  .dorso-link{display:block;width:100%;margin-top:16px;padding:9px 10px;border-radius:3px;
+    border:1px dashed rgba(201,162,39,.45);background:rgba(244,234,208,.04);color:#c9b48e;
+    font-family:var(--sans);font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}
+  .dorso-link:hover{border-color:var(--brass2);color:var(--brass2);background:rgba(201,162,39,.09)}
+  .dl-stars{color:var(--brass2);letter-spacing:2px}
 
   /* en pantalla angosta el mazo se acuesta arriba de la ficha */
   @media(max-width:900px){
@@ -621,6 +659,43 @@ function crossRefs(b){
   }
   return {sameAuthor,sameTopic,dec};
 }
+/* Dato para el dorso: se prefiere lo que la casa sabe del ejemplar (no la nota
+   del archivista, que ya está abrochada más abajo en la misma ficha). */
+function funFact(b){
+  const out=[],hoy=new Date().getFullYear();
+  if(b._year!=null){
+    if(b._year<0)out.push(`Se escribió hacia el siglo ${Math.ceil(Math.abs(b._year)/100)} a.C.: unos ${Math.round((hoy+Math.abs(b._year))/100)*100} años atrás.`);
+    else if(hoy-b._year>0)out.push(`Primera edición en ${b._year}: hace ${hoy-b._year} años.`);
+  }
+  if(b.author_canonical){
+    const n=BOOKS.filter(x=>x.author_canonical===b.author_canonical).length;
+    if(n>1)out.push(`En esta casa hay ${n} libros de ${b.author_canonical}.`);
+  }
+  const c=colOf(b);
+  if(c){
+    const l=colBooks(c),dated=l.filter(x=>x._year!=null);
+    if(dated.length>2){
+      const viejo=dated.reduce((a,x)=>x._year<a._year?x:a);
+      if(viejo.id===b.id)out.push(`Es el registro más antiguo del cajón ${c.title}, entre ${l.length} fichas.`);
+    }
+    if(l.length>1)out.push(`Comparte cajón con otras ${l.length-1} fichas de ${c.title}.`);
+  }
+  if(b.language){
+    const n=BOOKS.filter(x=>x.language===b.language).length;
+    if(n>1&&n<40)out.push(`Es uno de los ${n} libros en ${b.language.toLowerCase()} de la biblioteca.`);
+  }
+  if(b._year!=null&&b._year>1500){
+    const d=Math.floor(b._year/10)*10;
+    const n=BOOKS.filter(x=>x._year!=null&&Math.floor(x._year/10)*10===d).length;
+    if(n>1)out.push(`Otros ${n-1} libros de la casa son de los ${d}s.`);
+  }
+  const p=priceNum(b);
+  if(p!=null)out.push(`Reponerlo hoy costaría alrededor de USD ${p}.`);
+  const s=SHELF_BY_ID[b._shelf];
+  if(s)out.push(`Vive en el estante ${b._shelf} — ${s.theme} — en la posición ${b._idx+1} de ${b._n}.`);
+  if(out.length)return out[hsh(b.id)%out.length];
+  return (b._ed&&b._ed.dato)||'';
+}
 function viewFicha(id){
   const b=BY_ID[id];
   if(!b)return viewCajones();
@@ -706,7 +781,7 @@ function viewFicha(id){
     viewFicha(b.id);
   }));
   if(window.ExtReviews)ExtReviews.render(b,document.getElementById('xr-slot'));
-  if(window.Polaroids)Polaroids.mount(b,document.getElementById('fotos-rail'));
+  if(window.Polaroids)Polaroids.mount(b,document.getElementById('fotos-rail'),{fact:funFact(b)});
 }
 
 /* ================= índice general ================= */
