@@ -2043,7 +2043,16 @@
       "device": "sin-nombre",
       "dwell_s": 39,
       "scroll_pct": 0
+    },
+    {
+      "id": "mrzigu7h-cuhgin",
+      "ts": "2026-07-24T22:27:48.077Z",
+      "page": "2026-07-24-librerias-del-viaje.html",
+      "type": "dwell",
+      "device": "sin-nombre",
+      "dwell_s": 44,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-07-24T22:31:40.524Z"
+  "_updated_at": "2026-07-24T23:38:54.695Z"
 }
