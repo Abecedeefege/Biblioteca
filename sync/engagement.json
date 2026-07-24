@@ -1761,7 +1761,60 @@
       "page": "2026-07-23-pollan-cambiar-mente.html",
       "device": "Andy",
       "nid": "2026-07-23-rec"
+    },
+    {
+      "id": "mrwns54b-z5cofd",
+      "ts": "2026-07-22T22:33:14.987Z",
+      "page": "2026-07-22-carlisle-asesinato-libros.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 35,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mrz4vf26-aljlgm",
+      "ts": "2026-07-24T16:07:13.662Z",
+      "nid": "2026-07-24-rec",
+      "src": "push",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrz4vf2a-tp8a63",
+      "ts": "2026-07-24T16:07:13.666Z",
+      "nid": "2026-07-24-rec",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrz4vvca-rlcx12",
+      "ts": "2026-07-24T16:07:34.762Z",
+      "qid": "rec-veredicto:2026-07-24-osman-club-crimen",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "answer",
+      "value": "ya_lo_tengo",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrz4vwjk-5rdof6",
+      "ts": "2026-07-24T16:07:36.320Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "slug": "2026-07-24-osman-club-crimen",
+      "type": "reaction",
+      "value": "meh",
+      "device": "Sofi"
+    },
+    {
+      "id": "mrz4vyyo-etivsz",
+      "ts": "2026-07-24T16:07:39.456Z",
+      "page": "2026-07-24-osman-club-crimen.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 26,
+      "scroll_pct": 94
     }
   ],
-  "_updated_at": "2026-07-24T00:02:06.853Z"
+  "_updated_at": "2026-07-24T16:56:36.391Z"
 }
