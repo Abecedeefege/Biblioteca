@@ -2068,7 +2068,33 @@
       "device": "sin-nombre",
       "dwell_s": 50,
       "scroll_pct": 0
+    },
+    {
+      "id": "mrzefl1i-uful3u",
+      "type": "dwell",
+      "ts": "2026-07-24T20:34:51.078Z",
+      "page": "2026-07-24-encuesta-feedback.html",
+      "device": "Andy",
+      "dwell_s": 84,
+      "scroll_pct": 100
+    },
+    {
+      "id": "ms0nmz4v-fqyhkg",
+      "type": "notification_clicked",
+      "ts": "2026-07-25T17:40:18.656Z",
+      "page": "2026-07-24-librerias-del-viaje.html",
+      "device": "Andy",
+      "nid": "2026-07-25-viaje",
+      "src": "push"
+    },
+    {
+      "id": "ms0nmz4y-zxi3hs",
+      "type": "page_visit",
+      "ts": "2026-07-25T17:40:18.658Z",
+      "page": "2026-07-24-librerias-del-viaje.html",
+      "device": "Andy",
+      "nid": "2026-07-25-viaje"
     }
   ],
-  "_updated_at": "2026-07-25T01:08:09.491Z"
+  "_updated_at": "2026-07-25T17:40:19.917Z"
 }
