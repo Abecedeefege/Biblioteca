@@ -3,6 +3,18 @@
   "_updated_at": "2026-07-24T20:06:00.880Z",
   "notifications": [
     {
+      "id": "2026-07-25-viaje",
+      "title": "🗺️ Para que vayas pensando en tu viaje",
+      "body": "9 librerías y bibliotecas que valen el desvío en las 6 ciudades. Con QR a Maps para escanear de la tele.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-24-librerias-del-viaje.html",
+      "send_at": "2026-07-25T12:30:00-03:00",
+      "expires_at": "2026-07-25T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-25 (guía de viaje, pedida por Andy en paralelo a la del día; sin `to`: va a los dos)"
+    },
+    {
       "id": "2026-07-24-encuesta",
       "title": "💬 Desde hoy me pueden contestar",
       "body": "Hay una caja para escribirme con todas las letras. Más 5 preguntas cortas para afinar la puntería. 30 segundos.",

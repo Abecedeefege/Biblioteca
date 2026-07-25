@@ -167,6 +167,10 @@ button{font-family:var(--sans);cursor:pointer;color:inherit}
 .cierre .fila button:hover{border-color:var(--ac);color:var(--ac2)}
 .cierre .rot{font-size:calc(var(--u)*.8);letter-spacing:.2em;text-transform:uppercase;
   color:var(--ac);font-weight:700;margin-bottom:1.2vmin}
+/* el pedido de cierre: es la invitación con la que queremos que se queden */
+.cierre .pedido{font-family:var(--serif);font-size:calc(var(--u)*1.55);line-height:1.28;
+  max-width:34ch;margin:3vmin 0 1.6vmin}
+.cierre .pedido b{color:var(--ac2);font-weight:700}
 .q-hint,.react-hint{display:inline-block;margin-left:1.4vmin;font-size:calc(var(--u)*.9);color:var(--ac2)}
 #nota{width:min(58rem,78vw);box-sizing:border-box;resize:none;padding:1.4vmin 1.8vmin;
   border-radius:1.4vmin;border:1px solid var(--linea);background:rgba(244,241,234,.06);
@@ -506,9 +510,9 @@ function armar(){
       '<button onclick="engageReact(\''+REC+'\',\'no\',this)">🙅</button>'+
       '<span class="react-hint"></span>'+
     '</div>'+
-    '<p class="rot">¿Falta alguna ciudad o querés otra vuelta?</p>'+
-    '<textarea id="nota" rows="2" placeholder="Escribime acá: otra ciudad, otro tipo de librería, lo que sea."></textarea>'+
-    '<div class="fila"><button type="button" onclick="enviarNota(this)">Enviarme esto</button><span class="q-hint"></span></div>'+
+    '<p class="pedido">¿Querés que haga algo más antes del viaje?<b> Pedime lo que sea.</b></p>'+
+    '<textarea id="nota" rows="2" placeholder="Un mapa con todo junto, horarios, otra ciudad, qué llevar para leer en el avión… lo que se te ocurra."></textarea>'+
+    '<div class="fila"><button type="button" onclick="enviarNota(this)">Mandámelo</button><span class="q-hint"></span></div>'+
     '<p style="margin-top:1.5vmin"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>'+
     '</div></section>';
   meta.push({tipo:'cierre',ciudad:-1});
