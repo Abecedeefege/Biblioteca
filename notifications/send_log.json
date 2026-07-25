@@ -202,6 +202,34 @@
       "device": "Sofi",
       "ts": "2026-07-24T20:06:00.880Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-25-viaje",
+      "device": "Andy",
+      "ts": "2026-07-25T16:11:35.571Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-25-viaje",
+      "device": "Sofi",
+      "ts": "2026-07-25T16:11:35.707Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-25-rec",
+      "device": "Andy",
+      "ts": "2026-07-25T16:11:35.850Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-25-rec",
+      "device": "Sofi",
+      "ts": "2026-07-25T16:11:35.880Z",
+      "status_code": 201
     }
   ]
 }

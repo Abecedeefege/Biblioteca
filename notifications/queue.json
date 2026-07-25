@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-07-24T20:06:00.880Z",
+  "_updated_at": "2026-07-25T16:11:35.881Z",
   "notifications": [
     {
       "id": "2026-07-25-viaje",
@@ -9,8 +9,8 @@
       "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-24-librerias-del-viaje.html",
       "send_at": "2026-07-25T12:30:00-03:00",
       "expires_at": "2026-07-25T23:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-25T16:11:35.707Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-07-25 (guía de viaje, pedida por Andy en paralelo a la del día; sin `to`: va a los dos)"
     },
@@ -286,8 +286,8 @@
       "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-25-weir-hail-mary.html",
       "send_at": "2026-07-25T12:30:00-03:00",
       "expires_at": "2026-07-25T23:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-25T16:11:35.880Z",
       "fail_reason": null,
       "created_by": "bootstrap /recomendacion 2026-07-15"
     },
