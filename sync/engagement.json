@@ -2094,7 +2094,16 @@
       "page": "2026-07-24-librerias-del-viaje.html",
       "device": "Andy",
       "nid": "2026-07-25-viaje"
+    },
+    {
+      "id": "ms0no142-7fxkb2",
+      "type": "dwell",
+      "ts": "2026-07-25T17:41:07.874Z",
+      "page": "2026-07-24-librerias-del-viaje.html",
+      "device": "Andy",
+      "dwell_s": 49,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-07-25T17:40:19.917Z"
+  "_updated_at": "2026-07-25T17:41:09.189Z"
 }
