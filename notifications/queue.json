@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-07-25T16:11:35.881Z",
+  "_updated_at": "2026-07-26T19:10:00.000Z",
   "notifications": [
     {
       "id": "2026-07-25-viaje",
@@ -393,6 +393,19 @@
       "sent_at": "2026-07-21T21:36:47.285Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-07-21"
+    },
+    {
+      "id": "2026-07-26-rec-andy",
+      "title": "🕊️ El libro que le da nombre a tu estante",
+      "body": "Tu L4 se llama por él y nunca lo abriste. El otro Bach (Ilusiones) fue tu mejor 'nuevo' hasta ahora — este es el original.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-26-bach-gaviota.html",
+      "to": "Andy",
+      "send_at": "2026-07-26T17:30:00-03:00",
+      "expires_at": "2026-07-26T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-26"
     }
   ]
 }

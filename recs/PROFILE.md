@@ -9,11 +9,13 @@ su perfil y su feedback. Entre las dos del día: un libro NUEVO y uno DE LA
 BIBLIOTECA (redescubrimiento), alternando cada día quién recibe cuál.
 Pushes ~12:30, personales: `to:"Andy"` / `to:"Sofi"`. Las fichas `todos`
 quedan para ocasiones especiales y cuentan para ambos. Pre-armadas del
-bootstrap consumidas hasta 25/07 inclusive (25/07: Weir *Proyecto Hail
+bootstrap consumidas hasta 26/07 inclusive (25/07: Weir *Proyecto Hail
 Mary* `todos`, enviado 13:11 -03:00 junto con la guía de viaje pedida en
-vivo — corrida del 25/07 sin construcción nueva, solo feedback + confirmar
-push, según lo dejado anotado el 24/07). Restante: haig27-todos (osman24-sofi
-y hill26-sofi ya enviadas con otro id real, antes de tiempo). Si el día ya
+vivo. 26/07: hill26-sofi ya contaba como ficha del día de Sofi — 'nuevo',
+consumida con id real anticipado desde el 16/07 — así que esta corrida
+construyó SOLO la de Andy: redescub identitario Bach *Jonathan Livingston
+Seagull*/L4-017, push 2026-07-26-rec-andy 17:30). Restante: haig27-todos
+(pending, push ya encolado desde el bootstrap). Si el día ya
 tiene pre-armada de un destinatario, construir SOLO la del otro, respetando
 el par nuevo+redescub del día — es regla dura, prioridad sobre la mezcla
 personal de cada uno (ver 23/07: Andy nuevo pre-armado → Sofi redescub
@@ -46,12 +48,11 @@ pedido, no hace falta moverlo. Próxima ficha nueva desde cero para Sofi
 (no pre-armada): elegir de esta veta y decírselo explícito en el copy.
 Encuesta 24/07: puntería `mas_o_menos`, ritmo `mas`, felicidad `sorpresas`
 — pide variedad, no un cambio de lo que ya funciona.
-- Nuevos — consumidos: Osman t1 y t2 (ambos ACIERTO PLENO), Hill *traje
-  del muerto* (acierto), Dicker *Harry Quebert* (ACIERTO PLENO) y *Libro
-  de los Baltimore* (21/07, pendiente).
-- Redescub — consumidos: King R5-018, Katzenbach M5-024, Carlisle M5-012
-  (LOS TRES ya leídos — guardia dura); Minix *La librera detective*/M5-001
-  (23/07, pendiente — autora indie sin huella, test de estrategia escalada).
+- Consumidos (detalle completo en `recommended.json`): Osman t1/t2, Dicker
+  Harry Quebert (ACIERTOS PLENOS); Hill *traje del muerto* (acierto); King
+  R5-018, Katzenbach M5-024, Carlisle M5-012 (LOS TRES ya leídos — guardia
+  dura). Pendientes de veredicto: Dicker *Libro de los Baltimore* (21/07),
+  Minix *La librera detective*/M5-001 (23/07, test de estrategia escalada).
 - Banco nuevos (3): La asistenta (McFadden, oscuro), NOS4A2 (Hill, revisar
   stock), Osman t3 *El hombre bomba* (cozy).
 - Banco redescub misterio/oscuro (3, reponer si baja): M5-014 *Elemental,
@@ -89,12 +90,11 @@ autor identitario/segunda línea > clásico consagrado de aeropuerto. Seguir
 con: Kahneman, Sapolsky, Eagleman, Walker, Anil Seth, Tyson/Katie Mack.
 CONTEXTO: lee *El monje que vendió su Ferrari* (Sharma) — no recomendarlo.
 Julio = invierno en Montevideo (lecturas de una sentada, comfort books).
-- Consumido: Frankl, Meditaciones, Housel, Bach *Ilusiones* (ACIERTO),
-  Pollan (23/07, clickeó, sin veredicto), Rovelli (nuevos, ACIERTO);
-  Siddhartha (sin veredicto), Cosmos (ACIERTO — redescub), Bucay *Camino
-  Felicidad* (sin veredicto, redescub), Hawking *Breve historia del tiempo*
-  (24/07, L5-007, redescub — clickeó, dwell 78s/88% scroll, TODAVÍA sin
-  veredicto al 25/07 — revisar próxima corrida).
+- Consumidos (detalle completo en `recommended.json`): Rovelli, Bach
+  *Ilusiones* (ACIERTOS PLENOS/altos); Frankl, Meditaciones (`ya_lo_lei`);
+  Cosmos (ACIERTO — redescub). Pendientes de veredicto: Housel, Pollan
+  (23/07), Siddhartha, Bucay *Camino Felicidad* (redescub), Hawking
+  (24/07, L5-007, redescub — clickeó, dwell 78s/88% scroll, sin veredicto).
 - Encuesta 24/07: puntería `mas_o_menos`, formato `justas`, contenido
   favorito `insights` (seguir invirtiendo ahí), ritmo `asi_esta_bien`,
   felicidad `sorpresas`. Nota aparte (UX, no sobre libros): pidió que las
@@ -106,6 +106,13 @@ Julio = invierno en Montevideo (lecturas de una sentada, comfort books).
   repetir el "ya_lo_lei" de sus clásicos consagrados como *nuevos* (Frankl,
   Meditaciones) — pero Cosmos (igual de famoso, redescub) no tuvo ese
   problema, así que no está claro si aplica a formato redescub.
+- 26/07: redescub identitario Bach *Jonathan Livingston Seagull*/L4-017 —
+  el libro que le da nombre a su estante entero, sin señal previa de
+  lectura, enviado apalancando el éxito de *Ilusiones* (mismo autor, su
+  mejor "nuevo" hasta ahora). Pendiente de veredicto. Si acierta: confirma
+  que "volver al origen de un autor identitario" es jugada ganadora:
+  próximo paso sería completar el resto del banco redescub L4 (Prophet,
+  Zen en el arte del tiro con arco) en vez de gastar más "nuevos".
 
 ## 🛡️ Guardia (errores que no se cometen)
 - Antes de todo "nuevo": título Y autor contra el catálogo completo
@@ -146,24 +153,30 @@ Julio = invierno en Montevideo (lecturas de una sentada, comfort books).
   Autodependencia* (tomo 1, falta en M5).
 
 ## 🔁 Banco candidatos REDESCUBRIMIENTOS — Andy
-L4-017 *Jonathan Livingston Seagull* (relectura identitaria), L4-018 *The
-Prophet*, L4-010 *Zen en el arte del tiro con arco*, L4-014 *The Doors of
-Perception* (con L4-005 Leary), L4-021 *The Art of Happiness*, L4-022
-*The Boy, the Mole...*, L5-026 *Of Time and Space...* (Asimov), L5-019
-*La Vía Láctea* (Bok).
+L4-017 *Jonathan Livingston Seagull* — USADO 26/07, sacar del banco.
+L4-018 *The Prophet*, L4-010 *Zen en el arte del tiro con arco*, L4-014
+*The Doors of Perception* (con L4-005 Leary), L4-021 *The Art of
+Happiness*, L4-022 *The Boy, the Mole...*, L5-026 *Of Time and Space...*
+(Asimov), L5-019 *La Vía Láctea* (Bok).
 
-## 🔭 Qué mirar (próxima corrida: 2026-07-26)
-- 25/07 CONFIRMADO: `2026-07-25-rec` (Weir, `todos`) y `2026-07-25-viaje`
-  salieron OK a ambos dispositivos (send_log 201×2, 16:11 UTC). Sin
-  veredicto de Weir todavía (recién enviado) — revisar hoy.
-- Pendientes de veredicto a revisar: Weir, Pollan (Andy, 23/07), Hawking
+## 🔭 Qué mirar (próxima corrida: 2026-07-27)
+- 26/07 CONFIRMADO: `2026-07-26-rec-andy` (Bach *Jonathan Livingston
+  Seagull*, redescub L4-017) encolado 17:30 -03:00, sin feedback nuevo
+  desde el cutoff (2026-07-25T17:41Z) al momento de esta corrida — cero
+  eventos nuevos en `sync/engagement.json`. Revisar su veredicto mañana.
+- Pendientes de veredicto a revisar (sin cambios esta corrida, cero
+  eventos nuevos): Weir (`todos`, 25/07), Pollan (Andy, 23/07), Hawking
   (Andy, 24/07, clickeó+dwell 78s/88% pero sin votar), Minix (Sofi, 23/07
   — test clave de la guardia escalada tras 3/3 fallos de redescub) y
   Baltimore (Sofi, 21/07). Si Minix también da `ya_lo_lei`: parar de rotar
   nombres en M5/R4/R5 y saltar directo a romance (ver nota de Sofi arriba).
-- 27/07 pre-armado (Haig `todos`, pending); 28/07 100% libre para ambos —
-  primera fecha sin pre-armados, candidata natural para la primera ficha
-  romance de Sofi si no salió antes.
+  Son ya 5 recomendaciones seguidas sin feedback — si sigue así la próxima
+  corrida, aplicar la regla de "3+ sin feedback → cambio fuerte" (probar
+  otro horario de push o otro tipo de experiencia, no solo otro libro).
+- 27/07 pre-armado (Haig `todos`, pending, cuenta para ambos); 28/07 100%
+  libre para ambos — candidata natural para la primera ficha romance de
+  Sofi si no salió antes, y para el próximo redescub L4 de Andy (banco:
+  The Prophet, Zen en el arte del tiro con arco).
 
 ## 🧳 Piezas fuera del ciclo diario
 - `kind: "viaje"` en `recommended.json` marca experiencias puntuales que NO

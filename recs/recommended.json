@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-25T16:20:00-03:00",
+  "_updated_at": "2026-07-26T16:10:00-03:00",
   "_feedback_cutoff": "2026-07-25T17:41:07.874Z",
   "recommendations": [
     {
@@ -577,6 +577,32 @@
         "dwell_s": 49
       },
       "learning": "Andy clickeó el push del 25/07 (17:40) y quedó 49s; ya había explorado la página la noche del 24/07 (dos visitas sin device registrado, 39s y 44s). Marcó 'quiero_ir' en Dubrovnik-1 (viaje-libreria) — primera señal real de qué parada le tira: histórica/anticuario por sobre las demás. Sin veredicto formal (esta ficha no tiene botones de veredicto, es guía de viaje, no recomendación de libro)."
+    },
+    {
+      "id": "2026-07-26-bach-gaviota",
+      "date": "2026-07-26",
+      "kind": "redescubrimiento",
+      "title": "Jonathan Livingston Seagull",
+      "author": "Richard Bach",
+      "language": "en",
+      "topics": [
+        "fabula",
+        "positividad",
+        "espiritualidad",
+        "identitario"
+      ],
+      "book_ref": "L4-017",
+      "audience": "andy",
+      "page": "recs/2026-07-26-bach-gaviota.html",
+      "notified_by": "2026-07-26-rec-andy",
+      "why": "Redescubrimiento L4 identitario: el libro que le da nombre a todo el estante, sin ninguna señal de haber sido leído. 'Ilusiones' (21/07, el otro Bach) fue su mejor 'nuevo' hasta ahora — me_tienta+like+dwell 410s/100% scroll — así que antes de buscar otro autor nuevo, se vuelve al original de la misma pluma. Verificado contra catálogo y recommended.json: nunca antes recomendado. Par del día: Sofi ya tuvo su 'nuevo' (Hill, ya consumido con id real anticipado), a Andy le toca 'de la biblioteca'.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
     }
   ]
 }
