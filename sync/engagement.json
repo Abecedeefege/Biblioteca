@@ -2120,7 +2120,16 @@
       "page": "2026-07-26-bach-gaviota.html",
       "device": "Andy",
       "nid": "2026-07-26-rec-andy"
+    },
+    {
+      "id": "ms2btywf-wyclg1",
+      "type": "answer",
+      "ts": "2026-07-26T21:45:21.903Z",
+      "page": "2026-07-26-bach-gaviota.html",
+      "device": "Andy",
+      "qid": "leer-esta-noche:L4-017",
+      "value": "si"
     }
   ],
-  "_updated_at": "2026-07-26T21:39:02.116Z"
+  "_updated_at": "2026-07-26T21:45:23.250Z"
 }
