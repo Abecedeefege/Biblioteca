@@ -2138,7 +2138,16 @@
       "device": "Andy",
       "qid": "rec-veredicto:2026-07-26-bach-gaviota",
       "value": "me_tienta"
+    },
+    {
+      "id": "ms2bu4o2-u8iwg6",
+      "type": "reaction",
+      "ts": "2026-07-26T21:45:29.378Z",
+      "page": "2026-07-26-bach-gaviota.html",
+      "device": "Andy",
+      "slug": "2026-07-26-bach-gaviota",
+      "value": "like"
     }
   ],
-  "_updated_at": "2026-07-26T21:45:28.172Z"
+  "_updated_at": "2026-07-26T21:45:30.572Z"
 }
