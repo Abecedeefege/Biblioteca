@@ -2129,7 +2129,16 @@
       "device": "Andy",
       "qid": "leer-esta-noche:L4-017",
       "value": "si"
+    },
+    {
+      "id": "ms2bu2vm-4lt65q",
+      "type": "answer",
+      "ts": "2026-07-26T21:45:27.058Z",
+      "page": "2026-07-26-bach-gaviota.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-07-26-bach-gaviota",
+      "value": "me_tienta"
     }
   ],
-  "_updated_at": "2026-07-26T21:45:23.250Z"
+  "_updated_at": "2026-07-26T21:45:28.172Z"
 }
