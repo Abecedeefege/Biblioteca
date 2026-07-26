@@ -2103,7 +2103,24 @@
       "device": "Andy",
       "dwell_s": 49,
       "scroll_pct": 0
+    },
+    {
+      "id": "ms2blsrn-qked5e",
+      "type": "notification_clicked",
+      "ts": "2026-07-26T21:39:00.707Z",
+      "page": "2026-07-26-bach-gaviota.html",
+      "device": "Andy",
+      "nid": "2026-07-26-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "ms2blsrp-v4mjmv",
+      "type": "page_visit",
+      "ts": "2026-07-26T21:39:00.709Z",
+      "page": "2026-07-26-bach-gaviota.html",
+      "device": "Andy",
+      "nid": "2026-07-26-rec-andy"
     }
   ],
-  "_updated_at": "2026-07-25T17:41:09.189Z"
+  "_updated_at": "2026-07-26T21:39:02.116Z"
 }
