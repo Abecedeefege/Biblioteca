@@ -113,6 +113,36 @@
     border:1.5px solid currentColor;border-radius:3px;padding:1px 5px;transform:rotate(4deg)}
   .mk.leido{color:var(--green)}.mk.favorito{color:var(--red)}.mk.prestado{color:var(--blue)}
 
+  /* ---------- archivados (fondo guardado, fuera de estante) ---------- */
+  .minicard.static{cursor:default}
+  .minicard.static:hover{transform:none}
+  .mk.arch{color:#8a6b1d}
+  .archsum{font-size:13px;line-height:1.75}
+  .archsum .big{display:flex;gap:22px;flex-wrap:wrap;align-items:baseline;margin:6px 0 10px}
+  .archsum .big i{font-style:normal;font-size:26px;color:var(--red);letter-spacing:1px}
+  .archsum .big span{font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:1.6px;
+    text-transform:uppercase;color:var(--ink-soft);display:block}
+  .archsum .legend{font-family:var(--sans);font-size:10px;line-height:1.7;color:var(--ink-soft);
+    border-top:1px dotted rgba(92,79,62,.5);padding-top:8px;margin-top:4px}
+  .archnav{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+  .archnav button{background:none;border:1px solid rgba(92,79,62,.45);color:var(--ink-soft);border-radius:3px;
+    padding:5px 9px;font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+  .archnav button:hover{border-color:var(--red);color:var(--red)}
+  .archbox{margin:26px 0 0;scroll-margin-top:16px}
+  .archbox-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:6px;
+    border-bottom:1px solid rgba(201,162,39,.28)}
+  .archbox-head .bx{font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:1.8px;color:var(--red);
+    background:var(--card);border-radius:2px;padding:3px 7px}
+  .archbox-head h3{font-weight:400;font-size:17px;letter-spacing:1px;text-transform:uppercase;color:var(--brass2)}
+  .archbox-head .loc{font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:1.4px;
+    text-transform:uppercase;color:#8a785f}
+  .archbox-head .loc.none{color:#d1594f}
+  .archbox-head .n{margin-left:auto;font-family:var(--sans);font-size:9.5px;font-weight:800;letter-spacing:1.4px;
+    text-transform:uppercase;color:#c9b48e}
+  .archbox .cardstack{margin:14px 0 8px}
+  .archbox.hide{display:none}
+  .archfoot{text-align:center;font-family:var(--sans);font-size:11px;color:#8a785f;margin:6px 0 40px}
+
   /* drawer page chrome */
   .drawer-open{background:linear-gradient(180deg,#6b4a2e,#503620);border:8px solid #382514;border-bottom-width:16px;border-radius:8px;
     padding:22px;margin:18px 0 8px;box-shadow:0 26px 60px rgba(0,0,0,.6), inset 0 3px 8px rgba(0,0,0,.4)}
@@ -449,11 +479,12 @@
 <div class="plaque-row"><div class="plaque">
   <div class="s">Bibliotequeando · Concepto IV</div>
   <h1>El Fichero</h1>
-  <div class="s">Archivo catalográfico de la casa — 400 registros</div>
+  <div class="s">Archivo catalográfico de la casa — 400 registros a la vista</div>
 </div></div>
 <nav class="topnav wrap">
   <a href="#/" data-n="cajones">Los cajones</a>
   <a href="#/indice" data-n="indice">Índice general</a>
+  <a href="#/archivados" data-n="archivados" id="nav-arch" style="display:none">Archivados</a>
   <a href="../recs/">Recomendaciones</a>
 </nav>
 
@@ -473,6 +504,11 @@
 /* ================= data ================= */
 let CAT=null,PHOTOS={},ENRICH={},ED={books:{},authors:{},topics:{}},COLS=[];
 let BOOKS=[],BY_ID={},SHELF_BY_ID={};
+/* fondo guardado: cajas del archivero/ropero, NO están en los estantes.
+   Vive aparte de BOOKS a propósito — el catálogo de la casa sigue siendo 400. */
+let ARCH=null,ARCH_ITEMS=[];
+const archQty=it=>(typeof it.qty==='number'&&it.qty>0?it.qty:1);
+const archVols=items=>items.reduce((n,it)=>n+archQty(it),0);
 const TOPIC_LABEL=t=>(ED.topics[t]&&ED.topics[t].label)||t;
 async function loadAll(){
   const res=await fetch('../index.html');
@@ -501,6 +537,17 @@ async function loadAll(){
   CAT=JSON.parse(html.match(/<script id="inline-catalog"[^>]*>([\s\S]*?)<\/script>/)[1]);
   const pm=html.match(/<script id="inline-photos">window\.PHOTOS\s*=\s*([\s\S]*?)<\/script>/);
   if(pm){try{PHOTOS=JSON.parse(pm[1].trim().replace(/;\s*$/,''))}catch(e){}}
+  /* overlay aditivo: si falta o viene roto, El Fichero sigue funcionando igual */
+  const am=html.match(/<script id="inline-archive"[^>]*>([\s\S]*?)<\/script>/);
+  if(am){try{
+    const a=JSON.parse(am[1]);
+    if(a&&Array.isArray(a.boxes)&&a.boxes.length){
+      ARCH=a;
+      a.boxes.forEach(bx=>bx.items.forEach(it=>{
+        it._box=bx.box;it._boxId=bx.id;it._loc=bx.location||null;ARCH_ITEMS.push(it);
+      }));
+    }
+  }catch(e){}}
   try{ENRICH=(await(await fetch('../data/enrichment.json')).json()).books||{}}catch(e){}
   try{ED=await(await fetch('editorial.json')).json()}catch(e){}
   try{COLS=(await(await fetch('collections.json')).json()).collections||[]}catch(e){}
@@ -561,6 +608,20 @@ function minicardHTML(b){
     <div class="a">${esc(b.author||'—')}${b._year?' · '+yearLabel(b._year):''}</div>
   </a>`;
 }
+/* Ficha del fondo guardado. No es un enlace: del inventario sólo consta título,
+   caja y cuántos ejemplares — no hay ficha catalográfica que abrir. */
+function archCardHTML(it,hideBox){
+  const q=typeof it.qty==='number'&&it.qty>1?'&times;'+it.qty:(it.qty_note?esc(it.qty_note):'');
+  /* dentro de su caja el nombre sobra (ya está en el encabezado); en los
+     resultados de búsqueda es justamente el dato que se busca */
+  const line=hideBox?q:esc(it._box)+(q?' · '+q:'');
+  return `<div class="minicard static">
+    <span class="cn">${esc(it.id)}</span><span class="mk arch">Archivado</span>
+    <h4>${esc(it.title)}</h4>
+    ${line?`<div class="a">${line}</div>`:''}
+    ${it.note?`<div class="a" style="opacity:.75">— ${esc(it.note)}</div>`:''}
+  </div>`;
+}
 
 /* ================= home: the cabinet ================= */
 function viewCajones(){
@@ -580,6 +641,10 @@ function viewCajones(){
           <div class="label-holder"><div class="label-card">ÍNDICE GENERAL<small>${BOOKS.length} fichas · A–Z</small></div></div>
           <div class="handle"></div>
         </div>
+        ${ARCH?`<div class="drawer" onclick="location.hash='#/archivados'">
+          <div class="label-holder"><div class="label-card">${esc(ARCH.label||'Archivados').toUpperCase()}<small>${ARCH_ITEMS.length} fichas · fuera de estante</small></div></div>
+          <div class="handle"></div>
+        </div>`:''}
       </div>
     </div>
     <p style="text-align:center;font-family:var(--sans);font-size:11px;color:#8a785f;margin-bottom:36px">
@@ -591,8 +656,11 @@ function viewCajones(){
     const q=norm(e.target.value.trim());
     const box=document.getElementById('q-res');
     if(q.length<2){box.innerHTML='';return}
-    box.innerHTML=BOOKS.filter(b=>norm(b.title).includes(q)||norm(b.author).includes(q)||norm(b.id).includes(q))
-      .slice(0,9).map(minicardHTML).join('')||'<p style="font-size:13px;color:#c9b48e">Sin registros bajo esa voz.</p>';
+    const lib=BOOKS.filter(b=>norm(b.title).includes(q)||norm(b.author).includes(q)||norm(b.id).includes(q)).slice(0,9);
+    /* el fondo guardado también responde: la pregunta útil es «¿lo tengo?» */
+    const arc=ARCH_ITEMS.filter(it=>norm(it.title).includes(q)||norm(it._box).includes(q)).slice(0,9);
+    box.innerHTML=lib.map(minicardHTML).join('')+arc.map(it=>archCardHTML(it)).join('')
+      ||'<p style="font-size:13px;color:#c9b48e">Sin registros bajo esa voz.</p>';
   });
 }
 
@@ -644,6 +712,108 @@ function viewCajon(key){
     <h3 style="font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:#c9b48e;margin:22px 0 2px">Todas las fichas del cajón</h3>
     <div class="cardstack">${list.map(minicardHTML).join('')}</div>
   `,null);
+}
+
+/* ================= archivados (fondo guardado) =================
+   No son fichas del catálogo: son las cajas del archivero metálico y del ropero
+   del cuarto del fondo, relevadas en el inventario «Libros casa Toter». Ninguno
+   de estos libros está en los estantes, así que van en su propio cajón. */
+function viewArchivados(){
+  if(!ARCH)return viewCajones();
+  const tot=ARCH_ITEMS.length,vol=archVols(ARCH_ITEMS),nb=ARCH.boxes.length;
+  /* `loose` = grupos que el inventario dejó sin caja: no compiten por «la caja más cargada» */
+  const named=ARCH.boxes.filter(b=>!b.loose);
+  const biggest=named.length?named.reduce((a,b)=>b.items.length>a.items.length?b:a):null;
+  const loose=ARCH.boxes.filter(b=>b.loose).reduce((n,b)=>n+b.items.length,0);
+  const most=ARCH_ITEMS.reduce((a,b)=>archQty(b)>archQty(a)?b:a);
+  const sets=ARCH_ITEMS.filter(it=>archQty(it)>1).length;
+  const noLoc=ARCH.boxes.filter(b=>!b.location).length;
+
+  const boxes=ARCH.boxes.map(bx=>{
+    const v=archVols(bx.items);
+    return `<section class="archbox" id="arch-${esc(bx.id)}">
+      <div class="archbox-head">
+        <span class="bx">${esc(bx.id)}</span>
+        <h3>${esc(bx.box)}</h3>
+        <span class="loc${bx.location?'':' none'}">${esc(bx.location||'ubicación no registrada')}</span>
+        <span class="n">${bx.items.length} fichas${v!==bx.items.length?' · '+v+' vol.':''}</span>
+      </div>
+      <div class="cardstack">${bx.items.map(it=>archCardHTML(it,true)).join('')}</div>
+    </section>`;
+  }).join('');
+
+  render(`
+    <div class="drawer-open">
+      <div class="drawer-title">
+        <div class="label-holder"><div class="label-card">${esc(ARCH.label||'Archivados').toUpperCase()}<small>${tot} fichas · fuera de estante</small></div></div>
+        <span class="meta">Fondo guardado — nada de esto está en la biblioteca</span>
+        <a class="meta" style="margin-left:auto" href="#/">← cerrar el cajón</a>
+      </div>
+      <div class="bigcard-grid">
+        <div class="card">
+          <span class="callnum">CAJÓN/ARCHIVADOS</span>
+          <h3 style="font-size:16px">Nota del archivista</h3>
+          <div class="typed-essay">
+            <p>${esc(ARCH.note||'')}</p>
+            <p>Son ${tot} entradas en ${nb} ${nb===1?'caja':'cajas'}: ${vol} volúmenes contando
+            tomos y ejemplares repetidos. El grueso es Uruguay — padrones, genealogía, revistas
+            históricas, Montevideo — y una caja entera de literatura inglesa.</p>
+            <p>Nada de esto figura en los 400 registros del mueble: para consultar cualquiera de
+            estas fichas hay que abrir la caja.</p>
+          </div>
+          <div class="veasetit">Registros de mérito</div>
+          <ul class="reclist">
+            ${biggest?`<li><b>LA CAJA MÁS CARGADA:</b> ${esc(biggest.box)} — ${biggest.items.length} fichas</li>`:''}
+            <li><b>MÁS EJEMPLARES:</b> «${esc(most.title)}» — ${archQty(most)} tomos/ejemplares</li>
+            <li><b>SERIES Y REPETIDOS:</b> ${sets} entradas tienen más de un volumen</li>
+            ${loose?`<li><b>SUELTAS:</b> ${loose} fichas que el inventario no asigna a ninguna caja</li>`:''}
+            ${noLoc?`<li><b>PENDIENTE:</b> ${noLoc} ${noLoc===1?'caja':'cajas'} sin ubicación anotada en el inventario</li>`:''}
+          </ul>
+          <div class="holes"></div>
+        </div>
+        <div class="card">
+          <span class="callnum">RECUENTO</span>
+          <h3 style="font-size:15px">Recuento del fondo</h3>
+          <div class="archsum">
+            <div class="big">
+              <div><i>${tot}</i><span>entradas</span></div>
+              <div><i>${vol}</i><span>volúmenes</span></div>
+              <div><i>${nb}</i><span>${nb===1?'caja':'cajas'}</span></div>
+            </div>
+            <div class="legend">${esc(ARCH.qty_legend||'')}</div>
+            <div class="archnav">${ARCH.boxes.map(bx=>`<button data-jump="arch-${esc(bx.id)}">${esc(bx.id)} · ${bx.items.length}</button>`).join('')}</div>
+          </div>
+          <div class="holes"></div>
+        </div>
+      </div>
+    </div>
+    <div class="searchslot"><input id="aq" type="search" placeholder="BUSCAR EN EL FONDO GUARDADO…" autocomplete="off"></div>
+    <div id="arch-boxes">${boxes}</div>
+    <p class="archfoot" id="arch-count">${tot} entradas · ${vol} volúmenes · ${nb} cajas</p>
+  `,'archivados');
+
+  /* los saltos entre cajas NO pueden ser anclas: cambiar el hash dispararía el router */
+  document.querySelectorAll('[data-jump]').forEach(btn=>btn.addEventListener('click',()=>{
+    document.getElementById(btn.dataset.jump)?.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+
+  const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  document.getElementById('aq').addEventListener('input',e=>{
+    const q=norm(e.target.value.trim());
+    let shown=0;
+    ARCH.boxes.forEach(bx=>{
+      const sec=document.getElementById('arch-'+bx.id);
+      const hits=bx.items.filter(it=>!q||norm(it.title).includes(q)||norm(it._box).includes(q)||norm(it.note).includes(q));
+      sec.querySelector('.cardstack').innerHTML=hits.map(it=>archCardHTML(it,true)).join('');
+      sec.querySelector('.archbox-head .n').textContent=
+        hits.length+' fichas'+(q?'':(archVols(bx.items)!==bx.items.length?' · '+archVols(bx.items)+' vol.':''));
+      sec.classList.toggle('hide',hits.length===0);
+      shown+=hits.length;
+    });
+    document.getElementById('arch-count').textContent=q
+      ? (shown?shown+(shown===1?' entrada':' entradas')+' bajo esa voz':'Sin registros bajo esa voz.')
+      : tot+' entradas · '+vol+' volúmenes · '+nb+' cajas';
+  });
 }
 
 /* ================= ficha (book page) ================= */
@@ -808,10 +978,14 @@ function route(){
   if(v==='cajon')return viewCajon(a);
   if(v==='ficha')return viewFicha(a);
   if(v==='indice')return viewIndice();
+  if(v==='archivados')return viewArchivados();
   viewCajones();
 }
 window.addEventListener('hashchange',route);
-loadAll().then(route).catch(err=>{
+loadAll().then(()=>{
+  if(ARCH){const n=document.getElementById('nav-arch');if(n)n.style.display='';}
+  route();
+}).catch(err=>{
   if(window.__introHero)window.__introHero(null);
   document.getElementById('status').innerHTML=`<h2>El mueble está trabado</h2>
     <p style="max-width:52ch;margin:0 auto">${esc(err.message)}. El Fichero lee el catálogo desde <code>../index.html</code>: hay que abrirlo servido por HTTP (GitHub Pages o <code>python3 -m http.server</code>).</p>`;
