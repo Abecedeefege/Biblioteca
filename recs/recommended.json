@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-26T16:10:00-03:00",
-  "_feedback_cutoff": "2026-07-25T17:41:07.874Z",
+  "_updated_at": "2026-07-27T17:30:00-03:00",
+  "_feedback_cutoff": "2026-07-27T17:10:34.850Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -344,12 +344,12 @@
       "notified_by": "2026-07-27-rec",
       "why": "Para todos: ficción emotiva con enganche (ella) + filosofía de arrepentimientos/sentido que dialoga con Frankl (él). Tema sensible manejado con el registro del editor. Peli Pugh solo ANUNCIADA (no estrenada). Interacción: estante de vidas + rec-quien.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "veredicto": "lo_quiero",
+        "reaccion": "love",
+        "clicked": true,
+        "dwell_s": 207
       },
-      "learning": null
+      "learning": "ACIERTO PLENO de Sofi (lo_quiero+love+dwell 207s) en una ficha \"todos\" — respondió ella (rec-quien=sofi). Confirma que la fórmula ficción-emotiva-con-filosofia (Haig) funciona también para su lado, no solo para Andy: refuerza el banco \"Todos\" (Hail Mary, Midnight Library sembrados, ambos con señal fuerte ahora). Andy todavía no votó la suya (solo click+view a las 17:10, sin veredicto aún) — revisar mañana."
     },
     {
       "id": "2026-07-17-dicker-harry-quebert",
@@ -399,8 +399,7 @@
         "clicked": true,
         "dwell_s": 0
       },
-      "learning": "Respondió 'ya_lo_lei' Y 'ya_leido' en el compromiso físico en apenas ~36s desde que abrió la página (sin evento de dwell formal) — ya había leído este libro antes, R5-018 NO estaba 'sin leer' como asumía enrichment. Puntería de veta correcta (oscuro/King, reaccionó 'like' al formato) pero CERO descubrimiento. Guardia: marcar R5-018 como ya leído por Sofi, no reofrecerlo. Con 50 King en el estante, chequear antes cuáles leyó realmente en vez de asumir por el enrichment.",
-      "audience": "sofi"
+      "learning": "Respondió 'ya_lo_lei' Y 'ya_leido' en el compromiso físico en apenas ~36s desde que abrió la página (sin evento de dwell formal) — ya había leído este libro antes, R5-018 NO estaba 'sin leer' como asumía enrichment. Puntería de veta correcta (oscuro/King, reaccionó 'like' al formato) pero CERO descubrimiento. Guardia: marcar R5-018 como ya leído por Sofi, no reofrecerlo. Con 50 King en el estante, chequear antes cuáles leyó realmente en vez de asumir por el enrichment."
     },
     {
       "id": "2026-07-19-osman-murio-dos-veces",
@@ -597,12 +596,12 @@
       "notified_by": "2026-07-26-rec-andy",
       "why": "Redescubrimiento L4 identitario: el libro que le da nombre a todo el estante, sin ninguna señal de haber sido leído. 'Ilusiones' (21/07, el otro Bach) fue su mejor 'nuevo' hasta ahora — me_tienta+like+dwell 410s/100% scroll — así que antes de buscar otro autor nuevo, se vuelve al original de la misma pluma. Verificado contra catálogo y recommended.json: nunca antes recomendado. Par del día: Sofi ya tuvo su 'nuevo' (Hill, ya consumido con id real anticipado), a Andy le toca 'de la biblioteca'.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "veredicto": "me_tienta",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 395
       },
-      "learning": null
+      "learning": "CONFIRMA la hipótesis: redescub identitario de autor ya-ganador (Bach) repite acierto — me_tienta+like+dwell 395s, y ademas leer-esta-noche=si (compromiso físico). Segundo dato consecutivo a favor de Bach y de \"volver al origen del autor identitario\" como jugada segura. Próximo paso: seguir banco redescub L4 (Prophet, Zen en el arte del tiro con arco) antes de gastar más nuevos."
     },
     {
       "id": "2026-07-26-entrevista-cine",

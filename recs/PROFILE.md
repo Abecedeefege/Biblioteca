@@ -8,18 +8,13 @@ Dos fichas diarias: UNA para Andy y UNA para Sofi, cada una personal según
 su perfil y su feedback. Entre las dos del día: un libro NUEVO y uno DE LA
 BIBLIOTECA (redescubrimiento), alternando cada día quién recibe cuál.
 Pushes ~12:30, personales: `to:"Andy"` / `to:"Sofi"`. Las fichas `todos`
-quedan para ocasiones especiales y cuentan para ambos. Pre-armadas del
-bootstrap consumidas hasta 26/07 inclusive (25/07: Weir *Proyecto Hail
-Mary* `todos`, enviado 13:11 -03:00 junto con la guía de viaje pedida en
-vivo. 26/07: hill26-sofi ya contaba como ficha del día de Sofi — 'nuevo',
-consumida con id real anticipado desde el 16/07 — así que esta corrida
-construyó SOLO la de Andy: redescub identitario Bach *Jonathan Livingston
-Seagull*/L4-017, push 2026-07-26-rec-andy 17:30). Restante: haig27-todos
-(pending, push ya encolado desde el bootstrap). Si el día ya
-tiene pre-armada de un destinatario, construir SOLO la del otro, respetando
-el par nuevo+redescub del día — es regla dura, prioridad sobre la mezcla
-personal de cada uno (ver 23/07: Andy nuevo pre-armado → Sofi redescub
-aunque su mezcla pedía "nuevo"). Libre 100% para ambos: 2026-07-28.
+cuentan para ambos y NO generan una segunda ficha ese día (confirmado 2x:
+Weir 25/07, Haig 27/07). Si el día ya tiene pre-armada de un destinatario,
+construir SOLO la del otro, respetando el par nuevo+redescub — regla dura,
+prioridad sobre la mezcla personal de cada uno. Bootstrap del 16/07 100%
+consumido. 27/07: Haig `todos` cubrió la cuota de ambos por sí solo (nada
+que construir); Sofi votó `lo_quiero`+love+dwell 207s (ACIERTO PLENO), Andy
+solo clickeó+vio. 28/07: 100% libre para ambos.
 
 ### Sofi (pareja del dueño) — vetas confirmadas
 Sus salas: **sala King** (R4+R5, 50 King), **salón del crimen** (M5:
@@ -75,6 +70,15 @@ Fórmula: enganche narrativo/misterio (ella) × ciencia/sentido/positividad
 (él). Sembrados: Hail Mary, Midnight Library. Banco: Piranesi (Clarke), Un
 verdor terrible (Labatut), El curioso incidente del perro a medianoche,
 Recursion (Crouch).
+- **27/07 ACIERTO PLENO confirmado**: Haig *La Biblioteca de la Medianoche*
+  (`todos`) — Sofi votó `lo_quiero`+love+dwell 207s (identificada vía
+  micro-pregunta propia `rec-quien`=sofi). Confirma la fórmula en el lado
+  de ella también, no solo teórica. Andy aún sin votar la misma ficha
+  (solo click+view 17:10) — revisar próxima corrida. Weir *Hail Mary*
+  (25/07, `todos`) sigue sin ningún veredicto de ninguno de los dos —
+  si tampoco vota mañana, son ya 2 fichas `todos` seguidas sin señal de
+  Andy: considerar si el formato compartido le genera menos urgencia de
+  responder que el personal.
 
 ## 👤 Andy (el dueño) — datos duros
 Libros personales = **estante L4** (el de *Jonathan Livingston Seagull*).
@@ -92,9 +96,13 @@ CONTEXTO: lee *El monje que vendió su Ferrari* (Sharma) — no recomendarlo.
 Julio = invierno en Montevideo (lecturas de una sentada, comfort books).
 - Consumidos (detalle completo en `recommended.json`): Rovelli, Bach
   *Ilusiones* (ACIERTOS PLENOS/altos); Frankl, Meditaciones (`ya_lo_lei`);
-  Cosmos (ACIERTO — redescub). Pendientes de veredicto: Housel, Pollan
-  (23/07), Siddhartha, Bucay *Camino Felicidad* (redescub), Hawking
-  (24/07, L5-007, redescub — clickeó, dwell 78s/88% scroll, sin veredicto).
+  Cosmos (ACIERTO — redescub); Bach *Jonathan Livingston Seagull*/L4-017
+  (26/07, redescub — `me_tienta`+like+dwell 395s+leer-esta-noche=si,
+  CONFIRMA la jugada "volver al origen del autor identitario"). Pendientes
+  de veredicto: Housel, Pollan (23/07), Siddhartha, Bucay *Camino
+  Felicidad* (redescub), Hawking (24/07, L5-007, redescub — clickeó, dwell
+  78s/88% scroll, sin veredicto), Weir *Hail Mary* (25/07, `todos`, sin
+  ningún voto de Andy ni Sofi).
 - Encuesta 24/07: puntería `mas_o_menos`, formato `justas`, contenido
   favorito `insights` (seguir invirtiendo ahí), ritmo `asi_esta_bien`,
   felicidad `sorpresas`. Nota aparte (UX, no sobre libros): pidió que las
@@ -106,13 +114,12 @@ Julio = invierno en Montevideo (lecturas de una sentada, comfort books).
   repetir el "ya_lo_lei" de sus clásicos consagrados como *nuevos* (Frankl,
   Meditaciones) — pero Cosmos (igual de famoso, redescub) no tuvo ese
   problema, así que no está claro si aplica a formato redescub.
-- 26/07: redescub identitario Bach *Jonathan Livingston Seagull*/L4-017 —
-  el libro que le da nombre a su estante entero, sin señal previa de
-  lectura, enviado apalancando el éxito de *Ilusiones* (mismo autor, su
-  mejor "nuevo" hasta ahora). Pendiente de veredicto. Si acierta: confirma
-  que "volver al origen de un autor identitario" es jugada ganadora:
-  próximo paso sería completar el resto del banco redescub L4 (Prophet,
-  Zen en el arte del tiro con arco) en vez de gastar más "nuevos".
+- 26/07 → 27/07 CONFIRMADO: el redescub identitario de Bach acertó
+  (`me_tienta`+like+dwell 395s, y se comprometió a agarrarlo esa misma
+  noche). Segunda señal a favor de "volver al origen de un autor
+  identitario ya-ganador" — próximo redescub L4 puede salir directo del
+  banco (Prophet, Zen en el arte del tiro con arco) sin gastar más
+  "nuevos" antes.
 
 ## 🛡️ Guardia (errores que no se cometen)
 - Antes de todo "nuevo": título Y autor contra el catálogo completo
@@ -159,29 +166,35 @@ L4-018 *The Prophet*, L4-010 *Zen en el arte del tiro con arco*, L4-014
 Happiness*, L4-022 *The Boy, the Mole...*, L5-026 *Of Time and Space...*
 (Asimov), L5-019 *La Vía Láctea* (Bok).
 
-## 🔭 Qué mirar (próxima corrida: 2026-07-27)
+## 🔭 Qué mirar (próxima corrida: 2026-07-28)
 - 🎬 **PRIORIDAD: leer las respuestas de la entrevista de cine** (qids
-  `cine-*:andy` / `cine-*:sofi`, ver sección Pista semanal). Con eso:
+  `cine-*:andy` / `cine-*:sofi`, ver sección Pista semanal). Todavía CERO
+  eventos `cine-*` en `sync/engagement.json` — el push
+  (`2026-07-27-entrevista-cine`, id de cola, sin `to`) seguía `pending`,
+  `send_at` 19:30 -03:00 hoy 27/07 (esta corrida se ejecutó ~16:00, antes
+  de esa hora), así que aún no pudieron contestar. Con las respuestas:
   (1) escribir en este PROFILE las dos secciones de perfil de cine —la de
   cada uno y la del cruce—, marcando dónde coinciden y dónde no;
   (2) revisar si los tres títulos de la Función Nº 1 siguen en pie y
   reconstruir `recs/2026-07-31-sala-01.html` con lo que digan (sobre todo
   si marcan plataformas que no tienen, o "ya la vimos" adelantado);
   (3) mover el día/horario de la función si pidieron otro en `cine-dia`.
-- 26/07 CONFIRMADO: `2026-07-26-rec-andy` (Bach *Jonathan Livingston
-  Seagull*, redescub L4-017) encolado 17:30 -03:00, sin feedback nuevo
-  desde el cutoff (2026-07-25T17:41Z) al momento de esta corrida — cero
-  eventos nuevos en `sync/engagement.json`. Revisar su veredicto mañana.
-- Pendientes de veredicto a revisar (sin cambios esta corrida, cero
-  eventos nuevos): Weir (`todos`, 25/07), Pollan (Andy, 23/07), Hawking
-  (Andy, 24/07, clickeó+dwell 78s/88% pero sin votar), Minix (Sofi, 23/07
-  — test clave de la guardia escalada tras 3/3 fallos de redescub) y
-  Baltimore (Sofi, 21/07). Si Minix también da `ya_lo_lei`: parar de rotar
-  nombres en M5/R4/R5 y saltar directo a romance (ver nota de Sofi arriba).
-  Son ya 5 recomendaciones seguidas sin feedback — si sigue así la próxima
-  corrida, aplicar la regla de "3+ sin feedback → cambio fuerte" (probar
-  otro horario de push o otro tipo de experiencia, no solo otro libro).
-- 27/07 pre-armado (Haig `todos`, pending, cuenta para ambos); 28/07 100%
+- 27/07 CONFIRMADO: Haig `todos` cubrió la cuota de ambos, enviado 13:01
+  -03:00. Sofi: `lo_quiero`+love+dwell 207s (ACIERTO PLENO). Andy: solo
+  click+view, sin veredicto — revisar si votó de acá a mañana.
+- 26/07 CONFIRMADO: Bach *Jonathan Livingston Seagull* (redescub L4-017,
+  Andy) — `me_tienta`+like+dwell 395s+leer-esta-noche=si. Ver sección Andy.
+- Pendientes de veredicto sin cambios esta corrida (cero eventos nuevos):
+  Weir (`todos`, 25/07 — ninguno de los dos votó todavía), Pollan (Andy,
+  23/07), Hawking (Andy, 24/07, clickeó+dwell 78s/88% pero sin votar),
+  Minix (Sofi, 23/07 — test clave de la guardia escalada tras 3/3 fallos
+  de redescub) y Baltimore (Sofi, 21/07). Si Minix también da `ya_lo_lei`:
+  parar de rotar nombres en M5/R4/R5 y saltar directo a romance (ver nota
+  de Sofi arriba). La racha de "3+ sin feedback" para Andy ya se rompió
+  (Bach sí tuvo feedback esta corrida) — no hace falta cambio forzado, pero
+  Pollan/Hawking/Weir siguen envejeciendo sin señal, vigilar si se vuelve
+  a acumular.
+- 28/07 100%
   libre para ambos — candidata natural para la primera ficha romance de
   Sofi si no salió antes, y para el próximo redescub L4 de Andy (banco:
   The Prophet, Zen en el arte del tiro con arco).
