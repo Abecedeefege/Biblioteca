@@ -2163,7 +2163,33 @@
       "page": "index.html",
       "type": "page_visit",
       "device": "sin-nombre"
+    },
+    {
+      "id": "ms3fa6bp-ohgtwe",
+      "ts": "2026-07-27T16:09:43.045Z",
+      "nid": "2026-07-27-rec",
+      "src": "push",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3fa6br-ibjxcd",
+      "ts": "2026-07-27T16:09:43.047Z",
+      "nid": "2026-07-27-rec",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3fatf7-zf4b4i",
+      "ts": "2026-07-27T16:10:12.979Z",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 30,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-07-27T16:01:53.658Z"
+  "_updated_at": "2026-07-27T16:39:16.075Z"
 }
