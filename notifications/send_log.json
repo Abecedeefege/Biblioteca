@@ -251,6 +251,20 @@
       "device": "Sofi",
       "ts": "2026-07-27T16:01:54.229Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-26-cine-entrevista",
+      "device": "Andy",
+      "ts": "2026-07-27T23:16:53.984Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-26-cine-entrevista",
+      "device": "Sofi",
+      "ts": "2026-07-27T23:16:54.184Z",
+      "status_code": 201
     }
   ]
 }
