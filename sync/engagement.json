@@ -2215,7 +2215,60 @@
       "page": "2026-07-27-haig-biblioteca-medianoche.html",
       "device": "Andy",
       "nid": "2026-07-27-rec"
+    },
+    {
+      "id": "ms3gctkn-5zqu4u",
+      "ts": "2026-07-27T16:39:46.103Z",
+      "qid": "rec-veredicto:2026-07-27-haig-biblioteca-medianoche",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "answer",
+      "value": "lo_quiero",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3gczi7-u880gq",
+      "ts": "2026-07-27T16:39:53.791Z",
+      "qid": "rec-quien:2026-07-27-haig-biblioteca-medianoche",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "answer",
+      "value": "sofi",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3gd40x-mihkb3",
+      "ts": "2026-07-27T16:39:59.649Z",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "slug": "2026-07-27-haig-biblioteca-medianoche",
+      "type": "reaction",
+      "value": "love",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3gd9ih-5aw20i",
+      "ts": "2026-07-27T16:40:06.761Z",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 207,
+      "scroll_pct": 100
+    },
+    {
+      "id": "ms3hgg2n-ql2963",
+      "ts": "2026-07-27T17:10:34.848Z",
+      "nid": "2026-07-27-rec",
+      "src": "push",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "notification_clicked",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "ms3hgg2p-4hfvom",
+      "ts": "2026-07-27T17:10:34.850Z",
+      "nid": "2026-07-27-rec",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
     }
   ],
-  "_updated_at": "2026-07-27T17:10:34.459Z"
+  "_updated_at": "2026-07-27T17:52:11.321Z"
 }
