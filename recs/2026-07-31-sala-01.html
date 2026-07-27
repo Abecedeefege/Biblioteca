@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🎬 Función Nº 1 · La Sala de Bibliotequeando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sala:#0A0A0C;
+  --sala2:#131318;
+  --telon:#3A1220;
+  --telon-hi:#6E2038;
+  --hueso:#F2EFEA;
+  --bruma:#9A94A3;
+  --linea:rgba(242,239,234,.13);
+  --oro:#E8B44A;
+  --oro-hi:#F7D48A;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--sala);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--oro);color:var(--sala)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--oro-hi);outline-offset:3px;border-radius:6px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(242,239,234,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--telon-hi),var(--oro))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(10,10,12,.6);backdrop-filter:blur(4px)}
+.back:hover{color:var(--oro-hi);border-color:var(--oro)}
+.seccion{padding:clamp(3.4rem,8vw,6rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:800px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.85rem,1.3rem + 3vw,2.9rem);line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* hero: telón + marquesina */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(80% 60% at 50% 30%,#241020 0%,var(--sala) 70%)}
+.telon{position:absolute;top:0;left:0;right:0;height:26%;pointer-events:none;background:repeating-linear-gradient(90deg,rgba(110,32,56,.55) 0 14px,rgba(58,18,32,.75) 14px 30px);mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%)}
+.marquesina{position:relative;z-index:3;border:1px solid var(--oro);border-radius:4px;padding:clamp(1.7rem,6vw,2.6rem) clamp(1.2rem,5vw,2.4rem);background:linear-gradient(180deg,rgba(232,180,74,.09),rgba(232,180,74,.02));box-shadow:0 0 0 6px rgba(10,10,12,.9),0 0 60px -12px rgba(232,180,74,.45);max-width:560px}
+.bombillas{display:flex;justify-content:center;gap:.55rem;margin-bottom:1.2rem}
+.bombillas i{width:7px;height:7px;border-radius:50%;background:var(--oro-hi);box-shadow:0 0 8px var(--oro);animation:brillo 2.4s ease-in-out infinite}
+.bombillas i:nth-child(2){animation-delay:.3s}.bombillas i:nth-child(3){animation-delay:.6s}
+.bombillas i:nth-child(4){animation-delay:.9s}.bombillas i:nth-child(5){animation-delay:1.2s}
+@keyframes brillo{0%,100%{opacity:.35}50%{opacity:1}}
+.hero .num-funcion{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--oro);font-weight:700}
+.hero h1{font-size:clamp(2rem,1.4rem + 5vw,3.3rem);line-height:1.08;margin:.7rem 0}
+.hero h1 em{font-style:italic;color:var(--oro-hi)}
+.hero .sub{color:#D9D3DE;margin:1rem auto 0;max-width:40ch;font-size:.96rem}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:3;color:var(--bruma);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+
+/* aviso honesto */
+.aviso{border-left:3px solid var(--oro);background:rgba(232,180,74,.07);border-radius:0 14px 14px 0;padding:1.2rem 1.3rem;margin-top:1.8rem}
+.aviso p{color:#E4DDE8;font-size:.95rem}
+.aviso b{color:var(--oro-hi);font-weight:600}
+
+/* selector de la noche */
+.selector{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.4rem,4vw,2rem);margin-top:2.2rem;background:radial-gradient(120% 110% at 50% 0%,rgba(232,180,74,.09),transparent)}
+.selector .opciones{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.1rem 0}
+.selector .opciones button{border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.62rem 1.1rem;font-size:.9rem;font-weight:600;transition:all .22s ease}
+.selector .opciones button:hover,.selector .opciones button.activo{border-color:var(--oro);color:var(--oro-hi);background:rgba(232,180,74,.12)}
+.selector .salida{border-top:1px solid var(--linea);padding-top:1.1rem;min-height:4.2em;color:var(--bruma);font-size:.97rem}
+.selector .salida b{color:var(--oro-hi);font-weight:600}
+.selector .salida em{font-style:italic;color:var(--hueso)}
+
+/* fichas de título */
+.titulo-card{border:1px solid var(--linea);border-radius:22px;overflow:hidden;margin-top:1.6rem;background:linear-gradient(180deg,rgba(242,239,234,.04),transparent)}
+.titulo-card.destacada{border-color:rgba(232,180,74,.4)}
+.tc-top{padding:clamp(1.3rem,4vw,1.9rem) clamp(1.2rem,4vw,1.9rem) 0}
+.tc-forma{display:inline-block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--sala);background:var(--oro);border-radius:999px;padding:.28rem .8rem;margin-bottom:.9rem}
+.titulo-card:not(.destacada) .tc-forma{background:transparent;color:var(--bruma);border:1px solid var(--linea)}
+.tc-top h3{font-size:clamp(1.5rem,1.2rem + 1.8vw,2.1rem);line-height:1.12}
+.tc-meta{color:var(--bruma);font-size:.87rem;margin-top:.4rem}
+.tc-donde{display:inline-block;margin-top:.9rem;font-size:.82rem;color:var(--oro-hi);border:1px solid rgba(232,180,74,.35);border-radius:999px;padding:.32rem .85rem}
+.tc-cuerpo{padding:1.2rem clamp(1.2rem,4vw,1.9rem) 0}
+.tc-cuerpo p{color:#DED8E2;font-size:.97rem;margin-bottom:.9rem}
+.porque{border-left:3px solid var(--telon-hi);padding:.2rem 0 .2rem 1rem;margin:1.2rem 0}
+.porque .et{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--oro);font-weight:700;display:block;margin-bottom:.4rem}
+.porque p{color:var(--bruma);font-size:.93rem;margin:0}
+.porque p + p{margin-top:.6rem}
+.franqueza{background:rgba(242,239,234,.045);border-radius:12px;padding:.85rem 1rem;margin-bottom:1.2rem;font-size:.89rem;color:var(--bruma)}
+.franqueza b{color:var(--hueso);font-weight:600}
+.tc-voto{border-top:1px solid var(--linea);padding:1.1rem clamp(1.2rem,4vw,1.9rem) 1.4rem;background:rgba(0,0,0,.25)}
+.tc-voto .pregunta{font-family:var(--serif);font-size:1.1rem;margin-bottom:.2rem}
+.tc-voto button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.55rem 1rem;font-size:.88rem;font-weight:600;transition:all .22s ease}
+.tc-voto button:hover{border-color:var(--oro);color:var(--oro-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.84rem;color:var(--oro-hi)}
+
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.12rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.9rem;font-weight:600;font-family:var(--sans);transition:all .22s ease}
+.cta button:hover,.react button:hover{border-color:var(--oro);color:var(--oro-hi)}
+textarea{width:100%;box-sizing:border-box;resize:vertical;min-height:4.6em;padding:.75rem .85rem;border-radius:12px;border:1px solid var(--linea);background:rgba(242,239,234,.05);color:inherit;font-family:var(--sans);font-size:.95rem;line-height:1.55}
+textarea:focus{outline:none;border-color:var(--oro)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,var(--telon) 0%,var(--sala) 74%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-size:clamp(1.4rem,1rem + 2.4vw,2.1rem);line-height:1.35;max-width:32ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--oro-hi);font-weight:400;font-style:italic}
+footer{text-align:center;color:var(--bruma);font-size:.79rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="telon" aria-hidden="true"></div>
+  <div class="marquesina">
+    <div class="bombillas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="num-funcion">Función Nº 1 · viernes 31 de julio</p>
+    <h1>La Sala:<br><em>tres para ver de a dos</em></h1>
+    <p class="sub">Una serie para hacer ritual, una película para una sola noche, y una apuesta grande. Ninguna de relleno.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion">
+  <div class="centro">
+    <p class="kicker rev">Antes que nada</p>
+    <h2 class="titulo rev d1">De dónde salieron estas tres</h2>
+    <p class="bajada rev d2">La entrevista salió el domingo y esto se armó el viernes. Así que estas tres no salieron de sus respuestas de cine: salieron de <b>doce días de datos sobre sus libros</b>, que es lo que tengo. Cada una está anclada en algo que ustedes efectivamente votaron.</p>
+    <div class="aviso rev d2">
+      <p><b>La regla de la casa, aplicada acá:</b> la vara que pediste con las librerías del viaje —icónico o importante de verdad, mejor una buena que tres de relleno— vale igual para la pantalla. Por eso son tres y no diez. Y como con los libros ya me pasó de recomendarles cosas que ya habían leído, cada ficha tiene el botón <b>"ya la vimos"</b>: es el que más me sirve de todos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" style="background:var(--sala2)">
+  <div class="centro">
+    <p class="kicker rev">Empecemos por lo práctico</p>
+    <h2 class="titulo rev d1">¿Cuánto tienen esta noche?</h2>
+    <p class="bajada rev d2">Elegí y te digo cuál de las tres es. Es la pregunta que de verdad decide.</p>
+    <div class="selector rev d2">
+      <div class="opciones">
+        <button type="button" data-t="corto">⏱️ Media hora, y caemos</button>
+        <button type="button" data-t="medio">🕐 Un par de horas</button>
+        <button type="button" data-t="largo">🌙 La noche entera</button>
+      </div>
+      <div class="salida" id="salida">Tocá una opción.</div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="centro">
+    <p class="kicker rev">Uno · el ritual</p>
+    <h2 class="titulo rev d1">Para que se vuelva costumbre</h2>
+
+    <article class="titulo-card destacada rev d1" id="card-omitb">
+      <div class="tc-top">
+        <span class="tc-forma">La serie de la semana</span>
+        <h3>Only Murders in the Building</h3>
+        <p class="tc-meta">Serie · desde 2021 · capítulos de 30 a 35 minutos · con Steve Martin, Martin Short y Selena Gomez</p>
+        <span class="tc-donde">Disney+ · catálogo latinoamericano</span>
+      </div>
+      <div class="tc-cuerpo">
+        <p>Tres vecinos de un edificio antiguo de Nueva York que no se conocen de nada, salvo por una obsesión compartida con los podcasts de crímenes reales. Cuando aparece un muerto en el edificio, deciden investigarlo ellos y grabar su propio podcast. No son detectives: son un actor en decadencia, un director de teatro fundido y una chica de treinta que no cuenta lo que hace.</p>
+        <div class="porque">
+          <span class="et">Por qué esta, para ustedes</span>
+          <p><b>Sofi:</b> le pusiste "lo quiero" a los <em>dos</em> tomos del Club del Crimen de los Jueves de Osman — es la única veta con dos aciertos plenos seguidos. Y cuando te pregunté qué frase te había hecho reír, elegiste la más irreverente de Joyce, no la tierna. Esto es exactamente eso, pero filmado: aficionados metiéndose donde no los llaman, y el humor seco viniendo de los personajes viejos.</p>
+          <p><b>Andy:</b> capítulos de media hora, trama que cierra, cero sermón. Es la que menos te pide y la que más fácil se vuelve costumbre de a dos.</p>
+        </div>
+        <div class="franqueza"><b>Para que lo sepan:</b> ya van varias temporadas, así que si enganchan hay cuerda para rato — pero cada temporada es un caso cerrado, no quedan colgados. La primera temporada fue el estreno de comedia más visto en la historia de Hulu y se llevó 17 nominaciones al Emmy.</div>
+      </div>
+      <div class="tc-voto">
+        <p class="pregunta">¿Qué hacemos con esta?</p>
+        <div>
+          <button onclick="engageAnswer('cine-veredicto:omitb','la_vemos',this)">🍿 Esta vemos</button>
+          <button onclick="engageAnswer('cine-veredicto:omitb','me_tienta',this)">🤔 Me tienta</button>
+          <button onclick="engageAnswer('cine-veredicto:omitb','ya_la_vimos',this)">✔️ Ya la vimos</button>
+          <button onclick="engageAnswer('cine-veredicto:omitb','no_va',this)">🙅 No va</button>
+          <span class="q-hint"></span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="seccion" style="background:var(--sala2)">
+  <div class="centro">
+    <p class="kicker rev">Dos · una noche</p>
+    <h2 class="titulo rev d1">Empieza y termina hoy</h2>
+
+    <article class="titulo-card rev d1" id="card-arrival">
+      <div class="tc-top">
+        <span class="tc-forma">La película</span>
+        <h3>La llegada <span style="color:var(--bruma);font-size:.62em">(Arrival)</span></h3>
+        <p class="tc-meta">Película · 2016 · dirigida por Denis Villeneuve · menos de dos horas</p>
+        <span class="tc-donde">Para alquilar en Prime Video o Apple TV · rota por suscripción</span>
+      </div>
+      <div class="tc-cuerpo">
+        <p>Doce naves aparecen en distintos puntos del planeta y se quedan ahí, quietas, sin explicar nada. El ejército convoca a una lingüista para hacer lo único que nadie sabe hacer: aprender a hablar con ellos antes de que el miedo decida por todos. Es ciencia ficción, pero la película es en realidad sobre cómo el idioma que hablás te cambia la forma de pensar el tiempo.</p>
+        <div class="porque">
+          <span class="et">Por qué esta, para ustedes</span>
+          <p><b>Andy:</b> Rovelli es tu único "lo quiero" pleno en doce días, y Cosmos funcionó incluso siendo relectura. Astronomía moderna, corta y poética es tu combo probado. Esta es esa misma sensación, con actores.</p>
+          <p><b>Sofi:</b> escribiste que te gustan las historias con final que te haga llorar un poco, "que también hace bien". Esta pega ahí, y de una forma que no se ve venir hasta el final. Además está armada como un misterio: entendés lo que pasó recién cuando encajan las piezas.</p>
+        </div>
+        <div class="franqueza"><b>Honestidad:</b> arranca lenta y en voz baja — los primeros veinte minutos piden paciencia. Si esta noche están reventados, no es esta. Está basada en un cuento de Ted Chiang de 1998 y tuvo ocho nominaciones al Oscar; ganó una, la de edición de sonido.</div>
+      </div>
+      <div class="tc-voto">
+        <p class="pregunta">¿Qué hacemos con esta?</p>
+        <div>
+          <button onclick="engageAnswer('cine-veredicto:arrival','la_vemos',this)">🍿 Esta vemos</button>
+          <button onclick="engageAnswer('cine-veredicto:arrival','me_tienta',this)">🤔 Me tienta</button>
+          <button onclick="engageAnswer('cine-veredicto:arrival','ya_la_vimos',this)">✔️ Ya la vimos</button>
+          <button onclick="engageAnswer('cine-veredicto:arrival','no_va',this)">🙅 No va</button>
+          <span class="q-hint"></span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="centro">
+    <p class="kicker rev">Tres · la apuesta</p>
+    <h2 class="titulo rev d1">Si quieren algo que los ocupe</h2>
+
+    <article class="titulo-card rev d1" id="card-severance">
+      <div class="tc-top">
+        <span class="tc-forma">La apuesta grande</span>
+        <h3>Separación <span style="color:var(--bruma);font-size:.62em">(Severance)</span></h3>
+        <p class="tc-meta">Serie · 2022 y 2025 · dos temporadas, 19 capítulos · unos 45 minutos cada uno</p>
+        <span class="tc-donde">Apple TV+</span>
+      </div>
+      <div class="tc-cuerpo">
+        <p>Una empresa ofrece un procedimiento para separar quirúrgicamente los recuerdos del trabajo de los de la vida personal. El que entra a la oficina no sabe nada de su vida afuera; el que sale no sabe nada de lo que hizo adentro. Son, en los hechos, dos personas en un mismo cuerpo. La serie empieza cuando uno de los de adentro empieza a sospechar.</p>
+        <div class="porque">
+          <span class="et">Por qué esta, para ustedes</span>
+          <p><b>Sofi:</b> es un misterio con reglas — de los que se pueden ir deduciendo, como el Dicker que te voló la cabeza. Y tiene el humor seco de oficina que va en la misma línea de lo que te hace gracia.</p>
+          <p><b>Andy:</b> abajo del misterio hay una sola pregunta filosófica sostenida durante veinte horas: si perdés la memoria de lo que hacés, ¿seguís siendo vos? Es Frankl y el sentido, pero envuelto en trama, que es como a vos te entra.</p>
+        </div>
+        <div class="franqueza"><b>La letra chica, y es importante:</b> la tercera temporada está confirmada desde marzo de 2025, pero todavía sin fecha — la prensa especializada la ubica recién por 2027. O sea: si arrancan y les gusta, van a quedar esperando un buen rato. Si eso les arruina la experiencia, dejen esta para más adelante y quédense con las otras dos.</div>
+      </div>
+      <div class="tc-voto">
+        <p class="pregunta">¿Qué hacemos con esta?</p>
+        <div>
+          <button onclick="engageAnswer('cine-veredicto:severance','la_vemos',this)">🍿 Esta vemos</button>
+          <button onclick="engageAnswer('cine-veredicto:severance','me_tienta',this)">🤔 Me tienta</button>
+          <button onclick="engageAnswer('cine-veredicto:severance','ya_la_vimos',this)">✔️ Ya la vimos</button>
+          <button onclick="engageAnswer('cine-veredicto:severance','no_va',this)">🙅 No va</button>
+          <span class="q-hint"></span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="seccion" style="background:var(--sala2)">
+  <div class="centro">
+    <p class="kicker rev">Para la próxima función</p>
+    <h2 class="titulo rev d1">Lo que me falta saber</h2>
+    <p class="bajada rev d2">Dos cosas que cambian todo y que todavía no sé.</p>
+
+    <div class="cta rev d2">¿En qué plataformas pueden ver, hoy?
+      <div>
+        <button onclick="engageAnswer('cine-plataformas-rapido','netflix_prime',this)">Netflix y Prime</button>
+        <button onclick="engageAnswer('cine-plataformas-rapido','casi_todas',this)">Casi todas</button>
+        <button onclick="engageAnswer('cine-plataformas-rapido','solo_una',this)">Una sola</button>
+        <button onclick="engageAnswer('cine-plataformas-rapido','nos_arreglamos',this)">Nos arreglamos igual</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">¿El viernes de tarde es buena hora para esto?
+      <div>
+        <button onclick="engageAnswer('cine-dia-rapido','viernes_si',this)">👍 Viernes va bien</button>
+        <button onclick="engageAnswer('cine-dia-rapido','mejor_sabado',this)">Mejor sábado</button>
+        <button onclick="engageAnswer('cine-dia-rapido','mejor_jueves',this)">Mejor jueves</button>
+        <button onclick="engageAnswer('cine-dia-rapido','mas_temprano',this)">Más temprano</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">
+      <label for="nota-2026-07-31-sala-01" style="display:block;margin-bottom:.6rem;font-family:var(--sans);font-size:.95rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-07-31-sala-01" rows="3" placeholder="Qué les gustó, qué erré, qué quieren para el viernes que viene…"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-07-31-sala-01',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-31-sala-01','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-31-sala-01','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-31-sala-01','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-31-sala-01','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase rev">Los libros los leen por separado. <b>Esto es lo que hacen juntos.</b></p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Próxima función: el viernes que viene, ya con lo que contestaron en la entrevista.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--oro-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--oro);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · La Sala · función Nº 1 · 31 de julio de 2026.<br>Datos de estreno, plataformas y premios verificados a julio de 2026. Lo que no pude confirmar, va dicho como tal.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.14});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+
+  var SALIDA={
+    corto:'Entonces es <b>Only Murders in the Building</b>. Un capítulo dura 30 minutos y cierra: si caen dormidos, no perdieron el hilo. <em>Está más arriba, con el botón dorado.</em>',
+    medio:'Entonces es <b>La llegada</b>. Empieza y termina esta noche, sin comprometerse a nada. <em>Eso sí: los primeros veinte minutos son lentos a propósito.</em>',
+    largo:'Entonces <b>Separación</b> — pero leé la letra chica antes de arrancar: la temporada 3 no llega antes de 2027. <em>Si eso los frena, dos capítulos de Only Murders y a dormir.</em>'
+  };
+  $$('.selector .opciones button').forEach(function(b){
+    b.addEventListener('click',function(){
+      $$('.selector .opciones button').forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      var t=b.getAttribute('data-t');
+      $('#salida').innerHTML=SALIDA[t];
+      if(window.engageAnswer) window.engageAnswer('cine-noche:2026-07-31-sala-01',t,null);
+    });
+  });
+})();
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

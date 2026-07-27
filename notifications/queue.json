@@ -406,6 +406,30 @@
       "sent_at": "2026-07-26T20:35:49.614Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-07-26"
+    },
+    {
+      "id": "2026-07-26-cine-entrevista",
+      "title": "🎬 Arranca algo nuevo, para los dos",
+      "body": "Una vez por semana, una serie o peli elegida para ver juntos. Antes necesito conocerlos: 3 minutos, una sola vez.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-26-entrevista-cine.html",
+      "send_at": "2026-07-27T19:30:00-03:00",
+      "expires_at": "2026-07-27T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-27 (entrevista de cine pedida en vivo por Andy; sin `to`: va a los dos, cada uno contesta la suya. Construida el 26/07 y encolada para el 27/07: la sesión cruzó la medianoche y el send_at original quedó en el pasado)"
+    },
+    {
+      "id": "2026-07-31-cine",
+      "title": "🍿 Función Nº 1: tres para ver de a dos",
+      "body": "Una serie para hacer ritual, una peli para esta noche y una apuesta grande. Elegidas con lo que sé de ustedes.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-31-sala-01.html",
+      "send_at": "2026-07-31T19:00:00-03:00",
+      "expires_at": "2026-07-31T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-26 (primera función semanal de cine; sin `to`: es la pieza compartida de la semana)"
     }
   ]
 }

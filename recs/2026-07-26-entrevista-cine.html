@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🎬 La entrevista · Bibliotequeando va al cine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sala:#0A0A0C;
+  --sala2:#131318;
+  --telon:#3A1220;
+  --hueso:#F2EFEA;
+  --bruma:#9A94A3;
+  --linea:rgba(242,239,234,.13);
+  --acento:#E8B44A;
+  --acento-hi:#F7D48A;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+body[data-quien="andy"]{--acento:#E8B44A;--acento-hi:#F7D48A}
+body[data-quien="sofi"]{--acento:#E2568B;--acento-hi:#F58FB6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--sala);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acento);color:var(--sala)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--acento-hi);outline-offset:3px;border-radius:6px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(242,239,234,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--telon),var(--acento));transition:width .4s ease}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(10,10,12,.6);backdrop-filter:blur(4px)}
+.back:hover{color:var(--acento-hi);border-color:var(--acento)}
+.seccion{padding:clamp(3.4rem,8vw,6rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:760px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--acento);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.85rem,1.3rem + 3vw,2.9rem);line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: sala a oscuras + haz de proyector ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(70% 55% at 50% 42%,#1E1A24 0%,var(--sala) 68%)}
+.haz{position:absolute;top:-6%;left:50%;width:64vw;max-width:520px;height:78%;transform:translateX(-50%);background:linear-gradient(180deg,rgba(232,180,74,.20) 0%,rgba(232,180,74,.07) 45%,transparent 90%);clip-path:polygon(44% 0,56% 0,100% 100%,0 100%);filter:blur(6px);pointer-events:none;animation:parpadeo 5.5s ease-in-out infinite}
+@keyframes parpadeo{0%,100%{opacity:.75}44%{opacity:1}62%{opacity:.82}}
+.motas{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:radial-gradient(1.5px 1.5px at 22% 34%,rgba(255,255,255,.5),transparent),radial-gradient(1.5px 1.5px at 68% 22%,rgba(255,255,255,.35),transparent),radial-gradient(1.5px 1.5px at 48% 61%,rgba(255,255,255,.4),transparent),radial-gradient(1.5px 1.5px at 77% 52%,rgba(255,255,255,.3),transparent)}
+.pantalla{position:relative;z-index:3;width:min(88vw,520px);border:1px solid rgba(242,239,234,.22);border-radius:6px;background:linear-gradient(180deg,rgba(242,239,234,.09),rgba(242,239,234,.03));box-shadow:0 30px 90px -30px rgba(232,180,74,.35);padding:clamp(1.8rem,6vw,2.8rem) clamp(1.2rem,5vw,2rem)}
+.hero .rotulo{display:inline-block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acento-hi);border:1px solid var(--acento);border-radius:999px;padding:.28rem .85rem;margin-bottom:1.1rem}
+.hero h1{font-size:clamp(2rem,1.4rem + 5vw,3.4rem);line-height:1.06}
+.hero h1 em{font-style:italic;color:var(--acento)}
+.hero .sub{color:#D9D3DE;margin:1.2rem auto 0;max-width:42ch;font-size:.98rem}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:3;color:var(--bruma);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+
+/* ---------- puerta de identidad ---------- */
+.puerta{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.6rem,5vw,2.4rem);background:linear-gradient(180deg,rgba(242,239,234,.05),transparent);text-align:center}
+.puerta h2{font-size:clamp(1.5rem,1.2rem + 1.6vw,2.1rem);margin-bottom:.5rem}
+.puerta p{color:var(--bruma);font-size:.95rem;max-width:44ch;margin:0 auto 1.5rem}
+.butacas{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+.butaca{border:1px solid var(--linea);background:rgba(242,239,234,.04);color:var(--hueso);border-radius:16px;padding:1.1rem 1.7rem;font-size:1.05rem;font-weight:600;transition:all .25s ease;min-width:9rem}
+.butaca .emo{display:block;font-size:1.7rem;margin-bottom:.25rem}
+.butaca:hover{transform:translateY(-2px)}
+.butaca.andy:hover,.butaca.andy.sel{border-color:#E8B44A;color:#F7D48A;background:rgba(232,180,74,.1)}
+.butaca.sofi:hover,.butaca.sofi.sel{border-color:#E2568B;color:#F58FB6;background:rgba(226,86,139,.1)}
+.puerta .cambiar{margin-top:1.1rem;font-size:.84rem;color:var(--bruma);background:none;border:none;text-decoration:underline;padding:.3rem}
+.puerta .cambiar:hover{color:var(--acento-hi)}
+
+/* ---------- cuestionario ---------- */
+#cuestionario[hidden]{display:none}
+.marcador{position:sticky;top:0;z-index:40;background:rgba(10,10,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);padding:.7rem clamp(1.25rem,5vw,2.5rem);font-size:.82rem;color:var(--bruma);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.marcador b{color:var(--acento-hi);font-weight:600}
+.preg{border:1px solid var(--linea);border-radius:18px;padding:clamp(1.2rem,4vw,1.7rem);margin-top:1.3rem;scroll-margin-top:4rem;background:linear-gradient(180deg,rgba(242,239,234,.035),transparent);transition:border-color .35s ease}
+.preg.lista{border-color:rgba(232,180,74,.45);border-color:color-mix(in srgb,var(--acento) 45%,transparent)}
+.preg .num{font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--acento);display:block;margin-bottom:.35rem}
+.preg h3{font-family:var(--sans);font-weight:600;font-size:1.08rem;line-height:1.35;margin-bottom:.3rem}
+.preg .aclara{color:var(--bruma);font-size:.86rem;margin-bottom:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips button{border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.55rem 1rem;font-size:.9rem;font-weight:500;transition:all .2s ease}
+.chips button:hover:not(:disabled){border-color:var(--acento);color:var(--acento-hi)}
+.chips button.on{border-color:var(--acento);background:rgba(232,180,74,.16);background:color-mix(in srgb,var(--acento) 16%,transparent);color:var(--acento-hi);font-weight:600}
+.chips button.on::before{content:'✓ ';font-size:.85em}
+.chips button:disabled{cursor:default}
+.chips .q-hint{flex-basis:100%;margin-top:.2rem}
+.confirmar{margin-top:.95rem}
+.confirmar button{border:1px solid var(--acento);background:rgba(232,180,74,.14);background:color-mix(in srgb,var(--acento) 14%,transparent);color:var(--acento-hi);border-radius:999px;padding:.6rem 1.3rem;font-size:.9rem;font-weight:600;transition:all .2s ease}
+.confirmar button:hover:not(:disabled){background:var(--acento);color:var(--sala)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.84rem;color:var(--acento-hi)}
+.una .chips button.on{pointer-events:none}
+textarea{width:100%;box-sizing:border-box;resize:vertical;min-height:4.6em;padding:.75rem .85rem;border-radius:12px;border:1px solid var(--linea);background:rgba(242,239,234,.05);color:inherit;font-family:inherit;font-size:.95rem;line-height:1.55}
+textarea:focus{outline:none;border-color:var(--acento)}
+.duo{border-left:3px solid var(--telon);padding-left:1.1rem;margin-top:1.4rem}
+.duo p{color:var(--bruma);font-size:.92rem}
+.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.15rem}
+.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease}
+.react button:hover{border-color:var(--acento);color:var(--acento-hi)}
+.cta{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.15rem}
+.cta button{border:1px solid var(--acento);background:rgba(232,180,74,.14);background:color-mix(in srgb,var(--acento) 14%,transparent);color:var(--acento-hi);border-radius:999px;padding:.6rem 1.3rem;font-size:.9rem;font-weight:600;font-family:var(--sans)}
+.cta button:hover{background:var(--acento);color:var(--sala)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,var(--telon) 0%,var(--sala) 74%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-size:clamp(1.4rem,1rem + 2.4vw,2.1rem);line-height:1.35;max-width:32ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--acento-hi);font-weight:400;font-style:italic}
+footer{text-align:center;color:var(--bruma);font-size:.79rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="haz" aria-hidden="true"></div>
+  <div class="motas" aria-hidden="true"></div>
+  <div class="pantalla">
+    <span class="rotulo">Una vez por semana</span>
+    <h1>Antes de la<br><em>primera función</em></h1>
+    <p class="sub">Arranca algo nuevo: una vez por semana, una serie o una película elegida para ver <b>los dos juntos</b>. Pero para eso los tengo que conocer viéndolos, no leyéndolos. Esto es la entrevista. Son tres minutos y se hace una sola vez.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion" id="puerta-sec">
+  <div class="centro">
+    <div class="puerta rev">
+      <h2 id="puertaTitulo">¿Quién está del otro lado?</h2>
+      <p id="puertaBajada">Cada uno contesta desde su teléfono. Las respuestas de los dos se comparan después — ahí aparece lo interesante.</p>
+      <div class="butacas" id="butacas">
+        <button class="butaca andy" type="button" data-q="andy" aria-pressed="false"><span class="emo">🍿</span>Soy Andy</button>
+        <button class="butaca sofi" type="button" data-q="sofi" aria-pressed="false"><span class="emo">🎟️</span>Soy Sofi</button>
+      </div>
+      <button class="cambiar" type="button" id="btnCambiar" hidden>No soy yo, cambiar</button>
+    </div>
+  </div>
+</section>
+
+<div id="cuestionario" hidden>
+
+<div class="marcador">
+  <span>Entrevista de <b id="marcaQuien">—</b></span>
+  <span><b id="marcaN">0</b> de <b id="marcaT">14</b> contestadas</span>
+</div>
+
+<section class="seccion">
+  <div class="centro">
+    <p class="kicker rev">Primera parte · lo tuyo</p>
+    <h2 class="titulo rev d1">Qué te gusta a vos, sin negociar con nadie</h2>
+    <p class="bajada rev d2">Contestá pensando en vos solo. Después vienen las de a dos. En casi todas podés marcar <b>varias opciones</b> — para eso están: marcá todas las que apliquen y confirmá.</p>
+
+    <div class="preg rev d2" data-preg>
+      <span class="num">i</span>
+      <h3>¿Qué géneros te tiran de verdad?</h3>
+      <p class="aclara">Marcá todos los que te hagan decir "esa la veo". Podés elegir varios.</p>
+      <div class="chips" id="g-generos">
+        <button type="button" data-v="policial">🔎 Policial / investigación</button>
+        <button type="button" data-v="thriller">🔪 Thriller psicológico</button>
+        <button type="button" data-v="scifi">🛸 Ciencia ficción</button>
+        <button type="button" data-v="terror">👻 Terror</button>
+        <button type="button" data-v="comedia">😂 Comedia</button>
+        <button type="button" data-v="romance">💗 Romance</button>
+        <button type="button" data-v="drama">🎭 Drama</button>
+        <button type="button" data-v="documental">🎥 Documental</button>
+        <button type="button" data-v="historico">🏛️ Histórico / de época</button>
+        <button type="button" data-v="fantasia">🐉 Fantasía</button>
+        <button type="button" data-v="animacion">🎨 Animación</button>
+        <button type="button" data-v="accion">💥 Acción / aventura</button>
+        <button type="button" data-v="true_crime">🚨 True crime</button>
+        <button type="button" data-v="biopic">👤 Biopic / basada en hechos reales</button>
+      </div>
+      <div class="confirmar"><button type="button" onclick="enviarMulti('generos','g-generos',this)">Listo</button><span class="q-hint"></span></div>
+    </div>
+
+    <div class="preg rev" data-preg>
+      <span class="num">ii</span>
+      <h3>Cuando prendés algo, ¿qué estás buscando?</h3>
+      <p class="aclara">El para qué, más que el qué. Varias opciones.</p>
+      <div class="chips" id="g-busco">
+        <button type="button" data-v="desconectar">😌 Desconectar la cabeza</button>
+        <button type="button" data-v="misterio">🧩 Que me atrape un misterio</button>
+        <button type="button" data-v="reir">🤣 Reírme</button>
+        <button type="button" data-v="emocion">🥲 Emocionarme, llorar un poco</button>
+        <button type="button" data-v="aprender">💡 Aprender algo real</button>
+        <button type="button" data-v="adrenalina">⚡ Adrenalina</button>
+        <button type="button" data-v="belleza">🌅 Que sea hermosa de mirar</button>
+        <button type="button" data-v="pensar">🌀 Quedar pensando después</button>
+      </div>
+      <div class="confirmar"><button type="button" onclick="enviarMulti('busco','g-busco',this)">Listo</button><span class="q-hint"></span></div>
+    </div>
+
+    <div class="preg rev" data-preg>
+      <span class="num">iii</span>
+      <h3>¿Qué te hace abandonar algo a mitad de camino?</h3>
+      <p class="aclara">Esto me sirve más que lo que te gusta. Varias opciones.</p>
+      <div class="chips" id="g-abandono">
+        <button type="button" data-v="lento">🐌 Que arranque lento</button>
+        <button type="button" data-v="gore">🩸 Violencia explícita / gore</button>
+        <button type="button" data-v="triste">💔 Que sea un bajón</button>
+        <button type="button" data-v="final_abierto">🚪 Los finales abiertos</button>
+        <button type="button" data-v="muchos_personajes">👥 Demasiados personajes, me pierdo</button>
+        <button type="button" data-v="capitulos_largos">⏳ Capítulos muy largos</button>
+        <button type="button" data-v="humor_bobo">🙄 El humor bobo</button>
+        <button type="button" data-v="muy_larga">📚 Que tenga 8 temporadas</button>
+        <button type="button" data-v="subtitulos">🔤 Tener que leer subtítulos</button>
+        <button type="button" data-v="nada">🤷 Nada, le doy chance a todo</button>
+      </div>
+      <div class="confirmar"><button type="button" onclick="enviarMulti('abandono','g-abandono',this)">Listo</button><span class="q-hint"></span></div>
+    </div>
+
+    <div class="preg rev una" data-preg>
+      <span class="num">iv</span>
+      <h3>¿Cuánta oscuridad bancás vos?</h3>
+      <p class="aclara">Una sola. (Con los libros ya tengo una idea, pero en pantalla no es lo mismo.)</p>
+      <div class="chips" id="g-oscuridad">
+        <button type="button" onclick="unaSola('oscuridad','nada_oscuro',this)">☀️ Nada oscuro, para pasarla bien</button>
+        <button type="button" onclick="unaSola('oscuridad','algo_tension',this)">🌤️ Algo de tensión está bien</button>
+        <button type="button" onclick="unaSola('oscuridad','oscuro_ok',this)">🌑 Oscuro me va</button>
+        <button type="button" onclick="unaSola('oscuridad','mas_oscuro_mejor',this)">🖤 Cuanto más oscuro, mejor</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="preg rev" data-preg>
+      <span class="num">v</span>
+      <h3>Una serie o película que amaste. La que sea.</h3>
+      <p class="aclara">Vieja, nueva, con vergüenza o sin. Una sola alcanza; si te salen tres, mejor. Esta es la pregunta que más me sirve de todas.</p>
+      <textarea id="ta-amaste" rows="3" placeholder="Ej: la vi tres veces y la volvería a ver…"></textarea>
+      <div class="confirmar"><button type="button" onclick="enviarTexto('amaste','ta-amaste',this)">Enviar</button><span class="q-hint"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" style="background:var(--sala2)">
+  <div class="centro">
+    <p class="kicker rev">Segunda parte · los dos</p>
+    <h2 class="titulo rev d1">Y ahora, lo que pasa cuando se sientan juntos</h2>
+    <p class="bajada rev d2">Contestá igual desde tu teléfono, con tu criterio. Que cada uno conteste esta parte por separado es a propósito: donde no coincidan está la información que necesito.</p>
+
+    <div class="preg rev d2" data-preg>
+      <span class="num">vi</span>
+      <h3>¿Qué vieron juntos que funcionó de verdad?</h3>
+      <p class="aclara">Algo que los dos disfrutaron al mismo tiempo. Y si te acordás de algún fracaso, ponelo también — vale oro.</p>
+      <textarea id="ta-juntos" rows="3" placeholder="Funcionó: … / No funcionó: …"></textarea>
+      <div class="confirmar"><button type="button" onclick="enviarTexto('juntos','ta-juntos',this)">Enviar</button><span class="q-hint"></span></div>
+    </div>
+
+    <div class="preg rev una" data-preg>
+      <span class="num">vii</span>
+      <h3>Una noche típica de ustedes, ¿cuánto da?</h3>
+      <p class="aclara">Una sola. Esto define si te mando series de 25 minutos o películas de dos horas.</p>
+      <div class="chips" id="g-tiempo">
+        <button type="button" onclick="unaSola('tiempo','media_hora',this)">⏱️ Media hora y caemos</button>
+        <button type="button" onclick="unaSola('tiempo','una_hora',this)">🕐 Una hora, un par de capítulos</button>
+        <button type="button" onclick="unaSola('tiempo','pelicula_entera',this)">🎬 Una película entera, 2 horas</button>
+        <button type="button" onclick="unaSola('tiempo','maraton',this)">🌙 Si engancha, maratón</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="preg rev" data-preg>
+      <span class="num">viii</span>
+      <h3>¿Qué formato les rinde más de a dos?</h3>
+      <p class="aclara">Varias opciones, si les sirven varias.</p>
+      <div class="chips" id="g-formato">
+        <button type="button" data-v="serie_corta">📺 Serie de capítulos cortos (20-30 min)</button>
+        <button type="button" data-v="serie_larga">🎞️ Serie con vuelo (45-60 min)</button>
+        <button type="button" data-v="pelicula">🍿 Película: una noche y listo</button>
+        <button type="button" data-v="miniserie">📦 Miniserie que termina en 6 capítulos</button>
+        <button type="button" data-v="documental_serie">🎥 Documental o docuserie</button>
+      </div>
+      <div class="confirmar"><button type="button" onclick="enviarMulti('formato','g-formato',this)">Listo</button><span class="q-hint"></span></div>
+    </div>
+
+    <div class="preg rev" data-preg>
+      <span class="num">ix</span>
+      <h3>Cuando ven juntos, ¿qué directamente NO va?</h3>
+      <p class="aclara">Los límites de la casa. Marcá todos los que apliquen — nada de lo que marques te lo mando.</p>
+      <div class="chips" id="g-nova">
+        <button type="button" data-v="gore">🩸 Sangre y gore</button>
+        <button type="button" data-v="sexo_explicito">🔞 Escenas sexuales explícitas</button>
+        <button type="button" data-v="violencia_ninos">🚫 Violencia contra chicos</button>
+        <button type="button" data-v="animales">🐕 Que le pase algo al perro</button>
+        <button type="button" data-v="sustos">😱 Sustos de golpe</button>
+        <button type="button" data-v="bajon">🌧️ Dramones sin salida</button>
+        <button type="button" data-v="politica">🏛️ Política pesada</button>
+        <button type="button" data-v="nada_prohibido">✅ Nada prohibido, aguantamos todo</button>
+      </div>
+      <div class="confirmar"><button type="button" onclick="enviarMulti('nova','g-nova',this)">Listo</button><span class="q-hint"></span></div>
+    </div>
+
+    <div class="preg rev" data-preg>
+      <span class="num">x</span>
+      <h3>¿Subtítulos o doblaje?</h3>
+      <p class="aclara">Varias, si depende del caso.</p>
+      <div class="chips" id="g-idioma">
+        <button type="button" data-v="subtitulos_siempre">🔤 Subtítulos siempre, versión original</button>
+        <button type="button" data-v="doblaje_ok">🗣️ Doblaje si no, no la vemos</button>
+        <button type="button" data-v="depende_cansancio">😴 Depende del cansancio</button>
+        <button type="button" data-v="ingles_directo">🇬🇧 En inglés sin subtítulos, sin drama</button>
+      </div>
+      <div class="confirmar"><button type="button" onclick="enviarMulti('idioma','g-idioma',this)">Listo</button><span class="q-hint"></span></div>
+    </div>
+
+    <div class="preg rev una" data-preg>
+      <span class="num">xi</span>
+      <h3>¿Terminan lo que empiezan?</h3>
+      <p class="aclara">Una sola. Define si te puedo recomendar algo de 5 temporadas.</p>
+      <div class="chips" id="g-terminar">
+        <button type="button" onclick="unaSola('terminar','siempre',this)">🏁 Siempre, aunque sufra</button>
+        <button type="button" onclick="unaSola('terminar','si_engancha',this)">🎣 Solo si engancha rápido</button>
+        <button type="button" onclick="unaSola('terminar','abandonamos',this)">🚪 Abandonamos sin culpa</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="centro">
+    <p class="kicker rev">Tercera parte · la logística</p>
+    <h2 class="titulo rev d1">Para que lo que te mande se pueda ver de verdad</h2>
+    <p class="bajada rev d2">Sin esto te puedo recomendar una joya que no tienen dónde ver. Tres preguntas y listo.</p>
+
+    <div class="preg rev d2" data-preg>
+      <span class="num">xii</span>
+      <h3>¿Qué tienen en casa?</h3>
+      <p class="aclara">Todas las que usen, aunque sea la cuenta de alguien más. Varias opciones.</p>
+      <div class="chips" id="g-plataformas">
+        <button type="button" data-v="netflix">Netflix</button>
+        <button type="button" data-v="prime">Prime Video</button>
+        <button type="button" data-v="disney">Disney+</button>
+        <button type="button" data-v="max">Max</button>
+        <button type="button" data-v="appletv">Apple TV+</button>
+        <button type="button" data-v="paramount">Paramount+</button>
+        <button type="button" data-v="mubi">MUBI</button>
+        <button type="button" data-v="alquilamos">💳 Alquilamos si vale la pena</button>
+        <button type="button" data-v="cine">🎟️ Vamos al cine</button>
+        <button type="button" data-v="otros_medios">📀 Nos arreglamos por otro lado</button>
+      </div>
+      <div class="confirmar"><button type="button" onclick="enviarMulti('plataformas','g-plataformas',this)">Listo</button><span class="q-hint"></span></div>
+    </div>
+
+    <div class="preg rev" data-preg>
+      <span class="num">xiii</span>
+      <h3>¿Qué día les conviene que llegue la recomendación?</h3>
+      <p class="aclara">Marcá el que va, o varios si da igual. Por ahora la tengo pensada para los viernes de tarde.</p>
+      <div class="chips" id="g-dia">
+        <button type="button" data-v="jueves">Jueves</button>
+        <button type="button" data-v="viernes">Viernes</button>
+        <button type="button" data-v="sabado">Sábado</button>
+        <button type="button" data-v="domingo">Domingo</button>
+        <button type="button" data-v="da_igual">Cualquiera, ustedes</button>
+      </div>
+      <div class="confirmar"><button type="button" onclick="enviarMulti('dia','g-dia',this)">Listo</button><span class="q-hint"></span></div>
+    </div>
+
+    <div class="preg rev una" data-preg>
+      <span class="num">xiv</span>
+      <h3>¿Cuántos títulos por semana?</h3>
+      <p class="aclara">Una sola. Acordate de la vara que pediste con las librerías: mejor uno bueno que tres de relleno.</p>
+      <div class="chips" id="g-cuantos">
+        <button type="button" onclick="unaSola('cuantos','uno',this)">🎯 Uno solo, el que elijas vos</button>
+        <button type="button" onclick="unaSola('cuantos','tres',this)">🃏 Tres, para elegir según la noche</button>
+        <button type="button" onclick="unaSola('cuantos','cinco',this)">📋 Cinco, queremos menú</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="duo rev d1">
+      <p><b>Lo que voy a hacer con esto:</b> cruzar tus respuestas con las del otro y buscar la zona donde los dos dicen que sí. Donde no coincidan, no busco un punto medio tibio: alterno, y te aviso de quién fue la elección de esa semana.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" style="background:var(--sala2)">
+  <div class="centro">
+    <p class="kicker rev">Antes de irte</p>
+    <h2 class="titulo rev d1">Lo que no entró en ningún botón</h2>
+    <p class="bajada rev d2">Un actor que no bancás, un género que odiás y no puse, algo que quieras que sepa. Acá lo leo entero.</p>
+    <div class="cta rev d2">
+      <label for="nota-2026-07-26-entrevista-cine" style="display:block;margin-bottom:.6rem;font-family:var(--sans);font-size:.95rem">¿Algo más para decirme?</label>
+      <textarea id="nota-2026-07-26-entrevista-cine" rows="3" placeholder="Lo que sea. Lo leo en la próxima corrida y ajusto."></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-07-26-entrevista-cine',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-26-entrevista-cine','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-26-entrevista-cine','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-26-entrevista-cine','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-26-entrevista-cine','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /cuestionario -->
+
+<section class="seccion cierre">
+  <p class="frase rev">La primera función queda para el <b>viernes que viene</b>. Con lo que contesten, elegida para los dos.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Y si no contestan, igual va a haber función: la armo con lo que ya sé de sus libros. Peor puntería, nomás.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--acento-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--acento);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · entrevista de cine · 26 de julio de 2026.<br>Las preguntas son mías; las respuestas, de ustedes. Cada uno contesta la suya.</footer>
+
+<script>
+/* ---- identidad: quién contesta (define el sufijo de cada qid) ---- */
+var QUIEN=null;
+function qid(clave){ return 'cine-'+clave+':'+(QUIEN||'sin-identificar'); }
+
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  /* barra de scroll */
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+
+  /* reveals */
+  function observar(){
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.14});
+      $$('.rev:not(.visto)').forEach(function(el){io.observe(el);});
+    } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+  }
+  observar();
+
+  /* total de preguntas, contado del DOM (no hardcodeado) */
+  var marcaT=$('#marcaT'), marcaN=$('#marcaN');
+  window.marcarProgreso=function(el){
+    var caja=el&&el.closest?el.closest('[data-preg]'):null;
+    if(caja) caja.classList.add('lista');
+    var total=$$('[data-preg]').length, hechas=$$('[data-preg].lista').length;
+    if(marcaT) marcaT.textContent=total;
+    if(marcaN) marcaN.textContent=hechas;
+  };
+  window.marcarProgreso(null);   // el total sale del DOM, no de un número escrito a mano
+
+  /* puerta de identidad */
+  var NOMBRES={andy:'Andy',sofi:'Sofi'};
+  function abrir(quien,confirmado){
+    QUIEN=quien;
+    document.body.setAttribute('data-quien',quien);
+    $$('#butacas .butaca').forEach(function(b){
+      var esta=b.getAttribute('data-q')===quien;
+      b.classList.toggle('sel',esta);
+      b.setAttribute('aria-pressed',esta?'true':'false');
+    });
+    $('#marcaQuien').textContent=NOMBRES[quien];
+    $('#puertaTitulo').textContent='Hola, '+NOMBRES[quien]+'.';
+    $('#puertaBajada').textContent='Todo lo que marques de acá para abajo queda anotado como tuyo. Si sos la otra persona, cambialo con el botón.';
+    $('#btnCambiar').hidden=false;
+    var cu=$('#cuestionario');
+    cu.hidden=false;
+    observar();
+    if(confirmado){ setTimeout(function(){ cu.scrollIntoView({behavior:'smooth',block:'start'}); },120); }
+  }
+  $$('#butacas .butaca').forEach(function(b){
+    b.addEventListener('click',function(){ abrir(b.getAttribute('data-q'),true); });
+  });
+  $('#btnCambiar').addEventListener('click',function(){
+    $('#cuestionario').hidden=true;
+    $('#btnCambiar').hidden=true;
+    QUIEN=null;
+    document.body.removeAttribute('data-quien');
+    $$('#butacas .butaca').forEach(function(b){b.classList.remove('sel');b.setAttribute('aria-pressed','false');});
+    $('#puertaTitulo').textContent='¿Quién está del otro lado?';
+    $('#puertaBajada').textContent='Cada uno contesta desde su teléfono. Las respuestas de los dos se comparan después — ahí aparece lo interesante.';
+    $('#puerta-sec').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+
+  /* autodetección: el nombre del dispositivo lo guarda engage.js */
+  try{
+    var dev=(localStorage.getItem('biblioteca_device_name')||'').replace(/^"|"$/g,'').trim().toLowerCase();
+    if(dev==='andy'||dev==='sofi') abrir(dev,false);
+  }catch(e){}
+
+  /* chips multi-selección: togglean local, NO mandan nada todavía */
+  $$('.chips').forEach(function(g){
+    if(g.parentElement.classList.contains('una')) return;   // las de una sola van directo
+    g.addEventListener('click',function(ev){
+      var b=ev.target.closest('button');
+      if(!b||b.disabled||!g.contains(b)) return;
+      b.classList.toggle('on');
+      b.setAttribute('aria-pressed',b.classList.contains('on')?'true':'false');
+      var hint=g.parentElement.querySelector('.q-hint');
+      if(hint&&hint.textContent) hint.textContent='';
+    });
+  });
+})();
+
+/* ---- envío: multi, una-sola, texto libre y nota ---- */
+function enviarMulti(clave,grupoId,btn){
+  var g=document.getElementById(grupoId);
+  var hint=btn.parentElement.querySelector('.q-hint');
+  var sel=Array.prototype.slice.call(g.querySelectorAll('button.on')).map(function(b){return b.getAttribute('data-v');});
+  if(!sel.length){ if(hint) hint.textContent='Marcá al menos una ☝️'; return; }
+  window.engageAnswer(qid(clave),sel.join('|'),btn);
+  Array.prototype.forEach.call(g.querySelectorAll('button'),function(b){
+    b.disabled=true;
+    if(!b.classList.contains('on')) b.style.opacity='.3';
+  });
+  if(hint) hint.textContent='✓ anotado ('+sel.length+')';
+  window.marcarProgreso(btn);
+}
+function unaSola(clave,valor,btn){
+  window.engageAnswer(qid(clave),valor,btn);
+  btn.classList.add('on');
+  window.marcarProgreso(btn);
+}
+function enviarTexto(clave,taId,btn){
+  var ta=document.getElementById(taId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer(qid(clave),txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+  window.marcarProgreso(btn);
+}
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  /* qid exacto del contrato (rec-nota:<REC_ID>): quién la escribió sale del
+     device del evento y de los 14 qids identificados de la misma sesión. */
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

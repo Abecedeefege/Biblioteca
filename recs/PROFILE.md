@@ -160,6 +160,14 @@ Happiness*, L4-022 *The Boy, the Mole...*, L5-026 *Of Time and Space...*
 (Asimov), L5-019 *La Vía Láctea* (Bok).
 
 ## 🔭 Qué mirar (próxima corrida: 2026-07-27)
+- 🎬 **PRIORIDAD: leer las respuestas de la entrevista de cine** (qids
+  `cine-*:andy` / `cine-*:sofi`, ver sección Pista semanal). Con eso:
+  (1) escribir en este PROFILE las dos secciones de perfil de cine —la de
+  cada uno y la del cruce—, marcando dónde coinciden y dónde no;
+  (2) revisar si los tres títulos de la Función Nº 1 siguen en pie y
+  reconstruir `recs/2026-07-31-sala-01.html` con lo que digan (sobre todo
+  si marcan plataformas que no tienen, o "ya la vimos" adelantado);
+  (3) mover el día/horario de la función si pidieron otro en `cine-dia`.
 - 26/07 CONFIRMADO: `2026-07-26-rec-andy` (Bach *Jonathan Livingston
   Seagull*, redescub L4-017) encolado 17:30 -03:00, sin feedback nuevo
   desde el cutoff (2026-07-25T17:41Z) al momento de esta corrida — cero
@@ -177,6 +185,45 @@ Happiness*, L4-022 *The Boy, the Mole...*, L5-026 *Of Time and Space...*
   libre para ambos — candidata natural para la primera ficha romance de
   Sofi si no salió antes, y para el próximo redescub L4 de Andy (banco:
   The Prophet, Zen en el arte del tiro con arco).
+
+## 🎬 PISTA SEMANAL DE CINE (pedida en vivo por Andy, 26/07)
+Track NUEVO y paralelo al diario: **una vez por semana, UNA experiencia con
+series/películas para ver LOS DOS JUNTOS** (`audience: "todos"`).
+- `kind: "cine"` (las funciones) y `kind: "encuesta"` (la entrevista): NO
+  cuentan para la MEZCLA VIGENTE ni para el par nuevo+redescub del día, ni
+  consumen la ficha de nadie. Excluirlas al contar los `kind` de 7 días.
+- **Cadencia**: viernes ~19:00 -03:00, `id` `<fecha>-cine`, sin `to`. Los
+  viernes hay DOS pushes míos: la ficha diaria (12:30) + la función (19:00).
+  Es excepción explícita a la regla de 1 push/día, por pedido del dueño.
+- **Entrevista fundacional** `2026-07-26-entrevista-cine` (enviada 26/07
+  19:30). 14 preguntas, casi todas MULTI-OPCIÓN real — resuelve el pedido de
+  Andy del 24/07 de poder elegir más de una. Convención de qids:
+  `cine-<clave>:<andy|sofi>`; los multi vienen **separados por `|`**
+  (ej. `cine-generos:sofi = "policial|comedia|romance"`). Claves: generos,
+  busco, abandono, oscuridad, amaste, juntos, tiempo, formato, nova, idioma,
+  terminar, plataformas, dia, cuantos. Cada uno contesta desde su teléfono
+  (puerta de identidad + autodetección de `biblioteca_device_name`), así que
+  **hay respuesta de cada uno para las preguntas de a dos: donde no
+  coincidan está la información**. La nota libre usa el `rec-nota:<REC_ID>`
+  de siempre (leerla con prioridad máxima).
+- **Veredictos de cine**: `cine-veredicto:<slug>` con
+  `la_vemos` / `me_tienta` / `ya_la_vimos` / `no_va`. NO mezclar con
+  `rec-veredicto:` (ese es de libros; cruzarlos corrompe las dos series).
+  `ya_la_vimos` es la guardia anti-repetición equivalente al `ya_lo_lei` —
+  con 3/3 fallos en los redescub de Sofi, acá se pone el botón desde el día
+  uno en TODAS las fichas.
+- **Función Nº 1** `2026-07-31-sala-01` (viernes 31/07, ya encolada):
+  Only Murders in the Building (Disney+ LatAm) / La llegada (alquiler) /
+  Separación (Apple TV+). Estructura de tres FORMAS distintas —ritual corto,
+  una noche, apuesta grande—, no tres del mismo tipo; cada una anclada a
+  feedback real de libros y con su letra chica declarada.
+  ⚠️ **PENDIENTE antes del viernes: reconstruir los tres títulos con las
+  respuestas de la entrevista.** La URL y el push ya están fijos, solo
+  cambia el contenido. Si no contestaron, la función sale igual como está.
+- Cosmético conocido: `recs/index.html` etiqueta como "Nuevo" cualquier
+  `kind` que no sea `redescubrimiento` (línea 184), así que `viaje`, `cine`
+  y `encuesta` se ven mal rotuladas en el hub. Es archivo de infraestructura
+  (NO TOCAR); si el dueño lo pide, ahí está el punto exacto a arreglar.
 
 ## 🧳 Piezas fuera del ciclo diario
 - `kind: "viaje"` en `recommended.json` marca experiencias puntuales que NO

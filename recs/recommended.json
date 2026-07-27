@@ -603,6 +603,57 @@
         "dwell_s": 0
       },
       "learning": null
+    },
+    {
+      "id": "2026-07-26-entrevista-cine",
+      "date": "2026-07-26",
+      "kind": "encuesta",
+      "title": "La entrevista — antes de la primera función",
+      "author": "Bibliotequeando",
+      "language": "es",
+      "topics": [
+        "cine",
+        "series",
+        "entrevista",
+        "perfil"
+      ],
+      "book_ref": null,
+      "audience": "todos",
+      "page": "recs/2026-07-26-entrevista-cine.html",
+      "notified_by": "2026-07-26-cine-entrevista",
+      "why": "Pedido en vivo de Andy (26/07): arranca una pista nueva, una experiencia semanal que les recomiende series y películas para ver LOS DOS JUNTOS. Esta es la entrevista fundacional para construir el perfil de cine de cada uno y el conjunto. 14 preguntas: 5 personales, 6 de a dos, 3 de logística, la mayoría multi-opción real (pedido explícito de Andy en la encuesta del 24/07, que era de opción única). Cada uno contesta desde su teléfono y las respuestas se estampan con su identidad (puerta de identidad + autodetección del device name), así se pueden comparar las dos. Convención de qids: cine-<clave>:<andy|sofi>, multi-valor separado por |.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-31-sala-01",
+      "date": "2026-07-31",
+      "kind": "cine",
+      "title": "La Sala — Función Nº 1: tres para ver de a dos",
+      "author": "Only Murders in the Building · La llegada · Separación",
+      "language": "es",
+      "topics": [
+        "cine",
+        "series",
+        "juntos"
+      ],
+      "book_ref": null,
+      "audience": "todos",
+      "page": "recs/2026-07-31-sala-01.html",
+      "notified_by": "2026-07-31-cine",
+      "why": "Primera función de la pista semanal de cine pedida por Andy el 26/07. Tres títulos con FORMAS distintas (serie corta de ritual / película de una noche / apuesta grande), no tres del mismo tipo — aplicando la vara de curaduría del 24/07 (mejor una buena que tres de relleno). Cada uno anclado en feedback real de libros: Only Murders = traducción directa del 2/2 lo_quiero de Sofi con Osman + su elección de la frase más irreverente de Joyce; La llegada = Rovelli/Cosmos de Andy (asombro científico) cruzado con el pedido explícito de Sofi de finales que hagan llorar un poco; Separación = misterio con reglas (Dicker) + pregunta filosófica sostenida (Frankl). Cada ficha tiene botón 'ya la vimos' como guardia anti-repetición, la lección de los 3/3 ya_lo_lei de Sofi. Datos verificados: OMitB temporada 1 = 10 caps de 30-35 min, estreno de comedia más visto de Hulu, 17 nominaciones al Emmy, en Disney+ LatAm; Arrival 2016 Villeneuve, sobre el cuento de Ted Chiang de 1998, 8 nominaciones al Oscar y ganó edición de sonido, disponibilidad declarada como alquiler porque en suscripción rota; Severance 2 temporadas (9+10 caps), Apple TV+, temporada 3 confirmada 03/2025 pero sin fecha (prensa la ubica en 2027) — declarado explícitamente en la ficha. PENDIENTE: reconstruir los tres títulos con las respuestas de la entrevista antes del viernes; la URL y el push ya quedan fijos.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
     }
   ]
 }
