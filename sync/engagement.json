@@ -2545,7 +2545,16 @@
       "device": "Andy",
       "qid": "cine-terminar:andy",
       "value": "si_engancha"
+    },
+    {
+      "id": "ms51oniv-bdompl",
+      "type": "answer",
+      "ts": "2026-07-28T19:24:36.247Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "qid": "cine-plataformas:andy",
+      "value": "netflix|prime|disney|max|paramount|alquilamos|cine|otros_medios"
     }
   ],
-  "_updated_at": "2026-07-28T19:24:10.707Z"
+  "_updated_at": "2026-07-28T19:24:37.486Z"
 }
