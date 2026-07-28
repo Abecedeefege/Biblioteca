@@ -2590,7 +2590,23 @@
       "device": "Andy",
       "slug": "2026-07-26-entrevista-cine",
       "value": "love"
+    },
+    {
+      "id": "ms51reqy-wiggy1",
+      "type": "dwell",
+      "ts": "2026-07-28T19:26:44.842Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "dwell_s": 590,
+      "scroll_pct": 100
+    },
+    {
+      "id": "ms51res2-2xe322",
+      "type": "page_visit",
+      "ts": "2026-07-28T19:26:44.882Z",
+      "page": "index.html",
+      "device": "Andy"
     }
   ],
-  "_updated_at": "2026-07-28T19:26:30.360Z"
+  "_updated_at": "2026-07-28T19:26:45.995Z"
 }
