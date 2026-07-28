@@ -2581,7 +2581,16 @@
       "device": "Andy",
       "qid": "rec-nota:2026-07-26-entrevista-cine",
       "value": "Quiero que las recomendaciones tenga mucha mucha data además de ser visuales. Descripciones cortas y largas , actores , similitud a otras que me gusten o puedan gustar, Links a trailer, IMDb, reviews\nPresentado en experiencias muy modernas parecidas a Instagram, Pinterest o tinder"
+    },
+    {
+      "id": "ms51r2tb-k12cgc",
+      "type": "reaction",
+      "ts": "2026-07-28T19:26:29.375Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "slug": "2026-07-26-entrevista-cine",
+      "value": "love"
     }
   ],
-  "_updated_at": "2026-07-28T19:26:26.418Z"
+  "_updated_at": "2026-07-28T19:26:30.360Z"
 }
