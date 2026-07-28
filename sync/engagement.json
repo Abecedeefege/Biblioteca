@@ -2554,7 +2554,16 @@
       "device": "Andy",
       "qid": "cine-plataformas:andy",
       "value": "netflix|prime|disney|max|paramount|alquilamos|cine|otros_medios"
+    },
+    {
+      "id": "ms51ov6f-jzjxs5",
+      "type": "answer",
+      "ts": "2026-07-28T19:24:46.167Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "qid": "cine-dia:andy",
+      "value": "jueves"
     }
   ],
-  "_updated_at": "2026-07-28T19:24:37.486Z"
+  "_updated_at": "2026-07-28T19:24:47.476Z"
 }
