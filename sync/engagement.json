@@ -2563,7 +2563,16 @@
       "device": "Andy",
       "qid": "cine-dia:andy",
       "value": "jueves"
+    },
+    {
+      "id": "ms51ozlo-k371us",
+      "type": "answer",
+      "ts": "2026-07-28T19:24:51.900Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "qid": "cine-cuantos:andy",
+      "value": "tres"
     }
   ],
-  "_updated_at": "2026-07-28T19:24:47.476Z"
+  "_updated_at": "2026-07-28T19:24:53.008Z"
 }
