@@ -6,79 +6,74 @@ Fijada 2026-07-15, ajustar con datos.
 ## 👥 RÉGIMEN VIGENTE (fijado por Andy el 2026-07-16): 1 + 1 POR DÍA
 Dos fichas diarias: UNA para Andy y UNA para Sofi, cada una personal según
 su perfil y su feedback. Entre las dos del día: un libro NUEVO y uno DE LA
-BIBLIOTECA (redescubrimiento), alternando cada día quién recibe cuál.
-Pushes ~12:30, personales: `to:"Andy"` / `to:"Sofi"`. Las fichas `todos`
-cuentan para ambos y NO generan una segunda ficha ese día (confirmado 2x:
-Weir 25/07, Haig 27/07). Si el día ya tiene pre-armada de un destinatario,
-construir SOLO la del otro, respetando el par nuevo+redescub — regla dura,
-prioridad sobre la mezcla personal de cada uno. Bootstrap del 16/07 100%
-consumido. 27/07: Haig `todos` cubrió la cuota de ambos por sí solo (nada
-que construir); Sofi votó `lo_quiero`+love+dwell 207s (ACIERTO PLENO), Andy
-solo clickeó+vio. 28/07: 100% libre para ambos.
+BIBLIOTECA (redescubrimiento), alternando cada día quién recibe cuál (mirar
+el último "nuevo"/"redescub" INDIVIDUAL de cada uno, no las fichas `todos`).
+Pushes ~12:30 (o ≥75 min después de la corrida si corre tarde), personales:
+`to:"Andy"` / `to:"Sofi"`. Las fichas `todos` cuentan para ambos y NO generan
+una segunda ficha ese día (confirmado 2x: Weir 25/07, Haig 27/07).
+- **28/07 EJECUTADO**: último "nuevo" individual había sido de Sofi (Hill,
+  26/07) → hoy tocaba "nuevo" a Andy y "redescub" a Sofi. Andy: **Tyson,
+  Astrofísica para gente con prisa** (nuevo, veta astronomía moderna).
+  Sofi: **Benavent, En los zapatos de Valeria** (redescub, M6-001 — primera
+  ficha de la veta romance pedida el 24/07, ver sección Sofi). Ambos
+  verificados contra catálogo completo y `recommended.json`: sin
+  coincidencias. Corrida arrancó tarde (~16:00) → pushes encolados 17:30
+  -03:00 en vez de 12:30 (regla: ≥75 min después de la corrida).
 
 ### Sofi (pareja del dueño) — vetas confirmadas
 Sus salas: **sala King** (R4+R5, 50 King), **salón del crimen** (M5:
 cozies de Alma, Christie, Sherlock, Fitzek, Katzenbach), **rincón Valeria**
-(M6: 9 Benavent, romance — sin señal de gusto todavía). DOS vetas
-ganadoras: (1) cozy grupal cálido — humor filoso/deadpan de Joyce
-específicamente, 2/2 `lo_quiero`; (2) oscuro/thriller, CALIBRADO en "justo
-así" con Dicker — no escalar más. **Guardia dura ESCALADA (23/07)**: 3/3
-redescub reales (King R5-018, Katzenbach M5-024, Carlisle M5-012)
-resultaron `ya_lo_lei` — ni siquiera "autora sin consagrar" (Carlisle)
-alcanzó, y produjo su primer `meh` de la serie. No es problema de fama del
-autor: su estante de misterio/oscuro en general ya está muy leído. Desde
-23/07 se prueba autora 100% indie sin ninguna huella (Minix); si también
-falla, dejar de rotar nombres ahí y correr mezcla hacia más "nuevo" o
-saltar a redescub fuera de misterio puro (M6 Benavent).
+(M6: 9 Benavent — **activado 28/07**, ver abajo). TRES vetas ganadoras:
+(1) cozy grupal cálido — humor filoso/deadpan de Joyce específicamente,
+2/2 `lo_quiero`; (2) oscuro/thriller, CALIBRADO en "justo así" con Dicker
+— no escalar más; (3) romance/final catártico (recién abierta, ver nota
+del 24/07). **Guardia dura ESCALADA (23/07)**: 3/3 redescub reales de
+misterio/oscuro (King R5-018, Katzenbach M5-024, Carlisle M5-012)
+resultaron `ya_lo_lei` — su estante de misterio en general ya está muy
+leído, no es problema de fama del autor. Minix (23/07, autora 100% indie)
+sigue sin veredicto — si también da `ya_lo_lei`, dejar de rotar nombres en
+M5/R4/R5 y priorizar redescub en M6 (romance) en su lugar.
 
-**🔴 NOTA DIRECTA DE SOFI (rec-nota, 24/07, PRIORIDAD MÁXIMA):** pide SUMAR
-una tercera veta sin abandonar las otras dos: **romance / novela emotiva
-con final feliz o catártico** ("me gustan las historias... el romance y
-los finales felices, llorar un poco también hace bien"); nunca autoayuda
-(nunca se le mandó igual). Acción: M6 (Benavent, "rincón Valeria", 9
-libros sin ninguna señal) queda activado como veta de pleno derecho, no
-solo comodín anti-guardia — arrancar por M6-001 *En los zapatos de
-Valeria* (identitario del rincón). Haig 27/07 (`todos`) ya calza con el
-pedido, no hace falta moverlo. Próxima ficha nueva desde cero para Sofi
-(no pre-armada): elegir de esta veta y decírselo explícito en el copy.
-Encuesta 24/07: puntería `mas_o_menos`, ritmo `mas`, felicidad `sorpresas`
-— pide variedad, no un cambio de lo que ya funciona.
+**🔴 NOTA DIRECTA DE SOFI (rec-nota, 24/07) — ACCIÓN COMPLETADA 28/07:**
+pidió sumar romance/novela emotiva con final feliz o catártico, nunca
+autoayuda. Hoy (28/07) se activó M6 con su primer libro, **En los zapatos
+de Valeria** (M6-001), identitario (nombra su propio rincón, igual que
+Bach/L4 para Andy). Honestidad aplicada: el libro 1 NO tiene final feliz
+cerrado (Valeria y Adrián se separan, Víctor sin resolver) — se lo dijimos
+explícito en la ficha, marcando que el arco catártico completo sigue en
+M6-002/003/004 (ya los tiene). Vigilar veredicto: si `lo_quiero`/`me_tienta`,
+seguir la saga como próximos redescub; si `no_me_va`, la veta romance
+necesita un libro distinto (banco: comedia romántica contemporánea con
+final feliz claro desde el arranque, no una saga larga).
 - Consumidos (detalle completo en `recommended.json`): Osman t1/t2, Dicker
   Harry Quebert (ACIERTOS PLENOS); Hill *traje del muerto* (acierto); King
   R5-018, Katzenbach M5-024, Carlisle M5-012 (LOS TRES ya leídos — guardia
-  dura). Pendientes de veredicto: Dicker *Libro de los Baltimore* (21/07),
-  Minix *La librera detective*/M5-001 (23/07, test de estrategia escalada).
-- Banco nuevos (3): La asistenta (McFadden, oscuro), NOS4A2 (Hill, revisar
-  stock), Osman t3 *El hombre bomba* (cozy).
-- Banco redescub misterio/oscuro (3, reponer si baja): M5-014 *Elemental,
+  dura); Benavent *En los zapatos de Valeria* (28/07, redescub M6-001,
+  primera ficha romance). Pendientes de veredicto: Dicker *Libro de los
+  Baltimore* (21/07), Minix *La librera detective*/M5-001 (23/07, test de
+  estrategia escalada).
+- Banco redescub misterio/oscuro (reponer si baja): M5-014 *Elemental,
   querida lectora* (Delany), M5-016 *Un cadáver en Baker Street* (Delany),
-  M5-011 *Blanca Navidad y café negro* (Coyle, cozy culinario, autora sin
-  probar). Evitar M5-013/M5-015 (Adams, ya representada en fallos previos
-  vía Adams M5-018). Alternativa: M5-003/M5-010 (Fitzek, oscuro, sin
-  probar). **Tras el pivot del 24/07, esta veta deja de ser la única
-  fuente de redescub — alternar con romance (abajo).**
-- **Banco NUEVO — romance/final feliz (abierto 24/07, por pedido directo):**
-  M6 completo sin ninguna señal de lectura ni feedback — arrancar por
-  **M6-001 *En los zapatos de Valeria*** (tomo 1, el que le da nombre a su
-  propio rincón — identitario, igual que Bach/L4 para Andy). Candidatos
-  nuevos a investigar si M6 se agota: alguna comedia romántica contemporánea
-  con final feliz claro (evitar angst/final abierto — pidió específicamente
-  "finales felices" y "llorar un poco" en el sentido catártico, no trágico).
+  M5-011 *Blanca Navidad y café negro* (Coyle). Evitar M5-013/M5-015
+  (Adams). Alternativa: M5-003/M5-010 (Fitzek).
+- **Banco romance M6** (activado 24/07, primer libro usado 28/07): quedan
+  M6-002 *Valeria en el espejo*, M6-003 *Valeria en blanco y negro*,
+  M6-004 *Valeria al desnudo* (continuación directa si M6-001 acierta);
+  M6-005 a M6-009 son standalones de Benavent sin usar (*Mi isla*, *Fuimos
+  canciones*, *Seremos recuerdos*, *Cómo no escribí nuestra historia*,
+  *Todas esas cosas que te diré mañana*) — buena reserva si prefiere no
+  seguir la saga de Valeria.
 
 ### Todos (cruces Sofi × Andy) — qué funciona
 Fórmula: enganche narrativo/misterio (ella) × ciencia/sentido/positividad
 (él). Sembrados: Hail Mary, Midnight Library. Banco: Piranesi (Clarke), Un
 verdor terrible (Labatut), El curioso incidente del perro a medianoche,
 Recursion (Crouch).
-- **27/07 ACIERTO PLENO confirmado**: Haig *La Biblioteca de la Medianoche*
-  (`todos`) — Sofi votó `lo_quiero`+love+dwell 207s (identificada vía
-  micro-pregunta propia `rec-quien`=sofi). Confirma la fórmula en el lado
-  de ella también, no solo teórica. Andy aún sin votar la misma ficha
-  (solo click+view 17:10) — revisar próxima corrida. Weir *Hail Mary*
-  (25/07, `todos`) sigue sin ningún veredicto de ninguno de los dos —
-  si tampoco vota mañana, son ya 2 fichas `todos` seguidas sin señal de
-  Andy: considerar si el formato compartido le genera menos urgencia de
-  responder que el personal.
+- 27/07 ACIERTO PLENO confirmado: Haig *La Biblioteca de la Medianoche*
+  (`todos`) — Sofi `lo_quiero`+love+dwell 207s. Andy sin votar (solo click).
+  Weir *Hail Mary* (25/07) sigue sin ningún veredicto de ninguno de los
+  dos — ya 2 fichas `todos` sin señal de Andy, vigilar si el formato
+  compartido genera menos urgencia de responder que el personal.
 
 ## 👤 Andy (el dueño) — datos duros
 Libros personales = **estante L4** (el de *Jonathan Livingston Seagull*).
@@ -86,65 +81,52 @@ Gustos: wellness, autosuperación, positividad, astronomía, neurociencia y
 mente, espiritualidad oriental, finanzas, fábulas inspiradoras. Idioma
 indistinto (L4: 46% ES / 54% EN). Perfil fino: transformación práctica
 envuelta en **narrativa o ciencia, nunca sermón**; libros cortos y
-releíbles. Astronomía = L5 entero, **ACIERTO PLENO con Rovelli**
-(moderno+corto+poético). Tras DOS `ya_lo_lei` seguidos (Frankl,
-Meditaciones), **Bach *Ilusiones* rompió la racha**: `me_tienta`+like+dwell
-410s/100%, el engagement más alto medido en un "nuevo" suyo. Confirma:
-autor identitario/segunda línea > clásico consagrado de aeropuerto. Seguir
-con: Kahneman, Sapolsky, Eagleman, Walker, Anil Seth, Tyson/Katie Mack.
+releíbles. Astronomía = L5 entero, veta más consistente: ACIERTO PLENO
+Rovelli (nuevo), acierto Cosmos (redescub) — **28/07: sumamos Tyson**
+(nuevo, *Astrofísica para gente con prisa*) siguiendo la misma fórmula
+corto+moderno+asombro, un paso más allá (materia/energía oscura,
+exoplanetas). Regla vigente: autor identitario/segunda línea > clásico
+consagrado de aeropuerto (Frankl y Meditaciones fallaron con `ya_lo_lei`;
+Bach *Ilusiones* y Bach *Jonathan Livingston Seagull* acertaron alto).
 CONTEXTO: lee *El monje que vendió su Ferrari* (Sharma) — no recomendarlo.
 Julio = invierno en Montevideo (lecturas de una sentada, comfort books).
 - Consumidos (detalle completo en `recommended.json`): Rovelli, Bach
   *Ilusiones* (ACIERTOS PLENOS/altos); Frankl, Meditaciones (`ya_lo_lei`);
   Cosmos (ACIERTO — redescub); Bach *Jonathan Livingston Seagull*/L4-017
-  (26/07, redescub — `me_tienta`+like+dwell 395s+leer-esta-noche=si,
-  CONFIRMA la jugada "volver al origen del autor identitario"). Pendientes
-  de veredicto: Housel, Pollan (23/07), Siddhartha, Bucay *Camino
-  Felicidad* (redescub), Hawking (24/07, L5-007, redescub — clickeó, dwell
-  78s/88% scroll, sin veredicto), Weir *Hail Mary* (25/07, `todos`, sin
-  ningún voto de Andy ni Sofi).
-- Encuesta 24/07: puntería `mas_o_menos`, formato `justas`, contenido
-  favorito `insights` (seguir invirtiendo ahí), ritmo `asi_esta_bien`,
-  felicidad `sorpresas`. Nota aparte (UX, no sobre libros): pidió que las
-  preguntas de encuesta admitan elegir más de una opción — aplicar si se
-  arma otra encuesta.
+  (ACIERTO — redescub, `me_tienta`+like+dwell 395s+leer-esta-noche=si);
+  Tyson (28/07, nuevo, veta astronomía). Pendientes de veredicto: Housel,
+  Pollan (23/07), Siddhartha, Bucay *Camino Felicidad* (redescub), Hawking
+  (24/07, L5-007, redescub — clickeó, dwell 78s/88% scroll, sin veredicto),
+  Weir *Hail Mary* (25/07, `todos`, sin ningún voto de Andy ni Sofi).
+- Riesgo a vigilar con Hawking: es bestseller masivo (~10M copias), podría
+  repetir el "ya_lo_lei" de sus clásicos consagrados — pero Cosmos (igual
+  de famoso, redescub) no tuvo ese problema. Vigilar mismo riesgo con
+  Tyson (también bestseller Nº1 NYT) — pero es autor vivo/contemporáneo,
+  no un clásico de biblioteca, así que el riesgo de "ya lo leído hace años"
+  es menor.
 - Astronomía (su veta más fuerte) funciona también releída — priorizar
   para próximos redescubs: L5-026, L5-019.
-- Riesgo a vigilar con Hawking: es bestseller masivo (~10M copias), podría
-  repetir el "ya_lo_lei" de sus clásicos consagrados como *nuevos* (Frankl,
-  Meditaciones) — pero Cosmos (igual de famoso, redescub) no tuvo ese
-  problema, así que no está claro si aplica a formato redescub.
-- 26/07 → 27/07 CONFIRMADO: el redescub identitario de Bach acertó
-  (`me_tienta`+like+dwell 395s, y se comprometió a agarrarlo esa misma
-  noche). Segunda señal a favor de "volver al origen de un autor
-  identitario ya-ganador" — próximo redescub L4 puede salir directo del
-  banco (Prophet, Zen en el arte del tiro con arco) sin gastar más
-  "nuevos" antes.
 
 ## 🛡️ Guardia (errores que no se cometen)
 - Antes de todo "nuevo": título Y autor contra el catálogo completo
   (matching laxo, sin tildes) y contra `recommended.json`.
-- **Nueva (24/07)**: no reutilizar como push oficial del día una página que
-  ya salió como welcome/adelantada — el `2026-07-24-rec` (Osman) reabrió
-  la URL del welcome de Sofi (16/07) y ella votó dos veces, contradictorio
-  (lo_quiero+love vs. ya_lo_tengo+meh — la 2ª es fatiga por repetición, no
-  señal nueva). Chequear `send_log.json` por URL repetida antes de encolar.
-- **Nueva (24/07)**: revisar el campo `to` en toda entrada nueva de
-  `queue.json` — el bootstrap del 24/07 lo omitió en el push de Sofi y
-  salió también al dispositivo de Andy. Obligatorio con audiencia
-  `andy`/`sofi`; se omite solo con `todos`.
-- `R4-015` (King, *Todo Oscuro, Sin Estrellas*) tiene tag `astronomy`
-  ERRÓNEO en el catálogo — no es señal de astronomía.
+- No reutilizar como push oficial del día una página que ya salió como
+  welcome/adelantada (caso Osman 24/07). Chequear `send_log.json` por URL
+  repetida antes de encolar.
+- Revisar el campo `to` en toda entrada nueva de `queue.json` —
+  obligatorio con audiencia `andy`/`sofi`; se omite solo con `todos`.
+- `R4-015` (King) tiene tag `astronomy` ERRÓNEO en el catálogo.
 - `L4-004` (*Count Down*, Olson) es outlier de L4 con confidence media.
 - `read_status` de enrichment no es confiable por sí solo — cruzar con
-  feedback previo antes de asumir "sin leer" (guardia dura de Sofi: 3/3
-  redescub reales fallaron por esto, no solo con los 50 King).
-- Los 3 Bucay (*Hojas de Ruta*) viven en M5 (estante de misterio) — YA los
-  tiene aunque estén fuera de lugar.
+  feedback previo antes de asumir "sin leer" (3/3 redescub reales de Sofi
+  fallaron por esto).
+- Los 3 Bucay (*Hojas de Ruta*) viven en M5 (estante de misterio).
+- Corrida tarde (>12:30): `send_at` va ≥75 min después de la corrida, no a
+  las 12:30 fijas — piso duro 11:00, techo 21:00.
 
 ## 🆕 Banco candidatos NUEVOS — Andy (por veta; reponer si quedan <5)
-- **Astronomía moderna** (CALIENTE post-Rovelli): Tyson *Astrophysics for
-  People in a Hurry*, Katie Mack *The End of Everything*, Sean Carroll.
+- **Astronomía moderna**: Katie Mack *The End of Everything*, Sean Carroll
+  (Tyson usado 28/07 — sacar de la lista).
 - **Estoicismo**: Holiday *El Obstáculo es el Camino*/*Diario para
   Estoicos*, Séneca *Cartas a Lucilio*.
 - **Neurociencia reciente**: Kahneman *Pensar rápido, pensar despacio*,
@@ -160,100 +142,67 @@ Julio = invierno en Montevideo (lecturas de una sentada, comfort books).
   Autodependencia* (tomo 1, falta en M5).
 
 ## 🔁 Banco candidatos REDESCUBRIMIENTOS — Andy
-L4-017 *Jonathan Livingston Seagull* — USADO 26/07, sacar del banco.
 L4-018 *The Prophet*, L4-010 *Zen en el arte del tiro con arco*, L4-014
 *The Doors of Perception* (con L4-005 Leary), L4-021 *The Art of
 Happiness*, L4-022 *The Boy, the Mole...*, L5-026 *Of Time and Space...*
 (Asimov), L5-019 *La Vía Láctea* (Bok).
 
-## 🔭 Qué mirar (próxima corrida: 2026-07-28)
-- 🎬 **PRIORIDAD: leer las respuestas de la entrevista de cine** (qids
-  `cine-*:andy` / `cine-*:sofi`, ver sección Pista semanal). Todavía CERO
-  eventos `cine-*` en `sync/engagement.json` — el push
-  (`2026-07-27-entrevista-cine`, id de cola, sin `to`) seguía `pending`,
-  `send_at` 19:30 -03:00 hoy 27/07 (esta corrida se ejecutó ~16:00, antes
-  de esa hora), así que aún no pudieron contestar. Con las respuestas:
-  (1) escribir en este PROFILE las dos secciones de perfil de cine —la de
-  cada uno y la del cruce—, marcando dónde coinciden y dónde no;
-  (2) revisar si los tres títulos de la Función Nº 1 siguen en pie y
-  reconstruir `recs/2026-07-31-sala-01.html` con lo que digan (sobre todo
-  si marcan plataformas que no tienen, o "ya la vimos" adelantado);
-  (3) mover el día/horario de la función si pidieron otro en `cine-dia`.
-- 27/07 CONFIRMADO: Haig `todos` cubrió la cuota de ambos, enviado 13:01
-  -03:00. Sofi: `lo_quiero`+love+dwell 207s (ACIERTO PLENO). Andy: solo
-  click+view, sin veredicto — revisar si votó de acá a mañana.
-- 26/07 CONFIRMADO: Bach *Jonathan Livingston Seagull* (redescub L4-017,
-  Andy) — `me_tienta`+like+dwell 395s+leer-esta-noche=si. Ver sección Andy.
-- Pendientes de veredicto sin cambios esta corrida (cero eventos nuevos):
-  Weir (`todos`, 25/07 — ninguno de los dos votó todavía), Pollan (Andy,
-  23/07), Hawking (Andy, 24/07, clickeó+dwell 78s/88% pero sin votar),
-  Minix (Sofi, 23/07 — test clave de la guardia escalada tras 3/3 fallos
-  de redescub) y Baltimore (Sofi, 21/07). Si Minix también da `ya_lo_lei`:
-  parar de rotar nombres en M5/R4/R5 y saltar directo a romance (ver nota
-  de Sofi arriba). La racha de "3+ sin feedback" para Andy ya se rompió
-  (Bach sí tuvo feedback esta corrida) — no hace falta cambio forzado, pero
-  Pollan/Hawking/Weir siguen envejeciendo sin señal, vigilar si se vuelve
-  a acumular.
-- 28/07 100%
-  libre para ambos — candidata natural para la primera ficha romance de
-  Sofi si no salió antes, y para el próximo redescub L4 de Andy (banco:
-  The Prophet, Zen en el arte del tiro con arco).
+## 🔭 Qué mirar (próxima corrida)
+- Pendientes de veredicto sin cambios (cero eventos nuevos): Weir (`todos`,
+  25/07), Pollan (Andy, 23/07), Hawking (Andy, 24/07, dwell 78s pero sin
+  votar), Minix (Sofi, 23/07 — clave de la guardia escalada) y Baltimore
+  (Sofi, 21/07). Si Minix da `ya_lo_lei`: saltar directo a redescub en M6
+  para Sofi en vez de rotar más nombres en M5/R4/R5.
+- **NUEVOS de hoy a revisar**: Tyson (Andy, nuevo) y Benavent M6-001 (Sofi,
+  redescub) — primeras señales en la próxima corrida.
+- Próxima alternancia (29/07): hoy "nuevo" fue de Andy → mañana el
+  "nuevo" del día le toca a Sofi, y a Andy el redescub (banco: The
+  Prophet, Zen en el arte del tiro con arco).
 
 ## 🎬 PISTA SEMANAL DE CINE (pedida en vivo por Andy, 26/07)
-Track NUEVO y paralelo al diario: **una vez por semana, UNA experiencia con
-series/películas para ver LOS DOS JUNTOS** (`audience: "todos"`).
-- `kind: "cine"` (las funciones) y `kind: "encuesta"` (la entrevista): NO
-  cuentan para la MEZCLA VIGENTE ni para el par nuevo+redescub del día, ni
-  consumen la ficha de nadie. Excluirlas al contar los `kind` de 7 días.
-- **Cadencia**: viernes ~19:00 -03:00, `id` `<fecha>-cine`, sin `to`. Los
-  viernes hay DOS pushes míos: la ficha diaria (12:30) + la función (19:00).
-  Es excepción explícita a la regla de 1 push/día, por pedido del dueño.
-- **Entrevista fundacional** `2026-07-26-entrevista-cine` (enviada 26/07
-  19:30). 14 preguntas, casi todas MULTI-OPCIÓN real — resuelve el pedido de
-  Andy del 24/07 de poder elegir más de una. Convención de qids:
-  `cine-<clave>:<andy|sofi>`; los multi vienen **separados por `|`**
-  (ej. `cine-generos:sofi = "policial|comedia|romance"`). Claves: generos,
-  busco, abandono, oscuridad, amaste, juntos, tiempo, formato, nova, idioma,
-  terminar, plataformas, dia, cuantos. Cada uno contesta desde su teléfono
-  (puerta de identidad + autodetección de `biblioteca_device_name`), así que
-  **hay respuesta de cada uno para las preguntas de a dos: donde no
-  coincidan está la información**. La nota libre usa el `rec-nota:<REC_ID>`
-  de siempre (leerla con prioridad máxima).
-- **Veredictos de cine**: `cine-veredicto:<slug>` con
-  `la_vemos` / `me_tienta` / `ya_la_vimos` / `no_va`. NO mezclar con
-  `rec-veredicto:` (ese es de libros; cruzarlos corrompe las dos series).
-  `ya_la_vimos` es la guardia anti-repetición equivalente al `ya_lo_lei` —
-  con 3/3 fallos en los redescub de Sofi, acá se pone el botón desde el día
-  uno en TODAS las fichas.
+Track paralelo al diario: una vez por semana, una experiencia de cine para
+ver LOS DOS JUNTOS (`audience:"todos"`, `kind:"cine"`). `kind:"cine"` y
+`kind:"encuesta"` NO cuentan para la MEZCLA ni el par nuevo+redescub del
+día. Cadencia: viernes ~19:00 -03:00, excepción explícita a 1 push/día.
+- **Entrevista fundacional respondida por Sofi (27/07, 23:36–23:41)**:
+  13 de 14 preguntas (falta `cine-juntos`). Perfil de cine — Sofi: géneros
+  casi todo (policial, thriller, terror, comedia, romance, drama,
+  histórico, animación, true crime, biopic — muy amplia, sin exclusiones
+  claras de género); busca desconectar/misterio/reír/emoción/belleza;
+  NUNCA abandona lo que empieza (`abandono:nada`); tolera "algo de
+  tensión" en pantalla (más moderado que en libros, donde pidió "cuanto
+  más oscuro mejor"); duración ideal ~30 min por capítulo; evita
+  activamente gore, sexo explícito, violencia a niños y animales;
+  prefiere series cortas/miniseries/películas (no series larguísimas);
+  siempre con subtítulos, nunca doblado; termina si engancha, no por
+  obligación; plataformas: Netflix, Prime, Disney+, Max; prefiere
+  viernes o domingo; "cuantos" = uno (a solas con Andy, no en grupo).
+  Reaccionó `love` a la experiencia de la entrevista (dwell 315s/100%).
+  Amó "The Notebook", "El Padrino" y "The Shining" (rango amplio:
+  romance, drama familiar, terror clásico).
+  **PENDIENTE: Andy todavía no respondió ninguna `cine-*:andy`.** Sin su
+  mitad no se puede armar el cruce — insistir o esperar antes de tocar
+  `sala-01`.
 - **Función Nº 1** `2026-07-31-sala-01` (viernes 31/07, ya encolada):
-  Only Murders in the Building (Disney+ LatAm) / La llegada (alquiler) /
-  Separación (Apple TV+). Estructura de tres FORMAS distintas —ritual corto,
-  una noche, apuesta grande—, no tres del mismo tipo; cada una anclada a
-  feedback real de libros y con su letra chica declarada.
-  ⚠️ **PENDIENTE antes del viernes: reconstruir los tres títulos con las
-  respuestas de la entrevista.** La URL y el push ya están fijos, solo
-  cambia el contenido. Si no contestaron, la función sale igual como está.
+  Only Murders / La llegada / Separación. Chequear contra el perfil de
+  Sofi cuando esté completo: ningún título viola su lista de "evitar"
+  (gore/sexo explícito/violencia a niños/animales) a priori, pero
+  Separación (Severance, episodios ~50-60min) excede bastante su ~30min
+  ideal — vigilar si conviene ajustar o dejarlo como la "apuesta grande"
+  explícitamente distinta al ritual corto. **PENDIENTE: reconstruir con
+  las respuestas de Andy en cuanto lleguen; si no llegan antes del
+  viernes, sale igual como está.**
 - Cosmético conocido: `recs/index.html` etiqueta como "Nuevo" cualquier
-  `kind` que no sea `redescubrimiento` (línea 184), así que `viaje`, `cine`
-  y `encuesta` se ven mal rotuladas en el hub. Es archivo de infraestructura
-  (NO TOCAR); si el dueño lo pide, ahí está el punto exacto a arreglar.
+  `kind` que no sea `redescubrimiento` — es archivo de infraestructura
+  (NO TOCAR).
 
 ## 🧳 Piezas fuera del ciclo diario
-- `kind: "viaje"` en `recommended.json` marca experiencias puntuales que NO
-  son recomendación de libro: **no cuentan para la MEZCLA VIGENTE ni para el
-  par nuevo+redescub del día**, y no consumen la ficha de nadie. Excluirlas
-  al contar los `kind` de los últimos 7 días.
-- `2026-07-24-librerias-del-viaje` (`todos`) — guía de librerías/bibliotecas
-  para el viaje Dubrovnik/Split/Darmstadt/Frankfurt/Heidelberg/Amsterdam,
-  pedida en vivo por Andy, formato TV (flechas, SVG propio, QR a Maps en
-  `recs/qr/`). Encolada y enviada 25/07 (send 16:11, ambos dispositivos).
-  Señal `viaje-libreria:<ciudad>-<n>`="quiero_ir": primer marcado ✅
-  Dubrovnik-1 (histórico/anticuario le tira).
-- Aprendido (TV): módulo que asoma desde abajo necesita contenedor
-  recortado por encima del pie, si no se dibuja detrás de los controles.
+- `kind:"viaje"` marca experiencias puntuales (no cuentan para la MEZCLA
+  ni el par del día). `2026-07-24-librerias-del-viaje` (`todos`) ya
+  enviada 25/07; señal `viaje-libreria:dubrovnik-1`="quiero_ir" (único
+  marcado hasta ahora).
 - **CURADURÍA (Andy, 24/07, vale para todo)**: vara = icónico/hermoso/
-  importante de verdad; una parada buena > tres de relleno, cero es
-  respuesta legítima si no hay nada a la altura.
+  importante de verdad; una parada buena > tres de relleno.
 
 ## 🧭 Sugerencias hub
 `recs/index.html` lista todo leyendo `recommended.json` por fetch — cero

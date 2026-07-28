@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🌌 Astrofísica para gente con prisa · Bibliotequeando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --espacio:#05070C;
+  --espacio2:#0C1220;
+  --nova:#F2B25C;
+  --nova-hi:#FFD48F;
+  --nebula:#8B93FF;
+  --nebula-hi:#BFC4FF;
+  --hueso:#F2F3F6;
+  --bruma:#98A3BC;
+  --linea:rgba(242,243,246,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--espacio);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--nova);color:var(--espacio)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--nova-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(242,243,246,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--nebula-hi),var(--nova-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(5,7,12,.6);backdrop-filter:blur(4px)}
+.back:hover{color:var(--nova-hi);border-color:var(--nova)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--nova);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(120% 90% at 50% 10%,#151C33 0%,var(--espacio) 65%)}
+.estrellas{position:absolute;inset:0;z-index:0;opacity:.6}
+.estrellas span{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--hueso);animation:centelleo 3.4s ease-in-out infinite}
+@keyframes centelleo{0%,100%{opacity:.2}50%{opacity:1}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--nova-hi);border:1px solid var(--nova);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.9rem,1.3rem + 4.6vw,3.5rem);font-weight:600;line-height:1.1}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--nebula-hi)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:50ch}
+.cta-btn{display:inline-block;background:var(--nova);color:var(--espacio);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--nova-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--espacio2)}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.2rem 0 1.3rem}
+.tabs button{border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.87rem;font-weight:600;transition:all .25s ease}
+.tabs button:hover,.tabs button.activo{border-color:var(--nebula);color:var(--nebula-hi);background:rgba(139,147,255,.09)}
+.tab-panel{border:1px solid var(--linea);border-radius:16px;padding:clamp(1.4rem,4vw,2rem);background:linear-gradient(180deg,rgba(242,243,246,.03),transparent);min-height:11.5em}
+.tab-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--nova-hi);font-weight:700;margin-bottom:.6rem}
+.tab-panel p{color:var(--bruma);font-size:.98rem;margin-bottom:1rem}
+.tab-panel .cita-in{font-family:var(--serif);font-style:italic;color:var(--hueso);font-size:1.03rem;border-left:3px solid var(--nebula);padding-left:1rem}
+.universo{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:radial-gradient(120% 100% at 50% 0%,rgba(139,147,255,.08),transparent)}
+.barra-u{display:flex;height:52px;border-radius:12px;overflow:hidden;margin:1.2rem 0 1.4rem;border:1px solid var(--linea)}
+.seg{cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--espacio);transition:filter .2s ease;border-right:1px solid rgba(5,7,12,.25)}
+.seg:last-child{border-right:none}
+.seg:hover,.seg.activo{filter:brightness(1.15)}
+.seg.oscura-e{background:var(--nebula);flex:68}
+.seg.oscura-m{background:var(--nova);flex:27}
+.seg.ordinaria{background:var(--hueso);flex:5;color:var(--espacio)}
+.universo-panel{min-height:6em}
+.universo-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--nova-hi);font-weight:700;margin-bottom:.5rem}
+.universo-panel p{color:var(--bruma);font-size:.95rem}
+.cita{border-left:3px solid var(--nova);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(242,178,92,.06);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.55}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(242,243,246,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--nova-hi);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--nova);color:var(--espacio);border-radius:999px;padding:.9rem 1.7rem;font-weight:600;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--nova-hi);transform:translateY(-2px)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--nova);color:var(--nova-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--nova-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#151C33 0%,var(--espacio) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:34ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--nova-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="estrellas" id="estrellas" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Nuevo · el próximo paso después de Rovelli</span>
+    <h1>Astrofísica para gente con prisa</h1>
+    <p class="autor">Neil deGrasse Tyson · 2017</p>
+    <p class="sub">Rovelli te llevó siete lecciones de física en 97 páginas poéticas. Tyson toma la posta: el 95% del universo que no podemos ver, cómo nacieron los átomos que sos, y un alien buscando la Tierra. Capítulos de 10 minutos, pensados para leer en el colectivo — literal, así nació el libro.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traemos</p>
+    <h2 class="titulo rev d1">Tu L5 tiene 32 libros y ninguno de este siglo</h2>
+    <p class="bajada rev d2">El 16/07 te dimos Rovelli para reabrir tu estante de astronomía, dormido desde Hawking (1988) — y fue tu ACIERTO PLENO más limpio hasta ahora: <em>lo_quiero</em>, dwell 182s, la fórmula "corto + moderno + poético" funcionando de una. Tyson es el mismo espíritu, un paso más lejos: no reescribe la física clásica, te muestra el borde de lo que todavía no sabemos — materia oscura, energía oscura, exoplanetas. Es astrofísico de verdad (dirige el Planetario Hayden de Nueva York), no un divulgador de paso, y el libro nunca estuvo en tu estante ni se lo recomendamos antes.</p>
+  </div>
+</section>
+
+<section class="seccion" id="capitulos">
+  <div class="centro">
+    <p class="kicker rev">Cinco ideas del libro</p>
+    <h2 class="titulo rev d1">Elegí una, en 10 minutos te la cuenta</h2>
+    <p class="bajada rev d2">El libro son 12 capítulos cortos armados a partir de sus columnas en la revista Natural History (1997–2007). Estos cinco son el corazón.</p>
+    <div class="tabs" id="tabsCap">
+      <button data-c="bigbang" class="activo">I · El Big Bang</button>
+      <button data-c="luz">II · Luz invisible</button>
+      <button data-c="oscuro">III · Lo que no se ve</button>
+      <button data-c="polvo">IV · Polvo de estrellas</button>
+      <button data-c="exo">V · Buscando la Tierra</button>
+    </div>
+    <div class="tab-panel rev d2" id="panelCap">
+      <p class="et">I · El Big Bang</p>
+      <p>Tyson cuenta el origen del universo como si se lo explicaras a un chico: en un instante inimaginablemente pequeño, todo el espacio, el tiempo y la energía que existen hoy estaban comprimidos en un punto. No hace falta entender la matemática para agarrar la idea central — sólo asombrarse de que haya una explicación con evidencia real detrás.</p>
+      <p class="cita-in">"Después de las leyes de la física, todo lo demás es opinión."</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="universo-sec" style="background:var(--espacio2)">
+  <div class="centro">
+    <p class="kicker rev">El dato que más sorprende del libro</p>
+    <h2 class="titulo rev d1">¿De qué está hecho el 100% del universo?</h2>
+    <p class="bajada rev d2">Tocá cada franja. Ninguna de las tres es "cosas" en el sentido que conocés.</p>
+    <div class="universo rev d2">
+      <div class="barra-u" id="barraU">
+        <div class="seg oscura-e activo" data-u="oscura-e">68%</div>
+        <div class="seg oscura-m" data-u="oscura-m">27%</div>
+        <div class="seg ordinaria" data-u="ordinaria">5%</div>
+      </div>
+      <div class="universo-panel" id="panelU">
+        <p class="et">Energía oscura — 68%</p>
+        <p>La fuerza que acelera la expansión del universo. Nadie sabe qué es en realidad — se la nombró y se la mide por su efecto, no porque se entienda su naturaleza. Es la mayoría del universo y es, en gran medida, un misterio con nombre.</p>
+      </div>
+      <p class="bajada" style="margin-top:1rem;font-size:.88rem">Todo lo que ves a simple vista — planetas, estrellas, vos mismo — entra en ese 5% de "materia ordinaria". El resto ni se ve.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="citas">
+  <div class="centro">
+    <p class="kicker rev">Del libro, palabra por palabra</p>
+    <h2 class="titulo rev d1">Lo que de verdad escribió Tyson</h2>
+    <div class="cita rev"><p>"Somos polvo de estrellas que cobró vida, y a quien el universo empoderó para entenderse a sí mismo — y apenas estamos empezando."</p><span>Cierre del libro (traducción propia)</span></div>
+    <div class="cita rev d1"><p>"Los cuatro elementos químicamente más activos del universo — hidrógeno, oxígeno, carbono y nitrógeno — son los cuatro elementos más comunes de la vida en la Tierra. El universo vive dentro de nosotros."</p><span>Capítulo sobre el origen de los elementos (traducción propia)</span></div>
+    <div class="cita rev d1"><p>"Quien cree que no ignora nada no buscó, ni se topó nunca, con la frontera entre lo que se sabe y lo que no se sabe del universo."</p><span>Traducción propia</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha" style="background:var(--espacio2)">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2017 (W. W. Norton), a partir de columnas de Natural History de 1997 a 2007</dd>
+        <dt>Extensión</dt><dd>~240 páginas, 12 capítulos cortos — de una sentada o en pedazos de 10 minutos</dd>
+        <dt>Alcance</dt><dd>Nº1 en no-ficción del New York Times (mayo 2017); más de 1 millón de copias vendidas en su primer año</dd>
+        <dt>El autor</dt><dd>Astrofísico real, director del Planetario Hayden (Nueva York) — no es un divulgador de paso</dd>
+        <dt>Edición</dt><dd>"Astrofísica para gente con prisa" (Paidós), la traducción al español</dd>
+      </dl>
+      <a class="comprar" href="https://www.buscalibre.uy/libros/search/?q=Astrofisica+para+gente+con+prisa+Tyson" target="_blank" rel="noopener">Conseguilo — desde ~US$ 20 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">El veredicto</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d2">
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-28-tyson-astrofisica-prisa','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-28-tyson-astrofisica-prisa','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-28-tyson-astrofisica-prisa','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-28-tyson-astrofisica-prisa','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-28-tyson-astrofisica-prisa','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-28-tyson-astrofisica-prisa','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-28-tyson-astrofisica-prisa','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-28-tyson-astrofisica-prisa','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-28-tyson-astrofisica-prisa','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-07-28-tyson-astrofisica-prisa" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-07-28-tyson-astrofisica-prisa" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-07-28-tyson-astrofisica-prisa',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"Somos polvo de estrellas <b>que cobró vida</b> — y apenas estamos empezando."</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Mañana, la próxima ficha.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--nova-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--nova);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · nuevo para tu estante L5 · datos verificados (Wikipedia, Goodreads, NYT) a julio 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+
+  var estrellas=$('#estrellas');
+  for(var i=0;i<40;i++){
+    var s=document.createElement('span');
+    s.style.left=(Math.random()*100)+'%';
+    s.style.top=(Math.random()*70)+'%';
+    s.style.animationDelay=(Math.random()*3.4)+'s';
+    estrellas.appendChild(s);
+  }
+
+  var CAP={
+    bigbang:{et:'I · El Big Bang',cuerpo:'Tyson cuenta el origen del universo como si se lo explicaras a un chico: en un instante inimaginablemente pequeño, todo el espacio, el tiempo y la energía que existen hoy estaban comprimidos en un punto. No hace falta entender la matemática para agarrar la idea central — sólo asombrarse de que haya una explicación con evidencia real detrás.',cita:'"Después de las leyes de la física, todo lo demás es opinión."'},
+    luz:{et:'II · Luz invisible',cuerpo:'La luz visible es apenas una rebanada finita de todo el espectro electromagnético. Rayos gamma, rayos X, infrarrojo, ondas de radio — cada telescopio "ve" una parte distinta del universo, y combinarlos es lo que arma la imagen completa que ningún ojo humano podría captar solo.',cita:'"Cada franja del espectro cuenta una parte distinta de la misma historia."'},
+    oscuro:{et:'III · Lo que no se ve',cuerpo:'La materia oscura no emite ni refleja luz — se detecta sólo por su efecto gravitacional sobre lo que sí vemos. La energía oscura es todavía más rara: acelera la expansión del universo entero y nadie sabe bien qué es. Juntas, son el 95% de todo lo que existe.',cita:'"Le pusimos nombre a nuestra ignorancia, y la llamamos oscura."'},
+    polvo:{et:'IV · Polvo de estrellas',cuerpo:'Los elementos pesados de tu cuerpo — carbono, oxígeno, calcio, hierro — se forjaron en el núcleo de estrellas que murieron mucho antes de que existiera el Sol. Literal: sos materia reciclada de explosiones estelares. No es poesía, es química verificable.',cita:'"El universo vive dentro de nosotros."'},
+    exo:{et:'V · Buscando la Tierra',cuerpo:'El capítulo le da vuelta a la pregunta: en vez de cómo buscamos vida en otros planetas, ¿cómo nos encontraría a NOSOTROS una civilización alienígena? La respuesta pasa por las mismas herramientas —tránsitos, espectros de atmósfera— que usamos para buscar exoplanetas hoy.',cita:'"Desde ahí afuera, la Tierra también es sólo un punto de datos."'}
+  };
+  var tabs=$$('#tabsCap button'),panel=$('#panelCap');
+  tabs.forEach(function(b){
+    b.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      var c=CAP[b.getAttribute('data-c')];
+      panel.innerHTML='<p class="et">'+c.et+'</p><p>'+c.cuerpo+'</p><p class="cita-in">'+c.cita+'</p>';
+    });
+  });
+
+  var UNI={
+    'oscura-e':{et:'Energía oscura — 68%',cuerpo:'La fuerza que acelera la expansión del universo. Nadie sabe qué es en realidad — se la nombró y se la mide por su efecto, no porque se entienda su naturaleza. Es la mayoría del universo y es, en gran medida, un misterio con nombre.'},
+    'oscura-m':{et:'Materia oscura — 27%',cuerpo:'No emite ni refleja luz — se infiere porque las galaxias giran más rápido de lo que su materia visible explicaría. La detectamos por su gravedad, nunca directamente. Sin ella, las galaxias como la Vía Láctea se habrían desarmado hace miles de millones de años.'},
+    'ordinaria':{et:'Materia ordinaria — 5%',cuerpo:'Todo lo que conocés: estrellas, planetas, el aire, vos. Todo el universo estudiado por la física durante siglos —y todo lo que ves a simple vista de noche— es apenas esta franja delgada del total.'}
+  };
+  var segs=$$('.seg'),panelU=$('#panelU');
+  segs.forEach(function(s){
+    s.addEventListener('click',function(){
+      segs.forEach(function(x){x.classList.remove('activo')});
+      s.classList.add('activo');
+      var u=UNI[s.getAttribute('data-u')];
+      panelU.innerHTML='<p class="et">'+u.et+'</p><p>'+u.cuerpo+'</p>';
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
