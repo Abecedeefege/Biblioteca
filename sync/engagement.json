@@ -2491,7 +2491,16 @@
       "device": "Andy",
       "qid": "cine-amaste:andy",
       "value": "Crossroads , gladiator, titanic, scary movie, \nThe illusionist , \nFriends, modern family, how I met your mother , got, the office (tv)"
+    },
+    {
+      "id": "ms51m8h8-hrn895",
+      "type": "answer",
+      "ts": "2026-07-28T19:22:43.436Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "qid": "cine-juntos:andy",
+      "value": "Modern family, suits, got, friends"
     }
   ],
-  "_updated_at": "2026-07-28T19:21:44.918Z"
+  "_updated_at": "2026-07-28T19:22:44.954Z"
 }
