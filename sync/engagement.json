@@ -2446,7 +2446,16 @@
       "page": "2026-07-26-entrevista-cine.html",
       "device": "Andy",
       "nid": "2026-07-26-cine-entrevista"
+    },
+    {
+      "id": "ms51gqgc-9f12sw",
+      "type": "answer",
+      "ts": "2026-07-28T19:18:26.796Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "qid": "cine-generos:andy",
+      "value": "scifi|comedia|documental|historico|fantasia|animacion|accion|biopic"
     }
   ],
-  "_updated_at": "2026-07-28T19:16:55.732Z"
+  "_updated_at": "2026-07-28T19:18:28.140Z"
 }
