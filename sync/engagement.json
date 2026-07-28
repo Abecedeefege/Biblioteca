@@ -2685,7 +2685,16 @@
       "page": "2026-07-28-tyson-astrofisica-prisa.html",
       "device": "Andy",
       "nid": "2026-07-28-rec-andy"
+    },
+    {
+      "id": "ms5b8xs9-w8q81r",
+      "type": "dwell",
+      "ts": "2026-07-28T23:52:19.209Z",
+      "page": "2026-07-28-tyson-astrofisica-prisa.html",
+      "device": "Andy",
+      "dwell_s": 64,
+      "scroll_pct": 76
     }
   ],
-  "_updated_at": "2026-07-28T23:51:16.488Z"
+  "_updated_at": "2026-07-28T23:52:20.963Z"
 }
