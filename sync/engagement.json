@@ -2518,7 +2518,16 @@
       "device": "Andy",
       "qid": "cine-formato:andy",
       "value": "serie_corta|serie_larga|pelicula|miniserie|documental_serie"
+    },
+    {
+      "id": "ms51nf82-xepcfv",
+      "type": "answer",
+      "ts": "2026-07-28T19:23:38.834Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "qid": "cine-nova:andy",
+      "value": "bajon|politica|nada_prohibido"
     }
   ],
-  "_updated_at": "2026-07-28T19:23:16.849Z"
+  "_updated_at": "2026-07-28T19:23:40.352Z"
 }
