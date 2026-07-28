@@ -2659,7 +2659,33 @@
       "type": "answer",
       "value": "Este ya lo leí, toda la saga y vi la serie ya 💔",
       "device": "Sofi"
+    },
+    {
+      "id": "ms51rm1x-vie0ph",
+      "type": "dwell",
+      "ts": "2026-07-28T19:26:54.309Z",
+      "page": "index.html",
+      "device": "Andy",
+      "dwell_s": 9,
+      "scroll_pct": 15
+    },
+    {
+      "id": "ms5b7kdx-5xrpx2",
+      "type": "notification_clicked",
+      "ts": "2026-07-28T23:51:15.189Z",
+      "page": "2026-07-28-tyson-astrofisica-prisa.html",
+      "device": "Andy",
+      "nid": "2026-07-28-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "ms5b7kdz-ue8wkc",
+      "type": "page_visit",
+      "ts": "2026-07-28T23:51:15.191Z",
+      "page": "2026-07-28-tyson-astrofisica-prisa.html",
+      "device": "Andy",
+      "nid": "2026-07-28-rec-andy"
     }
   ],
-  "_updated_at": "2026-07-28T22:14:41.924Z"
+  "_updated_at": "2026-07-28T23:51:16.488Z"
 }
