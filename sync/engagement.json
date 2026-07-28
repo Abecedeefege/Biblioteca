@@ -2464,7 +2464,16 @@
       "device": "Andy",
       "qid": "cine-busco:andy",
       "value": "desconectar|misterio|reir|aprender|pensar"
+    },
+    {
+      "id": "ms51hyrz-s0v937",
+      "type": "answer",
+      "ts": "2026-07-28T19:19:24.239Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "qid": "cine-abandono:andy",
+      "value": "triste|nada"
     }
   ],
-  "_updated_at": "2026-07-28T19:18:49.774Z"
+  "_updated_at": "2026-07-28T19:19:25.479Z"
 }
