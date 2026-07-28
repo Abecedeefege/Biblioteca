@@ -2572,7 +2572,16 @@
       "device": "Andy",
       "qid": "cine-cuantos:andy",
       "value": "tres"
+    },
+    {
+      "id": "ms51qzik-xou9p9",
+      "type": "answer",
+      "ts": "2026-07-28T19:26:25.100Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "qid": "rec-nota:2026-07-26-entrevista-cine",
+      "value": "Quiero que las recomendaciones tenga mucha mucha data además de ser visuales. Descripciones cortas y largas , actores , similitud a otras que me gusten o puedan gustar, Links a trailer, IMDb, reviews\nPresentado en experiencias muy modernas parecidas a Instagram, Pinterest o tinder"
     }
   ],
-  "_updated_at": "2026-07-28T19:24:53.008Z"
+  "_updated_at": "2026-07-28T19:26:26.418Z"
 }
