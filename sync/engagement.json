@@ -2420,7 +2420,33 @@
       "device": "Sofi",
       "dwell_s": 315,
       "scroll_pct": 100
+    },
+    {
+      "id": "ms3hhz4f-i27w2o",
+      "type": "dwell",
+      "ts": "2026-07-27T17:11:46.191Z",
+      "page": "2026-07-27-haig-biblioteca-medianoche.html",
+      "device": "Andy",
+      "dwell_s": 73,
+      "scroll_pct": 100
+    },
+    {
+      "id": "ms51er5y-tlxoa2",
+      "type": "notification_clicked",
+      "ts": "2026-07-28T19:16:54.406Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "nid": "2026-07-26-cine-entrevista",
+      "src": "push"
+    },
+    {
+      "id": "ms51er5z-xxs3dz",
+      "type": "page_visit",
+      "ts": "2026-07-28T19:16:54.407Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "nid": "2026-07-26-cine-entrevista"
     }
   ],
-  "_updated_at": "2026-07-28T00:13:31.660Z"
+  "_updated_at": "2026-07-28T19:16:55.732Z"
 }
