@@ -2500,7 +2500,16 @@
       "device": "Andy",
       "qid": "cine-juntos:andy",
       "value": "Modern family, suits, got, friends"
+    },
+    {
+      "id": "ms51mgx0-q7jwjq",
+      "type": "answer",
+      "ts": "2026-07-28T19:22:54.372Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "qid": "cine-tiempo:andy",
+      "value": "pelicula_entera"
     }
   ],
-  "_updated_at": "2026-07-28T19:22:44.954Z"
+  "_updated_at": "2026-07-28T19:22:55.537Z"
 }
