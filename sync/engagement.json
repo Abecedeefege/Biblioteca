@@ -2606,7 +2606,60 @@
       "ts": "2026-07-28T19:26:44.882Z",
       "page": "index.html",
       "device": "Andy"
+    },
+    {
+      "id": "ms55x2s4-3bylel",
+      "ts": "2026-07-28T21:23:07.732Z",
+      "nid": "2026-07-28-rec-sofi",
+      "src": "push",
+      "page": "2026-07-28-benavent-zapatos-valeria.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms55x2s7-s3kfxd",
+      "ts": "2026-07-28T21:23:07.735Z",
+      "nid": "2026-07-28-rec-sofi",
+      "page": "2026-07-28-benavent-zapatos-valeria.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms55xsk2-h7mubb",
+      "ts": "2026-07-28T21:23:41.138Z",
+      "qid": "leer-esta-noche:M6-001",
+      "page": "2026-07-28-benavent-zapatos-valeria.html",
+      "type": "answer",
+      "value": "ya_leido",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms55xtgq-8acke6",
+      "ts": "2026-07-28T21:23:42.314Z",
+      "qid": "rec-veredicto:2026-07-28-benavent-zapatos-valeria",
+      "page": "2026-07-28-benavent-zapatos-valeria.html",
+      "type": "answer",
+      "value": "ya_lo_lei",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms55xvpo-eei2t2",
+      "ts": "2026-07-28T21:23:45.228Z",
+      "page": "2026-07-28-benavent-zapatos-valeria.html",
+      "slug": "2026-07-28-benavent-zapatos-valeria",
+      "type": "reaction",
+      "value": "meh",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms55yp2z-pp6a4y",
+      "ts": "2026-07-28T21:24:23.291Z",
+      "qid": "rec-nota:2026-07-28-benavent-zapatos-valeria",
+      "page": "2026-07-28-benavent-zapatos-valeria.html",
+      "type": "answer",
+      "value": "Este ya lo leí, toda la saga y vi la serie ya 💔",
+      "device": "Sofi"
     }
   ],
-  "_updated_at": "2026-07-28T19:26:45.995Z"
+  "_updated_at": "2026-07-28T22:14:41.924Z"
 }
