@@ -2509,7 +2509,16 @@
       "device": "Andy",
       "qid": "cine-tiempo:andy",
       "value": "pelicula_entera"
+    },
+    {
+      "id": "ms51mx8t-dq3268",
+      "type": "answer",
+      "ts": "2026-07-28T19:23:15.533Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "device": "Andy",
+      "qid": "cine-formato:andy",
+      "value": "serie_corta|serie_larga|pelicula|miniserie|documental_serie"
     }
   ],
-  "_updated_at": "2026-07-28T19:22:55.537Z"
+  "_updated_at": "2026-07-28T19:23:16.849Z"
 }
