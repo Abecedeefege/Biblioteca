@@ -2268,7 +2268,159 @@
       "page": "2026-07-27-haig-biblioteca-medianoche.html",
       "type": "page_visit",
       "device": "sin-nombre"
+    },
+    {
+      "id": "ms3v8pzx-opmudk",
+      "ts": "2026-07-27T23:36:29.085Z",
+      "nid": "2026-07-26-cine-entrevista",
+      "src": "push",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3v8q00-oq17s6",
+      "ts": "2026-07-27T23:36:29.088Z",
+      "nid": "2026-07-26-cine-entrevista",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vbg0o-58y9yu",
+      "ts": "2026-07-27T23:38:36.120Z",
+      "qid": "cine-oscuridad:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "algo_tension",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vc4cg-86z1ay",
+      "ts": "2026-07-27T23:39:07.648Z",
+      "qid": "cine-amaste:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "The notebook \nEl padrino \nThe shining",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vcknm-suahuv",
+      "ts": "2026-07-27T23:39:28.786Z",
+      "qid": "cine-tiempo:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "media_hora",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vd4hb-5rd4gy",
+      "ts": "2026-07-27T23:39:54.479Z",
+      "qid": "cine-nova:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "gore|sexo_explicito|violencia_ninos|animales",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vd6fj-2i2x3u",
+      "ts": "2026-07-27T23:39:57.007Z",
+      "qid": "cine-formato:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "serie_corta|pelicula|miniserie",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vdekk-2usfxc",
+      "ts": "2026-07-27T23:40:07.556Z",
+      "qid": "cine-generos:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "policial|thriller|terror|comedia|romance|drama|historico|animacion|true_crime|biopic",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vdgnh-15n5kp",
+      "ts": "2026-07-27T23:40:10.253Z",
+      "qid": "cine-busco:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "desconectar|misterio|reir|emocion|belleza",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vdis6-ten8g2",
+      "ts": "2026-07-27T23:40:13.014Z",
+      "qid": "cine-abandono:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "nada",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vdw2m-8u7qdo",
+      "ts": "2026-07-27T23:40:30.238Z",
+      "qid": "cine-idioma:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "subtitulos_siempre",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3ve14r-glmfsm",
+      "ts": "2026-07-27T23:40:36.795Z",
+      "qid": "cine-terminar:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "si_engancha",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vek16-0j4z6z",
+      "ts": "2026-07-27T23:41:01.290Z",
+      "qid": "cine-plataformas:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "netflix|prime|disney|max",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vev8c-7id764",
+      "ts": "2026-07-27T23:41:15.804Z",
+      "qid": "cine-dia:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "viernes|domingo",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vf1cb-jf43pk",
+      "ts": "2026-07-27T23:41:23.723Z",
+      "qid": "cine-cuantos:sofi",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "answer",
+      "value": "uno",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vf8c7-fb4w5c",
+      "ts": "2026-07-27T23:41:32.791Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "slug": "2026-07-26-entrevista-cine",
+      "type": "reaction",
+      "value": "love",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms3vfhat-v63zws",
+      "ts": "2026-07-27T23:41:44.405Z",
+      "page": "2026-07-26-entrevista-cine.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 315,
+      "scroll_pct": 100
     }
   ],
-  "_updated_at": "2026-07-27T17:52:11.321Z"
+  "_updated_at": "2026-07-28T00:13:31.660Z"
 }
