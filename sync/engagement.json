@@ -2694,7 +2694,42 @@
       "device": "Andy",
       "dwell_s": 64,
       "scroll_pct": 76
+    },
+    {
+      "id": "ms55yrxj-tamqdt",
+      "ts": "2026-07-28T21:24:26.983Z",
+      "page": "2026-07-28-benavent-zapatos-valeria.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 79,
+      "scroll_pct": 97
+    },
+    {
+      "id": "ms6lqp39-ndtsh9",
+      "ts": "2026-07-29T21:33:50.085Z",
+      "nid": "2026-07-29-rec-sofi",
+      "src": "push",
+      "page": "2026-07-29-osman-bala-perdida.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms6lqp3d-g1pm1b",
+      "ts": "2026-07-29T21:33:50.089Z",
+      "nid": "2026-07-29-rec-sofi",
+      "page": "2026-07-29-osman-bala-perdida.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms6lr09f-y4tad0",
+      "ts": "2026-07-29T21:34:04.563Z",
+      "page": "2026-07-29-osman-bala-perdida.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 14,
+      "scroll_pct": 4
     }
   ],
-  "_updated_at": "2026-07-28T23:52:20.963Z"
+  "_updated_at": "2026-07-29T22:15:42.070Z"
 }
