@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-28T13:00:00-03:00",
-  "_feedback_cutoff": "2026-07-27T23:41:44.405Z",
+  "_updated_at": "2026-07-29T16:45:00-03:00",
+  "_feedback_cutoff": "2026-07-28T23:52:19.209Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -623,11 +623,11 @@
       "why": "Pedido en vivo de Andy (26/07): arranca una pista nueva, una experiencia semanal que les recomiende series y películas para ver LOS DOS JUNTOS. Esta es la entrevista fundacional para construir el perfil de cine de cada uno y el conjunto. 14 preguntas: 5 personales, 6 de a dos, 3 de logística, la mayoría multi-opción real (pedido explícito de Andy en la encuesta del 24/07, que era de opción única). Cada uno contesta desde su teléfono y las respuestas se estampan con su identidad (puerta de identidad + autodetección del device name), así se pueden comparar las dos. Convención de qids: cine-<clave>:<andy|sofi>, multi-valor separado por |.",
       "feedback": {
         "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "reaccion": "love",
+        "clicked": true,
+        "dwell_s": 590
       },
-      "learning": null
+      "learning": "Andy completo las 13 preguntas cine-*:andy pendientes (28/07, dwell 590s/100%, love). Perfil de cine de Andy ahora completo junto al de Sofi (27/07). Tambien dejo rec-nota pidiendo mucha data (sinopsis, cast, similares, trailer/IMDb/reviews) en formato visual tipo Instagram/Pinterest/Tinder para las fichas de cine -> aplicado hoy en sala-01."
     },
     {
       "id": "2026-07-31-sala-01",
@@ -645,7 +645,7 @@
       "audience": "todos",
       "page": "recs/2026-07-31-sala-01.html",
       "notified_by": "2026-07-31-cine",
-      "why": "Primera función de la pista semanal de cine pedida por Andy el 26/07. Tres títulos con FORMAS distintas (serie corta de ritual / película de una noche / apuesta grande), no tres del mismo tipo — aplicando la vara de curaduría del 24/07 (mejor una buena que tres de relleno). Cada uno anclado en feedback real de libros: Only Murders = traducción directa del 2/2 lo_quiero de Sofi con Osman + su elección de la frase más irreverente de Joyce; La llegada = Rovelli/Cosmos de Andy (asombro científico) cruzado con el pedido explícito de Sofi de finales que hagan llorar un poco; Separación = misterio con reglas (Dicker) + pregunta filosófica sostenida (Frankl). Cada ficha tiene botón 'ya la vimos' como guardia anti-repetición, la lección de los 3/3 ya_lo_lei de Sofi. Datos verificados: OMitB temporada 1 = 10 caps de 30-35 min, estreno de comedia más visto de Hulu, 17 nominaciones al Emmy, en Disney+ LatAm; Arrival 2016 Villeneuve, sobre el cuento de Ted Chiang de 1998, 8 nominaciones al Oscar y ganó edición de sonido, disponibilidad declarada como alquiler porque en suscripción rota; Severance 2 temporadas (9+10 caps), Apple TV+, temporada 3 confirmada 03/2025 pero sin fecha (prensa la ubica en 2027) — declarado explícitamente en la ficha. PENDIENTE: reconstruir los tres títulos con las respuestas de la entrevista antes del viernes; la URL y el push ya quedan fijos.",
+      "why": "Primera función de la pista semanal de cine pedida por Andy el 26/07. Tres títulos con FORMAS distintas (serie corta de ritual / película de una noche / apuesta grande), no tres del mismo tipo — aplicando la vara de curaduría del 24/07 (mejor una buena que tres de relleno). Cada uno anclado en feedback real de libros: Only Murders = traducción directa del 2/2 lo_quiero de Sofi con Osman + su elección de la frase más irreverente de Joyce; La llegada = Rovelli/Cosmos de Andy (asombro científico) cruzado con el pedido explícito de Sofi de finales que hagan llorar un poco; Separación = misterio con reglas (Dicker) + pregunta filosófica sostenida (Frankl). Cada ficha tiene botón 'ya la vimos' como guardia anti-repetición, la lección de los 3/3 ya_lo_lei de Sofi. Datos verificados: OMitB temporada 1 = 10 caps de 30-35 min, estreno de comedia más visto de Hulu, 17 nominaciones al Emmy, en Disney+ LatAm; Arrival 2016 Villeneuve, sobre el cuento de Ted Chiang de 1998, 8 nominaciones al Oscar y ganó edición de sonido, disponibilidad declarada como alquiler porque en suscripción rota; Severance 2 temporadas (9+10 caps), Apple TV+, temporada 3 confirmada 03/2025 pero sin fecha (prensa la ubica en 2027) — declarado explícitamente en la ficha. PENDIENTE: reconstruir los tres títulos con las respuestas de la entrevista antes del viernes; la URL y el push ya quedan fijos. ACTUALIZACION 29/07: reconstruida a pedido explicito de Andy (rec-nota 28/07, prioridad maxima) con formato de tarjetas visual (poster CSS por titulo, reparto, 'se parece a', sinopsis corta+larga, link a trailer oficial de YouTube y a IMDb, rating). Todos los links verificados (200/202) antes de publicar: YouTube trailers de OMITB/Arrival/Severance y fichas de IMDb de los tres titulos.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
@@ -674,10 +674,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 64
       },
-      "learning": null
+      "learning": "Clickeo (push) y quedo 64s/76% scroll, pero sin voto de veredicto. Se suma al patron de Hawking (dwell alto, sin voto) - vigilar si hace falta simplificar el CTA de veredicto."
     },
     {
       "id": "2026-07-28-benavent-zapatos-valeria",
@@ -696,6 +696,56 @@
       "page": "recs/2026-07-28-benavent-zapatos-valeria.html",
       "notified_by": "2026-07-28-rec-sofi",
       "why": "Respuesta directa a su rec-nota del 24/07 pidiendo una tercera veta (romance/final feliz o catártico, nunca autoayuda). Primera ficha de M6 ('rincón Valeria'), identitario igual que Bach/L4 para Andy: el libro que le da nombre a su propio estante, nunca abierto. Honestidad dura: el libro 1 no cierra con final feliz (Valeria y Adrián se separan, Víctor no se resuelve) — se declara explícito en la ficha, con la saga completa (M6-002/003/004, ya en su estante) como el arco hacia el cierre catártico que pidió. Régimen del día: Andy tiene el 'nuevo' (Tyson) hoy, a Sofi le toca 'de la biblioteca'. Verificado título+autor contra catálogo completo y recommended.json: sin coincidencias (M6 nunca antes recomendado).",
+      "feedback": {
+        "veredicto": "ya_lo_lei",
+        "reaccion": "meh",
+        "clicked": true,
+        "dwell_s": 0
+      },
+      "learning": "MISS de guardia (4/5 redescub reales de Sofi ya_lo_lei): nota textual '¡Este ya lo lei, toda la saga y vi la serie ya!' confirma que es lectora completista de Benavent. El intento de pivotar a M6 tras la racha de misterio/oscuro fallida tambien fallo. Saga Valeria 1-4 y probablemente los standalones quedan quemados. Accion: no armar mas redescub a ciegas para Sofi, meter micro-pregunta directa antes del proximo."
+    },
+    {
+      "id": "2026-07-29-osman-bala-perdida",
+      "date": "2026-07-29",
+      "kind": "nuevo",
+      "title": "El misterio de la bala perdida",
+      "author": "Richard Osman",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy",
+        "humor"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-07-29-osman-bala-perdida.html",
+      "notified_by": "2026-07-29-rec-sofi",
+      "why": "Tomo 3 de Club del Crimen de los Jueves: 2/2 lo_quiero en los dos anteriores (Osman/Joyce es su veta mas segura confirmada). Regimen del dia: ayer (28/07) el 'nuevo' fue de Andy (Tyson) -> hoy le toca nuevo a Sofi y redescub a Andy. Verificado titulo+autor contra catalogo completo (sin match, Osman no vive en la biblioteca de casa) y contra recommended.json (sin match). Link de compra verificado (200) en buscalibre.uy.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-29-gibran-profeta",
+      "date": "2026-07-29",
+      "kind": "redescubrimiento",
+      "title": "El Profeta",
+      "author": "Kahlil Gibran",
+      "language": "en",
+      "topics": [
+        "espiritualidad",
+        "fabula",
+        "wisdom"
+      ],
+      "book_ref": "L4-018",
+      "audience": "andy",
+      "page": "recs/2026-07-29-gibran-profeta.html",
+      "notified_by": "2026-07-29-rec-andy",
+      "why": "Redescub de su estante L4 tras la racha ganadora de Bach (Ilusiones + Jonathan Livingston Seagull, ambos con dwell alto y compromiso fisico). El Profeta es el otro clasico universal de fabula corta que nunca abrio segun su historial. Regimen del dia: a Andy le toca redescub hoy (alternancia, ver PROFILE). Verificado titulo+autor contra recommended.json: sin match previo. Citas verificadas contra Poetry Foundation (dominio publico).",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

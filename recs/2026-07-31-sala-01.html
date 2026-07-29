@@ -71,22 +71,46 @@ button{font-family:var(--sans);cursor:pointer}
 .selector .salida b{color:var(--oro-hi);font-weight:600}
 .selector .salida em{font-style:italic;color:var(--hueso)}
 
-/* fichas de título */
-.titulo-card{border:1px solid var(--linea);border-radius:22px;overflow:hidden;margin-top:1.6rem;background:linear-gradient(180deg,rgba(242,239,234,.04),transparent)}
+/* tarjeta estilo swipe: poster + info */
+.titulo-card{border:1px solid var(--linea);border-radius:24px;overflow:hidden;margin-top:1.6rem;background:var(--sala2);box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
 .titulo-card.destacada{border-color:rgba(232,180,74,.4)}
-.tc-top{padding:clamp(1.3rem,4vw,1.9rem) clamp(1.2rem,4vw,1.9rem) 0}
-.tc-forma{display:inline-block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--sala);background:var(--oro);border-radius:999px;padding:.28rem .8rem;margin-bottom:.9rem}
-.titulo-card:not(.destacada) .tc-forma{background:transparent;color:var(--bruma);border:1px solid var(--linea)}
-.tc-top h3{font-size:clamp(1.5rem,1.2rem + 1.8vw,2.1rem);line-height:1.12}
-.tc-meta{color:var(--bruma);font-size:.87rem;margin-top:.4rem}
-.tc-donde{display:inline-block;margin-top:.9rem;font-size:.82rem;color:var(--oro-hi);border:1px solid rgba(232,180,74,.35);border-radius:999px;padding:.32rem .85rem}
-.tc-cuerpo{padding:1.2rem clamp(1.2rem,4vw,1.9rem) 0}
+.tc-poster{position:relative;padding:clamp(2.2rem,8vw,3.2rem) clamp(1.3rem,5vw,2rem);min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.tc-poster::before{content:"";position:absolute;inset:0;opacity:.5;background-image:radial-gradient(circle at 20% 20%,rgba(255,255,255,.12) 0,transparent 40%),radial-gradient(circle at 85% 75%,rgba(255,255,255,.08) 0,transparent 45%)}
+#card-omitb .tc-poster{background:linear-gradient(155deg,#3A1220 0%,#7A2A1E 55%,#C9714E 100%)}
+#card-arrival .tc-poster{background:linear-gradient(155deg,#0B1F3A 0%,#123157 55%,#4FC3B0 100%)}
+#card-severance .tc-poster{background:linear-gradient(155deg,#151022 0%,#2B1E45 55%,#5B3E86 100%)}
+.tc-badges{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:auto}
+.tc-forma{display:inline-block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--sala);background:var(--oro);border-radius:999px;padding:.3rem .85rem}
+.titulo-card:not(.destacada) .tc-forma{background:rgba(10,10,12,.55);color:var(--oro-hi);border:1px solid rgba(232,180,74,.5)}
+.tc-rating{font-size:.78rem;font-weight:700;color:var(--sala);background:var(--hueso);border-radius:999px;padding:.3rem .8rem;white-space:nowrap}
+.tc-poster h3{position:relative;z-index:2;font-size:clamp(1.7rem,1.3rem + 2vw,2.4rem);line-height:1.08;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.4);margin-top:1.4rem}
+.tc-poster .tc-tag{position:relative;z-index:2;font-family:var(--sans);font-size:.85rem;color:rgba(255,255,255,.85);margin-top:.4rem}
+.tc-meta{color:var(--bruma);font-size:.87rem;padding:1rem clamp(1.2rem,4vw,1.9rem) 0}
+.tc-cuerpo{padding:1rem clamp(1.2rem,4vw,1.9rem) 0}
 .tc-cuerpo p{color:#DED8E2;font-size:.97rem;margin-bottom:.9rem}
-.porque{border-left:3px solid var(--telon-hi);padding:.2rem 0 .2rem 1rem;margin:1.2rem 0}
+.tc-cast{display:flex;flex-wrap:wrap;gap:.5rem;padding:0 clamp(1.2rem,4vw,1.9rem);margin-bottom:1rem}
+.tc-cast span{font-size:.8rem;color:var(--hueso);border:1px solid var(--linea);border-radius:999px;padding:.32rem .8rem;background:rgba(242,239,234,.04)}
+.tc-parecidos{padding:0 clamp(1.2rem,4vw,1.9rem);margin-bottom:1.1rem}
+.tc-parecidos .et{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bruma);display:block;margin-bottom:.5rem}
+.tc-parecidos .chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.tc-parecidos .chips span{font-size:.82rem;color:var(--oro-hi);border:1px dashed rgba(232,180,74,.45);border-radius:999px;padding:.3rem .8rem}
+.tc-links{display:flex;flex-wrap:wrap;gap:.6rem;padding:0 clamp(1.2rem,4vw,1.9rem);margin-bottom:1.2rem}
+.tc-links a{font-size:.85rem;font-weight:600;text-decoration:none;border-radius:999px;padding:.55rem 1.05rem;display:inline-flex;align-items:center;gap:.4rem;transition:all .22s ease}
+.tc-links a.trailer{background:var(--oro);color:var(--sala)}
+.tc-links a.trailer:hover{background:var(--oro-hi)}
+.tc-links a.imdb{border:1px solid var(--linea);color:var(--hueso)}
+.tc-links a.imdb:hover{border-color:var(--oro);color:var(--oro-hi)}
+.tc-larga{margin:0 clamp(1.2rem,4vw,1.9rem) 1.1rem;border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+.tc-larga summary{cursor:pointer;list-style:none;padding:.8rem 1.1rem;font-size:.86rem;font-weight:600;color:var(--oro-hi);display:flex;justify-content:space-between;align-items:center}
+.tc-larga summary::-webkit-details-marker{display:none}
+.tc-larga summary::after{content:"+";font-size:1.2rem;color:var(--bruma)}
+.tc-larga[open] summary::after{content:"−"}
+.tc-larga .larga-cuerpo{padding:0 1.1rem 1rem;color:var(--bruma);font-size:.92rem}
+.porque{border-left:3px solid var(--telon-hi);padding:.2rem 0 .2rem 1rem;margin:0 clamp(1.2rem,4vw,1.9rem) 1.2rem}
 .porque .et{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--oro);font-weight:700;display:block;margin-bottom:.4rem}
 .porque p{color:var(--bruma);font-size:.93rem;margin:0}
 .porque p + p{margin-top:.6rem}
-.franqueza{background:rgba(242,239,234,.045);border-radius:12px;padding:.85rem 1rem;margin-bottom:1.2rem;font-size:.89rem;color:var(--bruma)}
+.franqueza{background:rgba(242,239,234,.045);border-radius:12px;padding:.85rem 1rem;margin:0 clamp(1.2rem,4vw,1.9rem) 1.2rem;font-size:.89rem;color:var(--bruma)}
 .franqueza b{color:var(--hueso);font-weight:600}
 .tc-voto{border-top:1px solid var(--linea);padding:1.1rem clamp(1.2rem,4vw,1.9rem) 1.4rem;background:rgba(0,0,0,.25)}
 .tc-voto .pregunta{font-family:var(--serif);font-size:1.1rem;margin-bottom:.2rem}
@@ -127,9 +151,9 @@ footer em{font-family:var(--serif)}
   <div class="centro">
     <p class="kicker rev">Antes que nada</p>
     <h2 class="titulo rev d1">De dónde salieron estas tres</h2>
-    <p class="bajada rev d2">La entrevista salió el domingo y esto se armó el viernes. Así que estas tres no salieron de sus respuestas de cine: salieron de <b>doce días de datos sobre sus libros</b>, que es lo que tengo. Cada una está anclada en algo que ustedes efectivamente votaron.</p>
+    <p class="bajada rev d2">La entrevista se completó recién esta semana (Sofi el 27/07, Andy el 28/07) — así que estas tres se armaron con <b>doce días de datos sobre sus libros</b>, más lo primero que ya se sabe de cine de cada uno. Cada ficha está anclada en algo que ustedes efectivamente votaron o contestaron, con toda la data que pude verificar: reparto, dónde verla, tráiler oficial y ficha de IMDb.</p>
     <div class="aviso rev d2">
-      <p><b>La regla de la casa, aplicada acá:</b> la vara que pediste con las librerías del viaje —icónico o importante de verdad, mejor una buena que tres de relleno— vale igual para la pantalla. Por eso son tres y no diez. Y como con los libros ya me pasó de recomendarles cosas que ya habían leído, cada ficha tiene el botón <b>"ya la vimos"</b>: es el que más me sirve de todos.</p>
+      <p><b>La regla de la casa, aplicada acá:</b> la vara que pediste con las librerías del viaje —icónico o importante de verdad, mejor una buena que tres de relleno— vale igual para la pantalla. Por eso son tres y no diez. Y como con los libros ya me pasó de recomendarles cosas que ya habían visto, cada ficha tiene el botón <b>"ya la vimos"</b>: es el que más me sirve de todos.</p>
     </div>
   </div>
 </section>
@@ -156,21 +180,39 @@ footer em{font-family:var(--serif)}
     <h2 class="titulo rev d1">Para que se vuelva costumbre</h2>
 
     <article class="titulo-card destacada rev d1" id="card-omitb">
-      <div class="tc-top">
-        <span class="tc-forma">La serie de la semana</span>
-        <h3>Only Murders in the Building</h3>
-        <p class="tc-meta">Serie · desde 2021 · capítulos de 30 a 35 minutos · con Steve Martin, Martin Short y Selena Gomez</p>
-        <span class="tc-donde">Disney+ · catálogo latinoamericano</span>
-      </div>
-      <div class="tc-cuerpo">
-        <p>Tres vecinos de un edificio antiguo de Nueva York que no se conocen de nada, salvo por una obsesión compartida con los podcasts de crímenes reales. Cuando aparece un muerto en el edificio, deciden investigarlo ellos y grabar su propio podcast. No son detectives: son un actor en decadencia, un director de teatro fundido y una chica de treinta que no cuenta lo que hace.</p>
-        <div class="porque">
-          <span class="et">Por qué esta, para ustedes</span>
-          <p><b>Sofi:</b> le pusiste "lo quiero" a los <em>dos</em> tomos del Club del Crimen de los Jueves de Osman — es la única veta con dos aciertos plenos seguidos. Y cuando te pregunté qué frase te había hecho reír, elegiste la más irreverente de Joyce, no la tierna. Esto es exactamente eso, pero filmado: aficionados metiéndose donde no los llaman, y el humor seco viniendo de los personajes viejos.</p>
-          <p><b>Andy:</b> capítulos de media hora, trama que cierra, cero sermón. Es la que menos te pide y la que más fácil se vuelve costumbre de a dos.</p>
+      <div class="tc-poster">
+        <div class="tc-badges">
+          <span class="tc-forma">La serie de la semana</span>
+          <span class="tc-rating">⭐ 7.5–8.2 por temporada · IMDb</span>
         </div>
-        <div class="franqueza"><b>Para que lo sepan:</b> ya van varias temporadas, así que si enganchan hay cuerda para rato — pero cada temporada es un caso cerrado, no quedan colgados. La primera temporada fue el estreno de comedia más visto en la historia de Hulu y se llevó 17 nominaciones al Emmy.</div>
+        <h3>Only Murders in the Building</h3>
+        <p class="tc-tag">Comedia · misterio · desde 2021</p>
       </div>
+      <p class="tc-meta">Serie · capítulos de 30 a 35 minutos · Disney+ (catálogo latinoamericano)</p>
+      <div class="tc-cuerpo">
+        <p>Tres vecinos de un edificio antiguo de Nueva York, obsesionados con los podcasts de crímenes reales, se ponen a investigar un asesinato en el edificio y graban su propio podcast sobre el caso.</p>
+      </div>
+      <div class="tc-cast">
+        <span>🎭 Steve Martin</span><span>🎭 Martin Short</span><span>🎭 Selena Gomez</span>
+      </div>
+      <div class="tc-parecidos">
+        <span class="et">Se parece a</span>
+        <div class="chips"><span>Knives Out</span><span>Los casos de Poirot</span><span>El Club del Crimen de los Jueves (el libro)</span></div>
+      </div>
+      <details class="tc-larga">
+        <summary>Sinopsis larga, sin spoilers</summary>
+        <div class="larga-cuerpo">No son detectives: son un actor de comedias en decadencia, un director de teatro fundido y una chica de treinta que no cuenta bien qué hace con su vida. Cuando aparece un muerto en el edificio, deciden investigarlo ellos mismos antes de que llegue la policía a cerrar el caso, y documentan todo para su propio podcast. Ya van varias temporadas y cada una es un caso distinto que cierra solo — no hace falta arrastrar tramas de una a otra para disfrutarla.</div>
+      </details>
+      <div class="tc-links">
+        <a class="trailer" href="https://www.youtube.com/watch?v=JRgyBaTulbs" target="_blank" rel="noopener">▶ Tráiler oficial</a>
+        <a class="imdb" href="https://www.imdb.com/title/tt11691774/" target="_blank" rel="noopener">IMDb ↗</a>
+      </div>
+      <div class="porque">
+        <span class="et">Por qué esta, para ustedes</span>
+        <p><b>Sofi:</b> le pusiste "lo quiero" a los <em>dos</em> tomos del Club del Crimen de los Jueves de Osman — es la única veta con dos aciertos plenos seguidos. Y cuando te pregunté qué frase te había hecho reír, elegiste la más irreverente de Joyce, no la tierna. Esto es exactamente eso, pero filmado: aficionados metiéndose donde no los llaman, humor seco viniendo de los personajes mayores.</p>
+        <p><b>Andy:</b> capítulos de media hora, trama que cierra, cero sermón. Es la que menos pide y la que más fácil se vuelve costumbre de a dos.</p>
+      </div>
+      <div class="franqueza"><b>Para que lo sepan:</b> si enganchan hay cuerda para rato (varias temporadas), pero cada una es un caso cerrado. La primera temporada fue el estreno de comedia más visto en la historia de Hulu y se llevó 17 nominaciones al Emmy; los episodios individuales rondan 7.5–8.2 en IMDb.</div>
       <div class="tc-voto">
         <p class="pregunta">¿Qué hacemos con esta?</p>
         <div>
@@ -191,21 +233,39 @@ footer em{font-family:var(--serif)}
     <h2 class="titulo rev d1">Empieza y termina hoy</h2>
 
     <article class="titulo-card rev d1" id="card-arrival">
-      <div class="tc-top">
-        <span class="tc-forma">La película</span>
-        <h3>La llegada <span style="color:var(--bruma);font-size:.62em">(Arrival)</span></h3>
-        <p class="tc-meta">Película · 2016 · dirigida por Denis Villeneuve · menos de dos horas</p>
-        <span class="tc-donde">Para alquilar en Prime Video o Apple TV · rota por suscripción</span>
-      </div>
-      <div class="tc-cuerpo">
-        <p>Doce naves aparecen en distintos puntos del planeta y se quedan ahí, quietas, sin explicar nada. El ejército convoca a una lingüista para hacer lo único que nadie sabe hacer: aprender a hablar con ellos antes de que el miedo decida por todos. Es ciencia ficción, pero la película es en realidad sobre cómo el idioma que hablás te cambia la forma de pensar el tiempo.</p>
-        <div class="porque">
-          <span class="et">Por qué esta, para ustedes</span>
-          <p><b>Andy:</b> Rovelli es tu único "lo quiero" pleno en doce días, y Cosmos funcionó incluso siendo relectura. Astronomía moderna, corta y poética es tu combo probado. Esta es esa misma sensación, con actores.</p>
-          <p><b>Sofi:</b> escribiste que te gustan las historias con final que te haga llorar un poco, "que también hace bien". Esta pega ahí, y de una forma que no se ve venir hasta el final. Además está armada como un misterio: entendés lo que pasó recién cuando encajan las piezas.</p>
+      <div class="tc-poster">
+        <div class="tc-badges">
+          <span class="tc-forma">La película</span>
+          <span class="tc-rating">⭐ 7.9 · IMDb</span>
         </div>
-        <div class="franqueza"><b>Honestidad:</b> arranca lenta y en voz baja — los primeros veinte minutos piden paciencia. Si esta noche están reventados, no es esta. Está basada en un cuento de Ted Chiang de 1998 y tuvo ocho nominaciones al Oscar; ganó una, la de edición de sonido.</div>
+        <h3>La llegada <span style="opacity:.7;font-size:.7em">(Arrival)</span></h3>
+        <p class="tc-tag">Ciencia ficción · drama · 2016 · Denis Villeneuve</p>
       </div>
+      <p class="tc-meta">Película · menos de dos horas · para alquilar en Prime Video o Apple TV (rota por suscripción)</p>
+      <div class="tc-cuerpo">
+        <p>Doce naves aparecen en distintos puntos del planeta y se quedan quietas, sin explicar nada. Una lingüista es convocada para aprender a hablar con ellos antes de que el miedo decida por todos.</p>
+      </div>
+      <div class="tc-cast">
+        <span>🎭 Amy Adams</span><span>🎭 Jeremy Renner</span><span>🎭 Forest Whitaker</span><span>🎭 Michael Stuhlbarg</span>
+      </div>
+      <div class="tc-parecidos">
+        <span class="et">Se parece a</span>
+        <div class="chips"><span>Interstellar</span><span>Contact</span><span>Cosmos (el libro de Andy)</span></div>
+      </div>
+      <details class="tc-larga">
+        <summary>Sinopsis larga, sin spoilers</summary>
+        <div class="larga-cuerpo">Es ciencia ficción de primer contacto, pero la película en el fondo habla de cómo el idioma que hablás cambia la forma en que pensás el tiempo. Basada en un cuento de Ted Chiang de 1998 ("La historia de tu vida"). Tuvo ocho nominaciones al Oscar y ganó la de mejor edición de sonido.</div>
+      </details>
+      <div class="tc-links">
+        <a class="trailer" href="https://www.youtube.com/watch?v=tFMo3UJ4B4g" target="_blank" rel="noopener">▶ Tráiler oficial</a>
+        <a class="imdb" href="https://www.imdb.com/title/tt2543164/" target="_blank" rel="noopener">IMDb ↗</a>
+      </div>
+      <div class="porque">
+        <span class="et">Por qué esta, para ustedes</span>
+        <p><b>Andy:</b> Rovelli es tu único "lo quiero" pleno en doce días, y Cosmos funcionó incluso siendo relectura. Astronomía moderna, corta y poética es tu combo probado. Esta es esa misma sensación, con actores.</p>
+        <p><b>Sofi:</b> escribiste que te gustan las historias con final que te haga llorar un poco, "que también hace bien". Esta pega ahí, de una forma que no se ve venir. Además está armada como un misterio: entendés lo que pasó recién cuando encajan las piezas.</p>
+      </div>
+      <div class="franqueza"><b>Honestidad:</b> arranca lenta y en voz baja — los primeros veinte minutos piden paciencia. Si esta noche están reventados, no es esta.</div>
       <div class="tc-voto">
         <p class="pregunta">¿Qué hacemos con esta?</p>
         <div>
@@ -226,21 +286,39 @@ footer em{font-family:var(--serif)}
     <h2 class="titulo rev d1">Si quieren algo que los ocupe</h2>
 
     <article class="titulo-card rev d1" id="card-severance">
-      <div class="tc-top">
-        <span class="tc-forma">La apuesta grande</span>
-        <h3>Separación <span style="color:var(--bruma);font-size:.62em">(Severance)</span></h3>
-        <p class="tc-meta">Serie · 2022 y 2025 · dos temporadas, 19 capítulos · unos 45 minutos cada uno</p>
-        <span class="tc-donde">Apple TV+</span>
-      </div>
-      <div class="tc-cuerpo">
-        <p>Una empresa ofrece un procedimiento para separar quirúrgicamente los recuerdos del trabajo de los de la vida personal. El que entra a la oficina no sabe nada de su vida afuera; el que sale no sabe nada de lo que hizo adentro. Son, en los hechos, dos personas en un mismo cuerpo. La serie empieza cuando uno de los de adentro empieza a sospechar.</p>
-        <div class="porque">
-          <span class="et">Por qué esta, para ustedes</span>
-          <p><b>Sofi:</b> es un misterio con reglas — de los que se pueden ir deduciendo, como el Dicker que te voló la cabeza. Y tiene el humor seco de oficina que va en la misma línea de lo que te hace gracia.</p>
-          <p><b>Andy:</b> abajo del misterio hay una sola pregunta filosófica sostenida durante veinte horas: si perdés la memoria de lo que hacés, ¿seguís siendo vos? Es Frankl y el sentido, pero envuelto en trama, que es como a vos te entra.</p>
+      <div class="tc-poster">
+        <div class="tc-badges">
+          <span class="tc-forma">La apuesta grande</span>
+          <span class="tc-rating">⭐ 8.6 · IMDb</span>
         </div>
-        <div class="franqueza"><b>La letra chica, y es importante:</b> la tercera temporada está confirmada desde marzo de 2025, pero todavía sin fecha — la prensa especializada la ubica recién por 2027. O sea: si arrancan y les gusta, van a quedar esperando un buen rato. Si eso les arruina la experiencia, dejen esta para más adelante y quédense con las otras dos.</div>
+        <h3>Separación <span style="opacity:.7;font-size:.7em">(Severance)</span></h3>
+        <p class="tc-tag">Thriller psicológico · sci-fi · 2022–2025</p>
       </div>
+      <p class="tc-meta">Serie · dos temporadas, 19 capítulos · ~45 minutos cada uno · Apple TV+</p>
+      <div class="tc-cuerpo">
+        <p>Una empresa ofrece separar quirúrgicamente los recuerdos del trabajo de los de la vida personal. El que entra a la oficina no sabe nada de su vida afuera; el que sale no sabe nada de lo que hizo adentro.</p>
+      </div>
+      <div class="tc-cast">
+        <span>🎭 Adam Scott</span><span>🎭 Britt Lower</span><span>🎭 John Turturro</span><span>🎭 Patricia Arquette</span><span>🎭 Tramell Tillman</span>
+      </div>
+      <div class="tc-parecidos">
+        <span class="et">Se parece a</span>
+        <div class="chips"><span>Black Mirror</span><span>El Prisionero</span><span>Dicker (el misterio con reglas de Sofi)</span></div>
+      </div>
+      <details class="tc-larga">
+        <summary>Sinopsis larga, sin spoilers</summary>
+        <div class="larga-cuerpo">Son, en los hechos, dos personas en un mismo cuerpo. La serie empieza cuando uno de los "de adentro" empieza a sospechar que algo no cierra. Dirigida por Ben Stiller, creada por Dan Erickson — un thriller de oficina con una premisa que se explica sola en cinco minutos y una temporada 2 que profundiza todavía más.</div>
+      </details>
+      <div class="tc-links">
+        <a class="trailer" href="https://www.youtube.com/watch?v=xEQP4VVuyrY" target="_blank" rel="noopener">▶ Tráiler oficial</a>
+        <a class="imdb" href="https://www.imdb.com/title/tt11280740/" target="_blank" rel="noopener">IMDb ↗</a>
+      </div>
+      <div class="porque">
+        <span class="et">Por qué esta, para ustedes</span>
+        <p><b>Sofi:</b> es un misterio con reglas — de los que se pueden ir deduciendo, como el Dicker que te voló la cabeza. Y tiene el humor seco de oficina que va en la misma línea de lo que te hace gracia.</p>
+        <p><b>Andy:</b> abajo del misterio hay una sola pregunta filosófica sostenida durante veinte horas: si perdés la memoria de lo que hacés, ¿seguís siendo vos? Es Frankl y el sentido, pero envuelto en trama, que es como a vos te entra.</p>
+      </div>
+      <div class="franqueza"><b>La letra chica, y es importante:</b> la tercera temporada está confirmada desde marzo de 2025, pero todavía sin fecha — la prensa especializada la ubica recién por 2027. Si eso les arruina la experiencia, dejen esta para más adelante y quédense con las otras dos.</div>
       <div class="tc-voto">
         <p class="pregunta">¿Qué hacemos con esta?</p>
         <div>
@@ -309,7 +387,7 @@ footer em{font-family:var(--serif)}
 </section>
 </main>
 
-<footer><em>Bibliotequeando</em> · La Sala · función Nº 1 · 31 de julio de 2026.<br>Datos de estreno, plataformas y premios verificados a julio de 2026. Lo que no pude confirmar, va dicho como tal.</footer>
+<footer><em>Bibliotequeando</em> · La Sala · función Nº 1 · 31 de julio de 2026 · reconstruida el 29/07 con más data (reparto, similares, tráiler, IMDb) a pedido de Andy.<br>Reparto, ratings, tráilers e IMDb verificados a julio de 2026. Lo que no pude confirmar, va dicho como tal.</footer>
 
 <script>
 (function(){
