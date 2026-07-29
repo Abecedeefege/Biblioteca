@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Biblioteca — five book spines fanned on a shelf.
+       Flat 2D, no outlines, no gradients, transparent background.
+       Warm tonal ramp: gold / terracotta / dark / red / ochre.
+       Source of truth for every icon-*.png in this directory. -->
+  <g transform="translate(0 -8)">
+    <path d="M54 418 V232 a14 14 0 0 1 14 -14 h34 a14 14 0 0 1 14 14 V418 Z" fill="#E0AC4E" transform="rotate(-9 85 418)"/>
+    <path d="M124 418 V150 a14 14 0 0 1 14 -14 h50 a14 14 0 0 1 14 14 V418 Z" fill="#B23B30" transform="rotate(-3.5 163 418)"/>
+    <path d="M210 418 V88 a14 14 0 0 1 14 -14 h64 a14 14 0 0 1 14 14 V418 Z" fill="#3A2216"/>
+    <path d="M310 418 V164 a14 14 0 0 1 14 -14 h50 a14 14 0 0 1 14 14 V418 Z" fill="#7E2024" transform="rotate(3.5 349 418)"/>
+    <path d="M396 418 V220 a14 14 0 0 1 14 -14 h34 a14 14 0 0 1 14 14 V418 Z" fill="#C07A2E" transform="rotate(9 427 418)"/>
+    <rect x="40" y="418" width="432" height="30" rx="15" fill="#3A2216"/>
+  </g>
+</svg>
