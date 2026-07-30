@@ -11,10 +11,10 @@
           "auth": "vSPVnhNQA46Dys_VCxFu8g"
         }
       },
-      "status": "active",
+      "status": "invalid",
       "updated_at": "2026-07-15T21:29:10.978Z",
-      "invalidated_at": null,
-      "invalid_reason": null
+      "invalidated_at": "2026-07-30T20:41:36.265Z",
+      "invalid_reason": "HTTP 410"
     },
     {
       "device": "Sofi",
