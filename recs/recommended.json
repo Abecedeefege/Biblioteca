@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-29T16:45:00-03:00",
-  "_feedback_cutoff": "2026-07-28T23:52:19.209Z",
+  "_updated_at": "2026-07-30T16:20:00-03:00",
+  "_feedback_cutoff": "2026-07-29T21:34:04.563Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -724,8 +724,8 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 14
       },
       "learning": null
     },
@@ -746,6 +746,56 @@
       "page": "recs/2026-07-29-gibran-profeta.html",
       "notified_by": "2026-07-29-rec-andy",
       "why": "Redescub de su estante L4 tras la racha ganadora de Bach (Ilusiones + Jonathan Livingston Seagull, ambos con dwell alto y compromiso fisico). El Profeta es el otro clasico universal de fabula corta que nunca abrio segun su historial. Regimen del dia: a Andy le toca redescub hoy (alternancia, ver PROFILE). Verificado titulo+autor contra recommended.json: sin match previo. Citas verificadas contra Poetry Foundation (dominio publico).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-30-osman-ultimo-en-morir",
+      "date": "2026-07-30",
+      "kind": "nuevo",
+      "title": "El último en morir",
+      "author": "Richard Osman",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy",
+        "emocional"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-07-30-osman-ultimo-en-morir.html",
+      "notified_by": "2026-07-30-rec-sofi",
+      "why": "Tomo 4 de El Club del Crimen de los Jueves, siguiente en la saga que va 2/2 lo_quiero para Sofi. DESVIO DELIBERADO del regimen nuevo+redescub del dia: por la Guardia Maxima del PROFILE (4 de 5 redescub reales de Sofi dieron ya_lo_lei, incluido Benavent el 28/07), hoy se le da NUEVO en vez de redescub -- decision ya anotada el 29/07 en 'Que mirar manana'. Ademas, la critica (Library Journal) lo describe como el libro mas emotivo de la saga, con duelo y amor de fondo -- conecta directo con su rec-nota del 24/07 pidiendo tambien romance/emocion con permiso de llorar un poco. Incluye micro-pregunta directa sobre que estante (R4/R5, M5, M6) le falta leer, para no seguir armando redescub a ciegas. Verificado titulo+autor contra catalogo completo y recommended.json: sin match. Citas verificadas contra la pagina oficial de Goodreads del libro (ingles, traduccion propia declarada como tal).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-30-eagleman-incognito",
+      "date": "2026-07-30",
+      "kind": "nuevo",
+      "title": "Incógnito: Las vidas secretas del cerebro",
+      "author": "David Eagleman",
+      "language": "es",
+      "topics": [
+        "neurociencia",
+        "mente",
+        "divulgacion-cientifica"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-07-30-eagleman-incognito.html",
+      "notified_by": "2026-07-30-rec-andy",
+      "why": "Primera recomendacion de neurociencia para Andy, veta declarada desde el 15/07 pero nunca tocada. Sigue la formula ganadora de Rovelli (dwell 182s, lo_quiero): capitulos cortos, casos concretos, tono de asombro sin sermon. El propio capitulo 1 abre con una analogia astronomica (Galileo), puente natural desde su racha de astronomia. Alternancia del dia: a Andy le tocaba nuevo (ver PROFILE 29/07). Verificado titulo+autor contra catalogo completo y recommended.json: sin match. Citas verificadas directamente contra el extracto oficial en espanol de Anagrama (elboomeran.com), no traduccion propia. Se agrego una micro-pregunta de 'primera impresion' cerca del hero para probar la hipotesis del PROFILE (dwell sin voto en Hawking y Tyson -> CTA mas arriba).",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
