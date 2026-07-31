@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mesa de Fichado — El Fichero</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#241811">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap"></noscript>
+<script>
+if ('serviceWorker' in navigator) {
+  addEventListener('load', function () { navigator.serviceWorker.register('../sw.js').catch(function(){}); });
+}
+</script>
+<style>
+  :root{
+    --room:#241811; --wood:#5a3d27; --wood-d:#3c2818; --brass:#c9a227; --brass2:#e6c86a;
+    --card:#f4ead0; --card2:#efe2c2; --ink:#33291f; --ink-soft:#5c4f3e; --red:#b3372e; --blue:#2b4a8a; --green:#2e6b45;
+    --type:'Special Elite','Courier New',monospace; --sans:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--room);color:var(--card);font-family:var(--type);font-size:15px;line-height:1.6;
+    background-image:radial-gradient(1000px 500px at 50% -100px, rgba(201,162,39,.07), transparent),
+      repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 2px, transparent 2px 90px)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font-family:inherit;cursor:pointer}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+
+  .back{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:2px;
+    text-transform:uppercase;color:#c9b48e;padding:14px 18px 0}
+  .back:hover{color:var(--brass2)}
+
+  /* ---------- header sticky: placa + progreso ---------- */
+  header.mesa{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#241811 82%,rgba(36,24,17,0));
+    padding:6px 0 14px}
+  .plaque-row{display:flex;justify-content:center;padding:6px 0 4px}
+  .plaque{background:linear-gradient(180deg,#e8ca74,#b8912e 55%,#d9b856);color:#3a2a08;border-radius:8px;
+    padding:8px 22px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.55);
+    border:1px solid #8a6b1d}
+  .plaque h1{font-family:var(--type);font-size:clamp(16px,4vw,22px);font-weight:400;letter-spacing:3px;text-transform:uppercase}
+  .plaque .s{font-family:var(--sans);font-size:8px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;opacity:.75}
+  .progress{max-width:34rem;margin:6px auto 0;padding:0 18px;text-align:center}
+  .progress .n{font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--brass2)}
+  .rail{height:7px;border-radius:4px;background:rgba(0,0,0,.45);margin-top:6px;overflow:hidden;
+    box-shadow:inset 0 1px 3px rgba(0,0,0,.6)}
+  .rail i{display:block;height:100%;width:0%;border-radius:4px;background:linear-gradient(90deg,#b8912e,#e6c86a);
+    transition:width .5s ease}
+
+  /* ---------- stories de estantes ---------- */
+  .stories{display:flex;gap:12px;overflow-x:auto;padding:10px 18px 6px;scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .stories::-webkit-scrollbar{display:none}
+  .story{flex:0 0 auto;width:64px;text-align:center;scroll-snap-align:start;background:none;border:0;color:inherit}
+  .story .ring{width:58px;height:58px;margin:0 auto;border-radius:50%;padding:3px;
+    background:conic-gradient(var(--brass2),#8a6b1d,var(--brass2));position:relative}
+  .story.falta .ring{background:conic-gradient(var(--red),#e6c86a,var(--red))}
+  .story .ring i{display:block;width:100%;height:100%;border-radius:50%;border:2px solid var(--room);
+    background-color:var(--wood-d);background-size:cover;background-position:center}
+  .story b{display:block;font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:1px;margin-top:4px;color:#c9b48e}
+  .story.on .ring{outline:2px solid var(--brass2);outline-offset:2px}
+  .story.on b{color:var(--brass2)}
+
+  /* ---------- chips de filtro ---------- */
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 2px;max-width:40rem;margin:0 auto;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .stampbtn{flex:0 0 auto;background:none;border:2px solid rgba(201,162,39,.5);color:#c9b48e;border-radius:6px;
+    padding:6px 12px;font-family:var(--sans);font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}
+  .stampbtn:hover{border-color:var(--brass2);color:var(--brass2)}
+  .stampbtn.on{background:rgba(201,162,39,.18);border-color:var(--brass2);color:var(--brass2)}
+
+  /* ---------- feed ---------- */
+  main{max-width:34rem;margin:0 auto;padding:10px 14px 80px}
+  .post{background:var(--card);color:var(--ink);border-radius:4px;position:relative;margin:0 0 26px;
+    box-shadow:0 8px 22px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.12);
+    background-image:repeating-linear-gradient(0deg,transparent 0 27px, rgba(43,74,138,.16) 27px 28px);
+    animation:fd .3s ease}
+  @keyframes fd{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .post .head{display:flex;align-items:center;gap:6px 10px;flex-wrap:wrap;padding:10px 14px 8px;border-bottom:2px solid rgba(179,55,46,.5)}
+  .post .cn{font-size:13px;color:var(--red);letter-spacing:1px}
+  .post .sh{font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-soft)}
+  .post .mk{margin-left:auto;font-family:var(--sans);font-size:8.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+    border:2px solid currentColor;border-radius:4px;padding:2px 7px;transform:rotate(3deg);white-space:nowrap}
+  .mk.unknown{color:var(--red)} .mk.low{color:var(--red)} .mk.medium{color:var(--blue)} .mk.sinfoto{color:var(--ink-soft)}
+  .mk.hecho{color:var(--green)}
+
+  .media{position:relative;aspect-ratio:4/5;background:var(--wood-d);overflow:hidden;cursor:pointer;
+    touch-action:manipulation;-webkit-user-select:none;user-select:none}
+  .media .rail-f{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .media .rail-f::-webkit-scrollbar{display:none}
+  .media .rail-f img{flex:0 0 100%;height:100%;object-fit:cover;scroll-snap-align:center}
+  .media .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:18px;color:var(--card)}
+  .media .ph::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;
+    filter:blur(7px) brightness(.42);transform:scale(1.15);background-image:var(--strip)}
+  .media .ph>*{position:relative}
+  .media .ph .bigid{font-size:clamp(30px,9vw,44px);letter-spacing:3px;color:var(--brass2);text-shadow:0 2px 8px rgba(0,0,0,.7)}
+  .media .ph .bind{font-size:12.5px;max-width:26rem;opacity:.92;text-shadow:0 1px 4px rgba(0,0,0,.8);line-height:1.5}
+  .media .ph .hint{font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+    opacity:.75;margin-top:10px}
+  .media .ndot{position:absolute;right:10px;top:10px;font-family:var(--sans);font-size:9px;font-weight:800;
+    background:rgba(0,0,0,.55);color:#fff;border-radius:10px;padding:2px 8px}
+  .stamp-done{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-14deg);
+    font-family:var(--sans);font-weight:800;letter-spacing:4px;text-transform:uppercase;font-size:26px;
+    color:var(--green);border:4px solid currentColor;border-radius:8px;padding:8px 20px;opacity:.9;
+    pointer-events:none;mix-blend-mode:normal;text-shadow:0 1px 0 rgba(255,255,255,.2);
+    animation:stampin .28s cubic-bezier(.2,2.2,.4,1);background:rgba(244,234,208,.14);backdrop-filter:blur(1px)}
+  @keyframes stampin{0%{transform:translate(-50%,-50%) scale(2.4) rotate(-14deg);opacity:0}
+    100%{transform:translate(-50%,-50%) scale(1) rotate(-14deg);opacity:.9}}
+
+  .acts{display:flex;gap:6px;padding:10px 12px 4px;flex-wrap:wrap}
+  .acts button{background:none;border:2px solid rgba(92,79,62,.45);color:var(--ink);border-radius:6px;
+    padding:7px 11px;font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+    display:flex;align-items:center;gap:6px}
+  .acts button:hover{border-color:var(--ink)}
+  .acts button.hecho-on{border-color:var(--green);color:var(--green);background:rgba(46,107,69,.08)}
+  .acts .sync{margin-left:auto;align-self:center;font-family:var(--sans);font-size:8.5px;font-weight:800;
+    letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft)}
+  .acts .sync.q{color:var(--red)}
+
+  .cap{padding:6px 14px 16px}
+  .cap h3{font-weight:400;font-size:17.5px;letter-spacing:.4px;text-transform:uppercase;line-height:1.35}
+  .cap h3.sint{color:var(--red)}
+  .cap .au{font-size:13px;color:var(--ink-soft)}
+  .cap .catnote{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin-top:6px;line-height:1.5}
+  .cap .aviso{font-family:var(--sans);font-size:10px;font-weight:600;background:rgba(179,55,46,.1);
+    border-left:3px solid var(--red);padding:6px 9px;margin-top:8px;line-height:1.5}
+  .notas{margin-top:8px}
+  .nota{font-size:13px;line-height:1.5;padding:4px 0;border-top:1px dashed rgba(92,79,62,.35)}
+  .nota b{font-family:var(--sans);font-size:8.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-soft);margin-right:6px}
+  .composer{display:none;margin-top:10px;background:#f7edb0;color:#4a4022;padding:12px;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);transform:rotate(-.8deg)}
+  .composer.open{display:block}
+  .composer textarea{width:100%;min-height:64px;border:0;background:transparent;font-family:var(--type);
+    font-size:14px;color:#4a4022;resize:vertical;outline:none;line-height:1.5}
+  .composer .row{display:flex;justify-content:flex-end;gap:8px;margin-top:6px}
+  .composer button{background:none;border:2px solid #8a6b1d;color:#6b5312;border-radius:5px;padding:5px 12px;
+    font-family:var(--sans);font-size:9.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+
+  #vacio{display:none;text-align:center;color:#c9b48e;padding:60px 20px}
+  #vacio h2{font-size:20px;letter-spacing:2px;text-transform:uppercase;color:var(--brass2);margin-bottom:6px}
+  #cargando{text-align:center;color:#c9b48e;padding:80px 20px}
+  #sentinel{height:2px}
+
+  footer{max-width:34rem;margin:0 auto;padding:10px 18px 90px;text-align:center;color:#8f7c5d;font-size:12px}
+  footer a{text-decoration:underline}
+  .setupwarn{font-family:var(--sans);font-size:10.5px;font-weight:600;background:rgba(201,162,39,.12);
+    border:1px solid rgba(201,162,39,.4);border-radius:6px;color:#e6c86a;padding:9px 12px;margin:0 0 14px;line-height:1.6}
+</style>
+</head>
+<body>
+<a class="back" href="fichero.html">← El Fichero</a>
+
+<header class="mesa">
+  <div class="plaque-row"><div class="plaque">
+    <div class="s">El Fichero · sección técnica</div>
+    <h1>Mesa de Fichado</h1>
+  </div></div>
+  <div class="progress">
+    <div class="n" id="prog-n">Abriendo el fichero…</div>
+    <div class="rail"><i id="prog-bar"></i></div>
+  </div>
+  <div class="stories" id="stories"></div>
+  <div class="chips" id="chips"></div>
+</header>
+
+<main>
+  <div id="cargando"><h2>Ordenando la mesa…</h2><p>Buscando fichas pendientes.</p></div>
+  <div id="vacio"><h2>Mesa limpia</h2><p>No queda ninguna ficha en este filtro.</p></div>
+  <div id="feed"></div>
+  <div id="sentinel"></div>
+</main>
+
+<footer>
+  <div class="setupwarn" id="setupwarn" style="display:none">
+    Este dispositivo guarda por el canal público (anónimo). Para que las fotos entren
+    directo al archivo con tu nombre, <a href="../engage/setup.html">configurá el guardado acá</a>.
+  </div>
+  <b>Mesa de Fichado</b> — cada ficha es un libro que espera su foto o su nombre.<br>
+  Sacale una foto a la cara del libro, escribile el título o marcala como hecha:
+  el archivista pasa a buscar todo esto y actualiza el catálogo.<br><br>
+  <a href="fichero.html">← volver al fichero</a>
+</footer>
+
+<input type="file" accept="image/*" capture="environment" id="in-cam" hidden>
+<input type="file" accept="image/*" multiple id="in-gal" hidden>
+
+<script src="labeling.js"></script>
+<script>
+'use strict';
+(function () {
+  var L = window.Labeling;
+  var esc = function (s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;'); };
+
+  var FEED = [], FILTRO = 'pendientes', SHELF = null;
+  var PAGE = 24, cursor = 0, io = null;
+  var feedEl = document.getElementById('feed');
+  var CARDS = {};                    // id -> element
+
+  /* ---------- clasificación ---------- */
+  function catOf(b) {
+    if (b.confidence === 'unknown') return 'unknown';
+    if (b.confidence === 'low') return 'low';
+    if (b.confidence === 'medium') return 'medium';
+    return 'sinfoto';
+  }
+  var MK_TXT = { unknown: 'Sin identificar', low: 'Dudoso', medium: 'A verificar', sinfoto: 'Sin foto' };
+
+  function pasaFiltro(b) {
+    if (SHELF && b._shelf !== SHELF) return false;
+    var st = L.estado(b.id), c = catOf(b);
+    switch (FILTRO) {
+      case 'pendientes': return st !== 'hecho';
+      case 'sinid': return c === 'unknown' || c === 'low';
+      case 'verificar': return c === 'medium';
+      case 'sinfoto': return L.fotosDe(b.id).length === 0 && st !== 'hecho';
+      case 'hechas': return st === 'hecho';
+      default: return true;
+    }
+  }
+  function visibles() { return FEED.filter(pasaFiltro); }
+
+  /* ---------- header: progreso + stories + chips ---------- */
+  function counts() {
+    var hechas = 0;
+    FEED.forEach(function (b) { if (L.estado(b.id) === 'hecho') hechas++; });
+    return { hechas: hechas, total: FEED.length };
+  }
+  function renderProgress() {
+    var c = counts();
+    document.getElementById('prog-n').textContent = c.hechas + ' de ' + c.total + ' fichadas';
+    document.getElementById('prog-bar').style.width = (c.total ? Math.round(100 * c.hechas / c.total) : 0) + '%';
+  }
+  function stripCSS() {
+    var ph = L.photos(), css = '';
+    L.shelves().forEach(function (s) {
+      if (ph['shelf_' + s.id])
+        css += '.st-' + s.id + '{background-image:url(data:image/jpeg;base64,' + ph['shelf_' + s.id] + ')}\n'
+             + '.ph-' + s.id + '{--strip:url(data:image/jpeg;base64,' + ph['shelf_' + s.id] + ')}\n';
+    });
+    var st = document.createElement('style');
+    st.textContent = css;
+    document.head.appendChild(st);
+  }
+  function renderStories() {
+    var host = document.getElementById('stories'), html = '';
+    L.shelves().forEach(function (s) {
+      if (!s.books.length) return;
+      var faltan = s.books.some(function (b) { return L.estado(b.id) !== 'hecho'; });
+      html += '<button class="story' + (faltan ? ' falta' : '') + (SHELF === s.id ? ' on' : '')
+        + '" data-sh="' + esc(s.id) + '" aria-label="Estante ' + esc(s.id) + '">'
+        + '<span class="ring"><i class="st-' + esc(s.id) + '"></i></span><b>' + esc(s.id) + '</b></button>';
+    });
+    host.innerHTML = html;
+  }
+  var CHIPS = [
+    ['pendientes', 'Pendientes'], ['sinid', 'Sin identificar'], ['verificar', 'A verificar'],
+    ['sinfoto', 'Sin foto'], ['hechas', 'Hechas'], ['todas', 'Todas'],
+  ];
+  function renderChips() {
+    document.getElementById('chips').innerHTML = CHIPS.map(function (c) {
+      return '<button class="stampbtn' + (FILTRO === c[0] ? ' on' : '') + '" data-f="' + c[0] + '">' + c[1] + '</button>';
+    }).join('');
+  }
+
+  /* ---------- tarjeta ---------- */
+  function mediaHTML(b) {
+    var fotos = L.fotosDe(b.id), st = L.estado(b.id), inner;
+    if (fotos.length) {
+      inner = '<div class="rail-f">' + fotos.map(function (f) {
+        var src = L.fotoSrc(f);
+        return src ? '<img alt="Foto de ' + esc(b.id) + '" loading="lazy" src="' + esc(src) + '">' : '';
+      }).join('') + '</div>'
+      + (fotos.length > 1 ? '<span class="ndot">' + fotos.length + ' fotos</span>' : '');
+    } else {
+      inner = '<div class="ph ph-' + esc(b._shelf) + '">'
+        + '<div class="bigid">' + esc(b.id) + '</div>'
+        + (b.binding ? '<div class="bind">«' + esc(b.binding) + '»</div>' : '')
+        + '<div class="hint">📷 Tocá dos veces al terminar · sacale una foto a la cara</div>'
+        + '</div>';
+    }
+    return inner + (st === 'hecho' ? '<span class="stamp-done">Fichado</span>' : '');
+  }
+  function cardHTML(b) {
+    var st = L.estado(b.id), c = catOf(b), notas = L.notasDe(b.id), pend = L.pendientesDe(b.id);
+    var sinT = /^UNK-/.test(b.title);
+    var mk = st === 'hecho' ? '<span class="mk hecho">Fichado</span>'
+      : '<span class="mk ' + c + '">' + MK_TXT[c] + '</span>';
+    return '<article class="post" data-id="' + esc(b.id) + '">'
+      + '<div class="head"><span class="cn">' + esc(b.id) + '</span>'
+      + '<span class="sh">' + shHTML(b) + '</span>' + mk + '</div>'
+      + '<div class="media" data-act="media">' + mediaHTML(b) + '</div>'
+      + '<div class="acts">'
+      + '<button data-act="cam">📷 Sacar</button>'
+      + '<button data-act="gal">🖼️ Subir</button>'
+      + '<button data-act="nota">✍️ Nota</button>'
+      + '<button data-act="hecho" class="' + (st === 'hecho' ? 'hecho-on' : '') + '">✓ ' + (st === 'hecho' ? 'Hecha' : 'Hecho') + '</button>'
+      + '<span class="sync' + (pend ? ' q' : '') + '">' + (pend ? '⏳ en cola' : '') + '</span>'
+      + '</div>'
+      + '<div class="cap">'
+      + (sinT
+          ? '<h3 class="sint">Sin título — ayudame a identificarlo</h3>'
+          : '<h3>' + esc(b.title) + '</h3>')
+      + (b.author ? '<div class="au">' + esc(b.author) + '</div>'
+                  : (sinT ? '' : '<div class="au">— sin identificar —</div>'))
+      + (b.note ? '<div class="catnote">Ficha del catálogo: ' + esc(b.note) + '</div>' : '')
+      + (b.id === 'M8-002' ? '<div class="aviso">Esta ficha representa ~15-20 libros antiguos sin identificar en su estante: sacale fotos a todos los lomos que puedas, de a grupos.</div>' : '')
+      + '<div class="notas">' + notas.map(function (n) {
+          return '<div class="nota"><b>' + esc(n.device || '') + '</b>' + esc(n.texto) + '</div>';
+        }).join('') + '</div>'
+      + '<div class="composer" data-role="composer">'
+      + '<textarea placeholder="¿Qué libro es? ¿Algo que el archivista deba saber?" maxlength="1200"></textarea>'
+      + '<div class="row"><button data-act="enviar-nota">Clavar la nota</button></div>'
+      + '</div>'
+      + '</div></article>';
+  }
+  function shHTML(b) { return 'Estante ' + esc(b._shelf) + ' · pos. ' + (b._idx + 1) + ' de ' + b._n; }
+
+  function renderCard(b) {
+    var el = CARDS[b.id];
+    if (!el) return;
+    var wrap = document.createElement('div');
+    wrap.innerHTML = cardHTML(b);
+    var nu = wrap.firstChild;
+    el.replaceWith(nu);
+    CARDS[b.id] = nu;
+  }
+
+  /* ---------- feed batched ---------- */
+  function renderBatch() {
+    var vis = visibles(), slice = vis.slice(cursor, cursor + PAGE);
+    if (!slice.length) return;
+    var tmp = document.createElement('div');
+    tmp.innerHTML = slice.map(cardHTML).join('');
+    while (tmp.firstChild) {
+      CARDS[tmp.firstChild.getAttribute('data-id')] = tmp.firstChild;
+      feedEl.appendChild(tmp.firstChild);
+    }
+    cursor += slice.length;
+  }
+  function resetFeed() {
+    feedEl.innerHTML = ''; CARDS = {}; cursor = 0;
+    var vis = visibles();
+    document.getElementById('vacio').style.display = vis.length ? 'none' : 'block';
+    renderBatch();
+  }
+
+  /* ---------- acciones ---------- */
+  var bookForInput = null;
+  function pickBook(el) {
+    var art = el.closest('.post');
+    return art && art.getAttribute('data-id');
+  }
+  document.getElementById('in-cam').addEventListener('change', onFiles);
+  document.getElementById('in-gal').addEventListener('change', onFiles);
+  function onFiles(e) {
+    var id = bookForInput, files = Array.prototype.slice.call(e.target.files || []);
+    e.target.value = '';
+    if (!id || !files.length) return;
+    var chain = Promise.resolve();
+    files.slice(0, 6).forEach(function (f) {
+      chain = chain.then(function () { return L.addFoto(id, f); }).catch(function () {});
+    });
+    chain.then(function () { var b = L.byId(id); if (b) renderCard(b); });
+  }
+
+  var lastTap = {};
+  feedEl.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-act]');
+    if (!t) return;
+    var id = pickBook(t); if (!id) return;
+    var b = L.byId(id), act = t.getAttribute('data-act');
+    if (act === 'cam') { bookForInput = id; document.getElementById('in-cam').click(); }
+    else if (act === 'gal') { bookForInput = id; document.getElementById('in-gal').click(); }
+    else if (act === 'nota') {
+      var comp = CARDS[id].querySelector('[data-role="composer"]');
+      comp.classList.toggle('open');
+      if (comp.classList.contains('open')) comp.querySelector('textarea').focus();
+    }
+    else if (act === 'enviar-nota') {
+      var ta = CARDS[id].querySelector('[data-role="composer"] textarea');
+      if (L.addNota(id, ta.value)) { ta.value = ''; renderCard(b); renderProgress(); }
+    }
+    else if (act === 'hecho') { toggleHecho(id); }
+    else if (act === 'media') {
+      var now = Date.now();
+      if (lastTap[id] && now - lastTap[id] < 320) { lastTap[id] = 0; toggleHecho(id); }
+      else lastTap[id] = now;
+    }
+  });
+  function toggleHecho(id) {
+    var st = L.estado(id) === 'hecho' ? 'pendiente' : 'hecho';
+    L.setEstado(id, st);
+    renderCard(L.byId(id));
+    renderProgress(); renderStories();
+  }
+
+  document.getElementById('stories').addEventListener('click', function (e) {
+    var t = e.target.closest('.story'); if (!t) return;
+    var sh = t.getAttribute('data-sh');
+    SHELF = (SHELF === sh) ? null : sh;
+    renderStories(); resetFeed();
+  });
+  document.getElementById('chips').addEventListener('click', function (e) {
+    var t = e.target.closest('.stampbtn'); if (!t) return;
+    FILTRO = t.getAttribute('data-f');
+    renderChips(); resetFeed();
+    scrollTo({ top: 0 });
+  });
+
+  /* ---------- arranque ---------- */
+  L.onChange(function () {
+    renderProgress();
+    Object.keys(CARDS).forEach(function (id) {
+      var chip = CARDS[id].querySelector('.sync');
+      if (!chip) return;
+      var pend = L.pendientesDe(id);
+      chip.textContent = pend ? '⏳ en cola' : '';
+      chip.className = 'sync' + (pend ? ' q' : '');
+    });
+  });
+  L.init().then(function () {
+    FEED = L.feed();
+    document.getElementById('cargando').style.display = 'none';
+    if (!L.hasPat()) document.getElementById('setupwarn').style.display = 'block';
+    stripCSS();
+    renderProgress(); renderStories(); renderChips(); resetFeed();
+    io = new IntersectionObserver(function (es) {
+      if (es.some(function (x) { return x.isIntersecting; })) renderBatch();
+    }, { rootMargin: '1200px 0px' });
+    io.observe(document.getElementById('sentinel'));
+  }).catch(function (e) {
+    document.getElementById('cargando').innerHTML = '<h2>No pude abrir el fichero</h2><p>' + esc(e.message) + '</p>';
+  });
+})();
+</script>
+</body>
+</html>
