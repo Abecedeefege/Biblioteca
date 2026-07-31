@@ -2736,7 +2736,16 @@
       "ts": "2026-07-31T21:14:45.212Z",
       "page": "index.html",
       "device": "Andy"
+    },
+    {
+      "id": "ms9fy12x-v592i2",
+      "type": "dwell",
+      "ts": "2026-07-31T21:14:53.049Z",
+      "page": "index.html",
+      "device": "Andy",
+      "dwell_s": 3,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-07-31T21:14:51.318Z"
+  "_updated_at": "2026-07-31T21:14:59.808Z"
 }
