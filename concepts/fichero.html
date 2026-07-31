@@ -54,7 +54,7 @@
   .plaque-row{display:flex;justify-content:center;padding:34px 0 8px}
   .plaque{background:linear-gradient(180deg,#e8ca74,#b8912e 55%,#d9b856);color:#3a2a08;border-radius:8px;
     padding:14px 34px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.55);
-    border:1px solid #8a6b1d}
+    border:1px solid #8a6b1d;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation}
   .plaque h1{font-family:var(--type);font-size:clamp(22px,4.5vw,34px);font-weight:400;letter-spacing:3px;text-transform:uppercase}
   .plaque .s{font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;opacity:.75}
   .plaque .screw{position:relative}
@@ -503,7 +503,7 @@
 <div class="plaque-row"><div class="plaque">
   <div class="s">Bibliotequeando · Concepto IV</div>
   <h1>El Fichero</h1>
-  <div class="s">Archivo catalográfico de la casa — 400 registros a la vista</div>
+  <div class="s">Archivo catalográfico de la casa — 437 registros a la vista</div>
 </div></div>
 <nav class="topnav wrap">
   <a href="#/" data-n="cajones">Los cajones</a>
@@ -512,7 +512,7 @@
   <a href="../recs/">Recomendaciones</a>
 </nav>
 
-<div id="status"><h2>Abriendo el mueble…</h2><p>Ordenando 400 fichas a máquina.</p></div>
+<div id="status"><h2>Abriendo el mueble…</h2><p>Ordenando 437 fichas a máquina.</p></div>
 <main id="app" class="wrap" style="display:none"></main>
 <script src="reviews.js"></script>
 <script src="polaroids.js"></script>
@@ -529,7 +529,8 @@
 let CAT=null,PHOTOS={},ENRICH={},ED={books:{},authors:{},topics:{}},COLS=[];
 let BOOKS=[],BY_ID={},SHELF_BY_ID={};
 /* fondo guardado: cajas del archivero/ropero, NO están en los estantes.
-   Vive aparte de BOOKS a propósito — el catálogo de la casa sigue siendo 400. */
+   Vive aparte de BOOKS a propósito — el catálogo en estantes son los 437
+   registros (mueble principal + mueble del rincón, re-catalogación 2026-08). */
 let ARCH=null,ARCH_ITEMS=[];
 const archQty=it=>(typeof it.qty==='number'&&it.qty>0?it.qty:1);
 const archVols=items=>items.reduce((n,it)=>n+archQty(it),0);
@@ -782,7 +783,7 @@ function viewArchivados(){
             <p>Son ${tot} entradas en ${nb} ${nb===1?'caja':'cajas'}: ${vol} volúmenes contando
             tomos y ejemplares repetidos. El grueso es Uruguay — padrones, genealogía, revistas
             históricas, Montevideo — y una caja entera de literatura inglesa.</p>
-            <p>Nada de esto figura en los 400 registros del mueble: para consultar cualquiera de
+            <p>Nada de esto figura en los 437 registros de los muebles: para consultar cualquiera de
             estas fichas hay que abrir la caja.</p>
           </div>
           <div class="veasetit">Registros de mérito</div>
@@ -1014,6 +1015,32 @@ loadAll().then(()=>{
   document.getElementById('status').innerHTML=`<h2>El mueble está trabado</h2>
     <p style="max-width:52ch;margin:0 auto">${esc(err.message)}. El Fichero lee el catálogo desde <code>../index.html</code>: hay que abrirlo servido por HTTP (GitHub Pages o <code>python3 -m http.server</code>).</p>`;
 });
+</script>
+
+<script>
+/* La puerta del taller: cinco toques seguidos sobre la placa de latón abren
+   la Mesa de Fichado (labeling.html). Sin menú, sin link: como un mueble con
+   cajón secreto. La intro come los taps mientras corre y después se remueve,
+   así que esto queda vivo apenas termina. */
+(function(){
+  'use strict';
+  var p=document.querySelector('.plaque');if(!p)return;
+  p.setAttribute('tabindex','0');p.setAttribute('role','button');
+  p.setAttribute('aria-label','El Fichero — cinco toques abren la Mesa de Fichado');
+  var taps=[],rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tap(){
+    var t=Date.now();
+    taps=taps.filter(function(x){return t-x<3000});taps.push(t);
+    if(!rm&&taps.length>1){
+      p.style.transition='transform .12s';
+      p.style.transform='scale('+(1+taps.length*.008)+')';
+      setTimeout(function(){p.style.transform=''},130);
+    }
+    if(taps.length>=5){taps=[];location.href='labeling.html';}
+  }
+  p.addEventListener('pointerup',tap);
+  p.addEventListener('keydown',function(e){if(e.key==='Enter')tap();});
+})();
 </script>
 
 </body>
