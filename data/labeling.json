@@ -1,0 +1,6 @@
+{
+  "_comment": "Tareas de fichado (concepts/labeling.html — la Mesa de Fichado). Escriben: el browser con PAT (concepts/labeling.js) y el agente /labeling al ingerir el relay de Supabase. /engagement y /recomendacion NO tocan este archivo ni data/labeling/.",
+  "_updated_at": "2026-07-31T19:00:00-03:00",
+  "_ingest": { "supabase_last_created_at": null },
+  "tasks": {}
+}
