@@ -2771,7 +2771,16 @@
       "page": "2026-07-31-sala-01.html",
       "device": "Andy",
       "nid": "2026-07-31-cine"
+    },
+    {
+      "id": "ms9ithuv-50le0q",
+      "type": "answer",
+      "ts": "2026-07-31T22:35:20.359Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "cine-veredicto:omitb",
+      "value": "ya_la_vimos"
     }
   ],
-  "_updated_at": "2026-07-31T22:34:25.827Z"
+  "_updated_at": "2026-07-31T22:35:21.932Z"
 }
