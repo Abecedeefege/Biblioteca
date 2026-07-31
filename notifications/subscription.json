@@ -4,15 +4,15 @@
     {
       "device": "Andy",
       "subscription": {
-        "endpoint": "https://fcm.googleapis.com/fcm/send/dc1Hap21PDw:APA91bEja43fUrN8z428fzQVF1NtQv9BaRVGioD7EiF-isE7RSlchNoHJyYkvX8Vsn0OkX3WWX-9mDVP53zrSnYeThmaqsHIDXOZkJRAGgwqe6dS2pGqZ8G6BM2oxZmyNbtVChjdpxqc",
+        "endpoint": "https://fcm.googleapis.com/fcm/send/fEqImWm1HLs:APA91bEwb3KCLVThPJHRBAqmAEATHVnvCWleTJQQRFX4qvJIQh4WbwNS4ZeQt5PfGNWWgUWpE9NKf3ugxf4TmsOt-LhTWsABg0dvTZYF3gzkhKgYBrdurOW6QS8U9yu2yIdUHXW-ZIEY",
         "expirationTime": null,
         "keys": {
-          "p256dh": "BG-FBQrx4GSUa3go6jtzdxle4Wfo7q4II2MGh94yF0iJcqV1W1HUmNCcJQqGdzn8hVzR9JGTCN-82riRM3p7pMg",
-          "auth": "bM-oZyKSPK9d_lLaDQR3pg"
+          "p256dh": "BPlockISXI4JC40-ldZdmPT0EC8Ra6EMQhgRl3NaYejwLkTpiMdz48eHPrezey3EX-bWpS21e7uGNmTQqs7fsyc",
+          "auth": "r-90bnIAeNuzNY8jVUw7fw"
         }
       },
       "status": "active",
-      "updated_at": "2026-07-31T21:02:03.712Z",
+      "updated_at": "2026-07-31T21:02:19.575Z",
       "invalidated_at": null,
       "invalid_reason": null
     },
