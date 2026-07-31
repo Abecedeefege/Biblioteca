@@ -2729,7 +2729,14 @@
       "device": "Sofi",
       "dwell_s": 14,
       "scroll_pct": 4
+    },
+    {
+      "id": "ms9fxv18-bvzmjm",
+      "type": "page_visit",
+      "ts": "2026-07-31T21:14:45.212Z",
+      "page": "index.html",
+      "device": "Andy"
     }
   ],
-  "_updated_at": "2026-07-29T22:15:42.070Z"
+  "_updated_at": "2026-07-31T21:14:51.318Z"
 }
