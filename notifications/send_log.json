@@ -307,6 +307,34 @@
       "device": "Andy",
       "ts": "2026-07-30T20:41:36.265Z",
       "status_code": 410
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-31-rec-andy",
+      "device": "Andy",
+      "ts": "2026-07-31T21:02:03.910Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-07-31-rec-sofi",
+      "device": "Sofi",
+      "ts": "2026-07-31T21:02:03.957Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "test-1785531702535",
+      "device": "Andy",
+      "ts": "2026-07-31T21:02:04.009Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "test-1785531702535",
+      "device": "Sofi",
+      "ts": "2026-07-31T21:02:04.021Z",
+      "status_code": 201
     }
   ]
 }
