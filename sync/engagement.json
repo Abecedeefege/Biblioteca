@@ -2789,7 +2789,16 @@
       "device": "Andy",
       "qid": "cine-veredicto:arrival",
       "value": "ya_la_vimos"
+    },
+    {
+      "id": "ms9iv8ek-e416f5",
+      "type": "dwell",
+      "ts": "2026-07-31T22:36:41.420Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "dwell_s": 137,
+      "scroll_pct": 92
     }
   ],
-  "_updated_at": "2026-07-31T22:36:13.085Z"
+  "_updated_at": "2026-07-31T22:36:42.750Z"
 }
