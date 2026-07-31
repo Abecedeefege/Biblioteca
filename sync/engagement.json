@@ -2807,7 +2807,16 @@
       "device": "Andy",
       "qid": "cine-veredicto:severance",
       "value": "me_tienta"
+    },
+    {
+      "id": "ms9ixwbt-ufwo0g",
+      "type": "answer",
+      "ts": "2026-07-31T22:38:45.737Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "cine-dia-rapido",
+      "value": "viernes_si"
     }
   ],
-  "_updated_at": "2026-07-31T22:38:32.075Z"
+  "_updated_at": "2026-07-31T22:38:47.077Z"
 }
