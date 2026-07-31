@@ -2745,7 +2745,33 @@
       "device": "Andy",
       "dwell_s": 3,
       "scroll_pct": 0
+    },
+    {
+      "id": "ms9fy9b9-m48bi4",
+      "type": "dwell",
+      "ts": "2026-07-31T21:15:03.717Z",
+      "page": "index.html",
+      "device": "Andy",
+      "dwell_s": 5,
+      "scroll_pct": 0
+    },
+    {
+      "id": "ms9isat4-volwxp",
+      "type": "notification_clicked",
+      "ts": "2026-07-31T22:34:24.568Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "nid": "2026-07-31-cine",
+      "src": "push"
+    },
+    {
+      "id": "ms9isat7-mpnf8z",
+      "type": "page_visit",
+      "ts": "2026-07-31T22:34:24.571Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "nid": "2026-07-31-cine"
     }
   ],
-  "_updated_at": "2026-07-31T21:14:59.808Z"
+  "_updated_at": "2026-07-31T22:34:25.827Z"
 }
