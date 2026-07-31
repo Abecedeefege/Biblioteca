@@ -403,11 +403,11 @@
   const logoEl=document.getElementById('in-logo');
   const AR=1355/1800;                               /* alto/ancho de la foto */
 
-  /* puntos de interés reales de la foto, en % (x,y sobre la imagen):
-     tazas LED → Sagan/Cosmos → Funkos del centro → King lomo blanco →
-     NatGeo amarillo → lomos antiguos del centro (donde nace el logo) */
-  const TOUR=[[50,13],[22,56],[48,37],[72,46],[78,64]];
-  const FINAL=[48,79];
+  /* puntos de interés reales de la foto (panorámica 2026-08), en % (x,y):
+     tazas → Sagan/Cosmos → Funkos de FRIENDS del centro → King lomo blanco →
+     NatGeo amarillo → referencia antigua del centro (donde nace el logo) */
+  const TOUR=[[50,13],[27,55],[50,36],[76,44],[76,63]];
+  const FINAL=[49,77];
 
   function geom(){
     const vw=innerWidth,vh=innerHeight,ih=vw*AR,top=(vh-ih)/2;
@@ -530,7 +530,7 @@ let CAT=null,PHOTOS={},ENRICH={},ED={books:{},authors:{},topics:{}},COLS=[];
 let BOOKS=[],BY_ID={},SHELF_BY_ID={};
 /* fondo guardado: cajas del archivero/ropero, NO están en los estantes.
    Vive aparte de BOOKS a propósito — el catálogo en estantes son los 437
-   registros (mueble principal + mueble del rincón, re-catalogación 2026-08). */
+   registros (re-catalogación 2026-08: la columna del medio es mitad vitrina). */
 let ARCH=null,ARCH_ITEMS=[];
 const archQty=it=>(typeof it.qty==='number'&&it.qty>0?it.qty:1);
 const archVols=items=>items.reduce((n,it)=>n+archQty(it),0);
@@ -783,7 +783,7 @@ function viewArchivados(){
             <p>Son ${tot} entradas en ${nb} ${nb===1?'caja':'cajas'}: ${vol} volúmenes contando
             tomos y ejemplares repetidos. El grueso es Uruguay — padrones, genealogía, revistas
             históricas, Montevideo — y una caja entera de literatura inglesa.</p>
-            <p>Nada de esto figura en los 437 registros de los muebles: para consultar cualquiera de
+            <p>Nada de esto figura en los 437 registros del mueble: para consultar cualquiera de
             estas fichas hay que abrir la caja.</p>
           </div>
           <div class="veasetit">Registros de mérito</div>

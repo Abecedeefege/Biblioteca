@@ -36,29 +36,33 @@ Fecha: 2026-07-03. Este archivo es **estable** (no se reescribe a diario como
   cinco toques en la placa "El Fichero" de la home. Los agentes `/engagement`
   y `/recomendacion` no tocan nada de esto.
 
-## 1. Entidades (437 volúmenes tras la re-catalogación 2026-08; 29 estantes, 24 con libros)
+## 1. Entidades (437 volúmenes tras la re-catalogación 2026-08; 25 estantes, 21 con libros)
 
-Desde 2026-08 hay un **segundo mueble**: la biblioteca del rincón (columna `B`,
-5 estantes, con la Smith-Corona de vitrina en B3). Los ids no cambiaron al
-mudarse los libros (ver regla de identidad arriba).
+Desde 2026-08 la **columna del medio es mitad vitrina**: M2 exhibe piezas
+egipcias, M3 los Funkos de FRIENDS, M4 portarretratos y velas, y M6 la
+Smith-Corona. Sus libros se consolidaron en M5 (misterio), M7 (referencia
+antigua + Mentor-UNESCO) y M8 (diccionarios). Los libros de los estantes
+convertidos en vitrina siguen fichados en su estante de origen con nota
+«no visto» hasta ubicarlos. Los ids no cambian al mudarse un libro (ver
+regla de identidad arriba).
 
 | Bloque | Estantes | Volúmenes | Notas |
 |---|---|---|---|
 | Stephen King en español | R4 (lomo blanco) + R5 (tapa negra) | 51 | La colección más grande; se sumó una segunda Carrie en tapa dura oscura (R5-026) |
 | Shakespeare + Harry Potter | L3 | 49 | Los dos Dickens Chapman & Hall (L3-050/051) se identificaron y mudaron a L7 |
+| Referencia antigua + Mentor-UNESCO | M7 (53) | 53 | Sus antiguos + la serie Mentor completa llegada de M4; 13 con nota «no visto» |
 | Uruguay y Montevideo | L6 (32) + L8 (9) | ~41 | L6-032 y los fascículos de El País (L6-MEDIA) bajaron a L8 |
 | Viajes y geografía | R2 (24) + R3 (19) | 43 | R2-019 dejó de ser UNK: el lomo invertido dice «GERMANY» |
-| Misterio y cozy mystery | **B2** (27) + resto en M5 (12) | 39 | El set Sherlock + cozys Alma se mudaron al mueble del rincón; M5-005 no visto |
-| Referencia antigua + arte | **B4** (40) | 40 | Casi todo el viejo M7 + la serie Mentor-UNESCO completa de M4 |
-| Diccionarios y atlas | **B5** (19) | 19 | La vieja fila anónima M8-002, ahora con nombre: Monlau, Granada, Larousse, facsimilares |
+| Misterio y cozy mystery | M5 (39) | 39 | Reordenado: abre con el set Sherlock completo + 7 altas; 12 con nota «no visto» (incl. M5-005) |
 | Astronomía y cosmología | L5 | 33 | Gamow ×3, Hoyle, Sagan, Hawking, Asimov, el matrimonio Bok |
 | Autoayuda y filosofía | L4 | 28 | +4 altas 2026-08: Raspall, Rojas Estapé, Rovelli, Brewer |
-| Antiguos restantes | M7 (13) + M8 (1) + R8 (8) | 22 | Lo que no se vio en el mueble del rincón; M8-002 sigue como placeholder |
+| Diccionarios y atlas | M8 (20) | 20 | La vieja fila anónima, ahora con nombre: Monlau, Granada, Larousse, facsimilares |
 | Genealogía + química familiar | R7 | 19 | Apolant + G.E. Villar — **obra de autoría familiar**; +2 altas 2026-08 |
 | Latinoamericana + clásicos ingleses | L7 | 15 | Quiroga/Borges/García Márquez + Dickens y los ingleses aparecidos (Ivanhoe, Jane Eyre…) |
-| Arte restante | M2 + M3 | 16 | Picasso en hebreo, Vincent van Gogh (la serie Mentor se fue a B4) |
+| Arte en vitrina | M2 (5) + M3 (11) | 16 | Picasso en hebreo, Vincent van Gogh — estantes ahora de exhibición, libros a ubicar |
 | Clásicos encuadernados | L2 | 10 | Balzac en vitela (Œuvres Complètes) + Keats en cuero |
-| Elísabet Benavent | M6 | 9 | Saga Valeria completa + 5 más |
+| Elísabet Benavent | M6 | 9 | Saga Valeria — el estante es la vitrina de la Smith-Corona; libros a ubicar |
+| Misceláneo | R8 | 8 | Mo Yan, Martín Fierro en piel de vaca, la vitela UNK-R8-008 |
 | National Geographic | R6 | ~100 revistas | 1976–2000 (incl. un número en español de Mayo 2000), un solo ítem |
 | Exhibición | TOP | 2 | Don Quijote I y II en cuero rojo, con figuras talladas de Quijote y Sancho |
 
