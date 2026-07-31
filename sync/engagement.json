@@ -2780,7 +2780,16 @@
       "device": "Andy",
       "qid": "cine-veredicto:omitb",
       "value": "ya_la_vimos"
+    },
+    {
+      "id": "ms9iulga-twrvdk",
+      "type": "answer",
+      "ts": "2026-07-31T22:36:11.674Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "cine-veredicto:arrival",
+      "value": "ya_la_vimos"
     }
   ],
-  "_updated_at": "2026-07-31T22:35:21.932Z"
+  "_updated_at": "2026-07-31T22:36:13.085Z"
 }
