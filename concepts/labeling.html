@@ -126,6 +126,21 @@ if ('serviceWorker' in navigator) {
     letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft)}
   .acts .sync.q{color:var(--red)}
 
+  /* ---------- banda del estante: dónde está parado el libro ---------- */
+  .enestante{margin:2px 12px 0;border:1px solid rgba(92,79,62,.35);border-radius:3px;overflow:hidden;
+    background:var(--wood-d)}
+  .enestante .tira{position:relative;aspect-ratio:3/1;background-size:cover;background-position:center}
+  .enestante .marca{position:absolute;top:0;bottom:0;width:12%;transform:translateX(-50%);
+    border-left:2px solid var(--brass2);border-right:2px solid var(--brass2);
+    background:linear-gradient(90deg,rgba(230,200,106,.10),rgba(230,200,106,.24),rgba(230,200,106,.10));
+    box-shadow:0 0 0 9999px rgba(36,24,17,.42)}
+  .enestante .marca::before{content:'';position:absolute;left:50%;top:-1px;width:9px;height:9px;
+    transform:translateX(-50%) rotate(45deg);background:var(--brass2)}
+  .enestante .pie{display:flex;gap:8px;align-items:center;padding:4px 8px;background:rgba(0,0,0,.35);
+    font-family:var(--sans);font-size:8.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#c9b48e}
+  .enestante .pie i{font-style:normal;color:var(--brass2)}
+  .enestante .pie .aub{margin-left:auto;color:var(--red)}
+
   .cap{padding:6px 14px 16px}
   .cap h3{font-weight:400;font-size:17.5px;letter-spacing:.4px;text-transform:uppercase;line-height:1.35}
   .cap h3.sint{color:var(--red)}
@@ -299,6 +314,7 @@ if ('serviceWorker' in navigator) {
       + '<div class="head"><span class="cn">' + esc(b.id) + '</span>'
       + '<span class="sh">' + shHTML(b) + '</span>' + mk + '</div>'
       + '<div class="media" data-act="media">' + mediaHTML(b) + '</div>'
+      + estanteHTML(b)
       + '<div class="acts">'
       + '<button data-act="cam">📷 Sacar</button>'
       + '<button data-act="gal">🖼️ Subir</button>'
@@ -324,6 +340,26 @@ if ('serviceWorker' in navigator) {
       + '</div></article>';
   }
   function shHTML(b) { return 'Estante ' + esc(b._shelf) + ' · pos. ' + (b._idx + 1) + ' de ' + b._n; }
+
+  /* La tira real del estante con una marca donde debería estar el libro:
+     el orden del catálogo sigue el orden físico de izquierda a derecha, así
+     que la posición en la fila mapea al ancho de la foto. Los libros con
+     nota «no visto» son justamente los que ya no están donde dice la foto:
+     ahí se muestra la tira sin marca y se avisa. */
+  function estanteHTML(b) {
+    if (!L.photos()['shelf_' + b._shelf]) return '';
+    var aUbicar = /no visto/i.test(b.note || '');
+    var pos = b._n > 1 ? (b._idx + 0.5) / b._n * 100 : 50;
+    return '<div class="enestante">'
+      + '<div class="tira st-' + esc(b._shelf) + '">'
+      + (aUbicar ? '' : '<span class="marca" style="left:' + pos.toFixed(1) + '%"></span>')
+      + '</div>'
+      + '<div class="pie"><span>Estante <i>' + esc(b._shelf) + '</i></span>'
+      + (aUbicar
+          ? '<span class="aub">Ya no está acá — ayudame a ubicarlo</span>'
+          : '<span>· va aprox. donde marca el latón</span>')
+      + '</div></div>';
+  }
 
   function renderCard(b) {
     var el = CARDS[b.id];
