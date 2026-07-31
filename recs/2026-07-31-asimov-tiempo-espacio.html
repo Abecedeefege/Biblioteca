@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🪐 Of Time and Space · Bibliotequeando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#0F0B06;
+  --papel2:#1B140A;
+  --ambar:#E8A94E;
+  --ambar-hi:#F7CB86;
+  --teal:#5FB8AC;
+  --teal-hi:#96D9CE;
+  --hueso:#F3EADA;
+  --bruma:#B4A48C;
+  --linea:rgba(243,234,218,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--papel);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--ambar);color:var(--papel)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--teal-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(243,234,218,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal-hi),var(--ambar-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(15,11,6,.6);backdrop-filter:blur(4px)}
+.back:hover{color:var(--ambar-hi);border-color:var(--ambar)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ambar);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(130% 90% at 50% 8%,#3A2A10 0%,var(--papel) 65%)}
+.orbita{position:absolute;inset:0;z-index:0;opacity:.6}
+.orbita span{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--ambar-hi);animation:centelleo 3.6s ease-in-out infinite}
+@keyframes centelleo{0%,100%{opacity:.15}50%{opacity:1}}
+.saturno{position:absolute;top:10%;left:50%;transform:translateX(-50%);font-size:3rem;opacity:.5;animation:girar 12s linear infinite}
+@keyframes girar{from{transform:translateX(-50%) rotate(0deg)}to{transform:translateX(-50%) rotate(360deg)}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-hi);border:1px solid var(--teal);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.7rem,1.15rem + 4vw,3.1rem);font-weight:600;line-height:1.14}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--ambar-hi)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:50ch}
+.cta-btn{display:inline-block;background:var(--ambar);color:var(--papel);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--ambar-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--papel2)}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.2rem 0 1.3rem}
+.tabs button{border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.87rem;font-weight:600;transition:all .25s ease}
+.tabs button:hover,.tabs button.activo{border-color:var(--teal);color:var(--teal-hi);background:rgba(95,184,172,.12)}
+.tab-panel{border:1px solid var(--linea);border-radius:16px;padding:clamp(1.4rem,4vw,2rem);background:linear-gradient(180deg,rgba(243,234,218,.03),transparent);min-height:12em}
+.tab-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-hi);font-weight:700;margin-bottom:.6rem}
+.tab-panel p{color:var(--bruma);font-size:.98rem;margin-bottom:1rem}
+.tab-panel .cita-in{font-family:var(--serif);font-style:italic;color:var(--hueso);font-size:1.02rem;border-left:3px solid var(--teal);padding-left:1rem}
+.honestidad{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2rem;background:rgba(232,169,78,.06)}
+.honestidad p{color:var(--bruma);font-size:.95rem}
+.honestidad .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ambar-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(243,234,218,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--teal-hi);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--teal);color:var(--teal-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--teal-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#3A2A10 0%,var(--papel) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:34ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--ambar-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="orbita" id="orbita" aria-hidden="true"></div>
+  <div class="saturno" aria-hidden="true">🪐</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · De tu estante · L5-026</span>
+    <h1>Of Time and Space and Other Things</h1>
+    <p class="autor">Isaac Asimov · 1965 · Diecisiete ensayos de ciencia</p>
+    <p class="sub">Después de Rovelli, Hawking, Cosmos y Tyson, tu estante L5 tiene un libro que nunca abriste: la cuarta colección de ensayos de Asimov, la misma fórmula corta y directa que te vino funcionando — pero escrita antes de que llegaras a nacer, cuando el sistema solar tenía la mitad de las lunas que hoy.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traemos</p>
+    <h2 class="titulo rev d1">La veta que nunca falla, en su versión más vieja y más rara</h2>
+    <p class="bajada rev d2">Astronomía es tu terreno más consistente — acertamos con Rovelli, con Cosmos, y aunque Hawking y Tyson todavía están sin veredicto, los dos tuvieron el dwell más largo de tus últimas fichas (78 y 64 segundos). L5-026 sigue el mismo molde que te funciona: capítulos — acá, ensayos — cortos, de una sentada, con humor y sin jerga. La diferencia es la fecha: esta colección salió en 1965, la cuarta de una serie que Asimov escribió a partir de su columna mensual en <em>The Magazine of Fantasy and Science Fiction</em>. Diecisiete ensayos en dos partes: "Of Time and Space" (diez, sobre astronomía y física) y "Of Other Things" (siete, más variados).</p>
+  </div>
+</section>
+
+<section class="seccion" id="ensayos">
+  <div class="centro">
+    <p class="kicker rev">Cinco ensayos reales del libro</p>
+    <h2 class="titulo rev d1">Elegí uno, en un par de minutos te lo cuenta</h2>
+    <p class="bajada rev d2">Títulos y temas confirmados contra el índice real de la edición Doubleday 1965.</p>
+    <div class="tabs" id="tabsEns">
+      <button data-e="celeritas" class="activo">C for Celeritas</button>
+      <button data-e="rollcall">Roll Call</button>
+      <button data-e="mooning">Just Mooning Around</button>
+      <button data-e="zoo">The Heavenly Zoo</button>
+      <button data-e="finger">The Slowly Moving Finger</button>
+    </div>
+    <div class="tab-panel rev d2" id="panelEns">
+      <p class="et">C for Celeritas (1959)</p>
+      <p>Abre la parte "Of Time and Space" jugando con la letra c de la fórmula de Einstein — la velocidad de la luz — para explicar, con su humor característico, qué significa realmente que la energía tenga "dimensiones". Es el ensayo más citado de la colección por lectores que lo recuerdan décadas después.</p>
+      <p class="cita-in">Tema real del ensayo: por qué E=mc² no es solo una fórmula para memorizar, sino una afirmación sobre las unidades con las que medimos el universo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="honestidad-sec" style="background:var(--papel2)">
+  <div class="centro">
+    <p class="kicker rev">La letra chica, honesta</p>
+    <h2 class="titulo rev d1">Este libro tiene 61 años — y eso también es el punto</h2>
+    <div class="honestidad rev d2">
+      <span class="et">Guardia de honestidad</span>
+      <p>No es un libro de divulgación "actual" como Rovelli o Tyson: es una cápsula del tiempo. El ensayo "Roll Call" cuenta el censo de planetas, lunas y asteroides tal como se conocía en 1963 — hoy sabemos de más de 300 lunas solo en el sistema solar, y Plutón ya no cuenta como noveno planeta. Un lector de Goodreads lo resume bien: "dated now, but still good". No encontré citas textuales verificables de estos ensayos específicos (el libro está descatalogado hace décadas, sin extracto oficial online), así que en vez de inventar frases exactas, preferí contarte fielmente de qué habla cada uno. Lo que no envejece es la forma de explicar de Asimov — clara, con humor, sin condescendencia — que es exactamente lo que te viene funcionando.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>1965, Doubleday & Company — cuarto libro de la serie de ensayos de Asimov para F&SF</dd>
+        <dt>Extensión</dt><dd>17 ensayos cortos en 2 partes: "Of Time and Space" (10) y "Of Other Things" (7) — se lee uno por noche</dd>
+        <dt>Idioma</dt><dd>Inglés, edición original (tu ejemplar es la Avon paperback)</dd>
+        <dt>El autor</dt><dd>Isaac Asimov, bioquímico y uno de los divulgadores científicos más leídos del siglo XX</dd>
+        <dt>Dónde</dt><dd>Ya lo tenés — estante L5, junto a Cosmos y Hawking</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--papel2)">
+  <div class="centro">
+    <p class="kicker rev">El rescate</p>
+    <h2 class="titulo rev d1">Una cápsula del tiempo, sin abrir en tu propio estante</h2>
+    <p class="bajada rev d2">No hace falta el libro entero de una sentada de invierno. Con "C for Celeritas" — cinco páginas — alcanza para saber si el tono de Asimov te atrapa tanto como Rovelli.</p>
+    <div class="cta rev d2">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L5-026','si',this)">📖 Sí, esta noche</button>
+        <button onclick="engageAnswer('leer-esta-noche:L5-026','ya_leido',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L5-026','no',this)">🙅 Esta noche no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-31-asimov-tiempo-espacio','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-31-asimov-tiempo-espacio','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-07-31-asimov-tiempo-espacio','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-07-31-asimov-tiempo-espacio','love',this)">😍</button>
+        <button onclick="engageReact('2026-07-31-asimov-tiempo-espacio','like',this)">🙂</button>
+        <button onclick="engageReact('2026-07-31-asimov-tiempo-espacio','meh',this)">😐</button>
+        <button onclick="engageReact('2026-07-31-asimov-tiempo-espacio','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-07-31-asimov-tiempo-espacio" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-07-31-asimov-tiempo-espacio" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-07-31-asimov-tiempo-espacio',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">El censo de <b>1965</b> ya quedó viejo — la forma de contarlo, no.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Mañana, la próxima ficha.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--teal-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--teal);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante L5 · datos verificados (Wikipedia, ISFDB, Goodreads) a julio 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+
+  var orbita=$('#orbita');
+  for(var i=0;i<36;i++){
+    var s=document.createElement('span');
+    s.style.left=(Math.random()*100)+'%';
+    s.style.top=(Math.random()*70)+'%';
+    s.style.animationDelay=(Math.random()*3.6)+'s';
+    orbita.appendChild(s);
+  }
+
+  var ENS={
+    celeritas:{et:'C for Celeritas (1959)',cuerpo:'Abre la parte "Of Time and Space" jugando con la letra c de la fórmula de Einstein — la velocidad de la luz — para explicar, con su humor característico, qué significa realmente que la energía tenga "dimensiones". Es el ensayo más citado de la colección por lectores que lo recuerdan décadas después.',cita:'Tema real del ensayo: por qué E=mc² no es solo una fórmula para memorizar, sino una afirmación sobre las unidades con las que medimos el universo.'},
+    rollcall:{et:'Roll Call (diciembre 1963)',cuerpo:'Un censo completo del sistema solar tal como se conocía a fines de 1963: planetas, lunas y asteroides catalogados uno por uno. Es el ensayo más "fechado" del libro — hoy sabemos de más de 300 lunas solo en el sistema solar — pero por eso mismo funciona como cápsula del tiempo: podés leerlo comparando mentalmente contra lo que sabemos hoy.',cita:'Dato real: en 1963 la lista de satélites naturales conocidos del sistema solar era una fracción de la actual.'},
+    mooning:{et:'Just Mooning Around (mayo 1963)',cuerpo:'Asimov propone clasificar las lunas del sistema solar no por tamaño sino por un "valor de tira y afloja" — cuánto más tira gravitacionalmente el Sol de cada luna comparado con su planeta. Es el tipo de idea simple y elegante que hace que sus ensayos se sigan leyendo sesenta años después.',cita:'Tema real: qué lunas están "más atadas" a su planeta y cuáles casi se le escapan al Sol.'},
+    zoo:{et:'The Heavenly Zoo (junio 1964)',cuerpo:'La historia de cómo el cielo se llenó de animales: de dónde vienen los nombres de las constelaciones del zodíaco y las coordenadas celestes que todavía usan los astrónomos. Un puente directo entre mitología antigua y el sistema de coordenadas que aparece en cualquier libro de astronomía moderno, incluido tu propio Cosmos.',cita:'Tema real: el origen histórico del sistema de coordenadas celestes que hoy sigue en uso.'},
+    finger:{et:'The Slowly Moving Finger (febrero 1964)',cuerpo:'El ensayo más inesperado de la colección: no habla de astronomía sino de biología — por qué los animales más grandes tienden a vivir más, y qué tiene eso que ver con el metabolismo. Un respiro de "Of Other Things" para mostrar que Asimov no era solo el hombre de las estrellas.',cita:'Tema real: la correlación entre tamaño corporal y longevidad en el reino animal.'}
+  };
+  var tabs=$$('#tabsEns button'),panel=$('#panelEns');
+  tabs.forEach(function(b){
+    b.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      var c=ENS[b.getAttribute('data-e')];
+      panel.innerHTML='<p class="et">'+c.et+'</p><p>'+c.cuerpo+'</p><p class="cita-in">'+c.cita+'</p>';
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

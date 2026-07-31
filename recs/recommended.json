@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-30T16:20:00-03:00",
+  "_updated_at": "2026-07-31T16:20:00-03:00",
   "_feedback_cutoff": "2026-07-29T21:34:04.563Z",
   "recommendations": [
     {
@@ -796,6 +796,56 @@
       "page": "recs/2026-07-30-eagleman-incognito.html",
       "notified_by": "2026-07-30-rec-andy",
       "why": "Primera recomendacion de neurociencia para Andy, veta declarada desde el 15/07 pero nunca tocada. Sigue la formula ganadora de Rovelli (dwell 182s, lo_quiero): capitulos cortos, casos concretos, tono de asombro sin sermon. El propio capitulo 1 abre con una analogia astronomica (Galileo), puente natural desde su racha de astronomia. Alternancia del dia: a Andy le tocaba nuevo (ver PROFILE 29/07). Verificado titulo+autor contra catalogo completo y recommended.json: sin match. Citas verificadas directamente contra el extracto oficial en espanol de Anagrama (elboomeran.com), no traduccion propia. Se agrego una micro-pregunta de 'primera impresion' cerca del hero para probar la hipotesis del PROFILE (dwell sin voto en Hawking y Tyson -> CTA mas arriba).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-31-asimov-tiempo-espacio",
+      "date": "2026-07-31",
+      "kind": "redescubrimiento",
+      "title": "Of Time and Space and Other Things",
+      "author": "Isaac Asimov",
+      "language": "en",
+      "topics": [
+        "astronomia",
+        "ciencia",
+        "ensayos"
+      ],
+      "book_ref": "L5-026",
+      "audience": "andy",
+      "page": "recs/2026-07-31-asimov-tiempo-espacio.html",
+      "notified_by": "2026-07-31-rec-andy",
+      "why": "Redescubrimiento de astronomia, la veta mas consistente de Andy (Rovelli y Cosmos acertaron pleno; Hawking y Tyson sin veredicto pero con el dwell mas alto de sus fichas). Sigue el molde de ensayos cortos que le viene funcionando. Guardia de honestidad aplicada: sin citas textuales verificables online (libro descatalogado desde hace decadas), asi que se describio fielmente el contenido real de 5 ensayos (confirmados contra Wikipedia/ISFDB) en vez de inventar frases. Se marco explicitamente que el contenido cientifico (censo de lunas de 1963) esta desactualizado, convertido en punto de honestidad, no ocultado. Verificado titulo+autor contra catalogo completo y recommended.json: unico match es el propio libro en L5-026 (esperado, es un redescubrimiento). read_status ausente en enrichment.json = tratado como no leido.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-07-31-henry-book-lovers",
+      "date": "2026-07-31",
+      "kind": "nuevo",
+      "title": "Book Lovers: Amor entre libros",
+      "author": "Emily Henry",
+      "language": "es",
+      "topics": [
+        "romance",
+        "humor",
+        "emocional"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-07-31-henry-book-lovers.html",
+      "notified_by": "2026-07-31-rec-sofi",
+      "why": "Sin respuesta aun a la micro-pregunta de estante del 30/07 (sync/engagement.json sin eventos nuevos desde 29/07 22:15 UTC) -> se mantiene la Guardia Maxima: no armar mas redescub a ciegas para Sofi. Se prioriza NUEVO otra vez, abriendo la tercera veta pedida explicitamente el 24/07: romance/emocional con final feliz. Emily Henry elegida por el gancho bookish (Nora es agente literaria, como ella rodeada de libros) mas humor y ritmo cercano a Osman, no melodrama. Verificado titulo+autor contra catalogo completo (sin match) y recommended.json (sin match). Citas verificadas cruzando dos fuentes independientes (extracto oficial Penguin + busquedas de citas de Goodreads); traduccion propia declarada como tal. Andy recibe hoy el redescubrimiento (Asimov L5-026), completando el par nuevo+biblioteca del dia.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

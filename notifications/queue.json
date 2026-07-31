@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-07-31T03:30:55.343Z",
+  "_updated_at": "2026-07-31T16:20:00-03:00",
   "notifications": [
     {
       "id": "2026-07-30-rec-sofi",
@@ -508,6 +508,32 @@
       "sent_at": "2026-07-29T21:15:38.850Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-07-29"
+    },
+    {
+      "id": "2026-07-31-rec-andy",
+      "title": "🪐 El libro de tu estante que nunca abriste",
+      "body": "Asimov, 1965: capítulos cortos como Rovelli, pero escritos antes de que nacieras — el censo de lunas quedó viejo, la forma no.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-31-asimov-tiempo-espacio.html",
+      "to": "Andy",
+      "send_at": "2026-07-31T17:40:00-03:00",
+      "expires_at": "2026-07-31T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-31"
+    },
+    {
+      "id": "2026-07-31-rec-sofi",
+      "title": "📖 Sofi, la veta que pediste: romance feliz",
+      "body": "Pediste romance con final feliz. Nora es agente literaria, Charlie el editor imposible — humor filoso, sin melodrama.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-07-31-henry-book-lovers.html",
+      "to": "Sofi",
+      "send_at": "2026-07-31T17:40:00-03:00",
+      "expires_at": "2026-07-31T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-07-31"
     }
   ]
 }
