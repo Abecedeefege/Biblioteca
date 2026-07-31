@@ -4,6 +4,13 @@ Auditoría inicial del catálogo para el sistema de experiencias diarias.
 Fecha: 2026-07-03. Este archivo es **estable** (no se reescribe a diario como
 `engage/learnings.md`): es el mapa de materia prima del agente `/engagement`.
 
+> **Regla de identidad (desde la re-catalogación 2026-08)**: el prefijo del
+> `id` de un libro es HISTÓRICO — indica dónde se fichó por primera vez, no
+> dónde está. La ubicación real es el estante que lo contiene en
+> `shelves[].books` (el front-end la deriva por contención vía `BOOK_SHELF`).
+> Un libro nunca cambia de id al moverse; los libros nuevos toman el prefijo
+> del estante donde aparecen, numerando después del máximo de esa serie.
+
 ## 0. Dónde viven los datos
 
 - **Catálogo canónico**: embebido en `index.html` como
@@ -20,25 +27,39 @@ Fecha: 2026-07-03. Este archivo es **estable** (no se reescribe a diario como
   en `data/enrichment.json` (136 libros sembrados con año de primera
   publicación de la obra + nivel de confianza; estado de lectura: todo
   `unknown` hasta que el dueño responda con botones).
+- **Fichado (Mesa de Fichado)**: `data/labeling.json` — tareas de
+  identificación/foto por libro (status, fotos, notas, resuelto), escrito por
+  `concepts/labeling.js` (browser con PAT) y por el agente `/labeling`
+  (que además ingiere el relay público: tabla Supabase `biblioteca_labeling`
+  + bucket Storage `labeling`, insert-only anónimo). Fotos de caras de libros
+  en `data/labeling/fotos/`. La página `concepts/labeling.html` se abre con
+  cinco toques en la placa "El Fichero" de la home. Los agentes `/engagement`
+  y `/recomendacion` no tocan nada de esto.
 
-## 1. Entidades (400 volúmenes, 25 estantes, 22 con libros)
+## 1. Entidades (437 volúmenes tras la re-catalogación 2026-08; 29 estantes, 24 con libros)
+
+Desde 2026-08 hay un **segundo mueble**: la biblioteca del rincón (columna `B`,
+5 estantes, con la Smith-Corona de vitrina en B3). Los ids no cambiaron al
+mudarse los libros (ver regla de identidad arriba).
 
 | Bloque | Estantes | Volúmenes | Notas |
 |---|---|---|---|
-| Stephen King en español | R4 (lomo blanco) + R5 (tapa negra) | 50 | La colección más grande; dos "ediciones rivales" conviviendo |
-| Shakespeare + Harry Potter | L3 | 51 | Obras, crítica, ediciones alemanas, un Macbeth ilustrado por Dalí, y un libro anti-Stratford |
-| Uruguay y Montevideo | L6 (34) + L8 (7) + parte de L7 | ~45 | Historia edilicia, nomenclatura de calles, Graf Spee, fotolibros |
-| Viajes y geografía | R2 (24) + R3 (19) | 43 | Incluye un lomo en griego (ΑΚΡΟΠΟΛΙΣ) |
-| Arte | M2 + M3 + M4 | 38 | Serie Mentor UNESCO casi completa (22), Picasso en hebreo, Vincent van Gogh |
+| Stephen King en español | R4 (lomo blanco) + R5 (tapa negra) | 51 | La colección más grande; se sumó una segunda Carrie en tapa dura oscura (R5-026) |
+| Shakespeare + Harry Potter | L3 | 49 | Los dos Dickens Chapman & Hall (L3-050/051) se identificaron y mudaron a L7 |
+| Uruguay y Montevideo | L6 (32) + L8 (9) | ~41 | L6-032 y los fascículos de El País (L6-MEDIA) bajaron a L8 |
+| Viajes y geografía | R2 (24) + R3 (19) | 43 | R2-019 dejó de ser UNK: el lomo invertido dice «GERMANY» |
+| Misterio y cozy mystery | **B2** (27) + resto en M5 (12) | 39 | El set Sherlock + cozys Alma se mudaron al mueble del rincón; M5-005 no visto |
+| Referencia antigua + arte | **B4** (40) | 40 | Casi todo el viejo M7 + la serie Mentor-UNESCO completa de M4 |
+| Diccionarios y atlas | **B5** (19) | 19 | La vieja fila anónima M8-002, ahora con nombre: Monlau, Granada, Larousse, facsimilares |
 | Astronomía y cosmología | L5 | 33 | Gamow ×3, Hoyle, Sagan, Hawking, Asimov, el matrimonio Bok |
-| Misterio y cozy mystery | M5 | 32 | Conan Doyle, Christie, Fitzek, cozys de ediciones Alma |
-| Antiguos (drama, historia, idiomas) | M7 (31) + M8 + R8 | ~41 | Los menos identificados del catálogo |
-| Autoayuda y filosofía | L4 | 24 | De Sun Tzu a Timothy Leary |
-| Genealogía + química familiar | R7 | 17 | Apolant (Génesis de la Familia Uruguaya) + G.E. Villar — **obra de autoría familiar** |
+| Autoayuda y filosofía | L4 | 28 | +4 altas 2026-08: Raspall, Rojas Estapé, Rovelli, Brewer |
+| Antiguos restantes | M7 (13) + M8 (1) + R8 (8) | 22 | Lo que no se vio en el mueble del rincón; M8-002 sigue como placeholder |
+| Genealogía + química familiar | R7 | 19 | Apolant + G.E. Villar — **obra de autoría familiar**; +2 altas 2026-08 |
+| Latinoamericana + clásicos ingleses | L7 | 15 | Quiroga/Borges/García Márquez + Dickens y los ingleses aparecidos (Ivanhoe, Jane Eyre…) |
+| Arte restante | M2 + M3 | 16 | Picasso en hebreo, Vincent van Gogh (la serie Mentor se fue a B4) |
 | Clásicos encuadernados | L2 | 10 | Balzac en vitela (Œuvres Complètes) + Keats en cuero |
 | Elísabet Benavent | M6 | 9 | Saga Valeria completa + 5 más |
-| Latinoamericana y antiguos | L7 | 8 | Martín Fierro escondido atrás del set de Quiroga |
-| National Geographic | R6 | 100+ revistas | 1976–2000, catalogadas como un solo ítem |
+| National Geographic | R6 | ~100 revistas | 1976–2000 (incl. un número en español de Mayo 2000), un solo ítem |
 | Exhibición | TOP | 2 | Don Quijote I y II en cuero rojo, con figuras talladas de Quijote y Sancho |
 
 **Autores con masa crítica**: King (50), Shakespeare (21 + crítica),

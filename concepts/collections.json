@@ -86,11 +86,11 @@
       "key": "misterio",
       "title": "El salón del crimen",
       "kicker": "De Baker Street a los cozys de Alma",
-      "filter": { "type": "shelf", "value": "M5" },
+      "filter": { "type": "shelves", "value": ["B2", "M5"] },
       "centerpiece": "M5-004",
       "highlights": ["M5-005", "M5-006", "M5-003", "M5-020", "M5-025", "M5-024"],
       "essay": [
-        "El estante M5 tiene un arco dramático perfecto: empieza con el crimen clásico — el drama completo de Conan Doyle matando a Holmes en 1893 y resucitándolo por presión y dinero, con las tres piezas de esa historia paradas una al lado de la otra — sigue con Christie en sus dos registros, y desemboca en el psicothriller alemán de Fitzek, que destronó al Código Da Vinci en su debut.",
+        "Este salón se mudó en 2026-08 al mueble del rincón (B2), con la máquina de escribir de vitrina. Tiene un arco dramático perfecto: empieza con el crimen clásico — el drama completo de Conan Doyle matando a Holmes en 1893 y resucitándolo por presión y dinero, con las tres piezas de esa historia paradas una al lado de la otra — sigue con Christie en sus dos registros, y desemboca en el psicothriller alemán de Fitzek, que destronó al Código Da Vinci en su debut.",
         "La otra mitad del estante es puro confort: los cozy mysteries de ediciones Alma, donde los crímenes ocurren en librerías, clubes de lectura y cafeterías, y hasta la reina Isabel II investiga entre el té y los corgis. Es el estante para elegir según el día: sangre victoriana o manta y bizcochos."
       ],
       "records_note": "El estante con la historia editorial más dramática: un detective asesinado por su propio autor y resucitado a pedido del público."

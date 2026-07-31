@@ -693,7 +693,7 @@ function viewYo(){
       </div>`:''}
 
     <h2 class="sec">Radiografía de la colección</h2>
-    <p class="sub">Los 400 de la casa, medidos.</p>
+    <p class="sub">Los 437 de la casa, medidos.</p>
     ${barChart('Por tema','Tema principal de cada volumen — los 8 más grandes',topicRows)}
     ${barChart('Por idioma','Idioma de la edición física (donde está identificado)',langRows)}
     ${decadeRows.length?barChart('Por década de primera publicación',`${decadeRows.reduce((a,r)=>a+r[1],0)} obras datadas después de 1800 · ${antiguos} anteriores (hasta el Arte de la Guerra, siglo V a.C.)`,decadeRows):''}
