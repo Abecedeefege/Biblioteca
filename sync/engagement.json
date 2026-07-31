@@ -2745,7 +2745,69 @@
       "device": "Andy",
       "dwell_s": 3,
       "scroll_pct": 0
+    },
+    {
+      "id": "ms9fy9b9-m48bi4",
+      "type": "dwell",
+      "ts": "2026-07-31T21:15:03.717Z",
+      "page": "index.html",
+      "device": "Andy",
+      "dwell_s": 5,
+      "scroll_pct": 0
+    },
+    {
+      "id": "ms9isat4-volwxp",
+      "type": "notification_clicked",
+      "ts": "2026-07-31T22:34:24.568Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "nid": "2026-07-31-cine",
+      "src": "push"
+    },
+    {
+      "id": "ms9isat7-mpnf8z",
+      "type": "page_visit",
+      "ts": "2026-07-31T22:34:24.571Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "nid": "2026-07-31-cine"
+    },
+    {
+      "id": "ms9ithuv-50le0q",
+      "type": "answer",
+      "ts": "2026-07-31T22:35:20.359Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "cine-veredicto:omitb",
+      "value": "ya_la_vimos"
+    },
+    {
+      "id": "ms9iulga-twrvdk",
+      "type": "answer",
+      "ts": "2026-07-31T22:36:11.674Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "cine-veredicto:arrival",
+      "value": "ya_la_vimos"
+    },
+    {
+      "id": "ms9iv8ek-e416f5",
+      "type": "dwell",
+      "ts": "2026-07-31T22:36:41.420Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "dwell_s": 137,
+      "scroll_pct": 92
+    },
+    {
+      "id": "ms9ixkfs-frhd1s",
+      "type": "answer",
+      "ts": "2026-07-31T22:38:30.328Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "cine-veredicto:severance",
+      "value": "me_tienta"
     }
   ],
-  "_updated_at": "2026-07-31T21:14:59.808Z"
+  "_updated_at": "2026-07-31T22:38:32.075Z"
 }
