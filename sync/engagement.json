@@ -2816,7 +2816,78 @@
       "device": "Andy",
       "qid": "cine-dia-rapido",
       "value": "viernes_si"
+    },
+    {
+      "id": "ms9iiljk-s2fd56",
+      "ts": "2026-07-31T22:26:51.920Z",
+      "nid": "2026-07-31-cine",
+      "src": "push",
+      "page": "2026-07-31-sala-01.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms9iiljl-unb0mi",
+      "ts": "2026-07-31T22:26:51.921Z",
+      "nid": "2026-07-31-cine",
+      "page": "2026-07-31-sala-01.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms9ijs5q-92fbbg",
+      "ts": "2026-07-31T22:27:47.150Z",
+      "qid": "cine-noche:2026-07-31-sala-01",
+      "page": "2026-07-31-sala-01.html",
+      "type": "answer",
+      "value": "medio",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms9ik64y-fkbwme",
+      "ts": "2026-07-31T22:28:05.266Z",
+      "qid": "cine-veredicto:omitb",
+      "page": "2026-07-31-sala-01.html",
+      "type": "answer",
+      "value": "ya_la_vimos",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms9ikma1-azfeyx",
+      "ts": "2026-07-31T22:28:26.185Z",
+      "qid": "cine-veredicto:arrival",
+      "page": "2026-07-31-sala-01.html",
+      "type": "answer",
+      "value": "no_va",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms9ilj3o-9a4z84",
+      "ts": "2026-07-31T22:29:08.724Z",
+      "page": "2026-07-31-sala-01.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 137,
+      "scroll_pct": 73
+    },
+    {
+      "id": "ms9im6fi-m1qykt",
+      "ts": "2026-07-31T22:29:38.958Z",
+      "qid": "cine-plataformas-rapido",
+      "page": "2026-07-31-sala-01.html",
+      "type": "answer",
+      "value": "netflix_prime",
+      "device": "Sofi"
+    },
+    {
+      "id": "ms9imlse-ca4lv9",
+      "ts": "2026-07-31T22:29:58.862Z",
+      "page": "2026-07-31-sala-01.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 168,
+      "scroll_pct": 100
     }
   ],
-  "_updated_at": "2026-07-31T22:38:47.077Z"
+  "_updated_at": "2026-07-31T23:29:28.347Z"
 }
