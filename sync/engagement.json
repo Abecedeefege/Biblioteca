@@ -2798,7 +2798,16 @@
       "device": "Andy",
       "dwell_s": 137,
       "scroll_pct": 92
+    },
+    {
+      "id": "ms9ixkfs-frhd1s",
+      "type": "answer",
+      "ts": "2026-07-31T22:38:30.328Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "cine-veredicto:severance",
+      "value": "me_tienta"
     }
   ],
-  "_updated_at": "2026-07-31T22:36:42.750Z"
+  "_updated_at": "2026-07-31T22:38:32.075Z"
 }
