@@ -2913,7 +2913,51 @@
       "page": "2026-08-01-bok-via-lactea.html",
       "device": "Andy",
       "nid": "2026-08-01-rec-andy"
+    },
+    {
+      "id": "msavihqa-q3qzuy",
+      "ts": "2026-08-01T21:18:28.162Z",
+      "nid": "2026-08-01-rec-sofi",
+      "src": "push",
+      "page": "2026-08-01-henry-people-vacation.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "msavihqc-x5ae75",
+      "ts": "2026-08-01T21:18:28.164Z",
+      "nid": "2026-08-01-rec-sofi",
+      "page": "2026-08-01-henry-people-vacation.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "msavj8i7-6vaqfv",
+      "ts": "2026-08-01T21:19:02.863Z",
+      "qid": "rec-veredicto:2026-08-01-henry-people-vacation",
+      "page": "2026-08-01-henry-people-vacation.html",
+      "type": "answer",
+      "value": "ya_lo_lei",
+      "device": "Sofi"
+    },
+    {
+      "id": "msavja1j-ld4uwr",
+      "ts": "2026-08-01T21:19:04.855Z",
+      "page": "2026-08-01-henry-people-vacation.html",
+      "slug": "2026-08-01-henry-people-vacation",
+      "type": "reaction",
+      "value": "like",
+      "device": "Sofi"
+    },
+    {
+      "id": "msavjp45-6c7cjf",
+      "ts": "2026-08-01T21:19:24.389Z",
+      "qid": "rec-nota:2026-08-01-henry-people-vacation",
+      "page": "2026-08-01-henry-people-vacation.html",
+      "type": "answer",
+      "value": "Lo leí, no está en la biblioteca porque lo leí en el kindle 🤓",
+      "device": "Sofi"
     }
   ],
-  "_updated_at": "2026-08-01T21:09:13.886Z"
+  "_updated_at": "2026-08-01T22:07:31.260Z"
 }
