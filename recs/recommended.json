@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-07-31T16:20:00-03:00",
-  "_feedback_cutoff": "2026-07-29T21:34:04.563Z",
+  "_updated_at": "2026-08-01T16:12:59-03:00",
+  "_feedback_cutoff": "2026-07-31T22:38:45.737Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -649,10 +649,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 168
       },
-      "learning": null
+      "learning": "Feedback real de ambos el 31/07 (22:26-22:38 UTC), vía la caja cine-veredicto de la propia ficha (no son botones rec-veredicto:* — esta pieza usa su propia convencion cine-*). Andy: OMitB y Arrival 'ya_la_vimos' (las conocia de antes, guardia de 'ya la vi' funciono para evitar el bochorno de recomendar algo repetido), Severance 'me_tienta' (unica sin ver), dia preferido 'viernes_si', dwell 137s/92%. Sofi: OMitB 'ya_la_vimos' tambien (coincide con Andy - la vieron juntos), Arrival 'no_va' (unico rechazo explicito de la funcion), noche 'medio', plataformas 'netflix_prime', dwell hasta 168s/100% (la mas alta registrada en esta pieza). Aprendizaje para la proxima Sala: 2/3 titulos ya vistos por ambos - antes de armar la Nº2 conviene preguntar que vieron recientemente o ir a estrenos mas nuevos en vez de clasicos ya consumidos; Arrival no convencio a Sofi (ciencia dura sin el enganche narrativo que ella pide) - anotar para no repetir el angulo 'asombro cientifico puro' sin trama humana fuerte cuando el destinatario es ella. Severance queda como candidata confirmada para la proxima funcion (unica con interes real de alguien)."
     },
     {
       "id": "2026-07-28-tyson-astrofisica-prisa",
@@ -846,6 +846,57 @@
       "page": "recs/2026-07-31-henry-book-lovers.html",
       "notified_by": "2026-07-31-rec-sofi",
       "why": "Sin respuesta aun a la micro-pregunta de estante del 30/07 (sync/engagement.json sin eventos nuevos desde 29/07 22:15 UTC) -> se mantiene la Guardia Maxima: no armar mas redescub a ciegas para Sofi. Se prioriza NUEVO otra vez, abriendo la tercera veta pedida explicitamente el 24/07: romance/emocional con final feliz. Emily Henry elegida por el gancho bookish (Nora es agente literaria, como ella rodeada de libros) mas humor y ritmo cercano a Osman, no melodrama. Verificado titulo+autor contra catalogo completo (sin match) y recommended.json (sin match). Citas verificadas cruzando dos fuentes independientes (extracto oficial Penguin + busquedas de citas de Goodreads); traduccion propia declarada como tal. Andy recibe hoy el redescubrimiento (Asimov L5-026), completando el par nuevo+biblioteca del dia.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-01-bok-via-lactea",
+      "date": "2026-08-01",
+      "kind": "redescubrimiento",
+      "title": "La Vía Láctea",
+      "author": "Bart J. Bok y Priscilla F. Bok",
+      "language": "es",
+      "topics": [
+        "astronomia",
+        "ciencia",
+        "matrimonio-autor"
+      ],
+      "book_ref": "L5-019",
+      "audience": "andy",
+      "page": "recs/2026-08-01-bok-via-lactea.html",
+      "notified_by": "2026-08-01-rec-andy",
+      "why": "Ultimo redescub de la lista corta de astronomia del PROFILE (banco repuesto tras esta corrida). Sigue la veta mas consistente de Andy (Rovelli y Cosmos ACIERTO PLENO; Hawking y Tyson con el dwell mas alto de sus fichas, sin voto). Angulo distinto a los redescub anteriores: es el unico libro de su estante L5 escrito por un matrimonio de astronomos (Bart y Priscilla Bok), con la anecdota real de que se dividieron la escritura del libro capitulo por capitulo. Regimen del dia: ayer (31/07) Andy tuvo el redescub (Asimov) y Sofi el nuevo (Henry) -> hoy toca alternar, pero la Guardia Maxima de Sofi (sin respuesta a la micro-pregunta de estante) obliga a mantener nuevo para ella otra vez, asi que Andy repite redescub para sostener el par nuevo+biblioteca del dia (documentado en PROFILE 31/07, seccion 'Que mirar manana'). Verificado titulo+autor contra catalogo completo (unico match esperado: el propio L5-019) y recommended.json: sin coincidencias previas. read_status ausente en enrichment.json = tratado como no leido. Sin citas textuales verificables del libro (sin extracto oficial online) -> se describio fielmente el contenido y la biografia de los autores en vez de inventar frases, siguiendo el mismo criterio de honestidad usado con Asimov.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-01-henry-people-vacation",
+      "date": "2026-08-01",
+      "kind": "nuevo",
+      "title": "People We Meet on Vacation (Gente que Conocemos en Vacaciones)",
+      "author": "Emily Henry",
+      "language": "es",
+      "topics": [
+        "romance",
+        "amistad",
+        "humor",
+        "viaje"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-08-01-henry-people-vacation.html",
+      "notified_by": "2026-08-01-rec-sofi",
+      "why": "Sin respuesta aun a la micro-pregunta de estante (rec-estante-sin-leer, pendiente desde el 30/07: sync/engagement.json revisado hasta el 31/07 22:38 sin ese evento) -> se sostiene la Guardia Maxima: no armar mas redescub a ciegas para Sofi. Se mantiene NUEVO en la veta romance/emocional que pidio el 24/07, con la otra gran novela de Emily Henry (misma autora de Book Lovers, enviada ayer y todavia sin veredicto) pero con una estructura totalmente distinta: amigos-a-algo-mas en vez de enemigos-a-algo-mas, diez veranos de viaje en vez de un mes fijo. Hook fuerte y verificado: adaptacion de Netflix con Emily Bader y Tom Blyth, estrenada el 9 de enero de 2026 (ya disponible hace meses, no es promesa futura). Verificado titulo+autora contra catalogo completo (sin match) y recommended.json (sin match, incluye chequeo especial de que no sea la misma obra que Book Lovers). Citas verificadas contra la coleccion de citas de Goodreads del libro; traduccion propia declarada como tal. Link de compra verificado (200) en buscalibre.uy, precio tomado de la edicion en espanol tapa blanda (1170 UYU, ~US$29 al tipo de cambio de fin de julio ~40.2). Andy recibe hoy el redescubrimiento (Bok, L5-019), completando el par nuevo+biblioteca del dia.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

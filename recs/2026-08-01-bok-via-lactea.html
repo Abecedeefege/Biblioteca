@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🗺️ La Vía Láctea · Bibliotequeando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#10131F;
+  --tinta2:#1B2036;
+  --oro:#C9A45C;
+  --oro-hi:#E8CD94;
+  --cian:#6FA9B8;
+  --cian-hi:#A6D4DF;
+  --pergamino:#F1E9D6;
+  --bruma:#A8A0C2;
+  --linea:rgba(241,233,214,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--tinta);color:var(--pergamino);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--oro);color:var(--tinta)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--cian-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(241,233,214,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cian-hi),var(--oro-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(16,19,31,.65);backdrop-filter:blur(4px)}
+.back:hover{color:var(--oro-hi);border-color:var(--oro)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(130% 90% at 50% 6%,#2B2450 0%,var(--tinta) 65%)}
+.mapa{position:absolute;inset:0;z-index:0;opacity:.55}
+.mapa span{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--oro-hi);animation:centelleo 3.8s ease-in-out infinite}
+@keyframes centelleo{0%,100%{opacity:.15}50%{opacity:1}}
+.bruju{position:absolute;top:9%;left:50%;transform:translateX(-50%);font-size:2.6rem;opacity:.5;animation:girar 16s linear infinite}
+@keyframes girar{from{transform:translateX(-50%) rotate(0deg)}to{transform:translateX(-50%) rotate(360deg)}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cian-hi);border:1px solid var(--cian);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.7rem,1.15rem + 4vw,3.1rem);font-weight:600;line-height:1.14}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--oro-hi)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:50ch}
+.cta-btn{display:inline-block;background:var(--oro);color:var(--tinta);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--oro-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--tinta2)}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.2rem 0 1.3rem}
+.tabs button{border:1px solid var(--linea);background:transparent;color:var(--pergamino);border-radius:999px;padding:.6rem 1.05rem;font-size:.87rem;font-weight:600;transition:all .25s ease}
+.tabs button:hover,.tabs button.activo{border-color:var(--cian);color:var(--cian-hi);background:rgba(111,169,184,.12)}
+.tab-panel{border:1px solid var(--linea);border-radius:16px;padding:clamp(1.4rem,4vw,2rem);background:linear-gradient(180deg,rgba(241,233,214,.03),transparent);min-height:13em}
+.tab-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cian-hi);font-weight:700;margin-bottom:.6rem}
+.tab-panel p{color:var(--bruma);font-size:.98rem;margin-bottom:1rem}
+.tab-panel .cita-in{font-family:var(--serif);font-style:italic;color:var(--pergamino);font-size:1.02rem;border-left:3px solid var(--cian);padding-left:1rem}
+.honestidad{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2rem;background:rgba(201,164,92,.07)}
+.honestidad p{color:var(--bruma);font-size:.95rem}
+.honestidad .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(241,233,214,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--cian-hi);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--pergamino);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--cian);color:var(--cian-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--cian-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#2B2450 0%,var(--tinta) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:36ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--oro-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="mapa" id="mapa" aria-hidden="true"></div>
+  <div class="bruju" aria-hidden="true">🧭</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · De tu estante · L5-019</span>
+    <h1>La Vía Láctea</h1>
+    <p class="autor">Bart J. Bok y Priscilla F. Bok · 1941 (con revisiones hasta 1981) · El mapa que hizo un matrimonio de astrónomos</p>
+    <p class="sub">Rovelli y Cosmos fueron aciertos plenos; Hawking y Tyson se quedaron con el dwell más alto de tus fichas, sin voto todavía. L5-019 es distinto a todos esos: no es un solo autor divulgando, es una pareja de astrónomos de carne y hueso escribiendo a cuatro manos el libro que definió cómo se enseñó la Vía Láctea durante cuarenta años.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traemos</p>
+    <h2 class="titulo rev d1">El único libro de tu estante escrito por dos personas</h2>
+    <p class="bajada rev d2">Tu L5 tiene 33 libros y este es el único firmado por un matrimonio: Bart Bok (Harvard, después Mount Stromlo en Australia, después Arizona) y Priscilla Fairfield Bok, que ya era astrónoma profesional — becaria en el observatorio Lick, colega de Harlow Shapley en Harvard — antes de conocerlo en un congreso en Leiden en 1928. La Sociedad Astronómica Real llegó a decir que "es difícil y hasta inútil separar los logros de él de los de ella". El libro arrancó en 1937, tuvo cinco ediciones hasta 1981, y se lo consideró uno de los libros de astronomía más exitosos jamás escritos.</p>
+  </div>
+</section>
+
+<section class="seccion" id="temas">
+  <div class="centro">
+    <p class="kicker rev">Cuatro cosas que vale la pena saber antes de abrirlo</p>
+    <h2 class="titulo rev d1">Elegí un tema, en un par de minutos te lo cuenta</h2>
+    <p class="bajada rev d2">Datos verificados contra Wikipedia (Bart Bok y Priscilla Fairfield Bok) y Harvard University Press.</p>
+    <div class="tabs" id="tabsTem">
+      <button data-t="pareja" class="activo">La pareja</button>
+      <button data-t="proceso">Cómo lo escribieron</button>
+      <button data-t="globulos">El hallazgo que vino después</button>
+      <button data-t="astrologia">El otro Bart Bok</button>
+    </div>
+    <div class="tab-panel rev d2" id="panelTem">
+      <p class="et">Dos astrónomos, un mismo tema</p>
+      <p>Bart Bok nació en los Países Bajos, se formó en Groninga y Leiden, y pasó a Harvard en 1929 — el mismo año en que se casó con Priscilla. El Boston Globe los apodó en 1936 "los vendedores de la Vía Láctea": daban charlas públicas casi tres veces por mes y hacían programas de televisión para explicar la estructura de la galaxia a cualquiera que quisiera escuchar. Este libro es la versión escrita de esas charlas.</p>
+      <p class="cita-in">Dato real: tuvieron dos hijos, John (1930) y Joyce (1933), mientras sostenían las dos carreras en paralelo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Escrito</dt><dd>A partir de 1937, primera edición 1941 (P. Blakiston's Son & Co.) — cinco ediciones hasta 1981, la serie "Harvard Books on Astronomy"</dd>
+        <dt>Autores</dt><dd>Bart J. Bok y Priscilla Fairfield Bok, matrimonio de astrónomos (Harvard → Mount Stromlo, Australia → Universidad de Arizona)</dd>
+        <dt>Tu ejemplar</dt><dd>Estante L5, junto a Cosmos, Hawking y Asimov — edición y año de impresión de tu copia sin identificar</dd>
+        <dt>Contenido</dt><dd>Estructura de la Vía Láctea vista desde adentro: cúmulos estelares, gas y polvo interestelar, la forma espiral de nuestra galaxia, mapas fotográficos del cielo norte y sur</dd>
+        <dt>Formato</dt><dd>Con ilustraciones y mapas — se hojea por capítulo, no hace falta empezar por el primero</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="honestidad-sec">
+  <div class="centro">
+    <p class="kicker rev">La letra chica, honesta</p>
+    <h2 class="titulo rev d1">Un mapa de mediados del siglo XX — con eso en mente</h2>
+    <div class="honestidad rev d2">
+      <span class="et">Guardia de honestidad</span>
+      <p>No encontré citas textuales verificables de este libro específico en español ni en inglés (no hay extracto oficial online ni colección de citas como con Book Lovers) — así que, igual que con el Asimov de la semana pasada, preferí contarte fielmente de qué trata en vez de inventar una frase. Tampoco sé qué edición exacta es tu copia física: si es la de 1941, el contenido va a estar mucho más viejo que si es una de las últimas revisiones de los 70. Tratalo como lo que es — una cápsula de cómo un matrimonio de astrónomos le explicaba la galaxia al público hace décadas, con datos que hoy seguramente cambiaron pero con una estructura de explicación que sigue siendo clara.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">El rescate</p>
+    <h2 class="titulo rev d1">El único libro de dos autores en tu estante de astronomía</h2>
+    <p class="bajada rev d2">No hace falta el libro entero de una sentada. Con el primer capítulo — la presentación general de la Vía Láctea — alcanza para saber si el tono de los Bok te atrapa tanto como Rovelli o Cosmos.</p>
+    <div class="cta rev d2">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L5-019','si',this)">📖 Sí, esta noche</button>
+        <button onclick="engageAnswer('leer-esta-noche:L5-019','ya_leido',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L5-019','no',this)">🙅 Esta noche no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-01-bok-via-lactea','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-01-bok-via-lactea','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-01-bok-via-lactea','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-01-bok-via-lactea','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-01-bok-via-lactea','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-01-bok-via-lactea','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-01-bok-via-lactea','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-01-bok-via-lactea" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-01-bok-via-lactea" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-01-bok-via-lactea',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">Ella revisaba cada borrador pensando en <b>"tu nieto, que no iba a entender esto"</b> — por eso el libro se lee tan fácil.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Mañana, la próxima ficha.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--cian-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--cian);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante L5 · datos verificados (Wikipedia, Harvard University Press) a agosto 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+
+  var mapa=$('#mapa');
+  for(var i=0;i<40;i++){
+    var s=document.createElement('span');
+    s.style.left=(Math.random()*100)+'%';
+    s.style.top=(Math.random()*70)+'%';
+    s.style.animationDelay=(Math.random()*3.8)+'s';
+    mapa.appendChild(s);
+  }
+
+  var TEM={
+    pareja:{et:'Dos astrónomos, un mismo tema',cuerpo:'Bart Bok nació en los Países Bajos, se formó en Groninga y Leiden, y pasó a Harvard en 1929 — el mismo año en que se casó con Priscilla. El Boston Globe los apodó en 1936 "los vendedores de la Vía Láctea": daban charlas públicas casi tres veces por mes y hacían programas de televisión para explicar la estructura de la galaxia a cualquiera que quisiera escuchar. Este libro es la versión escrita de esas charlas.',cita:'Dato real: tuvieron dos hijos, John (1930) y Joyce (1933), mientras sostenían las dos carreras en paralelo.'},
+    proceso:{et:'Cómo lo escribieron',cuerpo:'Priscilla ya era astrónoma antes de conocer a Bart: estudió con W.W. Campbell en el observatorio Lick, publicó sobre manchas solares en 1916 y trabajó junto a Harlow Shapley en Harvard investigando estrellas variables RR Lyrae. Cuando empezaron el libro en 1937, se dividieron ocho capítulos — cuatro cada uno — y después los reescribieron juntos para que sonaran como una sola voz.',cita:'Frase real de Bart Bok sobre el método: "acordamos que yo escribiría cuatro capítulos y ella otros cuatro" — antes de reorganizar todo para que fuera coherente.'},
+    globulos:{et:'El hallazgo que vino después',cuerpo:'En 1947, seis años después de la primera edición del libro, Bart publicó junto a E.F. Reilly el descubrimiento de unas nubes oscuras y densas de gas y polvo dentro de la Vía Láctea — hoy conocidas como "glóbulos de Bok". Su hipótesis: eran el lugar exacto donde nacen las estrellas nuevas. La confirmación llegó recién después de su muerte, con observaciones infrarrojas. Las ediciones posteriores del libro (hasta 1981) incorporaron este hallazgo propio.',cita:'Dato real: el nombre "glóbulos de Bok" se lo pusieron otros astrónomos, en su honor — él nunca los llamó así.'},
+    astrologia:{et:'El otro Bart Bok',cuerpo:'En 1975, Bok fue coautor de "Objeciones a la Astrología", un manifiesto firmado por 186 científicos, entre ellos 19 premios Nobel, cuestionando la astrología como pseudociencia. Se convirtió en miembro fundador del Comité para la Investigación Escéptica. El mismo hombre que pasó su vida mapeando estrellas de verdad se plantó fuerte contra usarlas para predecir destinos.',cita:'Contraste real: el especialista en la Vía Láctea literal, del lado opuesto de cualquier lectura del horóscopo.'}
+  };
+  var tabs=$$('#tabsTem button'),panel=$('#panelTem');
+  tabs.forEach(function(b){
+    b.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      var c=TEM[b.getAttribute('data-t')];
+      panel.innerHTML='<p class="et">'+c.et+'</p><p>'+c.cuerpo+'</p><p class="cita-in">'+c.cita+'</p>';
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
