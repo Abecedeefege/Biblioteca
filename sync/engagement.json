@@ -2887,7 +2887,33 @@
       "device": "Sofi",
       "dwell_s": 168,
       "scroll_pct": 100
+    },
+    {
+      "id": "ms9iy15g-menhoi",
+      "type": "dwell",
+      "ts": "2026-07-31T22:38:51.988Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "dwell_s": 165,
+      "scroll_pct": 100
+    },
+    {
+      "id": "msav6l3j-ssa5xn",
+      "type": "notification_clicked",
+      "ts": "2026-08-01T21:09:12.655Z",
+      "page": "2026-08-01-bok-via-lactea.html",
+      "device": "Andy",
+      "nid": "2026-08-01-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "msav6l3l-fmkbkj",
+      "type": "page_visit",
+      "ts": "2026-08-01T21:09:12.657Z",
+      "page": "2026-08-01-bok-via-lactea.html",
+      "device": "Andy",
+      "nid": "2026-08-01-rec-andy"
     }
   ],
-  "_updated_at": "2026-07-31T23:29:28.347Z"
+  "_updated_at": "2026-08-01T21:09:13.886Z"
 }
