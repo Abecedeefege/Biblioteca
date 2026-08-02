@@ -2957,7 +2957,33 @@
       "type": "answer",
       "value": "Lo leí, no está en la biblioteca porque lo leí en el kindle 🤓",
       "device": "Sofi"
+    },
+    {
+      "id": "msav77jn-s0hwya",
+      "type": "dwell",
+      "ts": "2026-08-01T21:09:41.747Z",
+      "page": "2026-08-01-bok-via-lactea.html",
+      "device": "Andy",
+      "dwell_s": 29,
+      "scroll_pct": 41
+    },
+    {
+      "id": "mscfc7pn-evns7b",
+      "type": "notification_clicked",
+      "ts": "2026-08-02T23:21:13.739Z",
+      "page": "2026-08-02-holiday-obstaculo.html",
+      "device": "Andy",
+      "nid": "2026-08-02-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mscfc7pq-dqzrg7",
+      "type": "page_visit",
+      "ts": "2026-08-02T23:21:13.742Z",
+      "page": "2026-08-02-holiday-obstaculo.html",
+      "device": "Andy",
+      "nid": "2026-08-02-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-01T22:07:31.260Z"
+  "_updated_at": "2026-08-02T23:21:15.050Z"
 }
