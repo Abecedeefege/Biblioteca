@@ -3001,7 +3001,16 @@
       "device": "Andy",
       "dwell_s": 31,
       "scroll_pct": 1
+    },
+    {
+      "id": "mscgh7mf-njztzo",
+      "type": "dwell",
+      "ts": "2026-08-02T23:53:06.519Z",
+      "page": "2026-08-02-holiday-obstaculo.html",
+      "device": "Andy",
+      "dwell_s": 145,
+      "scroll_pct": 67
     }
   ],
-  "_updated_at": "2026-08-02T23:33:49.417Z"
+  "_updated_at": "2026-08-02T23:53:08.174Z"
 }
