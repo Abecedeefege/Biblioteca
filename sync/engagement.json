@@ -2983,7 +2983,16 @@
       "page": "2026-08-02-holiday-obstaculo.html",
       "device": "Andy",
       "nid": "2026-08-02-rec-andy"
+    },
+    {
+      "id": "mscfcp50-60zga4",
+      "type": "dwell",
+      "ts": "2026-08-02T23:21:36.324Z",
+      "page": "2026-08-02-holiday-obstaculo.html",
+      "device": "Andy",
+      "dwell_s": 23,
+      "scroll_pct": 1
     }
   ],
-  "_updated_at": "2026-08-02T23:21:15.050Z"
+  "_updated_at": "2026-08-02T23:21:37.762Z"
 }
