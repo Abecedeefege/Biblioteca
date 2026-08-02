@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🔍 Elemental, querida lectora · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#1A1410;
+  --tinta2:#241D16;
+  --laton:#B8894F;
+  --laton-hi:#D9AE79;
+  --niebla:#6E8B8C;
+  --niebla-hi:#9FC0BF;
+  --pergamino:#F3E9D6;
+  --bruma:#B2A392;
+  --linea:rgba(243,233,214,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--tinta);color:var(--pergamino);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--laton);color:var(--tinta)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--niebla-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(243,233,214,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--laton-hi),var(--niebla-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(26,20,16,.65);backdrop-filter:blur(4px)}
+.back:hover{color:var(--laton-hi);border-color:var(--laton)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--laton);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(130% 90% at 50% 6%,#3A2E1D 0%,var(--tinta) 65%);border-top:6px dashed rgba(243,233,214,.2)}
+.niebla-fx{position:absolute;inset:0;z-index:0;opacity:.4}
+.niebla-fx span{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--niebla-hi);animation:centelleo 4.2s ease-in-out infinite}
+@keyframes centelleo{0%,100%{opacity:.15}50%{opacity:.85}}
+.lupa{position:absolute;top:9%;right:10%;font-size:2.6rem;opacity:.5;animation:balance 4.4s ease-in-out infinite}
+@keyframes balance{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--niebla-hi);border:1px solid var(--niebla);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.7rem,1.1rem + 4vw,3rem);font-weight:600;line-height:1.14}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--laton-hi)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:50ch}
+.cta-btn{display:inline-block;background:var(--laton);color:var(--tinta);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--laton-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--tinta2)}
+.estante{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.libro-chip{font-size:.82rem;color:var(--niebla-hi);border:1px solid var(--linea);border-radius:999px;padding:.4rem .9rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.2rem 0 1.3rem}
+.tabs button{border:1px solid var(--linea);background:transparent;color:var(--pergamino);border-radius:999px;padding:.6rem 1.05rem;font-size:.87rem;font-weight:600;transition:all .25s ease}
+.tabs button:hover,.tabs button.activo{border-color:var(--laton);color:var(--laton-hi);background:rgba(184,137,79,.12)}
+.tab-panel{border:1px solid var(--linea);border-radius:16px;padding:clamp(1.4rem,4vw,2rem);background:linear-gradient(180deg,rgba(243,233,214,.03),transparent);min-height:13em}
+.tab-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--niebla-hi);font-weight:700;margin-bottom:.6rem}
+.tab-panel p{color:var(--bruma);font-size:.98rem;margin-bottom:1rem}
+.tab-panel .cita-in{font-family:var(--serif);font-style:italic;color:var(--pergamino);font-size:1.02rem;border-left:3px solid var(--niebla);padding-left:1rem}
+.cita{border-left:3px solid var(--niebla);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(110,139,140,.1);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55;color:var(--niebla-hi)}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(243,233,214,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--niebla-hi);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.honestidad{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2rem;background:rgba(184,137,79,.08)}
+.honestidad p{color:var(--bruma);font-size:.95rem}
+.honestidad .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--laton-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--pergamino);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--laton);color:var(--laton-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--niebla-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#3A2E1D 0%,var(--tinta) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:36ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--laton-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="niebla-fx" id="nieblaFx" aria-hidden="true"></div>
+  <div class="lupa" aria-hidden="true">🔍</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · De tu estante · M5-014</span>
+    <h1>Elemental, querida lectora</h1>
+    <p class="autor">Vicki Delany · 2017 — orig. <em>Elementary, She Read</em></p>
+    <p class="sub">Gracias por lo del Kindle ayer — nos sirvió muchísimo. Hoy cambiamos de estrategia: nada de King, Katzenbach, Carlisle ni Benavent (esos ya los tenés muy vistos, en papel o en pantalla). Vicki Delany es una serie más chica, menos masiva, sobre una librería temática de Sherlock Holmes. Nunca te la recomendamos y no tiene el peso de ventas de las anteriores.</p>
+    <a class="cta-btn" href="#puente">Por qué justo esta ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traemos</p>
+    <h2 class="titulo rev d1">Una librería de Sherlock Holmes, un gato llamado Moriarty</h2>
+    <p class="bajada rev d2">Gemma Doyle es inglesa, trasplantada al pueblo ficticio de West London, en Cape Cod, donde heredó de su tío abuelo Arthur la Sherlock Holmes Bookshop and Emporium — una librería especializada en el canon y los pastiches de Holmes, ubicada (por supuesto) en el 222 de Baker Street. Al lado, su mejor amiga Jayne tiene el salón de té Mrs. Hudson's. Cuando Gemma encuentra escondida en la tienda una revista rara y potencialmente muy valiosa —con el primer cuento de Sherlock Holmes jamás publicado— ella y Jayne salen a buscar a su dueño legítimo... y se topan con un cadáver.</p>
+    <div class="estante rev d2">
+      <span class="libro-chip">Gemma Doyle: dueña de la librería, poderes de deducción reales</span>
+      <span class="libro-chip">Jayne Wilson: mejor amiga, el salón de té de al lado</span>
+      <span class="libro-chip">Moriarty: el gato de la librería</span>
+      <span class="libro-chip">Libro 1 de la serie Sherlock Holmes Bookshop Mystery</span>
+    </div>
+    <p class="remate rev d3" style="margin-top:1.6rem;font-family:var(--serif);font-style:italic;color:var(--laton-hi)">Guardia verificada: título y autora contra el catálogo completo (M5-014 es tu único ejemplar) y contra todo lo recomendado antes — Vicki Delany nunca apareció.</p>
+  </div>
+</section>
+
+<section class="seccion" id="temas">
+  <div class="centro">
+    <p class="kicker rev">Lo que te espera</p>
+    <h2 class="titulo rev d1">Elegí un tema, en un par de minutos te lo cuenta</h2>
+    <p class="bajada rev d2">Datos verificados contra la página oficial de la autora (vickidelany.com) y Goodreads.</p>
+    <div class="tabs" id="tabsTem">
+      <button data-t="sospecha" class="activo">Gemma, sospechosa</button>
+      <button data-t="revista">La revista escondida</button>
+      <button data-t="meta">El gancho meta</button>
+      <button data-t="porque">Por qué justo esta vez</button>
+    </div>
+    <div class="tab-panel rev d2" id="panelTem">
+      <p class="et">La policía la mira primero a ella</p>
+      <p>Cuando aparece el segundo cadáver, con Gemma y Jayne otra vez cerca sin querer, la policía la convierte en sospechosa principal. Como toda buena heredera del nombre Doyle, Gemma no espera a que la investiguen: usa sus propias dotes de deducción —afiladas de tanto vivir rodeada de Holmes— para señalar a los verdaderos sospechosos: un atractivo experto en libros raros, el hijo de la víctima con una calma sospechosa, y una familia entera peleándose por la herencia.</p>
+      <p class="cita-in">El mismo registro de "detective amateur con humor" que te funcionó con Joyce en el Club del Crimen de los Jueves.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="citas">
+  <div class="centro">
+    <p class="kicker rev">Del libro, palabra por palabra</p>
+    <h2 class="titulo rev d1">Lo que de verdad escribió Vicki Delany</h2>
+    <p class="bajada rev d2">Citas verificadas en inglés (idioma original) contra la colección de citas de Goodreads de este libro específico — no encontré la traducción exacta de la edición en español, así que la versión castellana es propia y honesta, no la impresa.</p>
+    <div class="cita rev"><p>"The only value objects have is what people are willing to pay to own them." <br><em>("El único valor que tienen los objetos es lo que la gente está dispuesta a pagar por poseerlos.")</em></p><span>Sobre la revista rara que dispara todo el misterio — traducción propia</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2017, Crooked Lane Books — libro 1 de la serie Sherlock Holmes Bookshop Mystery</dd>
+        <dt>Tu ejemplar</dt><dd>Estante M5-014, junto a otros cozies de misterio — sin lectura registrada</dd>
+        <dt>Escenario</dt><dd>West London (pueblo ficticio), Cape Cod — una librería temática de Sherlock Holmes y un salón de té al lado</dd>
+        <dt>Tono</dt><dd>Cozy mystery: rápido, con humor, "lleno de referencias sherlockianas" según la crítica — sin violencia gráfica</dd>
+        <dt>La serie</dt><dd>Sigue en M5-016 ("Un cadáver en Baker Street", libro 2) si esta primera te atrapa</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="honestidad-sec">
+  <div class="centro">
+    <p class="kicker rev">La letra chica, honesta</p>
+    <h2 class="titulo rev d1">No sabemos si ya la leíste — por eso preguntamos directo</h2>
+    <div class="honestidad rev d2">
+      <span class="et">Guardia de honestidad</span>
+      <p>Cuatro de tus últimos cinco rescates de tu propio estante resultaron "ya lo leí" (King, Katzenbach, Carlisle, Benavent) — y ayer aprendimos, por tu nota, que además leés en Kindle libros que ni siquiera pasan por acá. El common denominator de esos cuatro fallos era que eran autores muy conocidos o sagas que devoraste enteras. Vicki Delany es más chica, menos "masiva" — pero no tenemos ninguna señal real de que no la hayas tocado todavía. Si ya la leíste (en papel, Kindle, donde sea), contanoslo en el veredicto o en la nota de abajo: cada vez que nos corregís, afinamos más rápido que adivinando solos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">El rescate</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+    <p class="bajada rev d2">No hace falta el libro entero de una sentada — con el primer capítulo (el hallazgo de la revista) alcanza para saber si Gemma te atrapa tanto como Joyce.</p>
+    <div class="cta rev d2">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:M5-014','si',this)">📖 Sí, esta noche</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-014','ya_leido',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-014','no',this)">🙅 Esta noche no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-02-delany-elemental','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-02-delany-elemental','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-02-delany-elemental','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-02-delany-elemental','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-02-delany-elemental','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-02-delany-elemental','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-02-delany-elemental','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-02-delany-elemental" style="display:block;margin-bottom:.6rem">¿Qué estantes SABÉS que no tocaste todavía? (R4/R5, M5, M6 — como lo del Kindle ayer, contame lo que sea, lo leo en la próxima corrida)</label>
+      <textarea id="nota-2026-08-02-delany-elemental" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-02-delany-elemental',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"El único valor que tienen los objetos es <b>lo que la gente está dispuesta a pagar por poseerlos.</b>"</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Redescubrimientos y libros nuevos, alternando, uno por día.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--niebla-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--niebla);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante M5 · datos verificados (vickidelany.com, Goodreads) a agosto 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+
+  var nieblaFx=$('#nieblaFx');
+  for(var i=0;i<30;i++){
+    var s=document.createElement('span');
+    s.style.left=(Math.random()*100)+'%';
+    s.style.top=(Math.random()*70)+'%';
+    s.style.animationDelay=(Math.random()*4)+'s';
+    nieblaFx.appendChild(s);
+  }
+
+  var TEM={
+    sospecha:{et:'La policía la mira primero a ella',cuerpo:'Cuando aparece el segundo cadáver, con Gemma y Jayne otra vez cerca sin querer, la policía la convierte en sospechosa principal. Como toda buena heredera del nombre Doyle, Gemma no espera a que la investiguen: usa sus propias dotes de deducción —afiladas de tanto vivir rodeada de Holmes— para señalar a los verdaderos sospechosos: un atractivo experto en libros raros, el hijo de la víctima con una calma sospechosa, y una familia entera peleándose por la herencia.',cita:'El mismo registro de "detective amateur con humor" que te funcionó con Joyce en el Club del Crimen de los Jueves.'},
+    revista:{et:'Una revista que vale una fortuna',cuerpo:'Todo arranca cuando Gemma encuentra, escondida entre los estantes de su propia librería, una revista rara y potencialmente muy valiosa: contiene el primerísimo cuento de Sherlock Holmes jamás publicado. Ella y Jayne intentan hacer lo correcto — encontrar a su dueño legítimo — y en el camino se topan con un cadáver. Lo que iba a ser una devolución honesta se convierte en investigación de asesinato.',cita:'"El único valor que tienen los objetos es lo que la gente está dispuesta a pagar por poseerlos" — la frase que resume el motivo del crimen.'},
+    meta:{et:'Una librera investigando en su propia librería temática',cuerpo:'Gemma no es detective de oficio: es librera, y toda su tienda está construida alrededor del canon de Sherlock Holmes — desde el nombre de la calle (Baker Street) hasta el gato (Moriarty). La serie juega todo el tiempo con ese espejo: una mujer que vende historias de deducción, obligada a deducir de verdad. Es el mismo gancho "meta" que te enganchó con la novelista-detective de Sue Minix.',cita:'Dato real: el pueblo se llama West London y queda en Cape Cod, no en Inglaterra — el guiño es a propósito.'},
+    porque:{et:'Por qué justo esta vez',cuerpo:'Después de cuatro fallos seguidos de "ya lo leí" con autores muy conocidos (King, Katzenbach, Carlisle, Benavent), la apuesta de hoy es ir a una serie más chica: Vicki Delany no tiene ni por asomo el peso de ventas de esos cuatro nombres. No es garantía —no tenemos ninguna señal de lectura previa, ni buena ni mala— pero es la primera vez que probamos "autora de nicho" en vez de "autora nueva pero igual de masiva".',cita:'Si tampoco funciona, la próxima corrida cambia de estrategia otra vez: menos adivinar, más preguntar directo.'}
+  };
+  var tabs=$$('#tabsTem button'),panel=$('#panelTem');
+  tabs.forEach(function(b){
+    b.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      var c=TEM[b.getAttribute('data-t')];
+      panel.innerHTML='<p class="et">'+c.et+'</p><p>'+c.cuerpo+'</p><p class="cita-in">'+c.cita+'</p>';
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-01T16:12:59-03:00",
-  "_feedback_cutoff": "2026-07-31T22:38:45.737Z",
+  "_updated_at": "2026-08-02T16:14:34-03:00",
+  "_feedback_cutoff": "2026-08-01T21:19:24.389Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -897,6 +897,57 @@
       "page": "recs/2026-08-01-henry-people-vacation.html",
       "notified_by": "2026-08-01-rec-sofi",
       "why": "Sin respuesta aun a la micro-pregunta de estante (rec-estante-sin-leer, pendiente desde el 30/07: sync/engagement.json revisado hasta el 31/07 22:38 sin ese evento) -> se sostiene la Guardia Maxima: no armar mas redescub a ciegas para Sofi. Se mantiene NUEVO en la veta romance/emocional que pidio el 24/07, con la otra gran novela de Emily Henry (misma autora de Book Lovers, enviada ayer y todavia sin veredicto) pero con una estructura totalmente distinta: amigos-a-algo-mas en vez de enemigos-a-algo-mas, diez veranos de viaje en vez de un mes fijo. Hook fuerte y verificado: adaptacion de Netflix con Emily Bader y Tom Blyth, estrenada el 9 de enero de 2026 (ya disponible hace meses, no es promesa futura). Verificado titulo+autora contra catalogo completo (sin match) y recommended.json (sin match, incluye chequeo especial de que no sea la misma obra que Book Lovers). Citas verificadas contra la coleccion de citas de Goodreads del libro; traduccion propia declarada como tal. Link de compra verificado (200) en buscalibre.uy, precio tomado de la edicion en espanol tapa blanda (1170 UYU, ~US$29 al tipo de cambio de fin de julio ~40.2). Andy recibe hoy el redescubrimiento (Bok, L5-019), completando el par nuevo+biblioteca del dia.",
+      "feedback": {
+        "veredicto": "ya_lo_lei",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 0
+      },
+      "learning": "CUARTO 'ya_lo_lei' en una nuestra corrida, pero el primero en un 'nuevo' (no redescub) — y con una revelacion nueva: su propia nota (rec-nota) explica por que: 'Lo lei, no esta en la biblioteca porque lo lei en el kindle'. Confirma que la guardia de catalogo fisico + recommended.json NO alcanza para ella: tiene una biblioteca digital paralela que devora sin dejar rastro fisico. El patron real no es 'nuevo vs redescub', es 'autor/titulo muy masivo vs de nicho' — los 4 fallos (King, Katzenbach, Carlisle, Benavent, y ahora Henry) comparten fama/ventas altas, sea cual sea el formato. Reaccion 'like' (no love) sugiere que la experiencia en si funciono pero sin la chispa de un descubrimiento real. Accion: pivotar lejos de Emily Henry (dos de dos con senales de riesgo — Book Lovers sigue sin veredicto pero mismo perfil de fama); preferir autoras/series de nicho sobre bestsellers reconocidos, tanto en nuevo como en redescub. Book Lovers (31/07) queda con el mismo riesgo, pendiente de confirmar."
+    },
+    {
+      "id": "2026-08-02-holiday-obstaculo",
+      "date": "2026-08-02",
+      "kind": "nuevo",
+      "title": "El Obstáculo es el Camino",
+      "author": "Ryan Holiday",
+      "language": "es",
+      "topics": [
+        "estoicismo",
+        "autosuperacion",
+        "sentido"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-08-02-holiday-obstaculo.html",
+      "notified_by": "2026-08-02-rec-andy",
+      "why": "Rota de veta despues de cinco fichas seguidas de astronomia/neurociencia/espiritualidad-fabula: estoicismo es un hueco real (solo tiene 1 Holiday en L4-020, La Llamada del Coraje, y ningun clasico). Es el libro que hizo conocido a Ryan Holiday, autor que Andy ya eligio tener en casa -- variante del patron 'identitario' que funciono con Bach, pero con riesgo real declarado: es probablemente EL libro de estoicismo moderno mas vendido que existe, mismo perfil de fama que Frankl y Meditaciones, que fallaron 'ya_lo_lei'. Honestidad aplicada: la ficha declara ese riesgo de frente en vez de esconderlo. Verificado titulo+autor contra catalogo completo (unico match es el otro Holiday, L4-020, esperado) y recommended.json: sin coincidencias previas. Cita de Marco Aurelio (epigrafe del libro) verificada contra multiples fuentes, coincide palabra por palabra. Link de compra verificado (200) en buscalibre.uy, precio real encontrado (672 UYU / ~US$17, edicion Oceano). Regimen del dia: Sofi tiene el redescub hoy (Delany), a Andy le toca nuevo.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-02-delany-elemental",
+      "date": "2026-08-02",
+      "kind": "redescubrimiento",
+      "title": "Elemental, querida lectora",
+      "author": "Vicki Delany",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy",
+        "libros",
+        "sherlock-holmes"
+      ],
+      "book_ref": "M5-014",
+      "audience": "sofi",
+      "page": "recs/2026-08-02-delany-elemental.html",
+      "notified_by": "2026-08-02-rec-sofi",
+      "why": "Redescubrimiento con estrategia nueva tras el descubrimiento del 01/08 (nota de Sofi: lee en Kindle, no solo en papel -- la guardia de catalogo fisico no alcanza). Los 4 redescub fallidos (King, Katzenbach, Carlisle, Benavent) compartian autores/sagas muy masivos; Vicki Delany (Sherlock Holmes Bookshop Mystery, libro 1) es una serie mucho mas chica y de nicho, nunca antes recomendada. Cambio de canal pedido por el PROFILE tras 3 corridas mudas de la micro-pregunta de estante: se reemplaza el boton por una pregunta directa en la caja de nota, aprovechando que respondio por texto libre ayer. Verificado titulo+autora contra catalogo completo (unico match esperado M5-014) y recommended.json: sin coincidencias. read_status ausente en enrichment.json = sin senal, tratado con honestidad explicita del riesgo en la propia ficha. Cita verificada contra la coleccion de citas de Goodreads del libro. Regimen del dia: Andy tiene el nuevo (Holiday) hoy, a Sofi le toca redescubrimiento -- ademas ayuda a corregir la mezcla (4 nuevo seguidos para ella).",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

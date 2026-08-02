@@ -596,6 +596,32 @@
       "sent_at": "2026-08-01T21:02:07.952Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-01"
+    },
+    {
+      "id": "2026-08-02-rec-andy",
+      "title": "🪨 El estoicismo que te falta en L4",
+      "body": "El libro que hizo famoso a Ryan Holiday, autor que ya tenés en casa. Marco Aurelio, 18 siglos después.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-02-holiday-obstaculo.html",
+      "to": "Andy",
+      "send_at": "2026-08-02T17:30:00-03:00",
+      "expires_at": "2026-08-02T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-02"
+    },
+    {
+      "id": "2026-08-02-rec-sofi",
+      "title": "🔍 Sofi, una librería de Sherlock Holmes",
+      "body": "Gemma Doyle, su gato Moriarty, y una revista que esconde el primer cuento de Holmes. De tu estante M5.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-02-delany-elemental.html",
+      "to": "Sofi",
+      "send_at": "2026-08-02T17:30:00-03:00",
+      "expires_at": "2026-08-02T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-02"
     }
   ]
 }
