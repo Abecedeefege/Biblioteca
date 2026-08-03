@@ -3037,7 +3037,24 @@
       "device": "Andy",
       "dwell_s": 172,
       "scroll_pct": 95
+    },
+    {
+      "id": "msdsl1pv-j14luh",
+      "type": "notification_clicked",
+      "ts": "2026-08-03T22:19:47.059Z",
+      "page": "2026-08-03-holiday-llamada-coraje.html",
+      "device": "Andy",
+      "nid": "2026-08-03-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "msdsl1pz-la6u2n",
+      "type": "page_visit",
+      "ts": "2026-08-03T22:19:47.063Z",
+      "page": "2026-08-03-holiday-llamada-coraje.html",
+      "device": "Andy",
+      "nid": "2026-08-03-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-03T00:56:45.538Z"
+  "_updated_at": "2026-08-03T22:19:48.641Z"
 }
