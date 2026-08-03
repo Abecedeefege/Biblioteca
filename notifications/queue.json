@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-02T20:32:10.436Z",
+  "_updated_at": "2026-08-03T16:05:00-03:00",
   "notifications": [
     {
       "id": "2026-07-30-rec-sofi",
@@ -622,6 +622,32 @@
       "sent_at": "2026-08-02T20:32:10.436Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-02"
+    },
+    {
+      "id": "2026-08-03-rec-andy",
+      "title": "🔥 El otro Holiday, ya en tu estante",
+      "body": "Ayer dijiste lo quiero con el Obstáculo. Este está en L4 desde antes, sin abrir — la prueba directa del patrón.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-03-holiday-llamada-coraje.html",
+      "to": "Andy",
+      "send_at": "2026-08-03T17:30:00-03:00",
+      "expires_at": "2026-08-03T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-03"
+    },
+    {
+      "id": "2026-08-03-rec-sofi",
+      "title": "🏊‍♀️ Sofi, otro club de detectives amateurs",
+      "body": "Osman se te acabó (3/3 lo quiero, banco agotado). Judith tiene 77 años, nada de noche y no espera permiso.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-03-thorogood-marlow.html",
+      "to": "Sofi",
+      "send_at": "2026-08-03T17:30:00-03:00",
+      "expires_at": "2026-08-03T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-03"
     }
   ]
 }

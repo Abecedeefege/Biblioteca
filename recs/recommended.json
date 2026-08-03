@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-02T16:14:34-03:00",
-  "_feedback_cutoff": "2026-08-01T21:19:24.389Z",
+  "_updated_at": "2026-08-03T16:05:00-03:00",
+  "_feedback_cutoff": "2026-08-03T00:56:42.855Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -923,12 +923,12 @@
       "notified_by": "2026-08-02-rec-andy",
       "why": "Rota de veta despues de cinco fichas seguidas de astronomia/neurociencia/espiritualidad-fabula: estoicismo es un hueco real (solo tiene 1 Holiday en L4-020, La Llamada del Coraje, y ningun clasico). Es el libro que hizo conocido a Ryan Holiday, autor que Andy ya eligio tener en casa -- variante del patron 'identitario' que funciono con Bach, pero con riesgo real declarado: es probablemente EL libro de estoicismo moderno mas vendido que existe, mismo perfil de fama que Frankl y Meditaciones, que fallaron 'ya_lo_lei'. Honestidad aplicada: la ficha declara ese riesgo de frente en vez de esconderlo. Verificado titulo+autor contra catalogo completo (unico match es el otro Holiday, L4-020, esperado) y recommended.json: sin coincidencias previas. Cita de Marco Aurelio (epigrafe del libro) verificada contra multiples fuentes, coincide palabra por palabra. Link de compra verificado (200) en buscalibre.uy, precio real encontrado (672 UYU / ~US$17, edicion Oceano). Regimen del dia: Sofi tiene el redescub hoy (Delany), a Andy le toca nuevo.",
       "feedback": {
-        "veredicto": null,
+        "veredicto": "lo_quiero",
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 172
       },
-      "learning": null
+      "learning": "ACIERTO PLENO (lo_quiero + dwell 172s/95% scroll) en el libro de estoicismo mas vendido que existe -- el mismo perfil de fama que hizo fallar a Frankl y Meditaciones (ambos ya_lo_lei). Confirma con un tercer caso (despues de Bach x2) que lo que importa no es la fama del libro sino si el autor ya esta en su estante: Holiday ya tenia otro titulo en casa (L4-020) cuando se lo recomendamos, Frankl y Meditaciones no tenian ningun antecedente ahi. Regla actualizada en PROFILE: priorizar autor identitario/ya-en-casa por sobre evitar autores famosos en si mismos. Accion inmediata: 03/08 se le da el OTRO Holiday que ya tiene en casa (L4-020) como redescub, prueba mas directa del patron."
     },
     {
       "id": "2026-08-02-delany-elemental",
@@ -948,6 +948,56 @@
       "page": "recs/2026-08-02-delany-elemental.html",
       "notified_by": "2026-08-02-rec-sofi",
       "why": "Redescubrimiento con estrategia nueva tras el descubrimiento del 01/08 (nota de Sofi: lee en Kindle, no solo en papel -- la guardia de catalogo fisico no alcanza). Los 4 redescub fallidos (King, Katzenbach, Carlisle, Benavent) compartian autores/sagas muy masivos; Vicki Delany (Sherlock Holmes Bookshop Mystery, libro 1) es una serie mucho mas chica y de nicho, nunca antes recomendada. Cambio de canal pedido por el PROFILE tras 3 corridas mudas de la micro-pregunta de estante: se reemplaza el boton por una pregunta directa en la caja de nota, aprovechando que respondio por texto libre ayer. Verificado titulo+autora contra catalogo completo (unico match esperado M5-014) y recommended.json: sin coincidencias. read_status ausente en enrichment.json = sin senal, tratado con honestidad explicita del riesgo en la propia ficha. Cita verificada contra la coleccion de citas de Goodreads del libro. Regimen del dia: Andy tiene el nuevo (Holiday) hoy, a Sofi le toca redescubrimiento -- ademas ayuda a corregir la mezcla (4 nuevo seguidos para ella).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-03-holiday-llamada-coraje",
+      "date": "2026-08-03",
+      "kind": "redescubrimiento",
+      "title": "La Llamada del Coraje",
+      "author": "Ryan Holiday",
+      "language": "es",
+      "topics": [
+        "estoicismo",
+        "autosuperacion",
+        "coraje"
+      ],
+      "book_ref": "L4-020",
+      "audience": "andy",
+      "page": "recs/2026-08-03-holiday-llamada-coraje.html",
+      "notified_by": "2026-08-03-rec-andy",
+      "why": "Prueba directa del hallazgo del 03/08 (ver PROFILE): ayer 'El Obstaculo es el Camino' (mismo autor) fue ACIERTO PLENO (lo_quiero) pese a ser el libro de estoicismo mas vendido que existe, rompiendo el patron de fallo de Frankl/Meditaciones -- la diferencia real es que Holiday ya es autor identitario en su estante (L4-020, sin abrir). Hoy se le ofrece ese mismo L4-020 como redescubrimiento, replicando el patron que ya funciono dos veces con Bach (Ilusiones nuevo -> Jonathan Livingston Seagull redescub). Verificado titulo+autor contra catalogo completo (unico match esperado, el propio L4-020) y recommended.json: sin coincidencias previas de este titulo. Estructura (Miedo/Coraje/Heroismo, ~60 capitulos) y ejemplos reales (Nightingale, Douglass, MLK, de Gaulle, Serpico) verificados contra la ficha editorial de Penguin Random House. Citas de Churchill y Frankl citadas dentro del libro, verificadas contra la coleccion de citas de Goodreads de este titulo especifico; traduccion propia declarada como tal. Regimen del dia: Sofi tiene el nuevo hoy (Thorogood), a Andy le toca redescubrimiento.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-03-thorogood-marlow",
+      "date": "2026-08-03",
+      "kind": "nuevo",
+      "title": "El club del crimen de Marlow",
+      "author": "Robert Thorogood",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy",
+        "detectives-amateurs"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-08-03-thorogood-marlow.html",
+      "notified_by": "2026-08-03-rec-sofi",
+      "why": "Guardia Maxima sigue activa: Osman (cozy grupal, 3/3 lo_quiero) tiene su banco agotado -- los 4 tomos existentes ya se enviaron, dos sin abrir todavia (t.3 y t.4). En vez de esperar mas tomos de Osman o repetir autores quemados (King, Katzenbach, Carlisle, Benavent, Henry), se prueba el mismo TIPO de historia (trio de detectives amateurs en pueblo chico, con humor) con un autor sin ningun rastro en su historial: Robert Thorogood, creador de la serie de TV Death in Paradise, primera novela 2021. Objetivo explicito: separar si le gusta Osman en particular o el genero cozy-grupal en general. Honestidad declarada en la ficha: el libro tuvo su propia adaptacion de TV en 2024 (U&Drama/PBS), no es tan chico como Delany o Minix, pero tiene mucho menos rastro editorial que los 5 autores que fallaron antes. Verificado titulo+autor contra catalogo completo (sin match) y recommended.json (sin match). Edicion en espanol confirmada: 'El club del crimen de Marlow' (Catedral, 2024, ISBN 9788419722003). Link de compra verificado (200) en buscalibre.uy, precio real encontrado (~1202 UYU en oferta / ~US$30). Regimen del dia: Andy tiene el redescubrimiento hoy (Holiday L4-020), completando el par nuevo+biblioteca de la jornada.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
