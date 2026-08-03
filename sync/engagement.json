@@ -3019,7 +3019,16 @@
       "device": "Andy",
       "dwell_s": 159,
       "scroll_pct": 73
+    },
+    {
+      "id": "msciqytm-y3jt2m",
+      "type": "answer",
+      "ts": "2026-08-03T00:56:40.906Z",
+      "page": "2026-08-02-holiday-obstaculo.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-08-02-holiday-obstaculo",
+      "value": "lo_quiero"
     }
   ],
-  "_updated_at": "2026-08-02T23:53:35.675Z"
+  "_updated_at": "2026-08-03T00:56:42.244Z"
 }
