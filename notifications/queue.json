@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-03T16:05:00-03:00",
+  "_updated_at": "2026-08-03T20:59:06.869Z",
   "notifications": [
     {
       "id": "2026-07-30-rec-sofi",
@@ -631,8 +631,8 @@
       "to": "Andy",
       "send_at": "2026-08-03T17:30:00-03:00",
       "expires_at": "2026-08-03T23:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-08-03T20:59:06.653Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-03"
     },
@@ -644,8 +644,8 @@
       "to": "Sofi",
       "send_at": "2026-08-03T17:30:00-03:00",
       "expires_at": "2026-08-03T23:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-08-03T20:59:06.868Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-03"
     }
