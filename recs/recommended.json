@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-03T16:05:00-03:00",
-  "_feedback_cutoff": "2026-08-03T00:56:42.855Z",
+  "_updated_at": "2026-08-04T16:35:00-03:00",
+  "_feedback_cutoff": "2026-08-03T22:19:47.063Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -976,10 +976,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
+        "clicked": true,
         "dwell_s": 0
       },
-      "learning": null
+      "learning": "Clickeo el push (03/08 22:19 -03:00, notification_clicked + page_visit) pero sin dwell ni voto de veredicto todavia -- revisar en la proxima corrida si confirma el patron identitario por tercera vez con Holiday."
     },
     {
       "id": "2026-08-03-thorogood-marlow",
@@ -998,6 +998,58 @@
       "page": "recs/2026-08-03-thorogood-marlow.html",
       "notified_by": "2026-08-03-rec-sofi",
       "why": "Guardia Maxima sigue activa: Osman (cozy grupal, 3/3 lo_quiero) tiene su banco agotado -- los 4 tomos existentes ya se enviaron, dos sin abrir todavia (t.3 y t.4). En vez de esperar mas tomos de Osman o repetir autores quemados (King, Katzenbach, Carlisle, Benavent, Henry), se prueba el mismo TIPO de historia (trio de detectives amateurs en pueblo chico, con humor) con un autor sin ningun rastro en su historial: Robert Thorogood, creador de la serie de TV Death in Paradise, primera novela 2021. Objetivo explicito: separar si le gusta Osman en particular o el genero cozy-grupal en general. Honestidad declarada en la ficha: el libro tuvo su propia adaptacion de TV en 2024 (U&Drama/PBS), no es tan chico como Delany o Minix, pero tiene mucho menos rastro editorial que los 5 autores que fallaron antes. Verificado titulo+autor contra catalogo completo (sin match) y recommended.json (sin match). Edicion en espanol confirmada: 'El club del crimen de Marlow' (Catedral, 2024, ISBN 9788419722003). Link de compra verificado (200) en buscalibre.uy, precio real encontrado (~1202 UYU en oferta / ~US$30). Regimen del dia: Andy tiene el redescubrimiento hoy (Holiday L4-020), completando el par nuevo+biblioteca de la jornada.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-04-rovelli-orden-tiempo",
+      "date": "2026-08-04",
+      "kind": "nuevo",
+      "title": "El orden del tiempo",
+      "author": "Carlo Rovelli",
+      "language": "es",
+      "topics": [
+        "astronomia",
+        "ciencia",
+        "filosofia",
+        "asombro"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-08-04-rovelli-orden-tiempo.html",
+      "notified_by": "2026-08-04-rec-andy",
+      "why": "Identitario otra vez, esta vez con Rovelli: su Siete breves lecciones de fisica fue el primer ACIERTO PLENO de Andy (lo_quiero, dwell 182s) y hoy vive comprado en su propio estante (L4-027, hallazgo del 03/08). El orden del tiempo es el libro mas vendido del mismo autor, cruza fisica con filosofia del tiempo -- puente entre su veta de astronomia/ciencia y su veta de espiritualidad/sentido. Riesgo de fama declarado de frente en la ficha (es su libro mas vendido a nivel mundial, mismo perfil que Frankl/Meditaciones que fallaron), pero aplicando la regla confirmada tres veces (Bach x2, Holiday): autor ya-en-casa gana sobre clasico sin dueno. Verificado titulo+autor contra catalogo completo (unico match esperado, el propio L4-027) y recommended.json: sin coincidencias previas de este titulo. Estructura (3 partes) y citas verificadas contra el extracto oficial de Anagrama (empieza-a-leer). Link de compra verificado (200) en buscalibre.uy. Regimen del dia: Sofi tiene el redescubrimiento hoy (Buscando a Alaska), a Andy le toca nuevo.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-04-green-buscando-alaska",
+      "date": "2026-08-04",
+      "kind": "redescubrimiento",
+      "title": "Buscando a Alaska",
+      "author": "John Green",
+      "language": "es",
+      "topics": [
+        "coming-of-age",
+        "duelo",
+        "emocional",
+        "literario"
+      ],
+      "book_ref": "M5-023",
+      "audience": "sofi",
+      "page": "recs/2026-08-04-green-buscando-alaska.html",
+      "notified_by": "2026-08-04-rec-sofi",
+      "why": "CAMBIO FUERTE tras 3 fichas seguidas de Sofi sin ningun click ni page_visit registrado (Osman t.4 30/07, Delany 02/08, Thorogood 03/08 -- verificado en sync/engagement.json, cero eventos para las tres paginas). En vez de insistir con otro misterio/cozy, se pivota de veta por completo: novela juvenil literaria sin crimen ni detective, ya en su estante M5 (topics catalogados como mystery+young-adult pero el contenido real es duelo/coming-of-age). Conecta con su rec-nota del 24/07 pidiendo una tercera veta de romance/emocion con permiso de llorar un poco, nunca antes servida sin el envoltorio de un club de crimen. Tono del push tambien cambiado: honesto sobre la racha sin abrir, en vez de vender otro libro mas. Verificado titulo+autora contra catalogo completo (unico match esperado, el propio M5-023) y recommended.json: sin coincidencias previas. Citas (Rabelais, Bolivar, cierre del libro) verificadas contra LitCharts/SparkNotes/Goodreads, con honestidad declarada sobre que ambas atribuciones historicas son disputadas -- convertido en parte del gancho de la ficha, no ocultado. Riesgo declarado de frente: es un clasico juvenil masivo, chance real de que ya lo haya leido de adolescente o en Kindle (como paso con Henry). Regimen del dia: Andy tiene el nuevo hoy (Rovelli), a Sofi le toca redescubrimiento.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

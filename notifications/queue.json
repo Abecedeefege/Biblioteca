@@ -1,7 +1,33 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-03T20:59:06.869Z",
+  "_updated_at": "2026-08-04T16:35:00-03:00",
   "notifications": [
+    {
+      "id": "2026-08-04-rec-andy",
+      "title": "⏳ El otro gran libro de tu Rovelli",
+      "body": "Siete breves lecciones fue tu acierto pleno. Ahora la pregunta más grande, del mismo autor: ¿qué es el tiempo, en serio?",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-04-rovelli-orden-tiempo.html",
+      "to": "Andy",
+      "send_at": "2026-08-04T17:30:00-03:00",
+      "expires_at": "2026-08-04T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-04"
+    },
+    {
+      "id": "2026-08-04-rec-sofi",
+      "title": "🌀 Sofi, hoy dejé el misterio",
+      "body": "Hace 3 fichas que no te veo por acá. Nada de crimen esta vez — un laberinto de otro tipo. 5 minutos, prometido.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-04-green-buscando-alaska.html",
+      "to": "Sofi",
+      "send_at": "2026-08-04T17:30:00-03:00",
+      "expires_at": "2026-08-04T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-04"
+    },
     {
       "id": "2026-07-30-rec-sofi",
       "title": "🕯️ El club vuelve, más hondo esta vez, Sofi",
