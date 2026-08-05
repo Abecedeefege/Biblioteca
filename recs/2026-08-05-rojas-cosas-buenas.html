@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🧠 Cómo hacer que te pasen cosas buenas · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#101A22;
+  --noche2:#16232D;
+  --cortisol:#5B8DB8;
+  --cortisol-hi:#8FBBE0;
+  --oxito:#E0A84E;
+  --oxito-hi:#F4C97A;
+  --hueso:#F1EEE6;
+  --bruma:#AEBAC4;
+  --linea:rgba(241,238,230,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--oxito);color:var(--noche)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--oxito-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(241,238,230,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cortisol-hi),var(--oxito-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(16,26,34,.65);backdrop-filter:blur(4px)}
+.back:hover{color:var(--oxito-hi);border-color:var(--oxito)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oxito);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(130% 90% at 50% 6%,#1E3A4E 0%,var(--noche) 65%)}
+.dialfx{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;opacity:.5}
+.dial{width:min(70vw,420px);height:min(70vw,420px);border-radius:50%;border:1px solid var(--linea);position:relative;animation:girar 60s linear infinite}
+.dial::before,.dial::after{content:'';position:absolute;inset:14%;border-radius:50%;border:1px dashed var(--linea)}
+.dial::after{inset:28%}
+@keyframes girar{to{transform:rotate(360deg)}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--oxito-hi);border:1px solid var(--oxito);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.6rem,1rem + 3.6vw,2.7rem);font-weight:600;line-height:1.16}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--oxito-hi)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:54ch}
+.cta-btn{display:inline-block;background:var(--oxito);color:var(--noche);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--oxito-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--noche2)}
+.estante{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.libro-chip{font-size:.82rem;color:var(--oxito-hi);border:1px solid var(--linea);border-radius:999px;padding:.4rem .9rem}
+.balanza{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+@media (max-width:600px){.balanza{grid-template-columns:1fr}}
+.lado{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.4rem;background:linear-gradient(180deg,rgba(241,238,230,.03),transparent)}
+.lado.sube{border-color:rgba(91,141,184,.4)}
+.lado.baja{border-color:rgba(224,168,78,.4)}
+.lado h3{font-size:1rem;margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem}
+.lado.sube h3{color:var(--cortisol-hi)}
+.lado.baja h3{color:var(--oxito-hi)}
+.lado ul{list-style:none}
+.lado li{padding:.55rem 0;border-top:1px solid var(--linea);font-size:.94rem;color:var(--bruma);opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
+.lado li:first-child{border-top:none}
+.lado li.on{opacity:1;transform:none}
+.lado button.ver{margin-top:1rem;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.5rem 1rem;font-size:.85rem;font-weight:600}
+.lado.sube button.ver:hover{border-color:var(--cortisol);color:var(--cortisol-hi)}
+.lado.baja button.ver:hover{border-color:var(--oxito);color:var(--oxito-hi)}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.2rem 0 1.3rem}
+.tabs button{border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.87rem;font-weight:600;transition:all .25s ease}
+.tabs button:hover,.tabs button.activo{border-color:var(--oxito);color:var(--oxito-hi);background:rgba(224,168,78,.12)}
+.tab-panel{border:1px solid var(--linea);border-radius:16px;padding:clamp(1.4rem,4vw,2rem);background:linear-gradient(180deg,rgba(241,238,230,.03),transparent);min-height:12em}
+.tab-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--oxito-hi);font-weight:700;margin-bottom:.6rem}
+.tab-panel p{color:var(--bruma);font-size:.98rem;margin-bottom:1rem}
+.cita{border-left:3px solid var(--oxito);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(224,168,78,.08);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55;color:var(--oxito-hi)}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(241,238,230,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--oxito-hi);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.honestidad{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2rem;background:rgba(91,141,184,.1)}
+.honestidad p{color:var(--bruma);font-size:.95rem}
+.honestidad .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cortisol-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--oxito);color:var(--oxito-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--oxito-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#1E3A4E 0%,var(--noche) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,1rem + 2vw,2rem);line-height:1.35;max-width:40ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--oxito-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}.lado li{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="dialfx" aria-hidden="true"><div class="dial"></div></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · De tu propio estante · L4-026</span>
+    <h1>Cómo hacer que te pasen cosas buenas</h1>
+    <p class="autor">Marian Rojas Estapé · 2018</p>
+    <p class="sub">Lo compraste hace poco y todavía tiene el film puesto al lado (L4-028). Antes de sumar otro libro nuevo a la pila, hoy te propongo abrir uno que ya es tuyo: entender tu cerebro, no otro más de espiritualidad o de asombro científico.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este, hoy ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traemos</p>
+    <h2 class="titulo rev d1">El estante te está esperando, no la librería</h2>
+    <p class="bajada rev d2">Llevás cinco fichas seguidas entre astronomía (Rovelli x2, Bok) y estoicismo (Holiday x2) — todas con dwell alto o veredicto pleno, pero es momento de rotar de veta antes de agotarlas. En L4 tenés tres compras recientes sin ninguna señal de lectura: <em>Calmar la mente</em>, <em>Deshacer la ansiedad</em> y este. Elegí este porque es el que más cruza tus dos vetas declaradas — wellness y neurociencia — en un solo libro, escrito por una psiquiatra que trabaja de esto todos los días, no por un divulgador de fama mundial.</p>
+    <div class="estante rev d2">
+      <span class="libro-chip">Comprado, sin señal de lectura en enrichment</span>
+      <span class="libro-chip">Wellness + neurociencia + positividad, las tres a la vez</span>
+      <span class="libro-chip">Nunca antes recomendado</span>
+    </div>
+    <p class="rev d3" style="margin-top:1.6rem;font-family:var(--serif);font-style:italic;color:var(--oxito-hi)">Guardia verificada: título y autora contra el catálogo completo (único match esperado, tu propio L4-026) y contra todo lo recomendado antes — sin coincidencias.</p>
+  </div>
+</section>
+
+<section class="seccion" id="cortisol">
+  <div class="centro">
+    <p class="kicker rev">Tu compañero de viaje</p>
+    <h2 class="titulo rev d1">El cortisol no distingue lo real de lo imaginado</h2>
+    <p class="bajada rev d2">Ese es el eje del libro (capítulo 3): tu cuerpo reacciona igual de fuerte ante una amenaza real que ante una que solo imaginaste. El capítulo 7 lista qué lo dispara; el capítulo 8, qué lo baja. Tocá cada lado para verlo.</p>
+    <div class="balanza rev d2">
+      <div class="lado sube">
+        <h3>🌊 Lo que lo sube (cap. 7)</h3>
+        <ul id="listaSube">
+          <li>El miedo a perder el control</li>
+          <li>El perfeccionismo</li>
+          <li>La «cronopatía» — obsesión por aprovechar cada minuto</li>
+          <li>La sobreestimulación de la era digital</li>
+        </ul>
+        <button class="ver" data-target="listaSube">Ver la lista completa</button>
+      </div>
+      <div class="lado baja">
+        <h3>☀️ Lo que lo baja (cap. 8)</h3>
+        <ul id="listaBaja">
+          <li>El ejercicio</li>
+          <li>Aprender a manejar a las personas tóxicas</li>
+          <li>Entrenar pensamientos positivos, a propósito</li>
+          <li>Meditación / mindfulness</li>
+        </ul>
+        <button class="ver" data-target="listaBaja">Ver la lista completa</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="resiliencia" style="background:var(--noche2)">
+  <div class="centro">
+    <p class="kicker rev">El capítulo que más se cita del libro</p>
+    <h2 class="titulo rev d1">Resiliencia no es no quedar herido</h2>
+    <p class="bajada rev d2">Rojas Estapé se apoya en Boris Cyrulnik, el psiquiatra francés que sobrevivió escondido a la ocupación nazi con cinco años y dedicó su carrera a entender cómo una persona se recompone después de un trauma. Sus tres pilares, tal como los cita el libro:</p>
+    <div class="tabs" id="tabsPilar">
+      <button data-t="personal" class="activo">Lo personal</button>
+      <button data-t="familia">El contexto familiar</button>
+      <button data-t="social">El contexto social</button>
+    </div>
+    <div class="tab-panel rev d2" id="panelPilar">
+      <p class="et">Las herramientas de adentro</p>
+      <p>El apego seguro con el que se crece — "una de las prevenciones más potentes que existen para superar un trauma", según el libro.</p>
+    </div>
+    <div class="cita rev">
+      <p>«La capacidad del ser humano para reponerse de un trauma y, sin quedar marcado de por vida, ser feliz.»</p>
+      <span>Boris Cyrulnik, citado en el capítulo 1 — la definición de resiliencia que abre el libro</span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2018, Espasa — best seller en España, con reediciones cada año desde entonces</dd>
+        <dt>Tu ejemplar</dt><dd>L4-026, entre <em>Big Magic</em> y <em>La Llamada del Coraje</em> — sin lectura registrada</dd>
+        <dt>Autora</dt><dd>Psiquiatra, licenciada en Medicina por la Universidad de Navarra, trabaja en el Instituto Español de Investigaciones Psiquiátricas (Madrid)</dd>
+        <dt>Estructura</dt><dd>9 capítulos: felicidad, el amor como antídoto al sufrimiento, el cortisol, el pasado y el futuro, el presente, las emociones, qué sube y baja el cortisol, y "tu mejor versión"</dd>
+        <dt>Subtítulo real</dt><dd>«Entiende tu cerebro, gestiona tus emociones, mejora tu vida» — así está impreso en la tapa</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="honestidad-sec" style="background:var(--noche2)">
+  <div class="centro">
+    <p class="kicker rev">La letra chica, honesta</p>
+    <h2 class="titulo rev d1">Es masivo — pero con una diferencia real con Frankl y Meditaciones</h2>
+    <div class="honestidad rev d2">
+      <span class="et">Guardia de honestidad</span>
+      <p>Este es, sin vueltas, uno de los libros de autoayuda más vendidos en español de la última década — mismo perfil de fama que hizo fallar a Frankl y a Meditaciones (ambos "ya lo leí"). La diferencia real: aquellos dos no tenían ningún antecedente en tu estante cuando te los recomendé; este lo compraste vos mismo, hace poco, y todavía está sin abrir al lado de otros dos títulos igual de recientes. Es una apuesta distinta — no "¿es famoso?" sino "¿lo vas a abrir ahora que ya es tuyo?".</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Andy</p>
+    <h2 class="titulo rev d1">¿Lo agarrás esta noche?</h2>
+    <div class="cta rev d2">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L4-026','si',this)">📖 Sí, esta noche</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-026','ya_leido',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-026','no',this)">🙅 Esta noche no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-05-rojas-cosas-buenas','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-05-rojas-cosas-buenas','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-05-rojas-cosas-buenas','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-05-rojas-cosas-buenas','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-05-rojas-cosas-buenas','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-05-rojas-cosas-buenas','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-05-rojas-cosas-buenas','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-05-rojas-cosas-buenas" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-05-rojas-cosas-buenas" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-05-rojas-cosas-buenas',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">«La felicidad no es lo que nos pasa, sino <b>cómo interpretamos</b> lo que nos pasa.»</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Redescubrimientos y libros nuevos, alternando, uno por día.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--oxito-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--oxito);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante L4 · datos verificados contra el texto original del libro y su ficha editorial, agosto 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+
+  var SUBE=['El miedo a perder el control','El perfeccionismo','La «cronopatía» — obsesión por aprovechar cada minuto','La sobreestimulación de la era digital','Vivir preocupado por algo constantemente, aunque no pase'];
+  var BAJA=['El ejercicio','Aprender a manejar a las personas tóxicas','Entrenar pensamientos positivos, a propósito','Meditación / mindfulness','Omega 3'];
+  function expandir(id, extra){
+    var ul=document.getElementById(id);
+    extra.forEach(function(t){
+      var li=document.createElement('li');
+      li.textContent=t;
+      ul.appendChild(li);
+      setTimeout(function(){li.classList.add('on')},30);
+    });
+  }
+  $$('.lado li').forEach(function(li){li.classList.add('on')});
+  $$('.ver').forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=b.getAttribute('data-target');
+      var extra = id==='listaSube' ? SUBE.slice(4) : BAJA.slice(4);
+      expandir(id, extra);
+      b.style.display='none';
+    });
+  });
+
+  var PILAR={
+    personal:{et:'Las herramientas de adentro',cuerpo:'El apego seguro con el que se crece — "una de las prevenciones más potentes que existen para superar un trauma", según el libro.'},
+    familia:{et:'Lo que hacen los que te rodean',cuerpo:'El tipo de apoyo que dan los cuidadores y figuras de apego después del golpe. Cyrulnik lo llama la "teoría del doble golpe": el trauma no lo causa solo el evento, sino cómo reacciona después tu entorno — rechazo, incomprensión, un gesto de disgusto.'},
+    social:{et:'Lo que rodea a todo lo demás',cuerpo:'El apoyo social y legal disponible en ese momento — la comunidad, dice el libro, mitiga el trauma y fortalece a la víctima. Ninguno de los tres pilares alcanza solo; son los tres juntos.'}
+  };
+  var tabsP=$$('#tabsPilar button'),panelP=$('#panelPilar');
+  tabsP.forEach(function(b){
+    b.addEventListener('click',function(){
+      tabsP.forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      var c=PILAR[b.getAttribute('data-t')];
+      panelP.innerHTML='<p class="et">'+c.et+'</p><p>'+c.cuerpo+'</p>';
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

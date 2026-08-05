@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-04T21:47:30.555Z",
+  "_updated_at": "2026-08-05T19:17:34.000Z",
   "notifications": [
     {
       "id": "2026-08-04-rec-andy",
@@ -674,6 +674,32 @@
       "sent_at": "2026-08-03T20:59:06.868Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-03"
+    },
+    {
+      "id": "2026-08-05-rec-andy",
+      "title": "🧠 El que ya es tuyo y todavía no abriste",
+      "body": "Entre Big Magic y La Llamada del Coraje, sin abrir. Tu cerebro, tu cortisol, tu mejor versión — en 9 capítulos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-05-rojas-cosas-buenas.html",
+      "to": "Andy",
+      "send_at": "2026-08-05T18:30:00-03:00",
+      "expires_at": "2026-08-05T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-05"
+    },
+    {
+      "id": "2026-08-05-rec-sofi",
+      "title": "🌊 Sofi, nada de crimen otra vez",
+      "body": "Un inspector aburrido, un orfanato mágico y un chico de 6 años que es literalmente el Anticristo. 5 minutos y sabés si te copa.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-05-klune-casa-mar-azul.html",
+      "to": "Sofi",
+      "send_at": "2026-08-05T18:30:00-03:00",
+      "expires_at": "2026-08-05T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-05"
     }
   ]
 }

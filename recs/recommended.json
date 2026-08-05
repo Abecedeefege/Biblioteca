@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-04T16:35:00-03:00",
-  "_feedback_cutoff": "2026-08-03T22:19:47.063Z",
+  "_updated_at": "2026-08-05T16:17:34-03:00",
+  "_feedback_cutoff": "2026-08-05T19:17:34.000Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1050,6 +1050,57 @@
       "page": "recs/2026-08-04-green-buscando-alaska.html",
       "notified_by": "2026-08-04-rec-sofi",
       "why": "CAMBIO FUERTE tras 3 fichas seguidas de Sofi sin ningun click ni page_visit registrado (Osman t.4 30/07, Delany 02/08, Thorogood 03/08 -- verificado en sync/engagement.json, cero eventos para las tres paginas). En vez de insistir con otro misterio/cozy, se pivota de veta por completo: novela juvenil literaria sin crimen ni detective, ya en su estante M5 (topics catalogados como mystery+young-adult pero el contenido real es duelo/coming-of-age). Conecta con su rec-nota del 24/07 pidiendo una tercera veta de romance/emocion con permiso de llorar un poco, nunca antes servida sin el envoltorio de un club de crimen. Tono del push tambien cambiado: honesto sobre la racha sin abrir, en vez de vender otro libro mas. Verificado titulo+autora contra catalogo completo (unico match esperado, el propio M5-023) y recommended.json: sin coincidencias previas. Citas (Rabelais, Bolivar, cierre del libro) verificadas contra LitCharts/SparkNotes/Goodreads, con honestidad declarada sobre que ambas atribuciones historicas son disputadas -- convertido en parte del gancho de la ficha, no ocultado. Riesgo declarado de frente: es un clasico juvenil masivo, chance real de que ya lo haya leido de adolescente o en Kindle (como paso con Henry). Regimen del dia: Andy tiene el nuevo hoy (Rovelli), a Sofi le toca redescubrimiento.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-05-rojas-cosas-buenas",
+      "date": "2026-08-05",
+      "kind": "redescubrimiento",
+      "title": "Cómo hacer que te pasen cosas buenas",
+      "author": "Marian Rojas Estapé",
+      "language": "es",
+      "topics": [
+        "wellness",
+        "neurociencia",
+        "positividad"
+      ],
+      "book_ref": "L4-026",
+      "audience": "andy",
+      "page": "recs/2026-08-05-rojas-cosas-buenas.html",
+      "notified_by": "2026-08-05-rec-andy",
+      "why": "Rotacion de veta tras cinco fichas seguidas de astronomia/estoicismo (Rovelli x2, Bok, Holiday x2): en L4 hay tres compras recientes sin ninguna senal de lectura (L4-025, L4-026, L4-028, PRIORIDAD del PROFILE). Elegido este por ser el que mas cruza wellness+neurociencia+positividad a la vez, escrito por una psiquiatra en ejercicio (IEIP Madrid), no por un divulgador de fama mundial. Verificado titulo+autora contra catalogo completo (unico match esperado, el propio L4-026) y recommended.json: sin coincidencias previas. Estructura (9 capitulos) e indice completo, cita de contratapa y cita de Cyrulnik sobre resiliencia verificadas contra el texto original del libro (extracto oficial descargado, no resumenes de terceros). Regimen del dia: ayer (04/08) Andy tuvo el nuevo (Rovelli), hoy le toca redescubrimiento.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-05-klune-casa-mar-azul",
+      "date": "2026-08-05",
+      "kind": "nuevo",
+      "title": "La casa en el mar más azul",
+      "author": "TJ Klune",
+      "language": "es",
+      "topics": [
+        "fantasia",
+        "found-family",
+        "humor",
+        "romance"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-08-05-klune-casa-mar-azul.html",
+      "notified_by": "2026-08-05-rec-sofi",
+      "why": "Continua el cambio fuerte de ayer (Buscando a Alaska, salida del misterio) con un angulo distinto: fantasia calida de elenco-familia-encontrada (mismo ingrediente que gano con Osman: grupo raro que se vuelve familia) cruzada con la emocion/romance con final feliz que pidio el 24/07 (nunca entregada limpia: Henry x2 con riesgo, Benavent quemada). Se evaluo primero un segundo libro de Matt Haig (identitario tras el ACIERTO PLENO de La Biblioteca de la Medianoche) pero tanto 'Los Humanos' como 'Como detener el tiempo' estan agotados en buscalibre.uy -- anotado en PROFILE para revisar stock mas adelante. Verificado titulo+autor contra catalogo completo (sin match) y recommended.json (sin match). 4 citas verificadas palabra por palabra contra la coleccion de citas de Goodreads de este libro especifico; traduccion propia declarada como tal. Premios (Alex Award 2021, Mythopoeic Award 2021) verificados contra multiples fuentes (Wikipedia, ALA). Link de compra verificado (200) en buscalibre.uy. Honestidad: se avisa de frente que es fantasia (genero nunca probado con ella), que uno de los seis chicos es el Anticristo de 6 anos (jugado para ternura, no terror) y el riesgo Kindle de 'ya lo lei' visto con Henry. Regimen del dia: ayer (04/08) Sofi tuvo el redescubrimiento (Green), hoy le toca nuevo.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

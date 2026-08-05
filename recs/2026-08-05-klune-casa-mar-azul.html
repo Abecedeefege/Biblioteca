@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🌊 La casa en el mar más azul · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mar:#0E2A38;
+  --mar2:#153548;
+  --cerulean:#3FA6C4;
+  --cerulean-hi:#7FD4EE;
+  --sol:#E8A24C;
+  --sol-hi:#F7C57F;
+  --hueso:#F3F0E6;
+  --bruma:#AFC2CA;
+  --linea:rgba(243,240,230,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--mar);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--sol);color:var(--mar)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--cerulean-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(243,240,230,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cerulean-hi),var(--sol-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(14,42,56,.65);backdrop-filter:blur(4px)}
+.back:hover{color:var(--sol-hi);border-color:var(--sol)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sol);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(130% 90% at 50% 6%,#1B5169 0%,var(--mar) 65%)}
+.olafx{position:absolute;inset:0;z-index:0;opacity:.5}
+.olafx span{position:absolute;bottom:-40px;font-size:1.6rem;animation:subir 12s linear infinite}
+@keyframes subir{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.7}100%{transform:translateY(-620px) translateX(30px);opacity:0}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cerulean-hi);border:1px solid var(--cerulean);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.6rem,1rem + 3.6vw,2.7rem);font-weight:600;line-height:1.16}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--sol-hi)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:54ch}
+.cta-btn{display:inline-block;background:var(--sol);color:var(--mar);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--sol-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--mar2)}
+.estante{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.libro-chip{font-size:.82rem;color:var(--cerulean-hi);border:1px solid var(--linea);border-radius:999px;padding:.4rem .9rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.2rem 0 1.3rem}
+.tabs button{border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.87rem;font-weight:600;transition:all .25s ease}
+.tabs button:hover,.tabs button.activo{border-color:var(--sol);color:var(--sol-hi);background:rgba(232,162,76,.12)}
+.tab-panel{border:1px solid var(--linea);border-radius:16px;padding:clamp(1.4rem,4vw,2rem);background:linear-gradient(180deg,rgba(243,240,230,.03),transparent);min-height:13em}
+.tab-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sol-hi);font-weight:700;margin-bottom:.6rem}
+.tab-panel p{color:var(--bruma);font-size:.98rem;margin-bottom:1rem}
+.tab-panel .cita-in{font-family:var(--serif);font-style:italic;color:var(--hueso);font-size:1.02rem;border-left:3px solid var(--cerulean);padding-left:1rem}
+.citas-grid{display:grid;gap:1rem;margin-top:1.6rem}
+.cita{border-left:3px solid var(--sol);padding:1.1rem 1.3rem;background:rgba(232,162,76,.08);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.55;color:var(--sol-hi)}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(243,240,230,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--cerulean-hi);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.honestidad{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2rem;background:rgba(63,166,196,.1)}
+.honestidad p{color:var(--bruma);font-size:.95rem}
+.honestidad .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cerulean-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--sol);color:var(--sol-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--sol-hi);font-family:var(--sans)}
+.comprar{display:inline-block;margin-top:1.6rem;background:var(--sol);color:var(--mar);text-decoration:none;font-weight:700;padding:1rem 1.8rem;border-radius:999px;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--sol-hi);transform:translateY(-2px)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#1B5169 0%,var(--mar) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,1rem + 2vw,2rem);line-height:1.35;max-width:40ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--sol-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="olafx" id="olaFx" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · Nuevo · nunca en tu estante</span>
+    <h1>La casa en el mar más azul</h1>
+    <p class="autor">TJ Klune · 2020 (orig. <em>The House in the Cerulean Sea</em>)</p>
+    <p class="sub">Nada de crimen, nada de detective, nada de club. Hoy te traigo un funcionario gris que tiene que inspeccionar un orfanato mágico en una isla — y termina encontrando la familia que nunca supo que le faltaba.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este, hoy ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traemos</p>
+    <h2 class="titulo rev d1">Cambio de veta real, no solo de autor</h2>
+    <p class="bajada rev d2">Osman, Delany, Thorogood — misterio no está funcionando esta semana. Ayer probamos salir del todo con <em>Buscando a Alaska</em>. Hoy sigo por ese mismo camino, pero cambiando el ángulo: en vez de duelo literario, algo cálido y con humor — la misma calidez de grupo que amaste en Osman (un elenco entrañable, ninguno "normal"), pero sin ningún crimen que resolver. Y hay una historia de amor que sí llega a buen puerto, algo que pediste el 24/07 y que ni Henry ni Benavent te terminaron de dar.</p>
+    <div class="estante rev d2">
+      <span class="libro-chip">Género nunca antes probado con vos: fantasía cálida</span>
+      <span class="libro-chip">Elenco tipo Osman: un grupo raro que se vuelve familia</span>
+      <span class="libro-chip">Final feliz confirmado, sin spoilear el cómo</span>
+    </div>
+    <p class="rev d3" style="margin-top:1.6rem;font-family:var(--serif);font-style:italic;color:var(--sol-hi)">Guardia verificada: título y autor contra el catálogo completo (sin match — nunca vivió en tu casa) y contra todo lo recomendado antes — sin coincidencias.</p>
+  </div>
+</section>
+
+<section class="seccion" id="elenco">
+  <div class="centro">
+    <p class="kicker rev">Conocé la casa</p>
+    <h2 class="titulo rev d1">Un inspector de reglas, un director imposible, seis chicos que no son "normales"</h2>
+    <p class="bajada rev d2">Estructura y personajes verificados contra la ficha oficial del libro y LitCharts.</p>
+    <div class="tabs" id="tabsCasa">
+      <button data-t="linus" class="activo">Linus Baker</button>
+      <button data-t="arthur">Arthur Parnassus</button>
+      <button data-t="ninos">Los seis</button>
+      <button data-t="lucy">El giro</button>
+    </div>
+    <div class="tab-panel rev d2" id="panelCasa">
+      <p class="et">El burócrata más aburrido del Departamento a Cargo de la Juventud Mágica</p>
+      <p>Cuarenta años, vive solo con su gato Calliope y sus discos viejos, sigue el reglamento al pie de la letra. Le encargan una misión secreta: evaluar un orfanato remoto en la isla de Marsyas y decidir si los seis niños que viven ahí son un peligro para el mundo.</p>
+      <p class="cita-in">Empieza siendo el tipo de personaje que nunca elegirías de protagonista — y esa es la gracia.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="citas" style="background:var(--mar2)">
+  <div class="centro">
+    <p class="kicker rev">Frases que se citan solas</p>
+    <h2 class="titulo rev d1">Lo que se lleva la gente de este libro</h2>
+    <p class="bajada rev d2">Las cuatro, verificadas palabra por palabra contra la colección de citas de Goodreads de esta novela. Traducción propia, declarada como tal.</p>
+    <div class="citas-grid">
+      <div class="cita rev"><p>"Un hogar no siempre es la casa en la que vivís. También es la gente que elegís para rodearte."</p><span>(«A home isn't always the house we live in. It's also the people we choose to surround ourselves with.»)</span></div>
+      <div class="cita rev"><p>"Deberíamos hacer siempre lugar para las cosas que nos gustan. Si no, capaz nos olvidamos de cómo ser felices."</p><span>(«We should always make time for the things we like. If we don't, we might forget how to be happy.»)</span></div>
+      <div class="cita rev"><p>"Cuando algo se rompe, lo podés volver a armar. Puede que no encaje igual, o que no funcione como antes — pero eso no quiere decir que ya no sirva."</p><span>(«When something is broken, you can put it back together...»)</span></div>
+      <div class="cita rev"><p>"—Me temo que yo no tengo magia. —Sí que la tenés, Sr. Baker. Arthur me dijo que puede haber magia en lo ordinario."</p><span>(«I'm afraid I don't have magic.» «You do, Mr. Baker...»)</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de conseguirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2020, TJ Klune — primero de la saga <em>Cerulean Chronicles</em></dd>
+        <dt>Premios</dt><dd>Alex Award 2021 (ALA) y Mythopoeic Award 2021, categoría fantasía adulta</dd>
+        <dt>Edición en español</dt><dd><em>La casa en el mar más azul</em>, Crossbooks, trad. Carlos Abreu Fetter</dd>
+        <dt>Tono</dt><dd>Cálido y con humor, con una historia de amor que crece despacio entre Linus y Arthur</dd>
+        <dt>Verificado</dt><dd>Título y autor contra el catálogo completo y contra <code>recommended.json</code> — sin coincidencias</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="honestidad-sec" style="background:var(--mar2)">
+  <div class="centro">
+    <p class="kicker rev">La letra chica, honesta</p>
+    <h2 class="titulo rev d1">Tres cosas para saber antes de empezar</h2>
+    <div class="honestidad rev d2">
+      <span class="et">Guardia de honestidad</span>
+      <p>Uno: es fantasía, un género que nunca probamos con vos — si no es lo tuyo, decímelo con el botón de abajo y no insisto. Dos: uno de los seis chicos es, literalmente, el Anticristo de seis años — jugado todo el tiempo para la ternura y el humor, no para el terror, pero lo aviso para que no te agarre de sorpresa. Tres: es un libro enorme en redes (BookTok, Goodreads) desde 2020 — con tu historial de Kindle paralelo (como pasó con Henry), hay chance de que ya lo hayas leído; si es así, avisame y lo sumo a la guardia.</p>
+    </div>
+    <a class="comprar rev d2" href="https://www.buscalibre.uy/libros/search/?q=La+Casa+en+el+Mar+Mas+Azul+TJ+Klune">Conseguilo (~USD 20)</a>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Sofi</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d2">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-05-klune-casa-mar-azul','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-05-klune-casa-mar-azul','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-05-klune-casa-mar-azul','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-05-klune-casa-mar-azul','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-05-klune-casa-mar-azul','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-05-klune-casa-mar-azul','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-05-klune-casa-mar-azul','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-05-klune-casa-mar-azul','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-05-klune-casa-mar-azul','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-05-klune-casa-mar-azul" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-05-klune-casa-mar-azul" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-05-klune-casa-mar-azul',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"Puede haber <b>magia en lo ordinario.</b>"</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Redescubrimientos y libros nuevos, alternando, uno por día.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--sol-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--sol);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · un libro nuevo para vos · datos verificados (Goodreads, LitCharts, ficha editorial) a agosto 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+
+  var olaFx=$('#olaFx');
+  var olas=['🌊','🐚','✨'];
+  for(var i=0;i<14;i++){
+    var s=document.createElement('span');
+    s.textContent=olas[i%olas.length];
+    s.style.left=(Math.random()*100)+'%';
+    s.style.animationDelay=(Math.random()*12)+'s';
+    olaFx.appendChild(s);
+  }
+
+  var CASA={
+    linus:{et:'El burócrata más aburrido del Departamento a Cargo de la Juventud Mágica',cuerpo:'Cuarenta años, vive solo con su gato Calliope y sus discos viejos, sigue el reglamento al pie de la letra. Le encargan una misión secreta: evaluar un orfanato remoto en la isla de Marsyas y decidir si los seis niños que viven ahí son un peligro para el mundo.',cita:'Empieza siendo el tipo de personaje que nunca elegirías de protagonista — y esa es la gracia.'},
+    arthur:{et:'El director del orfanato, con más de un secreto',cuerpo:'Cálido, un poco teatral, paciente casi hasta lo imposible — pero fieramente protector de sus seis chicos y con una idea muy clara y poco convencional de lo que significa cuidar a alguien. Todo lo que Linus cree saber sobre las reglas empieza a temblar cerca de él.',cita:'El corazón y centro moral de todo el libro, aunque tarda en mostrar por qué.'},
+    ninos:{et:'Seis chicos que ningún otro orfanato quiso',cuerpo:'Talia, una gnoma con mal carácter y pasión por la jardinería. Theodore, una wyvern (parecido a un dragón) que colecciona botones. Phee, un espíritu del bosque. Sal, un adolescente que se transforma en un caniche de 5 kilos cuando tiene miedo. Chauncey, un blob verde que sueña con trabajar de botones en un hotel.',cita:'Ninguno es "normal" — y el libro nunca te pide que finjas que sí lo son.'},
+    lucy:{et:'El giro que hace reír, no temblar',cuerpo:'El sexto chico es Lucy — diminutivo de Lucifer. Sí, ese. Tiene seis años, colecciona figuritas y en el fondo solo quiere un lugar al que pertenecer, como los otros cinco. El libro lo juega todo el tiempo para la ternura y el humor negro suave, nunca para el miedo real.',cita:'La broma central del libro: el personaje más "peligroso" en el papel es, en la práctica, el más tierno.'}
+  };
+  var tabsC=$$('#tabsCasa button'),panelC=$('#panelCasa');
+  tabsC.forEach(function(b){
+    b.addEventListener('click',function(){
+      tabsC.forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      var c=CASA[b.getAttribute('data-t')];
+      panelC.innerHTML='<p class="et">'+c.et+'</p><p>'+c.cuerpo+'</p><p class="cita-in">'+c.cita+'</p>';
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

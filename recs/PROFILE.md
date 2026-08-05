@@ -5,42 +5,40 @@ Una ficha para Andy, una para Sofi, personal según su perfil/feedback.
 Entre las dos del día: un NUEVO y uno DE LA BIBLIOTECA, alternando quién
 recibe cuál. Pushes ~12:30 (o ≥75 min si corre tarde, piso 11:00 techo
 21:00), personales `to:"Andy"`/`to:"Sofi"`.
-- **04/08** (corrida 16:05 -03:00): Andy → **nuevo** Carlo Rovelli, *El
-  orden del tiempo* — identitario otra vez (mismo patrón que Bach x2 y
-  Holiday x2): Rovelli ya confirmó ACIERTO PLENO con Siete breves
-  lecciones, hoy comprado en L4-027. Sofi → **redescub** M5-023 John
-  Green, *Buscando a Alaska* — CAMBIO FUERTE (ver hallazgo abajo): se
-  pivota de veta por completo a novela juvenil/duelo, fuera del molde
-  misterio/cozy, y el push cambia de tono (honesto sobre la racha muda).
-- **03/08**: Andy → redescub L4-020 Holiday *La Llamada del Coraje*
-  (clickeó 22:19 -03:00, sin voto aún). Sofi → nuevo Thorogood *Marlow* —
-  sin ningún click registrado.
+- **05/08** (corrida 16:17 -03:00, tarde → push 18:30): Andy → **redescub**
+  L4-026 Rojas Estapé, *Cómo hacer que te pasen cosas buenas* — rota
+  fuera de astronomía/estoicismo hacia wellness+neuro, prioriza compra
+  reciente sin señal de lectura. Sofi → **nuevo** TJ Klune, *La casa en
+  el mar más azul* — sigue el cambio fuerte de ayer (fuera de misterio),
+  fantasía cálida de familia-encontrada + final feliz. Se evaluó Haig
+  identitario primero (*Los Humanos*/*Cómo detener el tiempo*) pero
+  AMBOS agotados en buscalibre.uy — revisar stock más adelante. Sin
+  feedback nuevo: cero eventos en `sync/engagement.json` desde el
+  cutoff anterior (03/08 22:19) — ni Rovelli ni Alaska (enviados 04/08
+  18:47) tienen click/page_visit a ~24hs, y esta vez el silencio
+  alcanza también a Andy. Puede ser solo cuestión de tiempo; si en la
+  corrida de mañana SIGUE en cero para todo (Rovelli, Alaska Y las
+  fichas de hoy), dejar de tratarlo como tema de contenido — preguntar
+  directo (nota/micro-pregunta) si hay que bajar cadencia o mover el
+  horario (probar 11:00-12:30).
+- **04/08**: Andy → nuevo Rovelli *El orden del tiempo* (identitario,
+  sin voto). Sofi → redescub Green *Buscando a Alaska* (CAMBIO FUERTE,
+  sin voto).
+- **03/08**: Andy → redescub Holiday *La Llamada del Coraje* (clickeó,
+  sin voto). Sofi → nuevo Thorogood *Marlow* (sin click).
 
-## 🚨 HALLAZGO 04/08 — Sofi: 3 fichas seguidas sin abrir, cambio de veta
-`sync/engagement.json` no tiene NINGÚN evento (ni click ni page_visit)
-para Osman t.4 (30/07), Delany (02/08) ni Thorogood (03/08) — cruza kinds
-distintos (nuevo/redescub/nuevo), así que no es un problema de formato,
-es apatía/fatiga general con la racha de misterio o con el push en sí.
-Acción: hoy se sale del género por completo (John Green, YA/duelo) y se
-cambia el tono del push. Si TAMPOCO se abre esta, el problema es de
-horario/canal, no de contenido — próximo paso: correr el push más
-temprano (11:00-12:30 en vez de 17:30) o preguntarle a Andy si hay que
-bajar la cadencia. Si SÍ se abre, confirma que el género estaba saturado.
+## 🏆 Andy: identitario le gana al riesgo de fama (x3, confirmado 03/08)
+Bach (Ilusiones→Gaviota) y Holiday (Obstáculo `lo_quiero` pese a ser el
+estoico más vendido que existe) confirman: autor ya-en-casa gana sobre
+clásico consagrado sin dueño, aunque ambos sean masivos. Regla: repetir
+con cualquier autor que tenga lo_quiero/me_tienta reciente y otro título
+propio en el estante — aplicado 04/08 con Rovelli.
 
-## 🏆 HALLAZGO 03/08 — Andy: identitario le gana al riesgo de fama (x3)
-Bach (Ilusiones→Gaviota) y ahora Holiday (Obstáculo `lo_quiero` pese a
-ser el estoico más vendido que existe) confirman: autor ya-en-casa gana
-sobre clásico consagrado sin dueño, aunque ambos sean masivos. Regla:
-repetir con cualquier autor que tenga lo_quiero/me_tienta reciente y otro
-título propio en el estante — aplicado 04/08 con Rovelli.
-
-## 📚 Re-catalogación de agosto (contexto, no accionable)
+## 📚 Re-catalogación de agosto (contexto)
 M2/M3/M4/M6 pasaron a vitrinas pero los libros siguen fichados con su id
-de siempre — no cambia guardia ni book_ref. Confirmado: L4-027 (Rovelli,
-comprado) y M5-039 (Osman t.1, comprado) ya viven en el estante físico.
-Re-extraer `/tmp/catalog.json` cada corrida, no cachear de memoria.
-
-## ✅ Suscripción — Andy y Sofi `active`, sin caídas.
+de siempre — no cambia guardia ni book_ref. Re-extraer `/tmp/catalog.json`
+cada corrida, no cachear de memoria. ✅ Suscripción — Andy y Sofi
+`active`, sin caídas (revisado 05/08).
 
 ### Sofi — vetas confirmadas
 Salas: **sala King** (R4+R5), **salón del crimen** (M5), **rincón
@@ -64,10 +62,19 @@ si Alaska revierte la racha muda.
   M5-016 Delany libro 2, M5-011 Coyle. Evitar M6 completo, M5-037/038
   (Carlisle/Adams, autores quemados), Fitzek M5-003/M5-010 (mismo riesgo
   bestseller).
-- Banco fuera de misterio (veta nueva 04/08): M5-022 *Ciudades de papel*
-  (otro John Green, YA), M5-008 *Una Mujer Rebelde* (Bridgerton libro 3,
-  riesgo alto "ya la vi" por Netflix). Reponer banco literario/emocional
-  si Alaska funciona.
+- Banco fuera de misterio (veta nueva 04-05/08): M5-022 *Ciudades de
+  papel* (otro John Green, YA), M5-008 *Una Mujer Rebelde* (Bridgerton
+  libro 3, riesgo alto "ya la vi" por Netflix). Fantasía cálida (nueva
+  05/08 con Klune): sin más candidatos todavía, investigar con WebSearch
+  la próxima vez que toque esta veta (ej. Backman *Un hombre llamado
+  Ove* — confirmado en stock en buscalibre.uy, ~1000 UYU, pero riesgo de
+  "ya la vi" por la peli de Tom Hanks 2022). Reponer banco
+  literario/emocional si Alaska o Klune funcionan.
+- Haig identitario (tras Midnight Library ACIERTO PLENO 27/07): sus dos
+  siguientes novelas en español, *Los Humanos* y *Cómo detener el
+  tiempo*, están AGOTADAS en buscalibre.uy (verificado 05/08, ambas "no
+  hay stock disponible") — no descartar el autor, solo revisar stock en
+  corridas futuras antes de armar la ficha.
 
 ### Todos (Sofi × Andy)
 Fórmula: narrativa/misterio (ella) × ciencia/sentido (él). Banco:
@@ -86,8 +93,9 @@ Holiday x2, Rovelli 04/08 pendiente de voto).
   `ya_lo_lei`: Frankl, Meditaciones (clásicos sin dueño previo — patrón
   resuelto). Sin veredicto aún: Asimov, Bok, Housel, Pollan, Siddhartha,
   Bucay, Hawking, Tyson, Eagleman, Gibran, Holiday Llamada del Coraje
-  (clickeó 03/08), Rovelli Orden del Tiempo (04/08) — dwell alto en
-  varios, sin voto; seguir vigilando.
+  (clickeó 03/08), Rovelli Orden del Tiempo (04/08), Rojas Estapé Cómo
+  hacer que te pasen cosas buenas (05/08) — dwell alto en varios, sin
+  voto; seguir vigilando.
 - Astronomía en pausa (no agotada): quedan L5-024 Hoyle, L5-021 Whipple.
 - Estoicismo confirmado — banco: Séneca Cartas a Lucilio (riesgo tipo
   Meditaciones, tratar con la misma honestidad).
@@ -111,33 +119,32 @@ Seligman. Cuerpo: Nestor *Breath*. Fábulas: Albom.
 
 ## 🔁 Banco REDESCUB — Andy
 PRIORIDAD (compra reciente, sin señal de lectura): L4-025 *Calmar la
-mente*, L4-026 *Cómo hacer que te pasen cosas buenas*, L4-028 *Deshacer
-la ansiedad* (aún envuelto en film). Banco viejo: L4-010 *Zen tiro con
-arco*, L4-014 *Doors of Perception*, L4-016 *Budismo para principiantes*,
+mente*, L4-028 *Deshacer la ansiedad* (aún envuelto en film) — L4-026
+(Rojas Estapé) usado 05/08. Banco viejo: L4-010 *Zen tiro con arco*,
+L4-014 *Doors of Perception*, L4-016 *Budismo para principiantes*,
 L4-021 *Art of Happiness*, L4-022 *The Boy, the Mole...*. Astro (pausa):
 L5-024 Hoyle, L5-021 Whipple.
 
 ## 🔭 Qué mirar (próxima corrida)
-Confirmar suscripción activa. Rovelli Orden del Tiempo (Andy): ¿tercera
-confirmación del patrón identitario con un autor distinto de Bach/
-Holiday? Llamada del Coraje (Andy) todavía sin voto pese al click del
-03/08. Buscando a Alaska (Sofi): la prueba más dura hasta ahora — si NI
-ESTA se abre, mover el horario del push o preguntarle a Andy si hace
-falta bajar la cadencia; si se abre, confirma que era saturación de
-género. Thorogood sigue sin señal. Sin cambios hace semanas: Weir
-(`todos`), Pollan, Baltimore, Minix.
+Confirmar suscripción activa. PRIORIDAD: ¿sigue en cero `sync/engagement.json`
+para Rovelli/Alaska (04/08) Y las fichas de hoy (05/08)? Si sí, dejar de
+tratarlo como tema de contenido — probar horario más temprano o
+preguntar directo por nota/micro-pregunta si hay que bajar la cadencia,
+para los dos lectores, no solo Sofi. Si aparecen eventos, seguir cada
+hilo normal: Rovelli (¿tercera confirmación identitaria?), Llamada del
+Coraje (clickeó 03/08, sin voto), Rojas Estapé (primer wellness/neuro
+puro desde Eagleman), Klune (¿la fantasía cálida funciona donde
+misterio no?). Thorogood sigue sin señal. Sin cambios hace semanas:
+Weir (`todos`), Pollan, Baltimore, Minix.
 
 ## 🎬 CINE + 🧳 viaje (fuera del ciclo, no cuentan mezcla/par)
-Cine: 1/semana, `audience:"todos"`, `kind:"cine"`, viernes ~19:00.
-Perfiles en 27-28/07 (Sofi evita gore/violencia explícita, subtítulos
-siempre; Andy evita "triste", nunca doblado). Función Nº1: OMitB "ya la
-vimos" ambos (fuera del banco); Arrival "no va" a Sofi (ciencia dura sin
-trama humana, no repetir ese ángulo puro con ella); Severance "me
-tienta" Andy — candidata fuerte Nº2, con dos títulos que ninguno vio.
-Curaduría: icónico/importante > relleno. `recs/index.html` etiqueta
-"Nuevo" todo lo que no sea `redescubrimiento` — infraestructura, NO
-TOCAR.
+Cine: 1/semana, `audience:"todos"`, `kind:"cine"`, viernes ~19:00. Sofi
+evita gore/violencia explícita, subtítulos siempre; Andy evita "triste",
+nunca doblado. Función Nº1: OMitB "ya la vimos" ambos; Arrival "no va" a
+Sofi (ciencia dura sin trama humana, no repetir ese ángulo con ella);
+Severance "me tienta" Andy — candidata fuerte Nº2. Curaduría:
+icónico/importante > relleno.
 
 ## 🧭 Sugerencias hub
 `recs/index.html` lista todo leyendo `recommended.json` por fetch —
-cero mantenimiento manual.
+cero mantenimiento manual. NO TOCAR (ni este ni `recs/setup.html`).
