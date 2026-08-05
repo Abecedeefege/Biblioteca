@@ -3054,7 +3054,51 @@
       "page": "2026-08-03-holiday-llamada-coraje.html",
       "device": "Andy",
       "nid": "2026-08-03-rec-andy"
+    },
+    {
+      "id": "msavjsdi-qa05si",
+      "ts": "2026-08-01T21:19:28.614Z",
+      "page": "2026-08-01-henry-people-vacation.html",
+      "type": "dwell",
+      "device": "Sofi",
+      "dwell_s": 60,
+      "scroll_pct": 100
+    },
+    {
+      "id": "msgnvxga-4q0eq9",
+      "ts": "2026-08-05T22:31:35.194Z",
+      "nid": "2026-08-05-rec-sofi",
+      "src": "push",
+      "page": "2026-08-05-klune-casa-mar-azul.html",
+      "type": "notification_clicked",
+      "device": "Sofi"
+    },
+    {
+      "id": "msgnvxgb-1yeiz4",
+      "ts": "2026-08-05T22:31:35.195Z",
+      "nid": "2026-08-05-rec-sofi",
+      "page": "2026-08-05-klune-casa-mar-azul.html",
+      "type": "page_visit",
+      "device": "Sofi"
+    },
+    {
+      "id": "msgnx4jq-yez4xz",
+      "ts": "2026-08-05T22:32:31.046Z",
+      "qid": "rec-veredicto:2026-08-05-klune-casa-mar-azul",
+      "page": "2026-08-05-klune-casa-mar-azul.html",
+      "type": "answer",
+      "value": "me_tienta",
+      "device": "Sofi"
+    },
+    {
+      "id": "msgnx5vr-kfmvfx",
+      "ts": "2026-08-05T22:32:32.775Z",
+      "page": "2026-08-05-klune-casa-mar-azul.html",
+      "slug": "2026-08-05-klune-casa-mar-azul",
+      "type": "reaction",
+      "value": "love",
+      "device": "Sofi"
     }
   ],
-  "_updated_at": "2026-08-03T22:19:48.641Z"
+  "_updated_at": "2026-08-05T23:30:52.744Z"
 }
