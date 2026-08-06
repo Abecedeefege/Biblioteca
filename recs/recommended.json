@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-05T16:17:34-03:00",
-  "_feedback_cutoff": "2026-08-05T19:17:34.000Z",
+  "_updated_at": "2026-08-06T16:06:29-03:00",
+  "_feedback_cutoff": "2026-08-05T22:32:32.775Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1102,12 +1102,12 @@
       "notified_by": "2026-08-05-rec-sofi",
       "why": "Continua el cambio fuerte de ayer (Buscando a Alaska, salida del misterio) con un angulo distinto: fantasia calida de elenco-familia-encontrada (mismo ingrediente que gano con Osman: grupo raro que se vuelve familia) cruzada con la emocion/romance con final feliz que pidio el 24/07 (nunca entregada limpia: Henry x2 con riesgo, Benavent quemada). Se evaluo primero un segundo libro de Matt Haig (identitario tras el ACIERTO PLENO de La Biblioteca de la Medianoche) pero tanto 'Los Humanos' como 'Como detener el tiempo' estan agotados en buscalibre.uy -- anotado en PROFILE para revisar stock mas adelante. Verificado titulo+autor contra catalogo completo (sin match) y recommended.json (sin match). 4 citas verificadas palabra por palabra contra la coleccion de citas de Goodreads de este libro especifico; traduccion propia declarada como tal. Premios (Alex Award 2021, Mythopoeic Award 2021) verificados contra multiples fuentes (Wikipedia, ALA). Link de compra verificado (200) en buscalibre.uy. Honestidad: se avisa de frente que es fantasia (genero nunca probado con ella), que uno de los seis chicos es el Anticristo de 6 anos (jugado para ternura, no terror) y el riesgo Kindle de 'ya lo lei' visto con Henry. Regimen del dia: ayer (04/08) Sofi tuvo el redescubrimiento (Green), hoy le toca nuevo.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
+        "veredicto": "me_tienta",
+        "reaccion": "love",
+        "clicked": true,
         "dwell_s": 0
       },
-      "learning": null
+      "learning": "ACIERTO (me_tienta + love, click+page_visit 22:31 UTC, votado 1 min despues) -- primera senal positiva de Sofi en fantasia calida de familia-encontrada, veta nunca antes probada. Sin dwell formal registrado (evento de voto llego casi junto al de visita), asi que no hay lectura de scroll/tiempo para calibrar cuanto leyo antes de votar, pero love en la reaccion de experiencia confirma que el formato funciono. Rompe tambien la racha de fichas mudas de Sofi (Delany, Thorogood, y a medias Green sin voto). Corrida de hoy (06/08, jueves) es no-op de Gate de dia: sin ficha ni push nuevos, solo se registra este feedback."
     }
   ]
 }

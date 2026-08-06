@@ -1,35 +1,29 @@
 # Perfil de gustos — recomendador semanal de Bibliotequeando
 
-## ⚖️ MEZCLA + RÉGIMEN — CAMBIO 05/08 (pedido en vivo de Andy): de diario a semanal
-Desde HOY, una sola ficha de libro POR SEMANA, domingos ~17:30 -03:00
-(antes: dos por día, una para cada uno). Sigue siendo personal, alternando
-el destinatario cada domingo entre Andy y Sofi (mirar el último libro en
-`recommended.json` y alternar `audience`). Nuevo/redescub también sigue
-alternando, pero mirando las últimas 2-3 fichas DE ESA PERSONA, no la
-semana calendario. El resto de los días de la semana, la corrida es un
-no-op corto (Gate de día en `.claude/commands/recomendacion.md`): solo
-procesa feedback liviano, no genera ficha ni push. Cine/series NO cambia
-(sigue viernes ~19:00, `todos`, sin tocar). Próximo turno: como hoy
-(05/08) salieron fichas para los dos bajo el régimen viejo, el último
-libro en el log es el de Sofi (Klune) → el domingo que viene le toca a
-Andy, salvo que el orden real de guardado diga lo contrario (chequear).
-- **05/08** (corrida 16:17 -03:00, tarde → push 18:30, último día del
-  régimen diario): Andy → **redescub**
-  L4-026 Rojas Estapé, *Cómo hacer que te pasen cosas buenas* — rota
-  fuera de astronomía/estoicismo hacia wellness+neuro, prioriza compra
-  reciente sin señal de lectura. Sofi → **nuevo** TJ Klune, *La casa en
-  el mar más azul* — sigue el cambio fuerte de ayer (fuera de misterio),
-  fantasía cálida de familia-encontrada + final feliz. Se evaluó Haig
-  identitario primero (*Los Humanos*/*Cómo detener el tiempo*) pero
-  AMBOS agotados en buscalibre.uy — revisar stock más adelante. Sin
-  feedback nuevo: cero eventos en `sync/engagement.json` desde el
-  cutoff anterior (03/08 22:19) — ni Rovelli ni Alaska (enviados 04/08
-  18:47) tienen click/page_visit a ~24hs, y esta vez el silencio
-  alcanza también a Andy. Puede ser solo cuestión de tiempo; si en la
-  corrida de mañana SIGUE en cero para todo (Rovelli, Alaska Y las
-  fichas de hoy), dejar de tratarlo como tema de contenido — preguntar
-  directo (nota/micro-pregunta) si hay que bajar cadencia o mover el
-  horario (probar 11:00-12:30).
+## ⚖️ MEZCLA + RÉGIMEN — semanal desde 05/08 (pedido en vivo de Andy)
+Una sola ficha de libro POR SEMANA, domingos ~17:30 -03:00, alternando el
+destinatario cada domingo entre Andy y Sofi (mirar el último libro en
+`recommended.json` y alternar `audience`; nuevo/redescub también alterna,
+mirando las últimas 2-3 fichas DE ESA PERSONA). El resto de la semana la
+corrida es no-op corto (Gate de día): solo procesa feedback, sin ficha ni
+push. Cine/series NO cambia (viernes ~19:00, `todos`). Último libro en el
+log es el de Sofi (Klune, 05/08) → el domingo 09/08 le toca a Andy.
+- **06/08 (jueves, no-op)**: 4 eventos nuevos en `sync/engagement.json`
+  desde el cutoff anterior (05/08 19:17 UTC) — todos de Klune (Sofi):
+  click+page_visit+voto `me_tienta`+reacción `love` a las 22:31-22:32 UTC
+  del 05/08, procesados y registrados; cutoff avanzado a esa hora. Primera señal
+  positiva en fantasía cálida de familia-encontrada; rompe la racha muda
+  de Sofi (Delany, Thorogood, Alaska sin voto). Sin señal nueva para
+  Rovelli *Orden del tiempo* (04/08, Andy), *Buscando a Alaska* (04/08,
+  Sofi), Rojas Estapé (05/08, Andy) ni Holiday Llamada del Coraje (03/08,
+  clickeó sin voto) — sigan pendientes, revisar próxima corrida activa
+  (domingo 09/08).
+- **05/08** (último día del régimen diario, push 18:30): Andy → redescub
+  L4-026 Rojas Estapé, *Cómo hacer que te pasen cosas buenas* (wellness+
+  neuro, compra reciente sin señal de lectura, sin voto aún). Sofi →
+  nuevo TJ Klune, *La casa en el mar más azul* → **me_tienta+love**
+  (ver arriba). Haig identitario evaluado primero pero *Los Humanos*/
+  *Cómo detener el tiempo* agotados en buscalibre.uy — revisar stock.
 - **04/08**: Andy → nuevo Rovelli *El orden del tiempo* (identitario,
   sin voto). Sofi → redescub Green *Buscando a Alaska* (CAMBIO FUERTE,
   sin voto).
