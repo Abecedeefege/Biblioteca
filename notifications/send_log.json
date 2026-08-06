@@ -447,6 +447,13 @@
       "device": "Sofi",
       "ts": "2026-08-05T22:29:07.516Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-08-06-vuelo-20h-ebooks",
+      "device": "Andy",
+      "ts": "2026-08-06T23:49:06.135Z",
+      "status_code": 201
     }
   ]
 }
