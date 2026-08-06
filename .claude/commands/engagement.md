@@ -135,10 +135,12 @@ una hora UTC.
      confianza.
    - El slot nocturno (20:30) es EL slot de biblioteca: "¿qué leés esta
      noche?". No lo malgastes en contenido de mañana.
-   - El slot del mediodía (~12:30) es del agente hermano `/recomendacion`
-     (recomendación diaria de libros): no encoles ahí ni toques sus
-     entradas `<fecha>-rec`. Tu propio slot de mañana se corrió a 11:15
-     (antes 08:30) por el piso horario nuevo — dejá margen entre ambos.
+   - El agente hermano `/recomendacion` pasó (2026-08-05) de dos fichas
+     diarias a UNA por semana, domingos ~17:30: no encoles ahí los
+     domingos ni toques sus entradas `<fecha>-rec`. El resto de la
+     semana ese slot queda libre, pero tu propio horario sigue siendo
+     11:15 (mañana) y 20:30 (noche) — no lo muevas al mediodía sin que
+     te lo pidan.
    - El canal es multi-dispositivo (`subscription.json` → `devices[]`,
      hay más de un teléfono en la casa). Tus pushes son para el dueño:
      agregá `"to": "Andy"` a cada entrada que encoles. Considerá el canal

@@ -1,11 +1,20 @@
-# Perfil de gustos — recomendador diario de Bibliotequeando
+# Perfil de gustos — recomendador semanal de Bibliotequeando
 
-## ⚖️ MEZCLA + RÉGIMEN (fijados 15-16/07): 1+1 por día, ~2 nuevos por 1 redescub
-Una ficha para Andy, una para Sofi, personal según su perfil/feedback.
-Entre las dos del día: un NUEVO y uno DE LA BIBLIOTECA, alternando quién
-recibe cuál. Pushes ~12:30 (o ≥75 min si corre tarde, piso 11:00 techo
-21:00), personales `to:"Andy"`/`to:"Sofi"`.
-- **05/08** (corrida 16:17 -03:00, tarde → push 18:30): Andy → **redescub**
+## ⚖️ MEZCLA + RÉGIMEN — CAMBIO 05/08 (pedido en vivo de Andy): de diario a semanal
+Desde HOY, una sola ficha de libro POR SEMANA, domingos ~17:30 -03:00
+(antes: dos por día, una para cada uno). Sigue siendo personal, alternando
+el destinatario cada domingo entre Andy y Sofi (mirar el último libro en
+`recommended.json` y alternar `audience`). Nuevo/redescub también sigue
+alternando, pero mirando las últimas 2-3 fichas DE ESA PERSONA, no la
+semana calendario. El resto de los días de la semana, la corrida es un
+no-op corto (Gate de día en `.claude/commands/recomendacion.md`): solo
+procesa feedback liviano, no genera ficha ni push. Cine/series NO cambia
+(sigue viernes ~19:00, `todos`, sin tocar). Próximo turno: como hoy
+(05/08) salieron fichas para los dos bajo el régimen viejo, el último
+libro en el log es el de Sofi (Klune) → el domingo que viene le toca a
+Andy, salvo que el orden real de guardado diga lo contrario (chequear).
+- **05/08** (corrida 16:17 -03:00, tarde → push 18:30, último día del
+  régimen diario): Andy → **redescub**
   L4-026 Rojas Estapé, *Cómo hacer que te pasen cosas buenas* — rota
   fuera de astronomía/estoicismo hacia wellness+neuro, prioriza compra
   reciente sin señal de lectura. Sofi → **nuevo** TJ Klune, *La casa en
