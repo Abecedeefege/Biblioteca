@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>✈️ 20 horas de vuelo · 5 ebooks + menciones · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0C1620;
+  --noche2:#12202C;
+  --cabina:#4E86B4;
+  --cabina-hi:#8CBEE4;
+  --ambar:#E2A64C;
+  --ambar-hi:#F6CB7C;
+  --hueso:#F1EEE6;
+  --bruma:#AAB7C2;
+  --linea:rgba(241,238,230,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--ambar);color:var(--noche)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--ambar-hi);outline-offset:3px;border-radius:4px}
+a{color:var(--ambar-hi)}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(241,238,230,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cabina-hi),var(--ambar-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(12,22,32,.65);backdrop-filter:blur(4px)}
+.back:hover{color:var(--ambar-hi);border-color:var(--ambar)}
+.seccion{padding:clamp(3.5rem,9vw,6.5rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:860px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ambar);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.7rem,1.25rem + 2.8vw,2.7rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:64ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 7rem;overflow:hidden;background:linear-gradient(180deg,#081119 0%,#12202C 55%,#1B3348 100%)}
+.estrellas{position:absolute;inset:0;z-index:0;opacity:.65;background-image:radial-gradient(1.4px 1.4px at 12% 22%,#fff,transparent),radial-gradient(1.2px 1.2px at 27% 64%,#fff,transparent),radial-gradient(1.6px 1.6px at 46% 14%,#fff,transparent),radial-gradient(1.1px 1.1px at 63% 47%,#fff,transparent),radial-gradient(1.5px 1.5px at 78% 26%,#fff,transparent),radial-gradient(1.2px 1.2px at 88% 62%,#fff,transparent),radial-gradient(1.3px 1.3px at 35% 82%,#fff,transparent),radial-gradient(1px 1px at 70% 78%,#fff,transparent)}
+.ala{position:absolute;bottom:-8%;left:50%;width:min(120vw,1100px);height:44vh;transform:translateX(-50%) rotate(-4deg);z-index:1;background:linear-gradient(180deg,rgba(12,22,32,.1),rgba(12,22,32,.92));clip-path:polygon(0% 100%,42% 8%,58% 8%,100% 100%);opacity:.55}
+.baliza{position:absolute;bottom:34%;left:calc(50% - min(60vw,550px) + 3vw);width:9px;height:9px;border-radius:50%;background:#F26A5A;box-shadow:0 0 14px 5px rgba(242,106,90,.6);z-index:2;animation:baliza 3s ease-in-out infinite}
+@keyframes baliza{0%,84%,100%{opacity:.15}88%,94%{opacity:1}}
+.hero-int{position:relative;z-index:3;max-width:740px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ambar-hi);border:1px solid var(--ambar);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.6rem,1rem + 3.4vw,2.6rem);font-weight:600;line-height:1.16}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--ambar-hi)}
+.hero .sub{color:var(--bruma);margin:1.3rem auto 2.2rem;max-width:56ch}
+.cta-btn{display:inline-block;background:var(--ambar);color:var(--noche);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--ambar-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:3;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--noche2)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.chip{font-size:.82rem;color:var(--ambar-hi);border:1px solid var(--linea);border-radius:999px;padding:.4rem .9rem}
+/* plan de vuelo */
+.plan{display:grid;grid-template-columns:auto 1fr;gap:0 1.1rem;margin-top:2rem}
+.plan .hora{font-family:var(--serif);color:var(--ambar-hi);font-size:.95rem;white-space:nowrap;padding:.9rem 0}
+.plan .tramo{border-left:1px solid var(--linea);padding:.9rem 0 .9rem 1.2rem;position:relative}
+.plan .tramo::before{content:'';position:absolute;left:-5px;top:1.35rem;width:9px;height:9px;border-radius:50%;background:var(--cabina);border:2px solid var(--noche)}
+.plan .tramo b{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:600;margin-bottom:.15rem}
+.plan .tramo span{color:var(--bruma);font-size:.92rem}
+@media (max-width:560px){.plan{grid-template-columns:1fr;gap:0}.plan .hora{padding:.9rem 0 0}.plan .tramo{border-left:none;padding-left:0}.plan .tramo::before{display:none}}
+/* fichas de libro */
+.libro{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.3rem,4vw,2rem);margin-top:1.6rem;background:linear-gradient(180deg,rgba(241,238,230,.045),transparent)}
+.libro .num{font-family:var(--serif);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ambar);font-weight:700}
+.libro h3{font-size:clamp(1.25rem,1.05rem + 1vw,1.7rem);font-weight:600;margin:.35rem 0 .2rem;line-height:1.2}
+.libro .autor{font-family:var(--serif);font-style:italic;color:var(--ambar-hi);font-size:1rem}
+.meta{display:flex;flex-wrap:wrap;gap:.45rem;margin:.95rem 0 1.1rem}
+.meta span{font-size:.78rem;color:var(--bruma);border:1px solid var(--linea);border-radius:8px;padding:.25rem .6rem}
+.libro p{color:var(--bruma);font-size:.98rem;margin-bottom:.9rem}
+.libro p b{color:var(--hueso);font-weight:600}
+.et{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:.4rem;color:var(--cabina-hi)}
+.riesgo{border-left:3px solid var(--ambar);background:rgba(226,166,76,.08);border-radius:0 12px 12px 0;padding:.95rem 1.15rem;margin:1.1rem 0}
+.riesgo .et{color:var(--ambar-hi)}
+.riesgo p{margin:0;font-size:.93rem}
+.acciones{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--linea)}
+.acciones a.comprar{display:inline-block;background:transparent;border:1px solid var(--ambar);color:var(--ambar-hi);border-radius:999px;padding:.55rem 1.1rem;font-size:.9rem;font-weight:600;text-decoration:none}
+.acciones a.comprar:hover{background:rgba(226,166,76,.14)}
+.acciones button{border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.55rem 1.05rem;font-size:.9rem;font-weight:600;transition:all .25s ease}
+.acciones button:hover{border-color:var(--ambar);color:var(--ambar-hi)}
+.q-hint,.react-hint{display:block;margin-top:.4rem;font-size:.85rem;color:var(--ambar-hi);font-family:var(--sans);flex-basis:100%}
+/* menciones */
+.mencion{border:1px solid var(--linea);border-radius:16px;padding:1.15rem 1.3rem;margin-top:1rem;background:rgba(78,134,180,.07)}
+.mencion h4{font-family:var(--serif);font-size:1.08rem;font-weight:600;margin-bottom:.15rem}
+.mencion .autor{font-size:.86rem;color:var(--ambar-hi);font-family:var(--serif);font-style:italic}
+.mencion p{color:var(--bruma);font-size:.93rem;margin-top:.55rem}
+.mencion a{font-size:.86rem}
+/* honestidad + feedback */
+.honestidad{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.4rem;margin-top:1.6rem;background:rgba(78,134,180,.1)}
+.honestidad p{color:var(--bruma);font-size:.95rem;margin-bottom:.7rem}
+.honestidad p:last-child{margin-bottom:0}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--ambar);color:var(--ambar-hi)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#1B3348 0%,var(--noche) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,1rem + 1.8vw,1.9rem);line-height:1.35;max-width:42ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--ambar-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="estrellas" aria-hidden="true"></div>
+  <div class="ala" aria-hidden="true"></div>
+  <div class="baliza" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Pedido puntual · Fuera del ciclo semanal</span>
+    <h1>Veinte horas de vuelo, cinco ebooks y una bandeja plegada</h1>
+    <p class="autor">5 títulos + 5 menciones especiales · todos en Kindle · agosto 2026</p>
+    <p class="sub">No es una lista de "los mejores libros". Es una lista armada para <em>este</em> vuelo: un monstruo de 1.200 páginas para el tramo bueno, uno que te explica el jet lag mientras lo cruzás, una novela para el pozo de la hora 13 y dos cortos para cuando ya no te dé la cabeza.</p>
+    <a class="cta-btn" href="#plan">El plan de vuelo ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="plan">
+  <div class="centro">
+    <p class="kicker rev">Cómo está armada</p>
+    <h2 class="titulo rev d1">Un vuelo de 20 horas no es una lectura larga: son cinco lecturas distintas</h2>
+    <p class="bajada rev d2">Tu cabeza no es la misma en la hora 2 que en la hora 16. Por eso ninguno de estos cinco es del mismo tipo: hay uno para cada estado. Y todos salieron de tus propias vetas declaradas — neurociencia, wellness, espiritualidad oriental, astronomía/física y psicología positiva —, una por libro, sin repetir ninguna.</p>
+    <div class="plan rev d2">
+      <div class="hora">Hora 0–2</div>
+      <div class="tramo"><b>Despegue, carrito, ruido</b><span>Nada que exija concentración larga. Rovelli o Katie Mack: capítulos de 10 minutos.</span></div>
+      <div class="hora">Hora 2–7</div>
+      <div class="tramo"><b>El mejor tramo, cabeza fresca</b><span>Acá va el libro grande: Sapolsky. Es el único momento del vuelo en que le podés dar de verdad.</span></div>
+      <div class="hora">Hora 7–11</div>
+      <div class="tramo"><b>Intento de dormir</b><span>Walker, y después apagar. Literalmente el manual de lo que estás por hacer mal.</span></div>
+      <div class="hora">Hora 11–16</div>
+      <div class="tramo"><b>El pozo</b><span>Pirsig: es narrativa, no te pide tomar notas. Un viaje en moto mientras vos vas en un tubo.</span></div>
+      <div class="hora">Hora 16–20</div>
+      <div class="tramo"><b>Aterrizaje, cabeza fundida</b><span>Capítulos sueltos: Albom o Housel. Cinco minutos cada uno y no perdés el hilo si te dormís.</span></div>
+    </div>
+    <div class="chips rev d3">
+      <span class="chip">Ninguno está en tu catálogo (verificado contra los 437 volúmenes)</span>
+      <span class="chip">Ninguno fue recomendado antes en Bibliotequeando</span>
+      <span class="chip">Los 5 tienen edición Kindle en español confirmada</span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="cinco">
+  <div class="centro">
+    <p class="kicker rev">El top 5</p>
+    <h2 class="titulo rev d1">Los cinco, en orden de cuándo abrirlos</h2>
+    <p class="bajada rev d2">Cada uno con por qué es para vos —anclado en lo que ya votaste o compraste—, y con la letra chica que le veo en contra. Si compro yo, te digo las dos cosas.</p>
+
+    <article class="libro rev d2">
+      <p class="num">01 · Neurociencia · El monstruo</p>
+      <h3>Compórtate</h3>
+      <p class="autor">Robert M. Sapolsky · Capitán Swing, 2020 (trad. Pedro Pacheco González)</p>
+      <div class="meta"><span>~1.200 págs.</span><span>Kindle es</span><span>~25–30 h de lectura</span><span>Veta: neurociencia</span></div>
+      <p><span class="et">Por qué vos</span>Tu veta neuro está declarada hace rato pero nunca tuvo un libro grande: en L4 tenés <em>The Brain That Changes Itself</em> (L4-011) y el 30/07 te fiché <em>Incógnito</em> de Eagleman. Sapolsky es el techo de esa veta — 30 años dando la clase de biología del comportamiento en Stanford, y este libro es esa clase entera.</p>
+      <p><span class="et">Cómo está armado (y por qué sirve en un avión)</span>Empieza <b>un segundo antes</b> de que alguien haga algo —bueno o terrible— y va retrocediendo capa por capa: qué pasó en el cerebro un segundo antes, qué hormonas horas antes, qué infancia años antes, qué cultura siglos antes, qué evolución milenios antes. Cada capítulo es una escala de tiempo distinta y cierra en sí mismo: podés cortar en cualquier lado, dormirte, y volver sin releer nada. Es el diseño ideal para un vuelo con interrupciones cada 40 minutos.</p>
+      <div class="riesgo"><span class="et">La letra chica</span><p>Son 1.200 páginas y hay dos capítulos de neuroanatomía dura al principio (él mismo te dice que los podés saltar y volver). No es un libro para sentirse bien: la mitad del tiempo te está mostrando lo peor de la especie. Regla honesta: si a la hora 3 no te agarró, no te va a agarrar en las otras 17.</p></div>
+      <div class="acciones">
+        <a class="comprar" href="https://www.amazon.com/dp/B086BR2L5D" target="_blank" rel="noopener">Ver en Kindle →</a>
+        <button onclick="engageAnswer('vuelo-compro:sapolsky-comportate','si',this)">🛒 Lo compro</button>
+        <button onclick="engageAnswer('vuelo-compro:sapolsky-comportate','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('vuelo-compro:sapolsky-comportate','no',this)">🙅 No</button>
+        <span class="q-hint"></span>
+      </div>
+    </article>
+
+    <article class="libro rev d2">
+      <p class="num">02 · Wellness + neuro · El útil</p>
+      <h3>Por qué dormimos</h3>
+      <p class="autor">Matthew Walker · Capitán Swing, 2020 (trad. Begoña Merino)</p>
+      <div class="meta"><span>~475 págs.</span><span>Kindle es</span><span>~10 h</span><span>Veta: wellness + neuro</span></div>
+      <p><span class="et">Por qué vos</span>Es exactamente el cruce que te fiché el 05/08 con Rojas Estapé —wellness y cerebro en el mismo libro—, pero con el que dirige un laboratorio del sueño en Berkeley. Y es el único de los cinco que <b>se aplica mientras lo leés</b>: tiene capítulos sobre ritmo circadiano y jet lag, sobre por qué volar hacia el este es el peor caso posible para el reloj interno, y qué hacer con la luz y las comidas al llegar. Leerlo en el aire y aterrizar sabiendo qué hacer con los primeros tres días es casi hacer trampa.</p>
+      <div class="riesgo"><span class="et">La letra chica</span><p>El libro comió críticas puntuales por exagerar o citar mal algunos datos —la más conocida, una revisión de Alexey Guzey en 2019—. El grueso de la ciencia del sueño se sostiene, pero leelo como divulgación entusiasta, no como si cada cifra fuera un paper. Te lo digo yo antes de que lo encuentres vos.</p></div>
+      <div class="acciones">
+        <a class="comprar" href="https://www.amazon.com/dp/B0849ZW5BD" target="_blank" rel="noopener">Ver en Kindle →</a>
+        <button onclick="engageAnswer('vuelo-compro:walker-por-que-dormimos','si',this)">🛒 Lo compro</button>
+        <button onclick="engageAnswer('vuelo-compro:walker-por-que-dormimos','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('vuelo-compro:walker-por-que-dormimos','no',this)">🙅 No</button>
+        <span class="q-hint"></span>
+      </div>
+    </article>
+
+    <article class="libro rev d2">
+      <p class="num">03 · Oriental + narrativa · El del pozo</p>
+      <h3>Zen y el arte del mantenimiento de la motocicleta</h3>
+      <p class="autor">Robert M. Pirsig · Sexto Piso (orig. 1974)</p>
+      <div class="meta"><span>~330 págs. (Kindle)</span><span>Kindle es</span><span>~9 h</span><span>Veta: espiritualidad oriental</span></div>
+      <p><span class="et">Por qué vos</span>Es el puente directo entre dos libros que ya tenés: <em>Zen en el arte del tiro con arco</em> (L4-010, Herrigel) y <em>Siddhartha</em> (L4-023). Misma pregunta —cómo se mete la práctica oriental en un oficio manual— pero contada como historia: un padre y su hijo cruzando Estados Unidos en moto, y adentro del viaje un ensayo sobre qué diablos es la <em>Calidad</em>.</p>
+      <p>Es el único de los cinco con <b>trama</b>, y por eso va en la hora 13: cuando ya no querés que te den datos, pero tampoco querés apagar la cabeza del todo. El Telegraph lo llamó el libro de filosofía más leído de la historia, y sin embargo casi nadie te lo recomienda — está fuera del circuito de los bestsellers de autoayuda que ya te fiché.</p>
+      <div class="riesgo"><span class="et">La letra chica</span><p>Los tramos filosóficos (él los llama "chautauquas") se ponen densos en el último tercio, cuando la historia personal del autor se mete con su propio colapso mental. Mucha gente abandona ahí. Si pasa, no es tuyo: cerralo en el 70% y quedate con el viaje.</p></div>
+      <div class="acciones">
+        <a class="comprar" href="https://www.amazon.com/dp/B07BGFXXVR" target="_blank" rel="noopener">Ver en Kindle →</a>
+        <button onclick="engageAnswer('vuelo-compro:pirsig-zen-motocicleta','si',this)">🛒 Lo compro</button>
+        <button onclick="engageAnswer('vuelo-compro:pirsig-zen-motocicleta','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('vuelo-compro:pirsig-zen-motocicleta','no',this)">🙅 No</button>
+        <span class="q-hint"></span>
+      </div>
+    </article>
+
+    <article class="libro rev d2">
+      <p class="num">04 · Física · El seguro</p>
+      <h3>Helgoland</h3>
+      <p class="autor">Carlo Rovelli · Anagrama (trad. Pilar González Rodríguez)</p>
+      <div class="meta"><span>~240 págs.</span><span>Kindle es</span><span>~4 h</span><span>Veta: física / asombro</span></div>
+      <p><span class="et">Por qué vos</span>Porque Rovelli es, con datos, el autor con mejor registro tuyo: <em>Siete breves lecciones de física</em> es uno de tus dos únicos <b>«lo quiero»</b> (el otro es Holiday), y ya está en tu estante como L4-027. La regla que se confirmó tres veces en tu perfil es esta: <b>el autor que ya está en tu casa le gana al clásico consagrado que no tiene dueño</b>. Este es el tercer Rovelli, y el más narrativo de todos.</p>
+      <p>Junio de 1925: Heisenberg tiene 23 años, sufre de alergia y se va a Helgoland, una isla pelada del Mar del Norte donde no hay polen. En una noche de insomnio ahí escribe lo que se convierte en la mecánica cuántica. Rovelli usa esa noche como puerta de entrada a la pregunta que le interesa de verdad — qué significa que nada exista por sí solo, sino solo en relación con otra cosa.</p>
+      <div class="riesgo"><span class="et">La letra chica</span><p>Si <em>El orden del tiempo</em> (te lo fiché el 04/08) sigue sin abrir, este es más de lo mismo en formato: mismo autor, misma extensión, misma voz. Lo bueno: en 20 horas lo terminás de una sentada y te queda el resto del vuelo libre.</p></div>
+      <div class="acciones">
+        <a class="comprar" href="https://www.amazon.com/dp/B09VS2WJR8" target="_blank" rel="noopener">Ver en Kindle →</a>
+        <button onclick="engageAnswer('vuelo-compro:rovelli-helgoland','si',this)">🛒 Lo compro</button>
+        <button onclick="engageAnswer('vuelo-compro:rovelli-helgoland','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('vuelo-compro:rovelli-helgoland','no',this)">🙅 No</button>
+        <span class="q-hint"></span>
+      </div>
+    </article>
+
+    <article class="libro rev d2">
+      <p class="num">05 · Psicología positiva · El meta</p>
+      <h3>Fluir: una psicología de la felicidad</h3>
+      <p class="autor">Mihaly Csikszentmihalyi · Kairós (orig. 1990)</p>
+      <div class="meta"><span>~490 págs.</span><span>Kindle es</span><span>~10 h</span><span>Veta: psicología positiva</span></div>
+      <p><span class="et">Por qué vos</span>Porque es <b>la fuente</b> de la que beben tres libros que ya tenés y no lo sabías: Covey (L4-006), <em>Solve for Happy</em> (L4-007) y <em>Big Magic</em> (L4-019) están todos parados sobre el concepto de <em>flow</em> — ese estado en que la atención se te va entera en una sola cosa y el tiempo deja de existir. Leer al que lo inventó, y no a los que lo citan, es subir un escalón en una veta que ya te gusta.</p>
+      <p>Y hay un chiste que se cuenta solo: un vuelo de 20 horas es un laboratorio de flow perfecto. Sin notificaciones, sin interrupciones que dependan de vos, con un objetivo claro y nada más que hacer. Vas a estar leyendo sobre las condiciones exactas en las que estás.</p>
+      <div class="riesgo"><span class="et">La letra chica — la más importante de la lista</span><p>Es un clásico consagrado sin dueño en tu estante: exactamente el perfil que te hizo contestar <b>«ya lo leí»</b> a Frankl y a Meditaciones. Es el más probable de los cinco de que ya lo hayas leído. Si es así, tocá el botón y no te lo vuelvo a traer nunca — así aprende el sistema.</p></div>
+      <div class="acciones">
+        <a class="comprar" href="https://www.amazon.com/dp/B006GA4XTM" target="_blank" rel="noopener">Ver en Kindle →</a>
+        <button onclick="engageAnswer('vuelo-compro:csikszentmihalyi-fluir','si',this)">🛒 Lo compro</button>
+        <button onclick="engageAnswer('vuelo-compro:csikszentmihalyi-fluir','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('vuelo-compro:csikszentmihalyi-fluir','no',this)">🙅 No</button>
+        <span class="q-hint"></span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="seccion puente" id="menciones">
+  <div class="centro">
+    <p class="kicker rev">Menciones especiales</p>
+    <h2 class="titulo rev d1">Los cinco que no entraron al podio (y por qué igual te los digo)</h2>
+    <p class="bajada rev d2">Uno por motivo distinto: uno es puro placer, uno es práctico a bordo, uno es para cuando ya no pensás, uno te lo debo desde julio y uno es por el destino.</p>
+
+    <div class="mencion rev d2">
+      <h4>🌌 El fin de todo (astrofísicamente hablando)</h4>
+      <p class="autor">Katie Mack · Crítica/Drakontos, 2021</p>
+      <p>Tu veta de astronomía está en pausa en el ciclo semanal, pero un vuelo no es el ciclo semanal. Cinco formas posibles de que se termine el universo —Big Crunch, muerte térmica, Big Rip, decaimiento del vacío y rebote—, contadas con humor real y sin ecuaciones. Es el postre: corto, divertido, y te deja mirando por la ventanilla. <a href="https://www.amazon.com/dp/B08V47YK2N" target="_blank" rel="noopener">Ver en Kindle →</a></p>
+    </div>
+
+    <div class="mencion rev d2">
+      <h4>🫁 Respira</h4>
+      <p class="autor">James Nestor · Planeta, 2021</p>
+      <p>El más práctico de todos a bordo: respiración nasal, por qué dormís mal sentado, qué hacer con la boca abierta a 11.000 metros y aire al 12% de humedad. Lo podés aplicar en el asiento en el mismo minuto en que lo leés. Estaba en tu banco de "cuerpo" desde hace semanas. <a href="https://www.amazon.com/dp/B08NTYT7Z5" target="_blank" rel="noopener">Ver en Kindle →</a></p>
+    </div>
+
+    <div class="mencion rev d3">
+      <h4>🕊️ Las cinco personas que encontrarás en el cielo</h4>
+      <p class="autor">Mitch Albom</p>
+      <p>Para la hora 17, cuando ya no te da la cabeza para nada que tenga estructura. Es una fábula de dos horas, de la misma familia que Bach (<em>Ilusiones</em>, <em>Gaviota</em>: tus dos «me tienta»), <em>El Principito</em> y Coelho — todos ya en tu L4. Albom estaba en tu banco de fábulas sin usar.</p>
+    </div>
+
+    <div class="mencion rev d3">
+      <h4>💸 La psicología del dinero</h4>
+      <p class="autor">Morgan Housel</p>
+      <p>Te la fiché el 20 de julio y no la abriste — pero para este vuelo cambia el argumento: son 20 capítulos independientes de cinco a ocho minutos cada uno, sin hilo que perder. Es el formato exacto para turbulencia, bandeja arriba y cinturón abrochado. Si no te convenció en julio, probala en el formato para el que sirve.</p>
+    </div>
+
+    <div class="mencion rev d3">
+      <h4>🇪🇺 En Europa: un viaje por el siglo XX</h4>
+      <p class="autor">Geert Mak · Destino</p>
+      <p>Por el destino: mil páginas de un periodista neerlandés recorriendo el continente entero durante un año, país por país, contando el siglo XX donde pasó. Cubre justo tu ruta — Croacia, Alemania, Países Bajos — y Amsterdam es su ciudad. <b>Ojo:</b> confirmé la edición en papel de Destino, <b>no</b> confirmé que exista edición Kindle en español. Verificá antes de contar con él para el vuelo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="honestidad">
+  <div class="centro">
+    <p class="kicker rev">La letra chica de toda la lista</p>
+    <h2 class="titulo rev d1">Qué verifiqué y qué no</h2>
+    <div class="honestidad rev d2">
+      <p><b>Verificado hoy (06/08/2026):</b> los cinco del podio tienen edición Kindle en español publicada, con editorial y traductor identificados; los links van a la ficha de esa edición. Ninguno de los diez títulos está en tu catálogo de 437 volúmenes (chequeado contra título y autor, sin tildes), y ninguno fue recomendado antes en Bibliotequeando.</p>
+      <p><b>No verificado:</b> precios. No los pongo porque cambian por tienda y por día, y prefiero no decirte un número que después no sea. Tampoco verifiqué edición Kindle en español de Albom, Housel y Geert Mak — los tres van como mención, no como compra recomendada.</p>
+      <p><b>Recordatorio de vuelo:</b> descargá los archivos al dispositivo <em>antes</em> de despegar. En modo avión el Kindle no baja nada, y comprar en el aire con wifi de a bordo es carísimo o directamente imposible.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Andy</p>
+    <h2 class="titulo rev d1">¿Sirvió esta lista?</h2>
+    <div class="cta rev d2">¿Y? ¿Comprás alguno?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-06-vuelo-20h-ebooks','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-06-vuelo-20h-ebooks','lo_quiero',this)">🔥 Me llevo varios</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-06-vuelo-20h-ebooks','ya_lo_lei',this)">✔️ Ya los tengo leídos</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-06-vuelo-20h-ebooks','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-06-vuelo-20h-ebooks','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-06-vuelo-20h-ebooks','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-06-vuelo-20h-ebooks','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-06-vuelo-20h-ebooks','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-06-vuelo-20h-ebooks" style="display:block;margin-bottom:.6rem">¿Querés otra vuelta antes del viaje? Decime qué falta y la rearmo.</label>
+      <textarea id="nota-2026-08-06-vuelo-20h-ebooks" rows="3" placeholder="Más ficción, menos ensayo, en inglés, con precios, otra veta…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-06-vuelo-20h-ebooks',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">Veinte horas es lo más parecido que vas a tener este año a <b>un día entero sin que nadie te pida nada</b>.</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:46ch">Cinco libros, cinco estados de cabeza. No hace falta que entren los cinco.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="text-decoration:none;font-weight:600;border-bottom:1px solid var(--ambar);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · pedido puntual de Andy, fuera del ciclo semanal · ediciones y traducciones verificadas con fuentes públicas el 06/08/2026; precios no verificados y declarados como tales.<br>Las ideas son de los libros; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  }else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

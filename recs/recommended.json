@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-06T16:06:29-03:00",
+  "_updated_at": "2026-08-06T23:05:00.000Z",
   "_feedback_cutoff": "2026-08-05T22:32:32.775Z",
   "recommendations": [
     {
@@ -1108,6 +1108,34 @@
         "dwell_s": 0
       },
       "learning": "ACIERTO (me_tienta + love, click+page_visit 22:31 UTC, votado 1 min despues) -- primera senal positiva de Sofi en fantasia calida de familia-encontrada, veta nunca antes probada. Sin dwell formal registrado (evento de voto llego casi junto al de visita), asi que no hay lectura de scroll/tiempo para calibrar cuanto leyo antes de votar, pero love en la reaccion de experiencia confirma que el formato funciono. Rompe tambien la racha de fichas mudas de Sofi (Delany, Thorogood, y a medias Green sin voto). Corrida de hoy (06/08, jueves) es no-op de Gate de dia: sin ficha ni push nuevos, solo se registra este feedback."
+    },
+    {
+      "id": "2026-08-06-vuelo-20h-ebooks",
+      "date": "2026-08-06",
+      "kind": "viaje",
+      "title": "20 horas de vuelo — 5 ebooks para comprar antes de despegar (+5 menciones)",
+      "author": "Sapolsky · Walker · Pirsig · Rovelli · Csikszentmihalyi",
+      "language": "es",
+      "topics": [
+        "viaje",
+        "ebooks",
+        "neurociencia",
+        "wellness",
+        "fisica",
+        "psicologia-positiva"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-08-06-vuelo-20h-ebooks.html",
+      "notified_by": "2026-08-06-vuelo-20h-ebooks",
+      "why": "Pedido puntual de Andy (fuera del ciclo semanal, no cuenta para la alternancia Andy/Sofi ni para el par del domingo): 5 ebooks + menciones especiales para un vuelo de ~20 h a Europa (ruta del viaje: Croacia, Alemania, Paises Bajos). Criterio: una veta declarada distinta por libro, sin repetir ninguna, y un estado de cabeza distinto por tramo del vuelo (plan de vuelo hora 0-2 / 2-7 / 7-11 / 11-16 / 16-20). TOP 5: (1) Sapolsky 'Comportate' — la veta neuro nunca tuvo libro grande (solo L4-011 Doidge y Eagleman fichado el 30/07); 1.200 pags., capitulos autoconclusivos por escala de tiempo, ideal para leer con interrupciones. (2) Walker 'Por que dormimos' — mismo cruce wellness+neuro que Rojas Estape (05/08) y unico que se aplica en el aire (capitulos de ritmo circadiano y jet lag; vuelo hacia el este = peor caso). (3) Pirsig 'Zen y el arte del mantenimiento de la motocicleta' — puente directo con L4-010 (Herrigel) y L4-023 (Siddhartha), y el unico con trama, para el pozo de la hora 13. (4) Rovelli 'Helgoland' — regla identitaria confirmada x3 (autor ya en casa > clasico sin dueno): Siete breves lecciones es uno de sus dos unicos lo_quiero, L4-027, y El orden del tiempo se ficho el 04/08; tercer Rovelli. (5) Csikszentmihalyi 'Fluir' — fuente de tres libros que ya tiene (L4-006 Covey, L4-007 Gawdat, L4-019 Gilbert) y un vuelo largo es un laboratorio de flow; declarado en la ficha como el de mayor riesgo 'ya_lo_lei' por ser clasico consagrado sin dueno (patron Frankl/Meditaciones). MENCIONES: Katie Mack 'El fin de todo' (astronomia, veta en pausa), Nestor 'Respira' (practico a bordo), Albom 'Las cinco personas...' (fabula de 2 h para la hora 17, veta Bach/Principito/Coelho), Housel 'La psicologia del dinero' (fichada el 20/07 sin abrir — se reargumenta por formato: 20 capitulos independientes de 5-8 min), Geert Mak 'En Europa' (por el destino). Guardia: los 10 titulos chequeados contra el catalogo completo (437 vol., sin tildes) y contra recommended.json — sin coincidencias. Verificacion: edicion Kindle en espanol confirmada por busqueda web para los 5 del podio + Mack + Nestor, con editorial y traductor; precios NO verificados y declarados como tales en la ficha; edicion Kindle es de Albom, Housel y Mak NO confirmada y declarada. Honestidad declarada tambien en Walker (criticas de Guzey 2019 por datos exagerados) y en Pirsig (abandono frecuente en el ultimo tercio). Botones propios de esta pieza: vuelo-compro:<slug> por libro (si/ya_lo_lei/no) ademas del rec-veredicto y la reaccion estandar.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
     }
   ]
 }

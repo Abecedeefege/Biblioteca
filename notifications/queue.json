@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-05T22:29:07.516Z",
+  "_updated_at": "2026-08-06T23:05:00.000Z",
   "notifications": [
     {
       "id": "2026-08-04-rec-andy",
@@ -700,6 +700,19 @@
       "sent_at": "2026-08-05T22:29:07.516Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-05"
+    },
+    {
+      "id": "2026-08-06-vuelo-20h-ebooks",
+      "title": "✈️ 20 horas de vuelo, 5 ebooks",
+      "body": "Uno de 1.200 páginas para el tramo bueno, uno que te explica el jet lag mientras lo cruzás, y tres más. Con menciones especiales.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-06-vuelo-20h-ebooks.html",
+      "to": "Andy",
+      "send_at": "2026-08-06T20:15:00-03:00",
+      "expires_at": "2026-08-06T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "pedido puntual de Andy 2026-08-06"
     }
   ]
 }
