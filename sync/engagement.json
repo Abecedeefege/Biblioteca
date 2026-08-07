@@ -3187,7 +3187,16 @@
       "device": "Andy",
       "dwell_s": 526,
       "scroll_pct": 76
+    },
+    {
+      "id": "msi9e740-lfp1hg",
+      "type": "dwell",
+      "ts": "2026-08-07T01:21:25.632Z",
+      "page": "2026-08-06-vuelo-20h-ebooks.html",
+      "device": "Andy",
+      "dwell_s": 549,
+      "scroll_pct": 78
     }
   ],
-  "_updated_at": "2026-08-07T01:19:53.965Z"
+  "_updated_at": "2026-08-07T01:21:27.468Z"
 }
