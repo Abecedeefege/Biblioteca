@@ -3124,7 +3124,16 @@
       "page": "2026-08-06-vuelo-20h-ebooks.html",
       "device": "Andy",
       "nid": "2026-08-06-vuelo-20h-ebooks"
+    },
+    {
+      "id": "msi70gg8-vn87dw",
+      "type": "dwell",
+      "ts": "2026-08-07T00:14:45.320Z",
+      "page": "2026-08-06-vuelo-20h-ebooks.html",
+      "device": "Andy",
+      "dwell_s": 101,
+      "scroll_pct": 32
     }
   ],
-  "_updated_at": "2026-08-07T00:12:03.989Z"
+  "_updated_at": "2026-08-07T00:14:48.519Z"
 }
