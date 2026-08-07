@@ -8,6 +8,21 @@ mirando las últimas 2-3 fichas DE ESA PERSONA). El resto de la semana la
 corrida es no-op corto (Gate de día): solo procesa feedback, sin ficha ni
 push. Cine/series NO cambia (viernes ~19:00, `todos`). Último libro en el
 log es el de Sofi (Klune, 05/08) → el domingo 09/08 le toca a Andy.
+- **07/08 (viernes, no-op)**: 11 eventos nuevos desde el cutoff anterior
+  (05/08 22:32 UTC), todos de Andy sobre la ficha de viaje del 06/08 (vuelo
+  20h ebooks): click+visita (00:12 UTC) y una racha de dwell hasta 549s/78%
+  scroll — el dwell más alto registrado en cualquier ficha hasta ahora, sin
+  votos `vuelo-compro:*` todavía. **rec-nota PRIORIDAD MÁXIMA (01:31 UTC):**
+  *"Mándame otra cuando puedas si. Alguna otra como el principito"* — pide
+  otra recomendación en el registro de *El Principito* (ya en su estante,
+  L4-024). Acción tomada: anotado abajo como el libro del próximo turno de
+  Andy (domingo 09/08) — Albom *Las cinco personas que encontrarás en el
+  cielo* (mencionado en esa misma ficha de viaje, veta Bach/Principito/
+  Coelho, nunca antes recomendado, no está en catálogo) encaja directo y
+  además le toca NUEVO por alternancia (nuevo 08/02, redescub 08/03, nuevo
+  08/04, redescub 08/05 → nuevo 08/09). Verificar stock/precio en
+  buscalibre.uy antes de armar la ficha del domingo. Cutoff avanzado a
+  2026-08-07T01:31:47.841Z.
 - **06/08 (jueves, no-op)**: 4 eventos nuevos en `sync/engagement.json`
   desde el cutoff anterior (05/08 19:17 UTC) — todos de Klune (Sofi):
   click+page_visit+voto `me_tienta`+reacción `love` a las 22:31-22:32 UTC
@@ -128,17 +143,21 @@ L4-014 *Doors of Perception*, L4-016 *Budismo para principiantes*,
 L4-021 *Art of Happiness*, L4-022 *The Boy, the Mole...*. Astro (pausa):
 L5-024 Hoyle, L5-021 Whipple.
 
-## 🔭 Qué mirar (próxima corrida)
-Confirmar suscripción activa. PRIORIDAD: ¿sigue en cero `sync/engagement.json`
-para Rovelli/Alaska (04/08) Y las fichas de hoy (05/08)? Si sí, dejar de
-tratarlo como tema de contenido — probar horario más temprano o
-preguntar directo por nota/micro-pregunta si hay que bajar la cadencia,
-para los dos lectores, no solo Sofi. Si aparecen eventos, seguir cada
-hilo normal: Rovelli (¿tercera confirmación identitaria?), Llamada del
-Coraje (clickeó 03/08, sin voto), Rojas Estapé (primer wellness/neuro
-puro desde Eagleman), Klune (¿la fantasía cálida funciona donde
-misterio no?). Thorogood sigue sin señal. Sin cambios hace semanas:
-Weir (`todos`), Pollan, Baltimore, Minix.
+## 🔭 Qué mirar (próxima corrida — domingo 09/08, turno de Andy)
+**PRIORIDAD 1 (pedido explícito 07/08):** armar la ficha de Andy con Albom
+*Las cinco personas que encontrarás en el cielo* (fábula corta, registro
+Principito/Coelho) — responde directo a su rec-nota "mandame otra... como
+el principito". Verificar stock/precio/link buscalibre.uy antes de
+confirmar; si no hay stock, banco alternativo: Coelho (autor ya en casa,
+L4-015 *El Alquimista*) u otra fábula corta de la veta oriental/positividad.
+Confirmar suscripción activa. Revisar si sigue en cero `sync/engagement.json`
+para Rovelli/Orden del Tiempo (04/08) y Rojas Estapé (05/08, redescub) —
+ninguno de los dos tuvo voto todavía pese a estar hace 2-3 días. Si
+aparecen eventos, seguir cada hilo: Rovelli (¿tercera confirmación
+identitaria?), Llamada del Coraje (clickeó 03/08, sin voto), Klune (¿la
+fantasía cálida funciona donde misterio no? única con veredicto real desde
+entonces). Thorogood sigue sin señal. Sin cambios hace semanas: Weir
+(`todos`), Pollan, Baltimore, Minix.
 
 ## 🎬 CINE + 🧳 viaje (fuera del ciclo, no cuentan mezcla/par)
 Cine: 1/semana, `audience:"todos"`, `kind:"cine"`, viernes ~19:00. Sofi

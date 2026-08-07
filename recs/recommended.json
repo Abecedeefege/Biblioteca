@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-06T23:05:00.000Z",
-  "_feedback_cutoff": "2026-08-05T22:32:32.775Z",
+  "_updated_at": "2026-08-07T13:10:00.000Z",
+  "_feedback_cutoff": "2026-08-07T01:31:47.841Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1132,10 +1132,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 549
       },
-      "learning": null
+      "learning": "Corrida no-op del 07/08 (viernes, Gate de dia): Andy abrio el push (00:12 UTC), quedo hasta 549s/78% scroll -- el dwell mas alto registrado en cualquier ficha hasta ahora, sin ningun evento vuelo-compro:* todavia (no voto por libro individual). A las 01:31 UTC dejo una rec-nota de prioridad maxima: \"Mandame otra cuando puedas si. Alguna otra como el principito\" -- pide otra recomendacion en el estilo de El Principito (L4-024, ya en su estante). ACCION para el proximo turno de Andy (domingo 09/08, alternancia): priorizar fabula corta en ese registro -- el banco ya tiene a Albom 'Las cinco personas que encontraras en el cielo' mencionado en esta misma ficha como veta Bach/Principito/Coelho, nunca antes recomendado (verificar catalogo/stock). Dado el patron de alternancia nuevo/redescub de Andy (nuevo 08/02, redescub 08/03, nuevo 08/04, redescub 08/05), el 09/08 le toca NUEVO -- Albom encaja."
     }
   ]
 }
