@@ -3098,7 +3098,33 @@
       "type": "reaction",
       "value": "love",
       "device": "Sofi"
+    },
+    {
+      "id": "msdslcm7-6xax95",
+      "type": "dwell",
+      "ts": "2026-08-03T22:20:01.183Z",
+      "page": "2026-08-03-holiday-llamada-coraje.html",
+      "device": "Andy",
+      "dwell_s": 14,
+      "scroll_pct": 41
+    },
+    {
+      "id": "msi6wz2h-voogd2",
+      "type": "notification_clicked",
+      "ts": "2026-08-07T00:12:02.825Z",
+      "page": "2026-08-06-vuelo-20h-ebooks.html",
+      "device": "Andy",
+      "nid": "2026-08-06-vuelo-20h-ebooks",
+      "src": "push"
+    },
+    {
+      "id": "msi6wz2j-r98j51",
+      "type": "page_visit",
+      "ts": "2026-08-07T00:12:02.827Z",
+      "page": "2026-08-06-vuelo-20h-ebooks.html",
+      "device": "Andy",
+      "nid": "2026-08-06-vuelo-20h-ebooks"
     }
   ],
-  "_updated_at": "2026-08-05T23:30:52.744Z"
+  "_updated_at": "2026-08-07T00:12:03.989Z"
 }
