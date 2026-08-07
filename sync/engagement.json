@@ -3196,7 +3196,16 @@
       "device": "Andy",
       "dwell_s": 549,
       "scroll_pct": 78
+    },
+    {
+      "id": "msi9rj7l-offy9q",
+      "type": "answer",
+      "ts": "2026-08-07T01:31:47.841Z",
+      "page": "2026-08-06-vuelo-20h-ebooks.html",
+      "device": "Andy",
+      "qid": "rec-nota:2026-08-06-vuelo-20h-ebooks",
+      "value": "Mándame otra cuando puedas si.  Alguna otra como el principito"
     }
   ],
-  "_updated_at": "2026-08-07T01:21:27.468Z"
+  "_updated_at": "2026-08-07T01:31:49.353Z"
 }
