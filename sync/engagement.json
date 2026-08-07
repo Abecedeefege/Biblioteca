@@ -3151,7 +3151,16 @@
       "device": "Andy",
       "dwell_s": 419,
       "scroll_pct": 65
+    },
+    {
+      "id": "msi90gyd-x5wcdt",
+      "type": "dwell",
+      "ts": "2026-08-07T01:10:45.205Z",
+      "page": "2026-08-06-vuelo-20h-ebooks.html",
+      "device": "Andy",
+      "dwell_s": 425,
+      "scroll_pct": 65
     }
   ],
-  "_updated_at": "2026-08-07T01:10:16.489Z"
+  "_updated_at": "2026-08-07T01:10:47.538Z"
 }
