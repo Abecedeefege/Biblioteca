@@ -3160,7 +3160,16 @@
       "device": "Andy",
       "dwell_s": 425,
       "scroll_pct": 65
+    },
+    {
+      "id": "msi955g0-fz64q3",
+      "type": "dwell",
+      "ts": "2026-08-07T01:14:23.568Z",
+      "page": "2026-08-06-vuelo-20h-ebooks.html",
+      "device": "Andy",
+      "dwell_s": 481,
+      "scroll_pct": 72
     }
   ],
-  "_updated_at": "2026-08-07T01:10:47.538Z"
+  "_updated_at": "2026-08-07T01:14:25.177Z"
 }
