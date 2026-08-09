@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🎡 Las cinco personas que encontrarás en el cielo · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#171022;
+  --noche2:#211730;
+  --oro:#E0A84A;
+  --oro-hi:#F4C878;
+  --violeta:#8C7BC9;
+  --violeta-hi:#B4A6E8;
+  --hueso:#F3ECE2;
+  --bruma:#B7ACC7;
+  --linea:rgba(243,236,226,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--hueso);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--oro);color:var(--noche)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--violeta-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(243,236,226,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--oro-hi),var(--violeta-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(23,16,34,.65);backdrop-filter:blur(4px)}
+.back:hover{color:var(--oro-hi);border-color:var(--oro)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(130% 90% at 50% 6%,#372A50 0%,var(--noche) 65%)}
+.luces{position:absolute;inset:0;z-index:0;opacity:.6}
+.luces span{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--oro);animation:titila 2.4s ease-in-out infinite}
+@keyframes titila{0%,100%{opacity:.15;transform:scale(.8)}50%{opacity:1;transform:scale(1.3)}}
+.noria{position:absolute;top:6%;left:50%;transform:translateX(-50%);font-size:2.6rem;opacity:.7;animation:girar 9s linear infinite}
+@keyframes girar{100%{transform:translateX(-50%) rotate(360deg)}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--violeta-hi);border:1px solid var(--violeta);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.6rem,1rem + 4vw,2.8rem);font-weight:600;line-height:1.14}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--oro-hi)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:52ch}
+.cta-btn{display:inline-block;background:var(--oro);color:var(--noche);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--oro-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--noche2)}
+.estante{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.libro-chip{font-size:.82rem;color:var(--violeta-hi);border:1px solid var(--linea);border-radius:999px;padding:.4rem .9rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.2rem 0 1.3rem}
+.tabs button{border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.87rem;font-weight:600;transition:all .25s ease}
+.tabs button:hover,.tabs button.activo{border-color:var(--oro);color:var(--oro-hi);background:rgba(224,168,74,.12)}
+.tab-panel{border:1px solid var(--linea);border-radius:16px;padding:clamp(1.4rem,4vw,2rem);background:linear-gradient(180deg,rgba(243,236,226,.03),transparent);min-height:13em}
+.tab-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--violeta-hi);font-weight:700;margin-bottom:.6rem}
+.tab-panel p{color:var(--bruma);font-size:.98rem;margin-bottom:1rem}
+.tab-panel .cita-in{font-family:var(--serif);font-style:italic;color:var(--hueso);font-size:1.02rem;border-left:3px solid var(--violeta);padding-left:1rem}
+.cita{border-left:3px solid var(--oro);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(224,168,74,.08);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55;color:var(--oro-hi)}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(243,236,226,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--violeta-hi);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--oro);color:var(--noche);border-radius:999px;padding:.9rem 1.7rem;font-weight:600;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.comprar:hover{background:var(--oro-hi);transform:translateY(-2px)}
+.honestidad{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2rem;background:rgba(140,123,201,.1)}
+.honestidad p{color:var(--bruma);font-size:.95rem}
+.honestidad .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--violeta-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--hueso);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--oro);color:var(--oro-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--violeta-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#372A50 0%,var(--noche) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:38ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--oro-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="luces" id="lucesFx" aria-hidden="true"></div>
+  <div class="noria" aria-hidden="true">🎡</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Nuevo · La fábula que pediste</span>
+    <h1>Las cinco personas que encontrarás en el cielo</h1>
+    <p class="autor">Mitch Albom · 2003 (orig. <em>The Five People You Meet in Heaven</em>) · ed. Maeva</p>
+    <p class="sub">Pediste "otra como El Principito" después del vuelo. Esta es una fábula corta de un guardián de parque de diversiones que muere salvando a una nena — y en el cielo entiende, uno por uno, cómo cinco desconocidos y conocidos marcaron cada rincón de su vida sin que él lo supiera.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traemos</p>
+    <h2 class="titulo rev d1">Respuesta directa a tu pedido del 07/08</h2>
+    <p class="bajada rev d2">"Mándame otra cuando puedas... alguna otra como el Principito" — eso dejaste escrito después de la ficha del vuelo. <em>El Principito</em> ya está en tu estante (L4-024) y nunca lo recomendamos porque ya es tuyo; pero la veta que pediste — fábula corta, un viaje casi de ensueño, una idea grande contada simple — tiene dueño nuevo posible: Mitch Albom, el mismo que mencionamos de paso en esa ficha de vuelo. Es su libro más conocido después de <em>Martes con Morrie</em>: 216 páginas, se lee en una tarde, y en vez de una rosa y un zorro tiene una noria, un guardián retirado y cinco personas esperándolo del otro lado.</p>
+    <div class="estante rev d2">
+      <span class="libro-chip">Tu pedido 07/08, 01:31 UTC: "algo como el Principito"</span>
+      <span class="libro-chip">L4-024 El Principito: ya en tu estante, no se repite</span>
+      <span class="libro-chip">Veta: fábula corta · sentido · espiritualidad (Bach, Coelho, Hesse)</span>
+    </div>
+    <p class="remate rev d3" style="margin-top:1.6rem;font-family:var(--serif);font-style:italic;color:var(--oro-hi)">Guardia verificada: título y autor contra el catálogo completo (437 volúmenes, sin coincidencias) y contra todo lo recomendado antes — Albom aparece mencionado de paso en la ficha del vuelo del 06/08, pero nunca fue la recomendación del día. Primera vez que llega de verdad.</p>
+  </div>
+</section>
+
+<section class="seccion" id="personas">
+  <div class="centro">
+    <p class="kicker rev">Las cinco personas</p>
+    <h2 class="titulo rev d1">Cada una le enseña algo que nunca vio en vida</h2>
+    <p class="bajada rev d2">Eddie, el protagonista, muere a los 83 en el parque de atracciones donde trabajó toda su vida (Ruby Pier), tratando de salvar a una nena de un carrito que se soltó. En el cielo no hay nubes ni arpas: hay cinco encuentros, en orden, cada uno con alguien cuya vida se cruzó con la suya — a veces sin que él supiera ni el nombre. Elegí una persona.</p>
+    <div class="tabs" id="tabsTem">
+      <button data-t="azul" class="activo">1. El Hombre Azul</button>
+      <button data-t="capitan">2. El Capitán</button>
+      <button data-t="ruby">3. Ruby</button>
+      <button data-t="marguerite">4. Marguerite</button>
+      <button data-t="tala">5. Tala</button>
+    </div>
+    <div class="tab-panel rev d2" id="panelTem">
+      <p class="et">Un extraño de su infancia</p>
+      <p>El primero que espera a Eddie es un hombre al que apenas recuerda: alguien de su barrio, muerto en un accidente cuando Eddie era chico, en una circunstancia que Eddie jamás relacionó consigo mismo. Le enseña la primera lección del libro: que ningún acto es al azar, que las vidas de desconocidos están enredadas entre sí de formas que nunca vemos en el momento — un poco el mismo asombro que sentiste con la trama de amnesia de Proyecto Hail Mary, pero aplicado a personas reales, no a un planeta.</p>
+      <p class="cita-in">Resumen de trama según reseñas y guías de lectura publicadas (Enotes, guía educativa del propio Albom) — no es cita textual del libro.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="citas" style="background:var(--noche2)">
+  <div class="centro">
+    <p class="kicker rev">Tres líneas del propio libro</p>
+    <h2 class="titulo rev d1">Verificadas contra el texto real</h2>
+    <p class="bajada rev d2">Las dos primeras están tomadas palabra por palabra del extracto oficial en español que el propio Mitch Albom publica en su sitio (capítulo "El final", traducción de la edición Maeva) — no son traducciones nuestras ni citas de reseñas. La tercera es la línea más citada del libro en inglés (Goodreads, Wikipedia); no encontramos la traducción oficial exacta de esa frase puntual, así que va en el idioma original con traducción propia aclarada, para no inventarte una cita en español que no verificamos.</p>
+    <div class="cita rev"><p>"Puede parecer raro que un relato empiece por el final, pero todos los finales son también comienzos, lo que pasa es que no lo sabemos en su momento."</p><span>Mitch Albom — primera página, capítulo "El final" (ed. Maeva, trad. verificada)</span></div>
+    <div class="cita rev" style="margin-top:1.2rem"><p>"Ninguna historia encaja por sí sola. A veces las historias se tocan en los bordes y otras veces se tapan completamente una a otra, como piedras debajo de un río."</p><span>Mitch Albom — capítulo "El final"</span></div>
+    <div class="cita rev" style="margin-top:1.2rem"><p>"There are no random acts. We are all connected. You can no more separate one life from another than you can separate a breeze from the wind."</p><span>Mitch Albom, original en inglés (la cita más difundida del libro) — traducción propia, no oficial: "No hay actos al azar. Todos estamos conectados. No podés separar una vida de otra más de lo que podés separar una brisa del viento."</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Datos antes de decidir</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2003 (Hyperion, EE.UU.) · ed. española Maeva, trad. desde 2004, reediciones vigentes hasta 2024</dd>
+        <dt>Estructura</dt><dd>El final (la muerte de Eddie) → cinco encuentros en el cielo, uno por capítulo → el cierre en la Tierra</dd>
+        <dt>Extensión</dt><dd>~216 páginas — se lee en una tarde, más corto que Ilusiones y que Siddhartha</dd>
+        <dt>Lugar en su obra</dt><dd>El libro más vendido de Albom después de <em>Martes con Morrie</em>; #1 en EE.UU. varias semanas en 2003</dd>
+        <dt>Voces que cruza</dt><dd>Misma veta que Bach (fábula), Hesse (viaje espiritual) y el pedido explícito de <em>El Principito</em></dd>
+      </dl>
+      <a class="comprar" href="https://www.buscalibre.uy/libros/search/?q=Las+Cinco+Personas+Que+Encontraras+En+El+Cielo+Mitch+Albom" target="_blank" rel="noopener">Conseguilo — desde ~US$ 13 (ed. Maeva 2024) →</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="honestidad-sec" style="background:var(--noche2)">
+  <div class="centro">
+    <p class="kicker rev">La letra chica, honesta</p>
+    <h2 class="titulo rev d1">Best-seller de aeropuerto, pero identitario en tu pedido</h2>
+    <div class="honestidad rev d2">
+      <span class="et">Guardia de honestidad</span>
+      <p>De frente: este es un libro masivo, del tipo que ya te falló dos veces por "ya lo leí" (Frankl, Meditaciones) — vendió millones, tiene película de TV de 2004 y aparece en cualquier lista de "libros que te cambian la vida". El riesgo existe. La diferencia es que no lo elegimos por ser un clásico consagrado sin dueño: lo elegimos porque vos lo nombraste indirectamente (mencionado en tu propia ficha de vuelo) al pedir algo con el tono de El Principito, y el patrón que mejor te funcionó hasta ahora — Bach, dos veces — fue justamente ir a un autor de fábula corta con nombre propio, no al clásico más obvio de la estantería. Sobre el contenido: el resumen de las cinco lecciones está armado con guías de lectura y reseñas públicas (Enotes, la guía educativa oficial de Albom), no son citas textuales — así queda declarado arriba en cada pestaña.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu veredicto, Andy</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Rovelli (04/08) y Rojas Estapé (05/08) siguen sin voto — si esta te genera lo mismo, un solo toque ya me dice más que el silencio de las últimas dos semanas.</p>
+    <div class="cta rev d2">¿Y? ¿Le damos?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-09-albom-cinco-personas','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-09-albom-cinco-personas','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-09-albom-cinco-personas','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-09-albom-cinco-personas','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-09-albom-cinco-personas','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-09-albom-cinco-personas','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-09-albom-cinco-personas','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-09-albom-cinco-personas','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-09-albom-cinco-personas','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-09-albom-cinco-personas" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-09-albom-cinco-personas" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-09-albom-cinco-personas',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"Todos los finales son también <b>comienzos</b>."</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Redescubrimientos y libros nuevos, alternando entre los dos, un domingo a la vez.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--violeta-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--violeta);padding-bottom:2px">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · nuevo, respuesta a tu pedido del 07/08 · datos verificados (extracto oficial de Mitch Albom, Buscalibre.uy) a agosto 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+
+  var lucesFx=$('#lucesFx');
+  for(var i=0;i<24;i++){
+    var s=document.createElement('span');
+    s.style.left=(Math.random()*100)+'%';
+    s.style.top=(Math.random()*90)+'%';
+    s.style.animationDelay=(Math.random()*2.4)+'s';
+    lucesFx.appendChild(s);
+  }
+
+  var TEM={
+    azul:{et:'Un extraño de su infancia',cuerpo:'El primero que espera a Eddie es un hombre al que apenas recuerda: alguien de su barrio, muerto en un accidente cuando Eddie era chico, en una circunstancia que Eddie jamás relacionó consigo mismo. Le enseña la primera lección del libro: que ningún acto es al azar, que las vidas de desconocidos están enredadas entre sí de formas que nunca vemos en el momento.',cita:'Resumen de trama según reseñas y guías de lectura publicadas — no es cita textual del libro.'},
+    capitan:{et:'Su superior en la guerra',cuerpo:'El segundo encuentro es con su capitán del ejército, la persona que más marcó los años de servicio de Eddie y el origen de la herida en su pierna que arrastró toda la vida. Le muestra que perder algo casi siempre significa que otra cosa se ganó a cambio, aunque en el momento sea imposible verlo — la lección del sacrificio, contada sin heroísmo de película.',cita:'Resumen de trama según reseñas y guías de lectura publicadas — no es cita textual del libro.'},
+    ruby:{et:'La mujer que da nombre al parque',cuerpo:'Ruby es quien le da nombre a Ruby Pier, el parque donde Eddie trabajó toda su vida — y su historia se cruza con la del propio padre de Eddie, con quien él nunca hizo las paces. El tercer encuentro es sobre soltar el rencor: perdonar a alguien que ya no puede pedir perdón.',cita:'Resumen de trama según reseñas y guías de lectura publicadas — no es cita textual del libro.'},
+    marguerite:{et:'Su esposa',cuerpo:'El cuarto encuentro es el más íntimo: Marguerite, la mujer que conoció en la Pista de Baile Polvo de Estrellas la noche que quedó "tocado por la gracia" (esa escena está verificada palabra por palabra en las citas de abajo). Ella le enseña que el amor no termina cuando termina una vida — que sigue, de otra forma, del otro lado.',cita:'Ver la escena del baile en las citas verificadas de esta ficha.'},
+    tala:{et:'La última, la que más pesa',cuerpo:'La quinta persona es una nena que Eddie nunca conoció en vida, ligada al episodio más oscuro de su paso por la guerra, algo que él pasó décadas sin poder mirar de frente. Es el encuentro que finalmente le contesta la pregunta que lo persiguió siempre: si su vida — la de un simple "hombre de mantenimiento" en un parque de atracciones — tuvo algún propósito.',cita:'Resumen de trama según reseñas y guías de lectura publicadas — no es cita textual del libro.'}
+  };
+  var tabs=$$('#tabsTem button'),panel=$('#panelTem');
+  tabs.forEach(function(b){
+    b.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      var c=TEM[b.getAttribute('data-t')];
+      panel.innerHTML='<p class="et">'+c.et+'</p><p>'+c.cuerpo+'</p><p class="cita-in">'+c.cita+'</p>';
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

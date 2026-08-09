@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-07T13:10:00.000Z",
+  "_updated_at": "2026-08-09T20:10:00.000Z",
   "_feedback_cutoff": "2026-08-07T01:31:47.841Z",
   "recommendations": [
     {
@@ -1136,6 +1136,32 @@
         "dwell_s": 549
       },
       "learning": "Corrida no-op del 07/08 (viernes, Gate de dia): Andy abrio el push (00:12 UTC), quedo hasta 549s/78% scroll -- el dwell mas alto registrado en cualquier ficha hasta ahora, sin ningun evento vuelo-compro:* todavia (no voto por libro individual). A las 01:31 UTC dejo una rec-nota de prioridad maxima: \"Mandame otra cuando puedas si. Alguna otra como el principito\" -- pide otra recomendacion en el estilo de El Principito (L4-024, ya en su estante). ACCION para el proximo turno de Andy (domingo 09/08, alternancia): priorizar fabula corta en ese registro -- el banco ya tiene a Albom 'Las cinco personas que encontraras en el cielo' mencionado en esta misma ficha como veta Bach/Principito/Coelho, nunca antes recomendado (verificar catalogo/stock). Dado el patron de alternancia nuevo/redescub de Andy (nuevo 08/02, redescub 08/03, nuevo 08/04, redescub 08/05), el 09/08 le toca NUEVO -- Albom encaja."
+    },
+    {
+      "id": "2026-08-09-albom-cinco-personas",
+      "date": "2026-08-09",
+      "kind": "nuevo",
+      "title": "Las cinco personas que encontrarás en el cielo",
+      "author": "Mitch Albom",
+      "language": "es",
+      "topics": [
+        "fabula",
+        "espiritualidad",
+        "sentido",
+        "positividad"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-08-09-albom-cinco-personas.html",
+      "notified_by": "2026-08-09-rec-andy",
+      "why": "Respuesta directa al rec-nota de prioridad maxima del 07/08 (\"Mandame otra... alguna otra como el principito\"): fabula corta en la veta Bach/Coelho/Principito, nunca antes recomendada como ficha propia (solo mencionada de paso en la ficha de vuelo del 06/08). El Principito ya esta en su estante (L4-024), no se repite. Alternancia nuevo/redescub de Andy (nuevo 08/02, redescub 08/03, nuevo 08/04, redescub 08/05) -> hoy 09/08 le toca nuevo. Verificado titulo+autor contra el catalogo completo (437 vol., sin coincidencias) y contra recommended.json (Albom nunca fue la recomendacion del dia). Citas verificadas contra extracto oficial en espanol publicado por el propio Mitch Albom (capitulo El final, ed. Maeva); una tercera cita muy difundida del libro se presento en ingles original con traduccion propia aclarada, por no tener la traduccion oficial exacta verificada. Stock y precio confirmados en buscalibre.uy (7 ediciones, todas en stock; ed. Maeva 2024 ~UYU 520 / ~US3).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
     }
   ]
 }
