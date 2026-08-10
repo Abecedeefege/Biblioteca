@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-09T20:10:00.000Z",
-  "_feedback_cutoff": "2026-08-07T01:31:47.841Z",
+  "_updated_at": "2026-08-10T16:35:00.000Z",
+  "_feedback_cutoff": "2026-08-10T16:31:56.154Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1158,10 +1158,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 71
       },
-      "learning": null
+      "learning": "Corrida no-op del 10/08 (lunes, Gate de dia): Andy abrio el push recien hoy (16:30 UTC, un dia despues de enviado), dos dwells (38s/73% y 71s/100% scroll) -- leyo la ficha entera, todavia sin veredicto de libro. A las 16:31 UTC dejo rec-nota de PRIORIDAD MAXIMA con dos pedidos: (1) politica general -- incluir siempre que este disponible un link al audiolibro en Google Play Books en las fichas de libro; (2) pedido puntual -- mandarle un push manana (11/08) especifico sobre el audiolibro de ESTE libro. ACCION tomada en esta misma corrida: se agrego el link de audiolibro (Google Play, narrado por Roger Vidal, confirmado por busqueda cruzada con titulo+autor+narrador -- Google Play bloquea la verificacion automatica por curl/WebFetch con 403 en CUALQUIER ficha de Play Store incluso con IDs validos conocidos, limitacion del entorno, no señal de link roto) a la ficha ya publicada; se encolo push extra 2026-08-11-rec-andy-audio (fuera de la cadencia semanal, pedido puntual explicito, mismo criterio que viaje 24/07 y vuelo 06/08). Politica de audiolibro Play Books anotada en PROFILE para aplicar de aca en mas en cada nuevo. Cutoff avanzado a 2026-08-10T16:31:56.154Z."
     }
   ]
 }

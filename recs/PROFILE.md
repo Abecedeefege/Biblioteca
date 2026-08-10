@@ -9,6 +9,22 @@ corrida es no-op corto (Gate de día): solo procesa feedback, sin ficha ni
 push. Cine/series NO cambia (viernes ~19:00, `todos`). Último libro en el
 log ahora es el de Andy (Albom, 09/08) → el próximo domingo (16/08) le
 toca a Sofi.
+- **10/08 (no-op, lunes)**: sin ficha nueva (Gate de día). Andy leyó recién hoy
+  la ficha de Albom (09/08), dwell 71s/100% scroll, sin veredicto todavía.
+  **rec-nota PRIORIDAD MÁXIMA (16:31 UTC) con dos pedidos**: (1) política
+  general — sumar SIEMPRE que esté disponible un link al audiolibro en Google
+  Play Books en cada ficha de libro nuevo (redescub también si aplica); (2)
+  pedido puntual — push específico mañana (11/08) avisando el audiolibro de
+  Albom. Aplicado en la corrida: audiolibro agregado a la ficha ya publicada
+  (Google Play, narrador Roger Vidal — Play Store bloquea con 403 la
+  verificación por curl/WebFetch en CUALQUIER ficha, hasta con IDs válidos
+  conocidos; confirmado por búsqueda cruzada título+autor+narrador, no
+  verificable por HTTP en este entorno) y push extra
+  `2026-08-11-rec-andy-audio` encolado fuera de la cadencia semanal (mismo
+  criterio que los pedidos puntuales de viaje 24/07 y vuelo 06/08). **REGLA
+  NUEVA PERMANENTE**: en toda ficha de libro nuevo de acá en más, buscar y
+  linkear el audiolibro en Google Play Books si existe (mismo bloque que el
+  link de compra); si no se encuentra, no inventar el link.
 - **09/08 (domingo, ACTIVA)**: sin eventos nuevos desde el cutoff del 07/08
   (01:31:47 UTC), cutoff sin avanzar. Ficha del día: Albom *Las cinco
   personas que encontrarás en el cielo* (nuevo), respuesta directa al
