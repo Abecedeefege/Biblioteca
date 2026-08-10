@@ -3205,7 +3205,49 @@
       "device": "Andy",
       "qid": "rec-nota:2026-08-06-vuelo-20h-ebooks",
       "value": "Mándame otra cuando puedas si.  Alguna otra como el principito"
+    },
+    {
+      "id": "msi9rlwf-7km9op",
+      "type": "dwell",
+      "ts": "2026-08-07T01:31:51.327Z",
+      "page": "2026-08-06-vuelo-20h-ebooks.html",
+      "device": "Andy",
+      "dwell_s": 605,
+      "scroll_pct": 96
+    },
+    {
+      "id": "msjpdo8a-csq4e4",
+      "type": "page_visit",
+      "ts": "2026-08-08T01:36:41.194Z",
+      "page": "index.html",
+      "device": "Andy"
+    },
+    {
+      "id": "msjpdrb9-iakekf",
+      "type": "dwell",
+      "ts": "2026-08-08T01:36:45.189Z",
+      "page": "index.html",
+      "device": "Andy",
+      "dwell_s": 4,
+      "scroll_pct": 0
+    },
+    {
+      "id": "msng6k5c-awn0wr",
+      "type": "notification_clicked",
+      "ts": "2026-08-10T16:30:17.472Z",
+      "page": "2026-08-09-albom-cinco-personas.html",
+      "device": "Andy",
+      "nid": "2026-08-09-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "msng6k5f-6anzhv",
+      "type": "page_visit",
+      "ts": "2026-08-10T16:30:17.475Z",
+      "page": "2026-08-09-albom-cinco-personas.html",
+      "device": "Andy",
+      "nid": "2026-08-09-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-07T01:31:49.353Z"
+  "_updated_at": "2026-08-10T16:30:22.653Z"
 }
