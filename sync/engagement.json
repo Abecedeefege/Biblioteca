@@ -3256,7 +3256,16 @@
       "device": "Andy",
       "dwell_s": 38,
       "scroll_pct": 73
+    },
+    {
+      "id": "msng86xc-mr21q2",
+      "type": "dwell",
+      "ts": "2026-08-10T16:31:33.648Z",
+      "page": "2026-08-09-albom-cinco-personas.html",
+      "device": "Andy",
+      "dwell_s": 71,
+      "scroll_pct": 100
     }
   ],
-  "_updated_at": "2026-08-10T16:30:58.826Z"
+  "_updated_at": "2026-08-10T16:31:36.042Z"
 }
