@@ -3274,7 +3274,33 @@
       "device": "Andy",
       "qid": "rec-nota:2026-08-09-albom-cinco-personas",
       "value": "Incluime siempre que esté disponible un link al audiobook en Play Books.\n\nMándame este específico por push mañana cuando veas mi comentario"
+    },
+    {
+      "id": "msng8udg-aqhdzr",
+      "type": "dwell",
+      "ts": "2026-08-10T16:32:04.036Z",
+      "page": "2026-08-09-albom-cinco-personas.html",
+      "device": "Andy",
+      "dwell_s": 100,
+      "scroll_pct": 100
+    },
+    {
+      "id": "msp793gu-vin1gl",
+      "type": "notification_clicked",
+      "ts": "2026-08-11T21:55:51.631Z",
+      "page": "2026-08-09-albom-cinco-personas.html",
+      "device": "Andy",
+      "nid": "2026-08-11-rec-andy-audio",
+      "src": "push"
+    },
+    {
+      "id": "msp793gv-2qubii",
+      "type": "page_visit",
+      "ts": "2026-08-11T21:55:51.631Z",
+      "page": "2026-08-09-albom-cinco-personas.html",
+      "device": "Andy",
+      "nid": "2026-08-11-rec-andy-audio"
     }
   ],
-  "_updated_at": "2026-08-10T16:31:58.167Z"
+  "_updated_at": "2026-08-11T21:55:53.173Z"
 }
