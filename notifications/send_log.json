@@ -461,6 +461,13 @@
       "device": "Andy",
       "ts": "2026-08-09T21:03:04.667Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-08-11-rec-andy-audio",
+      "device": "Andy",
+      "ts": "2026-08-11T21:00:32.906Z",
+      "status_code": 201
     }
   ]
 }
