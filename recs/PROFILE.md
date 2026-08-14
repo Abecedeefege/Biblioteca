@@ -9,6 +9,10 @@ corrida es no-op corto (Gate de día): solo procesa feedback, sin ficha ni
 push. Cine/series NO cambia (viernes ~19:00, `todos`). Último libro en el
 log ahora es el de Andy (Albom, 09/08) → el próximo domingo (16/08) le
 toca a Sofi.
+- **14/08 (no-op, viernes)**: sin ficha nueva (Gate de día). Sin eventos
+  nuevos desde el cutoff del 11/08 (21:56:10 UTC), cutoff sin avanzar.
+  Confirmado: cola y send_log sin pendientes, push del 09/08 (Albom) y el
+  extra de audiolibro del 11/08 ambos `sent` (201).
 - **13/08 (no-op, jueves)**: sin ficha nueva (Gate de día). Sin eventos
   nuevos desde el cutoff del 11/08 (21:56:10 UTC), cutoff sin avanzar.
 - **12/08 (no-op, miércoles)**: sin ficha nueva (Gate de día). Sin eventos
