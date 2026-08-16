@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>☕ Blanca Navidad y café negro · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#2B1B12;
+  --tinta2:#35241A;
+  --laton:#C99A56;
+  --laton-hi:#E6BE84;
+  --niebla:#7FA8B8;
+  --niebla-hi:#B9DCEA;
+  --pergamino:#F5EFE3;
+  --bruma:#C2AD93;
+  --linea:rgba(245,239,227,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--tinta);color:var(--pergamino);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--laton);color:var(--tinta)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--niebla-hi);outline-offset:3px;border-radius:4px}
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(245,239,227,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--laton-hi),var(--niebla-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--linea);border-radius:999px;background:rgba(43,27,18,.65);backdrop-filter:blur(4px)}
+.back:hover{color:var(--laton-hi);border-color:var(--laton)}
+.seccion{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.centro{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--laton);font-weight:700;margin-bottom:1rem}
+.titulo{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:600;line-height:1.14;margin-bottom:1rem}
+.bajada{color:var(--bruma);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(130% 90% at 50% 6%,#4A3220 0%,var(--tinta) 65%);border-top:6px dashed rgba(245,239,227,.2)}
+.nieve-fx{position:absolute;inset:0;z-index:0;opacity:.55}
+.nieve-fx span{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--niebla-hi);animation:centelleo 4.2s ease-in-out infinite}
+@keyframes centelleo{0%,100%{opacity:.15}50%{opacity:.85}}
+.taza{position:absolute;top:9%;right:10%;font-size:2.6rem;opacity:.55;animation:balance 4.4s ease-in-out infinite}
+@keyframes balance{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .rotulo{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--niebla-hi);border:1px solid var(--niebla);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.6rem,1.05rem + 4vw,2.8rem);font-weight:600;line-height:1.14}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--laton-hi)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.3rem;max-width:50ch}
+.cta-btn{display:inline-block;background:var(--laton);color:var(--tinta);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--laton-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.35}50%{opacity:.9}}
+.puente{background:var(--tinta2)}
+.estante{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.libro-chip{font-size:.82rem;color:var(--niebla-hi);border:1px solid var(--linea);border-radius:999px;padding:.4rem .9rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.2rem 0 1.3rem}
+.tabs button{border:1px solid var(--linea);background:transparent;color:var(--pergamino);border-radius:999px;padding:.6rem 1.05rem;font-size:.87rem;font-weight:600;transition:all .25s ease}
+.tabs button:hover,.tabs button.activo{border-color:var(--laton);color:var(--laton-hi);background:rgba(201,154,86,.14)}
+.tab-panel{border:1px solid var(--linea);border-radius:16px;padding:clamp(1.4rem,4vw,2rem);background:linear-gradient(180deg,rgba(245,239,227,.03),transparent);min-height:13em}
+.tab-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--niebla-hi);font-weight:700;margin-bottom:.6rem}
+.tab-panel p{color:var(--bruma);font-size:.98rem;margin-bottom:1rem}
+.tab-panel .cita-in{font-family:var(--serif);font-style:italic;color:var(--pergamino);font-size:1.02rem;border-left:3px solid var(--niebla);padding-left:1rem}
+.cita{border-left:3px solid var(--niebla);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(127,168,184,.1);border-radius:0 12px 12px 0}
+.cita p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55;color:var(--niebla-hi)}
+.cita span{display:block;margin-top:.55rem;color:var(--bruma);font-size:.82rem}
+.ficha{border:1px solid var(--linea);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(245,239,227,.04),transparent)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.ficha dt{color:var(--niebla-hi);font-weight:600;white-space:nowrap}
+.ficha dd{color:var(--bruma)}
+.honestidad{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2rem;background:rgba(201,154,86,.08)}
+.honestidad p{color:var(--bruma);font-size:.95rem}
+.honestidad .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--laton-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.cta,.react{border:1px solid var(--linea);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--linea);background:transparent;color:var(--pergamino);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--laton);color:var(--laton-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--niebla-hi);font-family:var(--sans)}
+.cierre{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#4A3220 0%,var(--tinta) 72%);padding-bottom:5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,.95rem + 2.2vw,2rem);line-height:1.35;max-width:38ch;margin:0 auto 1.3rem}
+.cierre .frase b{color:var(--laton-hi);font-weight:600}
+footer{text-align:center;color:var(--bruma);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--linea);line-height:1.7}
+footer em{font-family:var(--serif)}
+@media (max-width:560px){.ficha dl{grid-template-columns:1fr}.ficha dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="nieve-fx" id="nieveFx" aria-hidden="true"></div>
+  <div class="taza" aria-hidden="true">☕</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · De tu estante · M5-011</span>
+    <h1>Blanca Navidad y café negro</h1>
+    <p class="autor">Cleo Coyle · orig. <em>Holiday Grind</em> (2009) · ed. española Alma, 2024</p>
+    <p class="sub">Afuera hace el frío real de agosto — adentro, en el libro, nieva sobre Greenwich Village y aparece un Papá Noel muerto. Autora que nunca te recomendamos: nada de King, Katzenbach, Carlisle, Delany ni Benavent hoy. Serie chica de café y misterio, no un nombre masivo.</p>
+    <a class="cta-btn" href="#puente">Por qué justo esta ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+<section class="seccion puente" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traemos</p>
+    <h2 class="titulo rev d1">Un Santa Claus muerto en la nieve, a la puerta de la cafetería</h2>
+    <p class="bajada rev d2">Clare Cosi maneja el Village Blend, la cafetería histórica de Greenwich Village que aparece en toda la serie de Coyle. Faltan pocos días para Navidad y ella está armando una carta de bebidas festivas para atraer clientes — hasta que sale a la calle y encuentra, tirado en la nieve, a un Papá Noel callejero. Muerto de verdad. La policía se hace cargo, pero Clare —como toda protagonista de cozy que se precie— arma su propia lista. Solo que esta vez la lista es de sospechosos, no de regalos.</p>
+    <div class="estante rev d2">
+      <span class="libro-chip">Clare Cosi: gerenta del Village Blend, detective aficionada</span>
+      <span class="libro-chip">Mike Quinn: detective de policía, su pareja</span>
+      <span class="libro-chip">Matteo Allegro: ex marido y socio del café</span>
+      <span class="libro-chip">Incluye glosario + recetas navideñas de café</span>
+    </div>
+    <p class="remate rev d3" style="margin-top:1.6rem;font-family:var(--serif);font-style:italic;color:var(--laton-hi)">Guardia verificada: título y autora contra el catálogo completo (M5-011 es tu único ejemplar) y contra todo lo recomendado antes — Cleo Coyle nunca apareció, ni en libros nuevos ni en redescubrimientos.</p>
+  </div>
+</section>
+
+<section class="seccion" id="temas">
+  <div class="centro">
+    <p class="kicker rev">Lo que te espera</p>
+    <h2 class="titulo rev d1">Elegí un tema, en un par de minutos te lo cuenta</h2>
+    <p class="bajada rev d2">Datos verificados contra la reseña de la edición española (Anika Entre Libros) y la ficha editorial de Alma.</p>
+    <div class="tabs" id="tabsTem">
+      <button data-t="santa" class="activo">El Santa de la calle</button>
+      <button data-t="recetas">El glosario y las recetas</button>
+      <button data-t="salto">Por qué este número de la serie</button>
+      <button data-t="porque">Por qué justo ahora</button>
+    </div>
+    <div class="tab-panel rev d2" id="panelTem">
+      <p class="et">Nadie sabe quién era, y eso es el primer misterio</p>
+      <p>El hombre disfrazado de Santa que Clare encuentra no es un empleado conocido del barrio ni un mendigo habitual — nadie logra identificarlo enseguida, lo que dispara la primera pregunta real de la trama: ¿qué hacía ahí, vestido así, la noche antes de Nochebuena? A partir de ahí Clare cruza clientes habituales del café, vecinos del barrio y la ronda de Mike Quinn para armar su propia lista de sospechosos, mientras sigue despachando lattes con canela.</p>
+      <p class="cita-in">El mismo molde de "detective amateur con humor" que te funcionó con Joyce (Osman) y con la novelista de Sue Minix — acá el escenario es una cafetería en vez de una biblioteca.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="citas" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">Lo que dicen quienes ya lo leyeron</p>
+    <h2 class="titulo rev d1">Honestidad primero: no hay cita textual verificable del libro</h2>
+    <p class="bajada rev d2">Recorrí reseñas y fichas editoriales en español y no encontré ninguna cita textual del libro citada palabra por palabra en ningún lado confiable — así que no invento una. Lo que sí puedo darte, atribuido correctamente, es la valoración de una reseñadora de la edición española.</p>
+    <div class="cita rev"><p>"El ritmo es bueno y se lee con facilidad&hellip; si te gusta el cozy crime, esta serie es una de las mejores que he leído hasta el momento."</p><span>Mónica CZ, reseña en Anika Entre Libros (no es una cita del libro — es la opinión de la reseñadora)</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>2009 (orig. <em>Holiday Grind</em>), libro 8 de la serie Coffeehouse Mystery en inglés — ed. española Alma, 2024, "Coffee Lovers Club" nº 3</dd>
+        <dt>Tu ejemplar</dt><dd>Estante M5-011, junto a los otros cozies de misterio — sin lectura registrada</dd>
+        <dt>Escenario</dt><dd>Greenwich Village, Nueva York, en vísperas de Navidad — el Village Blend, la cafetería de Clare</dd>
+        <dt>Tono</dt><dd>Cozy mystery con humor y ambiente navideño, sin violencia gráfica — incluye glosario y recetas de café</dd>
+        <dt>Páginas</dt><dd>464 (edición Alma, rústica)</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="salto-sec" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">La letra chica de la serie</p>
+    <h2 class="titulo rev d1">Ojo: no es el libro 1, y no pasa nada</h2>
+    <div class="honestidad rev d2">
+      <span class="et">Dato honesto</span>
+      <p>Alma tradujo esta serie empezando por <em>Un capuchino mortal</em> (libro 1 original) y <em>Café hasta la muerte</em> (libro 2 original) — pero para esta tercera entrega en español saltó directo al libro 8 de la serie en inglés, el especial de Navidad, probablemente por la época del año en que salió a la venta. Vos tenés solo este tomo (M5-011) en el estante, ningún libro anterior de la serie. La buena noticia: los cozies de Coyle son casos autoconclusivos, uno por libro — vas a perderte algo de historia entre Clare, Matteo y Mike Quinn, pero no el misterio central. Y si el frío real de agosto te da ganas de nieve de mentira, el timing de todos modos te cae bien, aunque acá no sea diciembre.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="honestidad-sec">
+  <div class="centro">
+    <p class="kicker rev">La letra chica, honesta</p>
+    <h2 class="titulo rev d1">No sabemos si ya lo leíste — por eso preguntamos directo</h2>
+    <div class="honestidad rev d2">
+      <span class="et">Guardia de honestidad</span>
+      <p>Cuatro de tus últimos redescubrimientos reales terminaron en "ya lo leí" (King, Katzenbach, Carlisle, Benavent) — todos autores o sagas masivas que devoraste antes. Cleo Coyle rompe ese patrón: nunca te la recomendamos, no aparece en ningún libro anterior de esta bitácora, y no es un nombre de ventas masivas como los cuatro anteriores. Aun así no tenemos ninguna señal real de que no la hayas tocado — si ya la leíste (papel, Kindle, donde sea), contanoslo en el veredicto o en la nota de abajo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto" style="background:var(--tinta2)">
+  <div class="centro">
+    <p class="kicker rev">El rescate</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+    <p class="bajada rev d2">No hace falta el libro entero de una sentada — con el primer capítulo (el hallazgo en la nieve) alcanza para saber si Clare te atrapa tanto como Joyce o Gemma.</p>
+    <div class="cta rev d2">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:M5-011','si',this)">📖 Sí, esta noche</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-011','ya_leido',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-011','no',this)">🙅 Esta noche no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-16-coyle-navidad-cafe','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-16-coyle-navidad-cafe','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-16-coyle-navidad-cafe','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-16-coyle-navidad-cafe','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-16-coyle-navidad-cafe','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-16-coyle-navidad-cafe','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-16-coyle-navidad-cafe','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-16-coyle-navidad-cafe" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-16-coyle-navidad-cafe" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-16-coyle-navidad-cafe',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"Si te gusta el cozy crime, <b>esta serie es una de las mejores</b> que he leído hasta el momento."</p>
+  <p class="bajada rev d1" style="margin:0 auto;max-width:44ch">Redescubrimientos y libros nuevos, alternando, ahora de a uno por semana — domingos.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--niebla-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--niebla);padding-bottom:2px">📚 Ver todas las recomendaciones →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante M5 · datos verificados (Editorial Alma, Anika Entre Libros, Goodreads) a agosto 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){var h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('visto');});}
+
+  var nieveFx=$('#nieveFx');
+  for(var i=0;i<30;i++){
+    var s=document.createElement('span');
+    s.style.left=(Math.random()*100)+'%';
+    s.style.top=(Math.random()*70)+'%';
+    s.style.animationDelay=(Math.random()*4)+'s';
+    nieveFx.appendChild(s);
+  }
+
+  var TEM={
+    santa:{et:'Nadie sabe quién era, y eso es el primer misterio',cuerpo:'El hombre disfrazado de Santa que Clare encuentra no es un empleado conocido del barrio ni un mendigo habitual — nadie logra identificarlo enseguida, lo que dispara la primera pregunta real de la trama: ¿qué hacía ahí, vestido así, la noche antes de Nochebuena? A partir de ahí Clare cruza clientes habituales del café, vecinos del barrio y la ronda de Mike Quinn para armar su propia lista de sospechosos, mientras sigue despachando lattes con canela.',cita:'El mismo molde de "detective amateur con humor" que te funcionó con Joyce (Osman) y con la novelista de Sue Minix — acá el escenario es una cafetería en vez de una biblioteca.'},
+    recetas:{et:'No es solo novela: trae glosario y recetas reales',cuerpo:'Como toda la serie Coffeehouse Mystery, esta edición viene con un glosario de términos de café y recetas navideñas reales al final — bebidas festivas que Clare prueba en la trama, pensadas para hacer en casa. Es la marca de fábrica de Coyle: la ficción viene con "extras" utilizables, no solo ambientación.',cita:'Si el misterio te deja fría, el glosario+recetas es motivo aparte para hojearlo — dato verificado en la ficha editorial de Alma.'},
+    salto:{et:'Por qué este número exacto de la serie',cuerpo:'Alma tradujo esta serie empezando por el libro 1 original (Un capuchino mortal) y el 2 (Café hasta la muerte) — pero para el tercer lanzamiento en español saltó directo al libro 8 en inglés, el especial navideño. Vos tenés solo este tomo (M5-011), ningún anterior. Cada caso de la serie se resuelve solo dentro de su propio libro, así que no te perdés el misterio — sí un poco del hilo de las relaciones de Clare con Matteo y Mike, que ya vienen de antes.',cita:'Si te engancha, el paso lógico después no es "el libro 9" sino conseguir el 1 y el 2 en español para llenar el hueco.'},
+    porque:{et:'Por qué justo ahora',cuerpo:'Después de una racha de "ya lo leí" con nombres muy conocidos (King, Katzenbach, Carlisle, Benavent), hoy la apuesta es una autora que nunca pasó por esta bitácora: Cleo Coyle no tiene el peso de ventas de esos cuatro. Elegimos redescubrimiento porque el nuevo de la semana pasada (Klune) ya te tocó — hoy, con el régimen semanal nuevo (una ficha por domingo, alternando destinatario), te toca a vos y te toca "de tu estante".',cita:'Si tampoco funciona, la próxima corrida (23/08, turno de Andy) sigue afinando; el domingo después vuelve a ser tu turno.'}
+  };
+  var tabs=$$('#tabsTem button'),panel=$('#panelTem');
+  tabs.forEach(function(b){
+    b.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      var c=TEM[b.getAttribute('data-t')];
+      panel.innerHTML='<p class="et">'+c.et+'</p><p>'+c.cuerpo+'</p><p class="cita-in">'+c.cita+'</p>';
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

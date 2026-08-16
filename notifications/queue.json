@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-11T21:00:32.907Z",
+  "_updated_at": "2026-08-16T19:09:18.000Z",
   "notifications": [
     {
       "id": "2026-08-11-rec-andy-audio",
@@ -739,6 +739,19 @@
       "sent_at": "2026-08-09T21:03:04.668Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-09"
+    },
+    {
+      "id": "2026-08-16-rec-sofi",
+      "title": "☕ Sofi, un Papá Noel muerto en la nieve",
+      "body": "Cleo Coyle, autora nueva: un Santa muerto en la nieve de Greenwich Village y vos armando la lista de sospechosos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-16-coyle-navidad-cafe.html",
+      "to": "Sofi",
+      "send_at": "2026-08-16T17:30:00-03:00",
+      "expires_at": "2026-08-16T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-16"
     }
   ]
 }

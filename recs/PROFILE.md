@@ -9,63 +9,40 @@ corrida es no-op corto (Gate de día): solo procesa feedback, sin ficha ni
 push. Cine/series NO cambia (viernes ~19:00, `todos`). Último libro en el
 log ahora es el de Andy (Albom, 09/08) → el próximo domingo (16/08) le
 toca a Sofi.
-- **15/08 (no-op, sábado)**: sin ficha nueva (Gate de día). Único evento
-  nuevo desde el cutoff del 11/08 (21:56:10 UTC): Andy revisitó `index.html`
-  y reabrió la ficha de Albom (09:59:52 UTC) sin dwell ni voto nuevo — ya
-  la había leído entera, no aporta señal. Cutoff avanzado a
-  2026-08-15T09:59:52.469Z. Cola y send_log sin pendientes; suscripción
+- **16/08 (domingo, ACTIVA)**: sin eventos nuevos desde el cutoff del
+  15/08 (09:59:52 UTC), cutoff sin avanzar. Turno de Sofi (Klune 05/08 fue
+  su último 'nuevo' individual → hoy redescub). Elegida *Blanca Navidad y
+  café negro* de Cleo Coyle (M5-011, cozy navideño en una cafetería de
+  Greenwich Village) — autora NUNCA antes recomendada, cambio deliberado
+  tras la racha de "ya_lo_lei" con nombres masivos (King, Katzenbach,
+  Carlisle, Benavent) y sin señal aún sobre Delany (M5-014, 02/08).
+  Guardia verificada contra catálogo y `recommended.json`: sin
+  coincidencias. Honestidad: se avisa en la ficha que la edición española
+  salta del libro 2 al 8 de la serie original, sin afectar el caso
+  autoconclusivo; no se usaron citas inventadas (sin citas textuales
+  verificables — se usó, atribuida, la opinión de una reseñadora).
+  Audiolibro en Google Play Books buscado sin resultado → no se linkeó.
+  Push `2026-08-16-rec-sofi`, 17:30 -03:00. Próximo domingo (23/08) le
+  toca a Andy.
+- **09/08→15/08**: Domingo 09/08 (última ficha activa previa): Albom *Las
+  cinco personas que encontrarás en el cielo* (Andy, nuevo), respuesta
+  directa al rec-nota del 07/08 pidiendo "algo como el Principito".
+  Verificado sin match en catálogo/log; dos citas verificadas + una
+  traducida con aclaración; push `2026-08-09-rec-andy` 17:30. 10/08:
+  **rec-nota PRIORIDAD MÁXIMA** pidió (1) política permanente de linkear
+  audiolibro en Google Play Books en toda ficha de libro nuevo (redescub
+  también si aplica) si existe, sin inventar si no se encuentra — YA
+  APLICADA de acá en más — y (2) push puntual con el audiolibro de Albom,
+  enviado 11/08 (`2026-08-11-rec-andy-audio`, narrador Roger Vidal,
+  clickeado esa noche). 12/08-15/08: no-op sin señal nueva (Gate de día);
+  cutoff avanzó a 2026-08-15T09:59:52.469Z tras una revisita muda de Andy
+  a la ficha de Albom. Cola y send_log sin pendientes; suscripción
   Andy/Sofi `active`.
-- **14/08 (no-op, viernes)**: sin ficha nueva (Gate de día). Sin eventos
-  nuevos desde el cutoff del 11/08 (21:56:10 UTC), cutoff sin avanzar.
-  Confirmado: cola y send_log sin pendientes, push del 09/08 (Albom) y el
-  extra de audiolibro del 11/08 ambos `sent` (201).
-- **13/08 (no-op, jueves)**: sin ficha nueva (Gate de día). Sin eventos
-  nuevos desde el cutoff del 11/08 (21:56:10 UTC), cutoff sin avanzar.
-- **12/08 (no-op, miércoles)**: sin ficha nueva (Gate de día). Sin eventos
-  nuevos desde el cutoff del 11/08 (21:56:10 UTC), cutoff sin avanzar.
-- **11/08 (no-op, martes)**: push extra `2026-08-11-rec-andy-audio` salió
-  (201, 21:00 UTC). Andy lo clickeó esa noche (21:55 UTC) y revisitó la
-  ficha de Albom 19s/67% scroll — sin veredicto ni reacción nuevos, ya la
-  había leído entera el 10/08. Cutoff avanzado a 2026-08-11T21:56:10.924Z.
-- **10/08 (no-op, lunes)**: sin ficha nueva (Gate de día). Andy leyó recién hoy
-  la ficha de Albom (09/08), dwell 71s/100% scroll, sin veredicto todavía.
-  **rec-nota PRIORIDAD MÁXIMA (16:31 UTC) con dos pedidos**: (1) política
-  general — sumar SIEMPRE que esté disponible un link al audiolibro en Google
-  Play Books en cada ficha de libro nuevo (redescub también si aplica); (2)
-  pedido puntual — push específico mañana (11/08) avisando el audiolibro de
-  Albom. Aplicado en la corrida: audiolibro agregado a la ficha ya publicada
-  (Google Play, narrador Roger Vidal — Play Store bloquea con 403 la
-  verificación por curl/WebFetch en CUALQUIER ficha, hasta con IDs válidos
-  conocidos; confirmado por búsqueda cruzada título+autor+narrador, no
-  verificable por HTTP en este entorno) y push extra
-  `2026-08-11-rec-andy-audio` encolado fuera de la cadencia semanal (mismo
-  criterio que los pedidos puntuales de viaje 24/07 y vuelo 06/08). **REGLA
-  NUEVA PERMANENTE**: en toda ficha de libro nuevo de acá en más, buscar y
-  linkear el audiolibro en Google Play Books si existe (mismo bloque que el
-  link de compra); si no se encuentra, no inventar el link.
-- **09/08 (domingo, ACTIVA)**: sin eventos nuevos desde el cutoff del 07/08
-  (01:31:47 UTC), cutoff sin avanzar. Ficha del día: Albom *Las cinco
-  personas que encontrarás en el cielo* (nuevo), respuesta directa al
-  rec-nota del 07/08 (ver abajo). Verificado contra catálogo (437 vol.,
-  sin match) y `recommended.json` (Albom solo mencionado de paso en la
-  ficha de vuelo del 06/08, nunca fue rec del día). Stock confirmado en
-  buscalibre.uy (7 ediciones en stock, UYU 292-1303; se linkea ed. Maeva
-  2024 ~US$13). Dos citas verificadas contra extracto oficial de Albom
-  (cap. "El final"); tercera cita (la más difundida del libro) en inglés
-  original con traducción propia aclarada. Push `2026-08-09-rec-andy`,
-  17:30 -03:00.
-- **07/08 (no-op)**: 11 eventos de Andy sobre la ficha de vuelo (06/08):
-  dwell 549s/78% scroll, el más alto registrado, sin voto `vuelo-compro:*`.
-  **rec-nota PRIORIDAD MÁXIMA (01:31 UTC):** *"Mándame otra... alguna otra
-  como el principito"* — resuelto 09/08 con Albom (ver arriba). Cutoff
-  avanzado a 2026-08-07T01:31:47.841Z.
-- **06/08**: Klune (Sofi, 05/08) recibió `me_tienta`+`love` — primera señal
-  positiva en fantasía cálida, rompe racha muda. Últimos días del régimen
-  diario (previo al cambio del 05/08): Rojas Estapé (05/08, Andy, redescub,
-  sin voto), Rovelli *Orden del Tiempo* (04/08, Andy, nuevo, sin voto),
-  Green *Buscando a Alaska* (04/08, Sofi, redescub CAMBIO FUERTE, sin
-  voto), Holiday *Llamada del Coraje* (03/08, Andy, clickeó sin voto).
-  Haig *Los Humanos*/*Cómo detener el tiempo* agotados en buscalibre.uy.
+- **Régimen diario, últimos días (hasta 05/08)**: Klune (Sofi, 05/08)
+  `me_tienta`+`love` — primera señal positiva en fantasía cálida. Rojas
+  Estapé, Rovelli *Orden del Tiempo*, Green *Buscando a Alaska*, Holiday
+  *Llamada del Coraje* (03-05/08) sin voto. Haig *Los Humanos*/*Cómo
+  detener el tiempo* agotados en buscalibre.uy.
 
 ## 📚 Re-catalogación de agosto (contexto)
 M2/M3/M4/M6 pasaron a vitrinas pero los libros siguen fichados con su id
@@ -91,7 +68,8 @@ positiva, ver log arriba).
   Henry (ambos libros).
 - Pendientes sin señal (3+ días): Osman t.3/t.4, Dicker Baltimore, Minix,
   Delany M5-014, Thorogood Marlow, Book Lovers.
-- Banco redescub (misterio en pausa): M5-016 Delany libro 2, M5-011 Coyle.
+- Banco redescub (misterio en pausa): M5-016 Delany libro 2 (esperar señal
+  de M5-014 antes de usarlo). Coyle M5-011 usado 16/08, sale del banco.
   Evitar M6, M5-037/038 (autores quemados), Fitzek M5-003/M5-010.
 - Fuera de misterio: M5-022 *Ciudades de papel* (Green, YA), M5-008 *Una
   Mujer Rebelde* (riesgo "ya la vi" Netflix). Fantasía cálida: investigar
@@ -149,16 +127,19 @@ PRIORIDAD: L4-025 *Calmar la mente*, L4-028 *Deshacer la ansiedad* — L4-026
 of Happiness*, L4-022 *The Boy, the Mole...*. Astro: L5-024 Hoyle, L5-021
 Whipple. L4-015 *El Alquimista* (Coelho) disponible si se prioriza redescub.
 
-## 🔭 Qué mirar (próxima corrida — domingo 16/08, turno de Sofi)
-Alternancia: últimas de Sofi nuevo (Klune 05/08) → redescub (Alaska
-04/08) → 16/08 le toca redescub. Banco: M5-016 Delany libro 2, M5-011
-Coyle — evitar M6 y autores quemados. Revisar si llegó más señal de Klune
-antes de decidir si la fantasía cálida se profundiza. Revisar si Rovelli
-(04/08) y Rojas Estapé (05/08) por fin tuvieron algún evento — 5+ días
-sin voto en ambos; si sigue así, simplificar el CTA de veredicto de Andy
-o preguntar directo el 23/08. Seguir: Llamada del Coraje (03/08),
-Thorogood, vuelo-compro:* (06/08, dwell 549s sin voto todavía). Sin
-cambios hace semanas: Weir (`todos`), Pollan, Baltimore, Minix.
+## 🔭 Qué mirar (próxima corrida — domingo 23/08, turno de Andy)
+16/08 fue redescub de Sofi (Coyle, M5-011) → 23/08 le toca a Andy;
+alternar nuevo/redescub mirando sus últimas 2-3 fichas (última fue
+redescub Rojas Estapé 05/08 y antes nuevo Rovelli Orden del Tiempo 04/08
+— ver cuál tuvo más reciente antes de decidir). Revisar si llegó feedback
+de Coyle (Sofi) antes de tocar de nuevo M5-016 Delany — sin señal de
+M5-014 todavía. Revisar si Rovelli (04/08) y Rojas Estapé (05/08) por
+fin tuvieron algún evento — 5+ días sin voto en ambos; si sigue así,
+simplificar el CTA de veredicto de Andy o preguntar directo. Seguir:
+Llamada del Coraje (03/08), Thorogood (Sofi, 03/08), vuelo-compro:*
+(06/08, dwell 549s sin voto todavía). Sin cambios hace semanas: Weir
+(`todos`), Pollan, Baltimore, Minix, Osman bala perdida/último en morir,
+Henry People We Meet.
 
 ## 🎬 CINE + 🧳 viaje (fuera del ciclo, no cuentan mezcla/par)
 Cine: 1/semana, `audience:"todos"`, `kind:"cine"`, viernes ~19:00. Sofi

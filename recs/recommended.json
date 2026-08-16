@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-15T10:05:00.000Z",
+  "_updated_at": "2026-08-16T19:09:18.000Z",
   "_feedback_cutoff": "2026-08-15T09:59:52.469Z",
   "recommendations": [
     {
@@ -1162,6 +1162,32 @@
         "dwell_s": 100
       },
       "learning": "Corrida no-op del 10/08 (lunes, Gate de dia): Andy abrio el push recien hoy (16:30 UTC, un dia despues de enviado), tres dwells (38s/73%, 71s/100%, 100s/100% scroll) -- leyo la ficha entera dos veces, todavia sin veredicto de libro. A las 16:31 UTC dejo rec-nota de PRIORIDAD MAXIMA con dos pedidos: (1) politica general -- incluir siempre que este disponible un link al audiolibro en Google Play Books en las fichas de libro; (2) pedido puntual -- mandarle un push manana (11/08) especifico sobre el audiolibro de ESTE libro. ACCION tomada en esa corrida: se agrego el link de audiolibro (Google Play, narrado por Roger Vidal, confirmado por busqueda cruzada con titulo+autor+narrador -- Google Play bloquea la verificacion automatica por curl/WebFetch con 403 en CUALQUIER ficha de Play Store incluso con IDs validos conocidos, limitacion del entorno, no señal de link roto) a la ficha ya publicada; se encolo push extra 2026-08-11-rec-andy-audio (fuera de la cadencia semanal, pedido puntual explicito, mismo criterio que viaje 24/07 y vuelo 06/08). Politica de audiolibro Play Books anotada en PROFILE para aplicar de aca en mas en cada nuevo. Corrida no-op del 11/08 (martes): el push del audiolibro salio (201, 21:00 UTC) y Andy lo clickeo esa misma noche (21:55 UTC), revisito la ficha 19s/67% scroll -- sin nuevo veredicto ni reaccion, ya la habia leido entera antes. Corrida no-op del 12/08 (miercoles): sin eventos nuevos. Cutoff avanzado a 2026-08-11T21:56:10.924Z."
+    },
+    {
+      "id": "2026-08-16-coyle-navidad-cafe",
+      "date": "2026-08-16",
+      "kind": "redescubrimiento",
+      "title": "Blanca Navidad y café negro",
+      "author": "Cleo Coyle",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy",
+        "navidad",
+        "cafe"
+      ],
+      "book_ref": "M5-011",
+      "audience": "sofi",
+      "page": "recs/2026-08-16-coyle-navidad-cafe.html",
+      "notified_by": "2026-08-16-rec-sofi",
+      "why": "Redescubrimiento M5, régimen semanal (domingo, turno de Sofi tras Klune 05/08 nuevo -> hoy redescub): autora nunca antes recomendada (Cleo Coyle), rompiendo el patron de nombres masivos que dieron ya_lo_lei (King, Katzenbach, Carlisle, Delany sin señal, Benavent). Cozy navideño ambientado en una cafeteria de Greenwich Village, con glosario y recetas de café incluidas. Verificado título+autora contra catálogo completo (M5-011 es su único ejemplar) y contra todo recommended.json: Coyle nunca aparece. Honestidad: se declara explícito que la edición española salta del libro 2 al 8 de la serie original (Alma tradujo directo el especial navideño), sin afectar el caso autoconclusivo. No se encontraron citas textuales verificables del libro; se usa en su lugar, atribuida, la opinión de una reseñadora (Anika Entre Libros). Audiolibro en Google Play Books buscado, sin resultado -> no se linkea (regla de no inventar).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
     }
   ]
 }
