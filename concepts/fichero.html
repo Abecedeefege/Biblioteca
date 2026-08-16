@@ -27,6 +27,23 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => navigator.serviceWorker.register('../sw.js'));
+    /* El SW sirve la copia local al instante y revalida de fondo; cuando baja
+       algo nuevo que esta página usa, avisa acá y ofrecemos recargar. */
+    const FRESH_RE = /(\/index\.html|\/fichero\.html|editorial\.json|collections\.json|\/data\/)/;
+    let freshShown = false;
+    navigator.serviceWorker.addEventListener('message', (ev) => {
+      const d = ev.data || {};
+      if (freshShown || d.type !== 'fresh-content' || !FRESH_RE.test(d.url || '')) return;
+      freshShown = true;
+      const show = () => {
+        const b = document.createElement('button');
+        b.id = 'fresh-toast';
+        b.textContent = 'Llegaron fichas nuevas — tocá para actualizar';
+        b.addEventListener('click', () => location.reload());
+        document.body.appendChild(b);
+      };
+      if (document.body) show(); else window.addEventListener('DOMContentLoaded', show);
+    });
   }
 </script>
 
@@ -339,6 +356,13 @@
     .pola-add{width:158px;min-height:120px}
     .pola-msg{flex:0 0 auto;align-self:center;max-width:180px}
   }
+
+  /* ---------- aviso de contenido nuevo (mensaje del service worker) ---------- */
+  #fresh-toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:99;
+    background:linear-gradient(180deg,#e8ca74,#b8912e 55%,#d9b856);color:#3a2a08;border:1px solid #8a6b1d;
+    border-radius:8px;padding:11px 20px;font-family:var(--sans);font-size:11px;font-weight:800;
+    letter-spacing:1.5px;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.55);
+    cursor:pointer;max-width:calc(100vw - 36px)}
 </style>
 </head>
 <body>
@@ -1013,7 +1037,10 @@ loadAll().then(()=>{
 }).catch(err=>{
   if(window.__introHero)window.__introHero(null);
   document.getElementById('status').innerHTML=`<h2>El mueble está trabado</h2>
-    <p style="max-width:52ch;margin:0 auto">${esc(err.message)}. El Fichero lee el catálogo desde <code>../index.html</code>: hay que abrirlo servido por HTTP (GitHub Pages o <code>python3 -m http.server</code>).</p>`;
+    <p style="max-width:52ch;margin:0 auto">${esc(err.message)}. No pude bajar el catálogo y todavía no hay copia guardada en este dispositivo —
+    suele ser un corte de conexión: probá de nuevo con mejor señal.
+    (Si lo abriste como archivo local, servilo por HTTP: GitHub Pages o <code>python3 -m http.server</code>.)</p>
+    <p style="margin-top:16px"><button onclick="location.reload()" style="background:linear-gradient(180deg,#e8ca74,#b8912e 55%,#d9b856);color:#3a2a08;border:1px solid #8a6b1d;border-radius:8px;padding:10px 22px;font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase">Reintentar</button></p>`;
 });
 </script>
 
