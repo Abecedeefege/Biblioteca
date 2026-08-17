@@ -3380,7 +3380,16 @@
       "ts": "2026-08-17T12:28:50.045Z",
       "page": "2026-08-05-klune-casa-mar-azul.html",
       "device": "Andy"
+    },
+    {
+      "id": "msx7ob96-rzhlhs",
+      "type": "dwell",
+      "ts": "2026-08-17T12:29:50.970Z",
+      "page": "2026-08-05-klune-casa-mar-azul.html",
+      "device": "Andy",
+      "dwell_s": 61,
+      "scroll_pct": 94
     }
   ],
-  "_updated_at": "2026-08-17T12:28:51.012Z"
+  "_updated_at": "2026-08-17T12:29:52.825Z"
 }
