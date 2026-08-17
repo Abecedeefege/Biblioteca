@@ -24,6 +24,11 @@ toca a Sofi.
   Audiolibro en Google Play Books buscado sin resultado → no se linkeó.
   Push `2026-08-16-rec-sofi`, 17:30 -03:00. Próximo domingo (23/08) le
   toca a Andy.
+- **17/08 (lunes, no-op)**: Gate de día → no es domingo. 7 eventos nuevos
+  desde el cutoff, todos pasivos (page_visit/dwell de Andy en index.html y
+  en la ficha de Klune de Sofi, sin veredicto/reacción/nota) — sin señal
+  accionable, PROFILE sin cambios de fondo. Cutoff avanzado a
+  2026-08-17T12:29:50.970Z. Cola y send_log sin pendientes.
 - **09/08→15/08**: Domingo 09/08 (última ficha activa previa): Albom *Las
   cinco personas que encontrarás en el cielo* (Andy, nuevo), respuesta
   directa al rec-nota del 07/08 pidiendo "algo como el Principito".
