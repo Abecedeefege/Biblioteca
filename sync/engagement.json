@@ -3348,7 +3348,23 @@
       "ts": "2026-08-16T22:46:13.432Z",
       "page": "index.html",
       "device": "Andy"
+    },
+    {
+      "id": "mswe9dw1-4ppq6q",
+      "type": "dwell",
+      "ts": "2026-08-16T22:46:25.681Z",
+      "page": "index.html",
+      "device": "Andy",
+      "dwell_s": 12,
+      "scroll_pct": 8
+    },
+    {
+      "id": "msx7m9tr-i1ibig",
+      "type": "page_visit",
+      "ts": "2026-08-17T12:28:15.807Z",
+      "page": "index.html",
+      "device": "Andy"
     }
   ],
-  "_updated_at": "2026-08-16T22:46:14.437Z"
+  "_updated_at": "2026-08-17T12:28:17.048Z"
 }
