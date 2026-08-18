@@ -1,0 +1,32 @@
+{
+  "_comment": "Registry of C's recommendation cards. The hub (index.html) renders this list; the recommendation agent appends one entry per delivery and never repeats a slug.",
+  "recs": [
+    {
+      "slug": "2026-08-18-erpenbeck-kairos",
+      "date": "2026-08-18",
+      "title": "Kairos",
+      "author": "Jenny Erpenbeck",
+      "emoji": "⌛",
+      "flag": "new · fiction",
+      "teaser": "A love affair in the last years of East Berlin — the novel your German shelf, your Ernaux and your history-of-memory books have been circling for years. International Booker Prize 2024."
+    },
+    {
+      "slug": "2026-08-18-criado-perez-invisible-women",
+      "date": "2026-08-18",
+      "title": "Invisible Women",
+      "author": "Caroline Criado Perez",
+      "emoji": "📊",
+      "flag": "new · nonfiction",
+      "teaser": "The data book your feminism wall is missing: how a world built on male-default data quietly fails half the population — from crash-test dummies to drug trials."
+    },
+    {
+      "slug": "2026-08-18-graeber-wengrow-dawn-of-everything",
+      "date": "2026-08-18",
+      "title": "The Dawn of Everything",
+      "author": "David Graeber & David Wengrow",
+      "emoji": "🌄",
+      "flag": "new · big history",
+      "teaser": "The book that argues with your Sapiens — a historian-grade retelling of humanity's deep past that your E. H. Carr and Koselleck shelf will want to referee."
+    }
+  ]
+}

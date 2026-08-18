@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Recommendations — My library</title>
+<meta name="description" content="A book chosen for you, delivered to your phone — with its story, its keys, and zero spoilers.">
+<meta name="theme-color" content="#0b1425">
+<link rel="icon" href="../../icon-192.png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="manifest" href="../manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('../sw.js', { scope: '../' }); });
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #0b1425; --night-2: #101d36; --night-3: #172848;
+    --ink: #edf1f9; --ink-2: #b7c3d8; --ink-3: #71809c;
+    --bronze: #b08d57; --bronze-hi: #dcb680; --bronze-soft: rgba(176,141,87,.14);
+    --blue: #5f8fd0; --blue-hi: #93b9e8;
+    --ok: #8fd6a0; --err: #e08a98;
+    --hairline: rgba(176,141,87,.22);
+    --display: 'Fraunces', Georgia, serif;
+    --body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--night); color: var(--ink); font-family: var(--body);
+    font-size: clamp(1rem, .96rem + .3vw, 1.08rem); line-height: 1.6; min-height: 100svh;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 16% 12%, rgba(220,182,128,.5) 0px, transparent 1.4px),
+      radial-gradient(circle at 82% 24%, rgba(237,241,249,.45) 0px, transparent 1.1px),
+      radial-gradient(circle at 40% 60%, rgba(147,185,232,.35) 0px, transparent 1.2px),
+      radial-gradient(circle at 70% 85%, rgba(220,182,128,.3) 0px, transparent 1px),
+      radial-gradient(ellipse at 50% -10%, rgba(95,143,208,.16) 0%, transparent 55%);
+    background-size: 700px 700px, 560px 560px, 640px 640px, 520px 520px, cover;
+  }
+  ::selection { background: var(--bronze); color: var(--night); }
+  a { color: var(--blue-hi); text-decoration: none; }
+  a:hover { color: var(--bronze-hi); }
+  button { font-family: var(--body); cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--blue-hi); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: clamp(2rem, 6vw, 3.4rem) 1.3rem 4rem; }
+  .back { color: var(--ink-3); font-size: .82rem; }
+  .kicker { font-family: var(--mono); font-size: .68rem; letter-spacing: .24em; text-transform: uppercase; color: var(--bronze); margin: 1.6rem 0 .7rem; }
+  h1 { font-family: var(--display); font-weight: 430; font-size: clamp(1.9rem, 1.3rem + 3.5vw, 2.9rem); line-height: 1.08; }
+  h1 em { font-style: italic; color: var(--bronze-hi); }
+  .sub { color: var(--ink-2); margin-top: .9rem; max-width: 56ch; }
+
+  /* ---------- onboarding panel ---------- */
+  .panel {
+    border: 1px solid var(--hairline); border-radius: 20px; margin-top: 1.8rem;
+    padding: clamp(1.4rem, 5vw, 2.2rem); background: linear-gradient(180deg, rgba(237,241,249,.04), transparent);
+  }
+  .step-dots { display: flex; gap: .45rem; margin-bottom: 1.3rem; }
+  .step-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--night-3); }
+  .step-dots i.on { background: var(--bronze); }
+  .panel h2 { font-family: var(--display); font-weight: 480; font-size: 1.4rem; margin-bottom: .4rem; }
+  .panel .q-sub { color: var(--ink-3); font-size: .92rem; margin-bottom: 1.1rem; }
+  .opts { display: flex; flex-direction: column; gap: .55rem; }
+  .opts button {
+    text-align: left; border: 1px solid var(--hairline); background: transparent; color: var(--ink);
+    border-radius: 14px; padding: .85rem 1.1rem; font-size: .98rem; transition: all .18s ease;
+  }
+  .opts button:hover { border-color: var(--bronze); background: var(--bronze-soft); }
+  .opts button b { color: var(--bronze-hi); font-weight: 600; }
+  .skiprow { margin-top: 1.1rem; text-align: right; }
+  .skiprow a { color: var(--ink-3); font-size: .84rem; }
+
+  /* push step */
+  .pstep { border: 1px solid var(--hairline); border-radius: 14px; padding: 1.1rem 1.15rem; margin-top: .9rem; transition: opacity .3s ease; }
+  .pstep.dim { opacity: .38; pointer-events: none; }
+  .pstep .num { display: inline-grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--bronze); color: var(--night); font-family: var(--display); font-weight: 700; margin-bottom: .45rem; }
+  .pstep.done .num { background: var(--ok); }
+  .pstep h3 { font-family: var(--display); font-weight: 550; font-size: 1.1rem; margin-bottom: .35rem; }
+  .pstep p { color: var(--ink-2); font-size: .92rem; margin-bottom: .3rem; }
+  .pstep p b { color: var(--ink); }
+  .share-ico { display: inline-block; border: 1.5px solid var(--ink-3); border-radius: 6px; padding: .02rem .42rem; font-size: .88rem; vertical-align: -2px; }
+  .safari-note { display: none; border-left: 3px solid var(--err); padding: .6rem .9rem; background: rgba(224,138,152,.08); border-radius: 0 10px 10px 0; margin-top: .5rem; font-size: .86rem; color: var(--ink-2); }
+  button.big {
+    width: 100%; margin-top: .9rem; background: linear-gradient(135deg, var(--bronze), #96733f); color: #10131c;
+    border: none; border-radius: 999px; padding: .95rem 1.4rem; font-weight: 700; font-size: 1rem;
+    transition: transform .2s ease; box-shadow: 0 10px 26px -12px rgba(176,141,87,.8);
+  }
+  button.big:hover { transform: translateY(-2px); }
+  button.big:disabled { opacity: .5; transform: none; cursor: default; }
+  .pstatus { margin-top: .7rem; font-size: .9rem; min-height: 1.4em; white-space: pre-line; }
+  .pstatus.ok { color: var(--ok); }
+  .pstatus.err { color: var(--err); }
+
+  /* ---------- rec cards ---------- */
+  .cards { display: grid; gap: 1rem; margin-top: 1.8rem; }
+  .card {
+    display: block; border: 1px solid var(--hairline); border-radius: 18px; padding: 1.3rem 1.35rem;
+    background: linear-gradient(180deg, rgba(237,241,249,.045), transparent); color: var(--ink);
+    transition: transform .18s ease, border-color .18s ease; position: relative; overflow: hidden;
+  }
+  .card:hover { transform: translateY(-3px); border-color: rgba(176,141,87,.5); color: var(--ink); }
+  .card .flag { font-family: var(--mono); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--blue-hi); }
+  .card h3 { font-family: var(--display); font-weight: 500; font-size: 1.45rem; margin: .4rem 0 .1rem; }
+  .card .author { color: var(--bronze-hi); font-family: var(--display); font-style: italic; font-size: 1rem; }
+  .card p.teaser { color: var(--ink-2); font-size: .93rem; margin-top: .6rem; max-width: 58ch; }
+  .card .open { display: inline-block; margin-top: .8rem; font-size: .88rem; font-weight: 600; color: var(--blue-hi); border-bottom: 1px dashed var(--blue); padding-bottom: 1px; }
+  .card .emoji { position: absolute; right: 1.1rem; top: 1rem; font-size: 1.6rem; opacity: .9; }
+
+  .settings-row { margin-top: 2.6rem; text-align: center; color: var(--ink-3); font-size: .84rem; }
+  .settings-row a { color: inherit; text-decoration: underline dotted; }
+  footer { text-align: center; color: var(--ink-3); font-size: .78rem; padding: 1rem 1.3rem 3rem; font-style: italic; font-family: var(--display); }
+  .hidden { display: none !important; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../">← Back to My library</a>
+
+  <p class="kicker">My library · Reading service</p>
+  <h1>Recommendations, <em>for you</em></h1>
+  <p class="sub" id="lede">Every so often a new book lands here — and on your phone — chosen from what your shelves say about you. Each card carries the book's story, its keys, and zero spoilers. Your verdicts teach the next pick.</p>
+
+  <!-- ================= ONBOARDING (first open) ================= -->
+  <section class="panel hidden" id="onboarding">
+    <div class="step-dots" id="dots"></div>
+    <div id="step-host"></div>
+  </section>
+
+  <!-- ================= REC LIST ================= -->
+  <section id="reclist" class="hidden">
+    <div class="cards" id="cards"></div>
+    <p class="settings-row">
+      <a href="#" id="redo-quiz">Retake the taste quiz</a> ·
+      <a href="#" id="push-settings">Notification settings</a>
+    </p>
+  </section>
+
+  <footer>— the librarian, across the ocean</footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (s) { return document.querySelector(s); };
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+
+  var SUPA = 'https://jhdwpxttgnravhlnmdgg.supabase.co';
+  var KEY = 'sb_publishable_phJdQOO7PUdidexaeUI4vQ_WJpKOgDM'; // public by design (RLS: insert only)
+  var DEVICE = 'C';
+  var K_ONBOARDED = 'c_recs_onboarded';
+
+  function logAnswer(qid, value) {
+    if (window.engageRecord) window.engageRecord('answer', { qid: qid, value: value });
+  }
+
+  /* ---------------- quiz definition ---------------- */
+  var QUIZ = [
+    { key: 'mood', q: 'First things first — what are you in the mood for?', sub: 'There is no wrong answer, only a first clue.', opts: [
+      ['gripping', 'A novel I can <b>disappear into</b>'],
+      ['thinking', 'Something that makes me <b>think hard</b>'],
+      ['comfort', 'Something <b>warm and comforting</b>'],
+      ['surprise', '<b>Surprise me</b> — that’s the whole point']]},
+    { key: 'balance', q: 'Fiction or nonfiction these days?', sub: 'Your shelves hold plenty of both.', opts: [
+      ['fiction', 'Mostly <b>fiction</b>'],
+      ['nonfiction', 'Mostly <b>nonfiction</b>'],
+      ['mix', 'A healthy <b>mix</b>']]},
+    { key: 'vein', q: 'Which corner of your library should I mine for clues?', sub: 'Where the next pick should rhyme with what you already love.', opts: [
+      ['literary', 'The <b>literary fiction</b> rows — Rooney, Batuman, Ali Smith'],
+      ['feminism', 'The <b>feminism wall</b>'],
+      ['history', 'The <b>history & politics</b> shelves'],
+      ['classics', 'The <b>classics</b> row']]},
+    { key: 'languages', q: 'Which reading languages are fair game?', sub: 'You shelve in three — should recommendations too?', opts: [
+      ['en', '<b>English</b> only, please'],
+      ['en-de', 'English + <b>German</b>'],
+      ['en-fr', 'English + <b>French</b>'],
+      ['all', '<b>All three</b> — pick the best edition']]},
+    { key: 'age', q: 'New releases or proven books?', sub: '', opts: [
+      ['new', '<b>Hot off the press</b> — last year or two'],
+      ['modern', '<b>Modern classics</b> — the last couple of decades'],
+      ['any', 'Age doesn’t matter if the book is <b>right</b>']]},
+    { key: 'size', q: 'And how do you like them?', sub: '', opts: [
+      ['short', '<b>Short & sharp</b> — one sitting, big echo'],
+      ['big', '<b>Big and immersive</b> — live in it for weeks'],
+      ['depends', '<b>Depends</b> on the book']]}
+  ];
+  var CADENCE = { key: 'rec-cadence', q: 'How often should a new recommendation arrive?', sub: 'You can change this any time — just say so in any card’s comment box.', opts: [
+      ['weekly', '<b>Weekly</b> — one book every Sunday'],
+      ['biweekly', '<b>Every two weeks</b> — slower, deeper']]};
+
+  /* ---------------- onboarding engine ---------------- */
+  var flow = [];   // steps: {type:'quiz'|'cadence'|'push'|'done'}
+  QUIZ.forEach(function (q) { flow.push({ type: 'quiz', def: q }); });
+  flow.push({ type: 'cadence', def: CADENCE });
+  flow.push({ type: 'push' });
+  var stepIdx = 0;
+
+  function renderDots() {
+    $('#dots').innerHTML = flow.map(function (_, i) {
+      return '<i class="' + (i <= stepIdx ? 'on' : '') + '"></i>';
+    }).join('');
+  }
+
+  function showStep() {
+    renderDots();
+    var host = $('#step-host');
+    if (stepIdx >= flow.length) { finishOnboarding(); return; }
+    var st = flow[stepIdx];
+    if (st.type === 'quiz' || st.type === 'cadence') {
+      var d = st.def;
+      host.innerHTML = '<h2>' + d.q + '</h2>' +
+        (d.sub ? '<p class="q-sub">' + d.sub + '</p>' : '') +
+        '<div class="opts">' + d.opts.map(function (o) {
+          return '<button data-v="' + esc(o[0]) + '">' + o[1] + '</button>';
+        }).join('') + '</div>' +
+        '<div class="skiprow"><a href="#" id="skip-q">skip this one</a></div>';
+      host.querySelectorAll('.opts button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          logAnswer((st.type === 'quiz' ? 'quiz:' + d.key : d.key), b.getAttribute('data-v'));
+          stepIdx++; showStep();
+        });
+      });
+      host.querySelector('#skip-q').addEventListener('click', function (e) {
+        e.preventDefault(); stepIdx++; showStep();
+      });
+    } else if (st.type === 'push') {
+      renderPushStep(host, function () { stepIdx++; showStep(); });
+    }
+  }
+
+  function finishOnboarding() {
+    try { localStorage.setItem(K_ONBOARDED, '1'); } catch (e) {}
+    logAnswer('onboarding', 'completed');
+    $('#onboarding').classList.add('hidden');
+    $('#reclist').classList.remove('hidden');
+    loadRecs();
+  }
+
+  /* ---------------- push subscription (sofi.html pattern) ---------------- */
+  function renderPushStep(host, onDone) {
+    var standalone = (navigator.standalone === true) || (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    var isSafari = isIOS && /Safari/.test(navigator.userAgent) && !/CriOS|FxiOS|EdgiOS/.test(navigator.userAgent);
+
+    host.innerHTML =
+      '<h2>Last step — turn on your notifications</h2>' +
+      '<p class="q-sub">Recommendations work as gentle pushes: when a new book is chosen for you, your phone gets a card. No notifications, no deliveries — this is the engine of the whole thing.</p>' +
+      '<div class="pstep" id="ps1"><span class="num">1</span><h3>Add this to your home screen</h3>' +
+      '<p>In Safari, tap the share button <span class="share-ico">↑</span> and choose <b>“Add to Home Screen”</b>, then <b>“Add”</b>.</p>' +
+      '<p>You’ll get an icon called <b>“My library”</b>. Open it from there and come back to this step.</p>' +
+      '<div class="safari-note" id="safariNote">Heads up: this works from <b>Safari</b>. If you opened this from another app (WhatsApp, Instagram…), tap the dots menu and choose “Open in Safari” first.</div></div>' +
+      '<div class="pstep dim" id="ps2"><span class="num">2</span><h3>Allow notifications</h3>' +
+      '<p>Your phone will ask if this app may notify you. Say yes — and your first recommendations unlock below.</p>' +
+      '<button class="big" id="activate">🔔 Turn on my recommendations</button>' +
+      '<p class="pstatus" id="pstatus"></p></div>' +
+      '<div class="skiprow"><a href="#" id="skip-push">skip for now — I’ll read them here</a></div>';
+
+    if (standalone || !isIOS) {
+      host.querySelector('#ps1').classList.add('dim');
+      host.querySelector('#ps1').classList.add('done');
+      host.querySelector('#ps2').classList.remove('dim');
+    } else if (isIOS && !isSafari) {
+      host.querySelector('#safariNote').style.display = 'block';
+    }
+
+    var swRegPromise = ('serviceWorker' in navigator)
+      ? navigator.serviceWorker.register('../sw.js', { scope: '../' }).catch(function () { return null; })
+      : Promise.resolve(null);
+    var vapidPromise = fetch('../../notifications/vapid_public.txt', { cache: 'no-store' })
+      .then(function (r) { return r.text(); }).then(function (t) { return t.trim(); })
+      .catch(function () { return null; });
+
+    function b64ToU8(b64) {
+      var pad = '='.repeat((4 - (b64.length % 4)) % 4);
+      var s = (b64 + pad).replace(/-/g, '+').replace(/_/g, '/');
+      var raw = atob(s), arr = new Uint8Array(raw.length);
+      for (var i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
+      return arr;
+    }
+    function say(msg, cls) { var el = host.querySelector('#pstatus'); el.textContent = msg; el.className = 'pstatus ' + (cls || ''); }
+
+    host.querySelector('#skip-push').addEventListener('click', function (e) {
+      e.preventDefault();
+      logAnswer('push-optin', 'skipped');
+      onDone();
+    });
+
+    host.querySelector('#activate').addEventListener('click', function () {
+      var btn = this;
+      try {
+        if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+          if (isIOS && !standalone) throw new Error('Step 1 first: add this page to your home screen and open it from the “My library” icon.');
+          throw new Error('This browser does not support push notifications.');
+        }
+        var permPromise = Notification.requestPermission();   // FIRST, inside the tap
+        say('Turning on…');
+        btn.disabled = true;
+        permPromise.then(function (perm) {
+          if (perm !== 'granted') throw new Error('Your phone said no. Check Settings → Notifications → My library, then try again.');
+          return swRegPromise;
+        }).then(function (reg) {
+          if (!reg) return navigator.serviceWorker.register('../sw.js', { scope: '../' });
+          return reg;
+        }).then(function () {
+          return navigator.serviceWorker.ready;
+        }).then(function (reg) {
+          return vapidPromise.then(function (v) {
+            if (!v) throw new Error('Could not read the channel key. Try again in a minute.');
+            return reg.pushManager.getSubscription().then(function (sub) {
+              if (sub) return sub;
+              return reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToU8(v) });
+            });
+          });
+        }).then(function (sub) {
+          say('Telling the librarian…');
+          return fetch(SUPA + '/rest/v1/biblioteca_devices', {
+            method: 'POST',
+            headers: { apikey: KEY, Authorization: 'Bearer ' + KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+            body: JSON.stringify({ device: DEVICE, subscription: sub.toJSON(), ua: navigator.userAgent.slice(0, 180) })
+          }).then(function (r) {
+            if (!r.ok) throw new Error('Could not reach the librarian (HTTP ' + r.status + '). Try again.');
+          });
+        }).then(function () {
+          say('✓ Done — a welcome push is on its way.', 'ok');
+          logAnswer('push-optin', 'granted');
+          setTimeout(onDone, 1200);
+        }).catch(function (e) {
+          btn.disabled = false;
+          say('⚠️ ' + e.message, 'err');
+        });
+      } catch (e) {
+        btn.disabled = false;
+        say('⚠️ ' + e.message, 'err');
+      }
+    });
+  }
+
+  /* ---------------- rec cards ---------------- */
+  function loadRecs() {
+    fetch('recs.json', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (doc) {
+        var list = (doc.recs || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+        $('#cards').innerHTML = list.map(function (r) {
+          return '<a class="card" href="' + esc(r.slug) + '.html">' +
+            '<span class="emoji">' + esc(r.emoji || '✦') + '</span>' +
+            '<span class="flag">' + esc(r.date) + ' · ' + esc(r.flag || 'chosen for you') + '</span>' +
+            '<h3>' + esc(r.title) + '</h3>' +
+            '<p class="author">' + esc(r.author) + '</p>' +
+            '<p class="teaser">' + esc(r.teaser) + '</p>' +
+            '<span class="open">Open the card →</span>' +
+            '</a>';
+        }).join('');
+      })
+      .catch(function (e) {
+        $('#cards').innerHTML = '<p style="color:var(--err)">Could not load the recommendations (' + esc(e.message) + ').</p>';
+      });
+  }
+
+  /* ---------------- boot ---------------- */
+  var onboarded = false;
+  try { onboarded = localStorage.getItem(K_ONBOARDED) === '1'; } catch (e) {}
+  if (onboarded) {
+    $('#reclist').classList.remove('hidden');
+    loadRecs();
+  } else {
+    $('#onboarding').classList.remove('hidden');
+    showStep();
+  }
+
+  $('#redo-quiz').addEventListener('click', function (e) {
+    e.preventDefault();
+    stepIdx = 0;
+    flow = QUIZ.map(function (q) { return { type: 'quiz', def: q }; });
+    flow.push({ type: 'cadence', def: CADENCE });
+    $('#reclist').classList.add('hidden');
+    $('#onboarding').classList.remove('hidden');
+    showStep();
+  });
+  $('#push-settings').addEventListener('click', function (e) {
+    e.preventDefault();
+    stepIdx = 0;
+    flow = [{ type: 'push' }];
+    $('#reclist').classList.add('hidden');
+    $('#onboarding').classList.remove('hidden');
+    showStep();
+  });
+})();
+</script>
+<script src="../engage.js"></script>
+</body>
+</html>

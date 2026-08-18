@@ -1,0 +1,3841 @@
+{
+ "library": {
+  "owner": "C",
+  "owner_note": "C's library — catalogued 2026-08-18 from 14 photographs",
+  "structure": {
+   "bookcases": [
+    {
+     "id": "A",
+     "label": "Bookcase A (left)",
+     "shelves": 6
+    },
+    {
+     "id": "B",
+     "label": "Bookcase B (right)",
+     "shelves": 6
+    },
+    {
+     "id": "C",
+     "label": "Small case (desk & archives)",
+     "shelves": 1
+    }
+   ],
+   "notation": "Shelf 1 is the top row of each bookcase, counting down. Ids are accession numbers: bookcase + shelf + position."
+  }
+ },
+ "shelves": [
+  {
+   "id": "A1",
+   "label": "Bookcase A · Shelf 1",
+   "theme": "Childhood shelf — school stories, Roald Dahl, and the books read under the covers",
+   "books": [
+    {
+     "id": "A1-001",
+     "title": "The Sisterhood of the Traveling Pants",
+     "author": "Ann Brashares",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "young-adult"
+     ]
+    },
+    {
+     "id": "A1-002",
+     "title": "Hoot",
+     "author": "Carl Hiaasen",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-003",
+     "title": "The Penderwicks",
+     "author": "Jeanne Birdsall",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-004",
+     "title": "The Twins at St Clare's",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "St Clare's #1"
+    },
+    {
+     "id": "A1-005",
+     "title": "The O'Sullivan Twins",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "St Clare's #2"
+    },
+    {
+     "id": "A1-006",
+     "title": "Summer Term at St Clare's",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "St Clare's #3"
+    },
+    {
+     "id": "A1-007",
+     "title": "Second Form at St Clare's",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "St Clare's #4"
+    },
+    {
+     "id": "A1-008",
+     "title": "The Third Form at St Clare's",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "medium",
+     "topics": [
+      "children"
+     ],
+     "series": "St Clare's #5"
+    },
+    {
+     "id": "A1-009",
+     "title": "Claudine at St Clare's",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "St Clare's #7"
+    },
+    {
+     "id": "A1-010",
+     "title": "Fifth Formers of St Clare's",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "medium",
+     "topics": [
+      "children"
+     ],
+     "series": "St Clare's #8"
+    },
+    {
+     "id": "A1-011",
+     "title": "The Sixth Form at St Clare's",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "medium",
+     "topics": [
+      "children"
+     ],
+     "series": "St Clare's #9"
+    },
+    {
+     "id": "A1-012",
+     "title": "New Term at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #7"
+    },
+    {
+     "id": "A1-013",
+     "title": "Summer Term at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #8"
+    },
+    {
+     "id": "A1-014",
+     "title": "Winter Term at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #9"
+    },
+    {
+     "id": "A1-015",
+     "title": "Fun and Games at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #10"
+    },
+    {
+     "id": "A1-016",
+     "title": "Secrets at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #11"
+    },
+    {
+     "id": "A1-017",
+     "title": "Goodbye Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #12"
+    },
+    {
+     "id": "A1-018",
+     "title": "First Term at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #1",
+     "note": "older red-spine edition"
+    },
+    {
+     "id": "A1-019",
+     "title": "Second Form at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #2",
+     "note": "older red-spine edition"
+    },
+    {
+     "id": "A1-020",
+     "title": "Third Year at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #3",
+     "note": "older red-spine edition"
+    },
+    {
+     "id": "A1-021",
+     "title": "Upper Fourth at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #4",
+     "note": "older red-spine edition"
+    },
+    {
+     "id": "A1-022",
+     "title": "In the Fifth at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #5",
+     "note": "red-spine run seems complete but this spine is worn — is #5 the one between Upper Fourth and Last Term?"
+    },
+    {
+     "id": "A1-023",
+     "title": "Last Term at Malory Towers",
+     "author": "Enid Blyton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ],
+     "series": "Malory Towers #6",
+     "note": "older red-spine edition"
+    },
+    {
+     "id": "A1-024",
+     "title": "Everything on a Waffle",
+     "author": "Polly Horvath",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-025",
+     "title": "Matilda",
+     "author": "Roald Dahl",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-026",
+     "title": "The Twenty-One Balloons",
+     "author": "William Pène du Bois",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-027",
+     "title": "Charlotte's Web",
+     "author": "E. B. White",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-028",
+     "title": "The Wheel on the School",
+     "author": "Meindert DeJong",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-029",
+     "title": "The Witches",
+     "author": "Roald Dahl",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-030",
+     "title": "Der Gesang der Orcas",
+     "author": "Antje Babendererde",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "young-adult"
+     ]
+    },
+    {
+     "id": "A1-031",
+     "title": "Das Pferd aus Frankreich",
+     "author": "Nele Neuhaus",
+     "language": "German",
+     "confidence": "low",
+     "topics": [
+      "children"
+     ],
+     "note": "white spine next to Der Gesang der Orcas — author reads Nele Neuhaus, title hard to make out"
+    },
+    {
+     "id": "A1-032",
+     "title": "Ginger Pye",
+     "author": "Eleanor Estes",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-033",
+     "title": "From the Mixed-up Files of Mrs. Basil E. Frankweiler",
+     "author": "E. L. Konigsburg",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-034",
+     "title": "The Borrowers",
+     "author": "Mary Norton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-035",
+     "title": "A Long Way from Chicago",
+     "author": "Richard Peck",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-036",
+     "title": "A Year Down Yonder",
+     "author": "Richard Peck",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-037",
+     "title": "Mieses Karma",
+     "author": "David Safier",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A1-038",
+     "title": "The View from Saturday",
+     "author": "E. L. Konigsburg",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-039",
+     "title": "The Egypt Game",
+     "author": "Zilpha Keatley Snyder",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-040",
+     "title": "The Lion, the Witch and the Wardrobe",
+     "author": "C. S. Lewis",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children",
+      "fantasy"
+     ]
+    },
+    {
+     "id": "A1-041",
+     "title": "Little Women",
+     "author": "Louisa May Alcott",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "A1-042",
+     "title": "Little Women (second copy)",
+     "author": "Louisa May Alcott",
+     "language": "English",
+     "confidence": "medium",
+     "topics": [
+      "classics"
+     ],
+     "note": "two Little Women spines side by side — twin editions?"
+    },
+    {
+     "id": "A1-043",
+     "title": "Der kleine Prinz",
+     "author": "Antoine de Saint-Exupéry",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "A1-044",
+     "title": "Mrs. Frisby and the Rats of NIMH",
+     "author": "Robert C. O'Brien",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-045",
+     "title": "Harriet the Spy",
+     "author": "Louise Fitzhugh",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "A1-046",
+     "title": "The Titan's Curse (Percy Jackson & the Olympians #3)",
+     "author": "Rick Riordan",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "young-adult",
+      "fantasy"
+     ]
+    },
+    {
+     "id": "A1-047",
+     "title": "Twilight",
+     "author": "Stephenie Meyer",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "young-adult"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "A2",
+   "label": "Bookcase A · Shelf 2",
+   "theme": "Contemporary fiction — book-club favourites, translated hits, three languages mixed",
+   "books": [
+    {
+     "id": "A2-001",
+     "title": "Norwegian Wood",
+     "author": "Haruki Murakami",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-002",
+     "title": "The Last Song",
+     "author": "Nicholas Sparks",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-003",
+     "title": "La place",
+     "author": "Annie Ernaux",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "memoir"
+     ]
+    },
+    {
+     "id": "A2-004",
+     "title": "Eine Frau zu sehen",
+     "author": "Annemarie Schwarzenbach",
+     "language": "German",
+     "confidence": "low",
+     "topics": [
+      "fiction"
+     ],
+     "note": "thin spine after La place — author reads Annemarie Schwarzenbach, title unclear"
+    },
+    {
+     "id": "A2-005",
+     "title": "the sun and her flowers",
+     "author": "Rupi Kaur",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "poetry"
+     ]
+    },
+    {
+     "id": "A2-006",
+     "title": "The Wedding People",
+     "author": "Alison Espach",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-007",
+     "title": "Little Fires Everywhere",
+     "author": "Celeste Ng",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-008",
+     "title": "Taylor Jenkins Reid — French edition (title to confirm)",
+     "author": "Taylor Jenkins Reid",
+     "language": "French",
+     "confidence": "low",
+     "topics": [
+      "fiction"
+     ],
+     "note": "10/18 French paperback, spine ends in “…AMOUR” — which TJR is this?"
+    },
+    {
+     "id": "A2-009",
+     "title": "Convenience Store Woman",
+     "author": "Sayaka Murata",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-010",
+     "title": "Pachinko",
+     "author": "Min Jin Lee",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-011",
+     "title": "The Good Girl",
+     "author": "Mary Kubica",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "mystery"
+     ]
+    },
+    {
+     "id": "A2-012",
+     "title": "Swimming in the Dark",
+     "author": "Tomasz Jedrowski",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-013",
+     "title": "Dear John",
+     "author": "Nicholas Sparks",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-014",
+     "title": "Empire Falls",
+     "author": "Richard Russo",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-015",
+     "title": "The Kite Runner",
+     "author": "Khaled Hosseini",
+     "language": "English",
+     "confidence": "medium",
+     "topics": [
+      "fiction"
+     ],
+     "note": "dark red spine between Empire Falls and The Idiot — lettering faded"
+    },
+    {
+     "id": "A2-016",
+     "title": "The Idiot",
+     "author": "Elif Batuman",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-017",
+     "title": "Exit Lane",
+     "author": "Erika Veurink",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "fiction"
+     ],
+     "note": "spine reads ERIKA VEURINK · EXIT LANE — couldn't corroborate this title"
+    },
+    {
+     "id": "A2-018",
+     "title": "Unread yellow-orange spine (Berkley)",
+     "author": "—",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "fiction"
+     ],
+     "note": "bright yellow spine with purple base between Exit Lane and The Help — no legible title"
+    },
+    {
+     "id": "A2-019",
+     "title": "The Help",
+     "author": "Kathryn Stockett",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-020",
+     "title": "Ghosts",
+     "author": "Dolly Alderton",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-021",
+     "title": "Barcelona Dreaming",
+     "author": "Rupert Thomson",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-022",
+     "title": "Le Fantôme de l'Opéra",
+     "author": "Gaston Leroux",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "A2-023",
+     "title": "The Immortal Life of Henrietta Lacks",
+     "author": "Rebecca Skloot",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "science",
+      "nonfiction"
+     ]
+    },
+    {
+     "id": "A2-024",
+     "title": "Blood Hollow",
+     "author": "William Kent Krueger",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "mystery"
+     ]
+    },
+    {
+     "id": "A2-025",
+     "title": "Der Circle",
+     "author": "Dave Eggers",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-026",
+     "title": "Klara and the Sun",
+     "author": "Kazuo Ishiguro",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-027",
+     "title": "The Song of Achilles",
+     "author": "Madeline Miller",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-028",
+     "title": "Frau Komachi empfiehlt ein Buch",
+     "author": "Michiko Aoyama",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-029",
+     "title": "How Should a Person Be?",
+     "author": "Sheila Heti",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-030",
+     "title": "The Trouble with Happiness",
+     "author": "Tove Ditlevsen",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-031",
+     "title": "The Handmaid's Tale",
+     "author": "Margaret Atwood",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction",
+      "feminism"
+     ]
+    },
+    {
+     "id": "A2-032",
+     "title": "Reading Lolita in Tehran",
+     "author": "Azar Nafisi",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir"
+     ]
+    },
+    {
+     "id": "A2-033",
+     "title": "Interpreter of Maladies",
+     "author": "Jhumpa Lahiri",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-034",
+     "title": "The Reluctant Fundamentalist",
+     "author": "Mohsin Hamid",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A2-035",
+     "title": "The Boys in the Boat",
+     "author": "Daniel James Brown",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "nonfiction"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "A3",
+   "label": "Bookcase A · Shelf 3",
+   "theme": "The historian's toolkit — theory of history, empire, memory (plus the green lamp)",
+   "books": [
+    {
+     "id": "A3-001",
+     "title": "Peau noire, masques blancs",
+     "author": "Frantz Fanon",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "theory"
+     ]
+    },
+    {
+     "id": "A3-002",
+     "title": "Der lange Schatten der Vergangenheit",
+     "author": "Aleida Assmann",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "memory"
+     ]
+    },
+    {
+     "id": "A3-003",
+     "title": "What Is Global History?",
+     "author": "Sebastian Conrad",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "theory"
+     ]
+    },
+    {
+     "id": "A3-004",
+     "title": "A Theory of Economic History",
+     "author": "John Hicks",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "economics"
+     ]
+    },
+    {
+     "id": "A3-005",
+     "title": "Orientalism",
+     "author": "Edward W. Said",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "theory"
+     ]
+    },
+    {
+     "id": "A3-006",
+     "title": "The Wretched of the Earth",
+     "author": "Frantz Fanon",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "theory"
+     ]
+    },
+    {
+     "id": "A3-007",
+     "title": "What Is History?",
+     "author": "E. H. Carr",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "theory"
+     ]
+    },
+    {
+     "id": "A3-008",
+     "title": "Geschichte der Globalisierung",
+     "author": "Jürgen Osterhammel & Niels P. Petersson",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "A3-009",
+     "title": "Zeitschichten",
+     "author": "Reinhart Koselleck",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "theory"
+     ]
+    },
+    {
+     "id": "A3-010",
+     "title": "Discours sur le colonialisme",
+     "author": "Aimé Césaire",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "theory"
+     ],
+     "note": "top of the stacked pile"
+    },
+    {
+     "id": "A3-011",
+     "title": "The Origins of Totalitarianism",
+     "author": "Hannah Arendt",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "politics"
+     ],
+     "note": "stacked"
+    },
+    {
+     "id": "A3-012",
+     "title": "The Princeton Guide to Historical Research",
+     "author": "Zachary M. Schrag",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "reference"
+     ],
+     "note": "stacked"
+    },
+    {
+     "id": "A3-013",
+     "title": "1968: On the Edge of World Revolution",
+     "author": "Philip Gassert & Martin Klimke (eds.)",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ],
+     "note": "stacked, bottom of the pile"
+    }
+   ]
+  },
+  {
+   "id": "A4",
+   "label": "Bookcase A · Shelf 4",
+   "theme": "The fiction wall — campus novels, thrillers, prize winners, a few in French and German",
+   "books": [
+    {
+     "id": "A4-001",
+     "title": "The Eden Express",
+     "author": "Mark Vonnegut",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir"
+     ]
+    },
+    {
+     "id": "A4-002",
+     "title": "The Hate U Give",
+     "author": "Angie Thomas",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "young-adult"
+     ]
+    },
+    {
+     "id": "A4-003",
+     "title": "Lord of the Flies",
+     "author": "William Golding",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "A4-004",
+     "title": "The Sunflower",
+     "author": "Simon Wiesenthal",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "philosophy"
+     ]
+    },
+    {
+     "id": "A4-005",
+     "title": "Hotel",
+     "author": "Arthur Hailey",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-006",
+     "title": "Sophie's World",
+     "author": "Jostein Gaarder",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction",
+      "philosophy"
+     ]
+    },
+    {
+     "id": "A4-007",
+     "title": "Le liseur du 6h27",
+     "author": "Jean-Paul Didierlaurent",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-008",
+     "title": "Charlotte",
+     "author": "David Foenkinos",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "folio paperback — the German hardcover lives on B6"
+    },
+    {
+     "id": "A4-009",
+     "title": "Love, Rosie",
+     "author": "Cecelia Ahern",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-010",
+     "title": "Das Mädchen, das in der Metro las",
+     "author": "Christine Féret-Fleury",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-011",
+     "title": "Girl with a Pearl Earring",
+     "author": "Tracy Chevalier",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-012",
+     "title": "Female Forms",
+     "author": "Emma Cooke",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "fiction"
+     ],
+     "note": "spine reads FEMALE FORMS · EMMA COOKE — rare title, please confirm"
+    },
+    {
+     "id": "A4-013",
+     "title": "The Firm",
+     "author": "John Grisham",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "mystery"
+     ]
+    },
+    {
+     "id": "A4-014",
+     "title": "Operation Wandering Soul",
+     "author": "Richard Powers",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-015",
+     "title": "Der Buchladen am Ende der Welt",
+     "author": "Ruth Shaw",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "memoir"
+     ]
+    },
+    {
+     "id": "A4-016",
+     "title": "A Prayer for Owen Meany",
+     "author": "John Irving",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "paperback — a hardcover twin lives on A6"
+    },
+    {
+     "id": "A4-017",
+     "title": "Memoirs of a Geisha",
+     "author": "Arthur Golden",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-018",
+     "title": "A Loyal Character Dancer",
+     "author": "Qiu Xiaolong",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "mystery"
+     ]
+    },
+    {
+     "id": "A4-019",
+     "title": "The Hundred-Year-Old Man Who Climbed Out of the Window and Disappeared",
+     "author": "Jonas Jonasson",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-020",
+     "title": "Circé",
+     "author": "Madeline Miller",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "Pocket French edition — The Song of Achilles in English is on A2"
+    },
+    {
+     "id": "A4-021",
+     "title": "Gone Girl",
+     "author": "Gillian Flynn",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "mystery"
+     ]
+    },
+    {
+     "id": "A4-022",
+     "title": "On Earth We're Briefly Gorgeous",
+     "author": "Ocean Vuong",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-023",
+     "title": "Americanah",
+     "author": "Chimamanda Ngozi Adichie",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-024",
+     "title": "The Seven Husbands of Evelyn Hugo",
+     "author": "Taylor Jenkins Reid",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-025",
+     "title": "Conversations with Friends",
+     "author": "Sally Rooney",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-026",
+     "title": "Einstein's Dreams",
+     "author": "Alan Lightman",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction",
+      "science"
+     ]
+    },
+    {
+     "id": "A4-027",
+     "title": "The Secret History",
+     "author": "Donna Tartt",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A4-028",
+     "title": "The Book Thief",
+     "author": "Markus Zusak",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction",
+      "history"
+     ]
+    },
+    {
+     "id": "A4-029",
+     "title": "Persepolis",
+     "author": "Marjane Satrapi",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir",
+      "history"
+     ]
+    },
+    {
+     "id": "A4-030",
+     "title": "Middlesex",
+     "author": "Jeffrey Eugenides",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "A5",
+   "label": "Bookcase A · Shelf 5",
+   "theme": "Mind & body, French class, and the reference end — psychology, essays, empire histories",
+   "books": [
+    {
+     "id": "A5-001",
+     "title": "Life Rebel",
+     "author": "Yvonne Eisenring",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "self-help"
+     ]
+    },
+    {
+     "id": "A5-002",
+     "title": "Goodbye Herzschmerz",
+     "author": "Elena-Katharina Sohn",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "self-help"
+     ]
+    },
+    {
+     "id": "A5-003",
+     "title": "How to Be Yourself",
+     "author": "Ellen Hendriksen",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "self-help",
+      "psychology"
+     ]
+    },
+    {
+     "id": "A5-004",
+     "title": "Quiet",
+     "author": "Susan Cain",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "psychology"
+     ],
+     "note": "thin white spine with QUIET at the top — edition unclear, please confirm"
+    },
+    {
+     "id": "A5-005",
+     "title": "Komm, ich erzähl dir eine Geschichte",
+     "author": "Jorge Bucay",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "self-help"
+     ]
+    },
+    {
+     "id": "A5-006",
+     "title": "Lost Connections",
+     "author": "Johann Hari",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "psychology"
+     ]
+    },
+    {
+     "id": "A5-007",
+     "title": "All About Love",
+     "author": "bell hooks",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "philosophy"
+     ]
+    },
+    {
+     "id": "A5-008",
+     "title": "The Four Agreements",
+     "author": "Don Miguel Ruiz",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "self-help"
+     ]
+    },
+    {
+     "id": "A5-009",
+     "title": "Feeling Good: The New Mood Therapy",
+     "author": "David D. Burns",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "psychology"
+     ]
+    },
+    {
+     "id": "A5-010",
+     "title": "Gathering Moss",
+     "author": "Robin Wall Kimmerer",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "nature",
+      "science"
+     ]
+    },
+    {
+     "id": "A5-011",
+     "title": "The Body Keeps the Score",
+     "author": "Bessel van der Kolk",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "psychology"
+     ]
+    },
+    {
+     "id": "A5-012",
+     "title": "A Philosophy of Walking",
+     "author": "Frédéric Gros",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "philosophy"
+     ]
+    },
+    {
+     "id": "A5-013",
+     "title": "Landlines",
+     "author": "Raynor Winn",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir",
+      "nature"
+     ]
+    },
+    {
+     "id": "A5-014",
+     "title": "Brain Food",
+     "author": "Lisa Mosconi",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "science",
+      "self-help"
+     ]
+    },
+    {
+     "id": "A5-015",
+     "title": "I Am Her Tribe",
+     "author": "Danielle Doby",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "poetry"
+     ]
+    },
+    {
+     "id": "A5-016",
+     "title": "The End of Your Life Book Club",
+     "author": "Will Schwalbe",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir"
+     ]
+    },
+    {
+     "id": "A5-017",
+     "title": "Rhinocéros",
+     "author": "Eugène Ionesco",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "classics",
+      "theatre"
+     ]
+    },
+    {
+     "id": "A5-018",
+     "title": "Curtain: Poirot's Last Case",
+     "author": "Agatha Christie",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "mystery"
+     ]
+    },
+    {
+     "id": "A5-019",
+     "title": "Thin white spine (unread)",
+     "author": "—",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "unknown"
+     ],
+     "note": "very thin pale spine between Curtain and Sternstunden der Menschheit — no legible text"
+    },
+    {
+     "id": "A5-020",
+     "title": "Sternstunden der Menschheit",
+     "author": "Stefan Zweig",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "classics"
+     ]
+    },
+    {
+     "id": "A5-021",
+     "title": "Le chapeau de Mitterrand",
+     "author": "Antoine Laurain",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A5-022",
+     "title": "Alexander McCall Smith — title to confirm",
+     "author": "Alexander McCall Smith",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "fiction"
+     ],
+     "note": "pale Abacus spine — author clear, title too faint"
+    },
+    {
+     "id": "A5-023",
+     "title": "Tartuffe",
+     "author": "Molière",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "classics",
+      "theatre"
+     ]
+    },
+    {
+     "id": "A5-024",
+     "title": "Sky Daddy",
+     "author": "Kate Folk",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A5-025",
+     "title": "Tell Me Everything",
+     "author": "Elizabeth Strout",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A5-026",
+     "title": "Expert Sudoku",
+     "author": "—",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "puzzles"
+     ],
+     "note": "well-used puzzle workbook holding up the leaning row"
+    },
+    {
+     "id": "A5-027",
+     "title": "The Road Not Taken and Other Poems",
+     "author": "Robert Frost",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "poetry"
+     ]
+    },
+    {
+     "id": "A5-028",
+     "title": "Guide de l'Union européenne",
+     "author": "— (Nathan)",
+     "language": "French",
+     "confidence": "medium",
+     "topics": [
+      "reference",
+      "politics"
+     ],
+     "note": "Nathan study guide"
+    },
+    {
+     "id": "A5-029",
+     "title": "Die Flughöhe der Adler",
+     "author": "Jürgen Osterhammel",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "A5-030",
+     "title": "The Modern Middle East: A History",
+     "author": "James L. Gelvin",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ],
+     "note": "Oxford, fourth edition"
+    },
+    {
+     "id": "A5-031",
+     "title": "The British Empire: Sunrise to Sunset",
+     "author": "Philippa Levine",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "A5-032",
+     "title": "Fires of Hatred",
+     "author": "Norman M. Naimark",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "A5-033",
+     "title": "Kolonialismus-Erinnerung (title to confirm)",
+     "author": "—",
+     "language": "German",
+     "confidence": "low",
+     "topics": [
+      "history"
+     ],
+     "note": "yellow-tagged spine beginning with KOLONIALISMUS, right of Fires of Hatred — full title cut off"
+    },
+    {
+     "id": "A5-034",
+     "title": "The Penguin Historical Atlas of the British Empire",
+     "author": "Nigel Dalziel",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "reference"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "A6",
+   "label": "Bookcase A · Shelf 6",
+   "theme": "The keeper shelf — Harry Potter hardcovers, Inkworld, and the big hardbacks",
+   "books": [
+    {
+     "id": "A6-001",
+     "title": "Harry Potter and the Deathly Hallows",
+     "author": "J. K. Rowling",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fantasy"
+     ],
+     "note": "Scholastic hardcover, Year 7 spine"
+    },
+    {
+     "id": "A6-002",
+     "title": "Harry Potter and the Goblet of Fire",
+     "author": "J. K. Rowling",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fantasy"
+     ],
+     "note": "hardcover, Year 4 spine, well loved"
+    },
+    {
+     "id": "A6-003",
+     "title": "Harry Potter and the Order of the Phoenix",
+     "author": "J. K. Rowling",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fantasy"
+     ],
+     "note": "Bloomsbury hardcover"
+    },
+    {
+     "id": "A6-004",
+     "title": "Harry Potter and the Half-Blood Prince",
+     "author": "J. K. Rowling",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fantasy"
+     ],
+     "note": "Bloomsbury hardcover"
+    },
+    {
+     "id": "A6-005",
+     "title": "Tintentod",
+     "author": "Cornelia Funke",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "fantasy"
+     ]
+    },
+    {
+     "id": "A6-006",
+     "title": "Tintenherz",
+     "author": "Cornelia Funke",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "fantasy"
+     ]
+    },
+    {
+     "id": "A6-007",
+     "title": "Das Auswärtige Amt und die Kolonien",
+     "author": "Haas / Lehmann / Reinwald / Simo (Hrsg.)",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "A6-008",
+     "title": "Mary Poppins (vintage clothbound?)",
+     "author": "P. L. Travers",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "children"
+     ],
+     "note": "worn teal clothbound with a flying-umbrella figure on the cover — Mary Poppins is the best guess"
+    },
+    {
+     "id": "A6-009",
+     "title": "Die Letzte am Schafott",
+     "author": "Gertrud von le Fort",
+     "language": "German",
+     "confidence": "medium",
+     "topics": [
+      "classics"
+     ],
+     "note": "thin cream spine in the small stack"
+    },
+    {
+     "id": "A6-010",
+     "title": "Three or four slim volumes (unread)",
+     "author": "—",
+     "language": "—",
+     "confidence": "low",
+     "topics": [
+      "unknown"
+     ],
+     "note": "cluster of very thin spines between the teal clothbound and Am I There Yet? — mostly illegible"
+    },
+    {
+     "id": "A6-011",
+     "title": "Am I There Yet?",
+     "author": "Mari Andrew",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir",
+      "illustrated"
+     ]
+    },
+    {
+     "id": "A6-012",
+     "title": "Either/Or",
+     "author": "Elif Batuman",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A6-013",
+     "title": "The Bee Sting",
+     "author": "Paul Murray",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "A6-014",
+     "title": "Mastering Modern World History",
+     "author": "Norman Lowe",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "reference"
+     ],
+     "note": "Palgrave, fifth edition"
+    },
+    {
+     "id": "A6-015",
+     "title": "Foucault's Pendulum",
+     "author": "Umberto Eco",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "Secker & Warburg hardcover"
+    },
+    {
+     "id": "A6-016",
+     "title": "A Prayer for Owen Meany (hardcover)",
+     "author": "John Irving",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "second copy — the paperback lives on A4"
+    },
+    {
+     "id": "A6-017",
+     "title": "Die Geschichte der Welt",
+     "author": "Christian Grataloup",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "reference"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B1",
+   "label": "Bookcase B · Shelf 1",
+   "theme": "The canon shelf — school classics, Christie bookends, three languages of required reading",
+   "books": [
+    {
+     "id": "B1-001",
+     "title": "Wuthering Heights",
+     "author": "Emily Brontë",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-002",
+     "title": "The Murder of Roger Ackroyd",
+     "author": "Agatha Christie",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "mystery"
+     ]
+    },
+    {
+     "id": "B1-003",
+     "title": "Night",
+     "author": "Elie Wiesel",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir",
+      "history"
+     ]
+    },
+    {
+     "id": "B1-004",
+     "title": "The Great Gatsby",
+     "author": "F. Scott Fitzgerald",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-005",
+     "title": "L'étranger",
+     "author": "Albert Camus",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ],
+     "note": "Klett school edition"
+    },
+    {
+     "id": "B1-006",
+     "title": "The Time Traveler's Wife",
+     "author": "Audrey Niffenegger",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B1-007",
+     "title": "The Razor's Edge",
+     "author": "W. Somerset Maugham",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-008",
+     "title": "Heidi",
+     "author": "Johanna Spyri",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children",
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-009",
+     "title": "Beloved",
+     "author": "Toni Morrison",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-010",
+     "title": "A Little Princess",
+     "author": "Frances Hodgson Burnett",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children",
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-011",
+     "title": "The Catcher in the Rye",
+     "author": "J. D. Salinger",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-012",
+     "title": "The Old Man and the Sea",
+     "author": "Ernest Hemingway",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-013",
+     "title": "Siddhartha",
+     "author": "Hermann Hesse",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics",
+      "philosophy"
+     ]
+    },
+    {
+     "id": "B1-014",
+     "title": "Die Outsider",
+     "author": "S. E. Hinton",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "young-adult"
+     ],
+     "note": "dtv pocket edition"
+    },
+    {
+     "id": "B1-015",
+     "title": "The Bell Jar",
+     "author": "Sylvia Plath",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-016",
+     "title": "Slim dark spine with photo (unread)",
+     "author": "—",
+     "language": "—",
+     "confidence": "low",
+     "topics": [
+      "unknown"
+     ],
+     "note": "black-and-white photographic spine right of The Bell Jar — no legible text"
+    },
+    {
+     "id": "B1-017",
+     "title": "Mrs Dalloway",
+     "author": "Virginia Woolf",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-018",
+     "title": "Die Physiker",
+     "author": "Friedrich Dürrenmatt",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "classics",
+      "theatre"
+     ]
+    },
+    {
+     "id": "B1-019",
+     "title": "La peste",
+     "author": "Albert Camus",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-020",
+     "title": "Vol de nuit",
+     "author": "Antoine de Saint-Exupéry",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-021",
+     "title": "Jane Eyre",
+     "author": "Charlotte Brontë",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-022",
+     "title": "Atlas Shrugged",
+     "author": "Ayn Rand",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "50th anniversary Signet edition, heavily read"
+    },
+    {
+     "id": "B1-023",
+     "title": "Paris — ein Fest fürs Leben",
+     "author": "Ernest Hemingway",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "memoir",
+      "classics"
+     ],
+     "note": "A Moveable Feast, rororo edition"
+    },
+    {
+     "id": "B1-024",
+     "title": "The Secret Life of Bees",
+     "author": "Sue Monk Kidd",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B1-025",
+     "title": "About a Boy",
+     "author": "Nick Hornby",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B1-026",
+     "title": "The Five People You Meet in Heaven",
+     "author": "Mitch Albom",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B1-027",
+     "title": "Wild Swans",
+     "author": "Jung Chang",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir",
+      "history"
+     ]
+    },
+    {
+     "id": "B1-028",
+     "title": "Rebecca",
+     "author": "Daphne du Maurier",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics",
+      "mystery"
+     ]
+    },
+    {
+     "id": "B1-029",
+     "title": "Nineteen Eighty-Four",
+     "author": "George Orwell",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-030",
+     "title": "Flowers for Algernon",
+     "author": "Daniel Keyes",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-031",
+     "title": "Longitude",
+     "author": "Dava Sobel",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "science",
+      "history"
+     ]
+    },
+    {
+     "id": "B1-032",
+     "title": "Love in the Time of Cholera",
+     "author": "Gabriel García Márquez",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-033",
+     "title": "The Importance of Being Earnest and Other Plays",
+     "author": "Oscar Wilde",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics",
+      "theatre"
+     ]
+    },
+    {
+     "id": "B1-034",
+     "title": "The Sun Also Rises",
+     "author": "Ernest Hemingway",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-035",
+     "title": "Die unendliche Geschichte",
+     "author": "Michael Ende",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "fantasy",
+      "classics"
+     ]
+    },
+    {
+     "id": "B1-036",
+     "title": "The Diary of a Young Girl",
+     "author": "Anne Frank",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir",
+      "history"
+     ]
+    },
+    {
+     "id": "B1-037",
+     "title": "The Curious Incident of the Dog in the Night-Time",
+     "author": "Mark Haddon",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B1-038",
+     "title": "Death on the Nile",
+     "author": "Agatha Christie",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "mystery"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B2",
+   "label": "Bookcase B · Shelf 2",
+   "theme": "Essayists' corner — Didion and company on the left, the feminist canon stacked on the right",
+   "books": [
+    {
+     "id": "B2-001",
+     "title": "The White Album",
+     "author": "Joan Didion",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "essays"
+     ]
+    },
+    {
+     "id": "B2-002",
+     "title": "Play It as It Lays",
+     "author": "Joan Didion",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B2-003",
+     "title": "Outline",
+     "author": "Rachel Cusk",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B2-004",
+     "title": "The Year of Magical Thinking",
+     "author": "Joan Didion",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir"
+     ]
+    },
+    {
+     "id": "B2-005",
+     "title": "The Virgin Suicides",
+     "author": "Jeffrey Eugenides",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B2-006",
+     "title": "Sex & Rage",
+     "author": "Eve Babitz",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B2-007",
+     "title": "Writers & Lovers",
+     "author": "Lily King",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B2-008",
+     "title": "Selected Poems",
+     "author": "Sylvia Plath",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "poetry"
+     ]
+    },
+    {
+     "id": "B2-009",
+     "title": "Freedom Is a Constant Struggle",
+     "author": "Angela Y. Davis",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "politics"
+     ],
+     "note": "stacked pile, top"
+    },
+    {
+     "id": "B2-010",
+     "title": "Your Silence Will Not Protect You",
+     "author": "Audre Lorde",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "essays"
+     ],
+     "note": "stacked"
+    },
+    {
+     "id": "B2-011",
+     "title": "The Second Sex",
+     "author": "Simone de Beauvoir",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "philosophy"
+     ],
+     "note": "stacked, Vintage edition"
+    },
+    {
+     "id": "B2-012",
+     "title": "Rage Becomes Her",
+     "author": "Soraya Chemaly",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism"
+     ],
+     "note": "stacked"
+    },
+    {
+     "id": "B2-013",
+     "title": "Radical Reproductive Justice",
+     "author": "Ross, Roberts, Derkas, Peoples, Bridgewater Toure (eds.)",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism"
+     ],
+     "note": "stacked, bottom"
+    }
+   ]
+  },
+  {
+   "id": "B3",
+   "label": "Bookcase B · Shelf 3",
+   "theme": "The feminism wall — history, theory, reportage and manifestos, teal to red",
+   "books": [
+    {
+     "id": "B3-001",
+     "title": "The Sexual Question",
+     "author": "Paulo Drinot",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "history"
+     ],
+     "note": "Cambridge Latin American Studies 119"
+    },
+    {
+     "id": "B3-002",
+     "title": "A Lab of One's Own",
+     "author": "Patricia Fara",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "science",
+      "history"
+     ]
+    },
+    {
+     "id": "B3-003",
+     "title": "Fatal Invention",
+     "author": "Dorothy Roberts",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "science",
+      "politics"
+     ]
+    },
+    {
+     "id": "B3-004",
+     "title": "Outrageous Acts and Everyday Rebellions",
+     "author": "Gloria Steinem",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "essays"
+     ],
+     "note": "third edition"
+    },
+    {
+     "id": "B3-005",
+     "title": "How Was It for You?",
+     "author": "Virginia Nicholson",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "history"
+     ]
+    },
+    {
+     "id": "B3-006",
+     "title": "This Common Secret",
+     "author": "Susan Wicklund",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "memoir"
+     ]
+    },
+    {
+     "id": "B3-007",
+     "title": "Sister Outsider",
+     "author": "Audre Lorde",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "essays"
+     ]
+    },
+    {
+     "id": "B3-008",
+     "title": "Down Girl: The Logic of Misogyny",
+     "author": "Kate Manne",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "philosophy"
+     ]
+    },
+    {
+     "id": "B3-009",
+     "title": "A Kick in the Belly",
+     "author": "Stella Dadzie",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "history"
+     ]
+    },
+    {
+     "id": "B3-010",
+     "title": "The Unwomanly Face of War",
+     "author": "Svetlana Alexievich",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "feminism"
+     ]
+    },
+    {
+     "id": "B3-011",
+     "title": "Full Surrogacy Now",
+     "author": "Sophie Lewis",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "theory"
+     ]
+    },
+    {
+     "id": "B3-012",
+     "title": "Femina",
+     "author": "Janina Ramirez",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "feminism"
+     ]
+    },
+    {
+     "id": "B3-013",
+     "title": "Men Explain Things to Me",
+     "author": "Rebecca Solnit",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "essays"
+     ]
+    },
+    {
+     "id": "B3-014",
+     "title": "Witches, Witch-Hunting, and Women",
+     "author": "Silvia Federici",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "history"
+     ]
+    },
+    {
+     "id": "B3-015",
+     "title": "Feminisms: A Global History",
+     "author": "Lucy Delap",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "history"
+     ],
+     "note": "Pelican 38"
+    },
+    {
+     "id": "B3-016",
+     "title": "Our Women on the Ground",
+     "author": "Zahra Hankir (ed.)",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "journalism"
+     ]
+    },
+    {
+     "id": "B3-017",
+     "title": "What Is Sexual Capital?",
+     "author": "Dana Kaplan & Eva Illouz",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "theory"
+     ]
+    },
+    {
+     "id": "B3-018",
+     "title": "Women in the Picture",
+     "author": "Catherine McCormack",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "art"
+     ]
+    },
+    {
+     "id": "B3-019",
+     "title": "Ma vie sur la route",
+     "author": "Gloria Steinem",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "memoir"
+     ],
+     "note": "My Life on the Road, HarperCollins Poche"
+    },
+    {
+     "id": "B3-020",
+     "title": "A Room of One's Own",
+     "author": "Virginia Woolf",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "classics"
+     ]
+    },
+    {
+     "id": "B3-021",
+     "title": "Beyond the Gender Binary",
+     "author": "Alok Vaid-Menon",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "gender"
+     ],
+     "note": "Pocket Change Collective"
+    },
+    {
+     "id": "B3-022",
+     "title": "La Femme indépendante",
+     "author": "Simone de Beauvoir",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "philosophy"
+     ]
+    },
+    {
+     "id": "B3-023",
+     "title": "The Turnaway Study",
+     "author": "Diana Greene Foster",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "science"
+     ]
+    },
+    {
+     "id": "B3-024",
+     "title": "The Beauty Myth",
+     "author": "Naomi Wolf",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism"
+     ]
+    },
+    {
+     "id": "B3-025",
+     "title": "She Said",
+     "author": "Jodi Kantor & Megan Twohey",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "journalism"
+     ]
+    },
+    {
+     "id": "B3-026",
+     "title": "Killing the Black Body",
+     "author": "Dorothy Roberts",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "history"
+     ]
+    },
+    {
+     "id": "B3-027",
+     "title": "Hood Feminism",
+     "author": "Mikki Kendall",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism"
+     ]
+    },
+    {
+     "id": "B3-028",
+     "title": "Feminism, Interrupted",
+     "author": "Lola Olufemi",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism"
+     ]
+    },
+    {
+     "id": "B3-029",
+     "title": "Tomorrow Sex Will Be Good Again",
+     "author": "Katherine Angel",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "theory"
+     ]
+    },
+    {
+     "id": "B3-030",
+     "title": "Be Good Again (title to confirm)",
+     "author": "—",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "feminism"
+     ],
+     "note": "orange spine reading “…BE GOOD AGAIN” between Feminism, Interrupted and Katherine Angel — full title cut off"
+    },
+    {
+     "id": "B3-031",
+     "title": "When They Call You a Terrorist",
+     "author": "Patrisse Khan-Cullors & asha bandele",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir",
+      "politics"
+     ]
+    },
+    {
+     "id": "B3-032",
+     "title": "Revolting Prostitutes",
+     "author": "Juno Mac & Molly Smith",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "politics"
+     ]
+    },
+    {
+     "id": "B3-033",
+     "title": "Ejaculate Responsibly",
+     "author": "Gabrielle Blair",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism"
+     ]
+    },
+    {
+     "id": "B3-034",
+     "title": "Feminist City",
+     "author": "Leslie Kern",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "cities"
+     ]
+    },
+    {
+     "id": "B3-035",
+     "title": "The Dream of a Common Language",
+     "author": "Adrienne Rich",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "poetry",
+      "feminism"
+     ]
+    },
+    {
+     "id": "B3-036",
+     "title": "Reproductive Justice: An Introduction",
+     "author": "Loretta Ross & Rickie Solinger",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism"
+     ]
+    },
+    {
+     "id": "B3-037",
+     "title": "The Story of Jane",
+     "author": "Laura Kaplan",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "history"
+     ]
+    },
+    {
+     "id": "B3-038",
+     "title": "Ace",
+     "author": "Angela Chen",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "gender"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B4",
+   "label": "Bookcase B · Shelf 4",
+   "theme": "New literary fiction — Ali Smith's seasons, Rooney, and the leaning rainbow",
+   "books": [
+    {
+     "id": "B4-001",
+     "title": "People We Meet on Vacation",
+     "author": "Emily Henry",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-002",
+     "title": "20 Fragments of a Ravenous Youth",
+     "author": "Xiaolu Guo",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-003",
+     "title": "Call Me by Your Name",
+     "author": "André Aciman",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-004",
+     "title": "The Years",
+     "author": "Annie Ernaux",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir"
+     ],
+     "note": "Fitzcarraldo white spine"
+    },
+    {
+     "id": "B4-005",
+     "title": "Annie Ernaux — second Fitzcarraldo (title to confirm)",
+     "author": "Annie Ernaux",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "memoir"
+     ],
+     "note": "a second Ernaux spine beside The Years — A Girl's Story? Happening?"
+    },
+    {
+     "id": "B4-006",
+     "title": "Autumn",
+     "author": "Ali Smith",
+     "language": "English",
+     "confidence": "medium",
+     "topics": [
+      "fiction"
+     ],
+     "note": "the seasons run — first spine partly hidden"
+    },
+    {
+     "id": "B4-007",
+     "title": "Winter",
+     "author": "Ali Smith",
+     "language": "English",
+     "confidence": "medium",
+     "topics": [
+      "fiction"
+     ],
+     "note": "dark spine in the seasons run"
+    },
+    {
+     "id": "B4-008",
+     "title": "Spring",
+     "author": "Ali Smith",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-009",
+     "title": "Summer",
+     "author": "Ali Smith",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-010",
+     "title": "The Netanyahus",
+     "author": "Joshua Cohen",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "stacked under the bowl"
+    },
+    {
+     "id": "B4-011",
+     "title": "Beautiful World, Where Are You",
+     "author": "Sally Rooney",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "stacked under the bowl"
+    },
+    {
+     "id": "B4-012",
+     "title": "Tomorrow, and Tomorrow, and Tomorrow",
+     "author": "Gabrielle Zevin",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "stacked under the bowl"
+    },
+    {
+     "id": "B4-013",
+     "title": "Small Things Like These",
+     "author": "Claire Keegan",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-014",
+     "title": "Les cerfs-volants",
+     "author": "Romain Gary",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-015",
+     "title": "Wie ein Fisch im Wasser (title to confirm)",
+     "author": "—",
+     "language": "German",
+     "confidence": "low",
+     "topics": [
+      "fiction"
+     ],
+     "note": "folio-style spine beginning “Wie ein Fisch im Wasser…” in the leaning run — full title and author unclear"
+    },
+    {
+     "id": "B4-016",
+     "title": "Bunny",
+     "author": "Mona Awad",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-017",
+     "title": "Shoko's Smile",
+     "author": "Choi Eunyoung",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-018",
+     "title": "Stoner",
+     "author": "John Williams",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-019",
+     "title": "The Nickel Boys",
+     "author": "Colson Whitehead",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-020",
+     "title": "Tender Is the Flesh",
+     "author": "Agustina Bazterrica",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-021",
+     "title": "Where the Crawdads Sing",
+     "author": "Delia Owens",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-022",
+     "title": "A Woman Is No Man",
+     "author": "Etaf Rum",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-023",
+     "title": "Le Bal",
+     "author": "Irène Némirovsky",
+     "language": "French",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    },
+    {
+     "id": "B4-024",
+     "title": "Girl, Woman, Other",
+     "author": "Bernardine Evaristo",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "shelved back-cover out, blurb showing"
+    },
+    {
+     "id": "B4-025",
+     "title": "The Lying Life of Adults",
+     "author": "Elena Ferrante",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B5",
+   "label": "Bookcase B · Shelf 5",
+   "theme": "Nonfiction spine wall — reportage, big history, Germany, food and the internet",
+   "books": [
+    {
+     "id": "B5-001",
+     "title": "Empire of Pain",
+     "author": "Patrick Radden Keefe",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "nonfiction",
+      "journalism"
+     ]
+    },
+    {
+     "id": "B5-002",
+     "title": "The Cello Suites",
+     "author": "Eric Siblin",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "music",
+      "nonfiction"
+     ]
+    },
+    {
+     "id": "B5-003",
+     "title": "Decolonization",
+     "author": "M. E. Chamberlain",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ],
+     "note": "second edition"
+    },
+    {
+     "id": "B5-004",
+     "title": "Europa schafft sich ab",
+     "author": "Erik Marquardt",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "politics"
+     ]
+    },
+    {
+     "id": "B5-005",
+     "title": "Europe for Future",
+     "author": "Vincent-Immanuel Herr & Martin Speer",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "politics"
+     ]
+    },
+    {
+     "id": "B5-006",
+     "title": "Parkland",
+     "author": "Dave Cullen",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "journalism"
+     ]
+    },
+    {
+     "id": "B5-007",
+     "title": "American Dreams: The United States Since 1945",
+     "author": "H. W. Brands",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "B5-008",
+     "title": "The Hundred Years' War on Palestine",
+     "author": "Rashid Khalidi",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "B5-009",
+     "title": "The Birth of Biopolitics",
+     "author": "Michel Foucault",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "theory",
+      "philosophy"
+     ]
+    },
+    {
+     "id": "B5-010",
+     "title": "Nie wieder keine Ahnung",
+     "author": "Tim Schreder & Jennifer Sieglar",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "politics"
+     ]
+    },
+    {
+     "id": "B5-011",
+     "title": "Dictionary of Idioms",
+     "author": "Linda & Roger Flavell",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "reference",
+      "language"
+     ]
+    },
+    {
+     "id": "B5-012",
+     "title": "Eure Heimat ist unser Albtraum",
+     "author": "Fatma Aydemir & Hengameh Yaghoobifarah (Hrsg.)",
+     "language": "German",
+     "confidence": "medium",
+     "topics": [
+      "essays",
+      "politics"
+     ],
+     "note": "Ullstein — spine reads “…Heimat ist … Albtraum”"
+    },
+    {
+     "id": "B5-013",
+     "title": "An Unquiet Mind",
+     "author": "Kay Redfield Jamison",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir",
+      "psychology"
+     ]
+    },
+    {
+     "id": "B5-014",
+     "title": "Intimations",
+     "author": "Zadie Smith",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "essays"
+     ]
+    },
+    {
+     "id": "B5-015",
+     "title": "Briefe an einen jungen Dichter",
+     "author": "Rainer Maria Rilke",
+     "language": "German",
+     "confidence": "medium",
+     "topics": [
+      "classics",
+      "letters"
+     ],
+     "note": "thin spine next to Intimations"
+    },
+    {
+     "id": "B5-016",
+     "title": "One more slim spine (unread)",
+     "author": "—",
+     "language": "—",
+     "confidence": "low",
+     "topics": [
+      "unknown"
+     ],
+     "note": "third thin volume in the Intimations cluster — no legible text"
+    },
+    {
+     "id": "B5-017",
+     "title": "Between the World and Me",
+     "author": "Ta-Nehisi Coates",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "essays",
+      "politics"
+     ]
+    },
+    {
+     "id": "B5-018",
+     "title": "Sapiens: A Brief History of Humankind",
+     "author": "Yuval Noah Harari",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "science"
+     ]
+    },
+    {
+     "id": "B5-019",
+     "title": "Germany 1945: From War to Peace",
+     "author": "Richard Bessel",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "B5-020",
+     "title": "Paris",
+     "author": "Thankmar von Münchhausen",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "cities"
+     ]
+    },
+    {
+     "id": "B5-021",
+     "title": "Was ist Politik?",
+     "author": "Hannah Arendt",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "philosophy",
+      "politics"
+     ]
+    },
+    {
+     "id": "B5-022",
+     "title": "Eating Animals",
+     "author": "Jonathan Safran Foer",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "nonfiction",
+      "food"
+     ]
+    },
+    {
+     "id": "B5-023",
+     "title": "Abécédaire joyeux et décomplexé du féminisme",
+     "author": "—",
+     "language": "French",
+     "confidence": "low",
+     "topics": [
+      "feminism"
+     ],
+     "note": "yellow Pocket spine — subtitle legible, main title/author to confirm"
+    },
+    {
+     "id": "B5-024",
+     "title": "Some We Love, Some We Hate, Some We Eat",
+     "author": "Hal Herzog",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "science",
+      "food"
+     ]
+    },
+    {
+     "id": "B5-025",
+     "title": "Drunkard: A Hard-Drinking Life",
+     "author": "Neil Steinberg",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir"
+     ]
+    },
+    {
+     "id": "B5-026",
+     "title": "The New Age of Empire",
+     "author": "Kehinde Andrews",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "politics",
+      "history"
+     ]
+    },
+    {
+     "id": "B5-027",
+     "title": "Trick Mirror",
+     "author": "Jia Tolentino",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "essays"
+     ]
+    },
+    {
+     "id": "B5-028",
+     "title": "Dopesick",
+     "author": "Beth Macy",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "journalism"
+     ]
+    },
+    {
+     "id": "B5-029",
+     "title": "Digital Minimalism",
+     "author": "Cal Newport",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "self-help",
+      "technology"
+     ]
+    },
+    {
+     "id": "B5-030",
+     "title": "Darm mit Charme",
+     "author": "Giulia Enders",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "science"
+     ]
+    },
+    {
+     "id": "B5-031",
+     "title": "Originals",
+     "author": "Adam Grant",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "psychology"
+     ]
+    },
+    {
+     "id": "B5-032",
+     "title": "We Are the Weather",
+     "author": "Jonathan Safran Foer",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "nonfiction",
+      "climate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B6",
+   "label": "Bookcase B · Shelf 6",
+   "theme": "The hardback landing — biography, feminist hardcovers, German history, and the family archive volumes",
+   "books": [
+    {
+     "id": "B6-001",
+     "title": "Red Comet: The Short Life and Blazing Art of Sylvia Plath",
+     "author": "Heather Clark",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "biography"
+     ]
+    },
+    {
+     "id": "B6-002",
+     "title": "Then They Came for Me",
+     "author": "Matthew D. Hockenos",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "biography"
+     ],
+     "note": "Martin Niemöller, Basic Books"
+    },
+    {
+     "id": "B6-003",
+     "title": "The Da Vinci Code",
+     "author": "Dan Brown",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Doubleday hardcover"
+    },
+    {
+     "id": "B6-004",
+     "title": "Becoming",
+     "author": "Michelle Obama",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "memoir"
+     ]
+    },
+    {
+     "id": "B6-005",
+     "title": "Girlcrush",
+     "author": "Florence Given",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction",
+      "feminism"
+     ]
+    },
+    {
+     "id": "B6-006",
+     "title": "Nachdenken über das 20. Jahrhundert",
+     "author": "Tony Judt & Timothy Snyder",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "B6-007",
+     "title": "AktenEinsicht",
+     "author": "Christina Clemm",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "law"
+     ]
+    },
+    {
+     "id": "B6-008",
+     "title": "On Fire: The (Burning) Case for a Green New Deal",
+     "author": "Naomi Klein",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "climate",
+      "politics"
+     ]
+    },
+    {
+     "id": "B6-009",
+     "title": "Women Don't Owe You Pretty",
+     "author": "Florence Given",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism"
+     ],
+     "note": "well worn"
+    },
+    {
+     "id": "B6-010",
+     "title": "The Penguin Book of Feminist Writing",
+     "author": "Hannah Dawson (ed.)",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "feminism",
+      "anthology"
+     ]
+    },
+    {
+     "id": "B6-011",
+     "title": "The Trumpet of the Swan",
+     "author": "E. B. White",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "children"
+     ]
+    },
+    {
+     "id": "B6-012",
+     "title": "Dreams and Delusions",
+     "author": "Fritz Stern",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "B6-013",
+     "title": "A Little History of the World",
+     "author": "E. H. Gombrich",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "B6-014",
+     "title": "Intermezzo",
+     "author": "Sally Rooney",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "FSG hardcover"
+    },
+    {
+     "id": "B6-015",
+     "title": "Charlotte (German hardcover)",
+     "author": "David Foenkinos",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "fiction"
+     ],
+     "note": "DVA — the French folio twin lives on A4"
+    },
+    {
+     "id": "B6-016",
+     "title": "What Is History, Now?",
+     "author": "Helen Carr & Suzannah Lipscomb",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history",
+      "theory"
+     ]
+    },
+    {
+     "id": "B6-017",
+     "title": "The Invention of Yesterday",
+     "author": "Tamim Ansary",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "B6-018",
+     "title": "Zucker, Schnaps und Nilpferdpeitsche",
+     "author": "Dietmar Pieper",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "history"
+     ]
+    },
+    {
+     "id": "B6-019",
+     "title": "Unlearn Patriarchy",
+     "author": "Lisa Jaspers, Naomi Ryland & Silvie Horch (Hrsg.)",
+     "language": "German",
+     "confidence": "high",
+     "topics": [
+      "feminism"
+     ]
+    },
+    {
+     "id": "B6-020",
+     "title": "Tod eines Försters im Oberhavelland",
+     "author": "Marcus Huascar Bracklo",
+     "language": "German",
+     "confidence": "medium",
+     "topics": [
+      "family",
+      "history"
+     ],
+     "note": "family-history volume"
+    },
+    {
+     "id": "B6-021",
+     "title": "The History of the Bracklo Family",
+     "author": "Marcus Huascar Bracklo",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "family",
+      "history"
+     ],
+     "note": "green clothbound family chronicle"
+    },
+    {
+     "id": "B6-022",
+     "title": "Life Is a Salvation Mission (title to confirm)",
+     "author": "Dr. Eike Eszard Bracklo",
+     "language": "English",
+     "confidence": "low",
+     "topics": [
+      "family",
+      "memoir"
+     ],
+     "note": "dark clothbound in the family-archive run — spine lettering faint"
+    },
+    {
+     "id": "B6-023",
+     "title": "Quer durch Afrika",
+     "author": "Hermann von Wissmann",
+     "language": "German",
+     "confidence": "medium",
+     "topics": [
+      "history",
+      "family"
+     ],
+     "note": "antique dark-blue volume"
+    },
+    {
+     "id": "B6-024",
+     "title": "The Artist's Way",
+     "author": "Julia Cameron",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "self-help",
+      "creativity"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C1",
+   "label": "Small case · Top",
+   "theme": "The desk case — journals, albums and school archives (display, not catalogued as books)",
+   "books": [
+    {
+     "id": "C1-001",
+     "title": "Journal collection",
+     "author": "—",
+     "language": "—",
+     "confidence": "high",
+     "topics": [
+      "journals"
+     ],
+     "note": "a dozen notebooks and journals — green, red decorative, bird-patterned, navy leather — plus a silver frame, a small turtle figurine and a potted plant",
+     "kind": "object"
+    },
+    {
+     "id": "C1-002",
+     "title": "Binder — “Grade 12 AP History · Trinidad (Camp)”",
+     "author": "—",
+     "language": "English",
+     "confidence": "high",
+     "topics": [
+      "archives"
+     ],
+     "note": "hand-labelled school binder",
+     "kind": "object"
+    },
+    {
+     "id": "C1-003",
+     "title": "Brown leather photo album",
+     "author": "—",
+     "language": "—",
+     "confidence": "high",
+     "topics": [
+      "archives"
+     ],
+     "kind": "object"
+    },
+    {
+     "id": "C1-004",
+     "title": "Black binder (blank label) + blue folder",
+     "author": "—",
+     "language": "—",
+     "confidence": "medium",
+     "topics": [
+      "archives"
+     ],
+     "note": "unlabelled — what lives in these?",
+     "kind": "object"
+    },
+    {
+     "id": "C1-005",
+     "title": "Three wicker baskets",
+     "author": "—",
+     "language": "—",
+     "confidence": "high",
+     "topics": [
+      "archives"
+     ],
+     "note": "bottom shelf storage",
+     "kind": "object"
+    }
+   ]
+  }
+ ]
+}

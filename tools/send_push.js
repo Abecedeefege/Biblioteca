@@ -28,15 +28,24 @@ const VAPID_SUBJECT = 'https://abecedeefege.github.io/Biblioteca/';
 const readJson  = (p, fb) => { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return fb; } };
 const writeJson = (p, d)  => fs.writeFileSync(p, JSON.stringify(d, null, 2) + '\n');
 
-// Piso horario duro: ninguna notificación sale antes de las 11:00 en
-// Uruguay (UTC-3 fijo, sin DST), sin importar qué send_at haya puesto la
-// fuente de contenido. Protege contra un send_at mal calculado (corrida
-// tardía, error de zona horaria, prueba manual) que mandaría un push a
-// deshora.
-const MONTEVIDEO_UTC_OFFSET = -3;
+// Piso horario duro POR DISPOSITIVO: ninguna notificación sale antes de las
+// 11:00 en la zona horaria local de su destinatario, sin importar qué
+// send_at haya puesto la fuente de contenido. Protege contra un send_at mal
+// calculado (corrida tardía, error de zona horaria, prueba manual) que
+// mandaría un push a deshora. Andy y Sofi viven en Montevideo (UTC-3 fijo);
+// C vive en París (CET/CEST — Intl maneja el DST). Un dispositivo nuevo sin
+// entrada acá cae en Montevideo, el default histórico.
 const MIN_LOCAL_HOUR = 11;
-function montevideoHour(date) {
-  return (date.getUTCHours() + MONTEVIDEO_UTC_OFFSET + 24) % 24;
+const DEVICE_TZ = { andy: 'America/Montevideo', sofi: 'America/Montevideo', c: 'Europe/Paris' };
+const DEFAULT_TZ = 'America/Montevideo';
+function localHour(date, tz) {
+  return parseInt(new Intl.DateTimeFormat('en-GB', {
+    timeZone: tz, hour: 'numeric', hourCycle: 'h23',
+  }).format(date), 10);
+}
+function pastFloorFor(device, date) {
+  const tz = DEVICE_TZ[String(device || '').toLowerCase()] || DEFAULT_TZ;
+  return localHour(date, tz) >= MIN_LOCAL_HOUR;
 }
 
 function deviceList(subDoc) {
@@ -65,17 +74,25 @@ async function main() {
     }
   }
 
-  const pastFloor = montevideoHour(new Date(now)) >= MIN_LOCAL_HOUR;
+  const subDoc = readJson(SUB_PATH, null);
+  const devices = deviceList(subDoc);
+
+  const nowDate = new Date(now);
   const vencidas = queue.notifications.filter(
     (n) => n.status === 'pending' && n.send_at && Date.parse(n.send_at) <= now
   );
-  const due = pastFloor ? vencidas : [];
-  if (vencidas.length && !pastFloor) {
-    console.log(`${vencidas.length} vencidas pero antes de las 11:00 UY — se posponen hasta el piso horario.`);
+  // El piso se evalúa contra los destinatarios reales de cada notificación:
+  // solo entra a `due` la que tiene a TODOS sus targets pasado su piso local
+  // (sin targets activos entra igual, para conservar el log de "sin
+  // dispositivos" del loop de envío).
+  const activesNow = devices.filter((d) => d.status === 'active' && d.subscription);
+  const due = vencidas.filter((n) => {
+    const targets = targetsFor(n, activesNow);
+    return !targets.length || targets.every((d) => pastFloorFor(d.device, nowDate));
+  });
+  if (vencidas.length > due.length) {
+    console.log(`${vencidas.length - due.length} vencidas pero antes de las ${MIN_LOCAL_HOUR}:00 locales de su destinatario — se posponen hasta el piso horario.`);
   }
-
-  const subDoc = readJson(SUB_PATH, null);
-  const devices = deviceList(subDoc);
 
   if (due.length && devices.length) {
     const priv = process.env.VAPID_PRIVATE_KEY;

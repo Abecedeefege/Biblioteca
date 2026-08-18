@@ -9,7 +9,9 @@ on:
     # push de bienvenida no esperen media hora.
     # Ventana local (UY, UTC-3 fijo): 08:00–23:30
     # → en UTC: 11:00–23:59 y 00:00–02:30 del día siguiente.
-    - cron: '*/10 11-23 * * *'
+    # Además 09:00–10:59 UTC para el piso de París de C (11:00 CEST = 09:00
+    # UTC): el piso horario por dispositivo vive en tools/send_push.js.
+    - cron: '*/10 9-23 * * *'
     - cron: '*/10 0-2 * * *'
   workflow_dispatch: {}
   push:

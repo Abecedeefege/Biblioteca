@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../../icon-192.png">
+<title>🌄 The Dawn of Everything · For C</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0b1425; --night2:#101d36; --bronze:#b08d57; --bronze-hi:#dcb680;
+  --blue:#5f8fd0; --blue-hi:#93b9e8; --ink:#edf1f9; --mist:#a9b6cc;
+  --line:rgba(237,241,249,.14);
+  --serif:'Fraunces',Georgia,serif; --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ink);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--bronze);color:var(--night)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--blue-hi);outline-offset:3px;border-radius:4px}
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,241,249,.08)}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--bronze-hi),var(--blue-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--mist);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--line);border-radius:999px;background:rgba(11,20,37,.65);backdrop-filter:blur(4px)}
+.back:hover{color:var(--bronze-hi);border-color:var(--bronze)}
+.section{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.center{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);font-weight:700;margin-bottom:1rem}
+.title{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:500;line-height:1.14;margin-bottom:1rem}
+.lede{color:var(--mist);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.seen{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(130% 90% at 50% 100%,#2a2410 0%,var(--night) 60%)}
+.sunrays{position:absolute;left:50%;bottom:-6vh;transform:translateX(-50%);width:120vw;height:50vh;z-index:0;opacity:.25;background:repeating-conic-gradient(from -90deg at 50% 100%, rgba(220,182,128,.5) 0deg 4deg, transparent 4deg 14deg)}
+.stars{position:absolute;inset:0;z-index:0;opacity:.6}
+.stars span{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--ink);animation:tw 3.4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .tag{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-hi);border:1px solid var(--blue);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.8rem,1.1rem + 4.2vw,3.1rem);font-weight:500;line-height:1.12}
+.hero .author{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--bronze-hi)}
+.hero .sub{color:var(--mist);margin:1.4rem auto 2.3rem;max-width:52ch}
+.cta-btn{display:inline-block;background:var(--bronze);color:var(--night);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:700;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--bronze-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--mist);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
+.bridge{background:var(--night2)}
+.shelfrow{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.chip{font-size:.82rem;color:var(--blue-hi);border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.2rem 0 1.3rem}
+.tabs button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:.6rem 1.05rem;font-size:.87rem;font-weight:600;transition:all .25s ease}
+.tabs button:hover,.tabs button.on{border-color:var(--bronze);color:var(--bronze-hi);background:rgba(176,141,87,.12)}
+.tab-panel{border:1px solid var(--line);border-radius:16px;padding:clamp(1.4rem,4vw,2rem);background:linear-gradient(180deg,rgba(237,241,249,.03),transparent);min-height:13em}
+.tab-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-hi);font-weight:700;margin-bottom:.6rem}
+.tab-panel p{color:var(--mist);font-size:.98rem;margin-bottom:1rem}
+.tab-panel .qin{font-family:var(--serif);font-style:italic;color:var(--ink);font-size:1.02rem;border-left:3px solid var(--blue);padding-left:1rem}
+.quote{border-left:3px solid var(--bronze);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(176,141,87,.08);border-radius:0 12px 12px 0}
+.quote p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55;color:var(--bronze-hi)}
+.quote span{display:block;margin-top:.55rem;color:var(--mist);font-size:.82rem}
+.card{border:1px solid var(--line);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(237,241,249,.04),transparent)}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.card dt{color:var(--blue-hi);font-weight:600;white-space:nowrap}
+.card dd{color:var(--mist)}
+.honesty{border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2rem;background:rgba(95,143,208,.1)}
+.honesty p{color:var(--mist);font-size:.95rem}
+.honesty .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.cta,.react{border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--bronze);color:var(--bronze-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--blue-hi);font-family:var(--sans)}
+.close{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#1c2c4e 0%,var(--night) 72%);padding-bottom:5rem}
+.close .phrase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:40ch;margin:0 auto 1.3rem}
+.close .phrase b{color:var(--bronze-hi);font-weight:600}
+footer{text-align:center;color:var(--mist);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--line);line-height:1.7}
+footer em{font-family:var(--serif)}
+textarea{width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9}
+@media (max-width:560px){.card dl{grid-template-columns:1fr}.card dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+<header class="hero">
+  <a class="back" href="./">← All recommendations</a>
+  <div class="stars" id="starFx" aria-hidden="true"></div>
+  <div class="sunrays" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="tag">For you, C · New · The book that argues with your Sapiens</span>
+    <h1>The Dawn of Everything</h1>
+    <p class="author">David Graeber & David Wengrow · 2021 · “A New History of Humanity”</p>
+    <p class="sub">Your shelf holds Sapiens, and your history row holds the tools to interrogate it — Carr, Koselleck, Conrad. This is the book that does the interrogating: an anthropologist and an archaeologist take apart the tidy story of bands-to-farms-to-states and replace it with something stranger, better-evidenced, and far more political.</p>
+    <a class="cta-btn" href="#bridge">Why this one ↓</a>
+  </div>
+  <p class="hero-hint">Scroll ↓</p>
+</header>
+
+<main>
+<section class="section bridge" id="bridge">
+  <div class="center">
+    <p class="kicker rev">Why it came to you</p>
+    <h2 class="title rev d1">Sapiens asked the question. Your A3 shelf demands a better answer.</h2>
+    <p class="lede rev d2">You read big history (Sapiens, Gombrich, The Invention of Yesterday) and you read historiography — what counts as evidence, whose story gets told (What Is History?, What Is Global History?, Zeitschichten). The Dawn of Everything is the rare book written for exactly that double reader: a sweeping story of humanity's deep past that fights, footnote by footnote, about how such stories get made. Graeber died three weeks after finishing it; it became a global bestseller and the most argued-about history book of its decade.</p>
+    <div class="shelfrow rev d2">
+      <span class="chip">Your Sapiens (B5) — this is its sparring partner</span>
+      <span class="chip">Your E. H. Carr & Koselleck (A3) — the referee's toolkit</span>
+      <span class="chip">Your Arendt (A3): freedom as a political question</span>
+    </div>
+    <p class="rev d3" style="margin-top:1.6rem;font-family:var(--serif);font-style:italic;color:var(--bronze-hi)">Checked against your full catalog: plenty of big history on your shelves — no Graeber, no Wengrow, until now.</p>
+  </div>
+</section>
+
+<section class="section" id="themes">
+  <div class="center">
+    <p class="kicker rev">The keys</p>
+    <h2 class="title rev d1">Pick one — two minutes each</h2>
+    <div class="tabs" id="tabRow">
+      <button data-t="myth" class="on">Against the tidy story</button>
+      <button data-t="critique">The indigenous critique</button>
+      <button data-t="cities">Cities without kings</button>
+      <button data-t="you">Why you, exactly</button>
+    </div>
+    <div class="tab-panel rev d2" id="tabPanel"></div>
+  </div>
+</section>
+
+<section class="section" id="quotes">
+  <div class="center">
+    <p class="kicker rev">One line from the book</p>
+    <h2 class="title rev d1">The stakes, in the authors' words</h2>
+    <div class="quote rev"><p>“We are projects of collective self-creation. What if we approached human history that way? What if we treat people, from the beginning, as imaginative, intelligent, playful creatures who deserve to be understood as such?”</p><span>David Graeber & David Wengrow, The Dawn of Everything</span></div>
+  </div>
+</section>
+
+<section class="section" id="factcard" style="background:var(--night2)">
+  <div class="center">
+    <p class="kicker rev">The record card</p>
+    <h2 class="title rev d1">Facts before you decide</h2>
+    <div class="card rev d1">
+      <dl>
+        <dt>Published</dt><dd>2021, Allen Lane (UK) / Farrar, Straus and Giroux (US)</dd>
+        <dt>Authors</dt><dd>David Graeber (anthropologist, Debt; died 2020, three weeks after the manuscript was done) & David Wengrow (archaeologist, UCL)</dd>
+        <dt>Length</dt><dd>Around 700 pages including a serious apparatus of notes — a multi-week companion, not a weekend read</dd>
+        <dt>Method</dt><dd>Archaeology + anthropology against philosophy's origin myths (Hobbes's nasty state of nature, Rousseau's innocent fall)</dd>
+        <dt>Reception</dt><dd>International bestseller; loudly praised, loudly contested — historians and archaeologists still argue with specific chapters, which is half the fun for a reader like you</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="honesty-sec">
+  <div class="center">
+    <p class="kicker rev">The honest fine print</p>
+    <h2 class="title rev d1">Big, baggy, and pushing an argument</h2>
+    <div class="honesty rev d2">
+      <span class="et">Honesty guard</span>
+      <p>Full disclosure: it is 700 pages and it sprawls — chapters double back, detours multiply, and you will sometimes wish for an editor's red pen. And it is not neutral: Graeber was an anarchist thinker, the book argues for human political creativity, and some specialists dispute particular readings of the evidence. Your A3 shelf is precisely the training to enjoy that fight rather than be steamrolled by it — but if you want a quick, settled synthesis, this is the wrong book.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="verdict" style="background:var(--night2)">
+  <div class="center">
+    <p class="kicker rev">Your verdict</p>
+    <h2 class="title rev d1">What do we do with this one?</h2>
+    <p class="lede rev d2">One tap teaches the next recommendation — even “not for me” is gold.</p>
+    <div class="cta rev d2">So — shall we?
+      <div>
+        <button onclick="engageAnswer('rec-verdict:2026-08-18-graeber-wengrow-dawn-of-everything','want_it',this)">📚 I want it</button>
+        <button onclick="engageAnswer('rec-verdict:2026-08-18-graeber-wengrow-dawn-of-everything','tempted',this)">🤔 Tempted</button>
+        <button onclick="engageAnswer('rec-verdict:2026-08-18-graeber-wengrow-dawn-of-everything','own_it',this)">🏠 Already own it</button>
+        <button onclick="engageAnswer('rec-verdict:2026-08-18-graeber-wengrow-dawn-of-everything','read_it',this)">✔️ Already read it</button>
+        <button onclick="engageAnswer('rec-verdict:2026-08-18-graeber-wengrow-dawn-of-everything','not_for_me',this)">🙅 Not for me</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">Did you like this card?
+      <div>
+        <button onclick="engageReact('2026-08-18-graeber-wengrow-dawn-of-everything','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-18-graeber-wengrow-dawn-of-everything','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-18-graeber-wengrow-dawn-of-everything','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-18-graeber-wengrow-dawn-of-everything','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="note-dawn" style="display:block;margin-bottom:.6rem">Anything you want the librarian to know? It shapes the next pick.</label>
+      <textarea id="note-dawn" rows="3" placeholder="A request, a correction, what you loved or didn’t…"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="sendNote('2026-08-18-graeber-wengrow-dawn-of-everything','note-dawn',this)">Send this note</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section close">
+  <p class="phrase rev">Not how we became stuck — but whether <b>we ever had to be.</b></p>
+  <p class="lede rev d1" style="margin:0 auto;max-width:44ch">New books chosen from your shelves' clues — your feedback steers every next one.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--blue-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--blue);padding-bottom:2px">✦ All your recommendations →</a></p>
+</section>
+</main>
+
+<footer><em>My library</em> · new, the anti-Sapiens for shelf A3 · facts checked (Allen Lane/FSG editions, prize and reception record) as of August 2026.<br>The ideas belong to the book; the words and code are the librarian's own.</footer>
+
+<script>
+function sendNote(recId,taId,btn){
+  var ta=document.getElementById(taId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Write something first ✍️'; return; }
+  window.engageAnswer('rec-note:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var bar=$('#bar');
+  window.addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('seen');});}
+  var fx=$('#starFx');
+  for(var i=0;i<22;i++){var s=document.createElement('span');s.style.left=(Math.random()*100)+'%';s.style.top=(Math.random()*55)+'%';s.style.animationDelay=(Math.random()*3.4)+'s';fx.appendChild(s);}
+  var T={
+    myth:{et:'The story everyone tells, and why it fails',body:'The familiar arc — innocent foragers, then farming, then property, cities, kings and inequality as the price of civilization — turns out to be a philosophical fable from Hobbes and Rousseau with archaeology pasted on. Graeber and Wengrow walk through the actual evidence: societies that farmed part-time and walked away from it, seasonal kingdoms that assembled and dissolved, hierarchies adopted and abandoned. The deep past was an era of political experiment, not a waiting room for the state.',q:'The point is not a new single story — it is that a single story was always the error.'},
+    critique:{et:'The chapter people talk about most',body:'The European Enlightenment loved to debate liberty — and the book argues a key spark came from outside Europe: the recorded critiques of indigenous American intellectuals, above all the Wendat statesman Kandiaronk, whose dissections of French society (money, punishment, obedience) circulated in bestselling dialogues. Whether you end up convinced or not, it is a genuinely destabilizing piece of intellectual history — Said’s question about who gets to describe whom, run in reverse.',q:'Your Orientalism will recognize the move immediately.'},
+    cities:{et:'Cities without kings',body:'Some of the oldest large settlements we know — Çatalhöyük in Anatolia, the Ukrainian “mega-sites”, early Uruk — show thousands of people living together with no palaces, no royal tombs, no evidence of ruling classes. The authors use them to break the assumed link between scale and domination: getting big, they argue, never automatically meant getting kings. For a reader of urban history and politics, these are the most eye-opening chapters.',q:'Archaeology doing the work political theory usually claims for itself.'},
+    you:{et:'Why you, exactly',body:'Because you own the exact bookshelf this book wants to argue with. Sapiens gave you the smooth version; Carr and Koselleck taught you to ask who is smoothing and why; Arendt gave you freedom as the central political fact. The Dawn of Everything sits at the intersection — a big narrative history that is simultaneously a methods fight. You will read it with a pencil, and you will enjoy disagreeing with parts of it.',q:'A book to argue with all winter — which, for your shelves, is the highest compliment.'}
+  };
+  var tabs=$$('#tabRow button'),panel=$('#tabPanel');
+  function show(k){var c=T[k];panel.innerHTML='<p class="et">'+c.et+'</p><p>'+c.body+'</p><p class="qin">'+c.q+'</p>';}
+  tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');show(b.getAttribute('data-t'));});});
+  show('myth');
+})();
+</script>
+<script src="../engage.js"></script>
+</body>
+</html>

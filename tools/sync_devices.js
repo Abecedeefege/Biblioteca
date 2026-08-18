@@ -21,13 +21,23 @@ const SYNC_PATH  = path.join(ROOT, 'sync/engagement.json');
 const SUPA = 'https://jhdwpxttgnravhlnmdgg.supabase.co';
 const KEY  = 'sb_publishable_phJdQOO7PUdidexaeUI4vQ_WJpKOgDM';
 
-const ALLOWED_DEVICES = ['Sofi', 'Andy'];
-const WELCOME = {
-  device: 'Sofi',
-  id: 'sofi-bienvenida',
-  title: '🫖 Sofi, tu primera ficha llegó',
-  body: 'Cuatro jubilados ingleses, té con bizcochos y un crimen fresquito. Elegida para vos. Tocá y abrila.',
-  url: 'https://abecedeefege.github.io/Biblioteca/recs/2026-07-24-osman-club-crimen.html',
+const ALLOWED_DEVICES = ['Sofi', 'Andy', 'C'];
+// Bienvenida por dispositivo: se encola una sola vez, cuando el dispositivo
+// entra por primera vez desde el relay. C recibe la suya en inglés (su app
+// vive en /C/ y es My library).
+const WELCOMES = {
+  Sofi: {
+    id: 'sofi-bienvenida',
+    title: '🫖 Sofi, tu primera ficha llegó',
+    body: 'Cuatro jubilados ingleses, té con bizcochos y un crimen fresquito. Elegida para vos. Tocá y abrila.',
+    url: 'https://abecedeefege.github.io/Biblioteca/recs/2026-07-24-osman-club-crimen.html',
+  },
+  C: {
+    id: 'c-welcome',
+    title: '✦ C, your recommendations are on',
+    body: 'Notifications are working — and your first three books are already waiting in My library. Tap to open them.',
+    url: 'https://abecedeefege.github.io/Biblioteca/C/recs/',
+  },
 };
 // eventos del relay más viejos que esto no se re-mergean (el agente de
 // engagement compacta los >14 días; así no resucitan)
@@ -91,24 +101,30 @@ async function main() {
   }
   if (subChanged) writeJson(SUB_PATH, subDoc);
 
-  /* ---- bienvenida de Sofi (solo cuando su dispositivo entra por primera vez) ---- */
-  if (added.includes(WELCOME.device)) {
+  /* ---- bienvenidas (solo cuando un dispositivo entra por primera vez) ---- */
+  const welcomesDue = added.filter((d) => WELCOMES[d]);
+  if (welcomesDue.length) {
     const queue = readJson(QUEUE_PATH, { notifications: [] });
     queue.notifications = queue.notifications || [];
-    const ya = queue.notifications.some((n) => n.id === WELCOME.id);
-    if (!ya) {
+    let queued = 0;
+    for (const dev of welcomesDue) {
+      const w = WELCOMES[dev];
+      if (queue.notifications.some((n) => n.id === w.id)) continue;
       const now = Date.now();
       queue.notifications.push({
-        id: WELCOME.id, title: WELCOME.title, body: WELCOME.body, url: WELCOME.url,
-        to: WELCOME.device,
+        id: w.id, title: w.title, body: w.body, url: w.url,
+        to: dev,
         send_at: new Date(now - 60000).toISOString(),
         expires_at: new Date(now + 24 * 3600000).toISOString(),
         status: 'pending', sent_at: null, fail_reason: null,
         created_by: 'sync_devices.js (bienvenida)',
       });
+      queued++;
+      console.log('Bienvenida de ' + dev + ' encolada.');
+    }
+    if (queued) {
       queue._updated_at = new Date().toISOString();
       writeJson(QUEUE_PATH, queue);
-      console.log('Bienvenida de Sofi encolada.');
     }
   }
 

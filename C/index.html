@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>My library</title>
+<meta name="description" content="My library — C's visual catalog of every book on the shelves.">
+
+<!-- ============ PWA / home-screen ============ -->
+<meta name="application-name" content="My library">
+<meta name="apple-mobile-web-app-title" content="My library">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0b1425">
+<link rel="icon" href="../icon-192.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js'); });
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ==================================================
+     RAVENCLAW MODERN — midnight blue, bronze, starlight
+     ================================================== */
+  :root {
+    --night:      #0b1425;
+    --night-2:    #101d36;
+    --night-3:    #172848;
+    --ink:        #edf1f9;
+    --ink-2:      #b7c3d8;
+    --ink-3:      #71809c;
+    --bronze:     #b08d57;
+    --bronze-hi:  #dcb680;
+    --bronze-soft: rgba(176, 141, 87, 0.14);
+    --blue:       #5f8fd0;
+    --blue-hi:    #93b9e8;
+    --warn:       #d0a24a;
+    --hairline:   rgba(176, 141, 87, 0.22);
+    --card:       rgba(237, 241, 249, 0.03);
+    --card-hover: rgba(176, 141, 87, 0.08);
+    --display:    'Fraunces', Georgia, serif;
+    --body:       'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono:       'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--night);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.55;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(circle at 14% 18%, rgba(220,182,128,.55) 0px, transparent 1.4px),
+      radial-gradient(circle at 78% 8%,  rgba(237,241,249,.5)  0px, transparent 1.1px),
+      radial-gradient(circle at 42% 32%, rgba(220,182,128,.35) 0px, transparent 1.2px),
+      radial-gradient(circle at 92% 44%, rgba(237,241,249,.4)  0px, transparent 1px),
+      radial-gradient(circle at 8% 66%,  rgba(147,185,232,.4)  0px, transparent 1.2px),
+      radial-gradient(circle at 60% 80%, rgba(220,182,128,.3)  0px, transparent 1px),
+      radial-gradient(ellipse at 50% -10%, rgba(95,143,208,.14) 0%, transparent 55%);
+    background-size: 720px 720px, 560px 560px, 640px 640px, 500px 500px, 680px 680px, 520px 520px, cover;
+  }
+  ::selection { background: var(--bronze); color: var(--night); }
+  a { color: var(--blue-hi); text-decoration: none; }
+  a:hover { color: var(--bronze-hi); }
+  button { font-family: var(--body); cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--blue-hi); outline-offset: 3px; border-radius: 4px; }
+
+  /* ---------- masthead ---------- */
+  header.masthead {
+    border-bottom: 1px solid var(--hairline);
+    padding: clamp(2.4rem, 6vw, 4rem) clamp(1.2rem, 5vw, 3rem) 2rem;
+    background: linear-gradient(180deg, rgba(95,143,208,.10), transparent 70%);
+  }
+  .masthead-inner { max-width: 1500px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; }
+  .masthead .pre {
+    font-family: var(--mono); font-size: .68rem; letter-spacing: .28em; text-transform: uppercase;
+    color: var(--bronze); margin-bottom: .8rem; display: flex; align-items: center; gap: .7rem;
+  }
+  .masthead .eagle { width: 30px; height: 30px; flex: none; opacity: .9; }
+  .masthead h1 { font-family: var(--display); font-weight: 420; font-size: clamp(2.6rem, 6.5vw, 4.4rem); line-height: 1.02; letter-spacing: -.01em; }
+  .masthead h1 em { font-style: italic; color: var(--bronze-hi); }
+  .masthead .sub { color: var(--ink-2); max-width: 60ch; margin-top: 1rem; font-size: 1.02rem; }
+  .masthead .motto { font-family: var(--display); font-style: italic; color: var(--ink-3); font-size: .88rem; margin-top: .9rem; }
+  .mast-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.4rem; }
+  .btn-recs {
+    display: inline-flex; align-items: center; gap: .55rem; padding: .72rem 1.3rem; border-radius: 999px;
+    background: linear-gradient(135deg, var(--bronze), #96733f); color: #10131c; font-weight: 700; font-size: .92rem;
+    box-shadow: 0 10px 26px -12px rgba(176,141,87,.8); transition: transform .2s ease;
+  }
+  .btn-recs:hover { transform: translateY(-2px); color: #10131c; }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: .5rem; padding: .72rem 1.2rem; border-radius: 999px;
+    border: 1px solid var(--hairline); color: var(--ink-2); font-weight: 600; font-size: .9rem; transition: all .2s ease;
+  }
+  .btn-ghost:hover { border-color: var(--bronze); color: var(--bronze-hi); }
+  .stats { display: flex; gap: 1.6rem; }
+  .stat { text-align: right; }
+  .stat .n { font-family: var(--display); font-size: 2rem; font-weight: 500; color: var(--bronze-hi); line-height: 1; }
+  .stat .label { font-family: var(--mono); font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); margin-top: .35rem; }
+  @media (max-width: 780px) {
+    .masthead-inner { grid-template-columns: 1fr; align-items: start; }
+    .stats { order: -1; justify-content: flex-start; }
+    .stat { text-align: left; }
+  }
+
+  /* ---------- controls ---------- */
+  .controls { position: sticky; top: 0; z-index: 30; background: rgba(11,20,37,.86); backdrop-filter: blur(10px); border-bottom: 1px solid var(--hairline); }
+  .controls-inner { max-width: 1500px; margin: 0 auto; padding: .8rem clamp(1.2rem, 5vw, 3rem); display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; }
+  #search {
+    flex: 1 1 240px; background: var(--night-2); border: 1px solid var(--hairline); color: var(--ink);
+    border-radius: 999px; padding: .62rem 1.1rem; font-family: var(--body); font-size: .95rem;
+  }
+  #search::placeholder { color: var(--ink-3); }
+  .chip {
+    border: 1px solid var(--hairline); background: transparent; color: var(--ink-2); border-radius: 999px;
+    padding: .45rem .95rem; font-size: .8rem; font-weight: 600; letter-spacing: .02em; transition: all .18s ease;
+  }
+  .chip:hover { border-color: var(--bronze); color: var(--bronze-hi); }
+  .chip.on { background: var(--bronze-soft); border-color: var(--bronze); color: var(--bronze-hi); }
+  .chip.confirm.on { border-color: var(--warn); color: var(--warn); background: rgba(208,162,74,.12); }
+  #match-count { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-left: auto; }
+
+  /* ---------- bookcase map ---------- */
+  .map-wrap { max-width: 1500px; margin: 0 auto; padding: 2.2rem clamp(1.2rem, 5vw, 3rem) .6rem; }
+  .map-title { font-family: var(--mono); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1rem; }
+  .bookcase-map { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+  .case { border: 1px solid var(--hairline); border-radius: 14px; padding: .9rem; background: var(--card); flex: 1 1 240px; max-width: 420px; }
+  .case h3 { font-family: var(--display); font-weight: 500; font-size: 1rem; color: var(--bronze-hi); margin: 0 .2rem .6rem; }
+  .case a.row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: .8rem;
+    padding: .45rem .6rem; border-radius: 8px; color: var(--ink-2); font-size: .86rem; transition: background .15s ease;
+  }
+  .case a.row:hover { background: var(--card-hover); color: var(--ink); }
+  .case a.row .n { font-family: var(--mono); font-size: .68rem; color: var(--ink-3); }
+
+  /* ---------- shelves ---------- */
+  main { max-width: 1500px; margin: 0 auto; padding: 1rem clamp(1.2rem, 5vw, 3rem) 3rem; }
+  .shelf-section { margin-top: 2.6rem; scroll-margin-top: 90px; }
+  .shelf-head { display: flex; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--hairline); padding-bottom: .6rem; flex-wrap: wrap; }
+  .shelf-head .tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .16em; color: var(--night); background: var(--bronze); border-radius: 6px; padding: .2rem .55rem; font-weight: 500; }
+  .shelf-head h2 { font-family: var(--display); font-weight: 480; font-size: 1.45rem; }
+  .shelf-head .theme { color: var(--ink-3); font-size: .88rem; font-style: italic; font-family: var(--display); }
+  .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: .7rem; margin-top: 1rem; }
+  .book {
+    border: 1px solid var(--hairline); border-radius: 12px; padding: .85rem .95rem; background: var(--card);
+    transition: background .15s ease, border-color .15s ease; position: relative;
+  }
+  .book:hover { background: var(--card-hover); border-color: rgba(176,141,87,.45); }
+  .book .bid { font-family: var(--mono); font-size: .62rem; color: var(--ink-3); letter-spacing: .08em; }
+  .book h4 { font-family: var(--display); font-weight: 520; font-size: 1.02rem; line-height: 1.28; margin: .3rem 0 .15rem; }
+  .book .author { color: var(--ink-2); font-size: .84rem; }
+  .book .meta { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .6rem; }
+  .pill { font-family: var(--mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--hairline); border-radius: 999px; padding: .14rem .5rem; color: var(--ink-3); }
+  .pill.lang-German { color: var(--blue-hi); border-color: rgba(95,143,208,.4); }
+  .pill.lang-French { color: var(--bronze-hi); border-color: rgba(176,141,87,.45); }
+  .book .note { color: var(--ink-3); font-size: .78rem; margin-top: .55rem; font-style: italic; }
+  .book.conf-low { border-style: dashed; border-color: rgba(208,162,74,.5); }
+  .book.conf-low .bid::after { content: ' · to confirm'; color: var(--warn); }
+  .book.conf-medium .bid::after { content: ' · probable'; color: var(--ink-3); }
+  .book.obj { opacity: .85; }
+
+  /* ---------- unidentified ---------- */
+  #unidentified { margin-top: 3.4rem; scroll-margin-top: 90px; border: 1px solid rgba(208,162,74,.4); border-radius: 18px; padding: clamp(1.2rem, 4vw, 2rem); background: linear-gradient(180deg, rgba(208,162,74,.07), transparent); }
+  #unidentified .kicker { font-family: var(--mono); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--warn); }
+  #unidentified h2 { font-family: var(--display); font-weight: 480; font-size: 1.6rem; margin: .4rem 0 .3rem; }
+  #unidentified .lede { color: var(--ink-2); max-width: 62ch; font-size: .95rem; }
+  .uni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: .8rem; margin-top: 1.2rem; }
+  .uni {
+    border: 1px dashed rgba(208,162,74,.5); border-radius: 12px; padding: .95rem 1rem; background: rgba(11,20,37,.5);
+  }
+  .uni .where { font-family: var(--mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--warn); }
+  .uni h4 { font-family: var(--display); font-weight: 520; font-size: 1rem; margin: .3rem 0 .1rem; }
+  .uni .author { color: var(--ink-2); font-size: .84rem; }
+  .uni .note { color: var(--ink-3); font-size: .8rem; font-style: italic; margin-top: .45rem; }
+  .uni .acts { margin-top: .7rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+  .uni .acts button {
+    border: 1px solid var(--hairline); background: transparent; color: var(--ink-2); border-radius: 999px;
+    padding: .42rem .85rem; font-size: .8rem; font-weight: 600; transition: all .18s ease;
+  }
+  .uni .acts button:hover { border-color: var(--bronze); color: var(--bronze-hi); }
+  .uni .fix { display: none; margin-top: .6rem; }
+  .uni .fix.open { display: block; }
+  .uni .fix input {
+    width: 100%; background: var(--night-2); border: 1px solid var(--hairline); color: var(--ink);
+    border-radius: 10px; padding: .55rem .8rem; font-family: var(--body); font-size: .88rem;
+  }
+  .uni .fix button { margin-top: .5rem; }
+  .uni .done { color: #8fd6a0; font-size: .82rem; margin-top: .55rem; display: none; }
+
+  footer { border-top: 1px solid var(--hairline); text-align: center; color: var(--ink-3); font-size: .8rem; padding: 2rem 1.4rem 5rem; line-height: 1.8; }
+  footer em { font-family: var(--display); }
+  .hidden { display: none !important; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <p class="pre">
+        <svg class="eagle" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6c-3 5-9 8-16 8 5 2 8 2 11 1-4 4-9 6-14 6 6 2 11 1 15-1-2 5-6 9-11 11 7-1 12-4 15-8v18l3-4 3 4V23c3 4 8 7 15 8-5-2-9-6-11-11 4 2 9 3 15 1-5 0-10-2-14-6 3 1 6 1 11-1-7 0-13-3-16-8l-3 5-3-5z" fill="#b08d57"/></svg>
+        Private collection · Paris · MMXXVI
+      </p>
+      <h1>My <em>library</em></h1>
+      <p class="sub" id="masthead-sub">A visual catalog of every book on these shelves — two bookcases, thirteen rows, three hundred and forty-six volumes across fiction, feminism, history and three languages, each with its own record card.</p>
+      <p class="motto">“Wit beyond measure is man's greatest treasure.”</p>
+      <div class="mast-actions">
+        <a class="btn-recs" href="recs/">✦ Your reading recommendations →</a>
+        <a class="btn-ghost" href="#unidentified">Help me identify <span id="uni-count-btn">—</span> books</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n" id="stat-total">—</div><div class="label">Entries</div></div>
+      <div class="stat"><div class="n" id="stat-shelves">—</div><div class="label">Shelves</div></div>
+      <div class="stat"><div class="n" id="stat-unknown">—</div><div class="label">To confirm</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <input id="search" type="search" placeholder="Search titles, authors, series…" autocomplete="off">
+    <button class="chip lang on" data-lang="all">All</button>
+    <button class="chip lang" data-lang="English">English</button>
+    <button class="chip lang" data-lang="German">German</button>
+    <button class="chip lang" data-lang="French">French</button>
+    <button class="chip confirm" id="chip-confirm">? To confirm</button>
+    <span id="match-count"></span>
+  </div>
+</div>
+
+<div class="map-wrap">
+  <p class="map-title">The shelf map — tap a row to jump</p>
+  <div class="bookcase-map" id="bookcase-map"></div>
+</div>
+
+<main id="shelves-host"></main>
+
+<section id="unidentified-host"></section>
+
+<footer>
+  <em>My library</em> · catalogued August 2026 from 14 photographs · confidence-coded for verification<br>
+  Cards marked <span style="color:var(--warn)">to confirm</span> are waiting for your word below.
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (s) { return document.querySelector(s); };
+  var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+
+  var CAT = null, state = { q: '', lang: 'all', confirmOnly: false };
+
+  fetch('data/catalog.json', { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (cat) { CAT = cat; render(); wire(); })
+    .catch(function (e) {
+      $('#shelves-host').innerHTML = '<p style="color:var(--warn);padding:2rem 0">Could not load the catalog (' + esc(e.message) + '). Pull to refresh?</p>';
+    });
+
+  function allBooks() {
+    return CAT.shelves.reduce(function (acc, s) {
+      s.books.forEach(function (b) { acc.push({ shelf: s, book: b }); });
+      return acc;
+    }, []);
+  }
+
+  function render() {
+    var entries = allBooks();
+    var real = entries.filter(function (e) { return e.book.kind !== 'object'; });
+    var low = real.filter(function (e) { return e.book.confidence === 'low'; });
+    $('#stat-total').textContent = real.length;
+    $('#stat-shelves').textContent = CAT.shelves.length;
+    $('#stat-unknown').textContent = low.length;
+    $('#uni-count-btn').textContent = low.length;
+
+    /* map */
+    var groups = {};
+    CAT.shelves.forEach(function (s) {
+      var caseId = s.id.charAt(0);
+      (groups[caseId] = groups[caseId] || []).push(s);
+    });
+    var caseLabels = {};
+    ((CAT.library.structure || {}).bookcases || []).forEach(function (c) { caseLabels[c.id] = c.label; });
+    $('#bookcase-map').innerHTML = Object.keys(groups).map(function (cid) {
+      return '<div class="case"><h3>' + esc(caseLabels[cid] || cid) + '</h3>' +
+        groups[cid].map(function (s) {
+          return '<a class="row" href="#' + esc(s.id) + '"><span>' + esc(s.label.replace(/^.*· /, '')) + ' — ' + esc(shortTheme(s.theme)) + '</span><span class="n">' + s.books.length + '</span></a>';
+        }).join('') + '</div>';
+    }).join('');
+
+    /* shelves */
+    $('#shelves-host').innerHTML = CAT.shelves.map(function (s) {
+      return '<section class="shelf-section" id="' + esc(s.id) + '">' +
+        '<div class="shelf-head"><span class="tag">' + esc(s.id) + '</span><h2>' + esc(s.label) + '</h2><span class="theme">' + esc(s.theme) + '</span></div>' +
+        '<div class="book-grid">' + s.books.map(function (b) { return bookCard(b); }).join('') + '</div>' +
+        '</section>';
+    }).join('');
+
+    /* unidentified */
+    $('#unidentified-host').innerHTML =
+      '<section id="unidentified">' +
+      '<p class="kicker">A small favour</p>' +
+      '<h2>Unidentified books — can you confirm these?</h2>' +
+      '<p class="lede">These ' + low.length + ' spines were hard to read from the photographs. One tap per card teaches the catalog: confirm the guess, or type what it really is. Your answers reach the librarian automatically.</p>' +
+      '<div class="uni-grid">' + low.map(function (e) { return uniCard(e); }).join('') + '</div>' +
+      '</section>';
+
+    applyFilter();
+  }
+
+  function shortTheme(t) { return (t || '').split('—')[0].trim(); }
+
+  function bookCard(b) {
+    var cls = 'book conf-' + b.confidence + (b.kind === 'object' ? ' obj' : '');
+    var meta = '<span class="pill lang-' + esc(b.language) + '">' + esc(b.language) + '</span>' +
+      (b.topics || []).slice(0, 2).map(function (t) { return '<span class="pill">' + esc(t) + '</span>'; }).join('');
+    return '<article class="' + cls + '" data-id="' + esc(b.id) + '" data-lang="' + esc(b.language) + '" data-conf="' + esc(b.confidence) + '" data-hay="' + esc(((b.title || '') + ' ' + (b.author || '') + ' ' + (b.series || '') + ' ' + (b.topics || []).join(' ')).toLowerCase()) + '">' +
+      '<div class="bid">' + esc(b.id) + (b.series ? ' · ' + esc(b.series) : '') + '</div>' +
+      '<h4>' + esc(b.title) + '</h4>' +
+      '<div class="author">' + esc(b.author) + '</div>' +
+      '<div class="meta">' + meta + '</div>' +
+      (b.note ? '<div class="note">' + esc(b.note) + '</div>' : '') +
+      '</article>';
+  }
+
+  function uniCard(e) {
+    var b = e.book;
+    return '<div class="uni" data-uid="' + esc(b.id) + '">' +
+      '<div class="where">' + esc(e.shelf.label) + ' · ' + esc(b.id) + '</div>' +
+      '<h4>' + esc(b.title) + '</h4>' +
+      '<div class="author">' + esc(b.author) + '</div>' +
+      (b.note ? '<div class="note">' + esc(b.note) + '</div>' : '') +
+      '<div class="acts">' +
+      '<button data-act="confirm">That’s it ✓</button>' +
+      '<button data-act="fix">Not quite…</button>' +
+      '</div>' +
+      '<div class="fix"><input type="text" maxlength="200" placeholder="What is it really? Title + author">' +
+      '<button data-act="send">Send correction</button></div>' +
+      '<div class="done"></div>' +
+      '</div>';
+  }
+
+  /* ---------- filtering ---------- */
+  function applyFilter() {
+    var n = 0;
+    $$('.book').forEach(function (el) {
+      var ok = true;
+      if (state.lang !== 'all' && el.getAttribute('data-lang') !== state.lang) ok = false;
+      if (state.confirmOnly && el.getAttribute('data-conf') !== 'low') ok = false;
+      if (state.q && el.getAttribute('data-hay').indexOf(state.q) === -1) ok = false;
+      el.classList.toggle('hidden', !ok);
+      if (ok) n++;
+    });
+    $$('.shelf-section').forEach(function (sec) {
+      var any = sec.querySelector('.book:not(.hidden)');
+      sec.classList.toggle('hidden', !any);
+    });
+    var filtering = state.q || state.lang !== 'all' || state.confirmOnly;
+    $('#match-count').textContent = filtering ? n + ' match' + (n === 1 ? '' : 'es') : '';
+  }
+
+  function wire() {
+    $('#search').addEventListener('input', function () { state.q = this.value.trim().toLowerCase(); applyFilter(); });
+    $$('.chip.lang').forEach(function (c) {
+      c.addEventListener('click', function () {
+        $$('.chip.lang').forEach(function (x) { x.classList.remove('on'); });
+        c.classList.add('on');
+        state.lang = c.getAttribute('data-lang');
+        applyFilter();
+      });
+    });
+    $('#chip-confirm').addEventListener('click', function () {
+      state.confirmOnly = !state.confirmOnly;
+      this.classList.toggle('on', state.confirmOnly);
+      applyFilter();
+    });
+
+    /* unidentified interactions → engage events */
+    $('#unidentified-host').addEventListener('click', function (ev) {
+      var btn = ev.target.closest('button');
+      if (!btn) return;
+      var card = btn.closest('.uni');
+      var uid = card.getAttribute('data-uid');
+      var act = btn.getAttribute('data-act');
+      if (act === 'fix') { card.querySelector('.fix').classList.add('open'); return; }
+      if (act === 'confirm') {
+        if (window.engageAnswer) window.engageAnswer('unidentified:' + uid, 'confirmed', btn);
+        finishUni(card, 'Noted — the card stays as it is. Thank you!');
+      }
+      if (act === 'send') {
+        var v = card.querySelector('.fix input').value.trim();
+        if (!v) { card.querySelector('.fix input').focus(); return; }
+        if (window.engageAnswer) window.engageAnswer('unidentified:' + uid, 'correction: ' + v, btn);
+        finishUni(card, 'Sent — the librarian will fix the card. Thank you!');
+      }
+    });
+  }
+  function finishUni(card, msg) {
+    card.querySelectorAll('button, input').forEach(function (el) { el.disabled = true; el.style.opacity = .45; });
+    var d = card.querySelector('.done');
+    d.textContent = '✓ ' + msg;
+    d.style.display = 'block';
+  }
+})();
+</script>
+<script src="engage.js"></script>
+</body>
+</html>
