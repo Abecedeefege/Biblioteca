@@ -3405,7 +3405,16 @@
       "ts": "2026-08-18T19:26:59.252Z",
       "page": "index.html",
       "device": "Andy"
+    },
+    {
+      "id": "msz20qqd-f5im43",
+      "type": "dwell",
+      "ts": "2026-08-18T19:27:05.557Z",
+      "page": "index.html",
+      "device": "Andy",
+      "dwell_s": 6,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-08-18T19:27:00.965Z"
+  "_updated_at": "2026-08-18T19:27:07.401Z"
 }
