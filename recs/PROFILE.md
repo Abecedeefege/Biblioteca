@@ -29,6 +29,9 @@ toca a Sofi.
   en la ficha de Klune de Sofi, sin veredicto/reacción/nota) — sin señal
   accionable, PROFILE sin cambios de fondo. Cutoff avanzado a
   2026-08-17T12:29:50.970Z. Cola y send_log sin pendientes.
+- **18/08 (martes, no-op)**: Gate de día → no es domingo. 0 eventos nuevos
+  desde el cutoff (17/08); cutoff sin avanzar. Cola y send_log sin
+  pendientes (push de Coyle-Sofi salió OK 16/08, sent_at 20:42 UTC).
 - **09/08→15/08**: Domingo 09/08 (última ficha activa previa): Albom *Las
   cinco personas que encontrarás en el cielo* (Andy, nuevo), respuesta
   directa al rec-nota del 07/08 pidiendo "algo como el Principito".
