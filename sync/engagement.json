@@ -3389,7 +3389,23 @@
       "device": "Andy",
       "dwell_s": 61,
       "scroll_pct": 94
+    },
+    {
+      "id": "msx834u3-fil4tb",
+      "type": "dwell",
+      "ts": "2026-08-17T12:41:22.491Z",
+      "page": "2026-08-05-klune-casa-mar-azul.html",
+      "device": "Andy",
+      "dwell_s": 64,
+      "scroll_pct": 94
+    },
+    {
+      "id": "msz20lv8-e3oki0",
+      "type": "page_visit",
+      "ts": "2026-08-18T19:26:59.252Z",
+      "page": "index.html",
+      "device": "Andy"
     }
   ],
-  "_updated_at": "2026-08-17T12:29:52.825Z"
+  "_updated_at": "2026-08-18T19:27:00.965Z"
 }
