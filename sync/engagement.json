@@ -3414,7 +3414,16 @@
       "device": "Andy",
       "dwell_s": 6,
       "scroll_pct": 0
+    },
+    {
+      "id": "msz23t3z-0tnaod",
+      "type": "dwell",
+      "ts": "2026-08-18T19:29:28.607Z",
+      "page": "index.html",
+      "device": "Andy",
+      "dwell_s": 13,
+      "scroll_pct": 1
     }
   ],
-  "_updated_at": "2026-08-18T19:27:07.401Z"
+  "_updated_at": "2026-08-18T19:29:30.908Z"
 }
