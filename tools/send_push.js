@@ -100,7 +100,12 @@ async function main() {
   // (sin targets activos entra igual, para conservar el log de "sin
   // dispositivos" del loop de envío).
   const activesNow = devices.filter((d) => d.status === 'active' && d.subscription);
+  // `ignore_floor` salta el piso horario: es para las confirmaciones que el
+  // usuario acaba de pedir con un tap (la bienvenida al suscribirse). Si tocó
+  // el botón a las 23:00, la confirmación tiene que llegar ahí, no a la
+  // mañana siguiente. Las notificaciones proactivas nunca lo llevan.
   const due = vencidas.filter((n) => {
+    if (n.ignore_floor === true) return true;
     const targets = targetsFor(n, activesNow);
     return !targets.length || targets.every((d) => pastFloorFor(d, nowDate));
   });

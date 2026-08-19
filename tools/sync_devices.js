@@ -127,6 +127,8 @@ async function main() {
         send_at: new Date(now - 60000).toISOString(),
         expires_at: new Date(now + 24 * 3600000).toISOString(),
         status: 'pending', sent_at: null, fail_reason: null,
+        // la pidió con un tap hace segundos: sale ya, sin esperar el piso horario
+        ignore_floor: true,
         created_by: 'sync_devices.js (bienvenida)',
       });
       queued++;
