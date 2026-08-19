@@ -40,10 +40,12 @@ const WELCOMES = {
     body: 'Notifications are working — and your first three books are already waiting in My library. Tap to open them.',
     url: 'https://abecedeefege.github.io/Biblioteca/C/recs/',
   },
+  // Todo push que salga de la app de C va EN INGLÉS, sin excepciones — también
+  // los de prueba: lo que se prueba tiene que ser idéntico a lo que ella recibe.
   'C-test': {
     id: 'c-test-welcome',
-    title: '✅ Prueba: el canal de C funciona',
-    body: 'Este es el push de prueba del dueño. Si lo estás viendo, la app de C puede notificar. Nada de esto toca su perfil.',
+    title: '✅ Test — the channel works',
+    body: 'This is the owner’s test push. If you can read it, My library can reach a phone. Nothing here touches C’s profile.',
     url: 'https://abecedeefege.github.io/Biblioteca/C/recs/?as=test',
   },
 };

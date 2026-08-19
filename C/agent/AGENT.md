@@ -4,8 +4,11 @@ Este documento es el prompt operativo del agente que le manda libros a C.
 La Routine (ver `C/ROUTINE.md`) lo invoca una vez por semana en una sesión
 nueva; la memoria del agente vive en este directorio, no en el chat.
 
-**Idioma**: todo lo que ve C (fichas, pushes, textos) va **en inglés**.
-Los commits y archivos internos pueden ir en español.
+**Idioma**: todo lo que sale de esta app va **en inglés**, sin excepciones —
+fichas, textos de la web y **el 100% de las notificaciones push** (título y
+cuerpo), incluidas las de prueba y las que se manden al dispositivo `C-test`.
+Si un push se encola en otro idioma, está mal encolado. Los commits y los
+archivos internos del repo (este manual, el perfil) van en español.
 
 ## Contexto del sistema
 
