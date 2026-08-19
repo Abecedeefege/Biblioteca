@@ -61,3 +61,34 @@ final (feedback leído, decisión, libro elegido, SHA) es tu ventana de
 control. Si C pausa los pushes desde una ficha (`push_unsubscribe`), el
 agente pausa su dispositivo y te lo dice en el reporte — no hay que hacer
 nada más.
+
+## El portero de la raíz (para que C no caiga en tu biblioteca)
+
+`https://abecedeefege.github.io/Biblioteca/` ya no muestra tu sitio a
+cualquiera. El script de arranque de `index.html` decide a dónde mandar a
+cada visitante — los bloques de datos (`inline-catalog`, `inline-photos`,
+`inline-archive`) quedaron intactos, así que los conceptos, la TV y los
+agentes que los leen por fetch+regex siguen igual:
+
+| Quién entra | A dónde va |
+|---|---|
+| Tu app instalada (standalone) | `concepts/fichero.html` |
+| Un navegador con rastros de tu sitio (`biblioteca_*` en localStorage) | `concepts/fichero.html` |
+| Una push vieja (`?nid=` / `?src=`) | `concepts/fichero.html` |
+| `?exp=clasica` | se queda en el catálogo clásico |
+| **`?key=casa`** | `concepts/fichero.html`, y deja el navegador marcado |
+| El teléfono de C (rastros `c_library_*`) | `C/` |
+| Cualquiera sin señales | `C/` |
+
+**Si alguna vez caés en la biblioteca de C**, es porque ese navegador perdió
+la marca (datos borrados, incógnito, dispositivo nuevo). Entrá una vez con:
+
+    https://abecedeefege.github.io/Biblioteca/?key=casa
+
+y ese navegador queda desbloqueado para siempre. `concepts/fichero.html`
+también responde siempre directo: solo redirige si detecta señales de la app
+de C, nunca por ausencia de señal.
+
+Esto evita el tropiezo casual, no es una barrera real: el repo es público y
+las URLs directas (`/concepts/fichero.html`, `/recs/…`) siguen accesibles
+para quien las escriba.
