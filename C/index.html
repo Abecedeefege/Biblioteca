@@ -331,11 +331,11 @@
   <div class="stats">
     <div class="stat"><div class="n" id="stat-total">—</div><div class="label">Volumes</div></div>
     <div class="stat"><div class="n" id="stat-shelves">—</div><div class="label">Drawers</div></div>
-    <div class="stat"><div class="n" id="stat-unknown">—</div><div class="label">Restricted</div></div>
+    <div class="stat"><div class="n" id="stat-unknown">—</div><div class="label">To confirm</div></div>
   </div>
   <div class="mast-actions">
     <a class="btn-owl" href="recs/">✦ The Owl Post — your recommendations</a>
-    <a class="btn-ghost" href="#/confirm">🔍 The Restricted Section</a>
+    <a class="btn-ghost" href="#/confirm">🔍 Unidentified books</a>
   </div>
 </header>
 
@@ -440,7 +440,7 @@
       }).join('') + '</div>' +
       '<div class="teaser">' +
         '<div class="tn">' + LOW.length + '</div>' +
-        '<div class="tt"><h3>The Restricted Section</h3>' +
+        '<div class="tt"><h3>Unidentified books</h3>' +
         '<p>Spines the photographs could not read with certainty. One tap each — confirm the guess or tell me what it really is — and the catalog corrects itself.</p></div>' +
         '<a class="btn-ghost" href="#/confirm">Open it →</a>' +
       '</div>'
@@ -557,7 +557,7 @@
   /* ================= restricted section ================= */
   function confirmBlock(b) {
     return '<div class="confirm-box" data-uid="' + esc(b.id) + '">' +
-      '<p class="ct">Restricted Section · ' + esc(b._shelf) + '</p>' +
+      '<p class="ct">Unidentified · ' + esc(b._shelf) + '</p>' +
       '<p>This spine was hard to read in the photograph' + (b.note ? ' — ' + esc(b.note) : '') + '. Is the record right?</p>' +
       '<div class="acts">' +
         '<button data-act="confirm">That’s it ✓</button>' +
@@ -569,9 +569,9 @@
   }
   function viewConfirm() {
     render(
-      crumb([['The Stacks', '#/'], ['The Restricted Section', null]]) +
+      crumb([['The Stacks', '#/'], ['Unidentified books', null]]) +
       '<div class="view-head">' +
-        '<h2 class="section-title">The Restricted Section</h2>' +
+        '<h2 class="section-title">Unidentified books</h2>' +
         '<p class="section-sub">' + LOW.length + ' spines the photographs could not read with certainty. Confirm the guess or type what it really is — every answer reaches the librarian and corrects the catalog.</p>' +
       '</div>' +
       '<div class="book-grid">' + LOW.map(function (b) {

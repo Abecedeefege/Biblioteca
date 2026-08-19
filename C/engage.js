@@ -13,7 +13,35 @@
 
   var SUPA = 'https://jhdwpxttgnravhlnmdgg.supabase.co';
   var SUPA_KEY = 'sb_publishable_phJdQOO7PUdidexaeUI4vQ_WJpKOgDM'; // public by design (RLS)
-  var DEVICE = 'C';
+
+  /* Device identity. C's own phone is 'C'. The owner testing the app opens any
+     page once with ?as=test — from then on this browser reports as 'C-test',
+     so his taps never enter C's learning signal (the agent only reads 'C').
+     ?as=c clears it again. The choice is sticky in localStorage because the
+     query string is lost as soon as he taps an internal link. */
+  var K_AS = 'c_library_device_as';
+  var K_OUTBOX = 'c_library_engage_outbox';
+  var DEVICE = (function () {
+    var as = null, was = null, now = 'C';
+    try { as = new URLSearchParams(location.search).get('as'); } catch (e) {}
+    try { was = localStorage.getItem(K_AS) || 'C'; } catch (e) { was = 'C'; }
+    if (as === 'test') { now = 'C-test'; try { localStorage.setItem(K_AS, now); } catch (e) {} }
+    else if (as === 'c') { now = 'C'; try { localStorage.removeItem(K_AS); } catch (e) {} }
+    else { now = was; }
+    // Switching identity re-tags whatever is still queued locally: events
+    // recorded before the switch must not travel under the wrong name.
+    if (now !== was) {
+      try {
+        var pend = JSON.parse(localStorage.getItem(K_OUTBOX) || '[]');
+        if (pend.length) {
+          pend.forEach(function (e) { e.device = now; });
+          localStorage.setItem(K_OUTBOX, JSON.stringify(pend));
+        }
+      } catch (e) {}
+    }
+    return now;
+  })();
+  window.libraryDevice = DEVICE;
 
   var K = {
     outbox: 'c_library_engage_outbox',

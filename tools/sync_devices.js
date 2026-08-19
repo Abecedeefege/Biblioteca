@@ -21,7 +21,9 @@ const SYNC_PATH  = path.join(ROOT, 'sync/engagement.json');
 const SUPA = 'https://jhdwpxttgnravhlnmdgg.supabase.co';
 const KEY  = 'sb_publishable_phJdQOO7PUdidexaeUI4vQ_WJpKOgDM';
 
-const ALLOWED_DEVICES = ['Sofi', 'Andy', 'C'];
+// 'C-test' es el teléfono del dueño probando la app de C (?as=test): recibe
+// sus propios pushes de prueba y NUNCA ocupa el lugar del dispositivo 'C'.
+const ALLOWED_DEVICES = ['Sofi', 'Andy', 'C', 'C-test'];
 // Bienvenida por dispositivo: se encola una sola vez, cuando el dispositivo
 // entra por primera vez desde el relay. C recibe la suya en inglés (su app
 // vive en /C/ y es My library).
@@ -37,6 +39,12 @@ const WELCOMES = {
     title: '✦ C, your recommendations are on',
     body: 'Notifications are working — and your first three books are already waiting in My library. Tap to open them.',
     url: 'https://abecedeefege.github.io/Biblioteca/C/recs/',
+  },
+  'C-test': {
+    id: 'c-test-welcome',
+    title: '✅ Prueba: el canal de C funciona',
+    body: 'Este es el push de prueba del dueño. Si lo estás viendo, la app de C puede notificar. Nada de esto toca su perfil.',
+    url: 'https://abecedeefege.github.io/Biblioteca/C/recs/?as=test',
   },
 };
 // eventos del relay más viejos que esto no se re-mergean (el agente de

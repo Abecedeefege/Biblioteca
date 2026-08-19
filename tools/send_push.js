@@ -37,6 +37,9 @@ const writeJson = (p, d)  => fs.writeFileSync(p, JSON.stringify(d, null, 2) + '\
 // entrada acá cae en Montevideo, el default histórico.
 const MIN_LOCAL_HOUR = 11;
 const DEVICE_TZ = { andy: 'America/Montevideo', sofi: 'America/Montevideo', c: 'Europe/Paris' };
+// Dispositivos de prueba: sin piso horario, para poder validar el canal a
+// cualquier hora sin tocar el resguardo de los teléfonos reales.
+const NO_FLOOR_DEVICES = ['c-test'];
 const DEFAULT_TZ = 'America/Montevideo';
 function localHour(date, tz) {
   return parseInt(new Intl.DateTimeFormat('en-GB', {
@@ -44,7 +47,9 @@ function localHour(date, tz) {
   }).format(date), 10);
 }
 function pastFloorFor(device, date) {
-  const tz = DEVICE_TZ[String(device || '').toLowerCase()] || DEFAULT_TZ;
+  const key = String(device || '').toLowerCase();
+  if (NO_FLOOR_DEVICES.includes(key)) return true;
+  const tz = DEVICE_TZ[key] || DEFAULT_TZ;
   return localHour(date, tz) >= MIN_LOCAL_HOUR;
 }
 

@@ -163,8 +163,18 @@
 
   var SUPA = 'https://jhdwpxttgnravhlnmdgg.supabase.co';
   var KEY = 'sb_publishable_phJdQOO7PUdidexaeUI4vQ_WJpKOgDM'; // public by design (RLS: insert only)
-  var DEVICE = 'C';
-  var K_ONBOARDED = 'c_recs_onboarded';
+  /* Device identity — same rule as engage.js (which loads after this script):
+     ?as=test makes this browser 'C-test' for the owner's own trials, so his
+     subscription never takes C's slot and his taps never reach her profile.
+     ?as=c clears it. Sticky in localStorage across internal navigation. */
+  var DEVICE = (function () {
+    var as = null;
+    try { as = new URLSearchParams(location.search).get('as'); } catch (e) {}
+    if (as === 'test') { try { localStorage.setItem('c_library_device_as', 'C-test'); } catch (e) {} return 'C-test'; }
+    if (as === 'c') { try { localStorage.removeItem('c_library_device_as'); } catch (e) {} return 'C'; }
+    try { return localStorage.getItem('c_library_device_as') || 'C'; } catch (e) { return 'C'; }
+  })();
+  var K_ONBOARDED = 'c_recs_onboarded' + (DEVICE === 'C' ? '' : ':' + DEVICE);
 
   function logAnswer(qid, value) {
     if (window.engageRecord) window.engageRecord('answer', { qid: qid, value: value });
@@ -421,6 +431,14 @@
   }
 
   /* ---------------- boot ---------------- */
+  if (DEVICE !== 'C') {
+    var flag = document.createElement('p');
+    flag.setAttribute('style', 'margin-top:1rem;padding:.5rem .9rem;border:1px dashed var(--bronze);border-radius:10px;' +
+      'color:var(--bronze-hi);font-size:.82rem;display:inline-block');
+    flag.textContent = '⚙︎ Test mode — this browser is “' + DEVICE + '”. Nothing here reaches C’s reading profile.';
+    $('#lede').insertAdjacentElement('afterend', flag);
+  }
+
   var onboarded = false;
   try { onboarded = localStorage.getItem(K_ONBOARDED) === '1'; } catch (e) {}
   if (onboarded) {

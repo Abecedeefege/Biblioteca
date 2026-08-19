@@ -1,0 +1,5 @@
+{
+  "_comment": "Interruptor de entrega. Mientras delivered_to_C_at sea null, la app todavía no está en manos de C: TODO evento con device 'C' es una prueba del dueño y el agente debe ignorarlo (no toca el perfil, no cambia la cadencia). Cuando Andy le mande el link a C, poner acá la fecha ISO de ese momento; a partir de entonces solo cuenta el feedback POSTERIOR a esa marca. El dispositivo 'C-test' es siempre del dueño y nunca se lee.",
+  "delivered_to_C_at": null,
+  "notes": "2026-08-19: pruebas del dueño (dos rondas de quiz + alta de dispositivo) borradas del relay. El dueño prueba con ?as=test, que registra el dispositivo como C-test."
+}

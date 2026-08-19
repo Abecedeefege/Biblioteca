@@ -28,15 +28,25 @@ Los commits y archivos internos pueden ir en español.
     `page_visit` → señales de engagement.
   - `push_unsubscribe` → C pausó los pushes desde una ficha.
 
-## Datos de prueba: no aprender de ellos
+## PRIMER PASO DE CADA CORRIDA: el interruptor de entrega
 
-Antes del lanzamiento (2026-08-19) Andy probó la app haciéndose pasar por el
-dispositivo `C`: quiz completo, cadencia y navegación. **Esos eventos se
-borraron del relay** y nunca llegaron a `sync/engagement.json`. Regla
-permanente: si aparece feedback de `C` con fecha **anterior a la primera
-suscripción real de su teléfono** (la fila más vieja de `C` en
-`notifications/subscription.json`), tratarlo como prueba y descartarlo.
-Cuando Andy pruebe algo a propósito, lo va a avisar en el pedido.
+Leer `C/agent/handoff.json` **antes que cualquier otra cosa**.
+
+- `delivered_to_C_at: null` → la app **todavía no está en manos de C**.
+  Cualquier evento con `device: "C"` es una prueba del dueño: **ignorarlo
+  por completo** (no actualizar el perfil, no cambiar la cadencia, no
+  aplicar confirmaciones del catálogo). El agente puede igual elegir un
+  libro nuevo guiándose solo por el catálogo de sus estantes, o registrar
+  un no-op — lo que nunca puede hacer es aprender de esos eventos.
+- Con una fecha ISO → solo cuenta el feedback **posterior** a esa marca.
+  Todo lo anterior es prueba y se descarta.
+
+El dispositivo `C-test` (el teléfono del dueño abriendo la app con
+`?as=test`) **nunca** se lee: sus eventos y sus pushes son de prueba.
+
+Cuando el dueño avise que ya le mandó la app a C, él o el agente escriben
+la fecha en `handoff.json`. Hasta entonces, el perfil de C se apoya solo en
+lo que dicen sus estantes.
 
 ## La corrida semanal (domingos)
 
