@@ -18,6 +18,11 @@ Los commits y archivos internos pueden ir en español.
   `sync/engagement.json` (eventos con `"device": "C"`). Tipos relevantes:
   - `answer` con `qid` `quiz:*` y `rec-cadence` → el cuestionario de gustos
     y la cadencia elegida (`weekly` | `biweekly`).
+  - `answer` con `qid` `rec-time` → **hora de entrega elegida por C**, en un
+    formato autodescriptivo: `19:30 local | tz=Europe/Paris | utc+02:00 | rel=+6h`.
+    La hora es de SU reloj; `tz` es la zona IANA que informó su teléfono.
+  - `answer` con `qid` `timezone` → zona informada al suscribirse (`tz | utc±HH:MM`).
+    C se muda seguido: la marca más reciente manda sobre `DEVICE_TZ`.
   - `answer` con `qid` `rec-verdict:<slug>` → veredicto de una ficha
     (`want_it`, `tempted`, `own_it`, `read_it`, `not_for_me`).
   - `answer` con `qid` `rec-note:<slug>` → nota libre de C (leerla SIEMPRE:
@@ -85,17 +90,24 @@ lo que dicen sus estantes.
    esquema de arriba. Solo hechos verificables; si una cita no se puede
    verificar, parafrasear y decirlo. Agregar la entrada a
    `C/recs/recs.json` (slug, date, title, author, emoji, flag, teaser).
-8. **Encolar el push** en `notifications/queue.json`:
+8. **Fijar hora y lugar del envío** en `notifications/subscription.json`,
+   sobre la entrada del dispositivo `C` (el dispatcher lee estos campos):
+   - `tz`: la zona del último `timezone` o `rec-time` que ella haya mandado
+     (p.ej. `"Europe/Paris"`). Si se mudó, esto la sigue sin tocar código.
+   - `min_local_hour`: la hora entera de su `rec-time` (p.ej. `19` para las
+     19:30). Es el piso por debajo del cual el dispatcher no entrega; sin
+     este campo rige el default de las 11:00 locales.
+9. **Encolar el push** en `notifications/queue.json`:
    - `to: "C"`, `url` a la ficha nueva (URL absoluta bajo
      `https://abecedeefege.github.io/Biblioteca/C/recs/`).
-   - `send_at`: domingo **17:30 hora de París** convertido a UTC según el
-     DST vigente (CEST = UTC+2 → 15:30Z; CET = UTC+1 → 16:30Z).
-   - `expires_at`: ese día 23:00 París.
+   - `send_at`: el domingo, a la **hora local que ella eligió** en `rec-time`,
+     convertida a UTC con su `tz` y el DST vigente. Sin respuesta suya:
+     17:30 de su zona (CEST = UTC+2 → 15:30Z; CET = UTC+1 → 16:30Z).
+   - `expires_at`: 5 horas después del `send_at`, sin pasar la medianoche
+     de su hora local.
    - `title`/`body` en inglés, con gancho concreto y sin spoilers.
-   - El dispatcher además aplica un piso duro de 11:00 hora local del
-     destinatario (`tools/send_push.js`), así que nunca calcular un
-     `send_at` de madrugada.
-9. **Commit y push a `main`** con mensaje `rec-c: <fecha> <slug>` (o
+   - Nunca calcular un `send_at` de madrugada: el dispatcher lo retendría.
+10. **Commit y push a `main`** con mensaje `rec-c: <fecha> <slug>` (o
    `rec-c: <fecha> no-op (<motivo>)`). Dejar en el reporte final: feedback
    leído, decisión, libro elegido, SHA.
 

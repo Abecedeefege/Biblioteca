@@ -46,11 +46,20 @@ function localHour(date, tz) {
     timeZone: tz, hour: 'numeric', hourCycle: 'h23',
   }).format(date), 10);
 }
-function pastFloorFor(device, date) {
-  const key = String(device || '').toLowerCase();
+// El piso se calcula con lo que sepamos del dispositivo, en este orden:
+//   dev.tz            → zona informada por su propio teléfono (viaja con ella)
+//   DEVICE_TZ[nombre] → zona por defecto conocida de ese dispositivo
+//   DEFAULT_TZ        → Montevideo, el histórico de la casa
+// dev.min_local_hour permite bajar/subir el piso cuando el dueño de ese
+// teléfono eligió explícitamente un horario de entrega (ver rec-time).
+function pastFloorFor(dev, date) {
+  const key = String((dev && dev.device) || '').toLowerCase();
   if (NO_FLOOR_DEVICES.includes(key)) return true;
-  const tz = DEVICE_TZ[key] || DEFAULT_TZ;
-  return localHour(date, tz) >= MIN_LOCAL_HOUR;
+  const tz = (dev && dev.tz) || DEVICE_TZ[key] || DEFAULT_TZ;
+  const floor = Number.isInteger(dev && dev.min_local_hour) &&
+                dev.min_local_hour >= 0 && dev.min_local_hour <= 23
+    ? dev.min_local_hour : MIN_LOCAL_HOUR;
+  return localHour(date, tz) >= floor;
 }
 
 function deviceList(subDoc) {
@@ -93,10 +102,10 @@ async function main() {
   const activesNow = devices.filter((d) => d.status === 'active' && d.subscription);
   const due = vencidas.filter((n) => {
     const targets = targetsFor(n, activesNow);
-    return !targets.length || targets.every((d) => pastFloorFor(d.device, nowDate));
+    return !targets.length || targets.every((d) => pastFloorFor(d, nowDate));
   });
   if (vencidas.length > due.length) {
-    console.log(`${vencidas.length - due.length} vencidas pero antes de las ${MIN_LOCAL_HOUR}:00 locales de su destinatario — se posponen hasta el piso horario.`);
+    console.log(`${vencidas.length - due.length} vencidas pero antes del piso horario local de su destinatario — se posponen.`);
   }
 
   if (due.length && devices.length) {
