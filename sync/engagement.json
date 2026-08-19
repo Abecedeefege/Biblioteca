@@ -3475,7 +3475,14 @@
       "device": "C-test",
       "dwell_s": 34,
       "scroll_pct": 100
+    },
+    {
+      "id": "mszvrzj8-jwc0gi",
+      "ts": "2026-08-19T09:20:05.540Z",
+      "page": "index.html",
+      "type": "page_visit",
+      "device": "C-test"
     }
   ],
-  "_updated_at": "2026-08-19T08:43:57.121Z"
+  "_updated_at": "2026-08-19T09:52:17.045Z"
 }
