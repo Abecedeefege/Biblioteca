@@ -45,3 +45,11 @@ catálogo de sus estantes; todavía sin feedback de C)._
 ## Notas de C
 
 _(ninguna todavía — las `rec-note:*` de sync/engagement.json van acá)_
+
+## Advertencia de datos
+
+El 2026-08-19 (06:32–06:44 UTC) hubo 21 eventos con `device: "C"` que **no
+son de C**: fue Andy probando la app (quiz completo, `rec-cadence=weekly`,
+`push-optin=skipped`, dwells). Se borraron del relay de Supabase y nunca
+entraron a `sync/engagement.json`. No usar nada de esa ventana para el
+perfil. La cadencia sigue en default `weekly` hasta que C conteste.

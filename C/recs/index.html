@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Recommendations — My library</title>
 <meta name="description" content="A book chosen for you, delivered to your phone — with its story, its keys, and zero spoilers.">
-<meta name="theme-color" content="#0b1425">
+<meta name="theme-color" content="#0a1230">
 <link rel="icon" href="../../icon-192.png">
 <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <link rel="manifest" href="../manifest.json">
@@ -16,15 +16,17 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --night: #0b1425; --night-2: #101d36; --night-3: #172848;
-    --ink: #edf1f9; --ink-2: #b7c3d8; --ink-3: #71809c;
-    --bronze: #b08d57; --bronze-hi: #dcb680; --bronze-soft: rgba(176,141,87,.14);
-    --blue: #5f8fd0; --blue-hi: #93b9e8;
+    --night: #0a1230; --night-2: #101c46; --night-3: #17265c;
+    --ink: #eef2fb; --ink-2: #b3c0dd; --ink-3: #6f7fa6;
+    --bronze: #b08d57; --bronze-hi: #e3bf85; --bronze-dk: #946b2d; --bronze-soft: rgba(176,141,87,.14);
+    --silver: #c9d2e6;
+    --blue: #5f8fd0; --blue-hi: #9dc0ee;
     --ok: #8fd6a0; --err: #e08a98;
-    --hairline: rgba(176,141,87,.22);
+    --hairline: rgba(176,141,87,.26);
+    --engrave: 'Cinzel', Georgia, serif;
     --display: 'Fraunces', Georgia, serif;
     --body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -60,10 +62,18 @@
     border: 1px solid var(--hairline); border-radius: 20px; margin-top: 1.8rem;
     padding: clamp(1.4rem, 5vw, 2.2rem); background: linear-gradient(180deg, rgba(237,241,249,.04), transparent);
   }
-  .step-dots { display: flex; gap: .45rem; margin-bottom: 1.3rem; }
+  .step-dots { display: flex; gap: .45rem; margin-bottom: .7rem; }
   .step-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--night-3); }
   .step-dots i.on { background: var(--bronze); }
+  .step-count { font-family: var(--mono); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.1rem; }
   .panel h2 { font-family: var(--display); font-weight: 480; font-size: 1.4rem; margin-bottom: .4rem; }
+  /* welcome step */
+  .beats { display: grid; gap: .85rem; margin: 1.2rem 0 .4rem; }
+  .beat { display: flex; gap: .85rem; align-items: flex-start; }
+  .beat .bi { font-size: 1.25rem; line-height: 1.4; flex: none; }
+  .beat b { color: var(--bronze-hi); font-weight: 600; }
+  .beat p { color: var(--ink-2); font-size: .93rem; }
+  .crest-sm { width: 54px; height: 58px; display: block; margin: 0 0 1rem; opacity: .95; }
   .panel .q-sub { color: var(--ink-3); font-size: .92rem; margin-bottom: 1.1rem; }
   .opts { display: flex; flex-direction: column; gap: .55rem; }
   .opts button {
@@ -122,13 +132,14 @@
 <div class="wrap">
   <a class="back" href="../">← Back to My library</a>
 
-  <p class="kicker">My library · Reading service</p>
+  <p class="kicker">My library · The Owl Post</p>
   <h1>Recommendations, <em>for you</em></h1>
   <p class="sub" id="lede">Every so often a new book lands here — and on your phone — chosen from what your shelves say about you. Each card carries the book's story, its keys, and zero spoilers. Your verdicts teach the next pick.</p>
 
   <!-- ================= ONBOARDING (first open) ================= -->
   <section class="panel hidden" id="onboarding">
     <div class="step-dots" id="dots"></div>
+    <p class="step-count" id="stepCount"></p>
     <div id="step-host"></div>
   </section>
 
@@ -194,16 +205,31 @@
       ['biweekly', '<b>Every two weeks</b> — slower, deeper']]};
 
   /* ---------------- onboarding engine ---------------- */
-  var flow = [];   // steps: {type:'quiz'|'cadence'|'push'|'done'}
-  QUIZ.forEach(function (q) { flow.push({ type: 'quiz', def: q }); });
-  flow.push({ type: 'cadence', def: CADENCE });
-  flow.push({ type: 'push' });
+  function buildFlow(withWelcome) {
+    var f = withWelcome ? [{ type: 'welcome' }] : [];
+    QUIZ.forEach(function (q) { f.push({ type: 'quiz', def: q }); });
+    f.push({ type: 'cadence', def: CADENCE });
+    f.push({ type: 'push' });
+    return f;
+  }
+  var flow = buildFlow(true);
   var stepIdx = 0;
 
   function renderDots() {
     $('#dots').innerHTML = flow.map(function (_, i) {
       return '<i class="' + (i <= stepIdx ? 'on' : '') + '"></i>';
     }).join('');
+    // human-readable frame: which question, and what it is for
+    var st = flow[stepIdx], label = '';
+    if (st) {
+      if (st.type === 'welcome') label = 'Before we start';
+      else if (st.type === 'quiz') {
+        var qs = flow.filter(function (x) { return x.type === 'quiz'; });
+        label = 'Question ' + (qs.indexOf(st) + 1) + ' of ' + qs.length + ' · building your taste profile';
+      } else if (st.type === 'cadence') label = 'Almost there · how often you want books';
+      else if (st.type === 'push') label = 'Last step · how the books reach you';
+    }
+    $('#stepCount').textContent = label;
   }
 
   function showStep() {
@@ -211,7 +237,39 @@
     var host = $('#step-host');
     if (stepIdx >= flow.length) { finishOnboarding(); return; }
     var st = flow[stepIdx];
-    if (st.type === 'quiz' || st.type === 'cadence') {
+    if (st.type === 'welcome') {
+      host.innerHTML =
+        '<svg class="crest-sm" viewBox="0 0 100 110" aria-hidden="true">' +
+        '<defs><linearGradient id="bz" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset="0%" stop-color="#f3dcb4"/><stop offset="55%" stop-color="#b08d57"/><stop offset="100%" stop-color="#946b2d"/>' +
+        '</linearGradient></defs>' +
+        '<path d="M50 4 L92 18 V56 C92 82 72 98 50 106 C28 98 8 82 8 56 V18 Z" fill="rgba(27,45,110,.55)" stroke="url(#bz)" stroke-width="3.4"/>' +
+        '<g fill="url(#bz)">' +
+        '<path d="M47 55 L17 21 C22 31 25 39 27 46 L17 39 C21 47 25 53 29 58 L20 55 C26 63 35 68 46 68 Z"/>' +
+        '<path d="M53 55 L83 21 C78 31 75 39 73 46 L83 39 C79 47 75 53 71 58 L80 55 C74 63 65 68 54 68 Z"/>' +
+        '<path d="M50 38 C56 41 58.5 48 57.5 57 L54.5 73 L45.5 73 L42.5 57 C41.5 48 44 41 50 38 Z"/>' +
+        '<path d="M46 71 L54 71 L56 82 L50 89 L44 82 Z"/>' +
+        '<ellipse cx="50.5" cy="33.5" rx="6.4" ry="5.6"/>' +
+        '<path d="M45 31.6 L36.5 34.4 C38.6 35.6 39.6 36.8 39.8 38.4 C41.2 36.6 43 35.6 45.4 35.2 Z"/>' +
+        '<circle cx="50" cy="19" r="2.1"/><circle cx="30" cy="22" r="1.5"/><circle cx="70" cy="22" r="1.5"/>' +
+        '</g><circle cx="51" cy="32" r="1.5" fill="#0a1230"/></svg>' +
+        '<h2>Six quick questions — here’s why</h2>' +
+        '<p class="q-sub">Your whole library was read off the shelves, spine by spine. That says a lot about you, but not everything — so before the first delivery, a little calibration.</p>' +
+        '<div class="beats">' +
+          '<div class="beat"><span class="bi">🦅</span><p><b>What this is.</b> A librarian picks <b>one new book</b> for you — never one you already own — reading the clues your own shelves leave behind.</p></div>' +
+          '<div class="beat"><span class="bi">🪶</span><p><b>Why these questions.</b> Your answers become your reading profile: mood, languages, how long a book you want right now. They genuinely change what gets chosen — a “nonfiction, short, German welcome” answer picks a different book than “big immersive novel”.</p></div>' +
+          '<div class="beat"><span class="bi">📜</span><p><b>It keeps learning.</b> Every card ends with a verdict — <i>I want it</i>, <i>already read it</i>, <i>not for me</i> — plus a box to write to the librarian. That feedback outranks this quiz from here on.</p></div>' +
+        '</div>' +
+        '<div class="opts" style="margin-top:1.2rem"><button data-go="1"><b>Let’s calibrate</b> — takes about a minute</button></div>' +
+        '<div class="skiprow"><a href="#" id="skip-all">skip straight to my books</a></div>';
+      host.querySelector('[data-go]').addEventListener('click', function () { stepIdx++; showStep(); });
+      host.querySelector('#skip-all').addEventListener('click', function (e) {
+        e.preventDefault();
+        logAnswer('quiz', 'skipped-all');
+        stepIdx = flow.length - 1;   // jump to the push step
+        showStep();
+      });
+    } else if (st.type === 'quiz' || st.type === 'cadence') {
       var d = st.def;
       host.innerHTML = '<h2>' + d.q + '</h2>' +
         (d.sub ? '<p class="q-sub">' + d.sub + '</p>' : '') +
@@ -390,6 +448,14 @@
     $('#onboarding').classList.remove('hidden');
     showStep();
   });
+  // deep link for a fresh run of the whole onboarding (used from the catalog)
+  if (location.hash === '#restart') {
+    try { localStorage.removeItem(K_ONBOARDED); } catch (e) {}
+    stepIdx = 0; flow = buildFlow(true);
+    $('#reclist').classList.add('hidden');
+    $('#onboarding').classList.remove('hidden');
+    showStep();
+  }
 })();
 </script>
 <script src="../engage.js"></script>

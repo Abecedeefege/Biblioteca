@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>My library</title>
-<meta name="description" content="My library — C's visual catalog of every book on the shelves.">
+<meta name="description" content="My library — a visual catalog of every book on the shelves, one record card at a time.">
 
 <!-- ============ PWA / home-screen ============ -->
 <meta name="application-name" content="My library">
@@ -12,7 +12,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#0b1425">
+<meta name="theme-color" content="#0a1230">
 <link rel="icon" href="../icon-192.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
@@ -24,28 +24,32 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   /* ==================================================
-     RAVENCLAW MODERN — midnight blue, bronze, starlight
+     RAVENCLAW — midnight blue, bronze, eagle, starlight
      ================================================== */
   :root {
-    --night:      #0b1425;
-    --night-2:    #101d36;
-    --night-3:    #172848;
-    --ink:        #edf1f9;
-    --ink-2:      #b7c3d8;
-    --ink-3:      #71809c;
+    --night:      #0a1230;
+    --night-2:    #101c46;
+    --night-3:    #17265c;
+    --ink:        #eef2fb;
+    --ink-2:      #b3c0dd;
+    --ink-3:      #6f7fa6;
     --bronze:     #b08d57;
-    --bronze-hi:  #dcb680;
+    --bronze-hi:  #e3bf85;
+    --bronze-dk:  #946b2d;
     --bronze-soft: rgba(176, 141, 87, 0.14);
+    --silver:     #c9d2e6;
     --blue:       #5f8fd0;
-    --blue-hi:    #93b9e8;
-    --warn:       #d0a24a;
-    --hairline:   rgba(176, 141, 87, 0.22);
-    --card:       rgba(237, 241, 249, 0.03);
-    --card-hover: rgba(176, 141, 87, 0.08);
-    --display:    'Fraunces', Georgia, serif;
+    --blue-hi:    #9dc0ee;
+    --warn:       #d9a94f;
+    --ok:         #8fd6a0;
+    --hairline:   rgba(176, 141, 87, 0.26);
+    --card:       rgba(238, 242, 251, 0.035);
+    --card-hover: rgba(176, 141, 87, 0.09);
+    --display:    'Cinzel', Georgia, serif;
+    --serif:      'Fraunces', Georgia, serif;
     --body:       'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --mono:       'JetBrains Mono', ui-monospace, monospace;
   }
@@ -60,198 +64,298 @@
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(circle at 14% 18%, rgba(220,182,128,.55) 0px, transparent 1.4px),
-      radial-gradient(circle at 78% 8%,  rgba(237,241,249,.5)  0px, transparent 1.1px),
-      radial-gradient(circle at 42% 32%, rgba(220,182,128,.35) 0px, transparent 1.2px),
-      radial-gradient(circle at 92% 44%, rgba(237,241,249,.4)  0px, transparent 1px),
-      radial-gradient(circle at 8% 66%,  rgba(147,185,232,.4)  0px, transparent 1.2px),
-      radial-gradient(circle at 60% 80%, rgba(220,182,128,.3)  0px, transparent 1px),
-      radial-gradient(ellipse at 50% -10%, rgba(95,143,208,.14) 0%, transparent 55%);
-    background-size: 720px 720px, 560px 560px, 640px 640px, 500px 500px, 680px 680px, 520px 520px, cover;
+      radial-gradient(circle at 12% 14%, rgba(227,191,133,.6) 0px, transparent 1.5px),
+      radial-gradient(circle at 76% 6%,  rgba(238,242,251,.55) 0px, transparent 1.2px),
+      radial-gradient(circle at 38% 28%, rgba(227,191,133,.4) 0px, transparent 1.3px),
+      radial-gradient(circle at 90% 38%, rgba(238,242,251,.45) 0px, transparent 1.1px),
+      radial-gradient(circle at 6% 58%,  rgba(157,192,238,.45) 0px, transparent 1.3px),
+      radial-gradient(circle at 56% 72%, rgba(227,191,133,.35) 0px, transparent 1.1px),
+      radial-gradient(circle at 28% 88%, rgba(238,242,251,.4) 0px, transparent 1.2px),
+      radial-gradient(circle at 84% 82%, rgba(227,191,133,.3) 0px, transparent 1px),
+      radial-gradient(ellipse at 50% -8%, rgba(95,143,208,.18) 0%, transparent 58%),
+      linear-gradient(180deg, #0c1738 0%, var(--night) 40%);
+    background-size: 640px 640px, 520px 520px, 580px 580px, 470px 470px, 610px 610px, 500px 500px, 550px 550px, 430px 430px, cover, cover;
+    background-attachment: fixed;
   }
   ::selection { background: var(--bronze); color: var(--night); }
   a { color: var(--blue-hi); text-decoration: none; }
   a:hover { color: var(--bronze-hi); }
   button { font-family: var(--body); cursor: pointer; }
   :focus-visible { outline: 2px solid var(--blue-hi); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.1rem, 4vw, 2.4rem); }
+
+  /* ---------- crest ---------- */
+  .crest { width: 100%; height: 100%; display: block; }
 
   /* ---------- masthead ---------- */
   header.masthead {
+    text-align: center;
+    padding: clamp(2.2rem, 6vw, 3.6rem) 1.2rem 1.6rem;
     border-bottom: 1px solid var(--hairline);
-    padding: clamp(2.4rem, 6vw, 4rem) clamp(1.2rem, 5vw, 3rem) 2rem;
-    background: linear-gradient(180deg, rgba(95,143,208,.10), transparent 70%);
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(176,141,87,.14), transparent 62%);
+    position: relative;
   }
-  .masthead-inner { max-width: 1500px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; }
+  .crest-holder { width: clamp(78px, 13vw, 104px); height: clamp(78px, 13vw, 104px); margin: 0 auto .9rem; filter: drop-shadow(0 6px 18px rgba(176,141,87,.35)); }
   .masthead .pre {
-    font-family: var(--mono); font-size: .68rem; letter-spacing: .28em; text-transform: uppercase;
-    color: var(--bronze); margin-bottom: .8rem; display: flex; align-items: center; gap: .7rem;
+    font-family: var(--mono); font-size: .64rem; letter-spacing: .34em; text-transform: uppercase;
+    color: var(--bronze); margin-bottom: .8rem;
   }
-  .masthead .eagle { width: 30px; height: 30px; flex: none; opacity: .9; }
-  .masthead h1 { font-family: var(--display); font-weight: 420; font-size: clamp(2.6rem, 6.5vw, 4.4rem); line-height: 1.02; letter-spacing: -.01em; }
-  .masthead h1 em { font-style: italic; color: var(--bronze-hi); }
-  .masthead .sub { color: var(--ink-2); max-width: 60ch; margin-top: 1rem; font-size: 1.02rem; }
-  .masthead .motto { font-family: var(--display); font-style: italic; color: var(--ink-3); font-size: .88rem; margin-top: .9rem; }
-  .mast-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.4rem; }
-  .btn-recs {
-    display: inline-flex; align-items: center; gap: .55rem; padding: .72rem 1.3rem; border-radius: 999px;
-    background: linear-gradient(135deg, var(--bronze), #96733f); color: #10131c; font-weight: 700; font-size: .92rem;
-    box-shadow: 0 10px 26px -12px rgba(176,141,87,.8); transition: transform .2s ease;
+  .masthead h1 {
+    font-family: var(--display); font-weight: 600; letter-spacing: .06em;
+    font-size: clamp(2rem, 5.2vw, 3.4rem); line-height: 1.06; text-transform: uppercase;
+    background: linear-gradient(180deg, #f3dcb4 0%, var(--bronze) 55%, var(--bronze-dk) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .btn-recs:hover { transform: translateY(-2px); color: #10131c; }
+  .masthead .motto {
+    font-family: var(--serif); font-style: italic; color: var(--silver); opacity: .82;
+    font-size: clamp(.86rem, 2.2vw, 1rem); margin-top: .7rem;
+  }
+  .masthead .sub { color: var(--ink-2); max-width: 54ch; margin: 1rem auto 0; font-size: .98rem; }
+  .rule {
+    display: flex; align-items: center; justify-content: center; gap: .7rem;
+    margin: 1.4rem auto .2rem; max-width: 420px; color: var(--bronze);
+  }
+  .rule::before, .rule::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, var(--hairline), transparent); }
+  .rule svg { width: 26px; height: 26px; opacity: .85; }
+
+  .stats { display: flex; justify-content: center; gap: clamp(1.4rem, 5vw, 3rem); margin-top: 1.5rem; }
+  .stat .n { font-family: var(--display); font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 600; color: var(--bronze-hi); line-height: 1; }
+  .stat .label { font-family: var(--mono); font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-3); margin-top: .4rem; }
+  .mast-actions { display: flex; flex-wrap: wrap; gap: .7rem; justify-content: center; margin-top: 1.6rem; }
+  .btn-owl {
+    display: inline-flex; align-items: center; gap: .55rem; padding: .78rem 1.5rem; border-radius: 999px;
+    background: linear-gradient(135deg, var(--bronze-hi), var(--bronze) 55%, var(--bronze-dk));
+    color: #12172c; font-weight: 700; font-size: .92rem; letter-spacing: .01em;
+    box-shadow: 0 12px 28px -14px rgba(176,141,87,.95); transition: transform .2s ease;
+  }
+  .btn-owl:hover { transform: translateY(-2px); color: #12172c; }
   .btn-ghost {
-    display: inline-flex; align-items: center; gap: .5rem; padding: .72rem 1.2rem; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: .5rem; padding: .78rem 1.3rem; border-radius: 999px;
     border: 1px solid var(--hairline); color: var(--ink-2); font-weight: 600; font-size: .9rem; transition: all .2s ease;
   }
   .btn-ghost:hover { border-color: var(--bronze); color: var(--bronze-hi); }
-  .stats { display: flex; gap: 1.6rem; }
-  .stat { text-align: right; }
-  .stat .n { font-family: var(--display); font-size: 2rem; font-weight: 500; color: var(--bronze-hi); line-height: 1; }
-  .stat .label { font-family: var(--mono); font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); margin-top: .35rem; }
-  @media (max-width: 780px) {
-    .masthead-inner { grid-template-columns: 1fr; align-items: start; }
-    .stats { order: -1; justify-content: flex-start; }
-    .stat { text-align: left; }
-  }
 
-  /* ---------- controls ---------- */
-  .controls { position: sticky; top: 0; z-index: 30; background: rgba(11,20,37,.86); backdrop-filter: blur(10px); border-bottom: 1px solid var(--hairline); }
-  .controls-inner { max-width: 1500px; margin: 0 auto; padding: .8rem clamp(1.2rem, 5vw, 3rem); display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; }
+  /* ---------- search bar (sticky) ---------- */
+  .controls { position: sticky; top: 0; z-index: 40; background: rgba(10,18,48,.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--hairline); }
+  .controls-inner { max-width: 1180px; margin: 0 auto; padding: .7rem clamp(1.1rem, 4vw, 2.4rem); display: flex; flex-wrap: wrap; gap: .55rem; align-items: center; }
+  .home-link { font-family: var(--display); font-size: .82rem; letter-spacing: .1em; color: var(--bronze-hi); text-transform: uppercase; white-space: nowrap; }
   #search {
-    flex: 1 1 240px; background: var(--night-2); border: 1px solid var(--hairline); color: var(--ink);
-    border-radius: 999px; padding: .62rem 1.1rem; font-family: var(--body); font-size: .95rem;
+    flex: 1 1 200px; background: var(--night-2); border: 1px solid var(--hairline); color: var(--ink);
+    border-radius: 999px; padding: .58rem 1.05rem; font-family: var(--body); font-size: .92rem; min-width: 0;
   }
   #search::placeholder { color: var(--ink-3); }
   .chip {
     border: 1px solid var(--hairline); background: transparent; color: var(--ink-2); border-radius: 999px;
-    padding: .45rem .95rem; font-size: .8rem; font-weight: 600; letter-spacing: .02em; transition: all .18s ease;
+    padding: .42rem .85rem; font-size: .76rem; font-weight: 600; transition: all .18s ease; white-space: nowrap;
   }
   .chip:hover { border-color: var(--bronze); color: var(--bronze-hi); }
   .chip.on { background: var(--bronze-soft); border-color: var(--bronze); color: var(--bronze-hi); }
-  .chip.confirm.on { border-color: var(--warn); color: var(--warn); background: rgba(208,162,74,.12); }
-  #match-count { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-left: auto; }
+  .chip.owl { border-color: var(--bronze); color: var(--bronze-hi); background: var(--bronze-soft); }
+  .chip.owl:hover { background: rgba(176,141,87,.24); color: var(--bronze-hi); }
 
-  /* ---------- bookcase map ---------- */
-  .map-wrap { max-width: 1500px; margin: 0 auto; padding: 2.2rem clamp(1.2rem, 5vw, 3rem) .6rem; }
-  .map-title { font-family: var(--mono); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1rem; }
-  .bookcase-map { display: flex; flex-wrap: wrap; gap: 1.2rem; }
-  .case { border: 1px solid var(--hairline); border-radius: 14px; padding: .9rem; background: var(--card); flex: 1 1 240px; max-width: 420px; }
-  .case h3 { font-family: var(--display); font-weight: 500; font-size: 1rem; color: var(--bronze-hi); margin: 0 .2rem .6rem; }
-  .case a.row {
-    display: flex; justify-content: space-between; align-items: baseline; gap: .8rem;
-    padding: .45rem .6rem; border-radius: 8px; color: var(--ink-2); font-size: .86rem; transition: background .15s ease;
+  /* ---------- views ---------- */
+  main { padding: clamp(1.6rem, 4vw, 2.6rem) 0 4rem; }
+  .view-head { margin-bottom: 1.4rem; }
+  .breadcrumb { font-family: var(--mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .7rem; }
+  .breadcrumb a { color: var(--ink-3); }
+  .breadcrumb a:hover { color: var(--bronze-hi); }
+  h2.section-title { font-family: var(--display); font-weight: 600; letter-spacing: .03em; font-size: clamp(1.35rem, 3.4vw, 1.9rem); color: var(--bronze-hi); }
+  .section-sub { color: var(--ink-2); font-family: var(--serif); font-style: italic; margin-top: .4rem; max-width: 62ch; }
+
+  /* the stacks (shelf map) */
+  .stacks { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.1rem; }
+  .case {
+    border: 1px solid var(--hairline); border-radius: 16px; padding: 1.1rem 1rem;
+    background: linear-gradient(180deg, rgba(238,242,251,.045), transparent);
   }
-  .case a.row:hover { background: var(--card-hover); color: var(--ink); }
-  .case a.row .n { font-family: var(--mono); font-size: .68rem; color: var(--ink-3); }
+  .case h3 {
+    font-family: var(--display); font-weight: 600; font-size: .92rem; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--bronze); margin: 0 .3rem .8rem; display: flex; align-items: center; gap: .5rem;
+  }
+  .case h3 svg { width: 15px; height: 15px; flex: none; }
+  .drawer {
+    display: flex; align-items: center; gap: .8rem; width: 100%; text-align: left;
+    padding: .62rem .7rem; border-radius: 10px; color: var(--ink); transition: background .15s ease, transform .15s ease;
+  }
+  .drawer:hover { background: var(--card-hover); transform: translateX(3px); color: var(--ink); }
+  .drawer .dtag { font-family: var(--mono); font-size: .62rem; color: var(--night); background: var(--bronze); border-radius: 5px; padding: .16rem .42rem; flex: none; }
+  .drawer .dtxt { flex: 1; min-width: 0; }
+  .drawer .dname { display: block; font-family: var(--serif); font-size: .96rem; line-height: 1.25; }
+  .drawer .dtheme { display: block; color: var(--ink-3); font-size: .76rem; margin-top: .12rem; line-height: 1.35; }
+  .drawer .dn { font-family: var(--mono); font-size: .68rem; color: var(--ink-3); flex: none; }
 
-  /* ---------- shelves ---------- */
-  main { max-width: 1500px; margin: 0 auto; padding: 1rem clamp(1.2rem, 5vw, 3rem) 3rem; }
-  .shelf-section { margin-top: 2.6rem; scroll-margin-top: 90px; }
-  .shelf-head { display: flex; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--hairline); padding-bottom: .6rem; flex-wrap: wrap; }
-  .shelf-head .tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .16em; color: var(--night); background: var(--bronze); border-radius: 6px; padding: .2rem .55rem; font-weight: 500; }
-  .shelf-head h2 { font-family: var(--display); font-weight: 480; font-size: 1.45rem; }
-  .shelf-head .theme { color: var(--ink-3); font-size: .88rem; font-style: italic; font-family: var(--display); }
-  .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: .7rem; margin-top: 1rem; }
+  /* book grid */
+  .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(238px, 1fr)); gap: .7rem; }
   .book {
-    border: 1px solid var(--hairline); border-radius: 12px; padding: .85rem .95rem; background: var(--card);
-    transition: background .15s ease, border-color .15s ease; position: relative;
+    display: block; border: 1px solid var(--hairline); border-radius: 12px; padding: .85rem .95rem;
+    background: var(--card); color: var(--ink); transition: background .15s ease, border-color .15s ease, transform .15s ease;
   }
-  .book:hover { background: var(--card-hover); border-color: rgba(176,141,87,.45); }
-  .book .bid { font-family: var(--mono); font-size: .62rem; color: var(--ink-3); letter-spacing: .08em; }
-  .book h4 { font-family: var(--display); font-weight: 520; font-size: 1.02rem; line-height: 1.28; margin: .3rem 0 .15rem; }
-  .book .author { color: var(--ink-2); font-size: .84rem; }
-  .book .meta { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .6rem; }
-  .pill { font-family: var(--mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--hairline); border-radius: 999px; padding: .14rem .5rem; color: var(--ink-3); }
-  .pill.lang-German { color: var(--blue-hi); border-color: rgba(95,143,208,.4); }
-  .pill.lang-French { color: var(--bronze-hi); border-color: rgba(176,141,87,.45); }
-  .book .note { color: var(--ink-3); font-size: .78rem; margin-top: .55rem; font-style: italic; }
-  .book.conf-low { border-style: dashed; border-color: rgba(208,162,74,.5); }
+  .book:hover { background: var(--card-hover); border-color: rgba(176,141,87,.5); transform: translateY(-2px); color: var(--ink); }
+  .book .bid { font-family: var(--mono); font-size: .6rem; color: var(--ink-3); letter-spacing: .08em; }
+  .book h4 { font-family: var(--serif); font-weight: 520; font-size: 1.01rem; line-height: 1.28; margin: .3rem 0 .15rem; }
+  .book .author { color: var(--ink-2); font-size: .83rem; }
+  .book .meta { display: flex; flex-wrap: wrap; gap: .32rem; margin-top: .55rem; }
+  .pill { font-family: var(--mono); font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--hairline); border-radius: 999px; padding: .13rem .48rem; color: var(--ink-3); }
+  .pill.lang-German { color: var(--blue-hi); border-color: rgba(95,143,208,.42); }
+  .pill.lang-French { color: var(--bronze-hi); border-color: rgba(176,141,87,.48); }
+  .book.conf-low { border-style: dashed; border-color: rgba(217,169,79,.55); }
   .book.conf-low .bid::after { content: ' · to confirm'; color: var(--warn); }
   .book.conf-medium .bid::after { content: ' · probable'; color: var(--ink-3); }
-  .book.obj { opacity: .85; }
 
-  /* ---------- unidentified ---------- */
-  #unidentified { margin-top: 3.4rem; scroll-margin-top: 90px; border: 1px solid rgba(208,162,74,.4); border-radius: 18px; padding: clamp(1.2rem, 4vw, 2rem); background: linear-gradient(180deg, rgba(208,162,74,.07), transparent); }
-  #unidentified .kicker { font-family: var(--mono); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--warn); }
-  #unidentified h2 { font-family: var(--display); font-weight: 480; font-size: 1.6rem; margin: .4rem 0 .3rem; }
-  #unidentified .lede { color: var(--ink-2); max-width: 62ch; font-size: .95rem; }
-  .uni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: .8rem; margin-top: 1.2rem; }
-  .uni {
-    border: 1px dashed rgba(208,162,74,.5); border-radius: 12px; padding: .95rem 1rem; background: rgba(11,20,37,.5);
+  .pager { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--hairline); font-size: .88rem; }
+  .pager a { color: var(--ink-2); }
+  .pager a:hover { color: var(--bronze-hi); }
+
+  /* book record page */
+  .record {
+    border: 1px solid var(--hairline); border-radius: 20px; padding: clamp(1.4rem, 4vw, 2.2rem);
+    background: linear-gradient(180deg, rgba(238,242,251,.05), transparent 70%); position: relative; overflow: hidden;
   }
-  .uni .where { font-family: var(--mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--warn); }
-  .uni h4 { font-family: var(--display); font-weight: 520; font-size: 1rem; margin: .3rem 0 .1rem; }
-  .uni .author { color: var(--ink-2); font-size: .84rem; }
-  .uni .note { color: var(--ink-3); font-size: .8rem; font-style: italic; margin-top: .45rem; }
-  .uni .acts { margin-top: .7rem; display: flex; flex-wrap: wrap; gap: .4rem; }
-  .uni .acts button {
+  .record::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 100% 0%, rgba(176,141,87,.12), transparent 45%);
+  }
+  .record .callnum { font-family: var(--mono); font-size: .66rem; letter-spacing: .16em; color: var(--bronze); }
+  .record h2 { font-family: var(--serif); font-weight: 560; font-size: clamp(1.5rem, 4vw, 2.2rem); line-height: 1.16; margin: .5rem 0 .3rem; }
+  .record .by { font-family: var(--serif); font-style: italic; color: var(--bronze-hi); font-size: 1.05rem; }
+  .record .fact {
+    font-family: var(--serif); font-style: italic; color: var(--silver); margin-top: 1.1rem;
+    border-left: 3px solid var(--bronze); padding: .55rem 0 .55rem 1rem; background: rgba(176,141,87,.07);
+    border-radius: 0 10px 10px 0;
+  }
+  .record dl { display: grid; grid-template-columns: auto 1fr; gap: .5rem 1.3rem; margin-top: 1.4rem; font-size: .94rem; }
+  .record dt { font-family: var(--mono); font-size: .64rem; letter-spacing: .13em; text-transform: uppercase; color: var(--blue-hi); padding-top: .28rem; white-space: nowrap; }
+  .record dd { color: var(--ink); }
+  .xref-title { font-family: var(--display); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--bronze); margin: 1.6rem 0 .6rem; }
+  .xrefs { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .xrefs a { border: 1px solid var(--hairline); border-radius: 999px; padding: .4rem .85rem; font-size: .82rem; color: var(--ink-2); }
+  .xrefs a:hover { border-color: var(--bronze); color: var(--bronze-hi); }
+
+  /* confirm block */
+  .confirm-box {
+    border: 1px dashed rgba(217,169,79,.55); border-radius: 16px; padding: 1.2rem 1.25rem; margin-top: 1.6rem;
+    background: rgba(217,169,79,.07);
+  }
+  .confirm-box .ct { font-family: var(--display); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--warn); }
+  .confirm-box p { color: var(--ink-2); font-size: .92rem; margin-top: .45rem; }
+  .confirm-box .acts { margin-top: .8rem; display: flex; flex-wrap: wrap; gap: .45rem; }
+  .confirm-box .acts button, .fix button {
     border: 1px solid var(--hairline); background: transparent; color: var(--ink-2); border-radius: 999px;
-    padding: .42rem .85rem; font-size: .8rem; font-weight: 600; transition: all .18s ease;
+    padding: .45rem .9rem; font-size: .84rem; font-weight: 600; transition: all .18s ease;
   }
-  .uni .acts button:hover { border-color: var(--bronze); color: var(--bronze-hi); }
-  .uni .fix { display: none; margin-top: .6rem; }
-  .uni .fix.open { display: block; }
-  .uni .fix input {
+  .confirm-box .acts button:hover, .fix button:hover { border-color: var(--bronze); color: var(--bronze-hi); }
+  .fix { display: none; margin-top: .7rem; }
+  .fix.open { display: block; }
+  .fix input {
     width: 100%; background: var(--night-2); border: 1px solid var(--hairline); color: var(--ink);
-    border-radius: 10px; padding: .55rem .8rem; font-family: var(--body); font-size: .88rem;
+    border-radius: 10px; padding: .58rem .85rem; font-family: var(--body); font-size: .9rem;
   }
-  .uni .fix button { margin-top: .5rem; }
-  .uni .done { color: #8fd6a0; font-size: .82rem; margin-top: .55rem; display: none; }
+  .fix button { margin-top: .55rem; }
+  .done { color: var(--ok); font-size: .86rem; margin-top: .6rem; display: none; }
 
-  footer { border-top: 1px solid var(--hairline); text-align: center; color: var(--ink-3); font-size: .8rem; padding: 2rem 1.4rem 5rem; line-height: 1.8; }
-  footer em { font-family: var(--display); }
+  /* restricted section teaser */
+  .teaser {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem; margin-top: 2.4rem;
+    border: 1px solid rgba(217,169,79,.4); border-radius: 18px; padding: clamp(1.2rem, 3.5vw, 1.7rem);
+    background: linear-gradient(120deg, rgba(217,169,79,.1), transparent 65%);
+  }
+  .teaser .tn { font-family: var(--display); font-size: 2.4rem; font-weight: 600; color: var(--warn); line-height: 1; }
+  .teaser .tt { flex: 1 1 260px; }
+  .teaser h3 { font-family: var(--display); font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase; color: var(--bronze-hi); }
+  .teaser p { color: var(--ink-2); font-size: .92rem; margin-top: .35rem; max-width: 54ch; }
+
+  footer { border-top: 1px solid var(--hairline); text-align: center; color: var(--ink-3); font-size: .78rem; padding: 2rem 1.4rem 5rem; line-height: 1.9; }
+  footer .fmotto { font-family: var(--serif); font-style: italic; color: var(--silver); opacity: .7; display: block; margin-bottom: .5rem; }
+  #status { text-align: center; padding: 4rem 1rem; color: var(--ink-3); font-family: var(--serif); font-style: italic; }
   .hidden { display: none !important; }
+  .fade { animation: fd .3s ease }
+  @keyframes fd { from { opacity: 0; transform: translateY(7px) } to { opacity: 1; transform: none } }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  @media (max-width: 560px) {
+    .record dl { grid-template-columns: 1fr; }
+    .record dt { padding-top: .5rem; }
+    /* keep the drawers close to the fold on a phone */
+    header.masthead { padding-top: 1.6rem; padding-bottom: 1.1rem; }
+    .crest-holder { width: 62px; height: 62px; margin-bottom: .6rem; }
+    .masthead .sub { font-size: .9rem; margin-top: .7rem; }
+    .masthead .motto { font-size: .82rem; }
+    .rule { margin: 1rem auto .1rem; }
+    .stats { margin-top: 1.1rem; }
+    .mast-actions { margin-top: 1.1rem; }
+    .btn-owl, .btn-ghost { padding: .68rem 1.1rem; font-size: .86rem; }
+  }
 </style>
 </head>
 <body>
 
-<header class="masthead">
-  <div class="masthead-inner">
-    <div>
-      <p class="pre">
-        <svg class="eagle" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6c-3 5-9 8-16 8 5 2 8 2 11 1-4 4-9 6-14 6 6 2 11 1 15-1-2 5-6 9-11 11 7-1 12-4 15-8v18l3-4 3 4V23c3 4 8 7 15 8-5-2-9-6-11-11 4 2 9 3 15 1-5 0-10-2-14-6 3 1 6 1 11-1-7 0-13-3-16-8l-3 5-3-5z" fill="#b08d57"/></svg>
-        Private collection · Paris · MMXXVI
-      </p>
-      <h1>My <em>library</em></h1>
-      <p class="sub" id="masthead-sub">A visual catalog of every book on these shelves — two bookcases, thirteen rows, three hundred and forty-six volumes across fiction, feminism, history and three languages, each with its own record card.</p>
-      <p class="motto">“Wit beyond measure is man's greatest treasure.”</p>
-      <div class="mast-actions">
-        <a class="btn-recs" href="recs/">✦ Your reading recommendations →</a>
-        <a class="btn-ghost" href="#unidentified">Help me identify <span id="uni-count-btn">—</span> books</a>
-      </div>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="n" id="stat-total">—</div><div class="label">Entries</div></div>
-      <div class="stat"><div class="n" id="stat-shelves">—</div><div class="label">Shelves</div></div>
-      <div class="stat"><div class="n" id="stat-unknown">—</div><div class="label">To confirm</div></div>
-    </div>
+<header class="masthead" id="masthead">
+  <div class="crest-holder">
+    <svg class="crest" viewBox="0 0 100 110" aria-label="Ravenclaw-style crest">
+      <defs>
+        <linearGradient id="shieldG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1b2d6e"/>
+          <stop offset="100%" stop-color="#0a1230"/>
+        </linearGradient>
+        <linearGradient id="bronzeG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f3dcb4"/><stop offset="55%" stop-color="#b08d57"/><stop offset="100%" stop-color="#946b2d"/>
+        </linearGradient>
+      </defs>
+      <path d="M50 4 L92 18 V56 C92 82 72 98 50 106 C28 98 8 82 8 56 V18 Z" fill="url(#shieldG)" stroke="url(#bronzeG)" stroke-width="3.4"/>
+      <!-- eagle, wings displayed -->
+      <g fill="url(#bronzeG)">
+        <!-- left wing: straight leading edge raised in a V, stepped feather trailing edge -->
+        <path d="M47 55 L17 21 C22 31 25 39 27 46 L17 39 C21 47 25 53 29 58 L20 55 C26 63 35 68 46 68 Z"/>
+        <!-- right wing (mirror) -->
+        <path d="M53 55 L83 21 C78 31 75 39 73 46 L83 39 C79 47 75 53 71 58 L80 55 C74 63 65 68 54 68 Z"/>
+        <!-- body: broad chest tapering to the tail -->
+        <path d="M50 38 C56 41 58.5 48 57.5 57 L54.5 73 L45.5 73 L42.5 57 C41.5 48 44 41 50 38 Z"/>
+        <!-- tail, fanned -->
+        <path d="M46 71 L54 71 L56 82 L50 89 L44 82 Z"/>
+        <!-- head, in profile, with hooked beak -->
+        <ellipse cx="50.5" cy="33.5" rx="6.4" ry="5.6"/>
+        <path d="M45 31.6 L36.5 34.4 C38.6 35.6 39.6 36.8 39.8 38.4 C41.2 36.6 43 35.6 45.4 35.2 Z"/>
+        <!-- crown of stars -->
+        <circle cx="50" cy="19" r="2.1"/><circle cx="30" cy="22" r="1.5"/><circle cx="70" cy="22" r="1.5"/>
+      </g>
+      <circle cx="51" cy="32" r="1.5" fill="#0a1230"/>
+    </svg>
+  </div>
+  <p class="pre">The Tower Library · MMXXVI</p>
+  <h1>My Library</h1>
+  <p class="motto">“Wit beyond measure is man's greatest treasure.”</p>
+  <p class="sub" id="masthead-sub">Every book on these shelves, filed as its own record card — two towers, thirteen drawers, three languages.</p>
+  <div class="rule">
+    <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M20 3 C13 3 8 8 5 12 C8 16 13 21 20 21 C27 21 32 16 35 12 C32 8 27 3 20 3 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="20" cy="12" r="3" fill="currentColor"/></svg>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="n" id="stat-total">—</div><div class="label">Volumes</div></div>
+    <div class="stat"><div class="n" id="stat-shelves">—</div><div class="label">Drawers</div></div>
+    <div class="stat"><div class="n" id="stat-unknown">—</div><div class="label">Restricted</div></div>
+  </div>
+  <div class="mast-actions">
+    <a class="btn-owl" href="recs/">✦ The Owl Post — your recommendations</a>
+    <a class="btn-ghost" href="#/confirm">🔍 The Restricted Section</a>
   </div>
 </header>
 
 <div class="controls">
   <div class="controls-inner">
+    <a class="home-link" href="#/">✦ The Stacks</a>
     <input id="search" type="search" placeholder="Search titles, authors, series…" autocomplete="off">
     <button class="chip lang on" data-lang="all">All</button>
-    <button class="chip lang" data-lang="English">English</button>
-    <button class="chip lang" data-lang="German">German</button>
-    <button class="chip lang" data-lang="French">French</button>
-    <button class="chip confirm" id="chip-confirm">? To confirm</button>
-    <span id="match-count"></span>
+    <button class="chip lang" data-lang="English">EN</button>
+    <button class="chip lang" data-lang="German">DE</button>
+    <button class="chip lang" data-lang="French">FR</button>
+    <a class="chip owl" href="recs/" title="Your recommendations">✦ Owl Post</a>
   </div>
 </div>
 
-<div class="map-wrap">
-  <p class="map-title">The shelf map — tap a row to jump</p>
-  <div class="bookcase-map" id="bookcase-map"></div>
-</div>
-
-<main id="shelves-host"></main>
-
-<section id="unidentified-host"></section>
+<main class="wrap" id="view"><div id="status">Opening the cabinet…</div></main>
 
 <footer>
-  <em>My library</em> · catalogued August 2026 from 14 photographs · confidence-coded for verification<br>
-  Cards marked <span style="color:var(--warn)">to confirm</span> are waiting for your word below.
+  <span class="fmotto">“Wit beyond measure is man's greatest treasure.”</span>
+  <em>My library</em> · catalogued August 2026 from 14 photographs · confidence-coded for verification
 </footer>
 
 <script>
@@ -260,159 +364,289 @@
   var $ = function (s) { return document.querySelector(s); };
   var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function hsh(s) { var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; }
 
-  var CAT = null, state = { q: '', lang: 'all', confirmOnly: false };
+  var CAT = null, BOOKS = [], BY_ID = {}, SHELF_BY_ID = {}, LOW = [], CASE_LABELS = {};
+  var lang = 'all';
 
   fetch('data/catalog.json', { cache: 'no-store' })
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(function (cat) { CAT = cat; render(); wire(); })
+    .then(function (cat) { boot(cat); })
     .catch(function (e) {
-      $('#shelves-host').innerHTML = '<p style="color:var(--warn);padding:2rem 0">Could not load the catalog (' + esc(e.message) + '). Pull to refresh?</p>';
+      $('#view').innerHTML = '<p style="color:var(--warn);text-align:center;padding:3rem 0">Could not open the catalog (' + esc(e.message) + '). Pull to refresh?</p>';
     });
 
-  function allBooks() {
-    return CAT.shelves.reduce(function (acc, s) {
-      s.books.forEach(function (b) { acc.push({ shelf: s, book: b }); });
-      return acc;
-    }, []);
-  }
+  function boot(cat) {
+    CAT = cat;
+    cat.shelves.forEach(function (s) {
+      SHELF_BY_ID[s.id] = s;
+      s.books.forEach(function (b, i) {
+        b._shelf = s.id; b._idx = i; b._n = s.books.length;
+        BOOKS.push(b); BY_ID[b.id] = b;
+      });
+    });
+    LOW = BOOKS.filter(function (b) { return b.confidence === 'low'; });
+    ((cat.library.structure || {}).bookcases || []).forEach(function (c) { CASE_LABELS[c.id] = c.label; });
 
-  function render() {
-    var entries = allBooks();
-    var real = entries.filter(function (e) { return e.book.kind !== 'object'; });
-    var low = real.filter(function (e) { return e.book.confidence === 'low'; });
+    var real = BOOKS.filter(function (b) { return b.kind !== 'object'; });
     $('#stat-total').textContent = real.length;
-    $('#stat-shelves').textContent = CAT.shelves.length;
-    $('#stat-unknown').textContent = low.length;
-    $('#uni-count-btn').textContent = low.length;
+    $('#stat-shelves').textContent = cat.shelves.length;
+    $('#stat-unknown').textContent = LOW.length;
 
-    /* map */
-    var groups = {};
-    CAT.shelves.forEach(function (s) {
-      var caseId = s.id.charAt(0);
-      (groups[caseId] = groups[caseId] || []).push(s);
-    });
-    var caseLabels = {};
-    ((CAT.library.structure || {}).bookcases || []).forEach(function (c) { caseLabels[c.id] = c.label; });
-    $('#bookcase-map').innerHTML = Object.keys(groups).map(function (cid) {
-      return '<div class="case"><h3>' + esc(caseLabels[cid] || cid) + '</h3>' +
-        groups[cid].map(function (s) {
-          return '<a class="row" href="#' + esc(s.id) + '"><span>' + esc(s.label.replace(/^.*· /, '')) + ' — ' + esc(shortTheme(s.theme)) + '</span><span class="n">' + s.books.length + '</span></a>';
-        }).join('') + '</div>';
-    }).join('');
-
-    /* shelves */
-    $('#shelves-host').innerHTML = CAT.shelves.map(function (s) {
-      return '<section class="shelf-section" id="' + esc(s.id) + '">' +
-        '<div class="shelf-head"><span class="tag">' + esc(s.id) + '</span><h2>' + esc(s.label) + '</h2><span class="theme">' + esc(s.theme) + '</span></div>' +
-        '<div class="book-grid">' + s.books.map(function (b) { return bookCard(b); }).join('') + '</div>' +
-        '</section>';
-    }).join('');
-
-    /* unidentified */
-    $('#unidentified-host').innerHTML =
-      '<section id="unidentified">' +
-      '<p class="kicker">A small favour</p>' +
-      '<h2>Unidentified books — can you confirm these?</h2>' +
-      '<p class="lede">These ' + low.length + ' spines were hard to read from the photographs. One tap per card teaches the catalog: confirm the guess, or type what it really is. Your answers reach the librarian automatically.</p>' +
-      '<div class="uni-grid">' + low.map(function (e) { return uniCard(e); }).join('') + '</div>' +
-      '</section>';
-
-    applyFilter();
+    wire();
+    window.addEventListener('hashchange', route);
+    route();
   }
 
-  function shortTheme(t) { return (t || '').split('—')[0].trim(); }
+  /* ================= router ================= */
+  function route() {
+    var h = location.hash.replace(/^#/, '') || '/';
+    var parts = h.split('/').filter(Boolean);          // ['shelf','A1']
+    var view = parts[0] || '';
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    $('#masthead').classList.toggle('hidden', view !== '');
+    if (view === 'shelf' && SHELF_BY_ID[parts[1]]) return viewShelf(SHELF_BY_ID[parts[1]]);
+    if (view === 'book' && BY_ID[parts[1]]) return viewBook(BY_ID[parts[1]]);
+    if (view === 'confirm') return viewConfirm();
+    if (view === 'search') return viewSearch(decodeURIComponent(parts.slice(1).join('/') || ''));
+    return viewHome();
+  }
+  function render(html) { var v = $('#view'); v.innerHTML = html; v.classList.remove('fade'); void v.offsetWidth; v.classList.add('fade'); }
+  function crumb(links) {
+    return '<p class="breadcrumb">' + links.map(function (l) {
+      return l[1] ? '<a href="' + l[1] + '">' + esc(l[0]) + '</a>' : esc(l[0]);
+    }).join(' &nbsp;·&nbsp; ') + '</p>';
+  }
+  var FEATHER = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 4c-8 0-14 5-14 12v4M20 4c0 8-5 13-12 13"/></svg>';
+
+  /* ================= home ================= */
+  function viewHome() {
+    var groups = {};
+    CAT.shelves.forEach(function (s) { (groups[s.id.charAt(0)] = groups[s.id.charAt(0)] || []).push(s); });
+    render(
+      '<div class="view-head">' +
+        '<h2 class="section-title">The Stacks</h2>' +
+        '<p class="section-sub">Thirteen drawers across two towers. Pull one open — every volume inside has its own record card.</p>' +
+      '</div>' +
+      '<div class="stacks">' + Object.keys(groups).map(function (cid) {
+        return '<div class="case"><h3>' + FEATHER + esc(CASE_LABELS[cid] || cid) + '</h3>' +
+          groups[cid].map(function (s) {
+            return '<a class="drawer" href="#/shelf/' + esc(s.id) + '">' +
+              '<span class="dtag">' + esc(s.id) + '</span>' +
+              '<span class="dtxt"><span class="dname">' + esc(shelfName(s)) + '</span>' +
+              '<span class="dtheme">' + esc(shelfSub(s)) + '</span></span>' +
+              '<span class="dn">' + s.books.length + '</span></a>';
+          }).join('') + '</div>';
+      }).join('') + '</div>' +
+      '<div class="teaser">' +
+        '<div class="tn">' + LOW.length + '</div>' +
+        '<div class="tt"><h3>The Restricted Section</h3>' +
+        '<p>Spines the photographs could not read with certainty. One tap each — confirm the guess or tell me what it really is — and the catalog corrects itself.</p></div>' +
+        '<a class="btn-ghost" href="#/confirm">Open it →</a>' +
+      '</div>'
+    );
+  }
+  function shelfName(s) {
+    var t = (s.theme || '').split('—')[0].trim();
+    return t || s.label;
+  }
+  function shelfSub(s) {
+    var parts = (s.theme || '').split('—');
+    return (parts[1] || s.label).trim();
+  }
+
+  /* ================= shelf ================= */
+  function viewShelf(s) {
+    var i = CAT.shelves.indexOf(s);
+    var prev = CAT.shelves[(i - 1 + CAT.shelves.length) % CAT.shelves.length];
+    var next = CAT.shelves[(i + 1) % CAT.shelves.length];
+    var visible = s.books.filter(inLang);
+    render(
+      crumb([['The Stacks', '#/'], [CASE_LABELS[s.id.charAt(0)] || '', null], [s.label, null]]) +
+      '<div class="view-head">' +
+        '<h2 class="section-title">' + esc(shelfName(s)) + '</h2>' +
+        '<p class="section-sub">' + esc(s.theme) + ' · ' + visible.length + (lang === 'all' ? ' volumes' : ' in ' + esc(lang)) + '</p>' +
+      '</div>' +
+      (visible.length
+        ? '<div class="book-grid">' + visible.map(bookCard).join('') + '</div>'
+        : '<p class="section-sub">No ' + esc(lang) + ' books in this drawer.</p>') +
+      '<div class="pager"><a href="#/shelf/' + esc(prev.id) + '">← ' + esc(prev.label) + '</a>' +
+      '<a href="#/shelf/' + esc(next.id) + '">' + esc(next.label) + ' →</a></div>'
+    );
+  }
+  function inLang(b) { return lang === 'all' || b.language === lang; }
 
   function bookCard(b) {
-    var cls = 'book conf-' + b.confidence + (b.kind === 'object' ? ' obj' : '');
-    var meta = '<span class="pill lang-' + esc(b.language) + '">' + esc(b.language) + '</span>' +
-      (b.topics || []).slice(0, 2).map(function (t) { return '<span class="pill">' + esc(t) + '</span>'; }).join('');
-    return '<article class="' + cls + '" data-id="' + esc(b.id) + '" data-lang="' + esc(b.language) + '" data-conf="' + esc(b.confidence) + '" data-hay="' + esc(((b.title || '') + ' ' + (b.author || '') + ' ' + (b.series || '') + ' ' + (b.topics || []).join(' ')).toLowerCase()) + '">' +
+    return '<a class="book conf-' + esc(b.confidence) + '" href="#/book/' + esc(b.id) + '">' +
       '<div class="bid">' + esc(b.id) + (b.series ? ' · ' + esc(b.series) : '') + '</div>' +
       '<h4>' + esc(b.title) + '</h4>' +
       '<div class="author">' + esc(b.author) + '</div>' +
-      '<div class="meta">' + meta + '</div>' +
-      (b.note ? '<div class="note">' + esc(b.note) + '</div>' : '') +
-      '</article>';
+      '<div class="meta"><span class="pill lang-' + esc(b.language) + '">' + esc(b.language) + '</span>' +
+      (b.topics || []).slice(0, 2).map(function (t) { return '<span class="pill">' + esc(t) + '</span>'; }).join('') +
+      '</div></a>';
   }
 
-  function uniCard(e) {
-    var b = e.book;
-    return '<div class="uni" data-uid="' + esc(b.id) + '">' +
-      '<div class="where">' + esc(e.shelf.label) + ' · ' + esc(b.id) + '</div>' +
-      '<h4>' + esc(b.title) + '</h4>' +
-      '<div class="author">' + esc(b.author) + '</div>' +
-      (b.note ? '<div class="note">' + esc(b.note) + '</div>' : '') +
+  /* ================= book record ================= */
+  function houseFact(b) {
+    var out = [], s = SHELF_BY_ID[b._shelf];
+    var sameAuthor = BOOKS.filter(function (x) { return x.author && x.author === b.author; });
+    if (sameAuthor.length > 1) out.push('There are ' + sameAuthor.length + ' books by ' + b.author + ' in this library.');
+    if (b.series) {
+      var run = BOOKS.filter(function (x) { return x.series && b.series && x.series.split('#')[0] === b.series.split('#')[0]; });
+      if (run.length > 1) out.push('Part of a run of ' + run.length + ' volumes from the same series on these shelves.');
+    }
+    var sameLang = BOOKS.filter(function (x) { return x.language === b.language; });
+    if (b.language !== '—' && sameLang.length > 1 && sameLang.length < 60) out.push('One of ' + sameLang.length + ' books you keep in ' + b.language + '.');
+    (b.topics || []).forEach(function (t) {
+      var n = BOOKS.filter(function (x) { return (x.topics || []).indexOf(t) !== -1; }).length;
+      if (n > 3) out.push('Filed under “' + t + '” — a subject that runs to ' + n + ' volumes here.');
+    });
+    if (s) out.push('Lives in drawer ' + b._shelf + ' — ' + shelfName(s).toLowerCase() + ' — at position ' + (b._idx + 1) + ' of ' + b._n + '.');
+    return out.length ? out[hsh(b.id) % out.length] : '';
+  }
+  function crossRefs(b) {
+    var sameAuthor = BOOKS.filter(function (x) { return x !== b && x.author && x.author === b.author; }).slice(0, 6);
+    var ts = b.topics || [];
+    var sameTopic = BOOKS.filter(function (x) {
+      return x !== b && sameAuthor.indexOf(x) === -1 && x.kind !== 'object' &&
+        (x.topics || []).some(function (t) { return ts.indexOf(t) !== -1; });
+    }).sort(function (x, y) { return hsh(x.id + b.id) - hsh(y.id + b.id); }).slice(0, 6);
+    return { sameAuthor: sameAuthor, sameTopic: sameTopic };
+  }
+  function viewBook(b) {
+    var s = SHELF_BY_ID[b._shelf], refs = crossRefs(b);
+    var prev = s.books[(b._idx - 1 + b._n) % b._n], next = s.books[(b._idx + 1) % b._n];
+    var CONF = { high: 'Confirmed from the photographs', medium: 'Probable — worth a glance', low: 'Unconfirmed — your word decides' };
+    var fields = [
+      ['Title', b.title],
+      ['Author', b.author || '— unidentified —'],
+      ['Language', b.language],
+      b.series ? ['Series', b.series] : null,
+      ['Subjects', (b.topics || []).join(' · ') || '—'],
+      ['Shelfmark', 'Drawer ' + b._shelf + ' · position ' + (b._idx + 1) + ' of ' + b._n],
+      ['Drawer', shelfName(s) + ' — ' + shelfSub(s)],
+      ['Record', CONF[b.confidence] || b.confidence],
+      b.note ? ['Archivist’s note', b.note] : null
+    ].filter(Boolean);
+    var fact = houseFact(b);
+
+    render(
+      crumb([['The Stacks', '#/'], [s.label, '#/shelf/' + s.id], [b.id, null]]) +
+      '<article class="record">' +
+        '<span class="callnum">' + esc(b.id) + ' / ' + esc(b._shelf) + '</span>' +
+        '<h2>' + esc(b.title) + '</h2>' +
+        '<p class="by">' + esc(b.author || '— author unidentified —') + '</p>' +
+        (fact ? '<p class="fact">' + esc(fact) + '</p>' : '') +
+        '<dl>' + fields.map(function (f) {
+          return '<dt>' + esc(f[0]) + '</dt><dd>' + esc(f[1]) + '</dd>';
+        }).join('') + '</dl>' +
+        (refs.sameAuthor.length ? '<p class="xref-title">See also — same author</p><div class="xrefs">' +
+          refs.sameAuthor.map(xrefLink).join('') + '</div>' : '') +
+        (refs.sameTopic.length ? '<p class="xref-title">See also — kindred subjects</p><div class="xrefs">' +
+          refs.sameTopic.map(xrefLink).join('') + '</div>' : '') +
+      '</article>' +
+      (b.confidence === 'low' ? confirmBlock(b) : '') +
+      '<div class="pager"><a href="#/book/' + esc(prev.id) + '">← ' + esc(trim(prev.title)) + '</a>' +
+      '<a href="#/book/' + esc(next.id) + '">' + esc(trim(next.title)) + ' →</a></div>'
+    );
+    wireConfirm();
+  }
+  function trim(t) { return t.length > 30 ? t.slice(0, 28) + '…' : t; }
+  function xrefLink(x) { return '<a href="#/book/' + esc(x.id) + '">' + esc(trim(x.title)) + '</a>'; }
+
+  /* ================= restricted section ================= */
+  function confirmBlock(b) {
+    return '<div class="confirm-box" data-uid="' + esc(b.id) + '">' +
+      '<p class="ct">Restricted Section · ' + esc(b._shelf) + '</p>' +
+      '<p>This spine was hard to read in the photograph' + (b.note ? ' — ' + esc(b.note) : '') + '. Is the record right?</p>' +
       '<div class="acts">' +
-      '<button data-act="confirm">That’s it ✓</button>' +
-      '<button data-act="fix">Not quite…</button>' +
+        '<button data-act="confirm">That’s it ✓</button>' +
+        '<button data-act="fix">Not quite…</button>' +
       '</div>' +
       '<div class="fix"><input type="text" maxlength="200" placeholder="What is it really? Title + author">' +
       '<button data-act="send">Send correction</button></div>' +
-      '<div class="done"></div>' +
-      '</div>';
+      '<div class="done"></div></div>';
+  }
+  function viewConfirm() {
+    render(
+      crumb([['The Stacks', '#/'], ['The Restricted Section', null]]) +
+      '<div class="view-head">' +
+        '<h2 class="section-title">The Restricted Section</h2>' +
+        '<p class="section-sub">' + LOW.length + ' spines the photographs could not read with certainty. Confirm the guess or type what it really is — every answer reaches the librarian and corrects the catalog.</p>' +
+      '</div>' +
+      '<div class="book-grid">' + LOW.map(function (b) {
+        return '<div>' + bookCard(b) + confirmBlock(b) + '</div>';
+      }).join('') + '</div>'
+    );
+    wireConfirm();
+  }
+  function wireConfirm() {
+    $$('.confirm-box').forEach(function (box) {
+      if (box.__wired) return;
+      box.__wired = true;
+      box.addEventListener('click', function (ev) {
+        var btn = ev.target.closest('button');
+        if (!btn) return;
+        var uid = box.getAttribute('data-uid'), act = btn.getAttribute('data-act');
+        if (act === 'fix') { box.querySelector('.fix').classList.add('open'); box.querySelector('.fix input').focus(); return; }
+        if (act === 'confirm') {
+          if (window.engageAnswer) window.engageAnswer('unidentified:' + uid, 'confirmed', btn);
+          finish(box, 'Noted — the record stands. Thank you!');
+        }
+        if (act === 'send') {
+          var v = box.querySelector('.fix input').value.trim();
+          if (!v) { box.querySelector('.fix input').focus(); return; }
+          if (window.engageAnswer) window.engageAnswer('unidentified:' + uid, 'correction: ' + v, btn);
+          finish(box, 'Sent — the librarian will redo the card. Thank you!');
+        }
+      });
+    });
+  }
+  function finish(box, msg) {
+    box.querySelectorAll('button, input').forEach(function (el) { el.disabled = true; el.style.opacity = .45; });
+    var d = box.querySelector('.done');
+    d.textContent = '✓ ' + msg; d.style.display = 'block';
   }
 
-  /* ---------- filtering ---------- */
-  function applyFilter() {
-    var n = 0;
-    $$('.book').forEach(function (el) {
-      var ok = true;
-      if (state.lang !== 'all' && el.getAttribute('data-lang') !== state.lang) ok = false;
-      if (state.confirmOnly && el.getAttribute('data-conf') !== 'low') ok = false;
-      if (state.q && el.getAttribute('data-hay').indexOf(state.q) === -1) ok = false;
-      el.classList.toggle('hidden', !ok);
-      if (ok) n++;
+  /* ================= search ================= */
+  function viewSearch(q) {
+    var needle = q.toLowerCase();
+    var hits = BOOKS.filter(function (b) {
+      if (!inLang(b)) return false;
+      var hay = ((b.title || '') + ' ' + (b.author || '') + ' ' + (b.series || '') + ' ' + (b.topics || []).join(' ')).toLowerCase();
+      return hay.indexOf(needle) !== -1;
     });
-    $$('.shelf-section').forEach(function (sec) {
-      var any = sec.querySelector('.book:not(.hidden)');
-      sec.classList.toggle('hidden', !any);
-    });
-    var filtering = state.q || state.lang !== 'all' || state.confirmOnly;
-    $('#match-count').textContent = filtering ? n + ' match' + (n === 1 ? '' : 'es') : '';
+    if ($('#search').value !== q) $('#search').value = q;
+    render(
+      crumb([['The Stacks', '#/'], ['Search', null]]) +
+      '<div class="view-head">' +
+        '<h2 class="section-title">“' + esc(q) + '”</h2>' +
+        '<p class="section-sub">' + hits.length + ' record' + (hits.length === 1 ? '' : 's') + ' found across the drawers.</p>' +
+      '</div>' +
+      (hits.length ? '<div class="book-grid">' + hits.map(bookCard).join('') + '</div>'
+                   : '<p class="section-sub">Nothing under that name. Try an author, a series, or a subject.</p>')
+    );
   }
 
+  /* ================= wiring ================= */
   function wire() {
-    $('#search').addEventListener('input', function () { state.q = this.value.trim().toLowerCase(); applyFilter(); });
+    var t = null;
+    $('#search').addEventListener('input', function () {
+      var v = this.value.trim();
+      clearTimeout(t);
+      t = setTimeout(function () {
+        if (v.length >= 2) location.hash = '#/search/' + encodeURIComponent(v);
+        else if (/^#\/search/.test(location.hash)) location.hash = '#/';
+      }, 260);
+    });
     $$('.chip.lang').forEach(function (c) {
       c.addEventListener('click', function () {
         $$('.chip.lang').forEach(function (x) { x.classList.remove('on'); });
         c.classList.add('on');
-        state.lang = c.getAttribute('data-lang');
-        applyFilter();
+        lang = c.getAttribute('data-lang');
+        route();
       });
     });
-    $('#chip-confirm').addEventListener('click', function () {
-      state.confirmOnly = !state.confirmOnly;
-      this.classList.toggle('on', state.confirmOnly);
-      applyFilter();
-    });
-
-    /* unidentified interactions → engage events */
-    $('#unidentified-host').addEventListener('click', function (ev) {
-      var btn = ev.target.closest('button');
-      if (!btn) return;
-      var card = btn.closest('.uni');
-      var uid = card.getAttribute('data-uid');
-      var act = btn.getAttribute('data-act');
-      if (act === 'fix') { card.querySelector('.fix').classList.add('open'); return; }
-      if (act === 'confirm') {
-        if (window.engageAnswer) window.engageAnswer('unidentified:' + uid, 'confirmed', btn);
-        finishUni(card, 'Noted — the card stays as it is. Thank you!');
-      }
-      if (act === 'send') {
-        var v = card.querySelector('.fix input').value.trim();
-        if (!v) { card.querySelector('.fix input').focus(); return; }
-        if (window.engageAnswer) window.engageAnswer('unidentified:' + uid, 'correction: ' + v, btn);
-        finishUni(card, 'Sent — the librarian will fix the card. Thank you!');
-      }
-    });
-  }
-  function finishUni(card, msg) {
-    card.querySelectorAll('button, input').forEach(function (el) { el.disabled = true; el.style.opacity = .45; });
-    var d = card.querySelector('.done');
-    d.textContent = '✓ ' + msg;
-    d.style.display = 'block';
   }
 })();
 </script>

@@ -28,6 +28,16 @@ Los commits y archivos internos pueden ir en español.
     `page_visit` → señales de engagement.
   - `push_unsubscribe` → C pausó los pushes desde una ficha.
 
+## Datos de prueba: no aprender de ellos
+
+Antes del lanzamiento (2026-08-19) Andy probó la app haciéndose pasar por el
+dispositivo `C`: quiz completo, cadencia y navegación. **Esos eventos se
+borraron del relay** y nunca llegaron a `sync/engagement.json`. Regla
+permanente: si aparece feedback de `C` con fecha **anterior a la primera
+suscripción real de su teléfono** (la fila más vieja de `C` en
+`notifications/subscription.json`), tratarlo como prueba y descartarlo.
+Cuando Andy pruebe algo a propósito, lo va a avisar en el pedido.
+
 ## La corrida semanal (domingos)
 
 1. **Leer el feedback nuevo** de C en `sync/engagement.json` (device `C`)

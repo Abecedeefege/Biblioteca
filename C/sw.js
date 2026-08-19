@@ -1,6 +1,6 @@
 /* My library (C) service worker — network-first with cache fallback, so the
    catalog keeps working offline and the app is installable. Scoped to /C/. */
-const CACHE = 'my-library-v1';
+const CACHE = 'my-library-v2';
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
