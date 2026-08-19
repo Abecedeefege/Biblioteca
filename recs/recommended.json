@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-17T19:04:46.000Z",
-  "_feedback_cutoff": "2026-08-17T12:29:50.970Z",
+  "_updated_at": "2026-08-19T16:05:00-03:00",
+  "_feedback_cutoff": "2026-08-19T11:02:50.116Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",

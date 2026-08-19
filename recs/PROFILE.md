@@ -32,6 +32,16 @@ toca a Sofi.
 - **18/08 (martes, no-op)**: Gate de día → no es domingo. 0 eventos nuevos
   desde el cutoff (17/08); cutoff sin avanzar. Cola y send_log sin
   pendientes (push de Coyle-Sofi salió OK 16/08, sent_at 20:42 UTC).
+- **19/08 (miércoles, no-op)**: Gate de día → no es domingo. 13 eventos
+  nuevos desde el cutoff, todos pasivos: dwell de Andy en la ficha de Klune
+  de Sofi (64s/94%, sin voto — visita cruzada, no señal de perfil) + 3
+  page_visit/dwell de Andy en index.html + 8 eventos de un dispositivo
+  nuevo "C-test" (onboarding/quiz-skip/push-optin + dwell en index.html) —
+  no es Andy ni Sofi, sin acción; se sumó a `subscription.json` hoy
+  08:43 UTC como tercer device activo, fuera de mi territorio (lectura
+  únicamente). Sin veredicto/reacción/nota accionable. Cutoff avanzado a
+  2026-08-19T11:02:50.116Z. Cola sin pendientes propios (los ids
+  `c-test-*` son ajenos). Sin ficha ni push hoy.
 - **09/08→15/08**: Domingo 09/08 (última ficha activa previa): Albom *Las
   cinco personas que encontrarás en el cielo* (Andy, nuevo), respuesta
   directa al rec-nota del 07/08 pidiendo "algo como el Principito".
