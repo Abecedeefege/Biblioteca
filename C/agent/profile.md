@@ -3,10 +3,16 @@
 _Última corrida: 2026-08-18 (seed inicial, hecho a mano a partir del
 catálogo de sus estantes; todavía sin feedback de C)._
 
+## Estado
+
+App entregada a C el **2026-08-19** (ver `C/agent/handoff.json`). Desde esa
+marca su feedback es real y cuenta; lo anterior eran pruebas del dueño.
+A la espera de sus primeras respuestas: cuestionario, cadencia y hora de
+entrega (`rec-time`).
+
 ## Cadencia vigente
 
-`weekly` (default — C aún no contestó el cuestionario; el último
-`rec-cadence` en `sync/engagement.json` manda).
+`weekly` (default — hasta que llegue su primer `rec-cadence`).
 
 ## Lo que dicen sus estantes (346 libros, 13 filas)
 
