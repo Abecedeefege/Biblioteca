@@ -475,6 +475,20 @@
       "device": "Sofi",
       "ts": "2026-08-16T20:42:10.105Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "c-test-manual-20260819-0843",
+      "device": "C-test",
+      "ts": "2026-08-19T08:43:57.403Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "c-test-welcome",
+      "device": "C-test",
+      "ts": "2026-08-19T08:43:57.498Z",
+      "status_code": 201
     }
   ]
 }

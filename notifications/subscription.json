@@ -29,6 +29,21 @@
       "updated_at": "2026-07-16T14:40:36.654Z",
       "invalidated_at": null,
       "invalid_reason": null
+    },
+    {
+      "device": "C-test",
+      "subscription": {
+        "keys": {
+          "auth": "VRactHjubYQQ5FMWMk2Y4Q",
+          "p256dh": "BOgu1Fob9QGvNjuhHu1t6dlbemqrQSId_XX5An7wl7s-S4YXakDDyBfNVC-6UVrCrlt8B3MTFcPBtGvN8zDh-XA"
+        },
+        "endpoint": "https://fcm.googleapis.com/fcm/send/cREgmlIpouE:APA91bGzdNaXu3rVzn8Kg7AzgtEFErKmyfkkY3_UjWS8-nSrVHr0CaTK1EjboCUlandkl5qMZOAXS8RXOUX-CzBeYUlgl0BUprHBQ7lQmSmBMKCccLw8I5pKGTRYJmTdyny105cW-xDV",
+        "expirationTime": null
+      },
+      "status": "active",
+      "updated_at": "2026-08-19T08:43:57.055Z",
+      "invalidated_at": null,
+      "invalid_reason": null
     }
   ]
 }

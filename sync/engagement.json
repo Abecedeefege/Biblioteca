@@ -3432,7 +3432,50 @@
       "device": "Andy",
       "dwell_s": 19,
       "scroll_pct": 3
+    },
+    {
+      "id": "mszud8vy-fvfhwf",
+      "ts": "2026-08-19T08:40:38.207Z",
+      "page": "index.html",
+      "type": "page_visit",
+      "device": "C-test"
+    },
+    {
+      "id": "mszudjg1-1n3y6c",
+      "ts": "2026-08-19T08:40:51.889Z",
+      "qid": "quiz",
+      "page": "index.html",
+      "type": "answer",
+      "value": "skipped-all",
+      "device": "C-test"
+    },
+    {
+      "id": "mszudllb-dsqvnd",
+      "ts": "2026-08-19T08:40:54.671Z",
+      "qid": "push-optin",
+      "page": "index.html",
+      "type": "answer",
+      "value": "granted",
+      "device": "C-test"
+    },
+    {
+      "id": "mszudmir-76j5m0",
+      "ts": "2026-08-19T08:40:55.875Z",
+      "qid": "onboarding",
+      "page": "index.html",
+      "type": "answer",
+      "value": "completed",
+      "device": "C-test"
+    },
+    {
+      "id": "mszudz9v-gfdd8a",
+      "ts": "2026-08-19T08:41:12.403Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "C-test",
+      "dwell_s": 34,
+      "scroll_pct": 100
     }
   ],
-  "_updated_at": "2026-08-18T19:29:57.686Z"
+  "_updated_at": "2026-08-19T08:43:57.121Z"
 }
