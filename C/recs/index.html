@@ -210,15 +210,44 @@
       ['big', '<b>Big and immersive</b> — live in it for weeks'],
       ['depends', '<b>Depends</b> on the book']]}
   ];
+  /* Delivery hour, asked in RELATIVE terms so no one has to name a timezone:
+     every option is computed from her own clock, and the answer we store
+     carries the resulting local time plus the IANA zone her browser reports. */
+  var DELIVERY = { key: 'rec-time', q: 'And what time of day should it land?', sub: 'Times below are read straight off your own clock, so there is nothing to convert.',
+    rel: [0, 6, -6, 12, 3, -3, 9, -9, 15] };   // preference order; only civil hours survive the filter
   var CADENCE = { key: 'rec-cadence', q: 'How often should a new recommendation arrive?', sub: 'You can change this any time — just say so in any card’s comment box.', opts: [
       ['weekly', '<b>Weekly</b> — one book every Sunday'],
       ['biweekly', '<b>Every two weeks</b> — slower, deeper']]};
 
   /* ---------------- onboarding engine ---------------- */
+  function tzName() {
+    try { return Intl.DateTimeFormat().resolvedOptions().timeZone || 'unknown'; } catch (e) { return 'unknown'; }
+  }
+  function utcOffset() {
+    var m = -new Date().getTimezoneOffset();
+    var sign = m < 0 ? '-' : '+', a = Math.abs(m);
+    return sign + ('0' + Math.floor(a / 60)).slice(-2) + ':' + ('0' + (a % 60)).slice(-2);
+  }
+  /* the wall-clock time `hours` from now on her device, rounded to the half hour */
+  function clockIn(hours) {
+    var d = new Date(Date.now() + hours * 3600000);
+    var mins = d.getMinutes();
+    if (mins < 15) d.setMinutes(0, 0, 0);
+    else if (mins < 45) d.setMinutes(30, 0, 0);
+    else { d.setMinutes(0, 0, 0); d.setHours(d.getHours() + 1); }
+    return ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2);
+  }
+  function relLabel(h) {
+    if (h === 0) return '<b>Around now</b>';
+    if (h > 0) return '<b>' + h + ' hours later</b>';
+    return '<b>' + Math.abs(h) + ' hours earlier</b>';
+  }
+
   function buildFlow(withWelcome) {
     var f = withWelcome ? [{ type: 'welcome' }] : [];
     QUIZ.forEach(function (q) { f.push({ type: 'quiz', def: q }); });
     f.push({ type: 'cadence', def: CADENCE });
+    f.push({ type: 'time', def: DELIVERY });
     f.push({ type: 'push' });
     return f;
   }
@@ -237,6 +266,7 @@
         var qs = flow.filter(function (x) { return x.type === 'quiz'; });
         label = 'Question ' + (qs.indexOf(st) + 1) + ' of ' + qs.length + ' · building your taste profile';
       } else if (st.type === 'cadence') label = 'Almost there · how often you want books';
+      else if (st.type === 'time') label = 'Almost there · what time they arrive';
       else if (st.type === 'push') label = 'Last step · how the books reach you';
     }
     $('#stepCount').textContent = label;
@@ -278,6 +308,33 @@
         logAnswer('quiz', 'skipped-all');
         stepIdx = flow.length - 1;   // jump to the push step
         showStep();
+      });
+    } else if (st.type === 'time') {
+      var td = st.def;
+      // keep only offsets that land at a civil hour on her clock (08:00–22:30),
+      // so no option can schedule a push for the middle of her night
+      var choices = td.rel.filter(function (h) {
+        var hh = parseInt(clockIn(h).slice(0, 2), 10);
+        return hh >= 8 && hh <= 22;
+      }).slice(0, 4);
+      if (!choices.length) choices = [0];
+      host.innerHTML = '<h2>' + td.q + '</h2>' +
+        '<p class="q-sub">' + td.sub + '</p>' +
+        '<div class="opts">' + choices.map(function (h) {
+          return '<button data-h="' + h + '">' + relLabel(h) + ' — around <b>' + clockIn(h) + '</b> your time</button>';
+        }).join('') + '</div>' +
+        '<div class="skiprow"><a href="#" id="skip-q">no preference</a></div>';
+      host.querySelectorAll('.opts button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var h = parseInt(b.getAttribute('data-h'), 10);
+          // self-describing answer: local wall clock + zone + offset + the relative choice
+          logAnswer(td.key, clockIn(h) + ' local | tz=' + tzName() + ' | utc' + utcOffset() +
+                            ' | rel=' + (h > 0 ? '+' : '') + h + 'h');
+          stepIdx++; showStep();
+        });
+      });
+      host.querySelector('#skip-q').addEventListener('click', function (e) {
+        e.preventDefault(); stepIdx++; showStep();
       });
     } else if (st.type === 'quiz' || st.type === 'cadence') {
       var d = st.def;
@@ -396,6 +453,8 @@
         }).then(function () {
           say('✓ Done — a welcome push is on its way.', 'ok');
           logAnswer('push-optin', 'granted');
+          // the phone reports where it is, so deliveries follow her when she moves
+          logAnswer('timezone', tzName() + ' | utc' + utcOffset());
           setTimeout(onDone, 1200);
         }).catch(function (e) {
           btn.disabled = false;
