@@ -5,18 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biblioteca</title>
 
-<!-- ====== home swap: El Fichero (concepts/fichero.html) es la home principal ======
-     Este archivo sigue siendo el catálogo canónico (inline-catalog / inline-photos):
-     los conceptos y el agente /engagement lo LEEN por fetch/regex, donde este script
-     no se ejecuta. Solo redirige a visitantes humanos sin params de escape:
-       ?exp=clasica  → quedarse en el catálogo clásico (link "Clásica" del switcher)
-       ?nid= / ?src= → deep-links de push notifications: no interferir  -->
+<!-- ====== portero de la raíz ======
+     Este archivo sigue siendo el catálogo canónico (inline-catalog / inline-photos
+     / inline-archive): los conceptos, la TV y los agentes lo LEEN por fetch+regex,
+     donde este script NO se ejecuta. Nada de lo de abajo toca esos bloques.
+
+     A quién manda a dónde (solo visitantes humanos):
+       · señal de casa  → concepts/fichero.html (la home de siempre)
+       · señal de C     → C/  (su propia biblioteca)
+       · sin señales    → C/  (default: si alguien borra el /C/ de la URL,
+                          vuelve a su biblioteca en vez de caer acá)
+
+     Señales de casa, cualquiera alcanza y deja el navegador marcado:
+       · la app instalada (display-mode standalone): su start_url es esta raíz,
+         mientras que la PWA de C tiene scope /C/ y nunca abre acá
+       · rastros del sitio en localStorage (dispositivo, PAT, outbox, sellos)
+       · ?nid= / ?src=  → deep-links de las push viejas, que apuntan a este archivo
+       · ?exp=clasica   → quedarse en el catálogo clásico (link "Clásica")
+       · ?key=casa      → llave explícita para desbloquear un navegador nuevo  -->
 <style>html{background:#0d0a07}</style>
 <script>
 (function () {
+  var HOME = 'biblioteca_home';
+  function ls(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function mark() { try { localStorage.setItem(HOME, '1'); } catch (e) {} }
+  function anyKey(pred) {
+    try {
+      for (var i = 0; i < localStorage.length; i++) if (pred(localStorage.key(i))) return true;
+    } catch (e) {}
+    return false;
+  }
+
   var p = new URLSearchParams(location.search);
-  if (p.has('exp') || p.has('nid') || p.has('src')) return;
-  location.replace('concepts/fichero.html');
+  var escapes = p.has('exp') || p.has('nid') || p.has('src') || p.get('key') === 'casa';
+
+  // el ícono instalado del dueño arranca justo acá; el de C vive en /C/
+  var standalone = (navigator.standalone === true) ||
+    (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+
+  var isHome = escapes || standalone || ls(HOME) ||
+    ls('biblioteca_device_name') || ls('biblioteca_gh_pat') ||
+    anyKey(function (k) { return k && k.indexOf('biblioteca_') === 0; });
+
+  if (isHome) {
+    mark();
+    if (p.has('exp')) return;                 // catálogo clásico: quedarse acá
+    location.replace('concepts/fichero.html');
+    return;
+  }
+  // sin credenciales de la casa (o con rastros de My library): a su biblioteca
+  location.replace('C/');
 })();
 </script>
 

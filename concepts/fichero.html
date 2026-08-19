@@ -7,6 +7,27 @@
 <meta name="description" content="El Fichero: la biblioteca de la casa como archivo catalográfico. Cajones de madera, fichas a máquina y sellos de tinta.">
 <meta name="theme-color" content="#2c1f16">
 
+<!-- Portero espejo del de la raíz: si este navegador es el de My library
+     (la app de C), se lo devuelve a su biblioteca. Solo actúa ante señal
+     POSITIVA de C — nunca por ausencia de señal — para que el dueño jamás
+     quede afuera de su propia home aunque pierda el localStorage. -->
+<script>
+(function () {
+  try {
+    if (localStorage.getItem('c_library_device_as') ||
+        localStorage.getItem('c_recs_onboarded') ||
+        localStorage.getItem('c_library_engage_outbox')) {
+      location.replace('../C/');
+      return;
+    }
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('c_library_') === 0) { location.replace('../C/'); return; }
+    }
+  } catch (e) {}
+})();
+</script>
+
 <!-- ====================== PWA / home-screen ======================
      index.html hace location.replace() hacia acá desde el <head>, antes
      de que el parser llegue a su propio <link rel="manifest">. Es decir:
