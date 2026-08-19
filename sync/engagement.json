@@ -3482,7 +3482,23 @@
       "page": "index.html",
       "type": "page_visit",
       "device": "C-test"
+    },
+    {
+      "id": "mszzfxer-93423w",
+      "ts": "2026-08-19T11:02:41.379Z",
+      "page": "index.html",
+      "type": "page_visit",
+      "device": "C-test"
+    },
+    {
+      "id": "mszzg45g-s5w2rc",
+      "ts": "2026-08-19T11:02:50.116Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "C-test",
+      "dwell_s": 9,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-08-19T09:52:17.045Z"
+  "_updated_at": "2026-08-19T11:02:57.692Z"
 }
