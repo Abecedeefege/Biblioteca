@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🌀 Deshacer la ansiedad · De tu estante L4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0C131E;
+  --noche2:#121C2A;
+  --noche3:#182435;
+  --tiza:#E9F0F8;
+  --bruma:#8FA3BA;
+  --ambar:#E39B3C;
+  --ambar-hi:#FFC87A;
+  --menta:#57CFAE;
+  --menta-hi:#8FEBD1;
+  --linea:rgba(233,240,248,.13);
+  --serif:'Spectral',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--tiza);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--menta);color:var(--noche)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:500}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--menta-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(233,240,248,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--menta),var(--ambar-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(12,19,30,.7);backdrop-filter:blur(4px)}
+.back:hover{color:var(--menta-hi);border-color:var(--menta)}
+
+.seccion{padding:clamp(3.6rem,9vw,6.5rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:800px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--menta);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.65rem,1.25rem + 2.6vw,2.6rem);line-height:1.16;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 7rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#1B2B41 0%,var(--noche) 62%)}
+.orbita{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(88vw,560px);height:min(88vw,560px);z-index:0;opacity:.3}
+.orbita circle{fill:none;stroke:rgba(87,207,174,.28);stroke-width:1}
+.orbita .punto{fill:var(--ambar-hi)}
+.orbita g{transform-origin:50% 50%;animation:girar 16s linear infinite}
+@keyframes girar{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.orbita g{animation:none}}
+.hero-int{position:relative;z-index:2;max-width:680px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ambar-hi);border:1px solid rgba(227,155,60,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.85rem,1.2rem + 4.4vw,3.1rem);line-height:1.1}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--ambar-hi)}
+.hero .sub{color:var(--bruma);margin:1.35rem auto 2.2rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--menta);color:#06231C;border:none;border-radius:999px;padding:.9rem 1.8rem;font-weight:600;font-size:.98rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--menta-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.3}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.hero-hint{animation:none;opacity:.6}}
+
+.alt{background:var(--noche2)}
+.cita{border-left:3px solid var(--ambar);padding:.2rem 0 .2rem 1.15rem;margin:1.9rem 0;font-family:var(--serif);font-size:clamp(1.08rem,1rem + .7vw,1.34rem);line-height:1.5;font-style:italic;color:var(--tiza)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+.parr{margin-top:1.1rem;color:var(--tiza)}
+.parr.suave{color:var(--bruma)}
+
+/* ---------- bucle interactivo ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:.55rem;margin:1.6rem 0 2rem}
+.chips button{background:rgba(233,240,248,.05);color:var(--tiza);border:1px solid var(--linea);border-radius:999px;padding:.55rem 1rem;font-size:.87rem;transition:all .2s ease}
+.chips button:hover{border-color:var(--menta);color:var(--menta-hi)}
+.chips button.activo{background:var(--menta);border-color:var(--menta);color:#06231C;font-weight:600}
+.bucle{display:grid;gap:.55rem}
+.nodo{background:rgba(233,240,248,.045);border:1px solid var(--linea);border-left:3px solid var(--menta);border-radius:12px;padding:.95rem 1.1rem}
+.nodo.n2{border-left-color:var(--ambar)}
+.nodo.n3{border-left-color:#C4708F}
+.nodo b{display:block;font-size:.67rem;letter-spacing:.19em;text-transform:uppercase;color:var(--bruma);margin-bottom:.35rem;font-weight:700}
+.nodo p{font-size:1rem;line-height:1.5}
+.flecha{text-align:center;color:var(--bruma);font-size:1.15rem;line-height:1}
+.vuelta{text-align:center;color:var(--menta);font-size:.83rem;letter-spacing:.03em;border:1px dashed rgba(87,207,174,.4);border-radius:999px;padding:.5rem .9rem;margin-top:.3rem}
+.remate{margin-top:1.6rem;font-family:var(--serif);font-style:italic;color:var(--ambar-hi);font-size:1.05rem;line-height:1.55}
+
+/* ---------- marchas ---------- */
+.marchas{display:grid;gap:1rem;margin-top:1.8rem}
+@media(min-width:720px){.marchas{grid-template-columns:repeat(3,1fr)}}
+.marcha{background:rgba(233,240,248,.04);border:1px solid var(--linea);border-radius:14px;padding:1.25rem 1.15rem}
+.marcha .num{font-family:var(--serif);font-size:2rem;color:var(--ambar);line-height:1;display:block;margin-bottom:.5rem}
+.marcha h3{font-size:1.05rem;margin-bottom:.5rem;color:var(--tiza)}
+.marcha p{font-size:.9rem;color:var(--bruma);line-height:1.55}
+.marcha .caps{display:block;margin-top:.7rem;font-size:.75rem;color:rgba(143,163,186,.75);font-style:italic}
+
+/* ---------- slider ---------- */
+.medidor{background:rgba(233,240,248,.04);border:1px solid var(--linea);border-radius:14px;padding:1.35rem 1.2rem;margin-top:1.7rem}
+.medidor label{display:block;font-size:.88rem;color:var(--bruma);margin-bottom:1rem}
+input[type=range]{width:100%;accent-color:var(--ambar);height:1.7rem}
+.medidor .valor{font-family:var(--serif);font-size:2.1rem;color:var(--ambar-hi);line-height:1}
+.medidor .lectura{margin-top:.8rem;font-size:.97rem;line-height:1.55;min-height:3.2em}
+.escala{display:flex;justify-content:space-between;font-size:.72rem;color:var(--bruma);letter-spacing:.03em;margin-top:-.2rem}
+
+/* ---------- datos ---------- */
+.datos{display:grid;gap:.8rem;margin-top:1.7rem}
+@media(min-width:640px){.datos{grid-template-columns:1fr 1fr}}
+.dato{background:rgba(233,240,248,.04);border:1px solid var(--linea);border-radius:14px;padding:1.1rem}
+.dato .n{font-family:var(--serif);font-size:1.9rem;color:var(--menta-hi);line-height:1;display:block;margin-bottom:.35rem}
+.dato p{font-size:.88rem;color:var(--bruma);line-height:1.5}
+
+.ficha{background:rgba(233,240,248,.04);border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.2rem;margin-top:1.5rem}
+.ficha dl{display:grid;gap:.75rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--menta);font-weight:700}
+.ficha dd{font-size:.95rem;color:var(--tiza);margin-top:.15rem}
+.honestidad{background:rgba(227,155,60,.07);border:1px solid rgba(227,155,60,.32);border-radius:14px;padding:1.2rem;margin-top:1.4rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--ambar-hi);font-weight:700;margin-bottom:.55rem}
+.honestidad p{font-size:.94rem;line-height:1.6;color:var(--tiza)}
+.honestidad p + p{margin-top:.8rem}
+
+/* ---------- CTAs ---------- */
+.cta,.react{background:rgba(233,240,248,.05);border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.2rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(233,240,248,.07);color:var(--tiza);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--menta);color:var(--menta-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--menta-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--tiza)}
+
+.cierre{text-align:center;padding-bottom:4.5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1rem + 1.1vw,1.6rem);line-height:1.45;max-width:24ch;margin:0 auto 1.6rem}
+footer{border-top:1px solid var(--linea);padding:1.8rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--menta-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--menta);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <svg class="orbita" viewBox="0 0 200 200" aria-hidden="true">
+    <circle cx="100" cy="100" r="86"></circle>
+    <circle cx="100" cy="100" r="62"></circle>
+    <circle cx="100" cy="100" r="38"></circle>
+    <g><circle class="punto" cx="100" cy="14" r="4.5"></circle></g>
+    <g style="animation-duration:11s"><circle class="punto" cx="162" cy="100" r="3.5" opacity=".75"></circle></g>
+    <g style="animation-duration:7s"><circle class="punto" cx="100" cy="138" r="3" opacity=".55"></circle></g>
+  </svg>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · De tu estante · L4-028</span>
+    <h1>Deshacer la ansiedad</h1>
+    <p class="autor">Judson Brewer · orig. <em>Unwinding Anxiety</em> (Avery, 2021) · ed. Paidós, feb. 2022</p>
+    <p class="sub">Lo tenés en L4, entre los que entraron al estante y todavía no se abrieron. No te va a pedir fuerza de voluntad. Te va a pedir algo bastante más raro: curiosidad.</p>
+    <a class="cta-btn" href="#medico">Empezá por acá ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="medico">
+  <div class="centro">
+    <p class="kicker rev">Cómo abre el libro</p>
+    <h2 class="titulo rev d1">Un médico discutiendo diez minutos con su médico</h2>
+    <p class="bajada rev d2">Brewer cuenta que en su último año en Princeton empezó con calambres, hinchazón y corridas al baño. Planificaba las rutas de sus carreras diarias para tener siempre un baño cerca. Fue al médico de la universidad y el tipo le preguntó, tranquilo, si estaba estresado o ansioso.</p>
+    <p class="parr rev d2">Él dijo que no. Que imposible: hacía ejercicio todos los días, comía sano, tocaba el violín. Y entonces —esto es lo bueno— le propuso al médico un diagnóstico alternativo: giardiasis. Una infección que se agarra tomando agua sin purificar en la montaña. «Debe ser giardiasis», insistió. Había ido de excursión hacía poco.</p>
+    <p class="parr rev d2">El médico le recetó el antibiótico para sacarle una ameba que no tenía. Los síntomas siguieron. Brewer, que hoy es psiquiatra e investigador, pasó diez minutos de su vida convenciendo a un profesional de que él no podía estar ansioso.</p>
+    <div class="cita rev d3">«La ansiedad es como la pornografía. Es difícil de definir, pero sabes lo que es cuando la ves. A menos que no puedas verla, claro.»<span>Primeras líneas del capítulo 1, edición Paidós (trad. Antonio Francisco Rodríguez Esteban) — verificado contra el extracto oficial de Planeta.</span></div>
+    <p class="parr suave rev d3">Ese es el punto de partida y por eso el libro no arranca con técnicas. Arranca con un problema de visión.</p>
+  </div>
+</section>
+
+<section class="seccion" id="bucle">
+  <div class="centro">
+    <p class="kicker rev">La idea central, en vivo</p>
+    <h2 class="titulo rev d1">La ansiedad no es un defecto. Es un hábito con la forma de siempre</h2>
+    <p class="bajada rev d2">La tesis del libro entra en una línea: preocuparse es un <b>bucle del hábito</b>, exactamente el mismo circuito con el que aprendiste a manejar o a mirar el teléfono cuando te aburrís. Desencadenante → comportamiento → resultado. Elegí un desencadenante y mirá cómo se cierra el círculo.</p>
+    <div class="chips rev d2" id="chipsTrig" role="group" aria-label="Elegí un desencadenante">
+      <button type="button" data-k="mail" class="activo">Un mail sin responder</button>
+      <button type="button" data-k="noche">Son las 2 y no dormís</button>
+      <button type="button" data-k="plata">Una cuenta que no cierra</button>
+      <button type="button" data-k="salud">Un chequeo médico pendiente</button>
+    </div>
+    <div class="bucle rev d2" id="bucleBox" aria-live="polite">
+      <div class="nodo n1"><b>Desencadenante</b><p id="n1"></p></div>
+      <div class="flecha" aria-hidden="true">↓</div>
+      <div class="nodo n2"><b>Comportamiento</b><p id="n2"></p></div>
+      <div class="flecha" aria-hidden="true">↓</div>
+      <div class="nodo n3"><b>Resultado (la "recompensa")</b><p id="n3"></p></div>
+      <div class="vuelta">↺ y mañana arranca de nuevo, un poco más fuerte</div>
+    </div>
+    <p class="remate rev d3" id="remateBucle"></p>
+  </div>
+</section>
+
+<section class="seccion alt" id="marchas">
+  <div class="centro">
+    <p class="kicker rev">Cómo está armado</p>
+    <h2 class="titulo rev d1">Tres marchas, no tres pasos</h2>
+    <p class="bajada rev d2">Brewer no las llama pasos porque no se suben una vez y listo: son marchas, y se pasa de una a otra según el terreno. El índice del libro está literalmente dividido así — Parte 0 para entender la mente, y una parte por marcha.</p>
+    <div class="marchas">
+      <div class="marcha rev d1">
+        <span class="num">1ª</span>
+        <h3>Cartografiar tu mente</h3>
+        <p>Ni cambiar nada ni retarte. Solo mapear el bucle: qué lo dispara, qué hacés, qué sacás. Escribirlo. Verlo.</p>
+        <span class="caps">Caps. 5 a 9 · incluye "Por qué han fracasado tus anteriores estrategias contra la ansiedad"</span>
+      </div>
+      <div class="marcha rev d2">
+        <span class="num">2ª</span>
+        <h3>Actualizar el valor de la recompensa</h3>
+        <p>Prestarle atención real a lo que se siente preocuparse. No a la idea de preocuparse: a la sensación. El cerebro recalcula solo cuando mira de cerca.</p>
+        <span class="caps">Caps. 10 a 14 · incluye "¿Cuánto tiempo se tarda en cambiar un hábito?"</span>
+      </div>
+      <div class="marcha rev d3">
+        <span class="num">3ª</span>
+        <h3>La oferta imbatible</h3>
+        <p>El cerebro no suelta un hábito por decreto: lo suelta si le ofrecés algo mejor. La oferta del libro es la curiosidad.</p>
+        <span class="caps">Caps. 15 a 23 · incluye "La ciencia de la curiosidad" y "Todo lo que necesitas es amor"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="segunda">
+  <div class="centro">
+    <p class="kicker rev">La segunda marcha, en veinte segundos</p>
+    <h2 class="titulo rev d1">¿Qué ganaste, en serio, la última vez que te preocupaste?</h2>
+    <p class="bajada rev d2">Esta es toda la segunda marcha. No "dejá de preocuparte": preguntale al cerebro cuánto le rindió el negocio. Movelo y fijate.</p>
+    <div class="medidor rev d2">
+      <label for="recompensa">Preocuparte por eso que estás pensando ahora te rindió, del 0 al 10:</label>
+      <p class="valor" id="valorRec">7</p>
+      <input type="range" id="recompensa" min="0" max="10" step="1" value="7" aria-describedby="lecturaRec">
+      <div class="escala"><span>0 · nada</span><span>10 · muchísimo</span></div>
+      <p class="lectura" id="lecturaRec"></p>
+    </div>
+    <p class="parr suave rev d3">Brewer llama a esto <em>actualizar el valor de la recompensa</em>: el cerebro guardó la preocupación como algo útil (te da sensación de control) y nunca revisó el precio. La revisión no se hace pensando; se hace mirando cómo se siente en el cuerpo, con la ansiedad puesta.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="curiosidad">
+  <div class="centro">
+    <p class="kicker rev">La oferta imbatible</p>
+    <h2 class="titulo rev d1">La curiosidad es lo único que la preocupación no puede igualar</h2>
+    <p class="bajada rev d2">Cuando estás curioso, estás mirando. Cuando estás en el bucle, estás en piloto automático. No pueden pasar las dos cosas al mismo tiempo — y por eso el libro entrena una sola sílaba, "hmm", como puerta de entrada: qué se siente exactamente esto, dónde, ahora.</p>
+    <div class="cita rev d2">«El doctor Brewer nos enseña a conocer nuestro cerebro para descubrir los factores desencadenantes de nuestra ansiedad, a desactivarlos con la práctica simple pero poderosa de la curiosidad.»<span>Contracubierta de la edición Paidós — la que tenés en la mano.</span></div>
+    <p class="parr rev d3">Y una que tiene doscientos años. Brewer la trae en el capítulo 1: en una carta a John Adams, de 1816, Thomas Jefferson escribió sobre las mentes que siempre cuentan con que va a pasar lo peor, porque puede pasar.</p>
+    <div class="cita rev d3">«¡A ellos debo decirles cuánto dolor nos han costado los horrores que jamás sucedieron!»<span>Thomas Jefferson a John Adams, 1816 — citado y traducido en la edición Paidós de <em>Deshacer la ansiedad</em>.</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="evidencia">
+  <div class="centro">
+    <p class="kicker rev">Los números, con la letra chica puesta</p>
+    <h2 class="titulo rev d1">Qué tan probado está esto</h2>
+    <p class="bajada rev d2">Brewer es director de Investigación e Innovación del Mindfulness Center y profesor asociado de Psiquiatría en la Facultad de Medicina de la Universidad de Brown, además de investigador afiliado del MIT. Estos son los resultados que se le atribuyen a su programa:</p>
+    <div class="datos">
+      <div class="dato rev d1"><span class="n">67 %</span><p>de reducción de la ansiedad en pacientes con trastorno de ansiedad generalizada, en un ensayo aleatorizado de 2021, contra 14 % del tratamiento habitual.</p></div>
+      <div class="dato rev d2"><span class="n">57 %</span><p>de reducción de la ansiedad en médicos ansiosos, en un estudio de un solo brazo publicado en 2020.</p></div>
+      <div class="dato rev d3"><span class="n">+14 M</span><p>de reproducciones de su charla TED sobre cómo romper un mal hábito, según la propia Universidad de Brown en 2021.</p></div>
+      <div class="dato rev d3"><span class="n">20 años</span><p>de investigación y trabajo con pacientes, incluidos atletas y entrenadores olímpicos, según la ficha de la editorial.</p></div>
+    </div>
+    <div class="honestidad rev d3">
+      <span class="et">La letra chica que corresponde</span>
+      <p>Los dos primeros números salen de estudios del propio equipo que desarrolló la app del programa: es evidencia real y publicada, no marketing, pero no es evidencia independiente. Te lo digo antes de que lo leas vos en las notas del final del libro, donde están las citas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Tu ejemplar</dt><dd>Estante L4-028 — el estante de <em>Juan Salvador Gaviota</em>. Sin lectura registrada de tu lado.</dd>
+        <dt>Original</dt><dd><em>Unwinding Anxiety</em>, Avery (Penguin Random House), 9 de marzo de 2021. Bestseller del <em>New York Times</em>.</dd>
+        <dt>Tu edición</dt><dd>Paidós Divulgación, 1.ª edición febrero 2022, traducción de Antonio Francisco Rodríguez Esteban, ilustraciones de Julia Miroshnichenko.</dd>
+        <dt>Estructura</dt><dd>Introducción + Parte 0 (4 caps.) + una parte por marcha (19 caps.) + epílogo "Seis años y cinco minutos", notas e índice.</dd>
+        <dt>Del mismo autor</dt><dd><em>The Craving Mind</em> (2017) y <em>The Hunger Habit</em> (2024) — ninguno de los dos está en la casa.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">Honestidad dura</span>
+      <p><b>No sé si ya lo leíste.</b> No tengo registro de lectura de este ejemplar, y este es un libro que se compra con toda la intención y se abre seis meses después. Si ya lo leíste, tocá "Ya lo leí" acá abajo y lo saco de la lista para siempre.</p>
+      <p><b>Qué no es:</b> no es terapia ni la reemplaza, y no es un libro de ideas nuevas cada capítulo — es un programa, con la repetición que eso implica; varias reseñas le marcan que insiste bastante con su propia app. La parte que vale sin app ninguna es la primera marcha: mapear el bucle en papel.</p>
+      <p><b>Audiolibro:</b> busqué el audiolibro en español en Google Play Books y no lo encontré (sí está el ebook). No te invento un link. Igual acá el punto es otro: este ya lo tenés, en papel, a tres metros.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">Con dos capítulos alcanza para saber</h2>
+    <p class="bajada rev d2">El capítulo 1 es la historia de la giardiasis (arranca en la página 19) y el capítulo 4 es el bucle entero (página 53). Si esos dos no te enganchan, no te va a enganchar el resto y lo devolvemos al estante sin culpa.</p>
+    <div class="cta rev d2">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L4-028','si',this)">📖 Sí, esta noche</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-028','ya_leido',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-028','no',this)">🙅 Esta noche no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-20-brewer-deshacer-ansiedad','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-20-brewer-deshacer-ansiedad','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-20-brewer-deshacer-ansiedad','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="honestidad rev d3">
+      <span class="et">Te pido una cosa</span>
+      <p>Hace varias fichas que entrás, leés y te vas sin tocar ningún botón — la última vez que me votaste fue con Holiday, el 2 de agosto ("Lo quiero"). Estoy eligiendo medio a ciegas. Un solo toque arriba, aunque sea "No me va", me cambia por completo la próxima. Y si el problema es el formato y no los libros, decímelo en la caja de acá abajo.</p>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-20-brewer-deshacer-ansiedad','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-20-brewer-deshacer-ansiedad','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-20-brewer-deshacer-ansiedad','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-20-brewer-deshacer-ansiedad','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-20-brewer-deshacer-ansiedad" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-20-brewer-deshacer-ansiedad" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-20-brewer-deshacer-ansiedad',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">«Es como etiquetar "ser humano" como una dolencia.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:46ch">Brewer, sobre por qué duda en llamar trastorno a algo que es el cerebro haciendo bien su trabajo en el mundo equivocado. Cap. 1, edición Paidós.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante L4 · datos verificados contra el extracto oficial de Planeta/Paidós, la Escuela de Salud Pública de Brown y la página del autor, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  /* ----- bucle interactivo ----- */
+  var BUCLES={
+    mail:{
+      t:'Ves en la bandeja un mail que tenías que contestar hace tres días.',
+      c:'Lo abrís, lo leés entero, no lo contestás. Lo dejás sin leer de nuevo. Repetís cuatro veces en el día.',
+      r:'Sensación de estar "encima del tema" sin haber hecho nada. El mail sigue ahí y ahora además pesa.',
+      rem:'Ojo con lo que hace de recompensa: no es placer, es alivio. Repasar el problema se siente como avanzar. Eso alcanza para que el cerebro lo guarde como conducta útil y lo repita mañana.'
+    },
+    noche:{
+      t:'Dos de la mañana. Te despertaste y no volvés a dormirte.',
+      c:'Empezás a repasar mañana entero: la reunión, el trámite, lo que te falta. Planificás en la oscuridad.',
+      r:'Sensación de estar preparándote. Y cero sueño. Al rato aparece el segundo bucle: "¿por qué no puedo dormir?".',
+      rem:'Brewer describe exactamente este caso con sus pacientes: la preocupación de no poder dormir se alimenta de la preocupación original. Dos bucles enganchados, y el segundo es más difícil de ver que el primero.'
+    },
+    plata:{
+      t:'Mirás una cuenta y los números no cierran como esperabas.',
+      c:'Abrís la app del banco. La cerrás. La volvés a abrir veinte minutos después, con los mismos números.',
+      r:'Certeza momentánea de que la cifra sigue ahí. Ninguna decisión tomada.',
+      rem:'Revisar no es actuar, pero se le parece muchísimo por dentro. Ese parecido es la recompensa, y es lo que la segunda marcha se encarga de desarmar mirándola de frente.'
+    },
+    salud:{
+      t:'Tenés un estudio pendiente y todavía no pediste fecha.',
+      c:'Googleás síntomas. Descartás lo peor. Volvés a googlear a la noche, otra combinación de palabras.',
+      r:'Diez minutos de calma y después el mismo nudo, un poco más apretado.',
+      rem:'El libro llama a esto "el bucle del hábito del porqué" (cap. 20): buscar explicaciones se siente como resolver. Es el hábito disfrazado de investigación — y el propio Brewer cayó redondo, defendiendo su giardiasis.'
+    }
+  };
+  function pintarBucle(k){
+    var b=BUCLES[k]; if(!b) return;
+    $('#n1').textContent=b.t; $('#n2').textContent=b.c; $('#n3').textContent=b.r;
+    $('#remateBucle').textContent=b.rem;
+  }
+  var chips=$$('#chipsTrig button');
+  chips.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      chips.forEach(function(x){x.classList.remove('activo')});
+      btn.classList.add('activo');
+      pintarBucle(btn.getAttribute('data-k'));
+    });
+  });
+  pintarBucle('mail');
+
+  /* ----- medidor de recompensa ----- */
+  var rango=$('#recompensa'), valor=$('#valorRec'), lectura=$('#lecturaRec');
+  function leerRango(){
+    var v=parseInt(rango.value,10);
+    valor.textContent=v;
+    var txt;
+    if(v<=2){ txt='Ese es el número real, y ya lo sabés. La pregunta del libro es por qué el cerebro lo sigue haciendo si rinde tan poco: porque nunca lo midió mientras pasaba, solo después.'; }
+    else if(v<=5){ txt='Un rendimiento mediocre para algo que te ocupa medio día. Brewer diría: no lo bajes a fuerza de argumentos, prestale atención la próxima vez mientras ocurre y el número se corrige solo.'; }
+    else if(v<=8){ txt='Alto. Y eso es exactamente lo que mantiene el bucle en pie: preocuparte se siente productivo. La segunda marcha no discute ese número, lo pone a prueba en el cuerpo — cómo te deja el pecho, la mandíbula, el sueño.'; }
+    else { txt='Diez. O sea: el cerebro está convencido de que preocuparse funciona. Es la posición más cómoda para empezar el libro, porque es la que el capítulo 6 desarma — "Por qué han fracasado tus anteriores estrategias contra la ansiedad".'; }
+    lectura.textContent=txt;
+  }
+  rango.addEventListener('input',leerRango);
+  leerRango();
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

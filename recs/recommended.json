@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-19T16:05:00-03:00",
+  "_updated_at": "2026-08-20T16:40:00-03:00",
   "_feedback_cutoff": "2026-08-19T11:02:50.116Z",
   "recommendations": [
     {
@@ -1181,6 +1181,58 @@
       "page": "recs/2026-08-16-coyle-navidad-cafe.html",
       "notified_by": "2026-08-16-rec-sofi",
       "why": "Redescubrimiento M5, régimen semanal (domingo, turno de Sofi tras Klune 05/08 nuevo -> hoy redescub): autora nunca antes recomendada (Cleo Coyle), rompiendo el patron de nombres masivos que dieron ya_lo_lei (King, Katzenbach, Carlisle, Delany sin señal, Benavent). Cozy navideño ambientado en una cafeteria de Greenwich Village, con glosario y recetas de café incluidas. Verificado título+autora contra catálogo completo (M5-011 es su único ejemplar) y contra todo recommended.json: Coyle nunca aparece. Honestidad: se declara explícito que la edición española salta del libro 2 al 8 de la serie original (Alma tradujo directo el especial navideño), sin afectar el caso autoconclusivo. No se encontraron citas textuales verificables del libro; se usa en su lugar, atribuida, la opinión de una reseñadora (Anika Entre Libros). Audiolibro en Google Play Books buscado, sin resultado -> no se linkea (regla de no inventar).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-20-brewer-deshacer-ansiedad",
+      "date": "2026-08-20",
+      "kind": "redescubrimiento",
+      "title": "Deshacer la ansiedad",
+      "author": "Judson Brewer",
+      "language": "es",
+      "topics": [
+        "neurociencia",
+        "mindfulness",
+        "habitos",
+        "autosuperacion"
+      ],
+      "book_ref": "L4-028",
+      "audience": "andy",
+      "page": "recs/2026-08-20-brewer-deshacer-ansiedad.html",
+      "notified_by": "2026-08-20-rec-andy",
+      "why": "Regimen DIARIO restablecido (pedido del 20/08: DOS fichas por dia, una para Andy y una para Sofi, una nueva y una de biblioteca, alternando quien recibe la nueva). Andy: su ultima ficha fue nuevo (Albom 09/08) -> hoy le toca redescubrimiento, y la nueva del dia va para Sofi. Elegido L4-028 'Deshacer la ansiedad' (Judson Brewer), PRIORIDAD del banco de redescub del PROFILE, sin entrada en data/enrichment.json (read_status desconocido, no leido registrado). Cruza dos vetas declaradas suyas que nunca se tocaron juntas en un redescub: neurociencia y mindfulness practico; y su ultimo redescub (Rojas Estape 05/08) fue divulgacion emocional espanola, no neurociencia con programa. La experiencia esta construida sobre el texto REAL de su edicion: se descargo el extracto oficial de Planeta/Paidos y se citan verbatim el arranque del cap. 1 ('La ansiedad es como la pornografia...'), la anecdota de la giardiasis, la cita de Jefferson a John Adams de 1816 tal como la traduce la edicion, la contracubierta y el sumario completo (Parte 0 + tres marchas + epilogo 'Seis anos y cinco minutos'). Numeros de eficacia (67% RCT 2021 vs 14% cuidado habitual; 57% medicos 2020; +14M vistas TED segun Brown 2021) dados con la letra chica explicita de que son estudios del propio equipo que desarrollo la app. Audiolibro en espanol buscado en Google Play Books: NO existe (si el ebook) -> se declara en la ficha y no se inventa link, cumpliendo la politica del 10/08. Se suma un bloque directo pidiendole un voto: 5 fichas sin veredicto suyo desde Holiday (02/08), tal como el PROFILE marcaba que habia que hacer.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-20-klune-puerta-susurros",
+      "date": "2026-08-20",
+      "kind": "nuevo",
+      "title": "Bajo la puerta de los susurros",
+      "author": "TJ Klune",
+      "language": "es",
+      "topics": [
+        "fantasia_calida",
+        "duelo",
+        "romance",
+        "cozy"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-08-20-klune-puerta-susurros.html",
+      "notified_by": "2026-08-20-rec-sofi",
+      "why": "Regimen DIARIO restablecido: hoy la ficha NUEVA del dia es la de Sofi (su ultima fue redescubrimiento, Coyle 16/08) y la de biblioteca es la de Andy. Elegido 'Bajo la puerta de los susurros' (orig. Under the Whispering Door, Tor 2021) siguiendo la UNICA senal positiva reciente de Sofi: Klune 'La casa en el mar mas azul' (05/08) = me_tienta + love, despues de la racha de ya_lo_lei con autores masivos. Se aplica la regla de autor identitario ya confirmada 3 veces con Andy (Bach, Holiday, Rovelli), primera vez con ella. GUARDIA: titulo y autor verificados contra el catalogo completo (437 vol., 0 coincidencias de Klune, 'susurros', 'whispering') y contra todo recommended.json (Klune aparece una sola vez, 05/08, otro titulo). Trama verificada contra recap detallado y corregida antes de publicar: NO le dan los siete dias al llegar (el Gerente aparece semanas despues), y Wallace no vuelve a su estudio sino que intenta escaparse y se cruza con Cameron, un Husk. Citas del autor traducidas por mi y declaradas como tales (entrevista Hot Press, nov. 2021); blurbs oficiales de la pagina del autor (V.E. Schwab, Cassandra Khaw, Publishers Weekly). Honestidad declarada en la ficha: es un libro sobre muerte y duelo, incluye el suicidio de un personaje, romance lento entre dos hombres y dos o tres momentos oscuros -- sin gore, que es su restriccion dura. Stock y precios verificados hoy en buscalibre.uy (5 ediciones, desde UYU 712). Audiolibro en espanol SI existe en Google Play Books (ficha lo da narrado por Marc Gomez) -> linkeado segun politica del 10/08; Play devuelve 403 a curl/WebFetch en cualquier ficha (limitacion conocida del entorno, ya documentada el 10/08).",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

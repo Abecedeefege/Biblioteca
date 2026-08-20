@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🫖 Bajo la puerta de los susurros · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bosque:#101C18;
+  --bosque2:#16261F;
+  --crema:#F3EDE0;
+  --musgo:#A9BCA9;
+  --lampara:#E8A94F;
+  --lampara-hi:#FFCC85;
+  --vapor:#9FD3C7;
+  --vapor-hi:#C9EFE5;
+  --linea:rgba(243,237,224,.14);
+  --serif:'Newsreader',Georgia,serif;
+  --sans:'Karla',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bosque);color:var(--crema);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--lampara);color:var(--bosque)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--vapor-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(243,237,224,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--lampara-hi),var(--vapor-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--musgo);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(16,28,24,.7);backdrop-filter:blur(4px)}
+.back:hover{color:var(--lampara-hi);border-color:var(--lampara)}
+
+.seccion{padding:clamp(3.6rem,9vw,6.5rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:800px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lampara);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.65rem,1.25rem + 2.6vw,2.6rem);line-height:1.18;margin-bottom:1.1rem}
+.bajada{color:var(--musgo);max-width:60ch}
+.parr{margin-top:1.05rem}
+.parr.suave{color:var(--musgo)}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 7rem;overflow:hidden;background:radial-gradient(115% 75% at 50% 100%,#2C3F31 0%,var(--bosque) 60%)}
+.puerta{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:min(62vw,300px);height:min(74vh,430px);border-radius:150px 150px 0 0;border:1px solid rgba(232,169,79,.35);background:linear-gradient(180deg,rgba(232,169,79,.13),rgba(232,169,79,0) 72%);z-index:0}
+.vapor{position:absolute;bottom:14%;left:50%;transform:translateX(-50%);width:150px;height:230px;z-index:1;pointer-events:none;opacity:.55}
+.vapor span{position:absolute;bottom:0;width:9px;height:9px;border-radius:50%;background:var(--vapor-hi);filter:blur(4px);animation:subir 6.5s ease-in infinite}
+@keyframes subir{0%{transform:translateY(0) scale(.6);opacity:0}18%{opacity:.75}100%{transform:translateY(-215px) scale(2.1);opacity:0}}
+@media (prefers-reduced-motion:reduce){.vapor{display:none}}
+.hero-int{position:relative;z-index:3;max-width:680px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--vapor-hi);border:1px solid rgba(159,211,199,.45);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.8rem,1.15rem + 4.4vw,3rem);line-height:1.12}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--lampara-hi)}
+.hero .sub{color:var(--musgo);margin:1.35rem auto 2.2rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--lampara);color:#2A1B06;border:none;border-radius:999px;padding:.9rem 1.8rem;font-weight:700;font-size:.98rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--lampara-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:3;color:var(--musgo);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.3}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.hero-hint{animation:none;opacity:.6}}
+
+.alt{background:var(--bosque2)}
+.cita{border-left:3px solid var(--lampara);padding:.2rem 0 .2rem 1.15rem;margin:1.9rem 0;font-family:var(--serif);font-size:clamp(1.08rem,1rem + .7vw,1.34rem);line-height:1.5;font-style:italic}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.03em;color:var(--musgo)}
+
+/* ---------- puente ---------- */
+.senal{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
+.senal span{font-size:.83rem;color:var(--vapor-hi);border:1px solid var(--linea);border-radius:999px;padding:.4rem .9rem}
+
+/* ---------- elenco ---------- */
+.elenco{display:grid;gap:.75rem;margin-top:1.7rem}
+@media(min-width:640px){.elenco{grid-template-columns:1fr 1fr}}
+.pers{background:rgba(243,237,224,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem 1.05rem}
+.pers b{display:block;font-family:var(--serif);font-size:1.1rem;color:var(--lampara-hi);margin-bottom:.2rem}
+.pers p{font-size:.89rem;color:var(--musgo);line-height:1.5}
+
+/* ---------- siete días ---------- */
+.dias{display:grid;gap:.55rem;margin:1.7rem 0 1.4rem}
+@media(min-width:640px){.dias{grid-template-columns:1fr 1fr}}
+.dias button{text-align:left;background:rgba(243,237,224,.05);color:var(--crema);border:1px solid var(--linea);border-radius:14px;padding:.85rem 1rem;font-size:.94rem;line-height:1.45;transition:all .2s ease}
+.dias button:hover{border-color:var(--vapor);color:var(--vapor-hi)}
+.dias button.activo{background:var(--vapor);border-color:var(--vapor);color:#0B2620;font-weight:600}
+.panel{background:rgba(243,237,224,.045);border:1px solid var(--linea);border-left:3px solid var(--vapor);border-radius:14px;padding:1.2rem 1.15rem;min-height:11rem}
+.panel .et{display:block;font-family:var(--serif);font-size:1.15rem;color:var(--lampara-hi);margin-bottom:.6rem;font-style:italic}
+.panel p{font-size:.97rem;line-height:1.6}
+.panel .pie{margin-top:.85rem;font-size:.86rem;color:var(--musgo);border-top:1px solid var(--linea);padding-top:.75rem}
+
+.ficha{background:rgba(243,237,224,.04);border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.2rem;margin-top:1.5rem}
+.ficha dl{display:grid;gap:.75rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--vapor);font-weight:700}
+.ficha dd{font-size:.95rem;margin-top:.15rem}
+.honestidad{background:rgba(232,169,79,.07);border:1px solid rgba(232,169,79,.32);border-radius:14px;padding:1.2rem;margin-top:1.4rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--lampara-hi);font-weight:700;margin-bottom:.55rem}
+.honestidad p{font-size:.94rem;line-height:1.6}
+.honestidad p + p{margin-top:.8rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.compra a{display:inline-block;background:var(--lampara);color:#2A1B06;border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--lampara-hi);transform:translateY(-2px)}
+.compra a.sec{background:transparent;color:var(--vapor-hi);border:1px solid var(--vapor)}
+.compra a.sec:hover{background:rgba(159,211,199,.12)}
+
+/* ---------- CTAs ---------- */
+.cta,.react{background:rgba(243,237,224,.05);border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.2rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(243,237,224,.07);color:var(--crema);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--lampara);color:var(--lampara-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--vapor-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem}
+
+.cierre{text-align:center;padding-bottom:4.5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1rem + 1.1vw,1.6rem);line-height:1.45;max-width:26ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.8rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--musgo);line-height:1.6}
+a.hub{color:var(--vapor-hi);text-decoration:none;font-weight:700;border-bottom:1px solid var(--vapor);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="puerta" aria-hidden="true"></div>
+  <div class="vapor" id="vaporFx" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · Libro nuevo · mismo autor</span>
+    <h1>Bajo la puerta de los susurros</h1>
+    <p class="autor">TJ Klune · orig. <em>Under the Whispering Door</em> (Tor, 21 de septiembre de 2021)</p>
+    <p class="sub">Wallace Price está en su propio funeral, en la última fila, y descubre dos cosas a la vez: que se murió de un infarto, y que fue muy poca gente.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traigo</p>
+    <h2 class="titulo rev d1">Porque el 5 de agosto me dijiste que sí</h2>
+    <p class="bajada rev d2">Ese día te mandé <em>La casa en el mar más azul</em>, de TJ Klune. Tocaste 🤔 <b>"me tienta"</b> y le pusiste 😍 a la experiencia. Fue la única señal buena que me llegó en semanas — antes de eso venía una racha de "ya lo leí" con King, Katzenbach, Carlisle y Benavent.</p>
+    <p class="parr rev d2">Así que hoy no invento una veta nueva: voy al mismo autor. Este es el libro que Klune escribió inmediatamente después de <em>La casa en el mar más azul</em>, con el mismo tono de abrazo y un poco más de filo.</p>
+    <div class="senal rev d3">
+      <span>Misma calidez, otro escenario</span>
+      <span>Sin gore ni violencia explícita</span>
+      <span>Edición en español disponible en Uruguay</span>
+      <span>No está en ningún estante de la casa</span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Una tetería en la montaña que funciona como sala de espera</h2>
+    <p class="bajada rev d2">Wallace Price era un abogado insoportable. De los que despiden gente un lunes a las nueve y siguen con la agenda. Se muere de un infarto y aparece Mei, una segadora, para llevárselo — pero no al más allá: a una casa rarísima en el medio del bosque con un cartel que dice <em>Charon's Crossing Tea and Treats</em>.</p>
+    <p class="parr rev d2">Ahí vive Hugo, que atiende la tetería de día y es <b>barquero</b> de noche: su trabajo es acompañar a los muertos hasta la puerta, sin apurarlos. En la casa también están Nelson, el abuelo de Hugo, que murió y se quedó para cuidarlo, y Apollo, el perro, que murió y tampoco se fue.</p>
+    <p class="parr rev d3">Al principio nadie le pone plazo a Wallace. Recién semanas después aparece el Gerente —el jefe de los barqueros, y no es un personaje simpático— y le da siete días para cruzar. Todo el libro pasa, básicamente, adentro de esa casa.</p>
+    <div class="elenco">
+      <div class="pers rev d1"><b>Wallace Price</b><p>Abogado, recién muerto, especialista en tener razón. Su problema no es la muerte: es que nunca estuvo del todo vivo.</p></div>
+      <div class="pers rev d1"><b>Hugo Freeman</b><p>Dueño de la tetería y barquero. Escucha. Sirve el té exacto que cada uno necesita. Nunca empuja a nadie hacia la puerta.</p></div>
+      <div class="pers rev d2"><b>Mei</b><p>La segadora que recoge a Wallace. Directa, impaciente, la que dice en voz alta lo que todos piensan.</p></div>
+      <div class="pers rev d2"><b>Nelson y Apollo</b><p>El abuelo fantasma con bastón y humor negro, y el perro fantasma. Los dos se quedaron por elección propia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="siete">
+  <div class="centro">
+    <p class="kicker rev">La pregunta del libro</p>
+    <h2 class="titulo rev d1">Te acabás de morir y te dejan en una tetería. ¿Qué hacés?</h2>
+    <p class="bajada rev d2">Wallace prueba todas estas, más o menos en este orden. Elegí una y te cuento qué le pasa — nada del final acá, todo esto es el primer tercio.</p>
+    <div class="dias" id="diasBox" role="group" aria-label="Elegí qué harías">
+      <button type="button" data-k="negar" class="activo">Negarlo. Esto tiene que ser un error</button>
+      <button type="button" data-k="escapar">Irme de esta casa como sea</button>
+      <button type="button" data-k="pelear">Discutir con la que me vino a buscar</button>
+      <button type="button" data-k="te">Nada. Sentarme a tomar un té</button>
+    </div>
+    <div class="panel rev d2" id="panelDias" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="seccion" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué este libro existe</p>
+    <h2 class="titulo rev d1">Klune lo escribió por alguien</h2>
+    <p class="bajada rev d2">La dedicatoria del libro dice: <em>"For Eric. I hope you woke up in a strange place"</em> — "Para Eric. Espero que te hayas despertado en un lugar extraño". Eric Arvin era su pareja, también escritor, y <em>Woke Up in a Strange Place</em> es el título de una novela que Eric escribió. Klune le dedicó su libro sobre la muerte usando el nombre del libro de él.</p>
+    <div class="cita rev d2">«Puse más de mí en este proyecto que en ningún otro. Fue una historia profundamente personal de escribir, dado que perdí a mi pareja hace unos años.»<span>TJ Klune en entrevista con Hot Press, noviembre de 2021. Traducción mía del inglés.</span></div>
+    <div class="cita rev d3">«<em>Bajo la puerta de los susurros</em> es un hombro donde apoyarse, si lo necesitás.»<span>TJ Klune, misma entrevista. Traducción mía del inglés.</span></div>
+    <p class="parr suave rev d3">No te lo cuento para ponerte triste antes de empezar. Te lo cuento porque explica por qué el libro no trata la muerte con guantes ni con solemnidad: la trata como alguien que estuvo del otro lado del mostrador.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="criticas">
+  <div class="centro">
+    <p class="kicker rev">Qué dicen los que ya lo leyeron</p>
+    <h2 class="titulo rev d1">Tres frases, con nombre y apellido</h2>
+    <div class="cita rev d1">«Lo amé. Es como estar envuelto en una enorme manta gay.»<span>V. E. Schwab, autora bestseller nº 1 del New York Times — blurb oficial en la página del autor. Traducción mía.</span></div>
+    <div class="cita rev d2">«Un abrazo de libro… lleno de fe en la bondad de la gente.»<span>Cassandra Khaw, autora de <em>Nothing But Blackened Teeth</em> — blurb oficial. Traducción mía.</span></div>
+    <div class="cita rev d3">«Ternura, ingenio y una construcción de mundo hábil elevan este relato delicioso.»<span>Publishers Weekly — blurb oficial. Traducción mía.</span></div>
+    <p class="parr suave rev d3">Fue bestseller del New York Times y de USA Today, Indie Next Pick y estuvo entre los mejores libros del año de Barnes &amp; Noble en 2021.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Lo que tenés que saber antes de decir que sí</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Publicado</dt><dd>21 de septiembre de 2021, Tor Books (EE. UU.).</dd>
+        <dt>En español</dt><dd><em>Bajo la puerta de los susurros</em>, traducción de Carlos Abreu Fetter. Hay edición Crossbooks (2023) y edición Planeta (2023, reimpresa en 2024).</dd>
+        <dt>Género</dt><dd>Fantasía contemporánea cálida — "cozy fantasy". Un solo escenario, poco elenco, mucho diálogo.</dd>
+        <dt>Del mismo autor</dt><dd>Es el libro que siguió a <em>La casa en el mar más azul</em>, el que te tenté el 5 de agosto. Son historias independientes: no hace falta leer una para entender la otra.</dd>
+        <dt>Dónde está en la casa</dt><dd>En ningún lado. Verifiqué título y autor contra los 437 libros del catálogo completo y contra todo lo que te recomendé antes: Klune solo aparece una vez, y es aquella ficha del 5 de agosto.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p><b>Es un libro sobre la muerte y el duelo.</b> Es gracioso, es cálido, y también te va a mover. Las reseñas coinciden en que abre con una nota del autor avisando que toca temas difíciles: uno de los personajes se quitó la vida y eso se cuenta. Si hoy no estás para eso, tocá "no me va" y te traigo otra cosa el próximo turno, sin drama.</p>
+      <p><b>Hay romance, lento, entre dos hombres.</b> Igual que en <em>La casa en el mar más azul</em>. Lo aclaro por si en aquel te tentó la historia y no habías registrado esa parte.</p>
+      <p><b>No es terror, pero tiene dos o tres momentos oscuros de verdad</b> (la reseña de Grimdark Magazine los describe como escalofriantes). Nada de gore ni violencia explícita — eso te lo puedo asegurar.</p>
+      <p><b>Y no lo tengo leído yo.</b> Todo lo que hay acá está armado con la sinopsis oficial del autor, reseñas y una entrevista, no con humo: la trama que te conté es el planteo inicial, sin el final.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Conseguirlo</p>
+    <h2 class="titulo rev d1">Está en Uruguay, en varias ediciones</h2>
+    <p class="bajada rev d2">Lo busqué hoy en Buscalibre Uruguay: aparecen cinco ediciones en stock. La más barata, la de Crossbooks 2023 en rústica, estaba a $712 pesos uruguayos (unos 18 dólares); la de Planeta ronda los $930–990. También hay un usado a $895.</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=Bajo+la+puerta+de+los+susurros+TJ+Klune">Conseguilo (desde ~$712 UYU)</a>
+      <a class="sec" href="https://play.google.com/store/audiobooks/details/Bajo_la_puerta_de_los_susurros_Ficci%C3%B3n?id=AQAAAEBiFm9WHM&amp;hl=es">🎧 Audiolibro en Google Play</a>
+    </div>
+    <p class="parr suave rev d3">El audiolibro en español existe y está en Google Play Books; la ficha lo da narrado por Marc Gómez. Los precios de Buscalibre los vi hoy y cambian con las promos — el link te lleva al listado actualizado, no a un precio congelado.</p>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Lo que toques acá decide el próximo. Si decís que sí, sigo por esta veta; si decís que no, entiendo que Klune fue una excepción y no una puerta.</p>
+    <div class="cta rev d2">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-20-klune-puerta-susurros','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-20-klune-puerta-susurros','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-20-klune-puerta-susurros','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-20-klune-puerta-susurros','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-20-klune-puerta-susurros','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">Y una sola pregunta más: ¿qué te tentó de Klune la vez pasada?
+      <div>
+        <button onclick="engageAnswer('rec-klune-que:2026-08-20-klune-puerta-susurros','el_tono',this)">El tono cálido</button>
+        <button onclick="engageAnswer('rec-klune-que:2026-08-20-klune-puerta-susurros','los_personajes',this)">Los personajes raros</button>
+        <button onclick="engageAnswer('rec-klune-que:2026-08-20-klune-puerta-susurros','la_historia',this)">La historia en sí</button>
+        <button onclick="engageAnswer('rec-klune-que:2026-08-20-klune-puerta-susurros','nada_en_particular',this)">Nada en particular</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-20-klune-puerta-susurros','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-20-klune-puerta-susurros','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-20-klune-puerta-susurros','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-20-klune-puerta-susurros','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-20-klune-puerta-susurros" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-20-klune-puerta-susurros" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-20-klune-puerta-susurros',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">«Para Eric. Espero que te hayas despertado en un lugar extraño.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">La dedicatoria del libro, a Eric Arvin — que escribió una novela llamada, justamente, <em>Woke Up in a Strange Place</em>.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para Sofi · datos verificados contra la página oficial de TJ Klune, la entrevista de Hot Press (nov. 2021), reseñas publicadas y el stock de Buscalibre Uruguay, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  var vf=$('#vaporFx');
+  if(vf){
+    for(var i=0;i<9;i++){
+      var s=document.createElement('span');
+      s.style.left=(8+Math.random()*84)+'%';
+      s.style.animationDelay=(Math.random()*6.5)+'s';
+      s.style.animationDuration=(5.5+Math.random()*3)+'s';
+      vf.appendChild(s);
+    }
+  }
+
+  var DIAS={
+    negar:{
+      et:'Es exactamente lo primero que hace.',
+      p:'Se para en el fondo de su propio funeral y mira las sillas. Están casi todas vacías: fue poquísima gente. Su reacción no es tristeza, es indignación profesional — de abogado al que le presentaron un expediente mal armado. Está convencido de que hay un error administrativo en alguna parte y de que alguien va a tener que responder por él.',
+      pie:'Klune usa la negación para hacerte reír primero. La tristeza la deja para más adelante, cuando ya te encariñaste.'
+    },
+    escapar:{
+      et:'Lo intenta. Le sale muy mal.',
+      p:'Wallace no piensa quedarse a tomar el té de nadie, así que se manda a la ruta. Descubre dos cosas: que está atado a Hugo por una especie de cable que no se corta, y que afuera hay algo peor que el aburrimiento. Se cruza con Cameron, un Husk: un fantasma que se quedó tanto tiempo del lado equivocado que ya no le queda nada de persona adentro. Alejarse demasiado de la casa lo desintegra.',
+      pie:'Estos son los "momentos escalofriantes" que mencionan las reseñas. Son la parte oscura del libro y son breves — pero existen, y le dan peso a todo lo demás.'
+    },
+    pelear:{
+      et:'Mei no se lo permite ni cinco minutos.',
+      p:'Mei es la segadora que lo viene a buscar, y no tiene la paciencia infinita de Hugo: le contesta, lo apura, se burla. La dinámica entre ellos es el motor cómico de la primera parte. Wallace intenta usar con ella el tono que usaba en las reuniones y le rebota entero, una y otra vez.',
+      pie:'Si algo te divirtió de la casa del mar más azul, es exactamente esta clase de diálogo: gente rara diciéndose la verdad sin crueldad.'
+    },
+    te:{
+      et:'Esa es, literalmente, la respuesta del libro.',
+      p:'Hugo no le hace terapia ni le da sermones: le prepara té. De día atiende la tetería como cualquier negocio del pueblo; de noche acompaña a los muertos que le van llegando, sin empujar a ninguno hacia la puerta hasta que esté listo. Y lo que Wallace termina teniendo que aprender no es ninguna gran verdad cósmica: es a estar sentado en una habitación con otra gente, sin agenda.',
+      pie:'Por eso casi todo el libro pasa adentro de una misma casa. Si buscás trama con giros, este no es. Si buscás compañía, es exactamente este.'
+    }
+  };
+  function pintarDia(k){
+    var d=DIAS[k]; if(!d) return;
+    $('#panelDias').innerHTML='<span class="et">'+d.et+'</span><p>'+d.p+'</p><p class="pie">'+d.pie+'</p>';
+  }
+  var btns=$$('#diasBox button');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('activo')});
+      b.classList.add('activo');
+      pintarDia(b.getAttribute('data-k'));
+    });
+  });
+  pintarDia('negar');
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

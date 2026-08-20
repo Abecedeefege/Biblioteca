@@ -1,7 +1,33 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-19T08:43:57.628Z",
+  "_updated_at": "2026-08-20T16:40:00-03:00",
   "notifications": [
+    {
+      "id": "2026-08-20-rec-andy",
+      "title": "🌀 L4-028: lo compraste y no lo abriste",
+      "body": "Deshacer la ansiedad, de Judson Brewer. Preocuparse es un bucle de hábito, no un defecto. Adentro lo armé para tocar.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-20-brewer-deshacer-ansiedad.html",
+      "to": "Andy",
+      "send_at": "2026-08-20T19:00:00-03:00",
+      "expires_at": "2026-08-20T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-20"
+    },
+    {
+      "id": "2026-08-20-rec-sofi",
+      "title": "🫖 Sofi, el otro Klune: el de la tetería",
+      "body": "El que escribió justo después de La casa en el mar más azul: un abogado muerto, una tetería en la montaña y siete días.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-20-klune-puerta-susurros.html",
+      "to": "Sofi",
+      "send_at": "2026-08-20T19:00:00-03:00",
+      "expires_at": "2026-08-20T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-20"
+    },
     {
       "id": "2026-08-11-rec-andy-audio",
       "title": "🎧 El audiolibro que pediste, ya está",
