@@ -489,6 +489,20 @@
       "device": "C-test",
       "ts": "2026-08-19T08:43:57.498Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-08-20-rec-andy",
+      "device": "Andy",
+      "ts": "2026-08-20T22:18:23.429Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-08-20-rec-sofi",
+      "device": "Sofi",
+      "ts": "2026-08-20T22:18:23.627Z",
+      "status_code": 201
     }
   ]
 }
