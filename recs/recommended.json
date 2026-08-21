@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-20T16:40:00-03:00",
+  "_updated_at": "2026-08-21T16:20:00-03:00",
   "_feedback_cutoff": "2026-08-19T11:02:50.116Z",
   "recommendations": [
     {
@@ -1233,6 +1233,57 @@
       "page": "recs/2026-08-20-klune-puerta-susurros.html",
       "notified_by": "2026-08-20-rec-sofi",
       "why": "Regimen DIARIO restablecido: hoy la ficha NUEVA del dia es la de Sofi (su ultima fue redescubrimiento, Coyle 16/08) y la de biblioteca es la de Andy. Elegido 'Bajo la puerta de los susurros' (orig. Under the Whispering Door, Tor 2021) siguiendo la UNICA senal positiva reciente de Sofi: Klune 'La casa en el mar mas azul' (05/08) = me_tienta + love, despues de la racha de ya_lo_lei con autores masivos. Se aplica la regla de autor identitario ya confirmada 3 veces con Andy (Bach, Holiday, Rovelli), primera vez con ella. GUARDIA: titulo y autor verificados contra el catalogo completo (437 vol., 0 coincidencias de Klune, 'susurros', 'whispering') y contra todo recommended.json (Klune aparece una sola vez, 05/08, otro titulo). Trama verificada contra recap detallado y corregida antes de publicar: NO le dan los siete dias al llegar (el Gerente aparece semanas despues), y Wallace no vuelve a su estudio sino que intenta escaparse y se cruza con Cameron, un Husk. Citas del autor traducidas por mi y declaradas como tales (entrevista Hot Press, nov. 2021); blurbs oficiales de la pagina del autor (V.E. Schwab, Cassandra Khaw, Publishers Weekly). Honestidad declarada en la ficha: es un libro sobre muerte y duelo, incluye el suicidio de un personaje, romance lento entre dos hombres y dos o tres momentos oscuros -- sin gore, que es su restriccion dura. Stock y precios verificados hoy en buscalibre.uy (5 ediciones, desde UYU 712). Audiolibro en espanol SI existe en Google Play Books (ficha lo da narrado por Marc Gomez) -> linkeado segun politica del 10/08; Play devuelve 403 a curl/WebFetch en cualquier ficha (limitacion conocida del entorno, ya documentada el 10/08).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-21-nestor-respira",
+      "date": "2026-08-21",
+      "kind": "nuevo",
+      "title": "Respira",
+      "author": "James Nestor",
+      "language": "es",
+      "topics": [
+        "neurociencia",
+        "wellness",
+        "cuerpo",
+        "habitos"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-08-21-nestor-respira.html",
+      "notified_by": "2026-08-21-rec-andy",
+      "why": "Régimen DIARIO: ayer (20/08) Andy tuvo redescubrimiento (Brewer) -> hoy le toca nuevo, y Sofi recibe la biblioteca. Sin feedback nuevo en sync/engagement.json desde el cutoff (19/08 11:02), así que la hipótesis de Brewer sigue sin confirmar -> se rota de veta (neuro/hábitos ya tocada ayer) hacia cuerpo/respiración, nunca antes ofrecida como ficha propia (solo mencionada de pasada en la ficha de vuelo del 06/08). Formato corto y narrativo (experimento personal en Stanford), en la línea de lo que mejor le funcionó (Rovelli, Pollan, Eagleman). Verificado título+autor contra el catálogo completo (437 vol., sin match) y contra recommended.json (Nestor solo aparece como mención de paso en la ficha de vuelo, nunca como recomendación propia). Datos de estructura, experimento Stanford y premios verificados contra Wikipedia; citas cruzadas contra dos fuentes independientes (Goodreads work-quotes + resumen de búsqueda), coincide palabra por palabra; controversia científica (Sam Kean, Kate Womersley) declarada de frente en la ficha. Edición española (Booket, 'Prácticos siglo XXI') y precio (845 UYU, 50% off, última unidad) verificados en vivo en buscalibre.uy, link 200. Audiolibro en español SÍ existe en Google Play Books (narrado por IA) -> linkeado según política del 10/08. EXPERIMENTO del día, distinto a lo habitual: ante la racha de fichas mudas de Andy (5 seguidas sin voto desde Holiday 02/08, y Brewer ayer tampoco tiene señal aún <24h después), se prueba (1) mandar el push más temprano que los ~19:00 habituales y (2) reconocer la racha de silencio directamente en la ficha, sin cambiar el contrato de botones (se mantienen los 5 valores estándar de 'nuevo', per contrato de .claude/commands/recomendacion.md).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-21-carey-heap-house",
+      "date": "2026-08-21",
+      "kind": "redescubrimiento",
+      "title": "Los secretos de Heap House",
+      "author": "Edward Carey",
+      "language": "es",
+      "topics": [
+        "fantasia_gotica",
+        "found-family",
+        "misterio-ligero"
+      ],
+      "book_ref": "M5-007",
+      "audience": "sofi",
+      "page": "recs/2026-08-21-carey-heap-house.html",
+      "notified_by": "2026-08-21-rec-sofi",
+      "why": "Régimen DIARIO: ayer (20/08) Sofi tuvo nuevo (Klune, Puerta de los susurros) -> hoy le toca la biblioteca de la casa. Guardia Máxima sigue activa: misterio/cozy está en pausa (5 ya_lo_lei seguidos con autores masivos) y su única veta viva es fantasía cálida (Klune), sin libro propio en el catálogo físico todavía para dar como redescub. Se eligió M5-007 'Los secretos de Heap House' (Edward Carey, Trilogía Iremonger) como puente deliberado: fantasía found-family (mismo ingrediente que ganó con Klune y con Osman/Joyce) pero en registro gótico-inquietante en vez de cálido -- experimento explícito para separar si lo que la engancha es la fantasía en general o el tono tierno específico de Klune, declarado así en la propia ficha. Verificado título+autor contra el catálogo completo (M5-007 único match, esperado) y contra todo recommended.json: Carey/Iremonger/Heap House nunca aparecen. Sin read_status en data/enrichment.json = tratado como no leído. HONESTIDAD sobre el género: Goodreads lo etiqueta 'Horror', así que se declaró de frente en la ficha que es gótico-whimsical estilo Tim Burton/Gorey/Snicket, SIN gore ni violencia gráfica (su restricción dura, la misma que se respetó con Klune) -- verificado cruzando reseña de NPR (Amal El-Mohtar) y reseña en español de Anika Entre Libros (ya usada como fuente confiable en la ficha de Coyle 16/08). Cita española verificada contra Anika Entre Libros ('Las cosas no son lo que parecen. Nunca confíes en las cosas.'); premio/reconocimiento (Kirkus mejores juveniles 2014, NYT Notable Books) verificado contra Goodreads. Es redescubrimiento: sin link de compra, con el CTA de compromiso físico estándar.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

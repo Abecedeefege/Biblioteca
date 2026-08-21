@@ -1,7 +1,33 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-20T22:18:23.627Z",
+  "_updated_at": "2026-08-21T16:20:00-03:00",
   "notifications": [
+    {
+      "id": "2026-08-21-rec-andy",
+      "title": "🫁 Antes de las 7, algo distinto",
+      "body": "Respira, de James Nestor. 10 días con la nariz tapada con cinta en Stanford — el experimento que arranca el libro, en 3 minutos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-21-nestor-respira.html",
+      "to": "Andy",
+      "send_at": "2026-08-21T17:30:00-03:00",
+      "expires_at": "2026-08-21T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-21 (push adelantado como experimento de horario, ver rec-nota en la ficha)"
+    },
+    {
+      "id": "2026-08-21-rec-sofi",
+      "title": "🗝️ Sofi, un objeto que susurra tu nombre",
+      "body": "Los secretos de Heap House: una familia atada a objetos que hablan, en una mansión hecha de basura. Gótico, no terror — sin gore, prometido.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-21-carey-heap-house.html",
+      "to": "Sofi",
+      "send_at": "2026-08-21T19:00:00-03:00",
+      "expires_at": "2026-08-21T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-21"
+    },
     {
       "id": "2026-08-20-rec-andy",
       "title": "🌀 L4-028: lo compraste y no lo abriste",

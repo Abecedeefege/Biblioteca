@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🫁 Respira · La ciencia que le faltaba a tu L4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0B1420;
+  --noche2:#101C2B;
+  --noche3:#152437;
+  --tiza:#EAF1F7;
+  --bruma:#8CA2B8;
+  --alba:#F0916B;
+  --alba-hi:#FFB491;
+  --aire:#5FC7D6;
+  --aire-hi:#9AE4EE;
+  --linea:rgba(234,241,247,.13);
+  --serif:'Spectral',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--tiza);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--aire);color:var(--noche)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:500}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--aire-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(234,241,247,.07)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--aire),var(--alba-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(11,20,32,.7);backdrop-filter:blur(4px)}
+.back:hover{color:var(--aire-hi);border-color:var(--aire)}
+
+.seccion{padding:clamp(3.6rem,9vw,6.5rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:800px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--aire);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.65rem,1.25rem + 2.6vw,2.6rem);line-height:1.16;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 7rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#1E3348 0%,var(--noche) 62%)}
+.aros{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(88vw,560px);height:min(88vw,560px);z-index:0;opacity:.28}
+.aros circle{fill:none;stroke:rgba(95,199,214,.35);stroke-width:1}
+.hero-int{position:relative;z-index:2;max-width:680px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--alba-hi);border:1px solid rgba(240,145,107,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.85rem,1.2rem + 4.4vw,3.1rem);line-height:1.1}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--alba-hi)}
+.hero .sub{color:var(--bruma);margin:1.35rem auto 2.2rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--aire);color:#06232A;border:none;border-radius:999px;padding:.9rem 1.8rem;font-weight:600;font-size:.98rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--aire-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.3}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.hero-hint{animation:none;opacity:.6}}
+
+.alt{background:var(--noche2)}
+.cita{border-left:3px solid var(--alba);padding:.2rem 0 .2rem 1.15rem;margin:1.9rem 0;font-family:var(--serif);font-size:clamp(1.08rem,1rem + .7vw,1.34rem);line-height:1.5;font-style:italic;color:var(--tiza)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+.parr{margin-top:1.1rem;color:var(--tiza)}
+.parr.suave{color:var(--bruma)}
+
+/* ---------- respirador guiado ---------- */
+.respirador{display:flex;flex-direction:column;align-items:center;margin:2rem 0 1.6rem;gap:1.3rem}
+.respiro-wrap{position:relative;width:min(62vw,220px);height:min(62vw,220px);display:flex;align-items:center;justify-content:center}
+.respiro-anillo{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(95,199,214,.35)}
+.respiro-bola{width:38%;height:38%;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--aire-hi),var(--aire) 60%,#0d3540 100%);box-shadow:0 0 40px rgba(95,199,214,.35);animation:respirar 11s ease-in-out infinite}
+@keyframes respirar{0%,100%{transform:scale(.62)}50%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.respiro-bola{animation:none;transform:scale(.8)}}
+.respiro-txt{font-family:var(--serif);font-size:1.1rem;color:var(--tiza);letter-spacing:.02em;min-height:1.6em}
+.respiro-sub{color:var(--bruma);font-size:.85rem;text-align:center;max-width:36ch}
+
+/* ---------- boca vs nariz ---------- */
+.duelo{display:grid;gap:.9rem;margin-top:1.7rem}
+@media(min-width:640px){.duelo{grid-template-columns:1fr 1fr}}
+.via{background:rgba(234,241,247,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.15rem}
+.via.gana{border-color:rgba(95,199,214,.55);background:rgba(95,199,214,.07)}
+.via h3{font-size:1rem;margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
+.via ul{padding-left:1.15rem;color:var(--bruma);font-size:.9rem;line-height:1.6}
+.via.gana ul{color:var(--tiza)}
+
+/* ---------- marchas / capitulos ---------- */
+.marchas{display:grid;gap:1rem;margin-top:1.8rem}
+@media(min-width:720px){.marchas{grid-template-columns:repeat(2,1fr)}}
+.marcha{background:rgba(234,241,247,.04);border:1px solid var(--linea);border-radius:14px;padding:1.25rem 1.15rem}
+.marcha .num{font-family:var(--serif);font-size:1.7rem;color:var(--alba);line-height:1;display:block;margin-bottom:.5rem}
+.marcha h3{font-size:1.02rem;margin-bottom:.5rem;color:var(--tiza)}
+.marcha p{font-size:.9rem;color:var(--bruma);line-height:1.55}
+
+/* ---------- datos ---------- */
+.datos{display:grid;gap:.8rem;margin-top:1.7rem}
+@media(min-width:640px){.datos{grid-template-columns:1fr 1fr}}
+.dato{background:rgba(234,241,247,.04);border:1px solid var(--linea);border-radius:14px;padding:1.1rem}
+.dato .n{font-family:var(--serif);font-size:1.9rem;color:var(--aire-hi);line-height:1;display:block;margin-bottom:.35rem}
+.dato p{font-size:.88rem;color:var(--bruma);line-height:1.5}
+
+.ficha{background:rgba(234,241,247,.04);border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.2rem;margin-top:1.5rem}
+.ficha dl{display:grid;gap:.75rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--aire);font-weight:700}
+.ficha dd{font-size:.95rem;color:var(--tiza);margin-top:.15rem}
+.honestidad{background:rgba(240,145,107,.07);border:1px solid rgba(240,145,107,.32);border-radius:14px;padding:1.2rem;margin-top:1.4rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--alba-hi);font-weight:700;margin-bottom:.55rem}
+.honestidad p{font-size:.94rem;line-height:1.6;color:var(--tiza)}
+.honestidad p + p{margin-top:.8rem}
+
+/* ---------- CTAs ---------- */
+.cta,.react{background:rgba(234,241,247,.05);border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.2rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(234,241,247,.07);color:var(--tiza);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--aire);color:var(--aire-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--aire-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--tiza)}
+.comprar{display:inline-block;margin-top:1.4rem;background:var(--alba);color:#2A0F04;border-radius:999px;padding:.85rem 1.6rem;font-weight:600;text-decoration:none;font-size:.95rem}
+.comprar:hover{background:var(--alba-hi)}
+.audio{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;margin-left:.7rem;color:var(--aire-hi);text-decoration:none;font-size:.88rem;border-bottom:1px solid var(--aire)}
+
+.cierre{text-align:center;padding-bottom:4.5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1rem + 1.1vw,1.6rem);line-height:1.45;max-width:26ch;margin:0 auto 1.6rem}
+footer{border-top:1px solid var(--linea);padding:1.8rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--aire-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--aire);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <svg class="aros" viewBox="0 0 200 200" aria-hidden="true">
+    <circle cx="100" cy="100" r="86"></circle>
+    <circle cx="100" cy="100" r="62"></circle>
+    <circle cx="100" cy="100" r="38"></circle>
+  </svg>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Nuevo · veta neurociencia/wellness</span>
+    <h1>Respira</h1>
+    <p class="autor">James Nestor · orig. <em>Breath</em> (Riverhead, 2020) · ed. Booket, «Prácticos siglo XXI»</p>
+    <p class="sub">10 años investigando algo que hacés 25.000 veces por día sin pensarlo — y que, según este libro, probablemente estás haciendo mal.</p>
+    <a class="cta-btn" href="#experimento">Empezá por acá ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="experimento">
+  <div class="centro">
+    <p class="kicker rev">Cómo abre el libro</p>
+    <h2 class="titulo rev d1">Se tapó la nariz con silicona y cinta quirúrgica. Diez días.</h2>
+    <p class="bajada rev d2">Nestor es periodista científico, no médico. Para escribir esto se metió como sujeto de experimento en Stanford: diez días respirando solo por la boca (nariz tapada con tapones y cinta), y después diez días respirando solo por la nariz. Un ingeniero llamado Marco Mount y el propio equipo de Stanford midieron todo — presión arterial, sueño, dióxido de carbono en sangre — antes, durante y después.</p>
+    <p class="parr rev d2">Los diez días de solo-boca lo dejaron roncando, con apneas que nunca había tenido, la presión arterial más alta y peor humor. Los diez días de solo-nariz revirtieron todo eso — y de paso le bajaron la presión más de lo que suele lograr un medicamento. El libro completo sale de la pregunta que ese experimento le dejó picando: si algo tan simple cambia tanto, ¿por qué nadie nos lo explicó nunca?</p>
+    <div class="cita rev d3">«El mouthbreathing cambia el cuerpo físico y transforma las vías respiratorias, todo para peor.»<span>Traducción propia — verificado contra dos fuentes (Goodreads, cita de la edición original en inglés) — cruza con el hallazgo central del experimento de Stanford.</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="respirador">
+  <div class="centro">
+    <p class="kicker rev">La idea que más repite el libro</p>
+    <h2 class="titulo rev d1">La «respiración perfecta»: 5,5 segundos, 5,5 segundos</h2>
+    <p class="bajada rev d2">De todas las técnicas que prueba en el libro — Tummo tibetano, Sudarshan Kriya, respiración de Buteyko — la que más veces vuelve a nombrar es la más aburrida: inhalar 5,5 segundos, exhalar 5,5 segundos, sin pausa. Nestor la llama la «respiración de resonancia»: es el ritmo en el que el corazón, los pulmones y la circulación quedan sincronizados al máximo. Probala 30 segundos, no hace falta más para sentir la diferencia.</p>
+    <div class="respirador rev d2">
+      <div class="respiro-wrap">
+        <div class="respiro-anillo"></div>
+        <div class="respiro-bola" id="bola"></div>
+      </div>
+      <p class="respiro-txt" id="respiroTxt">Inhalá…</p>
+      <p class="respiro-sub">Seguí el círculo. Un ciclo completo son 11 segundos — el mismo ritmo que mide el libro.</p>
+    </div>
+    <p class="parr suave rev d3">A esa frecuencia (~5,5 respiraciones por minuto) el cuerpo absorbe más oxígeno por cada respiración de lo habitual: en una respiración normal los pulmones sólo aprovechan una porción del oxígeno disponible en el aire y el resto se exhala sin usar.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="boca-nariz">
+  <div class="centro">
+    <p class="kicker rev">La comparación que arranca todo</p>
+    <h2 class="titulo rev d1">La nariz no es un simple agujero para el aire</h2>
+    <p class="bajada rev d2">Es el argumento que Nestor repite con datos distintos en cada capítulo: la boca es una entrada de emergencia; la nariz es el sistema completo de filtrado, calentamiento y presurización que el cuerpo diseñó para respirar.</p>
+    <div class="duelo">
+      <div class="via rev d2">
+        <h3>👄 Por la boca</h3>
+        <ul>
+          <li>Menos presión: los tejidos blandos del fondo se aflojan y se cierran un poco más el paso.</li>
+          <li>Aire sin filtrar ni humedecer antes de llegar a los pulmones.</li>
+          <li>Asociada en el libro a ronquidos, apnea y peor calidad de sueño.</li>
+        </ul>
+      </div>
+      <div class="via gana rev d3">
+        <h3>👃 Por la nariz</h3>
+        <ul>
+          <li>Filtra, calienta y presuriza el aire antes de que llegue a los pulmones.</li>
+          <li>Libera óxido nítrico — un vasodilatador que ayuda a absorber oxígeno.</li>
+          <li>Con la exhalación larga, deja que los pulmones aprovechen más de cada bocanada.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="capitulos">
+  <div class="centro">
+    <p class="kicker rev">Cómo está armado</p>
+    <h2 class="titulo rev d1">Un experimento, después un mapa de técnicas</h2>
+    <p class="bajada rev d2">304 páginas en dos movimientos: primero reconstruye por qué respiramos mal (evolución de la mandíbula humana, comida procesada, el experimento de Stanford), después recorre técnicas de todo el mundo poniéndolas a prueba una por una.</p>
+    <div class="marchas">
+      <div class="marcha rev d1">
+        <span class="num">I</span>
+        <h3>Los peores respiradores del reino animal</h3>
+        <p>Por qué la especie humana es la única que respira mal por diseño: la mandíbula se nos achicó con la comida blanda y procesada, y el paladar dejó de tener espacio para todos los dientes ni para respirar bien por la nariz.</p>
+      </div>
+      <div class="marcha rev d2">
+        <span class="num">II</span>
+        <h3>Más, menos, aguantar, y a veces nada</h3>
+        <p>Prueba en carne propia el Tummo tibetano (monjes que generan calor corporal real con la respiración, en la nieve), la Sudarshan Kriya y las técnicas de tolerancia al CO₂ — con qué funcionó y qué no.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="evidencia">
+  <div class="centro">
+    <p class="kicker rev">Los números, con la letra chica puesta</p>
+    <h2 class="titulo rev d1">Qué tan lejos llegó esto</h2>
+    <div class="datos">
+      <div class="dato rev d1"><span class="n">2 M+</span><p>de copias vendidas en todo el mundo y 18 semanas en la lista de no-ficción del <em>New York Times</em>, según Wikipedia.</p></div>
+      <div class="dato rev d2"><span class="n">10 años</span><p>de investigación y reporteo, cruzando pulmonólogos, ortodoncistas evolutivos, monjes y buceadores en apnea.</p></div>
+      <div class="dato rev d2"><span class="n">6x</span><p>más óxido nítrico se libera respirando por la nariz que por la boca, según el libro — vasodilatador que ayuda a absorber oxígeno.</p></div>
+      <div class="dato rev d3"><span class="n">Finalista</span><p>del Royal Society Science Book Prize 2021 y ganador del premio a mejor no-ficción general de la ASJA en 2020.</p></div>
+    </div>
+    <div class="honestidad rev d3">
+      <span class="et">La letra chica que corresponde</span>
+      <p>No es un libro sin objeciones. Revisores como Sam Kean (periodista científico) le marcaron poco escepticismo frente al efecto placebo, y la psiquiatra Kate Womersley señaló que algunas afirmaciones sobre óxido nítrico y CO₂ están sobredichas frente a la evidencia real, y advirtió del riesgo de que la respiración se venda como producto de auto-optimización. Nada de esto invalida el experimento de Stanford (ese sí, medido y publicado) — pero conviene leer los capítulos de técnicas más «probalo y fijate» que como ciencia cerrada.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>Breath: The New Science of a Lost Art</em>, Riverhead Books (Penguin Random House), 26 de mayo de 2020.</dd>
+        <dt>Tu edición</dt><dd>«Respira: La nueva ciencia de un arte olvidado», Booket, colección Prácticos siglo XXI, 352 págs., publicado en España en 2022.</dd>
+        <dt>Disponibilidad</dt><dd>Buscalibre.uy la tiene con 50% de descuento — pero marca «Última unidad» ahora mismo, así que si te copa no la dejes para después.</dd>
+        <dt>Audiolibro</dt><dd>Existe en español en Google Play Books, narrado por voz de IA (Luis). Lo linkeo abajo — política vigente desde el pedido del 10/08.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">Honestidad dura</span>
+      <p><b>Es un bestseller mundial.</b> Mismo perfil de fama que Frankl y Meditaciones, que te salieron "ya lo leí" — te lo digo de entrada. La diferencia es que nunca tuviste un libro de neurociencia/wellness centrado en algo tan físico y probable en el cuerpo (no en la mente), así que la apuesta es la novedad del ángulo, no del autor.</p>
+      <p><b>Qué no es:</b> no reemplaza indicación médica si tenés apnea diagnosticada o un problema respiratorio real — el propio libro lo aclara. Es un libro para respirar mejor en el día a día, no un tratado clínico.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">Con el experimento de Stanford alcanza para saber si te copa</h2>
+    <p class="bajada rev d2">Es el arranque del libro (Parte I). Si esa historia no te enganchó, el resto —que es más técnico— tampoco lo va a hacer.</p>
+    <div class="cta rev d2">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-21-nestor-respira','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-21-nestor-respira','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-21-nestor-respira','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-21-nestor-respira','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-21-nestor-respira','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+      <div>
+        <a class="comprar" href="https://www.buscalibre.uy/libros/search/?q=Respira+James+Nestor" target="_blank" rel="noopener">Conseguilo (~USD 21)</a>
+        <a class="audio" href="https://play.google.com/store/audiobooks/details?id=AQAAAEBKbzgvYM" target="_blank" rel="noopener">🎧 Audiolibro en Google Play</a>
+      </div>
+    </div>
+    <div class="honestidad rev d3">
+      <span class="et">Te pido una cosa, distinto hoy</span>
+      <p>Hace varias fichas que entrás, leés y te vas sin votar. No sé si es el libro, la hora del push o el botón. Así que hoy pruebo dos cosas nuevas: te mando esto más temprano que de costumbre, y te dejo el botón de veredicto pegado arriba del todo (no al final). Si igual no es tu hora, decímelo en la caja de abajo — un "no me va" también me sirve, mucho más que el silencio.</p>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-21-nestor-respira','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-21-nestor-respira','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-21-nestor-respira','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-21-nestor-respira','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-21-nestor-respira" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-21-nestor-respira" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-21-nestor-respira',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">«¿Y si respirar mal no fuera el resultado de la ansiedad, sino su causa?»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:46ch">Paráfrasis de una de las preguntas centrales del libro — el mismo terreno que ayer tocó Brewer, mirado desde el cuerpo en vez de la mente.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · nuevo · datos verificados contra Wikipedia (recepción y premios), Goodreads (citas, cruzadas con una segunda fuente) y buscalibre.uy (precio y stock), a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  /* ----- respirador guiado: 5.5s in / 5.5s out ----- */
+  var txt=$('#respiroTxt');
+  function ciclo(){
+    txt.textContent='Inhalá…';
+    setTimeout(function(){ txt.textContent='Exhalá…'; }, 5500);
+  }
+  ciclo();
+  setInterval(ciclo, 11000);
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
