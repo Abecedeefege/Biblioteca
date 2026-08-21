@@ -503,6 +503,13 @@
       "device": "Sofi",
       "ts": "2026-08-20T22:18:23.627Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-08-21-rec-andy",
+      "device": "Andy",
+      "ts": "2026-08-21T20:42:26.409Z",
+      "status_code": 201
     }
   ]
 }
