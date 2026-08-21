@@ -3498,7 +3498,24 @@
       "device": "C-test",
       "dwell_s": 9,
       "scroll_pct": 0
+    },
+    {
+      "id": "mt3h76ri-265e8x",
+      "type": "notification_clicked",
+      "ts": "2026-08-21T21:43:05.214Z",
+      "page": "2026-08-21-nestor-respira.html",
+      "device": "Andy",
+      "nid": "2026-08-21-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mt3h76rj-or3aqj",
+      "type": "page_visit",
+      "ts": "2026-08-21T21:43:05.215Z",
+      "page": "2026-08-21-nestor-respira.html",
+      "device": "Andy",
+      "nid": "2026-08-21-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-19T11:02:57.692Z"
+  "_updated_at": "2026-08-21T21:43:06.416Z"
 }
