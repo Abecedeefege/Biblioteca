@@ -1,7 +1,33 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-21T22:09:53.937Z",
+  "_updated_at": "2026-08-22T16:15:00-03:00",
   "notifications": [
+    {
+      "id": "2026-08-22-rec-andy",
+      "title": "🧘 El vecino de Rojas Estapé, sin abrir",
+      "body": "Calmar la mente, de Lucas Raspall: psiquiatra que cruza neurociencia y budismo. Un ejercicio armado para probar hoy.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-22-raspall-calmar-mente.html",
+      "to": "Andy",
+      "send_at": "2026-08-22T19:00:00-03:00",
+      "expires_at": "2026-08-22T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-22"
+    },
+    {
+      "id": "2026-08-22-rec-sofi",
+      "title": "☕ Sofi, hoy no hay ningún muerto",
+      "body": "El café de las leyendas: una orca guerrera abre la primera cafetería de su ciudad. Cero crimen, cero gore, prometido.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-22-baldree-cafe-leyendas.html",
+      "to": "Sofi",
+      "send_at": "2026-08-22T19:00:00-03:00",
+      "expires_at": "2026-08-22T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-22"
+    },
     {
       "id": "2026-08-21-rec-andy",
       "title": "🫁 Antes de las 7, algo distinto",

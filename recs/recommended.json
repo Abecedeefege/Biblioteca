@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-21T16:20:00-03:00",
-  "_feedback_cutoff": "2026-08-19T11:02:50.116Z",
+  "_updated_at": "2026-08-22T16:30:00-03:00",
+  "_feedback_cutoff": "2026-08-21T21:43:05.215Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1262,10 +1262,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
+        "clicked": true,
         "dwell_s": 0
       },
-      "learning": null
+      "learning": "Click + page_visit el 21/08 21:43 (24h+ después del push adelantado a las 17:30) -- abrió la ficha, pero sin dwell ni veredicto todavia. El experimento de horario consiguió el click; falta ver si consigue el voto."
     },
     {
       "id": "2026-08-21-carey-heap-house",
@@ -1284,6 +1284,57 @@
       "page": "recs/2026-08-21-carey-heap-house.html",
       "notified_by": "2026-08-21-rec-sofi",
       "why": "Régimen DIARIO: ayer (20/08) Sofi tuvo nuevo (Klune, Puerta de los susurros) -> hoy le toca la biblioteca de la casa. Guardia Máxima sigue activa: misterio/cozy está en pausa (5 ya_lo_lei seguidos con autores masivos) y su única veta viva es fantasía cálida (Klune), sin libro propio en el catálogo físico todavía para dar como redescub. Se eligió M5-007 'Los secretos de Heap House' (Edward Carey, Trilogía Iremonger) como puente deliberado: fantasía found-family (mismo ingrediente que ganó con Klune y con Osman/Joyce) pero en registro gótico-inquietante en vez de cálido -- experimento explícito para separar si lo que la engancha es la fantasía en general o el tono tierno específico de Klune, declarado así en la propia ficha. Verificado título+autor contra el catálogo completo (M5-007 único match, esperado) y contra todo recommended.json: Carey/Iremonger/Heap House nunca aparecen. Sin read_status en data/enrichment.json = tratado como no leído. HONESTIDAD sobre el género: Goodreads lo etiqueta 'Horror', así que se declaró de frente en la ficha que es gótico-whimsical estilo Tim Burton/Gorey/Snicket, SIN gore ni violencia gráfica (su restricción dura, la misma que se respetó con Klune) -- verificado cruzando reseña de NPR (Amal El-Mohtar) y reseña en español de Anika Entre Libros (ya usada como fuente confiable en la ficha de Coyle 16/08). Cita española verificada contra Anika Entre Libros ('Las cosas no son lo que parecen. Nunca confíes en las cosas.'); premio/reconocimiento (Kirkus mejores juveniles 2014, NYT Notable Books) verificado contra Goodreads. Es redescubrimiento: sin link de compra, con el CTA de compromiso físico estándar.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-22-raspall-calmar-mente",
+      "date": "2026-08-22",
+      "kind": "redescubrimiento",
+      "title": "Calmar la mente",
+      "author": "Lucas Raspall",
+      "language": "es",
+      "topics": [
+        "neurociencia",
+        "espiritualidad",
+        "wisdom",
+        "mindfulness"
+      ],
+      "book_ref": "L4-025",
+      "audience": "andy",
+      "page": "recs/2026-08-22-raspall-calmar-mente.html",
+      "notified_by": "2026-08-22-rec-andy",
+      "why": "Regimen DIARIO: ayer (21/08) Andy tuvo nuevo (Nestor, Respira) -> hoy le toca redescubrimiento, y Sofi recibe la nueva. Elegido L4-025 'Calmar la mente' (Lucas Raspall), PRIORIDAD del banco de redescub del PROFILE (L4-028 usado 20/08, L4-026 usado 05/08), sin entrada en data/enrichment.json (read_status desconocido, tratado como no leido). Cruza tres vetas declaradas de Andy en un solo libro (neurociencia + espiritualidad oriental/budismo + un poco de fisica cuantica), autor con autoridad real (psiquiatra y psicoterapeuta cognitivo, no un influencer generico) -- misma logica que funciono con Rovelli/Rojas Estape/Bach. Sigue una racha de 2 fichas mudas seguidas (Brewer 20/08, Nestor 21/08, aunque Nestor SI tuvo click el 21/08 21:43, primera senal de interaccion en dias); en vez de gastar otro 'nuevo' sin confirmar la hipotesis de Brewer, se vuelve a un redescubrimiento de su propio estante, formato que le viene funcionando mejor ultimamente (Cosmos, Jonathan Livingston Seagull). Verificado titulo+autor contra el catalogo completo (L4-025 unico match, esperado) y contra todo recommended.json: Raspall nunca aparece. Contenido verificado contra la sinopsis oficial de Grijalbo/librerias (Yenny, Cuspide, Popular Libros) y una entrevista real del autor (Rosario3, marzo 2025) para las citas y el ejercicio de 'la ruta mental' -- sin inventar contenido no verificado. Es redescubrimiento: sin link de compra, con el CTA de compromiso fisico estandar.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-22-baldree-cafe-leyendas",
+      "date": "2026-08-22",
+      "kind": "nuevo",
+      "title": "El café de las leyendas",
+      "author": "Travis Baldree",
+      "language": "es",
+      "topics": [
+        "fantasia_calida",
+        "found-family",
+        "cozy"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-08-22-baldree-cafe-leyendas.html",
+      "notified_by": "2026-08-22-rec-sofi",
+      "why": "Regimen DIARIO: ayer (21/08) Sofi tuvo redescubrimiento (Carey, Heap House) -> hoy le toca la nueva, y Andy recibe la biblioteca. Sin feedback nuevo de Sofi en sync/engagement.json desde el cutoff (ni Puerta de los susurros 20/08 ni Heap House 21/08 tienen clicks ni votos todavia), asi que se sigue sin poder confirmar si su unica senal viva (Klune 05/08, me_tienta+love) fue el autor puntual o la veta 'fantasia calida' en general -- y el banco de Klune esta casi agotado. Se eligio 'El cafe de las leyendas' (Travis Baldree) como segundo punto de datos en la misma veta pero con otro autor: cozy fantasy de bajisimo riesgo (subtitulo oficial 'alta fantasia, bajisima apuesta'), found-family armandose alrededor de un negocio, sin crimen -- deliberadamente el extremo opuesto del registro gotico de Heap House de ayer, para tener los dos polos con los que comparar su proxima respuesta. Verificado titulo+autor contra el catalogo completo (437 vol., 0 coincidencias de 'Baldree', 'lattes', 'leyendas de Baldree') y contra todo recommended.json: Baldree nunca aparece. GUARDIA: el titulo en espanol que tenia anotado el banco del PROFILE ('Leyendas y lattes') era una traduccion mia sin verificar -- el titulo real de la edicion de Roca Editorial es 'El cafe de las leyendas', corregido en esta ficha. Trama, elenco (Cal, Tandri, Amity) y tono verificados contra la ficha editorial de Roca, resenas publicadas (Idae Ros, Modus Leyendi, Triada Literaria) y SuperSummary; cita de apertura verificada contra Goodreads y traducida por mi, declarada como tal. Honestidad: se declara de frente que hay un incendio provocado y una muerte fuera de camara en el epilogo, sin gore ni detalle grafico (su restriccion dura respetada). Precio y stock verificados hoy en buscalibre.uy (2 ediciones en stock, desde UYU 788), link 200. Audiolibro en espanol existe (Laia Florez) pero no se encontro el link directo de Google Play Books -> no se linkea, cumpliendo la politica de no inventar.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
