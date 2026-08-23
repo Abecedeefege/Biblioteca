@@ -3541,7 +3541,16 @@
       "page": "2026-08-22-raspall-calmar-mente.html",
       "device": "Andy",
       "nid": "2026-08-22-rec-andy"
+    },
+    {
+      "id": "mt5bgfgo-je6s3c",
+      "type": "dwell",
+      "ts": "2026-08-23T04:37:51.048Z",
+      "page": "2026-08-22-raspall-calmar-mente.html",
+      "device": "Andy",
+      "dwell_s": 55,
+      "scroll_pct": 11
     }
   ],
-  "_updated_at": "2026-08-23T04:36:57.076Z"
+  "_updated_at": "2026-08-23T04:37:52.779Z"
 }
