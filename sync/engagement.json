@@ -3515,7 +3515,33 @@
       "page": "2026-08-21-nestor-respira.html",
       "device": "Andy",
       "nid": "2026-08-21-rec-andy"
+    },
+    {
+      "id": "mt3heovt-fky5uu",
+      "type": "dwell",
+      "ts": "2026-08-21T21:48:55.289Z",
+      "page": "2026-08-21-nestor-respira.html",
+      "device": "Andy",
+      "dwell_s": 350,
+      "scroll_pct": 99
+    },
+    {
+      "id": "mt5bf8wn-wfthal",
+      "type": "notification_clicked",
+      "ts": "2026-08-23T04:36:55.896Z",
+      "page": "2026-08-22-raspall-calmar-mente.html",
+      "device": "Andy",
+      "nid": "2026-08-22-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mt5bf8wq-9ad0ud",
+      "type": "page_visit",
+      "ts": "2026-08-23T04:36:55.898Z",
+      "page": "2026-08-22-raspall-calmar-mente.html",
+      "device": "Andy",
+      "nid": "2026-08-22-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-21T21:43:06.416Z"
+  "_updated_at": "2026-08-23T04:36:57.076Z"
 }
