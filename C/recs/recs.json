@@ -2,6 +2,15 @@
   "_comment": "Registry of C's recommendation cards. The hub (index.html) renders this list; the recommendation agent appends one entry per delivery and never repeats a slug.",
   "recs": [
     {
+      "slug": "2026-08-23-hartman-wayward-lives",
+      "date": "2026-08-23",
+      "title": "Wayward Lives, Beautiful Experiments",
+      "author": "Saidiya Hartman",
+      "emoji": "💃",
+      "flag": "new · history",
+      "teaser": "Philadelphia and New York, 1890–1935: young Black women whose only surviving records were written by the people who policed them. The book where your feminism wall and your E. H. Carr shelf have to argue it out."
+    },
+    {
       "slug": "2026-08-18-erpenbeck-kairos",
       "date": "2026-08-18",
       "title": "Kairos",

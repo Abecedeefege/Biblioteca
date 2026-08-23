@@ -856,6 +856,19 @@
       "sent_at": "2026-08-19T08:43:57.498Z",
       "fail_reason": null,
       "created_by": "sync_devices.js (bienvenida)"
+    },
+    {
+      "id": "2026-08-23-rec-c",
+      "title": "💃 A history written out of police files",
+      "body": "Wayward Lives, Beautiful Experiments, by Saidiya Hartman: the young Black women of 1900s Philadelphia and New York, arrested for what they might do next. Your feminism wall and your E. H. Carr will fight over it.",
+      "url": "https://abecedeefege.github.io/Biblioteca/C/recs/2026-08-23-hartman-wayward-lives.html",
+      "to": "C",
+      "send_at": "2026-08-23T17:30:00+02:00",
+      "expires_at": "2026-08-23T22:30:00+02:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "rec-c-agent 2026-08-23"
     }
   ]
 }

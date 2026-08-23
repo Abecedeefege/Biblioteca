@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../../icon-192.png">
+<title>💃 Wayward Lives, Beautiful Experiments · For C</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0b1425; --night2:#101d36; --bronze:#b08d57; --bronze-hi:#dcb680;
+  --blue:#5f8fd0; --blue-hi:#93b9e8; --ink:#edf1f9; --mist:#a9b6cc;
+  --line:rgba(237,241,249,.14);
+  --serif:'Fraunces',Georgia,serif; --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ink);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--bronze);color:var(--night)}
+h1,h2,h3,.serif{font-family:var(--serif)}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--blue-hi);outline-offset:3px;border-radius:4px}
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,241,249,.08)}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--bronze-hi),var(--blue-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--mist);text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border:1px solid var(--line);border-radius:999px;background:rgba(11,20,37,.65);backdrop-filter:blur(4px)}
+.back:hover{color:var(--bronze-hi);border-color:var(--bronze)}
+.section{padding:clamp(4rem,10vw,7rem) clamp(1.25rem,5vw,2.5rem)}
+.center{max-width:820px;margin:0 auto}
+.kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);font-weight:700;margin-bottom:1rem}
+.title{font-size:clamp(1.8rem,1.3rem + 3vw,2.9rem);font-weight:500;line-height:1.14;margin-bottom:1rem}
+.lede{color:var(--mist);max-width:58ch}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rev.seen{opacity:1;transform:none}
+.rev.d1{transition-delay:.12s}.rev.d2{transition-delay:.24s}.rev.d3{transition-delay:.36s}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.5rem 8rem;overflow:hidden;background:radial-gradient(130% 90% at 50% 8%,#26203c 0%,var(--night) 62%)}
+.ledger{position:absolute;inset:0;z-index:0;opacity:.16;background:repeating-linear-gradient(180deg,transparent 0 30px,rgba(237,241,249,.55) 30px 31px);animation:drift 22s linear infinite}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-31px)}}
+.redact{position:absolute;inset:0;z-index:0;opacity:.5}
+.redact i{position:absolute;height:11px;border-radius:2px;background:var(--bronze);opacity:.18;animation:blot 6.5s ease-in-out infinite}
+@keyframes blot{0%,100%{opacity:.06;transform:scaleX(.7)}45%{opacity:.32;transform:scaleX(1)}}
+.emblem{position:absolute;top:8%;left:50%;transform:translateX(-50%);font-size:2.6rem;opacity:.6;animation:sway 7s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:translateX(-50%) rotate(-5deg)}50%{transform:translateX(-50%) rotate(5deg)}}
+.hero-int{position:relative;z-index:2;max-width:720px}
+.hero .tag{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-hi);border:1px solid var(--blue);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.7rem,1.05rem + 4.2vw,3.1rem);font-weight:500;line-height:1.12}
+.hero .author{margin-top:1rem;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--bronze-hi)}
+.hero .sub{color:var(--mist);margin:1.4rem auto 2.3rem;max-width:54ch}
+.cta-btn{display:inline-block;background:var(--bronze);color:var(--night);border:none;border-radius:999px;padding:.95rem 1.9rem;font-weight:700;font-size:1rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--bronze-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.3rem;left:0;right:0;z-index:2;color:var(--mist);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
+.bridge{background:var(--night2)}
+.shelfrow{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.chip{font-size:.82rem;color:var(--blue-hi);border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.2rem 0 1.3rem}
+.tabs button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:.6rem 1.05rem;font-size:.87rem;font-weight:600;transition:all .25s ease}
+.tabs button:hover,.tabs button.on{border-color:var(--bronze);color:var(--bronze-hi);background:rgba(176,141,87,.12)}
+.tab-panel{border:1px solid var(--line);border-radius:16px;padding:clamp(1.4rem,4vw,2rem);background:linear-gradient(180deg,rgba(237,241,249,.03),transparent);min-height:13em}
+.tab-panel .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-hi);font-weight:700;margin-bottom:.6rem}
+.tab-panel p{color:var(--mist);font-size:.98rem;margin-bottom:1rem}
+.tab-panel .qin{font-family:var(--serif);font-style:italic;color:var(--ink);font-size:1.02rem;border-left:3px solid var(--blue);padding-left:1rem}
+.quote{border-left:3px solid var(--bronze);padding:1.1rem 1.3rem;margin-top:1.4rem;background:rgba(176,141,87,.08);border-radius:0 12px 12px 0}
+.quote p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55;color:var(--bronze-hi)}
+.quote span{display:block;margin-top:.55rem;color:var(--mist);font-size:.82rem}
+.card{border:1px solid var(--line);border-radius:20px;padding:clamp(1.5rem,4vw,2.2rem);margin-top:2.2rem;background:linear-gradient(180deg,rgba(237,241,249,.04),transparent)}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.95rem}
+.card dt{color:var(--blue-hi);font-weight:600;white-space:nowrap}
+.card dd{color:var(--mist)}
+.honesty{border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.4rem;margin-top:2rem;background:rgba(95,143,208,.1)}
+.honesty p{color:var(--mist);font-size:.95rem}
+.honesty p + p{margin-top:.9rem}
+.honesty .et{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-hi);font-weight:700;margin-bottom:.5rem;display:block}
+.cta,.react{border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.25rem;margin-top:1.6rem;font-family:var(--serif);font-size:1.05rem}
+.cta button,.react button{margin:.45rem .3rem 0 0;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:.6rem 1.05rem;font-size:.92rem;font-weight:600;transition:all .25s ease;font-family:var(--sans)}
+.cta button:hover,.react button:hover{border-color:var(--bronze);color:var(--bronze-hi)}
+.q-hint,.react-hint{display:block;margin-top:.5rem;font-size:.85rem;color:var(--blue-hi);font-family:var(--sans)}
+.close{text-align:center;background:radial-gradient(80% 60% at 50% 100%,#26203c 0%,var(--night) 72%);padding-bottom:5rem}
+.close .phrase{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,1rem + 2.4vw,2.2rem);line-height:1.35;max-width:40ch;margin:0 auto 1.3rem}
+.close .phrase b{color:var(--bronze-hi);font-weight:600}
+footer{text-align:center;color:var(--mist);font-size:.8rem;padding:2.2rem 1.5rem 3rem;border-top:1px solid var(--line);line-height:1.7}
+footer em{font-family:var(--serif)}
+textarea{width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9}
+@media (max-width:560px){.card dl{grid-template-columns:1fr}.card dt{margin-top:.4rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+<header class="hero">
+  <a class="back" href="./">← All recommendations</a>
+  <div class="ledger" aria-hidden="true"></div>
+  <div class="redact" id="redactFx" aria-hidden="true"></div>
+  <div class="emblem" aria-hidden="true">💃</div>
+  <div class="hero-int">
+    <span class="tag">For you, C · New · NBCC Award for Criticism</span>
+    <h1>Wayward Lives, Beautiful Experiments</h1>
+    <p class="author">Saidiya Hartman · 2019 · “Intimate Histories of Riotous Black Girls, Troublesome Women, and Queer Radicals”</p>
+    <p class="sub">Philadelphia and New York, roughly 1890 to 1935. The only surviving records of these young Black women are the ones written by the people who policed them: arrest sheets, reformatory case files, rent collectors' notes, sociological surveys. Hartman reads that archive against itself and finds, underneath the charge sheets, a social revolution nobody bothered to write down.</p>
+    <a class="cta-btn" href="#bridge">Why this one ↓</a>
+  </div>
+  <p class="hero-hint">Scroll ↓</p>
+</header>
+
+<main>
+<section class="section bridge" id="bridge">
+  <div class="center">
+    <p class="kicker rev">Why it came to you</p>
+    <h2 class="title rev d1">The book where your two best walls argue with each other</h2>
+    <p class="lede rev d2">Your feminism wall already knows what happened to these women: Stella Dadzie on enslaved women's refusals, Dorothy Roberts on the policing of Black women's bodies, Angela Davis, Audre Lorde, Mikki Kendall. And your historian's shelf already knows the harder question — E. H. Carr on what a fact even is, Koselleck on layered time, Said on who gets to narrate, and, three shelves over, the Princeton Guide to Historical Research telling you to stay inside your sources. Hartman puts those two shelves in the same room and refuses to let either one win easily: what do you do when the only archive of a life is the file kept by the people who arrested her?</p>
+    <div class="shelfrow rev d2">
+      <span class="chip">Your Dadzie: A Kick in the Belly (B3-009)</span>
+      <span class="chip">Your Roberts: Killing the Black Body (B3-026)</span>
+      <span class="chip">Your Carr: What Is History? (A3-007)</span>
+      <span class="chip">Your Princeton Guide to Historical Research (A3-012)</span>
+      <span class="chip">Your Ernaux: The Years (B4-004)</span>
+    </div>
+    <p class="rev d3" style="margin-top:1.6rem;font-family:var(--serif);font-style:italic;color:var(--bronze-hi)">Checked against your whole catalogue: no Hartman on any of your thirteen shelves — this would be the first.</p>
+  </div>
+</section>
+
+<section class="section" id="themes">
+  <div class="center">
+    <p class="kicker rev">The keys</p>
+    <h2 class="title rev d1">Pick one — two minutes each</h2>
+    <div class="tabs" id="tabRow">
+      <button data-t="archive" class="on">The archive problem</button>
+      <button data-t="who">Who is actually in it</button>
+      <button data-t="form">What the prose does</button>
+      <button data-t="you">Why you, exactly</button>
+    </div>
+    <div class="tab-panel rev d2" id="tabPanel"></div>
+  </div>
+</section>
+
+<section class="section" id="quotes">
+  <div class="center">
+    <p class="kicker rev">One line from the book</p>
+    <h2 class="title rev d1">Her definition of the word in the title</h2>
+    <div class="quote rev"><p>“Waywardness is a practice of possibility at a time when all roads, except the ones created by smashing out, are foreclosed. It obeys no rules and abides no authorities.”</p><span>Saidiya Hartman, from the chapter “Wayward: A Short Entry on the Possible”</span></div>
+    <p class="lede rev d1" style="margin-top:1.3rem">“Wayward minor” was a real legal category — it is how the state described a girl who might commit a crime later. Hartman takes the word away from the courts and gives it back to the women.</p>
+  </div>
+</section>
+
+<section class="section" id="factcard" style="background:var(--night2)">
+  <div class="center">
+    <p class="kicker rev">The record card</p>
+    <h2 class="title rev d1">Facts before you decide</h2>
+    <div class="card rev d1">
+      <dl>
+        <dt>Published</dt><dd>W. W. Norton, 2019 · UK edition Serpent's Tail, 29 August 2019 · paperback around 448 pages</dd>
+        <dt>Two subtitles</dt><dd>Later editions carry the shorter “Intimate Histories of Social Upheaval” — same book, don't buy it twice</dd>
+        <dt>Prizes</dt><dd>National Book Critics Circle Award in Criticism (2019 awards, announced March 2020) · PEN/John Kenneth Galbraith Award for Nonfiction 2021 · a Publishing Triangle Award · shortlisted for the James Tait Black Prize 2020</dd>
+        <dt>Also</dt><dd>Named by the publisher among The New York Times' 100 Best Books of the 21st Century</dd>
+        <dt>The author</dt><dd>Saidiya Hartman, professor at Columbia, MacArthur Fellow 2019; earlier: Scenes of Subjection (1997) and Lose Your Mother (2007)</dd>
+        <dt>Her method</dt><dd>“Critical fabulation”, a term she coined in her 2008 essay “Venus in Two Acts”</dd>
+        <dt>Your edition</dt><dd>English, either the Norton or the Serpent's Tail — both easy to find in Paris. I have not verified a French or German translation, so check before ordering one</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="honesty-sec">
+  <div class="center">
+    <p class="kicker rev">The honest fine print</p>
+    <h2 class="title rev d1">Three warnings, and one of them is the point</h2>
+    <div class="honesty rev d2">
+      <span class="et">Honesty guard</span>
+      <p><b>It breaks the rule your Princeton Guide teaches.</b> Where the file goes silent, Hartman writes in the subjunctive — what might have been said, what the room probably smelled like, what the woman may have wanted. She says so openly and calls the method critical fabulation. If you want history that never steps past what a document can prove, this book will irritate you for four hundred pages. I'd argue that irritation is the most useful thing on this list: it is the same fight your Carr picked, taken one step further than he took it.</p>
+      <p><b>The material is heavy.</b> Arrests, reformatories, sexual violence, tenements, the long reach of the vagrancy and wayward-minor laws. It is not grim for its own sake — the argument is about joy and refusal — but it does not spare you.</p>
+      <p><b>It is not linear.</b> Chapters run from a single page to forty, photographs and case files sit next to lyric passages, and the same women return under different lights. Read it in sittings, not in one gulp.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="verdict" style="background:var(--night2)">
+  <div class="center">
+    <p class="kicker rev">Your verdict</p>
+    <h2 class="title rev d1">What do we do with this one?</h2>
+    <p class="lede rev d2">One tap teaches the next recommendation — even “not for me” is gold.</p>
+    <div class="cta rev d2">So — shall we?
+      <div>
+        <button onclick="engageAnswer('rec-verdict:2026-08-23-hartman-wayward-lives','want_it',this)">📚 I want it</button>
+        <button onclick="engageAnswer('rec-verdict:2026-08-23-hartman-wayward-lives','tempted',this)">🤔 Tempted</button>
+        <button onclick="engageAnswer('rec-verdict:2026-08-23-hartman-wayward-lives','own_it',this)">🏠 Already own it</button>
+        <button onclick="engageAnswer('rec-verdict:2026-08-23-hartman-wayward-lives','read_it',this)">✔️ Already read it</button>
+        <button onclick="engageAnswer('rec-verdict:2026-08-23-hartman-wayward-lives','not_for_me',this)">🙅 Not for me</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">Did you like this card?
+      <div>
+        <button onclick="engageReact('2026-08-23-hartman-wayward-lives','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-23-hartman-wayward-lives','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-23-hartman-wayward-lives','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-23-hartman-wayward-lives','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="note-wayward" style="display:block;margin-bottom:.6rem">Anything you want the librarian to know? It shapes the next pick.</label>
+      <textarea id="note-wayward" rows="3" placeholder="A request, a correction, what you loved or didn’t…"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="sendNote('2026-08-23-hartman-wayward-lives','note-wayward',this)">Send this note</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section close">
+  <p class="phrase rev">The file recorded the arrest. <b>She wrote the life.</b></p>
+  <p class="lede rev d1" style="margin:0 auto;max-width:44ch">New books chosen from your shelves' clues — your feedback steers every next one.</p>
+  <p class="rev d2" style="margin-top:1.8rem"><a href="./" style="color:var(--blue-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--blue);padding-bottom:2px">✦ All your recommendations →</a></p>
+</section>
+</main>
+
+<footer><em>My library</em> · new, your first Hartman · facts checked (NBCC Award in Criticism for 2019, PEN/Galbraith 2021, Norton and Serpent's Tail editions, MacArthur 2019) as of August 2026.<br>The ideas belong to the book; the words and code are the librarian's own.</footer>
+
+<script>
+function sendNote(recId,taId,btn){
+  var ta=document.getElementById(taId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Write something first ✍️'; return; }
+  window.engageAnswer('rec-note:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+(function(){
+  var $=function(s){return document.querySelector(s)};var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var bar=$('#bar');
+  window.addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target);}});},{threshold:.15});$$('.rev').forEach(function(el){io.observe(el);});}else{$$('.rev').forEach(function(el){el.classList.add('seen');});}
+  var fx=$('#redactFx');
+  for(var i=0;i<14;i++){
+    var b=document.createElement('i');
+    b.style.left=(6+Math.random()*62)+'%';
+    b.style.top=(4+Math.random()*92)+'%';
+    b.style.width=(7+Math.random()*22)+'%';
+    b.style.animationDelay=(Math.random()*6.5)+'s';
+    fx.appendChild(b);
+  }
+  var T={
+    archive:{et:'The problem the book is built around',body:'Almost everything we can know about these women was written down by someone with power over them: the arresting officer, the reformatory matron, the social worker, the landlord, the sociologist. The documents record charges, measurements and moral verdicts — never a first-person sentence. Hartman refuses both of the usual exits: she will not pretend the archive is neutral, and she will not shrug and say the lives are unrecoverable. Instead she reads each file for what it was trying not to say, and then writes toward the life the file was built to contain. She named the method critical fabulation in a 2008 essay, and this book is its fullest test.',q:'What survives of a life when the only witness kept the keys?'},
+    who:{et:'The women',body:'Esther Brown, who preferred an unsteady life to steady work and a respectable marriage, and whose existence survives mainly in a few reports inside her file at the reformatory at Bedford Hills. Mabel Hampton, who came to New York to dance in a chorus and lived a lesbian life long before there was a safe word for it. Anonymous girls in the tenements of Philadelphia’s Seventh Ward and New York’s Tenderloin — the same Seventh Ward W. E. B. Du Bois surveyed in The Philadelphia Negro, whose numbers Hartman reads back against his own conclusions. What they had in common was being counted as a problem while they were quietly inventing new ways to live together.',q:'Charged with waywardness; guilty, in fact, of experiment.'},
+    form:{et:'What the prose does',body:'It is criticism that moves like fiction. Short chapters — some a single page — set beside longer essays; photographs and case-file fragments dropped into lyric narration; the present tense used to put you inside a room the documents only describe from outside. The subjunctive does the heavy lifting: she may have, she might have said, perhaps she wanted. That grammar is the argument. If The Years worked on you because Ernaux turned a documentary impulse into literature, this is the same instinct pointed at people who were never allowed to write their own.',q:'Not a novel, not a monograph — and deliberately so.'},
+    you:{et:'Why you, exactly',body:'Because you are one of very few readers equipped to referee this fight. Your feminism wall gives you the stakes: Dadzie, Roberts, Davis, Lorde, Kendall, the Reproductive Justice books, When They Call You a Terrorist. Your history shelf gives you the objection: Carr on facts, Koselleck on time, Said on narration, the Princeton Guide on method, and What Is History, Now? already asking the question in a milder register. Most readers arrive with one half and take Hartman at her word, or dismiss her. You can hold both and decide — which is, honestly, why I wanted to hand you this one.',q:'The rare book that needs both of your walls at once.'}
+  };
+  var tabs=$$('#tabRow button'),panel=$('#tabPanel');
+  function show(k){var c=T[k];panel.innerHTML='<p class="et">'+c.et+'</p><p>'+c.body+'</p><p class="qin">'+c.q+'</p>';}
+  tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');show(b.getAttribute('data-t'));});});
+  show('archive');
+})();
+</script>
+<script src="../engage.js"></script>
+</body>
+</html>
