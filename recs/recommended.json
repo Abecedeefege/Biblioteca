@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-22T16:30:00-03:00",
-  "_feedback_cutoff": "2026-08-21T21:43:05.215Z",
+  "_updated_at": "2026-08-23T19:00:00-03:00",
+  "_feedback_cutoff": "2026-08-23T04:37:51.048Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1263,9 +1263,9 @@
         "veredicto": null,
         "reaccion": null,
         "clicked": true,
-        "dwell_s": 0
+        "dwell_s": 350
       },
-      "learning": "Click + page_visit el 21/08 21:43 (24h+ después del push adelantado a las 17:30) -- abrió la ficha, pero sin dwell ni veredicto todavia. El experimento de horario consiguió el click; falta ver si consigue el voto."
+      "learning": "Dwell altisimo (350s, 99% scroll) el 21/08 21:48 -- probablemente leido casi entero -- pero sin voto de veredicto ni el 21/08 ni en las corridas siguientes. Maxima senal de interes sin conversion a boton: base para probar Walker (24/08) como continuacion directa de la veta cuerpo/neurociencia."
     },
     {
       "id": "2026-08-21-carey-heap-house",
@@ -1313,10 +1313,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 55
       },
-      "learning": null
+      "learning": "Click real del push el 23/08 04:36 (visito la pagina) pero dwell bajo (55s, 11% scroll) y sin voto. No cumple la condicion de \"ni click\" que hubiera activado el plan de respaldo de 2 botones -- se mantiene el CTA completo, pero se agrega un micro-CTA de un toque en la ficha del 23/08 para bajar la friccion."
     },
     {
       "id": "2026-08-22-baldree-cafe-leyendas",
@@ -1335,6 +1335,56 @@
       "page": "recs/2026-08-22-baldree-cafe-leyendas.html",
       "notified_by": "2026-08-22-rec-sofi",
       "why": "Regimen DIARIO: ayer (21/08) Sofi tuvo redescubrimiento (Carey, Heap House) -> hoy le toca la nueva, y Andy recibe la biblioteca. Sin feedback nuevo de Sofi en sync/engagement.json desde el cutoff (ni Puerta de los susurros 20/08 ni Heap House 21/08 tienen clicks ni votos todavia), asi que se sigue sin poder confirmar si su unica senal viva (Klune 05/08, me_tienta+love) fue el autor puntual o la veta 'fantasia calida' en general -- y el banco de Klune esta casi agotado. Se eligio 'El cafe de las leyendas' (Travis Baldree) como segundo punto de datos en la misma veta pero con otro autor: cozy fantasy de bajisimo riesgo (subtitulo oficial 'alta fantasia, bajisima apuesta'), found-family armandose alrededor de un negocio, sin crimen -- deliberadamente el extremo opuesto del registro gotico de Heap House de ayer, para tener los dos polos con los que comparar su proxima respuesta. Verificado titulo+autor contra el catalogo completo (437 vol., 0 coincidencias de 'Baldree', 'lattes', 'leyendas de Baldree') y contra todo recommended.json: Baldree nunca aparece. GUARDIA: el titulo en espanol que tenia anotado el banco del PROFILE ('Leyendas y lattes') era una traduccion mia sin verificar -- el titulo real de la edicion de Roca Editorial es 'El cafe de las leyendas', corregido en esta ficha. Trama, elenco (Cal, Tandri, Amity) y tono verificados contra la ficha editorial de Roca, resenas publicadas (Idae Ros, Modus Leyendi, Triada Literaria) y SuperSummary; cita de apertura verificada contra Goodreads y traducida por mi, declarada como tal. Honestidad: se declara de frente que hay un incendio provocado y una muerte fuera de camara en el epilogo, sin gore ni detalle grafico (su restriccion dura respetada). Precio y stock verificados hoy en buscalibre.uy (2 ediciones en stock, desde UYU 788), link 200. Audiolibro en espanol existe (Laia Florez) pero no se encontro el link directo de Google Play Books -> no se linkea, cumpliendo la politica de no inventar.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-23-walker-por-que-dormimos",
+      "date": "2026-08-23",
+      "kind": "nuevo",
+      "title": "¿Por qué dormimos?",
+      "author": "Matthew Walker",
+      "language": "es",
+      "topics": [
+        "neurociencia",
+        "cuerpo",
+        "wellness",
+        "habitos"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-08-23-walker-por-que-dormimos.html",
+      "notified_by": "2026-08-23-rec-andy",
+      "why": "Regimen DIARIO: ayer (22/08) Andy tuvo redescubrimiento (Raspall) -> hoy le toca la nueva, y Sofi recibe la biblioteca. Senal mas fuerte de Andy en semanas no fue un voto: dwell de 350s/99% scroll en Respira (Nestor, 21/08) sin veredicto, mas un click real al push de Raspall esta madrugada (23/08 04:36) con dwell bajo (55s) y tampoco voto -- 9 fichas seguidas sin boton de veredicto pero con senal de lectura real. En vez de otra veta nueva sin confirmar, se profundiza la MISMA veta que genero el dwell mas alto: cuerpo + neurociencia. Elegido Matthew Walker, 'Why We Sleep' / '¿Por que dormimos?' -- neurocientifico de UC Berkeley, fundador del Center for Human Sleep Science, mismo perfil de autoridad real que vino funcionando (Rovelli, Raspall). GUARDIA: verificado titulo (con y sin signos) y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- nunca fue recomendado como ficha propia. SI fue MENCIONADO de pasada el 06/08 en la lista de 5 ebooks para el vuelo (kind:viaje, no cuenta para la alternancia) -- se declara esa continuidad de frente en la ficha, no se presenta como sorpresa. Honestidad: se repite y se amplia la advertencia ya dada el 06/08 sobre la critica de Alexey Guzey (2019, errores de datos en el primer capitulo) -- no se citan las cifras especificas cuestionadas. Verificado: perfil academico de Walker en UC Berkeley, resumenes/reseñas de multiples fuentes para los insights de REM y ritmo circadiano, y 5 citas reales (Goodreads) traducidas por mi y declaradas como tales -- ninguna inventada. Se agrega un micro-CTA de un solo toque antes del veredicto grande, respondiendo directamente a la racha muda. Precio y stock verificados hoy en buscalibre.uy (3 ediciones en stock: Planeta 2023 desde $1.026 UYU, Capitan Swing 2019 $1.495, Paidos 2020 $1.504), link 200. No se encontro audiolibro en español con link directo de Google Play Books -> no se linkea, cumpliendo la politica de no inventar.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-23-bennett-windsor-knot",
+      "date": "2026-08-23",
+      "kind": "redescubrimiento",
+      "title": "The Windsor Knot",
+      "author": "S.J. Bennett",
+      "language": "en",
+      "topics": [
+        "mystery",
+        "cozy"
+      ],
+      "book_ref": "M5-025",
+      "audience": "sofi",
+      "page": "recs/2026-08-23-bennett-windsor-knot.html",
+      "notified_by": "2026-08-23-rec-sofi",
+      "why": "Regimen DIARIO: ayer (22/08) Sofi tuvo nuevo (Baldree, cafe de las leyendas) -> hoy le toca redescubrimiento, y Andy recibe la nueva. Sin feedback nuevo de Sofi en sync/engagement.json desde el cutoff -- las tres fichas de la veta fantasia calida (Klune 20/08, Heap House 21/08, Baldree 22/08) siguen sin ningun click ni voto. Su unico acierto pleno confirmado sigue siendo Osman (3/3 lo_quiero); el resto de misterio de libreria/cafe salio 'ya lo lei' (King, Katzenbach, Carlisle, Benavent) -- veta declarada en pausa por el PROFILE hasta tener señal de fantasia. Revisado el banco de redescub: M5-022 (Ciudades de papel) y M5-009 (Alice) estan marcados 'no visto' en la re-catalogacion de agosto (riesgo real de que no esten en el estante); M5-016 (Delany libro 2) el PROFILE pide esperar señal del libro 1 (sin señal 3+ semanas); la fantasia repetiria el tema de ayer sin señal para justificarlo; la romance Benavent/Henry esta descartada/quemada. Se eligio en cambio M5-025 'The Windsor Knot' (S.J. Bennett) -- CONFIRMADO en catalogo sin nota de 'no visto', nunca usado antes, autora nueva. Es un experimento deliberado: comparado de frente por criticos y marketing como lectura para fans de 'The Thursday Murder Club' (exactamente la serie de Osman, su 3/3), pero con protagonista y autora distintas -- sirve para separar si lo que funciono fue Osman puntual o el genero 'detective improbable con humor britanico' en general, en vez de sumar una cuarta ficha de fantasia sin dato o forzar otro cozy de libreria potencialmente ya leido via Kindle. GUARDIA: verificado titulo y autora contra los 437 libros del catalogo completo (unico match esperado, M5-025) y contra todo recommended.json: Bennett nunca aparece. Sin entrada en data/enrichment.json (read_status desconocido, tratado como no leido) -- con la salvedad estandar de que el Kindle de Sofi no siempre coincide con lo fichado. Contenido verificado contra una reseña publicada (Criminal Element) y fichas editoriales (Amazon, Barnes & Noble, Goodreads); no se revela quien es el asesino. Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

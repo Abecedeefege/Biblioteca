@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>😴 ¿Por qué dormimos? · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0A1226;
+  --noche2:#0F1B36;
+  --luna:#EAF0FF;
+  --bruma:#94A6CC;
+  --cian:#4FD1C5;
+  --cian-hi:#7EE8DB;
+  --ambar:#E8A855;
+  --ambar-hi:#F5C179;
+  --linea:rgba(234,240,255,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--luna);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--cian);color:var(--noche)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--cian-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(234,240,255,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cian),var(--ambar-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(10,18,38,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--cian-hi);border-color:var(--cian)}
+
+.seccion{padding:clamp(3.6rem,9vw,6.5rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:800px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ambar);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.6rem,1.2rem + 2.5vw,2.5rem);line-height:1.18;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--luna)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 7rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 8%,#132048 0%,var(--noche) 62%)}
+.cielo{position:absolute;inset:0;z-index:0;opacity:.75}
+.cielo span{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--cian-hi);animation:centellear 3.6s ease-in-out infinite}
+@keyframes centellear{0%,100%{opacity:.15}50%{opacity:.9}}
+.luna-ico{position:absolute;top:8%;right:12%;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--luna),var(--bruma) 70%);box-shadow:0 0 40px rgba(126,232,219,.35);opacity:.85;z-index:0}
+@media (prefers-reduced-motion:reduce){.cielo span{animation:none;opacity:.4}}
+.hero-int{position:relative;z-index:2;max-width:680px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ambar-hi);border:1px solid rgba(232,168,85,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.7rem,1.1rem + 3.6vw,2.75rem);line-height:1.14}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--cian-hi)}
+.hero .sub{color:var(--bruma);margin:1.35rem auto 2.2rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--cian);color:#08211D;border:none;border-radius:999px;padding:.9rem 1.8rem;font-weight:600;font-size:.98rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--cian-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.3}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.hero-hint{animation:none;opacity:.6}}
+
+.alt{background:var(--noche2)}
+.cita{border-left:3px solid var(--ambar);padding:.2rem 0 .2rem 1.15rem;margin:1.9rem 0;font-family:var(--serif);font-size:clamp(1.05rem,1rem + .6vw,1.28rem);line-height:1.5;font-style:italic;color:var(--luna)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- reloj de tu noche (interactivo) ---------- */
+.reloj{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(234,240,255,.03)}
+.arco{height:3px;background:linear-gradient(90deg,var(--ambar),var(--cian),var(--bruma));border-radius:99px;margin:.6rem 0 1.3rem}
+.horas{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem}
+.hora{background:rgba(234,240,255,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem .85rem;text-align:center;transition:all .2s ease}
+.hora:hover:not(.abierta){border-color:var(--cian);transform:translateY(-2px)}
+.hora .ico{font-size:1.6rem;display:block;margin-bottom:.45rem}
+.hora .nombre{font-size:.85rem;color:var(--bruma)}
+.hora.abierta{background:rgba(79,209,197,.12);border-color:var(--cian)}
+.hora .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--cian-hi);font-size:.86rem;margin-top:.5rem;line-height:1.42}
+.hora.abierta .obs{display:block}
+.hora.abierta .nombre{display:none}
+.reloj-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(234,240,255,.04);border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.2rem;margin-top:1.5rem}
+.ficha dl{display:grid;gap:.75rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--ambar);font-weight:700}
+.ficha dd{font-size:.95rem;color:var(--luna);margin-top:.15rem}
+.honestidad{background:rgba(232,168,85,.09);border:1px solid rgba(232,168,85,.34);border-radius:14px;padding:1.2rem;margin-top:1.4rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--ambar-hi);font-weight:700;margin-bottom:.55rem}
+.honestidad p{font-size:.94rem;line-height:1.6;color:var(--luna)}
+.honestidad p + p{margin-top:.8rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.compra a{display:inline-block;background:var(--cian);color:#08211D;border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--cian-hi);transform:translateY(-2px)}
+
+/* ---------- CTAs ---------- */
+.cta,.react{background:rgba(234,240,255,.05);border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.2rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(234,240,255,.07);color:var(--luna);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--ambar);color:var(--ambar-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--ambar-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--luna)}
+.micro{border-style:dashed;opacity:.92}
+.micro .bajada{font-size:.88rem}
+
+.cierre{text-align:center;padding-bottom:4.5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,1rem + 1vw,1.5rem);line-height:1.45;max-width:28ch;margin:0 auto 1.6rem}
+footer{border-top:1px solid var(--linea);padding:1.8rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--ambar-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--ambar);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="cielo" id="cieloFx" aria-hidden="true"></div>
+  <div class="luna-ico" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Libro nuevo · veta cuerpo + neurociencia</span>
+    <h1>¿Por qué dormimos?</h1>
+    <p class="autor">Matthew Walker · <em>La nueva ciencia del sueño y los sueños</em></p>
+    <p class="sub">Respira te tuvo 350 segundos pegado a la pantalla, scrolleando el 99%, sin votar todavía. Si la respiración te enganchó así, esto va un paso más allá: qué le pasa a tu cerebro las ocho horas que no estás respirando consciente — estás dormido.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traigo</p>
+    <h2 class="titulo rev d1">La señal más fuerte que tengo tuya en semanas no fue un voto</h2>
+    <p class="bajada rev d2">Van nueve fichas sin que aprietes un botón de veredicto — pero esta madrugada (23/08, 04:36) sí clickeaste el push de Raspall y entraste a la ficha, y el jueves te quedaste 350 segundos y 99% de scroll en la de Nestor sin moverte de ahí. Eso no es indiferencia: es que preferís mostrarme qué te interesa leyendo, no clickeando un botón. Así que hoy te traigo la continuación lógica de lo que más te retuvo hasta ahora — el cuerpo, no solo la mente.</p>
+    <p class="parr rev d2">Walker es a la ciencia del sueño lo que Nestor es a la respiración: no un divulgador de wellness, sino el neurocientífico que dirige el laboratorio que genera los datos. Es la misma jugada que te vino funcionando con Rovelli y con Raspall — autoridad real del tema, no una síntesis de segunda mano.</p>
+    <div class="cita rev d3">«Dormir es lo más efectivo que podemos hacer cada día para resetear la salud del cerebro y el cuerpo.»<span>Matthew Walker, <em>Why We Sleep</em> — traducción propia, sin verificar palabra por palabra contra la edición en español.</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Dormir mal no es un mal hábito. Es una amputación silenciosa</h2>
+    <p class="bajada rev d2">La tesis central del libro: la sociedad moderna decidió colectivamente que dormir es tiempo perdido, y esa decisión nos está costando memoria, sistema inmune, salud cardiovascular y salud mental — sin que lo notemos, porque el déficit de sueño no duele como el hambre. El libro está armado en cuatro partes: qué es el sueño y por qué lo necesitamos; los beneficios (y los costos de no tenerlo); los sueños en sí (por qué soñamos, qué hace el cerebro ahí adentro); y los trastornos del sueño, con propuestas concretas para dormir mejor esta semana, no algún día.</p>
+    <p class="parr rev d2">Un dato que probablemente ya viviste sin saberlo: la fase REM —la del sueño donde soñás— no es un descanso pasivo. El cerebro usa esas horas para mezclar recuerdos nuevos con lo que ya sabías, de formas raras y creativas, y para bajarle la carga emocional a lo que te pasó en el día. Walker lo llama "terapia nocturna": la razón por la que un problema que te desvela un lunes a veces se ve distinto el martes a la mañana no es que lo "dejaste descansar" — es que tu cerebro literalmente lo procesó mientras dormías.</p>
+    <div class="cita rev d3">«REM parece ser, entre otras cosas, terapia nocturna.»<span>Matthew Walker — traducción propia.</span></div>
+  </div>
+</section>
+
+<section class="seccion alt" id="reloj">
+  <div class="centro">
+    <p class="kicker rev">Un recorrido del libro</p>
+    <h2 class="titulo rev d1">Tu noche tiene cuatro tramos. Cada uno hace un trabajo distinto</h2>
+    <p class="bajada rev d2">Así arma Walker una noche típica de sueño. Tocá cada tramo:</p>
+    <div class="reloj rev d3">
+      <div class="arco" aria-hidden="true"></div>
+      <div class="horas" id="horasBox">
+        <div class="hora" data-obs="Cae la melatonina, sube la presión de sueño acumulada del día. Cafeína y pantallas la frenan más de lo que se siente."><span class="ico">🌆</span><span class="nombre">Atardecer</span><span class="obs"></span></div>
+        <div class="hora" data-obs="Sueño de ondas lentas. Acá el cerebro literalmente lava proteínas de desecho (el sistema glinfático) y consolida memoria de hechos."><span class="ico">🌑</span><span class="nombre">Sueño profundo</span><span class="obs"></span></div>
+        <div class="hora" data-obs="Ojos moviéndose, cuerpo paralizado. Acá pasa la 'terapia nocturna' y la mezcla creativa de ideas — los ciclos REM se alargan hacia el final de la noche."><span class="ico">👁️</span><span class="nombre">REM</span><span class="obs"></span></div>
+        <div class="hora" data-obs="El último REM del amanecer es el más largo. Cortarlo con el despertador —lo que casi todos hacemos— es cortar justo la parte que más falta."><span class="ico">🌅</span><span class="nombre">Amanecer</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="reloj-hint">Dato que probablemente te sorprenda: el sueño perdido de una noche no se "recupera" durmiendo de más el fin de semana. El déficit es acumulativo, no una cuenta corriente.</p>
+  </div>
+</section>
+
+<section class="seccion" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Quién lo escribe</p>
+    <h2 class="titulo rev d1">Dirige el laboratorio, no repite lo que leyó en otro lado</h2>
+    <p class="bajada rev d2">Matthew Walker es profesor de neurociencia y psicología en UC Berkeley y fundador y director del Center for Human Sleep Science de esa universidad. Se doctoró en el Medical Research Council de la Universidad de Nottingham y fue profesor asistente de psiquiatría en Harvard Medical School. Publicó más de 100 estudios científicos sobre el efecto del sueño en el cerebro, y en 2020 recibió el Premio Carl Sagan a la Divulgación Científica.</p>
+    <p class="parr suave rev d3">Es, en otras palabras, el mismo perfil que te viene funcionando: Rovelli con la física, Raspall con la psiquiatría clínica — alguien que investiga el tema, no alguien que lo resume.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>Why We Sleep: Unlocking the Power of Sleep and Dreams</em>, Scribner, 2017. Bestseller del New York Times.</dd>
+        <dt>En español</dt><dd>Hay tres ediciones activas hoy en Uruguay: Capitán Swing (2019, trad. Begoña Merino), Paidós (2020) y Planeta (2023) — las tres tapa blanda, mismo texto, distinta editorial. Cuatro partes, ~420 páginas según la edición.</dd>
+        <dt>Vetas que cruza</dt><dd>Neurociencia + cuerpo/wellness — continuación directa de la veta que abriste con Respira (Nestor), tu ficha con más dwell registrado hasta ahora sin voto.</dd>
+        <dt>Dónde está en la casa</dt><dd>En ningún lado. Verifiqué título (con y sin el "¿Por qué dormimos?") y autor contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: no aparece como recomendación propia. Sí se lo <em>mencionó</em> de pasada el 06/08, en la lista de 5 ebooks para el vuelo — nunca tuvo su propia ficha ni voto.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. Los insights de esta ficha —REM como consolidación de memoria y regulación emocional, el costo acumulativo de la privación de sueño, el ciclo circadiano— salen de reseñas, resúmenes verificados de varias fuentes y las citas atribuidas a Walker que aparecen repetidas en Goodreads y notas de prensa; no son un resumen del libro completo.</p>
+      <p><b>Importante — lo que ya te dije el 06/08 sigue vigente:</b> el investigador Alexey Guzey publicó en 2019 una crítica extensa (130 horas de fact-checking del primer capítulo) señalando errores y una gráfica reproducida quitándole una barra que debilitaba el argumento de Walker. No hay una retractación pública ni una respuesta punto por punto de Walker que haya encontrado. Esto no invalida la tesis central —la evidencia de que dormir mal afecta memoria e inmunidad es sólida y viene de muchos otros investigadores— pero sí significa que algunas cifras puntuales del libro (las más extremas) conviene tomarlas con pinza. No repito acá ninguna de esas cifras específicas cuestionadas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Conseguirlo</p>
+    <h2 class="titulo rev d1">Tres ediciones en Uruguay, misma novela científica</h2>
+    <p class="bajada rev d2">Lo busqué hoy en Buscalibre Uruguay: la más barata es Planeta (2023) a $1.026 pesos uruguayos (40% off sobre $1.709); también están Capitán Swing (2019) a $1.495 y Paidós (2020) a $1.504. Las tres en stock, tapa blanda.</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=Por+que+dormimos+Matthew+Walker">Conseguilo (desde ~$1.026 UYU)</a>
+    </div>
+    <p class="parr suave rev d3">No encontré confirmación de audiolibro en español con link directo de Google Play Books — si existe y lo pedís, lo busco de nuevo la próxima corrida.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Sé que el botón grande viene sin uso hace nueve fichas — así que antes te dejo uno de un solo toque, sin comprometerte a nada:</p>
+    <div class="cta micro rev d2">¿Ya le diste una mirada a Respira o a Calmar la mente, aunque sea por arriba?
+      <div>
+        <button onclick="engageAnswer('rec-empezaste:2026-08-23-walker-por-que-dormimos','si',this)">Sí, algo leí</button>
+        <button onclick="engageAnswer('rec-empezaste:2026-08-23-walker-por-que-dormimos','todavia_no',this)">Todavía no</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-23-walker-por-que-dormimos','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-23-walker-por-que-dormimos','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-23-walker-por-que-dormimos','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-23-walker-por-que-dormimos','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-23-walker-por-que-dormimos','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-23-walker-por-que-dormimos','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-23-walker-por-que-dormimos','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-23-walker-por-que-dormimos','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-23-walker-por-que-dormimos','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-23-walker-por-que-dormimos" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-23-walker-por-que-dormimos" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-23-walker-por-que-dormimos',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">«Cuando el sueño abunda, las mentes florecen. Cuando falta, no.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">Matthew Walker — traducción propia, sobre por qué esto no es un lujo.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para Andy · datos verificados contra el perfil académico de Matthew Walker en UC Berkeley, reseñas y resúmenes publicados del libro, la cobertura de la crítica de Alexey Guzey (2019) y el stock de Buscalibre Uruguay, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  var cf=$('#cieloFx');
+  if(cf){
+    for(var i=0;i<26;i++){
+      var s=document.createElement('span');
+      s.style.left=(Math.random()*100)+'%';
+      s.style.top=(Math.random()*70)+'%';
+      s.style.animationDelay=(Math.random()*3.6)+'s';
+      cf.appendChild(s);
+    }
+  }
+
+  $$('#horasBox .hora').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(el.classList.contains('abierta')) return;
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
