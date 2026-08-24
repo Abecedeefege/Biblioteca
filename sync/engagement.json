@@ -3550,7 +3550,24 @@
       "device": "Andy",
       "dwell_s": 55,
       "scroll_pct": 11
+    },
+    {
+      "id": "mt6uia3c-mkh7sy",
+      "type": "notification_clicked",
+      "ts": "2026-08-24T06:18:56.280Z",
+      "page": "2026-08-23-walker-por-que-dormimos.html",
+      "device": "Andy",
+      "nid": "2026-08-23-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mt6uia3c-3jbray",
+      "type": "page_visit",
+      "ts": "2026-08-24T06:18:56.280Z",
+      "page": "2026-08-23-walker-por-que-dormimos.html",
+      "device": "Andy",
+      "nid": "2026-08-23-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-23T04:37:52.779Z"
+  "_updated_at": "2026-08-24T06:18:59.746Z"
 }
