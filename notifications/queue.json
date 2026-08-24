@@ -1,7 +1,46 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-23T22:00:33.224Z",
+  "_updated_at": "2026-08-24T16:12:11-03:00",
   "notifications": [
+    {
+      "id": "2026-08-24-rec-andy",
+      "title": "🐴 De tu L4, con audiolibro nuevo",
+      "body": "El niño, el topo, el zorro y el caballo: en tu L4, sin abrir. Suma audiolibro y el corto ganador del Oscar.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-24-mackesy-boy-mole-fox-horse.html",
+      "to": "Andy",
+      "send_at": "2026-08-24T19:00:00-03:00",
+      "expires_at": "2026-08-24T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-24"
+    },
+    {
+      "id": "2026-08-24-rec-sofi",
+      "title": "🌊 La secuela de tu único sí",
+      "body": "La secuela de tu Klune (me tienta+love): misma isla, un año después. En inglés, con audiolibro.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-24-klune-somewhere-beyond-sea.html",
+      "to": "Sofi",
+      "send_at": "2026-08-24T19:00:00-03:00",
+      "expires_at": "2026-08-24T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-24"
+    },
+    {
+      "id": "2026-08-24-rec-andy-audio",
+      "title": "🎧 El audiolibro que pediste, ya está",
+      "body": "Ebook de Walker confirmado en Google Play; audiolibro narrado no existe ahí, pero sí un resumen. Ya está en tu ficha.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-23-walker-por-que-dormimos.html",
+      "to": "Andy",
+      "send_at": "2026-08-24T19:05:00-03:00",
+      "expires_at": "2026-08-24T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-24 (respuesta puntual a rec-nota de Andy 24/08 06:24, mismo patron que 2026-08-11-rec-andy-audio)"
+    },
     {
       "id": "2026-08-23-rec-andy",
       "title": "😴 El libro detrás de tus 350 segundos",
