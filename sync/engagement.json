@@ -3585,7 +3585,33 @@
       "device": "Andy",
       "qid": "rec-nota:2026-08-23-walker-por-que-dormimos",
       "value": "Mándame este y a partir de ahora TODOS con un link a audiobook de Play books (si existe).\nTambién incluime en TODOS A PARTIR DE AHORA un link a resumen en ebook o audiobook de Play books (si existe)."
+    },
+    {
+      "id": "mt6uqcbb-x7b6ba",
+      "type": "dwell",
+      "ts": "2026-08-24T06:25:12.407Z",
+      "page": "2026-08-23-walker-por-que-dormimos.html",
+      "device": "Andy",
+      "dwell_s": 376,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mt7t0hbc-d24l05",
+      "type": "notification_clicked",
+      "ts": "2026-08-24T22:24:52.392Z",
+      "page": "2026-08-24-mackesy-boy-mole-fox-horse.html",
+      "device": "Andy",
+      "nid": "2026-08-24-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mt7t0hbe-n8c2fy",
+      "type": "page_visit",
+      "ts": "2026-08-24T22:24:52.394Z",
+      "page": "2026-08-24-mackesy-boy-mole-fox-horse.html",
+      "device": "Andy",
+      "nid": "2026-08-24-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-24T06:24:59.379Z"
+  "_updated_at": "2026-08-24T22:24:53.441Z"
 }
