@@ -3611,7 +3611,16 @@
       "page": "2026-08-24-mackesy-boy-mole-fox-horse.html",
       "device": "Andy",
       "nid": "2026-08-24-rec-andy"
+    },
+    {
+      "id": "mt7t32n4-frc75u",
+      "type": "dwell",
+      "ts": "2026-08-24T22:26:53.344Z",
+      "page": "2026-08-24-mackesy-boy-mole-fox-horse.html",
+      "device": "Andy",
+      "dwell_s": 121,
+      "scroll_pct": 80
     }
   ],
-  "_updated_at": "2026-08-24T22:24:53.441Z"
+  "_updated_at": "2026-08-24T22:26:54.564Z"
 }
