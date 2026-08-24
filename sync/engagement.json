@@ -3629,7 +3629,16 @@
       "device": "Andy",
       "dwell_s": 135,
       "scroll_pct": 80
+    },
+    {
+      "id": "mt7t4msg-g4e99v",
+      "type": "dwell",
+      "ts": "2026-08-24T22:28:06.112Z",
+      "page": "2026-08-24-mackesy-boy-mole-fox-horse.html",
+      "device": "Andy",
+      "dwell_s": 140,
+      "scroll_pct": 80
     }
   ],
-  "_updated_at": "2026-08-24T22:27:48.577Z"
+  "_updated_at": "2026-08-24T22:28:07.485Z"
 }
