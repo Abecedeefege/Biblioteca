@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-24T16:12:11-03:00",
+  "_updated_at": "2026-08-24T22:17:23.750Z",
   "notifications": [
     {
       "id": "2026-08-24-rec-andy",
@@ -10,8 +10,8 @@
       "to": "Andy",
       "send_at": "2026-08-24T19:00:00-03:00",
       "expires_at": "2026-08-24T23:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-08-24T22:17:23.550Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-24"
     },
@@ -23,8 +23,8 @@
       "to": "Sofi",
       "send_at": "2026-08-24T19:00:00-03:00",
       "expires_at": "2026-08-24T23:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-08-24T22:17:23.627Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-24"
     },
@@ -36,8 +36,8 @@
       "to": "Andy",
       "send_at": "2026-08-24T19:05:00-03:00",
       "expires_at": "2026-08-24T23:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-08-24T22:17:23.750Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-24 (respuesta puntual a rec-nota de Andy 24/08 06:24, mismo patron que 2026-08-11-rec-andy-audio)"
     },
