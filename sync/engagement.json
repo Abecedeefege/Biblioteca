@@ -3567,7 +3567,16 @@
       "page": "2026-08-23-walker-por-que-dormimos.html",
       "device": "Andy",
       "nid": "2026-08-23-rec-andy"
+    },
+    {
+      "id": "mt6uofe7-dr5c1i",
+      "type": "answer",
+      "ts": "2026-08-24T06:23:43.087Z",
+      "page": "2026-08-23-walker-por-que-dormimos.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-08-23-walker-por-que-dormimos",
+      "value": "me_tienta"
     }
   ],
-  "_updated_at": "2026-08-24T06:18:59.746Z"
+  "_updated_at": "2026-08-24T06:23:48.009Z"
 }
