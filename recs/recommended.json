@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-24T16:12:11-03:00",
-  "_feedback_cutoff": "2026-08-24T06:24:55.291Z",
+  "_updated_at": "2026-08-25T16:30:00-03:00",
+  "_feedback_cutoff": "2026-08-24T22:28:06.112Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1365,9 +1365,9 @@
         "veredicto": "me_tienta",
         "reaccion": null,
         "clicked": true,
-        "dwell_s": 0
+        "dwell_s": 376
       },
-      "learning": "ROMPE LA RACHA MUDA DE 9 FICHAS: primer veredicto real de Andy desde Holiday (02/08) -- me_tienta, con click al push (24/08 madrugada) aunque sin dwell ni reaccion formal registrados en este batch. Confirma que la veta cuerpo/neurociencia (ya con el mejor dwell historico en Nestor) tambien convierte en voto, no solo en lectura silenciosa. PRIORIDAD MAXIMA -- rec-nota del mismo evento (24/08 06:24): pidio explicitamente (1) mandarle este libro con link a audiolibro de Google Play si existe, y (2) sumar de ahora en mas, en TODAS las fichas futuras, un link a audiolibro o a un resumen en ebook/audiolibro de Google Play Books, si existe. Accion tomada la misma corrida: se edito retroactivamente la ficha de Walker sumando el ebook de Play Books (confirmado) y el audiolibro-resumen de Play Books de un tercero (no hay audiolibro narrado completo en español ahi, se aviso explicitamente); se agrega la politica como regla dura para toda ficha nueva de aqui en mas (ver PROFILE). Guardia: Google Play sigue devolviendo 403 a cualquier verificacion automatica por link -- se sigue verificando por busqueda cruzada titulo+autor(+narrador), nunca por click directo."
+      "learning": "ROMPE LA RACHA MUDA DE 9 FICHAS: primer veredicto real de Andy desde Holiday (02/08) -- me_tienta, con click al push (24/08 madrugada). Nuevo evento procesado 25/08: dwell_s actualizado a 376 (evento del 24/08 06:25, scroll 100%) -- confirma que ademas del voto hubo lectura completa de la ficha, la señal mas fuerte de esta veta hasta ahora. PRIORIDAD MAXIMA -- rec-nota del mismo evento (24/08 06:24): pidio explicitamente (1) mandarle este libro con link a audiolibro de Google Play si existe, y (2) sumar de ahora en mas, en TODAS las fichas futuras, un link a audiolibro o a un resumen en ebook/audiolibro de Google Play Books, si existe. Accion tomada la misma corrida: se edito retroactivamente la ficha de Walker sumando el ebook de Play Books (confirmado) y el audiolibro-resumen de Play Books de un tercero (no hay audiolibro narrado completo en español ahi, se aviso explicitamente); se agrega la politica como regla dura para toda ficha nueva de aqui en mas (ver PROFILE). Guardia: Google Play sigue devolviendo 403 a cualquier verificacion automatica por link -- se sigue verificando por busqueda cruzada titulo+autor(+narrador), nunca por click directo."
     },
     {
       "id": "2026-08-23-bennett-windsor-knot",
@@ -1413,10 +1413,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 140
       },
-      "learning": null
+      "learning": "Andy clickeo el push (24/08 22:24) y se quedo en la pagina con tres eventos de dwell crecientes (121s, 135s, 140s) y 80% de scroll -- entro y la leyo casi entera, pero todavia sin apretar el boton de veredicto grande. Mismo patron que Nestor y Walker: lee antes de votar. Sin feedback de Sofi en el mismo periodo (sigue en silencio total, van 5 fichas mudas incluyendo Somewhere Beyond the Sea de ayer) -- ver decision de 'cambio de raiz' en la ficha del 25/08."
     },
     {
       "id": "2026-08-24-klune-somewhere-beyond-sea",
@@ -1435,6 +1435,56 @@
       "page": "recs/2026-08-24-klune-somewhere-beyond-sea.html",
       "notified_by": "2026-08-24-rec-sofi",
       "why": "Regimen DIARIO: ayer (23/08) Sofi tuvo redescubrimiento (Bennett Windsor Knot) -> hoy le toca nuevo, alternancia respetada. CAMBIO FUERTE aplicado (regla de 3+ fichas sin feedback): Klune-Puerta (20/08), Heap House (21/08), Café de las leyendas (22/08) y Windsor Knot (23/08) -- CUATRO fichas seguidas sin un solo click, voto ni reaccion. En vez de un quinto nombre nuevo dentro de misterio/gotico (vetas ya con guardia maxima), se vuelve al UNICO dato duro confirmado de Sofi en toda la fantasia calida: La casa en el mar mas azul (Klune, 05/08, me_tienta+love). Somewhere Beyond the Sea es su secuela directa (Goodreads Choice Award Fantasia 2024), mismo mundo y personajes. Se suma un micro-CTA de diagnostico directo (rec-que-paso) preguntando por que las ultimas 4 no generaron nada -- push, tiempo o desinteres -- para saber si el problema es de entrega o de contenido antes de seguir gastando 'nuevos'. GUARDIA: verificado titulo+autor contra los 437 libros del catalogo completo y contra todo recommended.json -- sin coincidencias, ni como titulo ni como Klune fuera del libro 1. Sin traduccion al español encontrada (a diferencia del libro 1) -- declarado de frente en la ficha, se ofrece en ingles. Precio via Buscalibre Uruguay (desde ~USD 22, Tor 2024 tapa blanda) y links de Google Play Books (ebook + audiolibro narrado por Daniel Henning) sumados por la nueva politica pedida por Andy el 24/08 (aplicada a toda ficha de aqui en mas, no solo las suyas) -- verificados por busqueda cruzada.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-25-seth-being-you",
+      "date": "2026-08-25",
+      "kind": "nuevo",
+      "title": "Being You",
+      "author": "Anil Seth",
+      "language": "en",
+      "topics": [
+        "neurociencia",
+        "mente",
+        "consciencia"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-08-25-seth-being-you.html",
+      "notified_by": "2026-08-25-rec-andy",
+      "why": "Regimen DIARIO: ayer (24/08) Andy tuvo redescubrimiento (Mackesy) -> hoy le toca nuevo, alternancia respetada. Mackesy no genero voto todavia pero si el patron ya conocido de dwell alto (140s, 80% scroll) sin click de veredicto. En vez de repetir fabula o volver a cuerpo/sueño, se rota a una veta declarada por Andy el primer dia (15/07: 'astronomia, neurociencia y mente') y nunca antes probada: la neurociencia de la consciencia. Elegido Anil Seth, 'Being You' -- profesor de neurociencia cognitiva en la Universidad de Sussex, co-director de su centro de investigacion sobre consciencia, autor de una TED talk de 11M+ vistas; mismo perfil de autoridad real que vino funcionando (Rovelli, Walker). GUARDIA: verificado titulo (ingles y la traduccion 'La creacion del yo') y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- no aparece. Contenido verificado contra la ficha oficial de Faber/Dutton, la entrada de Wikipedia sobre el libro (estructura en 6 partes, marco 'beast machine', las 5 facetas del yo consciente) y reseñas de The Guardian/WSJ/NYTBR; se declara de frente que el termino 'alucinacion controlada' es discutido academicamente y que la evidencia del marco Bayesiano no es consenso cerrado. Precio y stock verificados hoy en Buscalibre Uruguay (ingles Faber 2022 desde $1.027 UYU, español Sexto Piso 2023 $1.203 UYU, ambos 200 OK); Google Play Books ebook + audiolibro narrado por el propio Anil Seth, verificados por busqueda cruzada (Google Play devuelve 403 a cualquier bot). Se agrega micro-CTA de un solo toque preguntando como va Mackesy.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-25-doyle-perro-baskerville",
+      "date": "2026-08-25",
+      "kind": "redescubrimiento",
+      "title": "El Perro de los Baskerville",
+      "author": "Arthur Conan Doyle",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "detective",
+        "gotico"
+      ],
+      "book_ref": "M5-004",
+      "audience": "sofi",
+      "page": "recs/2026-08-25-doyle-perro-baskerville.html",
+      "notified_by": "2026-08-25-rec-sofi",
+      "why": "Regimen DIARIO: ayer (24/08) Sofi tuvo nuevo (Klune, Somewhere Beyond the Sea) -> hoy le toca redescubrimiento, alternancia respetada. CAMBIO DE RAIZ aplicado, tal como se anuncio en la ficha de ayer: Somewhere Beyond the Sea tampoco genero ningun click ni voto -- ya son 5 fichas seguidas (Klune-Puerta 20/08, Heap House 21/08, Cafe de las leyendas 22/08, Windsor Knot 23/08, Somewhere Beyond the Sea 24/08) sin NINGUN evento de Sofi en sync/engagement.json, ni siquiera un page_visit. Eso ya no es señal de veta -- es señal de que el problema puede ser de entrega/formato. En vez de otro nombre nuevo con la misma estructura larga, se construye una experiencia deliberadamente MAS CORTA (sin la seccion interactiva de personajes, sin footer largo) con la pregunta de diagnostico (rec-que-paso) movida al frente, inmediatamente despues del hero, en vez de al final -- para maximizar la chance de que si abre la pagina, vea la pregunta antes de irse. Libro elegido: M5-004 'El Perro de los Baskerville' (Conan Doyle) -- del set Sherlock Holmes confirmado fisicamente en la re-catalogacion de agosto ('abre la fila Sherlock', confianza alta), la novela de Holmes mas conocida y vendida, nunca usada antes. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- nunca tuvo ficha propia. NO es de los 50 King de R4/R5 (guardia especial pedida por el dueño). Sin entrada en data/enrichment.json (read_status desconocido, tratado como no leido). Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche).",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

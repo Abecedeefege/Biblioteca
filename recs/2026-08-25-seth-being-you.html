@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🧠 Being You · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#150F2B;
+  --fondo2:#1D1640;
+  --texto:#EFEAFF;
+  --bruma:#A79BD9;
+  --acento:#8B7CF6;
+  --acento-hi:#AFA3FF;
+  --dorado:#E3A85C;
+  --dorado-hi:#F0C384;
+  --linea:rgba(239,234,255,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acento);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--acento-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(239,234,255,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--dorado-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(21,15,43,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--acento-hi);border-color:var(--acento)}
+
+.seccion{padding:clamp(3.6rem,9vw,6.5rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:800px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dorado);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.6rem,1.2rem + 2.5vw,2.5rem);line-height:1.18;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 7rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 8%,#271C54 0%,var(--fondo) 62%)}
+.chispas{position:absolute;inset:0;z-index:0;opacity:.8}
+.chispas span{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--acento-hi);animation:centellear 3.4s ease-in-out infinite}
+@keyframes centellear{0%,100%{opacity:.15}50%{opacity:.95}}
+@media (prefers-reduced-motion:reduce){.chispas span{animation:none;opacity:.4}}
+.hero-int{position:relative;z-index:2;max-width:680px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--dorado-hi);border:1px solid rgba(227,168,92,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.7rem,1.1rem + 3.6vw,2.75rem);line-height:1.14}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--acento-hi)}
+.hero .sub{color:var(--bruma);margin:1.35rem auto 2.2rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--acento);color:#0F0A22;border:none;border-radius:999px;padding:.9rem 1.8rem;font-weight:600;font-size:.98rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--acento-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.3}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.hero-hint{animation:none;opacity:.6}}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--dorado);padding:.2rem 0 .2rem 1.15rem;margin:1.9rem 0;font-family:var(--serif);font-size:clamp(1.05rem,1rem + .6vw,1.28rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- cinco caras del yo (interactivo) ---------- */
+.caras{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(239,234,255,.03)}
+.hilo{height:3px;background:linear-gradient(90deg,var(--dorado),var(--acento));border-radius:99px;margin:.6rem 0 1.3rem}
+.carasGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.7rem}
+.cara{background:rgba(239,234,255,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem .8rem;text-align:center;transition:all .2s ease}
+.cara:hover:not(.abierta){border-color:var(--dorado);transform:translateY(-2px)}
+.cara .ico{font-size:1.55rem;display:block;margin-bottom:.45rem}
+.cara .nombre{font-size:.82rem;color:var(--bruma)}
+.cara.abierta{background:rgba(139,124,246,.15);border-color:var(--acento)}
+.cara .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--acento-hi);font-size:.84rem;margin-top:.5rem;line-height:1.42}
+.cara.abierta .obs{display:block}
+.cara.abierta .nombre{display:none}
+.caras-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(239,234,255,.04);border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.2rem;margin-top:1.5rem}
+.ficha dl{display:grid;gap:.75rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--dorado);font-weight:700}
+.ficha dd{font-size:.95rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(139,124,246,.1);border:1px solid rgba(139,124,246,.34);border-radius:14px;padding:1.2rem;margin-top:1.4rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--acento-hi);font-weight:700;margin-bottom:.55rem}
+.honestidad p{font-size:.94rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.8rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.compra a{display:inline-block;background:var(--acento);color:#0F0A22;border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--acento-hi);transform:translateY(-2px)}
+
+/* ---------- CTAs ---------- */
+.cta,.react{background:rgba(239,234,255,.05);border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.2rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(239,234,255,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--dorado);color:var(--dorado-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--dorado-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+.micro{border-style:dashed;opacity:.92}
+.micro .bajada{font-size:.88rem}
+
+.cierre{text-align:center;padding-bottom:4.5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,1rem + 1vw,1.5rem);line-height:1.45;max-width:30ch;margin:0 auto 1.6rem}
+footer{border-top:1px solid var(--linea);padding:1.8rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--dorado-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--dorado);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="chispas" id="chispasFx" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Libro nuevo · veta neurociencia + mente</span>
+    <h1>Being You</h1>
+    <p class="autor">Anil Seth · <em>La nueva ciencia de la consciencia</em> (2021)</p>
+    <p class="sub">Ayer te quedaste 140 segundos y 80% de scroll en la ficha de Mackesy, sin votar todavía — el mismo patrón de Nestor y Walker: leés antes de apretar el botón. Hoy cambio de veta a propósito: nada de fábula, nada de sueño. Vamos directo a algo que dijiste que te interesa desde el primer día y todavía no toqué — la neurociencia de la mente misma.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traigo</p>
+    <h2 class="titulo rev d1">La veta que declaraste el primer día y todavía no probé</h2>
+    <p class="bajada rev d2">El 15/07, cuando armamos tu perfil, pusiste "astronomía, neurociencia y mente" en la misma frase. De astronomía ya te traje Rovelli y Cosmos (ambos con acierto). De neurociencia de la mente en sí — no del cuerpo, no del sueño, sino de qué es la consciencia — todavía no te traje nada. Walker fue cuerpo; Nestor fue respiración; hoy voy un nivel más adentro: cómo tu cerebro construye la experiencia de ser vos.</p>
+    <p class="parr rev d2">Seth no es un divulgador que resume papers ajenos: dirige el laboratorio. Es la misma jugada que te vino funcionando con Rovelli y con Walker — autoridad real del tema, no una síntesis de segunda mano.</p>
+    <div class="cita rev d3">«No percibimos el mundo tal cual es. Somos máquinas de predicción, inventando constantemente nuestro mundo y corrigiendo los errores, microsegundo a microsegundo.»<span>Anil Seth — traducción propia, la idea central del libro repetida en su charla TED y en la introducción.</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Ver, oír y ser vos no es recibir el mundo. Es inventarlo, bien</h2>
+    <p class="bajada rev d2">La tesis central: lo que llamamos "percibir la realidad" no es el cerebro recibiendo datos limpios de los sentidos y armando un cuadro. Es al revés — el cerebro arranca con una predicción de lo que probablemente está ahí afuera, y usa lo que llega por los ojos, oídos y piel solo para corregir el error de esa predicción. A eso Seth lo llama "alucinación controlada": no significa que inventás cualquier cosa, significa que tu realidad consciente es una construcción activa, anclada por el mundo real pero generada de adentro hacia afuera.</p>
+    <p class="parr rev d2">El libro está armado en seis partes y usa la metáfora de la "bestia máquina" (beast machine): la consciencia no es un programa de computadora corriendo en la cabeza, es algo que emerge de tener un cuerpo vivo, regulándose todo el tiempo para no morirse. Por eso el hambre, el miedo o la ansiedad no son "ruido" que interfiere con pensar claro — son, literalmente, parte de cómo se construye la experiencia de ser alguien.</p>
+    <div class="cita rev d3">«Este libro trata sobre vos... una forma particular de sistema material — una bestia máquina.»<span>Anil Seth — traducción propia, plataforma central del argumento (marco "beast machine").</span></div>
+  </div>
+</section>
+
+<section class="seccion alt" id="caras">
+  <div class="centro">
+    <p class="kicker rev">Un mapa del libro</p>
+    <h2 class="titulo rev d1">Seth dice que "el yo" no es una sola cosa. Son cinco</h2>
+    <p class="bajada rev d2">Una de las ideas más útiles del libro: cuando decís "yo", en realidad estás mezclando cinco experiencias distintas que el cerebro arma por separado. Tocá cada una:</p>
+    <div class="caras rev d3">
+      <div class="hilo" aria-hidden="true"></div>
+      <div class="carasGrid" id="carasBox">
+        <div class="cara" data-obs="La sensación de tener y estar dentro de un cuerpo. Se puede romper: en el experimento de la 'mano de goma', el cerebro adopta una mano falsa como propia en minutos."><span class="ico">🖐️</span><span class="nombre">Corporal</span><span class="obs"></span></div>
+        <div class="cara" data-obs="El punto de vista desde el que ves el mundo — normalmente detrás de tus ojos. En experiencias extracorporales reportadas, ese punto se siente 'afuera' del cuerpo."><span class="ico">👁️</span><span class="nombre">Perspectiva</span><span class="obs"></span></div>
+        <div class="cara" data-obs="La sensación de que sos vos quien decide moverse o pensar algo, no que simplemente 'pasa'. Es la base de la sensación de libre albedrío."><span class="ico">✋</span><span class="nombre">Volición</span><span class="obs"></span></div>
+        <div class="cara" data-obs="La historia que te contás de quién sos a lo largo del tiempo — tu biografía interna, hecha de memoria autobiográfica, no de hechos objetivos."><span class="ico">📖</span><span class="nombre">Narrativa</span><span class="obs"></span></div>
+        <div class="cara" data-obs="Cómo el 'yo' cambia según quién te mira — el vos de una reunión de trabajo no es el mismo que el vos de una charla con un amigo."><span class="ico">🫂</span><span class="nombre">Social</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="caras-hint">Ninguna de las cinco es "la real" y las otras cuatro ilusiones — Seth insiste en que todas, incluida la sensación más sólida de todas (tener un cuerpo), son construcciones del cerebro que se pueden separar y estudiar por partes.</p>
+  </div>
+</section>
+
+<section class="seccion" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Quién lo escribe</p>
+    <h2 class="titulo rev d1">Dirige el centro de investigación, no repite lo que leyó en otro lado</h2>
+    <p class="bajada rev d2">Anil Seth es profesor de Neurociencia Cognitiva y Computacional en la Universidad de Sussex (Reino Unido) y co-director del centro de investigación sobre consciencia de esa universidad desde 2010. Es editor en jefe de la revista científica <em>Neuroscience of Consciousness</em> y uno de los investigadores más citados del mundo en su campo. Su charla TED de 2017, "Tu cerebro alucina tu realidad consciente", superó los 11 millones de vistas.</p>
+    <p class="parr suave rev d3">Es, otra vez, el mismo perfil que te viene funcionando: Rovelli con la física, Walker con el sueño — alguien que investiga el tema en el laboratorio, no alguien que lo resume de terceros.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>Being You: A New Science of Consciousness</em>, Faber &amp; Faber / Dutton, 2021. 352 páginas. Libro del año 2021 según Bloomberg, The Economist, The Guardian y Financial Times.</dd>
+        <dt>En español</dt><dd><em>La creación del yo: una nueva ciencia de la conciencia</em>, Sexto Piso, 2023 (trad. Albino Santos Mosquera) — sí existe traducción, y está en stock en Uruguay.</dd>
+        <dt>Vetas que cruza</dt><dd>Neurociencia + mente — veta declarada por vos el 15/07, todavía sin probar hasta hoy.</dd>
+        <dt>Dónde está en la casa</dt><dd>En ningún lado. Verifiqué título (inglés y español) y autor contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: no aparece.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. Los insights de esta ficha —la alucinación controlada, la metáfora "beast machine", las cinco caras del yo— salen de la sinopsis oficial de Faber/Dutton, la entrada de Wikipedia sobre el libro (que cita su estructura en seis partes) y reseñas verificadas (The Guardian, Wall Street Journal, New York Times Book Review); no es un resumen del libro completo.</p>
+      <p><b>Nota de honestidad:</b> algunas reseñas académicas señalan que el término "alucinación" puede sonar más extremo de lo que Seth quiere decir (no dice que "inventás cualquier cosa", sino que la percepción es una construcción activa), y que la evidencia detrás de su marco de "inferencia Bayesiana" todavía se discute en el campo — no es una teoría cerrada y aceptada por unanimidad. Lo aviso para que lo leas sabiendo que es ciencia viva, no un consenso final.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Conseguirlo</p>
+    <h2 class="titulo rev d1">En inglés o en español, con audiolibro narrado por el propio autor</h2>
+    <p class="bajada rev d2">Lo busqué hoy en Buscalibre Uruguay: la más barata es la edición de bolsillo en inglés (Faber, 2022) a $1.027 pesos uruguayos (40% off); la traducción al español (Sexto Piso, 2023) está a $1.203. También existe en Google Play como ebook y como audiolibro narrado por el propio Anil Seth — verificado por búsqueda cruzada título+autor+narrador, Google Play bloquea la verificación automática por link.</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=Being+You+Anil+Seth">Conseguilo en inglés (desde ~$1.027 UYU)</a>
+      <a href="https://www.buscalibre.uy/libros/search/?q=La+creacion+del+yo+Anil+Seth">En español (~$1.203 UYU)</a>
+      <a href="https://play.google.com/store/books/details?id=u8UZEAAAQBAJ">📱 Ebook en Google Play Books</a>
+      <a href="https://play.google.com/store/audiobooks/details?id=AQAAAEBcC1dLGM">🎧 Audiolibro en Google Play (narrado por el propio Anil Seth)</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <p class="bajada rev d2">Y de nuevo, algo de un solo toque sobre Mackesy — lo dejaste con 140 segundos y sin votar:</p>
+    <div class="cta micro rev d2">¿Cómo va El niño, el topo, el zorro y el caballo?
+      <div>
+        <button onclick="engageAnswer('rec-como-va:2026-08-24-mackesy-boy-mole-fox-horse','me_esta_gustando',this)">🙂 Me está gustando</button>
+        <button onclick="engageAnswer('rec-como-va:2026-08-24-mackesy-boy-mole-fox-horse','todavia_no_lo_agarre',this)">📚 Todavía no lo agarré</button>
+        <button onclick="engageAnswer('rec-como-va:2026-08-24-mackesy-boy-mole-fox-horse','no_me_engancho',this)">🙅 No me enganchó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-25-seth-being-you','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-25-seth-being-you','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-25-seth-being-you','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-25-seth-being-you','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-25-seth-being-you','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-25-seth-being-you','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-25-seth-being-you','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-25-seth-being-you','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-25-seth-being-you','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-25-seth-being-you" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-25-seth-being-you" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-25-seth-being-you',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">«Este libro trata sobre vos.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">Anil Seth, abriendo el libro con la frase más simple posible para el tema más difícil que existe.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para Andy · datos verificados contra la ficha oficial de Faber/Dutton, la entrada de Wikipedia sobre el libro y sobre Anil Seth, reseñas de The Guardian / WSJ / New York Times Book Review, y el stock de Buscalibre Uruguay, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  var cf=$('#chispasFx');
+  if(cf){
+    for(var i=0;i<26;i++){
+      var s=document.createElement('span');
+      s.style.left=(Math.random()*100)+'%';
+      s.style.top=(Math.random()*70)+'%';
+      s.style.animationDelay=(Math.random()*3.4)+'s';
+      cf.appendChild(s);
+    }
+  }
+
+  $$('#carasBox .cara').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(el.classList.contains('abierta')) return;
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

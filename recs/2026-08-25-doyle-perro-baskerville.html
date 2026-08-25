@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🐺 El Perro de los Baskerville · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --niebla:#1A211E;
+  --niebla2:#212A26;
+  --luna:#ECEFE7;
+  --musgo:#94AC98;
+  --farol:#CB8148;
+  --farol-hi:#E1A26C;
+  --verde:#5E9179;
+  --verde-hi:#83B79D;
+  --linea:rgba(236,239,231,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--niebla);color:var(--luna);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--farol);color:var(--niebla)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--verde-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(236,239,231,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--farol),var(--verde-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--musgo);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(26,33,30,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--farol-hi);border-color:var(--farol)}
+
+.seccion{padding:clamp(3rem,8vw,5.2rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:760px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--farol);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.2rem);line-height:1.2;margin-bottom:1.1rem}
+.bajada{color:var(--musgo);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--luna)}
+.parr.suave{color:var(--musgo)}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:88svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 4rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 8%,#28332E 0%,var(--niebla) 62%)}
+.niebla-fx{position:absolute;inset:0;z-index:0;opacity:.55}
+.niebla-fx span{position:absolute;border-radius:50%;background:var(--musgo);filter:blur(1px);opacity:.16;animation:derivar 9s ease-in-out infinite}
+@keyframes derivar{0%,100%{transform:translateX(0)}50%{transform:translateX(18px)}}
+@media (prefers-reduced-motion:reduce){.niebla-fx span{animation:none}}
+.hero-int{position:relative;z-index:2;max-width:640px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--farol-hi);border:1px solid rgba(203,129,72,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.55rem,1.05rem + 3vw,2.35rem);line-height:1.16}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--verde-hi)}
+.hero .sub{color:var(--musgo);margin:1.2rem auto 1.6rem;max-width:46ch}
+.hero-hint{position:relative;z-index:2;color:var(--musgo);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.6rem}
+
+.alt{background:var(--niebla2)}
+.cita{border-left:3px solid var(--farol);padding:.2rem 0 .2rem 1.15rem;margin:1.6rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.2rem);line-height:1.5;font-style:italic;color:var(--luna)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--musgo)}
+
+.ficha{background:rgba(236,239,231,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--farol);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--luna);margin-top:.15rem}
+
+/* ---------- CTAs ---------- */
+.cta,.react{background:rgba(236,239,231,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.1rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(236,239,231,.07);color:var(--luna);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--farol);color:var(--farol-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--farol-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--luna)}
+.directo{border:1px solid var(--verde);background:rgba(94,145,121,.14)}
+.directo .bajada{font-size:.92rem;color:var(--luna)}
+
+.cierre{text-align:center;padding-bottom:3.6rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1rem + .9vw,1.4rem);line-height:1.45;max-width:30ch;margin:0 auto 1.4rem}
+footer{border-top:1px solid var(--linea);padding:1.6rem 1.25rem 2.6rem;text-align:center;font-size:.78rem;color:var(--musgo);line-height:1.6}
+a.hub{color:var(--farol-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--farol);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="niebla-fx" id="nieblaFx" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · De tu estante M5 · M5-004</span>
+    <h1>El Perro de los Baskerville</h1>
+    <p class="autor">Arthur Conan Doyle · el Holmes más famoso de todos, en tu propio estante</p>
+    <p class="sub">Ficha corta hoy, a propósito — van cinco seguidas sin que sepa si te llegan. Un párrafo, un libro que ya tenés, y esta pregunta antes que nada:</p>
+  </div>
+</header>
+
+<main>
+
+<section class="seccion directo" id="directo">
+  <div class="centro">
+    <div class="cta directo rev">¿Te están llegando estos avisos al teléfono?
+      <div class="bajada">Van cinco fichas tuyas seguidas (Klune-Puerta, Heap House, Café de las leyendas, Windsor Knot, Somewhere Beyond the Sea) sin un solo click ni voto — ni siquiera abriste la página. Antes de seguir eligiendo libros a ciegas, necesito saber si el problema es que no ves la notificación, o que ninguna te copó.</div>
+      <div>
+        <button onclick="engageAnswer('rec-que-paso:2026-08-25-doyle-perro-baskerville','no_veo_las_notis',this)">📵 No veo ninguna notificación</button>
+        <button onclick="engageAnswer('rec-que-paso:2026-08-25-doyle-perro-baskerville','las_veo_sin_tiempo',this)">⏰ Las veo, no tuve tiempo</button>
+        <button onclick="engageAnswer('rec-que-paso:2026-08-25-doyle-perro-baskerville','no_me_copo_ninguna',this)">🙅 Las vi, ninguna me copó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">El libro, corto</p>
+    <h2 class="titulo rev d1">Una leyenda de sabuesos infernales. Un pantano que se traga gente. Holmes con dudas de verdad</h2>
+    <p class="bajada rev d2">1902. Un heredero de los Baskerville aparece muerto en su mansión en el páramo de Dartmoor, con una vieja leyenda familiar dando vueltas: un perro gigante y espectral que persigue a los hombres de su sangre desde hace generaciones. El próximo heredero llega desde Canadá sin saber en qué se está metiendo. Holmes manda a Watson solo al páramo — algo que casi nunca hace — y la novela entera se cocina con esa ausencia: dudas, niebla, huellas que no cierran.</p>
+    <div class="cita rev d2">«Señor Holmes, ¡eran las huellas de un perro gigantesco!»<span>Arthur Conan Doyle — traducción propia, la línea que abre el misterio.</span></div>
+    <p class="parr suave rev d3">Es la novela de Holmes más larga y la más vendida de las cuatro — y la que casi todo el mundo nombra primero cuando piensa en Sherlock, aunque nunca la haya leído.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <div class="ficha rev">
+      <dl>
+        <dt>Tu ejemplar</dt><dd>Estante M5-004, sala de misterio y cozy mystery — parte del set completo de Sherlock que abre esa fila. Sin lectura registrada de tu lado.</dd>
+        <dt>Formato</dt><dd>~220 páginas, se lee rápido — capítulos cortos, mucho diálogo.</dd>
+        <dt>Guardia</dt><dd>Verificado título y autor contra los 437 libros del catálogo y contra todo <code>recommended.json</code>: nunca tuvo ficha propia. No es de los 50 King del estante de al lado.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Le damos una noche?</h2>
+    <div class="cta rev d1">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:M5-004','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-004','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-004','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-25-doyle-perro-baskerville','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-25-doyle-perro-baskerville','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-25-doyle-perro-baskerville','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia (más corta hoy, a propósito)?
+      <div>
+        <button onclick="engageReact('2026-08-25-doyle-perro-baskerville','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-25-doyle-perro-baskerville','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-25-doyle-perro-baskerville','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-25-doyle-perro-baskerville','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-25-doyle-perro-baskerville" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-25-doyle-perro-baskerville" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(236,239,231,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-25-doyle-perro-baskerville',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">«El mundo está lleno de cosas obvias que nadie, jamás, observa.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.2rem;max-width:44ch">Arthur Conan Doyle — traducción propia. Aplica al libro y a estas cinco fichas mudas por igual.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante M5 · ficha corta a propósito · datos verificados contra el catálogo de la casa y ediciones/citas de dominio público de <em>The Hound of the Baskervilles</em>, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  var nf=$('#nieblaFx');
+  if(nf){
+    for(var i=0;i<10;i++){
+      var s=document.createElement('span');
+      var sz=(40+Math.random()*70);
+      s.style.width=sz+'px'; s.style.height=(sz*.4)+'px';
+      s.style.left=(Math.random()*100)+'%';
+      s.style.top=(10+Math.random()*70)+'%';
+      s.style.animationDelay=(Math.random()*4)+'s';
+      nf.appendChild(s);
+    }
+  }
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
