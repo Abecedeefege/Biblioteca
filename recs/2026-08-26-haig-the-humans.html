@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🪐 The Humans · Para vos, Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0F1220;
+  --noche2:#171B30;
+  --papel:#EDEBF6;
+  --bruma:#A6A3C4;
+  --violeta:#9B7EDE;
+  --violeta-hi:#BFA7F2;
+  --miel:#E8B26B;
+  --linea:rgba(237,235,246,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Space Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--papel);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--violeta);color:var(--noche)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--violeta-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,235,246,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--violeta),var(--miel))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(15,18,32,.7);backdrop-filter:blur(4px)}
+.back:hover{color:var(--violeta-hi);border-color:var(--violeta-hi)}
+
+.seccion{padding:clamp(3.6rem,9vw,6.5rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:760px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--miel);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.55rem,1.2rem + 2.4vw,2.4rem);line-height:1.2;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--papel)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: estrellas ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 7rem;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,var(--noche2) 0%,var(--noche) 65%)}
+.estrellas{position:absolute;inset:0;z-index:0}
+.estrellas span{position:absolute;border-radius:50%;background:var(--papel);opacity:.7;animation:centelleo 3.4s ease-in-out infinite}
+@keyframes centelleo{0%,100%{opacity:.15}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.estrellas span{animation:none;opacity:.5}}
+.hero-int{position:relative;z-index:2;max-width:660px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--miel);border:1px solid rgba(232,178,107,.45);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.55rem,1rem + 3.2vw,2.5rem);line-height:1.18}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--violeta-hi)}
+.hero .sub{color:var(--bruma);margin:1.35rem auto 2.2rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--violeta);color:var(--noche);border:none;border-radius:999px;padding:.9rem 1.8rem;font-weight:600;font-size:.98rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--miel);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.3}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.hero-hint{animation:none;opacity:.6}}
+
+.alt{background:var(--noche2)}
+.cita{border-left:3px solid var(--violeta);padding:.2rem 0 .2rem 1.15rem;margin:1.9rem 0;font-family:var(--serif);font-size:clamp(1.05rem,1rem + .6vw,1.28rem);line-height:1.5;font-style:italic;color:var(--papel)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- consejos para un humano (interactivo) ---------- */
+.consejos{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(237,235,246,.03)}
+.consejo-card{background:rgba(237,235,246,.05);border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.2rem;text-align:center;min-height:6.5em;display:flex;align-items:center;justify-content:center}
+.consejo-card p{font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.55;color:var(--violeta-hi)}
+.consejo-nav{display:flex;justify-content:center;gap:.7rem;margin-top:1rem}
+.consejo-nav button{background:rgba(237,235,246,.08);color:var(--papel);border:1px solid var(--linea);border-radius:999px;padding:.55rem 1.2rem;font-size:.85rem;font-weight:500}
+.consejo-nav button:hover{border-color:var(--violeta-hi);color:var(--violeta-hi)}
+.consejo-contador{text-align:center;color:var(--bruma);font-size:.78rem;margin-top:.7rem}
+
+.ficha{background:rgba(237,235,246,.04);border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.2rem;margin-top:1.5rem}
+.ficha dl{display:grid;gap:.75rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--miel);font-weight:700}
+.ficha dd{font-size:.95rem;color:var(--papel);margin-top:.15rem}
+.honestidad{background:rgba(155,126,222,.1);border:1px solid rgba(155,126,222,.32);border-radius:14px;padding:1.2rem;margin-top:1.4rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--violeta-hi);font-weight:700;margin-bottom:.55rem}
+.honestidad p{font-size:.94rem;line-height:1.6;color:var(--papel)}
+.honestidad p + p{margin-top:.8rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.compra a{display:inline-block;background:var(--violeta);color:var(--noche);border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--miel);transform:translateY(-2px)}
+
+.cta,.react{background:rgba(237,235,246,.05);border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.2rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(237,235,246,.07);color:var(--papel);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--violeta-hi);color:var(--violeta-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--miel);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--papel)}
+
+.cierre{text-align:center;padding-bottom:4.5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,1rem + 1vw,1.5rem);line-height:1.45;max-width:30ch;margin:0 auto 1.6rem}
+footer{border-top:1px solid var(--linea);padding:1.8rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--violeta-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--violeta-hi);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="estrellas" id="estrellasFx" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · Libro nuevo</span>
+    <h1>The Humans</h1>
+    <p class="autor">Matt Haig (2013)</p>
+    <p class="sub">Van seis fichas sin que sepa si te están llegando. Esta va con todo igual: es del mismo autor de <em>La biblioteca de medianoche</em>, que sí te enamoró en julio. Si esta tampoco hace ruido, dejo de mandarte nombres nuevos a ciegas — te lo cuento al final.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traigo</p>
+    <h2 class="titulo rev d1">El único dato duro que tengo de vos es este autor</h2>
+    <p class="bajada rev d2">27 de julio: te mandé <em>La biblioteca de medianoche</em> de Matt Haig — fue tu único acierto pleno confirmado hasta ahora (lo_quiero + love). Desde entonces probé cozy fantasy (Klune x2), misterio gótico (Bennett), thriller (Katzenbach), Sherlock — variedad total, cero señal. Antes de asumir que el problema es de contenido, quería volver una vez más a lo único que sí funcionó con vos, pero con un libro distinto: no otra vez el mismo tono contemplativo, sino la otra cara de Haig — ciencia ficción con humor negro y corazón.</p>
+    <div class="cita rev d3">Lo que hay que hacer con el conocimiento y la información es exactamente lo mismo que hay que hacer con el pastel: comer solo lo que se puede disfrutar de verdad.<span>Matt Haig, <em>The Humans</em> — traducción propia.</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Un alien ocupa el cuerpo de un matemático de Cambridge</h2>
+    <p class="bajada rev d2">Andrew Martin, profesor de matemática en Cambridge, acaba de demostrar la Hipótesis de Riemann — un problema abierto hace más de 150 años. Para los Vonnadorianos, una civilización alienígena que considera a los humanos demasiado violentos e inmaduros para manejar ese conocimiento, eso es una amenaza que hay que borrar. Mandan a uno de los suyos a tomar la forma exacta de Martin, destruir toda evidencia de la prueba y eliminar a cualquiera que la haya visto.</p>
+    <p class="parr rev d2">El problema es que el visitante, disfrazado de humano, tiene que <em>vivir</em> como humano mientras cumple la misión: comer, vestirse, tener familia. Al principio todo le resulta repulsivo — la comida, la ropa, la guerra, el amor le parece una debilidad absurda. Publicado en 2013, narrado en primera persona por el propio alien, el libro es su diario de campo mientras la misión se le empieza a desarmar entre las manos.</p>
+    <div class="cita rev d3">El significado era sostener la mano de alguien que te importa y vivir en el presente. El pasado y el futuro son mitos.<span>Matt Haig, <em>The Humans</em> — traducción propia.</span></div>
+  </div>
+</section>
+
+<section class="seccion alt" id="newton">
+  <div class="centro">
+    <p class="kicker rev">El quiebre</p>
+    <h2 class="titulo rev d1">Lo primero que lo ablanda no es humano</h2>
+    <p class="bajada rev d2">Antes que la esposa de Martin, antes que su hijo adolescente, es el perro de la familia — Newton, viejo y con artrosis — el primer ser que el alien decide ayudar sin que se lo pidan. Ese gesto, tan pequeño, es la primera grieta real en la misión: el punto donde el visitante deja de observar a los humanos como un experimento y empieza a involucrarse.</p>
+    <p class="parr rev d2">A partir de ahí el libro se vuelve, sin dejar de ser gracioso, una carta de amor rara: a la poesía de Emily Dickinson, a la manteca de maní (el alien se obsesiona), al rock, y sobre todo al hijo adolescente de Martin, para quien termina escribiendo el capítulo más citado del libro: una lista de 97 consejos, "Advice for a Human" — mitad chiste, mitad testamento emocional.</p>
+  </div>
+</section>
+
+<section class="seccion" id="consejos-sec">
+  <div class="centro">
+    <p class="kicker rev">Una muestra de la lista</p>
+    <h2 class="titulo rev d1">97 consejos para un humano</h2>
+    <p class="bajada rev d2">Así cierra el libro: el alien le deja esta lista al hijo de Martin. Andá pasando algunos:</p>
+    <div class="consejos rev d3">
+      <div class="consejo-card"><p id="consejoTxt">"Sé amable con otras personas. A nivel universal, esas personas sos vos."</p></div>
+      <div class="consejo-nav">
+        <button id="consejoPrev" type="button">← anterior</button>
+        <button id="consejoNext" type="button">siguiente →</button>
+      </div>
+      <p class="consejo-contador" id="consejoContador">1 / 6</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Quién lo escribe</p>
+    <h2 class="titulo rev d1">El mismo Haig, otro registro</h2>
+    <p class="bajada rev d2">Matt Haig es el autor británico de <em>La biblioteca de medianoche</em> — el libro que ya te sacó un acierto pleno. Es su marca registrada: usar premisas fantásticas o de ciencia ficción para hablar de cosas muy humanas (la muerte, el sentido, la depresión) sin solemnidad. <em>The Humans</em> es anterior (2013) y más cómico en la superficie, pero apunta al mismo lugar emocional.</p>
+    <p class="parr suave rev d3">Fue publicado por Canongate Books y tuvo buena recepción de crítica (Kirkus, Publishers Weekly) como una de sus novelas más queridas por lectores, junto con <em>La biblioteca de medianoche</em>.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Vetas que cruza</dt><dd>Autor con acierto pleno confirmado (Haig, 27/07) — mismo autor, tono distinto: ciencia ficción con humor en vez de fábula contemplativa.</dd>
+        <dt>Formato</dt><dd>Novela corta, narración en primera persona, tono ligero con momentos de filo emocional.</dd>
+        <dt>Guardia</dt><dd>Verificado título y autor contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: no está en casa, nunca fue recomendado (la única ficha previa de Haig fue <em>La biblioteca de medianoche</em>, libro distinto).</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. Trama, estructura y las tres citas verificadas contra reseñas (Kirkus, la ficha de Canongate) y compilaciones de citas que las repiten de forma consistente en inglés — la traducción de las citas es propia. El detalle de Newton (el perro) y la lista "Advice for a Human" (97 ítems) están verificados contra al menos dos fuentes independientes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Si te copa</p>
+    <h2 class="titulo rev d1">Dónde conseguirlo</h2>
+    <p class="bajada rev d2">Verificado hoy en Buscalibre Uruguay: la edición en inglés (Canongate, tapa blanda) está en stock a $883 UYU. También existe la traducción al español, "Los humanos" — el link de abajo va directo a los resultados reales, sin precio confirmado todavía. En Google Play Books hay ebook y audiolibro en inglés (narrado por Mark Meadows), verificados por búsqueda cruzada título+autor+narrador (Google Play bloquea la verificación automática por link, devuelve 403 a cualquier bot):</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=The+Humans+Matt+Haig">Conseguilo en inglés (~$883 UYU)</a>
+      <a href="https://www.buscalibre.uy/libros/search/?q=Los+humanos+Matt+Haig">En español (revisá precio en el link)</a>
+      <a href="https://play.google.com/store/books/details?id=GgJx6vNG_jcC">📱 Ebook en Google Play Books (inglés)</a>
+      <a href="https://play.google.com/store/audiobooks/details?id=AQAAAIACzlVORM">🎧 Audiolibro en Google Play (inglés, narrado por Mark Meadows)</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d2">
+      <button onclick="engageAnswer('rec-veredicto:2026-08-26-haig-the-humans','lo_quiero',this)">📚 Lo quiero</button>
+      <button onclick="engageAnswer('rec-veredicto:2026-08-26-haig-the-humans','me_tienta',this)">🤔 Me tienta</button>
+      <button onclick="engageAnswer('rec-veredicto:2026-08-26-haig-the-humans','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+      <button onclick="engageAnswer('rec-veredicto:2026-08-26-haig-the-humans','ya_lo_lei',this)">✔️ Ya lo leí</button>
+      <button onclick="engageAnswer('rec-veredicto:2026-08-26-haig-the-humans','no_me_va',this)">🙅 No me va</button>
+      <span class="q-hint"></span>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-26-haig-the-humans','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-26-haig-the-humans','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-26-haig-the-humans','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-26-haig-the-humans','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-26-haig-the-humans" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-26-haig-the-humans" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(237,235,246,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-26-haig-the-humans',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">«No hace falta un propósito para la vida. Un propósito de vida es una definición humana, al fin y al cabo.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">El narrador de <em>The Humans</em>, en algún punto entre odiar y entender a esta especie.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para vos, Sofi · datos verificados contra reseñas de Kirkus Reviews y Publishers Weekly, la ficha oficial de Canongate Books, compilaciones de citas del libro y el stock de Buscalibre Uruguay, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  var ef=$('#estrellasFx');
+  if(ef){
+    for(var i=0;i<40;i++){
+      var s=document.createElement('span');
+      var sz=(1+Math.random()*2.4);
+      s.style.width=sz+'px'; s.style.height=sz+'px';
+      s.style.left=(Math.random()*100)+'%';
+      s.style.top=(Math.random()*100)+'%';
+      s.style.animationDelay=(Math.random()*3.4)+'s';
+      ef.appendChild(s);
+    }
+  }
+
+  var consejos=[
+    "Sé amable con otras personas. A nivel universal, esas personas sos vos.",
+    "Leé poesía, sobre todo de Emily Dickinson. Puede llegar a salvarte.",
+    "La materia oscura mantiene unidas a las galaxias. Tu mente es una galaxia. Más oscura que luminosa. Pero la luz vale la pena.",
+    "No tenés que ser nada en particular. No lo fuerces. Andá sintiendo el camino hasta que algo encaje.",
+    "No podés encontrar la felicidad buscando el sentido de la vida. El sentido está en tercer lugar — primero está amar, y estar.",
+    "Sos un humano. No hay nada más raro ni más difícil en todo el universo."
+  ];
+  var idx=0;
+  var txt=$('#consejoTxt'), contador=$('#consejoContador');
+  function pintar(){
+    txt.textContent='"'+consejos[idx]+'"';
+    contador.textContent=(idx+1)+' / '+consejos.length;
+  }
+  var prevBtn=$('#consejoPrev'), nextBtn=$('#consejoNext');
+  if(prevBtn) prevBtn.addEventListener('click',function(){ idx=(idx-1+consejos.length)%consejos.length; pintar(); });
+  if(nextBtn) nextBtn.addEventListener('click',function(){ idx=(idx+1)%consejos.length; pintar(); });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

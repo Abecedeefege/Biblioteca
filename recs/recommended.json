@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-25T16:30:00-03:00",
-  "_feedback_cutoff": "2026-08-24T22:28:06.112Z",
+  "_updated_at": "2026-08-26T16:30:00-03:00",
+  "_feedback_cutoff": "2026-08-26T06:31:19.869Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1463,10 +1463,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
+        "clicked": true,
         "dwell_s": 0
       },
-      "learning": null
+      "learning": "26/08: click + page_visit tempranos (06:31 UTC / 03:31 -03:00), sin veredicto todavia. Sigue el patron 'lee antes de votar' (Walker, Mackesy). Sin accion nueva -- esperar."
     },
     {
       "id": "2026-08-25-doyle-perro-baskerville",
@@ -1485,6 +1485,56 @@
       "page": "recs/2026-08-25-doyle-perro-baskerville.html",
       "notified_by": "2026-08-25-rec-sofi",
       "why": "Regimen DIARIO: ayer (24/08) Sofi tuvo nuevo (Klune, Somewhere Beyond the Sea) -> hoy le toca redescubrimiento, alternancia respetada. CAMBIO DE RAIZ aplicado, tal como se anuncio en la ficha de ayer: Somewhere Beyond the Sea tampoco genero ningun click ni voto -- ya son 5 fichas seguidas (Klune-Puerta 20/08, Heap House 21/08, Cafe de las leyendas 22/08, Windsor Knot 23/08, Somewhere Beyond the Sea 24/08) sin NINGUN evento de Sofi en sync/engagement.json, ni siquiera un page_visit. Eso ya no es señal de veta -- es señal de que el problema puede ser de entrega/formato. En vez de otro nombre nuevo con la misma estructura larga, se construye una experiencia deliberadamente MAS CORTA (sin la seccion interactiva de personajes, sin footer largo) con la pregunta de diagnostico (rec-que-paso) movida al frente, inmediatamente despues del hero, en vez de al final -- para maximizar la chance de que si abre la pagina, vea la pregunta antes de irse. Libro elegido: M5-004 'El Perro de los Baskerville' (Conan Doyle) -- del set Sherlock Holmes confirmado fisicamente en la re-catalogacion de agosto ('abre la fila Sherlock', confianza alta), la novela de Holmes mas conocida y vendida, nunca usada antes. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- nunca tuvo ficha propia. NO es de los 50 King de R4/R5 (guardia especial pedida por el dueño). Sin entrada en data/enrichment.json (read_status desconocido, tratado como no leido). Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-26-herrigel-zen-tiro-arco",
+      "date": "2026-08-26",
+      "kind": "redescubrimiento",
+      "title": "Zen en el arte del tiro con arco",
+      "author": "Eugen Herrigel",
+      "language": "es",
+      "topics": [
+        "espiritualidad-oriental",
+        "wellness",
+        "filosofia"
+      ],
+      "book_ref": "L4-010",
+      "audience": "andy",
+      "page": "recs/2026-08-26-herrigel-zen-tiro-arco.html",
+      "notified_by": "2026-08-26-rec-andy",
+      "why": "Regimen DIARIO: ayer (25/08) Andy tuvo nuevo (Seth) -> hoy le toca redescubrimiento, alternancia respetada. Elegido L4-010 (Zen en el arte del tiro con arco, Herrigel), primer libro del banco REDESCUB del PROFILE, nunca antes usado. Cruza sus dos vetas declaradas el 15/07 (espiritualidad oriental + wellness) desde un angulo nuevo -- soltar el control en vez de construir un habito -- que conecta con el patron de dwell alto sin voto que vino mostrando en Walker (376s/100%) y Mackesy (140s/80%). GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- nunca tuvo ficha propia. Sin entrada en data/enrichment.json mas alla de anio de publicacion (read_status desconocido, tratado como no leido). Contenido verificado contra la entrada de Wikipedia sobre el libro y citas repetidas de forma consistente en compilaciones y resenas de la edicion en espanol (Kier/Gaia). Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche). Regla de audiolibros (24/08): no existe edicion en espanol en Google Play Books para este titulo puntual, se ofrece el audiolibro original en ingles (narrado por Ralph Blum), verificado por busqueda cruzada.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-26-haig-the-humans",
+      "date": "2026-08-26",
+      "kind": "nuevo",
+      "title": "The Humans",
+      "author": "Matt Haig",
+      "language": "en",
+      "topics": [
+        "ciencia-ficcion",
+        "humor",
+        "filosofia-de-bolsillo"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-08-26-haig-the-humans.html",
+      "notified_by": "2026-08-26-rec-sofi",
+      "why": "Regimen DIARIO: ayer (25/08) Sofi tuvo redescubrimiento (Doyle, Baskerville) -> hoy le toca nuevo, alternancia respetada. Van 6 fichas seguidas de Sofi (20 al 25/08) sin NINGUN evento en sync/engagement.json, ni un solo page_visit, pese a subscription.json 'active' y push entregado con status_code 201 en las 6. Esto ya no se trata como problema de contenido/formato (se probaron 6 generos distintos: fantasia calida, gotico, cozy fantasy, historico, cozy sequel, misterio clasico) sino como probable problema de entrega/permisos en su dispositivo -- escalado explicito en el reporte de hoy en vez de seguir iterando formato dentro de la ficha (que ya se probo el 25/08 sin resultado). Elegido igual el mejor candidato posible para si el canal se destraba: Matt Haig, 'The Humans' -- MISMO autor que le dio su UNICO acierto pleno confirmado (La biblioteca de medianoche, 27/07, lo_quiero+love), pero libro y tono distintos (ciencia ficcion con humor, no fabula contemplativa) para no repetir literalmente la ficha que funciono. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- no esta en casa, la unica ficha previa de Haig fue un libro distinto. Contenido (premisa, estructura, la lista 'Advice for a Human' de 97 items, el personaje del perro Newton) verificado contra resenas de Kirkus Reviews y Publishers Weekly y la ficha oficial de Canongate; citas verificadas contra compilaciones que las repiten de forma consistente en ingles, traduccion propia. Precio verificado hoy en Buscalibre Uruguay via JSON-LD del producto: edicion en ingles (Canongate, tapa blanda) en stock a $883 UYU (200 OK); edicion en espanol tambien tiene resultados reales en Buscalibre.uy pero sin precio de producto confirmado, se linkea sin afirmar precio. Google Play: ebook y audiolibro en ingles (narrado por Mark Meadows) verificados por busqueda cruzada titulo+autor+narrador.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
