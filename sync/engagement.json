@@ -3638,7 +3638,24 @@
       "device": "Andy",
       "dwell_s": 140,
       "scroll_pct": 80
+    },
+    {
+      "id": "mt9ptwqn-tr7ebf",
+      "type": "notification_clicked",
+      "ts": "2026-08-26T06:31:19.295Z",
+      "page": "2026-08-25-seth-being-you.html",
+      "device": "Andy",
+      "nid": "2026-08-25-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mt9ptwqp-ykpwd0",
+      "type": "page_visit",
+      "ts": "2026-08-26T06:31:19.297Z",
+      "page": "2026-08-25-seth-being-you.html",
+      "device": "Andy",
+      "nid": "2026-08-25-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-24T22:28:07.485Z"
+  "_updated_at": "2026-08-26T06:31:20.845Z"
 }
