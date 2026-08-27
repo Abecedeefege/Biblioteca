@@ -3672,7 +3672,33 @@
       "page": "2026-08-25-seth-being-you.html",
       "type": "page_visit",
       "device": "sin-nombre"
+    },
+    {
+      "id": "mt9pu39y-o14mq5",
+      "type": "dwell",
+      "ts": "2026-08-26T06:31:27.766Z",
+      "page": "2026-08-25-seth-being-you.html",
+      "device": "Andy",
+      "dwell_s": 8,
+      "scroll_pct": 9
+    },
+    {
+      "id": "mtb7a9vp-w99f1n",
+      "type": "notification_clicked",
+      "ts": "2026-08-27T07:27:42.469Z",
+      "page": "2026-08-26-herrigel-zen-tiro-arco.html",
+      "device": "Andy",
+      "nid": "2026-08-26-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mtb7a9vr-qdsddh",
+      "type": "page_visit",
+      "ts": "2026-08-27T07:27:42.471Z",
+      "page": "2026-08-26-herrigel-zen-tiro-arco.html",
+      "device": "Andy",
+      "nid": "2026-08-26-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-26T09:27:22.094Z"
+  "_updated_at": "2026-08-27T07:27:43.901Z"
 }
