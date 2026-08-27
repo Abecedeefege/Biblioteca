@@ -3716,7 +3716,16 @@
       "device": "Andy",
       "qid": "leer-esta-noche:L4-010",
       "value": "ya_leido"
+    },
+    {
+      "id": "mtb7ihyf-1c6qaz",
+      "type": "answer",
+      "ts": "2026-08-27T07:34:06.183Z",
+      "page": "2026-08-26-herrigel-zen-tiro-arco.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-08-26-herrigel-zen-tiro-arco",
+      "value": "me_tienta"
     }
   ],
-  "_updated_at": "2026-08-27T07:34:00.132Z"
+  "_updated_at": "2026-08-27T07:34:07.293Z"
 }
