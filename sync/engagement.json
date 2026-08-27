@@ -3698,7 +3698,16 @@
       "page": "2026-08-26-herrigel-zen-tiro-arco.html",
       "device": "Andy",
       "nid": "2026-08-26-rec-andy"
+    },
+    {
+      "id": "mtb7e0t1-y60mo9",
+      "type": "dwell",
+      "ts": "2026-08-27T07:30:37.333Z",
+      "page": "2026-08-26-herrigel-zen-tiro-arco.html",
+      "device": "Andy",
+      "dwell_s": 175,
+      "scroll_pct": 34
     }
   ],
-  "_updated_at": "2026-08-27T07:27:43.901Z"
+  "_updated_at": "2026-08-27T07:30:38.792Z"
 }
