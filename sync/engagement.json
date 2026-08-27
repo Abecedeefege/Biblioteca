@@ -3725,7 +3725,16 @@
       "device": "Andy",
       "qid": "rec-veredicto:2026-08-26-herrigel-zen-tiro-arco",
       "value": "me_tienta"
+    },
+    {
+      "id": "mtb7ijw2-vlmnes",
+      "type": "reaction",
+      "ts": "2026-08-27T07:34:08.690Z",
+      "page": "2026-08-26-herrigel-zen-tiro-arco.html",
+      "device": "Andy",
+      "slug": "2026-08-26-herrigel-zen-tiro-arco",
+      "value": "like"
     }
   ],
-  "_updated_at": "2026-08-27T07:34:07.293Z"
+  "_updated_at": "2026-08-27T07:34:09.775Z"
 }
