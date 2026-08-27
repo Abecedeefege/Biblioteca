@@ -3707,7 +3707,16 @@
       "device": "Andy",
       "dwell_s": 175,
       "scroll_pct": 34
+    },
+    {
+      "id": "mtb7ic6e-d4mjag",
+      "type": "answer",
+      "ts": "2026-08-27T07:33:58.694Z",
+      "page": "2026-08-26-herrigel-zen-tiro-arco.html",
+      "device": "Andy",
+      "qid": "leer-esta-noche:L4-010",
+      "value": "ya_leido"
     }
   ],
-  "_updated_at": "2026-08-27T07:30:38.792Z"
+  "_updated_at": "2026-08-27T07:34:00.132Z"
 }
