@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🌊 Flow · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#0D1B2A;
+  --fondo2:#132639;
+  --texto:#E9F1F7;
+  --bruma:#9DB4C7;
+  --acento:#4FB6C4;
+  --acento-hi:#7DD4DE;
+  --dorado:#E3A85C;
+  --dorado-hi:#F0C384;
+  --linea:rgba(233,241,247,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acento);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--acento-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(233,241,247,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--dorado-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(13,27,42,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--acento-hi);border-color:var(--acento)}
+
+.seccion{padding:clamp(3.6rem,9vw,6.5rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:800px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dorado);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.6rem,1.2rem + 2.5vw,2.5rem);line-height:1.18;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: agua ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 7rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 8%,#1B3A52 0%,var(--fondo) 62%)}
+.ondas{position:absolute;inset:0;z-index:0;opacity:.5}
+.ondas span{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--acento-hi),transparent);animation:fluir 5.5s ease-in-out infinite}
+@keyframes fluir{0%{transform:translateX(-15%);opacity:0}50%{opacity:.6}100%{transform:translateX(15%);opacity:0}}
+@media (prefers-reduced-motion:reduce){.ondas span{animation:none;opacity:.15}}
+.hero-int{position:relative;z-index:2;max-width:680px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--dorado-hi);border:1px solid rgba(227,168,92,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.7rem,1.1rem + 3.6vw,2.75rem);line-height:1.14}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--acento-hi)}
+.hero .sub{color:var(--bruma);margin:1.35rem auto 2.2rem;max-width:48ch}
+.cta-btn{display:inline-block;background:var(--acento);color:#06131C;border:none;border-radius:999px;padding:.9rem 1.8rem;font-weight:600;font-size:.98rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--acento-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.3}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.hero-hint{animation:none;opacity:.6}}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--dorado);padding:.2rem 0 .2rem 1.15rem;margin:1.9rem 0;font-family:var(--serif);font-size:clamp(1.05rem,1rem + .6vw,1.28rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- canal de flow (interactivo) ---------- */
+.canal{position:relative;margin:1.9rem 0 1rem;padding:1.5rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(233,241,247,.03)}
+.canalGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.zona{background:rgba(233,241,247,.045);border:1px solid var(--linea);border-radius:14px;padding:1.1rem .9rem;text-align:center;transition:all .2s ease}
+.zona:hover:not(.abierta){border-color:var(--dorado);transform:translateY(-2px)}
+.zona .ico{font-size:1.55rem;display:block;margin-bottom:.45rem}
+.zona .nombre{font-size:.86rem;color:var(--bruma);font-weight:600}
+.zona.abierta{background:rgba(79,182,196,.15);border-color:var(--acento)}
+.zona .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--acento-hi);font-size:.84rem;margin-top:.5rem;line-height:1.42}
+.zona.abierta .obs{display:block}
+.zona.abierta .nombre{display:none}
+.canal-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(233,241,247,.04);border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.2rem;margin-top:1.5rem}
+.ficha dl{display:grid;gap:.75rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--dorado);font-weight:700}
+.ficha dd{font-size:.95rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(79,182,196,.1);border:1px solid rgba(79,182,196,.34);border-radius:14px;padding:1.2rem;margin-top:1.4rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--acento-hi);font-weight:700;margin-bottom:.55rem}
+.honestidad p{font-size:.94rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.8rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.compra a{display:inline-block;background:var(--acento);color:#06131C;border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--acento-hi);transform:translateY(-2px)}
+
+.cta,.react{background:rgba(233,241,247,.05);border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.2rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(233,241,247,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--dorado);color:var(--dorado-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--dorado-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,1rem + 1vw,1.5rem);line-height:1.45;max-width:32ch;margin:0 auto 1.6rem}
+footer{border-top:1px solid var(--linea);padding:1.8rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--dorado-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--dorado);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="ondas" id="ondasFx" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Libro nuevo · veta positividad, primera vez</span>
+    <h1>Flow</h1>
+    <p class="autor">Mihaly Csikszentmihalyi · <em>The Psychology of Optimal Experience</em> (1990)</p>
+    <p class="sub">Ayer con Herrigel votaste "me tienta" y te copó el formato (❤️) después de nueve fichas sin apretar un botón — algo se destrabó. Hoy sigo ese hilo pero cambio de continente: el mismo estado que el arquero zen describía a los tijeretazos, acá lo mide un científico en más de 100.000 personas.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traigo</p>
+    <h2 class="titulo rev d1">Lo que Herrigel contaba con una flecha, esto lo mide con un buscapersonas</h2>
+    <p class="bajada rev d2">"Positividad" está en tu lista de gustos desde el primer día (15/07), al lado de wellness y autosuperación. De ahí ya te traje fábulas (Bach, Mackesy) y estoicismo (Holiday) — pero nunca el campo académico que se dedica en serio a estudiar qué hace que un momento se sienta pleno. Ese campo tiene nombre: psicología positiva. Y este es el libro que la fundó.</p>
+    <p class="parr rev d2">Csikszentmihalyi (se pronuncia más o menos "chik-sent-mi-hái") pasó los años 70 y 80 repartiendo buscapersonas a miles de voluntarios: sonaban al azar ocho veces al día y la persona anotaba qué estaba haciendo y cuán absorta se sentía. De ahí salió "flow" — el mismo estado sin autoconciencia y sin noción del tiempo que Awa Kenzō le pedía a Herrigel que encontrara soltando el arco, pero acá documentado con datos, no con anécdotas de un dojo.</p>
+    <div class="cita rev d3">«Los mejores momentos suelen ocurrir cuando el cuerpo o la mente de una persona se estiran hasta su límite, en un esfuerzo voluntario por lograr algo difícil y que vale la pena.»<span>Mihaly Csikszentmihalyi — traducción propia, de la introducción de "Flow" (1990).</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">La felicidad no te pasa. Se arma, y hay una receta</h2>
+    <p class="bajada rev d2">La tesis central: contrario a lo que se suele creer, los mejores momentos de la vida no son los pasivos y relajados —ver tele, no hacer nada— sino los de máxima concentración voluntaria en algo desafiante. A ese estado de absorción total, donde la acción y la conciencia se funden y el reloj deja de importar, Csikszentmihalyi lo llama <em>flow</em>: "la experiencia óptima".</p>
+    <p class="parr rev d2">La receta tiene condiciones concretas, no es mística: un desafío que empareje justo con tu nivel de habilidad (ni tan fácil que aburra, ni tan difícil que angustie), metas claras y feedback inmediato de cómo vas. Cuando esas piezas calzan, aparece lo que él llama personalidad "autotélica" — gente que encuentra ese estado en casi cualquier actividad, del ajedrez a lavar los platos, porque dejó de necesitar una recompensa externa para engancharse.</p>
+    <div class="cita rev d3">«El estado en el que la gente está tan involucrada en una actividad que nada más parece importar; la experiencia es tan placentera que la gente la sigue haciendo incluso a gran costo, por el puro placer de hacerla.»<span>Mihaly Csikszentmihalyi — traducción propia, su propia definición de flow, repetida en el libro y en entrevistas posteriores.</span></div>
+  </div>
+</section>
+
+<section class="seccion alt" id="canal">
+  <div class="centro">
+    <p class="kicker rev">Para sentirlo, no solo leerlo</p>
+    <h2 class="titulo rev d1">Tres zonas según cómo calzan desafío y habilidad</h2>
+    <p class="bajada rev d2">La idea que más se cita del libro es este mapa de tres zonas. Tocá cada una:</p>
+    <div class="canal rev d3">
+      <div class="canalGrid" id="canalBox">
+        <div class="zona" data-obs="Mucha habilidad, poco desafío. El ejemplo del propio Csikszentmihalyi: una tarea repetitiva que ya dominás de sobra. La mente se va a otro lado — no hay absorción posible."><span class="ico">😴</span><span class="nombre">Aburrimiento</span><span class="obs"></span></div>
+        <div class="zona abierta" data-obs="Desafío y habilidad emparejados, los dos altos. Acá aparece el flow: metas claras, feedback inmediato, y una concentración tan completa que el 'yo' que evalúa cómo te está yendo se apaga un rato."><span class="ico">🌊</span><span class="nombre">Flow</span><span class="obs">Desafío y habilidad emparejados, los dos altos. Acá aparece el flow: metas claras, feedback inmediato, y una concentración tan completa que el 'yo' que evalúa cómo te está yendo se apaga un rato.</span></div>
+        <div class="zona" data-obs="Mucho desafío, poca habilidad todavía. El resultado no es más esfuerzo — es ansiedad. Bajar la vara del desafío, o subir la habilidad primero, antes de intentar de nuevo."><span class="ico">😬</span><span class="nombre">Ansiedad</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="canal-hint">La misma actividad puede caer en cualquiera de las tres según el día — por eso el libro insiste en que el flow no es una propiedad de la actividad, sino de cómo calza con vos en ese momento.</p>
+  </div>
+</section>
+
+<section class="seccion" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Quién lo escribe</p>
+    <h2 class="titulo rev d1">El que le puso nombre y método al campo, no quien lo resumió después</h2>
+    <p class="bajada rev d2">Mihaly Csikszentmihalyi (1934–2021) fue psicólogo húngaro-estadounidense, profesor en la Universidad de Chicago y después director del Quality of Life Research Center en la Claremont Graduate University. Junto con Martin Seligman fundó formalmente el campo de la psicología positiva a fines de los 90. Su método de muestreo de experiencia (ESM, el "buscapersonas") sigue siendo una herramienta estándar de investigación en psicología hoy.</p>
+    <p class="parr suave rev d3">Mismo perfil que te viene funcionando: Rovelli con la física, Walker con el sueño, Seth con la consciencia — quien hizo la investigación de primera mano, no quien la resume de terceros.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>Flow: The Psychology of Optimal Experience</em>, Harper &amp; Row, 1990. ~340 páginas. Best-seller traducido a más de 30 idiomas, considerado el texto fundacional de la psicología positiva.</dd>
+        <dt>En español</dt><dd><em>Fluir (Flow): Una psicología de la felicidad</em>, editorial Kairós — sí existe traducción y está en stock en Uruguay.</dd>
+        <dt>Vetas que cruza</dt><dd>Positividad — veta declarada por vos el 15/07, nunca antes probada desde el ángulo de psicología positiva académica. Conecta directo con el "soltar el control" de Herrigel (ayer).</dd>
+        <dt>Dónde está en la casa</dt><dd>En ningún lado. Verifiqué título (inglés y "Fluir") y autor contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: solo aparece mencionado de pasada en la lista de 5 ebooks para el vuelo (06/08), nunca como ficha propia.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. Los insights de esta ficha —el estado de flow, el balance desafío-habilidad, la personalidad autotélica, el método del buscapersonas— salen de reseñas y síntesis verificadas (Supersummary, Positive Psychology, reseñas académicas) y de las dos citas del propio autor, ampliamente citadas y verificadas de forma cruzada; no es un resumen del libro completo, que profundiza cada zona con casos de atletas, artistas y trabajadores reales.</p>
+      <p><b>Nota de honestidad:</b> el libro tiene más de 30 años y algunas de sus afirmaciones sobre neurociencia son anteriores a la neuroimagen moderna — investigación posterior refinó varios de sus mecanismos propuestos sin tirar abajo la idea central, que sigue vigente y ampliamente replicada.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Conseguirlo</p>
+    <h2 class="titulo rev d1">En inglés o en español, con audiolibro</h2>
+    <p class="bajada rev d2">Lo busqué hoy en Buscalibre Uruguay: la edición en inglés (Harper Perennial, tapa blanda) está a $735 pesos uruguayos, con más de 100 unidades en stock; la traducción al español "Fluir" (Kairós) está a $893. También existe en Google Play como ebook y como audiolibro narrado por Donald Corren — verificado por búsqueda cruzada título+autor+narrador, Google Play bloquea la verificación automática por link.</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=Flow+Mihaly+Csikszentmihalyi">Conseguilo en inglés (desde ~$735 UYU)</a>
+      <a href="https://www.buscalibre.uy/libros/search/?q=Fluir+Mihaly+Csikszentmihalyi">En español, "Fluir" (~$893 UYU)</a>
+      <a href="https://play.google.com/store/books/details?id=QVjPsd1UukEC">📱 Ebook en Google Play Books</a>
+      <a href="https://play.google.com/store/audiobooks/details?id=AQAAAEDSjzfP9M">🎧 Audiolibro en Google Play (narrado por Donald Corren)</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d2">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-27-csikszentmihalyi-flow','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-27-csikszentmihalyi-flow','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-27-csikszentmihalyi-flow','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-27-csikszentmihalyi-flow','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-27-csikszentmihalyi-flow','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-27-csikszentmihalyi-flow','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-27-csikszentmihalyi-flow','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-27-csikszentmihalyi-flow','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-27-csikszentmihalyi-flow','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-27-csikszentmihalyi-flow" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-27-csikszentmihalyi-flow" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-27-csikszentmihalyi-flow',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">«No es lo que nos pasa lo que determina la felicidad, sino cómo hacemos sentido de eso que nos pasa.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">Mihaly Csikszentmihalyi, la idea que resume el libro entero.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para Andy · datos verificados contra reseñas y síntesis de Supersummary, Positive Psychology y Blinkist, citas del propio autor verificadas de forma cruzada, y el stock de Buscalibre Uruguay, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  var of=$('#ondasFx');
+  if(of){
+    for(var i=0;i<7;i++){
+      var s=document.createElement('span');
+      s.style.top=(10+i*12)+'%';
+      s.style.animationDelay=(i*.8)+'s';
+      of.appendChild(s);
+    }
+  }
+
+  $$('#canalBox .zona').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#canalBox .zona').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

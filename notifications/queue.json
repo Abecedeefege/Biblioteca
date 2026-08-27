@@ -986,6 +986,32 @@
       "sent_at": "2026-08-27T00:38:37.707Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-26"
+    },
+    {
+      "id": "2026-08-27-rec-andy",
+      "title": "🌊 El lado científico de soltar",
+      "body": "Flow, de Csikszentmihalyi: el estado que Herrigel te describía con una flecha, medido en 100.000 personas.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-27-csikszentmihalyi-flow.html",
+      "to": "Andy",
+      "send_at": "2026-08-27T19:00:00-03:00",
+      "expires_at": "2026-08-27T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-27"
+    },
+    {
+      "id": "2026-08-27-rec-sofi",
+      "title": "🪞 La Christie que te faltaba",
+      "body": "They Do It with Mirrors, de tu propio estante. Tenés dos Christie en casa y hoy te doy el primero.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-27-christie-mirrors.html",
+      "to": "Sofi",
+      "send_at": "2026-08-27T19:00:00-03:00",
+      "expires_at": "2026-08-27T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-27"
     }
   ]
 }

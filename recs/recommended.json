@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-26T16:30:00-03:00",
-  "_feedback_cutoff": "2026-08-26T06:31:19.869Z",
+  "_updated_at": "2026-08-27T16:14:01-03:00",
+  "_feedback_cutoff": "2026-08-27T07:34:08.690Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1511,12 +1511,12 @@
       "notified_by": "2026-08-26-rec-andy",
       "why": "Regimen DIARIO: ayer (25/08) Andy tuvo nuevo (Seth) -> hoy le toca redescubrimiento, alternancia respetada. Elegido L4-010 (Zen en el arte del tiro con arco, Herrigel), primer libro del banco REDESCUB del PROFILE, nunca antes usado. Cruza sus dos vetas declaradas el 15/07 (espiritualidad oriental + wellness) desde un angulo nuevo -- soltar el control en vez de construir un habito -- que conecta con el patron de dwell alto sin voto que vino mostrando en Walker (376s/100%) y Mackesy (140s/80%). GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- nunca tuvo ficha propia. Sin entrada en data/enrichment.json mas alla de anio de publicacion (read_status desconocido, tratado como no leido). Contenido verificado contra la entrada de Wikipedia sobre el libro y citas repetidas de forma consistente en compilaciones y resenas de la edicion en espanol (Kier/Gaia). Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche). Regla de audiolibros (24/08): no existe edicion en espanol en Google Play Books para este titulo puntual, se ofrece el audiolibro original en ingles (narrado por Ralph Blum), verificado por busqueda cruzada.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "veredicto": "me_tienta",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 175
       },
-      "learning": null
+      "learning": "Procesado 27/08 (eventos del mismo dia, 07:27-07:34): click al push + dwell 175s/34% scroll + veredicto 'me_tienta' + reaccion 'like'. Rompe la racha de 'lee entero y no vota' -- primer voto real desde Walker (23/08). Señal MIXTA a anotar: a la pregunta de compromiso fisico 'leer-esta-noche' contesto 'ya_leido' (el libro es MAS viejo de lo que data/enrichment.json reflejaba -- no tenia entrada de lectura, se asumio 'no leido' y resulto ser lectura previa), pero igual voto 'me_tienta' en vez de 'ya_lo_lei' -- interes real en volver a agarrarlo, no solo puntero de veta acertada. Aprendizaje para la guardia: la ausencia de entrada en enrichment.json NO garantiza que el libro este sin leer; tratarlo como 'no leido' sigue siendo la mejor apuesta por defecto pero no es certeza. Acierto de puntera confirmado en oriental nivel 2 (angulo 'soltar' vs 'construir') y el formato (reaccion 'like') sigue funcionando."
     },
     {
       "id": "2026-08-26-haig-the-humans",
@@ -1535,6 +1535,57 @@
       "page": "recs/2026-08-26-haig-the-humans.html",
       "notified_by": "2026-08-26-rec-sofi",
       "why": "Regimen DIARIO: ayer (25/08) Sofi tuvo redescubrimiento (Doyle, Baskerville) -> hoy le toca nuevo, alternancia respetada. Van 6 fichas seguidas de Sofi (20 al 25/08) sin NINGUN evento en sync/engagement.json, ni un solo page_visit, pese a subscription.json 'active' y push entregado con status_code 201 en las 6. Esto ya no se trata como problema de contenido/formato (se probaron 6 generos distintos: fantasia calida, gotico, cozy fantasy, historico, cozy sequel, misterio clasico) sino como probable problema de entrega/permisos en su dispositivo -- escalado explicito en el reporte de hoy en vez de seguir iterando formato dentro de la ficha (que ya se probo el 25/08 sin resultado). Elegido igual el mejor candidato posible para si el canal se destraba: Matt Haig, 'The Humans' -- MISMO autor que le dio su UNICO acierto pleno confirmado (La biblioteca de medianoche, 27/07, lo_quiero+love), pero libro y tono distintos (ciencia ficcion con humor, no fabula contemplativa) para no repetir literalmente la ficha que funciono. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- no esta en casa, la unica ficha previa de Haig fue un libro distinto. Contenido (premisa, estructura, la lista 'Advice for a Human' de 97 items, el personaje del perro Newton) verificado contra resenas de Kirkus Reviews y Publishers Weekly y la ficha oficial de Canongate; citas verificadas contra compilaciones que las repiten de forma consistente en ingles, traduccion propia. Precio verificado hoy en Buscalibre Uruguay via JSON-LD del producto: edicion en ingles (Canongate, tapa blanda) en stock a $883 UYU (200 OK); edicion en espanol tambien tiene resultados reales en Buscalibre.uy pero sin precio de producto confirmado, se linkea sin afirmar precio. Google Play: ebook y audiolibro en ingles (narrado por Mark Meadows) verificados por busqueda cruzada titulo+autor+narrador.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-27-csikszentmihalyi-flow",
+      "date": "2026-08-27",
+      "kind": "nuevo",
+      "title": "Flow: The Psychology of Optimal Experience",
+      "author": "Mihaly Csikszentmihalyi",
+      "language": "en",
+      "topics": [
+        "positividad",
+        "psicologia-positiva",
+        "wellness",
+        "autosuperacion"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-08-27-csikszentmihalyi-flow.html",
+      "notified_by": "2026-08-27-rec-andy",
+      "why": "Regimen DIARIO: ayer (26/08) Andy tuvo redescubrimiento (Herrigel) -> hoy le toca nuevo, alternancia respetada. Herrigel rompio la racha de dwell-sin-voto (me_tienta + reaccion like) en la veta oriental/soltar-control -- en vez de repetir esa misma veta dos dias seguidos, se abre una veta hermana declarada por Andy el 15/07 pero nunca antes probada en el banco: 'positividad' via psicologia positiva academica. Elegido Csikszentmihalyi, 'Flow' (1990) -- el libro fundacional del campo, con el mismo perfil de autoridad real que le vino funcionando (Rovelli en fisica, Walker en sueno, Seth en consciencia): el propio investigador que acuno el concepto y lo estudio empiricamente en mas de 100.000 personas con el Experience Sampling Method, no un divulgador de segunda mano. Conecta directo con Herrigel de ayer -- el estado de 'flow' es la version cientifica occidental, medida y replicada en laboratorio, de lo que el arquero zen describia de forma anecdotica (accion sin autoconciencia, ego que se disuelve, nocion del tiempo alterada) -- se declara este puente explicito en la ficha. GUARDIA: verificado titulo (ingles y 'Fluir' en espanol) y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- unica mencion previa fue de pasada en la lista de 5 ebooks para el vuelo (06/08, kind:viaje, no cuenta como ficha propia ni para la alternancia). Contenido (estado de flow, balance desafio-habilidad, personalidad autotelica, metodologia del beeper/ESM) verificado contra multiples resenas y sintesis (Supersummary, Blinkist, Positive Psychology) y dos citas reales del propio autor, ampliamente repetidas y verificadas de forma cruzada (no traducidas por mi, en ingles con traduccion propia al pie). Precio verificado hoy en Buscalibre Uruguay via el producto directo: edicion en ingles (Harper Perennial 2008) a $735 UYU (200 OK, +100 unidades en stock), traduccion 'Fluir' (Kairos) a $893 UYU (200 OK). Google Play: ebook (id QVjPsd1UukEC) y audiolibro en ingles narrado por Donald Corren (id AQAAAEDSjzfP9M), ambos verificados por busqueda cruzada titulo+autor+narrador -- Google Play sigue bloqueando la verificacion automatica por link (403 a cualquier bot).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-27-christie-mirrors",
+      "date": "2026-08-27",
+      "kind": "redescubrimiento",
+      "title": "They Do It with Mirrors",
+      "author": "Agatha Christie",
+      "language": "en",
+      "topics": [
+        "misterio",
+        "clasico",
+        "detective"
+      ],
+      "book_ref": "M5-021",
+      "audience": "sofi",
+      "page": "recs/2026-08-27-christie-mirrors.html",
+      "notified_by": "2026-08-27-rec-sofi",
+      "why": "Regimen DIARIO: ayer (26/08) Sofi tuvo nuevo (Haig) -> hoy le toca redescubrimiento, alternancia respetada. Van 7 fichas seguidas de Sofi (20 al 26/08) sin NINGUN evento en sync/engagement.json -- la escalacion ya fue reportada explicita a Andy el 26/08 como probable problema tecnico de entrega/permisos, no de contenido (6 generos distintos probados sin ninguna apertura). No se repite el diagnostico dentro de la ficha de hoy (ya se pregunto el 25/08 sin resultado, y el reporte ya llego a Andy) -- se prioriza en cambio dar el mejor libro posible por si el canal se destraba. Del banco 'limpio' del PROFILE (Sherlock x4 mas, Christie x2, Peters, Bennett libro 2) se descarta otro Sherlock por repetir el autor usado hace solo 2 turnos (Baskerville, 25/08) y se elige Agatha Christie -- la autora fundacional del genero misterio/detective que Sofi declara como gusto central, nunca antes recomendada pese a tener DOS titulos propios en el estante M5 (M5-020 y M5-021). Entre los dos se elige M5-021 'They Do It with Mirrors' (Miss Marple, 1952) sobre M5-020 'The Secret of Chimneys' (1925, aventura/comedia mas liviana) por tono mas cercano a sus aciertos confirmados (Dicker Harry Quebert, misterio con atmosfera de casa/familia cerrada) -- ambienta en una mansion inglesa con un instituto de reforma para menores delincuentes funcionando adentro, con Miss Marple llamada por una vieja amiga preocupada. GUARDIA: verificado titulo y autora contra los 437 libros del catalogo completo (unico match esperado, M5-021) y contra todo recommended.json: nunca tuvo ficha propia. Sin entrada en data/enrichment.json mas alla de anio de publicacion (read_status desconocido, tratado como no leido, con la salvedad estandar del Kindle paralelo de Sofi). Contenido (ambientacion, personajes principales, el origen del titulo como jerga de ilusionismo de escenario) verificado contra Wikipedia y la ficha oficial de agathachristie.com; CERO detalles de quien es el o la asesina, ningun spoiler del misterio. No se encontro audiolibro de esta edicion puntual en Google Play por busqueda cruzada -> no se linkea, sin inventar. Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche).",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
