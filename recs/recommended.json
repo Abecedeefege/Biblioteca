@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-27T16:14:01-03:00",
+  "_updated_at": "2026-08-28T16:30:00-03:00",
   "_feedback_cutoff": "2026-08-27T07:34:08.690Z",
   "recommendations": [
     {
@@ -1586,6 +1586,56 @@
       "page": "recs/2026-08-27-christie-mirrors.html",
       "notified_by": "2026-08-27-rec-sofi",
       "why": "Regimen DIARIO: ayer (26/08) Sofi tuvo nuevo (Haig) -> hoy le toca redescubrimiento, alternancia respetada. Van 7 fichas seguidas de Sofi (20 al 26/08) sin NINGUN evento en sync/engagement.json -- la escalacion ya fue reportada explicita a Andy el 26/08 como probable problema tecnico de entrega/permisos, no de contenido (6 generos distintos probados sin ninguna apertura). No se repite el diagnostico dentro de la ficha de hoy (ya se pregunto el 25/08 sin resultado, y el reporte ya llego a Andy) -- se prioriza en cambio dar el mejor libro posible por si el canal se destraba. Del banco 'limpio' del PROFILE (Sherlock x4 mas, Christie x2, Peters, Bennett libro 2) se descarta otro Sherlock por repetir el autor usado hace solo 2 turnos (Baskerville, 25/08) y se elige Agatha Christie -- la autora fundacional del genero misterio/detective que Sofi declara como gusto central, nunca antes recomendada pese a tener DOS titulos propios en el estante M5 (M5-020 y M5-021). Entre los dos se elige M5-021 'They Do It with Mirrors' (Miss Marple, 1952) sobre M5-020 'The Secret of Chimneys' (1925, aventura/comedia mas liviana) por tono mas cercano a sus aciertos confirmados (Dicker Harry Quebert, misterio con atmosfera de casa/familia cerrada) -- ambienta en una mansion inglesa con un instituto de reforma para menores delincuentes funcionando adentro, con Miss Marple llamada por una vieja amiga preocupada. GUARDIA: verificado titulo y autora contra los 437 libros del catalogo completo (unico match esperado, M5-021) y contra todo recommended.json: nunca tuvo ficha propia. Sin entrada en data/enrichment.json mas alla de anio de publicacion (read_status desconocido, tratado como no leido, con la salvedad estandar del Kindle paralelo de Sofi). Contenido (ambientacion, personajes principales, el origen del titulo como jerga de ilusionismo de escenario) verificado contra Wikipedia y la ficha oficial de agathachristie.com; CERO detalles de quien es el o la asesina, ningun spoiler del misterio. No se encontro audiolibro de esta edicion puntual en Google Play por busqueda cruzada -> no se linkea, sin inventar. Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-28-huxley-doors-perception",
+      "date": "2026-08-28",
+      "kind": "redescubrimiento",
+      "title": "The Doors of Perception",
+      "author": "Aldous Huxley",
+      "language": "en",
+      "topics": [
+        "neurociencia",
+        "conciencia",
+        "espiritualidad-oriental"
+      ],
+      "book_ref": "L4-014",
+      "audience": "andy",
+      "page": "recs/2026-08-28-huxley-doors-perception.html",
+      "notified_by": "2026-08-28-rec-andy",
+      "why": "Redescubrimiento L4-014: Pollan (23/07) citó a Huxley como una de sus tres fuentes (junto con Leary y Doidge) pero nunca le dimos ficha propia -- corrige esa secuencia. Continua la veta neurociencia/mente abierta con Seth (25/08, sin veredicto todavia) con el texto original de 1954 sobre la valvula reductora del cerebro. Verificado: solo mencionado como referencia de otro libro en recommended.json, nunca tuvo ficha propia; sin read_status en enrichment.json.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-28-klune-lives-puppets",
+      "date": "2026-08-28",
+      "kind": "nuevo",
+      "title": "In the Lives of Puppets",
+      "author": "TJ Klune",
+      "language": "en",
+      "topics": [
+        "fantasia-calida",
+        "familia-elegida",
+        "aventura"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-08-28-klune-lives-puppets.html",
+      "notified_by": "2026-08-28-rec-sofi",
+      "why": "Nuevo para Sofi: mismo autor de su unica senal 100% confirmada (Casa en el mar mas azul, me_tienta+love, 05/08), pero cambio deliberado de genero (aventura de robots/familia elegida, no romance ni orfanato magico) para separar la variable \"autor\" de la variable \"tipo de historia\", dado que sus dos Klune posteriores (Puerta, Somewhere) salieron mudos en la misma ventana del problema tecnico del canal. Cero crimen/gore. Verificado titulo+autor contra el catalogo completo de 437 libros y contra recommended.json: sin coincidencias.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

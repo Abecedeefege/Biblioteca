@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🤖 In the Lives of Puppets · Para vos, Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#F3EFE2;
+  --papel2:#E7E9D9;
+  --tinta:#1F2E28;
+  --bruma:#5C6D63;
+  --musgo:#3B6B54;
+  --musgo-hi:#4E8A6C;
+  --cobre:#C06A3B;
+  --cobre-hi:#DB8552;
+  --tinta-suave:rgba(31,46,40,.15);
+  --serif:'Baloo 2',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--musgo);color:var(--papel)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:600}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--cobre);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(31,46,40,.08)}
+.progreso i{display:block;height:100%;width:0;background:var(--musgo)}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--tinta-suave);border-radius:999px;background:rgba(243,239,226,.88);backdrop-filter:blur(4px)}
+.back:hover{color:var(--musgo);border-color:var(--musgo)}
+
+.seccion{padding:clamp(3.6rem,9vw,6.5rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:760px;margin:0 auto}
+.kicker{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cobre);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.1vw,2.2rem);line-height:1.26;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--tinta)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: bosque + arbol de casa-robot ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 7rem;overflow:hidden;background:linear-gradient(180deg,var(--papel2),var(--papel) 65%)}
+.bosque-hero{position:absolute;bottom:0;left:0;right:0;z-index:0;opacity:.85}
+.hero-int{position:relative;z-index:2;max-width:640px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--musgo);border:1px solid rgba(59,107,84,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.35rem}
+.hero h1{font-size:clamp(1.5rem,.95rem + 3vw,2.3rem);line-height:1.2}
+.hero .autor{margin-top:1rem;font-family:var(--serif);font-weight:600;font-size:1.02rem;color:var(--cobre)}
+.hero .sub{color:var(--bruma);margin:1.4rem auto 2.2rem;max-width:46ch}
+.cta-btn{display:inline-block;background:var(--tinta);color:var(--papel);border:none;border-radius:999px;padding:.9rem 1.8rem;font-weight:600;font-size:.98rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--musgo);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.3}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.hero-hint{animation:none;opacity:.6}}
+
+.alt{background:var(--papel2)}
+.cita{border-left:3px solid var(--cobre);padding:.2rem 0 .2rem 1.15rem;margin:1.9rem 0;font-family:var(--serif);font-weight:500;font-size:clamp(1.02rem,1rem + .45vw,1.18rem);line-height:1.55;color:var(--tinta)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-weight:400;font-size:.78rem;letter-spacing:.03em;color:var(--bruma)}
+
+/* ---------- elegí tu robot ---------- */
+.familia-wrap{margin:1.9rem 0 1rem}
+.familia{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+@media(min-width:520px){.familia{grid-template-columns:repeat(4,1fr)}}
+.bot{background:rgba(31,46,40,.04);border:1px solid var(--tinta-suave);border-radius:14px;padding:1rem .8rem;text-align:center;transition:all .2s ease}
+.bot .emoji{font-size:2rem;display:block;margin-bottom:.5rem}
+.bot .nombre{font-family:var(--serif);font-weight:600;font-size:.92rem}
+.bot .desc{color:var(--bruma);font-size:.78rem;margin-top:.3rem;line-height:1.4}
+.bot:not(:disabled):hover{border-color:var(--cobre);transform:translateY(-2px)}
+.bot.elegido{background:rgba(192,106,59,.14);border-color:var(--cobre)}
+.familia-hint{margin-top:.9rem;color:var(--bruma);font-size:.85rem;text-align:center}
+
+.ficha{background:rgba(31,46,40,.04);border:1px solid var(--tinta-suave);border-radius:14px;padding:1.3rem 1.2rem;margin-top:1.5rem}
+.ficha dl{display:grid;gap:.75rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--cobre);font-weight:700}
+.ficha dd{font-size:.95rem;color:var(--tinta);margin-top:.15rem}
+.honestidad{background:rgba(92,109,99,.1);border:1px solid rgba(92,109,99,.3);border-radius:14px;padding:1.2rem;margin-top:1.4rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--bruma);font-weight:700;margin-bottom:.55rem}
+.honestidad p{font-size:.94rem;line-height:1.6;color:var(--tinta)}
+.honestidad p + p{margin-top:.8rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.compra a{display:inline-block;background:var(--tinta);color:var(--papel);border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--cobre);transform:translateY(-2px)}
+
+.cta,.react{background:rgba(31,46,40,.05);border:1px solid var(--tinta-suave);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.2rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(31,46,40,.07);color:var(--tinta);border:1px solid var(--tinta-suave);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--cobre);color:var(--cobre);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--cobre);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--tinta)}
+
+.cierre{text-align:center;padding-bottom:4.5rem}
+.cierre .frase{font-family:var(--serif);font-weight:600;font-size:clamp(1.05rem,1rem + .9vw,1.4rem);line-height:1.5;max-width:32ch;margin:0 auto 1.6rem}
+footer{border-top:1px solid var(--tinta-suave);padding:1.8rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--cobre);text-decoration:none;font-weight:600;border-bottom:1px solid var(--cobre);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <svg class="bosque-hero" viewBox="0 0 400 180" preserveAspectRatio="xMidYMax slice" aria-hidden="true" height="220">
+    <g fill="none" stroke="#3B6B54" stroke-width="2" opacity=".45">
+      <path d="M40 180 L40 90 M40 100 L20 80 M40 110 L60 90 M40 120 L15 100"/>
+      <path d="M120 180 L120 70 M120 85 L95 60 M120 95 L145 65 M120 108 L100 82"/>
+      <path d="M300 180 L300 85 M300 95 L275 70 M300 105 L322 78"/>
+      <path d="M360 180 L360 100 M360 110 L340 88"/>
+    </g>
+  </svg>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · libro nuevo</span>
+    <h1>In the Lives of Puppets</h1>
+    <p class="autor">TJ Klune · 2023</p>
+    <p class="sub">El mismo autor de <em>La casa en el mar más azul</em> — tu único "me tienta + love" confirmado hasta ahora. Pero este es otro género completo: nada de orfanato mágico ni isla. Es una familia de robots viviendo escondida en un árbol, y un chico humano que es, sin saberlo, el centro de todo. Aviso ya: cero crimen, cero misterio. Un experimento distinto.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traigo</p>
+    <h2 class="titulo rev d1">El mismo Klune, un género distinto</h2>
+    <p class="bajada rev d2">Con Klune tenés una sola señal 100% confirmada — <em>La casa en el mar más azul</em>, me tienta + love, el 05/08 — y dos fichas más de él que salieron sin ningún eco (Puerta de los susurros, Somewhere Beyond the Sea), en la misma ventana en la que casi todas tus fichas quedaron mudas por un problema técnico que seguimos sin resolver del todo. No sé todavía si esas dos no te gustaron o simplemente no las viste.</p>
+    <p class="parr rev d2">Por eso hoy no repito el mismo tipo de historia — cambio de género adentro del mismo autor. Si lo que te enganchó de <em>Casa en el mar más azul</em> fue el humor cálido y la familia elegida más que el escenario mágico-infantil puntual, esto debería funcionar igual. Si fue específicamente esa historia, esta ficha te lo va a decir rápido: es de robots, no de niños mágicos.</p>
+  </div>
+</section>
+
+<section class="seccion" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Una familia de robots, escondida en un árbol</h2>
+    <p class="bajada rev d2">En un bosque que ya no tiene nombre en los mapas, hay una casa construida entre las ramas. Ahí viven Victor, el único humano, criado desde bebé por Gio — un inventor robot que en realidad no es del todo lo que aparenta ser. Con ellos: Rambo, una aspiradora hiperactiva y desesperada por que la quieran, y la Enfermera Ratched, un androide médico con un sentido del humor filoso y nada de paciencia. Están escondidos, y están a salvo. Hasta que Victor repara un androide caído en el bosque, etiquetado "HAP".</p>
+    <p class="parr rev d2">Hap despierta con memoria de un pasado oscuro compartido con Gio: los dos vienen de un mundo donde los robots cazaban humanos. Sin querer, Hap delata dónde están — y Gio es capturado y llevado de vuelta a su antiguo laboratorio, en la Ciudad de los Sueños Eléctricos. Victor, Rambo, Nurse Ratched y el propio Hap tienen que cruzar un país hostil para rescatarlo antes de que lo desarmen o lo reprogramen.</p>
+    <div class="cita rev d3">No importa qué pase, seguimos juntos. No dejes que nos separen. Somos más fuertes juntos que separados.<span>Uno de los cuatro, en algún punto del viaje — cita repetida en compilaciones de reseñas del libro.</span></div>
+  </div>
+</section>
+
+<section class="seccion alt" id="familia">
+  <div class="centro">
+    <p class="kicker rev">Antes de seguir</p>
+    <h2 class="titulo rev d1">¿A cuál te llevarías a tu casa?</h2>
+    <p class="bajada rev d2">Cuatro personajes, cuatro personalidades bien distintas. Elegí uno — no hay respuesta correcta, pero me sirve para saber qué tipo de personaje te engancha más (como con Joyce, en su momento).</p>
+    <div class="familia-wrap rev d3">
+      <div class="familia" id="familiaBotones">
+        <button class="bot" data-v="rambo" onclick="elegirBot(this,'rambo')"><span class="emoji">🧹</span><span class="nombre">Rambo</span><span class="desc">Aspiradora ansiosa, ama sin límite, le teme al abandono.</span></button>
+        <button class="bot" data-v="nurse_ratched" onclick="elegirBot(this,'nurse_ratched')"><span class="emoji">💉</span><span class="nombre">Nurse Ratched</span><span class="desc">Androide médico. Humor negro, cero filtro, mucha lealtad.</span></button>
+        <button class="bot" data-v="gio" onclick="elegirBot(this,'gio')"><span class="emoji">🌳</span><span class="nombre">Gio</span><span class="desc">El padre inventor. Amable, con un pasado que esconde.</span></button>
+        <button class="bot" data-v="hap" onclick="elegirBot(this,'hap')"><span class="emoji">⚙️</span><span class="nombre">Hap</span><span class="desc">El androide roto. El más complicado de los cuatro.</span></button>
+      </div>
+      <p class="familia-hint" id="familiaHint">Tocá uno de los cuatro.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Quién lo escribe</p>
+    <h2 class="titulo rev d1">Su novela más larga hasta ahora</h2>
+    <p class="bajada rev d2">TJ Klune publicó esto en abril de 2023, después de <em>La casa en el mar más azul</em> (2020) y <em>Bajo la puerta de los susurros</em> (2022) — los dos que ya tenés en tu ficha. Es, con 432 páginas, la más larga de las tres, y una adaptación libre y declarada de <em>Las aventuras de Pinocho</em>: un padre que crea vida por métodos poco ortodoxos, y un hijo que tiene que cruzar un país peligroso para volver a casa. Encima de esa base, Klune arma su marca de siempre — familia elegida, humor rápido, calidez sin cursilería — pero esta vez con robots en vez de personas queer o criaturas mágicas.</p>
+    <p class="parr suave rev d3">Si tu duda es "¿esto es una historia de amor como las otras dos?": no exactamente. Es más aventura y familia que romance — otra señal de que es un experimento de género distinto, no una repetición.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de conseguirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Edición</dt><dd>Tor Books, tapa blanda/dura, 432 páginas. Publicado el 25 de abril de 2023. En inglés — no confirmé edición en español todavía.</dd>
+        <dt>Vetas que cruza</dt><dd>Fantasía cálida / familia elegida (tu veta confirmada con Klune) + un poco de aventura-viaje, algo que no probamos antes con vos.</dd>
+        <dt>Tono</dt><dd>Ninguna escena de crimen ni gore — hay tensión y un enemigo real, pero el registro general es cálido y con humor, como el resto de Klune.</dd>
+        <dt>Guardia</dt><dd>Verificado título y autor contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: sin coincidencias. No está en la casa.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La sinopsis está armada a partir de reseñas y la ficha oficial de Macmillan/Tor; las citas están tomadas de la página de citas de Goodreads para este libro, que las atribuye a personajes puntuales — las uso sin poner el nombre exacto del personaje que la dice cuando la fuente no lo deja 100% claro, para no inventar una atribución.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Si te copa</p>
+    <h2 class="titulo rev d1">Dónde conseguirlo</h2>
+    <p class="bajada rev d2">Verificado hoy en Buscalibre Uruguay: la edición en inglés de Pan Macmillan (tapa blanda) está con 50% de descuento a $882 UYU (~USD 22), y también hay tapa dura de Tor a $1.202 UYU. El link de abajo va directo a los resultados reales — revisá el precio del día. En Google Play Books hay ebook y audiolibro en inglés (narrado por Daniel Henning), verificados por búsqueda cruzada título+autor+narrador (Google Play bloquea la verificación automática por link, devuelve 403 a cualquier bot):</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=In+the+Lives+of+Puppets+TJ+Klune">Conseguilo (~USD 22)</a>
+      <a href="https://play.google.com/store/books/details/TJ_Klune_In_the_Lives_of_Puppets?id=FIVrEAAAQBAJ">📱 Ebook en Google Play Books</a>
+      <a href="https://play.google.com/store/audiobooks/details?id=AQAAAEACkF_QTM">🎧 Audiolibro en Google Play (narrado por Daniel Henning)</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d2">
+      <button onclick="engageAnswer('rec-veredicto:2026-08-28-klune-lives-puppets','lo_quiero',this)">📚 Lo quiero</button>
+      <button onclick="engageAnswer('rec-veredicto:2026-08-28-klune-lives-puppets','me_tienta',this)">🤔 Me tienta</button>
+      <button onclick="engageAnswer('rec-veredicto:2026-08-28-klune-lives-puppets','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+      <button onclick="engageAnswer('rec-veredicto:2026-08-28-klune-lives-puppets','ya_lo_lei',this)">✔️ Ya lo leí</button>
+      <button onclick="engageAnswer('rec-veredicto:2026-08-28-klune-lives-puppets','no_me_va',this)">🙅 No me va</button>
+      <span class="q-hint"></span>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-28-klune-lives-puppets','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-28-klune-lives-puppets','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-28-klune-lives-puppets','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-28-klune-lives-puppets','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-28-klune-lives-puppets" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-28-klune-lives-puppets" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no… (¿te están llegando estos avisos?)"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(31,46,40,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-28-klune-lives-puppets',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">«La humanidad es horrible, furiosa y violenta. Pero también somos mágicos y musicales. Bailamos. Cantamos. Creamos.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">Uno de los robots, sobre por qué vale la pena proteger a los humanos que ama.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para vos, Sofi · datos verificados contra la ficha oficial de Macmillan/Tor Books, reseñas (Chicago Review of Books, Bookshelf Fantasies) y la página de citas de Goodreads del libro, y el stock de Buscalibre Uruguay, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+})();
+
+var botElegido=false;
+function elegirBot(btn,valor){
+  if(botElegido) return;
+  botElegido=true;
+  document.querySelectorAll('#familiaBotones .bot').forEach(function(b){ b.disabled=true; });
+  btn.classList.add('elegido');
+  window.engageAnswer('rec-robot:2026-08-28-klune-lives-puppets', valor, btn);
+  document.getElementById('familiaHint').textContent='Anotado — vamos a ver si acertaste con quién más te copó del libro.';
+}
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

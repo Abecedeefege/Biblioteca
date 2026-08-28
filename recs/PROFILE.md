@@ -35,40 +35,45 @@ de cada ficha. Se sigue mandando su ficha diaria igual (régimen no
 negociable), priorizando redescub confirmado en casa sobre "nuevos"
 experimentales, por si el canal se destraba.
 
-## 📅 27/08 — hoy
-Andy: procesado el evento más claro en semanas — click al push de Herrigel
-(07:27), dwell 175s/34%, **veredicto `me_tienta` + reacción `like`**: rompe
-la racha de "lee entero y no vota" que venía desde Walker. Señal mixta a
-anotar: a "¿lo agarrás esta noche?" contestó `ya_leido` (el libro es más
-viejo de lo que decía `enrichment.json`, que no tenía entrada de lectura) —
-guardia actualizada: ausencia de entrada NO es garantía de "no leído".
-Sofi: **séptima ficha muda seguida** (20 al 26/08), cero eventos otra vez —
-la escalación ya está reportada a Andy (26/08), no se repite el diagnóstico
-dentro de la ficha de hoy.
-Régimen: ayer Andy tuvo redescub → hoy nuevo; Sofi tuvo nuevo → hoy
-redescub. Andy → **Csikszentmihalyi, *Flow*** (nuevo): abre la veta
-"positividad" declarada el día 1 y nunca antes probada a fondo (solo
-mención de pasada en la lista de vuelo del 06/08); puente explícito con
-Herrigel de ayer (el mismo estado sin ego, medido en laboratorio en vez de
-descrito con una flecha). Sofi → **Agatha Christie, *They Do It with
-Mirrors*** (M5-021, redescub): la autora fundacional del género que
-declara como gusto central y que tiene DOS veces en su propio estante sin
-que nunca le haya dado ficha — se prioriza sobre otro Sherlock para variar
-autor (Baskerville fue hace solo 2 turnos). Pushes `2026-08-27-rec-andy` /
-`-rec-sofi` (19:00).
+## 🔧 Incidente 27/08→28/08 (resuelto solo) + corrección de memoria
+`2026-08-27-rec-andy`/`-rec-sofi` (Flow/Mirrors) nunca se entregaron:
+`status:"expired"`, sin fila en `send_log.json`. Causa en Actions: el
+workflow `push-dispatch` dejó de correr entre 19:21 UTC del 27/08 y 03:35
+UTC del 28/08 (~8h), tragándose la ventana `send_at`→`expires_at` de ambos.
+Se recuperó solo; es `.github/` (NO TOCAR), solo queda registrado. Flow y
+Mirrors siguen válidas en el hub, sin push. No cuentan como "mudas" de
+Sofi — nadie las vio. De paso, corrijo un error: el acierto Klune
+`me_tienta`+`love` de Sofi NO era "Puerta" (esa entrada tiene `feedback`
+en `null`) — es `2026-08-05-klune-casa-mar-azul`, corregido abajo.
 
-### Log resumido 20–26/08
-20/08 Andy→Brewer *Ansiedad* (redescub) / Sofi→Klune-Puerta (nuevo). 21/08
-Andy→Nestor *Respira* (nuevo, dwell 350s/99%, sin voto) / Sofi→Carey *Heap
-House* (redescub). 22/08 Andy→Raspall *Calmar la mente* (redescub) /
-Sofi→Baldree *Café de leyendas* (nuevo). 23/08 Andy→Walker (nuevo,
-me_tienta + dwell 376s/100% — rompió racha muda de 9) / Sofi→Bennett
-*Windsor Knot* (redescub). 24/08 Andy→Mackesy (redescub, dwell 140s/80%,
-sin voto) / Sofi→Klune *Somewhere Beyond the Sea* (nuevo). 25/08 Andy→Seth
-*Being You* (nuevo, click sin voto) / Sofi→Doyle *Baskerville* (redescub).
-26/08 Andy→Herrigel *Zen tiro con arco* (redescub, **me_tienta + like**) /
-Sofi→Haig *The Humans* (nuevo). Sofi: 7/7 fichas mudas desde el 20/08
-(ver escalación arriba).
+## 📅 28/08 — hoy
+Sin eventos nuevos de feedback (cero en `sync/engagement.json` desde el
+cutoff del 27/08) — ni de Andy ni de Sofi. Consistente con el hallazgo de
+arriba: ninguno de los dos llegó a ver su ficha de ayer porque el push
+nunca salió. Régimen: ayer Andy tuvo nuevo → hoy redescub; Sofi tuvo
+redescub → hoy nuevo. Andy → **Huxley, *The Doors of Perception***
+(L4-014, redescub): Pollan (23/07) lo citó como una de sus tres fuentes
+(con Leary y Doidge) pero nunca tuvo ficha propia — se corrige esa
+secuencia y se profundiza la veta neurociencia/conciencia abierta con Seth
+(25/08, todavía sin veredicto). Sofi → **TJ Klune, *In the Lives of
+Puppets*** (nuevo): mismo autor de su único acierto 100% confirmado (Casa
+en el mar más azul), pero cambio deliberado de género — aventura de
+robots/familia elegida, no romance ni orfanato mágico — para separar la
+variable "autor" de la variable "tipo de historia", ya que sus otros dos
+Klune (Puerta, Somewhere) cayeron mudos en la ventana del problema técnico
+del canal. Pushes `2026-08-28-rec-andy` / `-rec-sofi` encolados 19:00
+-03:00.
+
+### Log resumido 23–27/08
+23/08 Andy→Walker (nuevo, me_tienta+dwell 376s/100%, rompió racha muda de
+9) / Sofi→Bennett *Windsor Knot* (redescub, muda). 24/08 Andy→Mackesy
+(redescub, dwell 140s/80%, sin voto) / Sofi→Klune *Somewhere Beyond the
+Sea* (nuevo, muda). 25/08 Andy→Seth *Being You* (nuevo, click sin voto) /
+Sofi→Doyle *Baskerville* (redescub, muda). 26/08 Andy→Herrigel *Zen tiro
+con arco* (redescub, **me_tienta+like**) / Sofi→Haig *The Humans* (nuevo,
+muda). 27/08 Andy→Csikszentmihalyi *Flow* (nuevo) / Sofi→Christie
+*Mirrors* (redescub) — **no se entregaron por push** (ver incidente
+arriba), no cuentan como mudas por desinterés.
 
 ## 📚 Contexto fijo
 Catálogo: 437 volúmenes (re-extraer `/tmp/catalog.json` cada corrida).
@@ -79,11 +84,14 @@ siempre.
 ### Sofi — vetas confirmadas
 Salas: sala King (R4+R5, 50 libros), salón del crimen (M5), rincón Valeria
 (M6, quemado). Aciertos duros: **Dicker Harry Quebert `lo_quiero`+`love`**
-(17/07); **Klune-Puerta `me_tienta`+`love`** (fantasía cálida); **Haig
+(17/07); **Klune-Casa-mar-azul `me_tienta`+`love`** (05/08, fantasía
+cálida/familia elegida — corregido 28/08, no era "Puerta"); **Haig
 *Biblioteca de medianoche* `lo_quiero`+`love`** (27/07, audiencia todos).
 Todos los "segundos libros" del mismo autor/veta fallaron en silencio:
-Dicker-Baltimore (21/07), Klune-Somewhere (24/08) — no asumir que un
-segundo intento con el mismo autor repite el acierto. Romance contemporáneo
+Dicker-Baltimore (21/07), Klune-Puerta (20/08), Klune-Somewhere (24/08) —
+pero las tres fichas mudas caen dentro de la ventana del problema técnico
+del canal (20/08 en adelante), así que "fallaron" puede ser "no se vieron"
+— no tratar todavía como misses reales de contenido. Romance contemporáneo
 (Henry x2): descartado. **Guardia máxima misterio/cozy**: `ya_lo_lei` en
 King, Katzenbach, Carlisle, Benavent, Henry — sagas masivas ya devoradas
 por Kindle, evitar esos autores puntuales.
@@ -91,17 +99,19 @@ por Kindle, evitar esos autores puntuales.
   M5-024, Carlisle M5-012, Benavent M6-001-009, Henry (ambos), Coyle M5-011,
   Klune-Puerta, Heap House, Bennett-Windsor, Klune-Somewhere, Doyle-
   Baskerville, Haig-Biblioteca-medianoche, Haig-The-Humans (usado 26/08),
-  Christie-Mirrors M5-021 (usado 27/08).
+  Christie-Mirrors M5-021 (usado 27/08, no entregada por push — ver
+  incidente), Klune-In-the-Lives-of-Puppets (usado 28/08).
 - Banco redescub: M5-016 Delany libro 2 (esperar señal de M5-014). NO usar
   M5-022, M5-009, M5-008, M5-002, M6 entero (romance/no visto). Limpios en
   M5: Sherlock x4 más (M5-033/006/034/035/036), Christie M5-020 (*The Secret
   of Chimneys*, más liviana que Mirrors), Peters *Misterio en Egipto*
   (M5-019), S.J. Bennett libro 2.
-- Banco nuevo: resto de TJ Klune (*In the Lives of Puppets*), Backman *Un
-  hombre llamado Ove* (riesgo "ya la vi", película), otro Haig si el canal
-  se confirma vivo (*How to Stop Time*, *Reasons to Stay Alive*).
-  **Pausa de "nuevos" experimentales hasta confirmar que el canal
-  funciona** — priorizar redescub de lo ya confirmado en casa.
+- Banco nuevo: Backman *Un hombre llamado Ove* (riesgo "ya la vi",
+  película), otro Haig si el canal se confirma vivo (*How to Stop Time*,
+  *Reasons to Stay Alive*). TJ Klune usado hoy (Puppets) — no volver a él
+  hasta ver señal real. **Pausa de "nuevos" muy experimentales hasta
+  confirmar que el canal funciona** — priorizar redescub de lo ya
+  confirmado en casa cuando el banco nuevo se achique.
 
 ### Andy — datos duros
 Estante L4 (28 + 5 nuevos agosto). Gustos: wellness, autosuperación,
@@ -126,9 +136,11 @@ segundo voto real desde Walker, el formato sigue funcionando.
   *Bhagavad Gita*), psicología positiva (Haidt, Seligman — Csikszentmihalyi
   usado 27/08), cuerpo (Brewer *Craving Mind*/*Hunger Habit*), hábitos
   (veta abierta 20/08, sin confirmar).
-- Banco redescub: usado 26/08 L4-010 (acierto). Próxima prioridad: L4-014
-  *Doors of Perception*, L4-016 *Budismo para principiantes*, L4-021 *Art
-  of Happiness*, L4-015 *El Alquimista*. Astro: L5-024, L5-021.
+- Banco redescub: usado 26/08 L4-010 (acierto), usado 28/08 L4-014
+  (Huxley). Próxima prioridad: L4-021 *Art of Happiness*, L4-015 *El
+  Alquimista*, L4-016 *Budismo para principiantes* (evitar si oriental
+  se sintió repetido tras Herrigel+Huxley). Astro: L5-024, L5-021
+  (en pausa, ver abajo).
 
 ## 🛡️ Guardia
 "Nuevo": título+autor contra catálogo completo (sin tildes) y contra
@@ -140,16 +152,16 @@ producto directo y leer su JSON-LD `offers.price` (el buscador no lo
 expone). Re-catalogación de agosto: libros M5/M6 con `note:"no visto"` no
 confirmados hasta ver en persona.
 
-## 🔭 Qué mirar (próxima corrida — 28/08, régimen diario)
-Mañana se invierte: Andy redescub, Sofi nuevo. Prioridad: (1) **Sofi —
-¿algo, lo que sea, en Christie-Mirrors o en cualquier notificación?** Van
-7 fichas mudas; si sigue en cero, insistir con Andy en el reporte para que
-confirme en persona con Sofi si le llegan las notis (permiso del navegador,
-modo no molestar, o simplemente no mira el celu) — ya no es un problema
-que una ficha nueva pueda resolver sola. (2) ¿Flow (Csikszentmihalyi)
-genera voto o dwell alto, dado que Herrigel rompió la racha muda? (3)
-¿Being You (Seth) o Mackesy generan voto tardío? Sin señal: Coyle (16/08),
-Delany M5-014, Rovelli 04/08, Rojas 05/08, Thorogood, vuelo-ebooks.
+## 🔭 Qué mirar (próxima corrida — 29/08, régimen diario)
+Mañana se invierte: Andy nuevo, Sofi redescub. (1) Confirmar en
+`send_log.json` que `2026-08-28-rec-andy`/`-rec-sofi` salieron (dispatcher
+recuperado desde 03:35 UTC 28/08) antes de sacar conclusiones sobre Sofi.
+(2) Si Sofi sigue en cero con push confirmado entregado, van casi 3
+semanas — insistir con Andy para que confirme en persona el estado de las
+notis en su teléfono. (3) ¿Flow o Huxley generan voto tardío de Andy? (4)
+`rec-robot:2026-08-28-klune-lives-puppets` — leer qué robot eligió Sofi.
+Sin señal: Coyle, Delany M5-014, Rovelli 04/08, Rojas 05/08, Thorogood,
+vuelo-ebooks, Being You, Mackesy.
 
 ## 🎬 CINE + 🧳 viaje (fuera del ciclo)
 Cine: 1/semana, `todos`, viernes ~19:00. Sofi evita gore/subtítulos
