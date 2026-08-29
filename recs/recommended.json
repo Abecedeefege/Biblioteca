@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-28T16:30:00-03:00",
+  "_updated_at": "2026-08-29T19:05:00-03:00",
   "_feedback_cutoff": "2026-08-27T07:34:08.690Z",
   "recommendations": [
     {
@@ -1636,6 +1636,56 @@
       "page": "recs/2026-08-28-klune-lives-puppets.html",
       "notified_by": "2026-08-28-rec-sofi",
       "why": "Nuevo para Sofi: mismo autor de su unica senal 100% confirmada (Casa en el mar mas azul, me_tienta+love, 05/08), pero cambio deliberado de genero (aventura de robots/familia elegida, no romance ni orfanato magico) para separar la variable \"autor\" de la variable \"tipo de historia\", dado que sus dos Klune posteriores (Puerta, Somewhere) salieron mudos en la misma ventana del problema tecnico del canal. Cero crimen/gore. Verificado titulo+autor contra el catalogo completo de 437 libros y contra recommended.json: sin coincidencias.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-29-fogg-tiny-habits",
+      "date": "2026-08-29",
+      "kind": "nuevo",
+      "title": "Tiny Habits: The Small Changes That Change Everything",
+      "author": "BJ Fogg",
+      "language": "en",
+      "topics": [
+        "habitos",
+        "autosuperacion",
+        "conducta"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-08-29-fogg-tiny-habits.html",
+      "notified_by": "2026-08-29-rec-andy",
+      "why": "Primera prueba real de la veta habitos (abierta 20/08 con el redescub de Brewer, sin senal por el corte del canal). Fogg es la fuente del modelo B=MAP que usan tanto Habitos Atomicos (L4-002, ya en su estante) como el diseno de producto de Instagram (Systrom/Krieger cursaron con el en Stanford, verificado). Evita repetir la veta neurociencia/conciencia del turno anterior (Huxley, 28/08). Verificado titulo+autor contra el catalogo completo y recommended.json: sin coincidencias.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-29-peters-misterio-egipto",
+      "date": "2026-08-29",
+      "kind": "redescubrimiento",
+      "title": "Misterio en Egipto",
+      "author": "Elizabeth Peters",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "aventura",
+        "egiptologia"
+      ],
+      "book_ref": "M5-019",
+      "audience": "sofi",
+      "page": "recs/2026-08-29-peters-misterio-egipto.html",
+      "notified_by": "2026-08-29-rec-sofi",
+      "why": "Redescubrimiento M5 con autora completamente nueva para ella: ni saga masiva ya devorada (King/Christie/Katzenbach/Carlisle) ni autor de moda. Elizabeth Peters (seudonimo de la egiptologa real Barbara Mertz) escribe aventura victoriana con humor, tono mas cerca de Joyce/Osman que de sus libros mas oscuros. Verificado titulo (ingles y espanol) y autora contra el catalogo completo y recommended.json: sin coincidencias.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

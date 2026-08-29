@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🕯️ Tiny Habits · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#1C1410;
+  --fondo2:#251A13;
+  --texto:#F3E9DD;
+  --bruma:#C9AF97;
+  --acento:#E8834A;
+  --acento-hi:#F5A66E;
+  --dorado:#D9A441;
+  --dorado-hi:#F0C46B;
+  --linea:rgba(243,233,221,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acento);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--acento-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(243,233,221,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--dorado-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(28,20,16,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--acento-hi);border-color:var(--acento)}
+
+.seccion{padding:clamp(3.6rem,9vw,6.5rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:800px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dorado);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.6rem,1.2rem + 2.5vw,2.5rem);line-height:1.18;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: chispa ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 7rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 8%,#3A2618 0%,var(--fondo) 62%)}
+.chispas{position:absolute;inset:0;z-index:0;opacity:.65}
+.chispas span{position:absolute;bottom:-4%;width:3px;height:3px;border-radius:50%;background:var(--acento-hi);box-shadow:0 0 8px 2px var(--dorado);animation:subir 4.5s ease-in infinite}
+@keyframes subir{0%{transform:translateY(0);opacity:0}12%{opacity:.9}100%{transform:translateY(-90vh);opacity:0}}
+@media (prefers-reduced-motion:reduce){.chispas span{animation:none;opacity:.15}}
+.hero-int{position:relative;z-index:2;max-width:680px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--dorado-hi);border:1px solid rgba(217,164,65,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.7rem,1.1rem + 3.6vw,2.75rem);line-height:1.14}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--acento-hi)}
+.hero .sub{color:var(--bruma);margin:1.35rem auto 2.2rem;max-width:48ch}
+.cta-btn{display:inline-block;background:var(--acento);color:#1C1410;border:none;border-radius:999px;padding:.9rem 1.8rem;font-weight:600;font-size:.98rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--acento-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.3}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.hero-hint{animation:none;opacity:.6}}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--dorado);padding:.2rem 0 .2rem 1.15rem;margin:1.9rem 0;font-family:var(--serif);font-size:clamp(1.05rem,1rem + .6vw,1.28rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- la receta (interactivo) ---------- */
+.receta{position:relative;margin:1.9rem 0 1rem;padding:1.5rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(243,233,221,.03)}
+.recetaGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.paso{background:rgba(243,233,221,.045);border:1px solid var(--linea);border-radius:14px;padding:1.1rem .9rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.paso:hover:not(.abierta){border-color:var(--dorado);transform:translateY(-2px)}
+.paso .ico{font-size:1.55rem;display:block;margin-bottom:.45rem}
+.paso .nombre{font-size:.86rem;color:var(--bruma);font-weight:600}
+.paso.abierta{background:rgba(232,131,74,.15);border-color:var(--acento)}
+.paso .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--acento-hi);font-size:.84rem;margin-top:.5rem;line-height:1.42}
+.paso.abierta .obs{display:block}
+.paso.abierta .nombre{display:none}
+.receta-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(243,233,221,.04);border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.2rem;margin-top:1.5rem}
+.ficha dl{display:grid;gap:.75rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--dorado);font-weight:700}
+.ficha dd{font-size:.95rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(232,131,74,.1);border:1px solid rgba(232,131,74,.34);border-radius:14px;padding:1.2rem;margin-top:1.4rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--acento-hi);font-weight:700;margin-bottom:.55rem}
+.honestidad p{font-size:.94rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.8rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.compra a{display:inline-block;background:var(--acento);color:#1C1410;border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--acento-hi);transform:translateY(-2px)}
+
+.cta,.react{background:rgba(243,233,221,.05);border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.2rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(243,233,221,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--dorado);color:var(--dorado-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--dorado-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,1rem + 1vw,1.5rem);line-height:1.45;max-width:34ch;margin:0 auto 1.6rem}
+footer{border-top:1px solid var(--linea);padding:1.8rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--dorado-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--dorado);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="chispas" id="chispasFx" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Libro nuevo · veta hábitos, primera vez de verdad</span>
+    <h1>Tiny Habits</h1>
+    <p class="autor">BJ Fogg, PhD · <em>The Small Changes That Change Everything</em> (2019)</p>
+    <p class="sub">Tenés Hábitos Atómicos (L4-002) y Deshacer la Ansiedad de Brewer (L4-028) hace rato, pero el libro que armó el modelo del que ambos parten nunca tuvo ficha propia. Hoy se lo doy, con el ejemplo más chico posible: un solo diente de hilo dental.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traigo</p>
+    <h2 class="titulo rev d1">La veta que abrimos el 20/08 y nunca probamos de verdad</h2>
+    <p class="bajada rev d2">El 20/08 te rescaté "Deshacer la ansiedad" de Judson Brewer de tu propio L4-028 — un libro sobre bucles de hábito que ya tenías comprado y sin abrir. Pero esa ficha cayó justo en la ventana en que el push no te llegaba, así que nunca sabemos si te copó el ángulo. Hoy, con el canal reparado, te traigo la fuente real de la veta hábitos: no un divulgador que sintetiza, sino el investigador de Stanford cuyo modelo (B=MAP) usaron tanto James Clear para escribir Hábitos Atómicos como los fundadores de Instagram para diseñar el feed que probablemente tenés en el bolsillo ahora mismo.</p>
+    <p class="parr rev d2">Fogg dio esa clase en Stanford — la llamaron "la clase de Facebook" — y por ella pasaron Kevin Systrom y Mike Krieger antes de fundar Instagram. Este libro es la otra cara de esa misma moneda: el mismo mecanismo, pero apuntado por vos mismo hacia adentro, no por una app hacia tu atención.</p>
+    <div class="cita rev d3">«La gente cambia mejor sintiéndose bien, no sintiéndose mal.»<span>B. J. Fogg — traducción propia, la idea que él mismo pide que te lleves del libro si te llevás una sola.</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Si no formaste el hábito, no fue falta de voluntad — fue mal diseño</h2>
+    <p class="bajada rev d2">La fórmula central del libro, B=MAP: un comportamiento (B) ocurre cuando Motivación, Habilidad y un Disparador (Prompt) convergen en el mismo instante. Si falta cualquiera de los tres, no pasa nada — y la solución casi nunca es "tener más fuerza de voluntad" (motivación es la variable menos confiable de las tres, dice Fogg), sino bajar tanto la dificultad que la habilidad requerida sea casi cero.</p>
+    <p class="parr rev d2">De ahí sale la idea que le da título al libro: en vez de proponerte "hacer 30 flexiones todos los días", proponete algo tan chico que sea ridículo fallar — dos flexiones, un diente con hilo dental, una respiración profunda. La escala minúscula no es el objetivo final: es la puerta de entrada. Una vez que el comportamiento existe, aunque sea en miniatura, crece solo.</p>
+    <div class="cita rev d3">«No cambiás vidas ayudando a la gente a hacer cosas difíciles. Cambiás vidas ayudándola a hacer cosas pequeñas.»<span>B. J. Fogg — traducción propia, sobre por qué el libro insiste en achicar antes de exigir.</span></div>
+  </div>
+</section>
+
+<section class="seccion alt" id="receta">
+  <div class="centro">
+    <p class="kicker rev">Para probarlo, no solo leerlo</p>
+    <h2 class="titulo rev d1">La receta de tres partes, con el propio ejemplo de Fogg</h2>
+    <p class="bajada rev d2">Fogg no lograba mantener el hilo dental hasta que armó esta receta con su propio cuerpo de conejillo de indias. Tocá cada paso:</p>
+    <div class="receta rev d3">
+      <div class="recetaGrid" id="recetaBox">
+        <div class="paso" data-obs="'Después de que me cepillo los dientes...' — un hábito que YA hacés todos los días, sin falta, funciona como disparador automático. No hace falta acordarte: el ancla te avisa."><span class="ico">⚓</span><span class="nombre">1. Ancla</span><span class="obs"></span></div>
+        <div class="paso abierta" data-obs="'...paso el hilo por UN solo diente.' Ridículamente chico a propósito: la barrera para arrancar tiene que ser tan baja que hacerlo requiera menos energía que no hacerlo. (Fogg admite que casi siempre terminaba pasando varios más — pero la meta oficial era uno.)"><span class="ico">🦷</span><span class="nombre">2. Micro-hábito</span><span class="obs">'...paso el hilo por UN solo diente.' Ridículamente chico a propósito: la barrera para arrancar tiene que ser tan baja que hacerlo requiera menos energía que no hacerlo. (Fogg admite que casi siempre terminaba pasando varios más — pero la meta oficial era uno.)</span></div>
+        <div class="paso" data-obs="'...y me digo: ¡Bien ahí!' — con gesto incluido si querés (Fogg imagina a su maestra de cuarto grado poniéndole la mano en el hombro). Esa emoción positiva inmediata es la que graba el hábito, no la repetición sola."><span class="ico">🎉</span><span class="nombre">3. Celebración</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="receta-hint">La celebración es la parte que más se salta la gente — y para Fogg es la más importante de las tres: le puso nombre propio, "Shine".</p>
+  </div>
+</section>
+
+<section class="seccion" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Quién lo escribe</p>
+    <h2 class="titulo rev d1">El profesor de Stanford que llevó 20 años estudiando por qué hacemos lo que hacemos</h2>
+    <p class="bajada rev d2">B. J. Fogg fundó y dirige el Behavior Design Lab de Stanford (antes Persuasive Technology Lab), donde investiga el cambio de comportamiento desde fines de los 90. Su modelo B=MAP se volvió estándar tanto en libros de autoayuda como en diseño de producto tecnológico — el propio Fogg ha dicho públicamente que escribió este libro, en parte, para devolverle el modelo a la gente común y que lo use para sí misma, no solo las empresas que lo usan para captar atención.</p>
+    <p class="parr suave rev d3">Mismo perfil que te viene funcionando: quien hizo la investigación de primera mano (Rovelli con la física, Csikszentmihalyi con el flow, Seth con la consciencia), no quien la resume de terceros.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>Tiny Habits: The Small Changes That Change Everything</em>, Houghton Mifflin Harcourt, 2019. Best-seller del New York Times.</dd>
+        <dt>En español</dt><dd>No encontré traducción publicada verificable a agosto 2026 — la edición disponible en Buscalibre Uruguay es la original en inglés.</dd>
+        <dt>Vetas que cruza</dt><dd>Hábitos — veta abierta el 20/08 con el redescubrimiento de Brewer (sin señal aún por el corte del canal). Primera vez que se prueba como libro "nuevo".</dd>
+        <dt>Dónde está en la casa</dt><dd>En ningún lado. Verifiqué título y autor contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: no hay coincidencias.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. Los insights de esta ficha —el modelo B=MAP, la receta ancla/micro-hábito/celebración, el ejemplo del hilo dental y la "Power Celebration" de la maestra de cuarto grado— salen de reseñas, resúmenes verificados (Shortform, SuperSummary, la propia web tinyhabits.com de Fogg) y de dos citas del autor ampliamente repetidas y verificadas de forma cruzada entre varias fuentes independientes; no es un resumen del libro completo, que además trae ejercicios guiados semana a semana.</p>
+      <p><b>Nota de honestidad:</b> no encontré traducción al español confirmada — si la tiene y no la vi, avisame en la caja de abajo y la busco de nuevo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Conseguirlo</p>
+    <h2 class="titulo rev d1">En inglés, con audiolibro narrado por el propio autor</h2>
+    <p class="bajada rev d2">Lo busqué hoy en Buscalibre Uruguay: la edición en inglés (tapa blanda) está a $952 pesos uruguayos, con 16 unidades en stock. En Google Play existe como ebook y como audiolibro — el oficial está narrado por el propio BJ Fogg (también hay versiones-resumen de terceros con otros narradores; esta es la del libro completo) — verificado por búsqueda cruzada título+autor+narrador, Google Play bloquea la verificación automática por link.</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=Tiny+Habits+BJ+Fogg">Conseguilo (~$952 UYU)</a>
+      <a href="https://play.google.com/store/books/details/Tiny_Habits_The_Small_Changes_That_Change_Everythi?id=s7OCDwAAQBAJ&hl=en">📱 Ebook en Google Play Books</a>
+      <a href="https://play.google.com/store/audiobooks/details/Tiny_Habits_The_Small_Changes_That_Change_Everythi?id=AQAAAEAsD0RPeM&hl=en_US">🎧 Audiolibro en Google Play (narrado por BJ Fogg)</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d2">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-29-fogg-tiny-habits','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-29-fogg-tiny-habits','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-29-fogg-tiny-habits','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-29-fogg-tiny-habits','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-29-fogg-tiny-habits','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">Un dato más, para afinar la próxima
+      <div>
+        <button onclick="engageAnswer('rec-canal:2026-08-29-fogg-tiny-habits','llegando_bien',this)">📱 Me están llegando bien las notis</button>
+        <button onclick="engageAnswer('rec-canal:2026-08-29-fogg-tiny-habits','fallando',this)">⚠️ Están fallando / llegan tarde</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-29-fogg-tiny-habits','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-29-fogg-tiny-habits','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-29-fogg-tiny-habits','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-29-fogg-tiny-habits','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-29-fogg-tiny-habits" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-29-fogg-tiny-habits" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-29-fogg-tiny-habits',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">«No cambiás vidas ayudando a la gente a hacer cosas difíciles. Cambiás vidas ayudándola a hacer cosas pequeñas.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">B. J. Fogg, la idea que resume el libro entero.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para Andy · datos verificados contra tinyhabits.com, reseñas y síntesis de Shortform y SuperSummary, citas del propio autor verificadas de forma cruzada, y el stock de Buscalibre Uruguay, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  var cf=$('#chispasFx');
+  if(cf){
+    for(var i=0;i<9;i++){
+      var s=document.createElement('span');
+      s.style.left=(6+i*10)+'%';
+      s.style.animationDelay=(i*.55)+'s';
+      cf.appendChild(s);
+    }
+  }
+
+  $$('#recetaBox .paso').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#recetaBox .paso').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

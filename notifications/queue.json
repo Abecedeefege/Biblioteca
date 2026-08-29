@@ -1,7 +1,33 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-29T02:51:49.832Z",
+  "_updated_at": "2026-08-29T19:05:00-03:00",
   "notifications": [
+    {
+      "id": "2026-08-29-rec-andy",
+      "title": "🕯️ El profesor detrás de tus hábitos",
+      "body": "Tiny Habits, de BJ Fogg: el modelo que usó James Clear y que enseñó a los fundadores de Instagram. Hoy, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-29-fogg-tiny-habits.html",
+      "to": "Andy",
+      "send_at": "2026-08-29T19:00:00-03:00",
+      "expires_at": "2026-08-29T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-29"
+    },
+    {
+      "id": "2026-08-29-rec-sofi",
+      "title": "🏺 Una detective con sombrilla, no un policía",
+      "body": "Misterio en Egipto, de Elizabeth Peters: viuda victoriana, una momia que camina de noche. De tu propio M5.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-29-peters-misterio-egipto.html",
+      "to": "Sofi",
+      "send_at": "2026-08-29T19:00:00-03:00",
+      "expires_at": "2026-08-29T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-29"
+    },
     {
       "id": "2026-08-28-rec-andy",
       "title": "🌸 Antes de Pollan, la fuente",

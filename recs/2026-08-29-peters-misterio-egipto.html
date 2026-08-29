@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🏺 Misterio en Egipto · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#241A0F;
+  --noche2:#2E2213;
+  --arena:#F1E6D2;
+  --bruma:#C9B490;
+  --turquesa:#3FA79A;
+  --turquesa-hi:#63C7B9;
+  --lapis:#4A5FA0;
+  --lapis-hi:#7688C4;
+  --linea:rgba(241,230,210,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--arena);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--turquesa);color:var(--noche)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--turquesa-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(241,230,210,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--turquesa),var(--lapis-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(36,26,15,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--turquesa-hi);border-color:var(--turquesa)}
+
+.seccion{padding:clamp(3.2rem,8vw,5.6rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:760px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--turquesa-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.2rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--arena)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: sol del desierto ---------- */
+.hero{position:relative;min-height:92svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 4.5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 8%,#3D2E17 0%,var(--noche) 62%)}
+.sol{position:absolute;top:6%;left:50%;transform:translateX(-50%);width:min(60vw,300px);height:min(60vw,300px);border-radius:50%;background:radial-gradient(circle,rgba(212,166,90,.28) 0%,transparent 70%);opacity:.85}
+.hero-int{position:relative;z-index:2;max-width:640px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--turquesa-hi);border:1px solid rgba(63,167,154,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.5rem,1.05rem + 3vw,2.3rem);line-height:1.18}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--lapis-hi)}
+.hero .sub{color:var(--bruma);margin:1.2rem auto 1.6rem;max-width:46ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.6rem}
+
+.alt{background:var(--noche2)}
+.cita{border-left:3px solid var(--lapis);padding:.2rem 0 .2rem 1.15rem;margin:1.7rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--arena)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- ingredientes de Amelia (interactivo) ---------- */
+.ingredientes{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(241,230,210,.03)}
+.ingGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem}
+.ing{background:rgba(241,230,210,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem .8rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.ing:hover:not(.abierta){border-color:var(--turquesa);transform:translateY(-2px)}
+.ing .ico{font-size:1.5rem;display:block;margin-bottom:.4rem}
+.ing .nombre{font-size:.82rem;color:var(--bruma)}
+.ing.abierta{background:rgba(74,95,160,.2);border-color:var(--lapis)}
+.ing .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--lapis-hi);font-size:.83rem;margin-top:.5rem;line-height:1.42}
+.ing.abierta .obs{display:block}
+.ing.abierta .nombre{display:none}
+.ing-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(241,230,210,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--turquesa-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--arena);margin-top:.15rem}
+.honestidad{background:rgba(74,95,160,.14);border:1px solid rgba(74,95,160,.36);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--lapis-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--arena)}
+.honestidad p + p{margin-top:.7rem}
+
+.cta,.react{background:rgba(241,230,210,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.1rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(241,230,210,.07);color:var(--arena);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--turquesa);color:var(--turquesa-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--turquesa-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--arena)}
+
+.cierre{text-align:center;padding-bottom:3.8rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1rem + .9vw,1.4rem);line-height:1.48;max-width:34ch;margin:0 auto 1.4rem}
+footer{border-top:1px solid var(--linea);padding:1.6rem 1.25rem 2.8rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--turquesa-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--turquesa);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="sol" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · De tu estante M5 · M5-019</span>
+    <h1>Misterio en Egipto</h1>
+    <p class="autor">Elizabeth Peters · el primer caso de Amelia Peabody (1975)</p>
+    <p class="sub">Autora que nunca te di: ni King, ni Christie, ni Osman. Una viuda victoriana rica, terca y con sombrilla se va a excavar a Egipto — y una momia empieza a caminar de noche.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">El caso</p>
+    <h2 class="titulo rev d1">Una herencia, un rescate en Roma y una momia que no debería moverse</h2>
+    <p class="bajada rev d2">Amelia Peabody hereda una fortuna considerable al morir su padre y decide, ya entrada en años para los estándares victorianos y sin ningún interés en casarse, gastarla viajando por el mundo. En Roma rescata a Evelyn Barton-Forbes, una joven noble caída en desgracia, y se la lleva de compañera de viaje. El destino que elige: Egipto. Ahí se cruzan con la excavación arqueológica de los hermanos Emerson — el insoportable y brillante Radcliffe al frente — justo cuando empiezan a circular rumores de una momia que camina de noche por el campamento.</p>
+    <p class="parr rev d2">No es un misterio de cuarto cerrado como tus Christie ni un expediente policial como tus Dicker: es más aventura victoriana con crimen adentro, con una narradora en primera persona que se ríe de las convenciones de su época todo el tiempo — el tono es más cercano al humor filoso de Joyce (tu Osman) que a la atmósfera densa de tus libros más oscuros.</p>
+    <div class="cita rev d3">«Si Indiana Jones fuera mujer, esposa y madre, viviera en la época victoriana, sería Amelia Peabody Emerson.»<span>Descripción editorial de la serie, verificada contra la ficha de Google Play Books del original en inglés.</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="ingredientes">
+  <div class="centro">
+    <p class="kicker rev">Quién es Amelia</p>
+    <h2 class="titulo rev d1">Tres cosas que la hacen distinta a tus otras detectives</h2>
+    <p class="bajada rev d2">No es una jubilada tejiendo pistas como Miss Marple, ni una escritora resolviendo crímenes reales. Tocá cada una:</p>
+    <div class="ingredientes rev d3">
+      <div class="ingGrid" id="ingBox">
+        <div class="ing" data-obs="Su herramienta de todos los usos: se defiende con ella, la usa para abrirse paso entre la multitud a los golpes ('apliqué el regatón bastante fuerte en la espalda de varios caballeros hasta que se movieran') y no sale de casa sin una. Es EL objeto que la identifica en toda la saga."><span class="ico">☂️</span><span class="nombre">La sombrilla</span><span class="obs"></span></div>
+        <div class="ing abierta" data-obs="Amelia narra en primera persona con un sarcasmo constante hacia las convenciones victorianas sobre lo que 'debe' hacer una mujer de su clase — se burla de sí misma tanto como de los demás. Es lo que separa a la serie del misterio victoriano solemne."><span class="ico">🗣️</span><span class="nombre">La lengua filosa</span><span class="obs">Amelia narra en primera persona con un sarcasmo constante hacia las convenciones victorianas sobre lo que 'debe' hacer una mujer de su clase — se burla de sí misma tanto como de los demás. Es lo que separa a la serie del misterio victoriano solemne.</span></div>
+        <div class="ing" data-obs="El arqueólogo al mando de la excavación: brillante, mandón, y chocan desde el primer minuto que se conocen. La tensión entre los dos es la otra columna del libro — y de los 18 que siguen."><span class="ico">⛏️</span><span class="nombre">Radcliffe Emerson</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="ing-hint">Ninguno de los tres resuelve el misterio de la momia por sí solo — pero sin los tres, este libro sería un policial victoriano más.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo esta autora</p>
+    <h2 class="titulo rev d1">La única de tu estante con doctorado real en lo que escribe</h2>
+    <p class="bajada rev d2">Elizabeth Peters es el seudónimo de Barbara Mertz, doctora en Egiptología por el Instituto Oriental de la Universidad de Chicago — la egiptología del libro no es decorado de investigación superficial, es lo que ella estudió de verdad antes de escribirlo. Empezó la saga en 1975 y terminó escribiendo 19 libros con Amelia, todos ambientados en excavaciones reales de fines del siglo XIX.</p>
+    <p class="parr suave rev d3">Es autora nueva para vos: nunca antes recomendada, sin ninguna huella tuya en el catálogo ni en <code>recommended.json</code>. Después de tres "ya lo leí" seguidos en tu estante de misterio más consagrado (King, Katzenbach, Carlisle) y de Doyle sin abrir todavía, cambio de fuente por completo: ni saga masiva devorada por Kindle, ni autor de moda — una escritora de los 70 con Egiptología de verdad detrás.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <div class="ficha rev">
+      <dl>
+        <dt>Tu ejemplar</dt><dd>Estante M5-019, sala de misterio, junto a tus Christie y toda la fila de Sherlock. Sin lectura registrada de tu lado.</dd>
+        <dt>Título original</dt><dd><em>Crocodile on the Sandbank</em> (1975) — la edición que tenés, "Misterio en Egipto" (Editorial Alma, 2024, trad. Jorge Rizzo), es la traducción al español. ~270 páginas en la edición original en inglés.</dd>
+        <dt>Guardia</dt><dd>Verificado título (en inglés y en español) y autora contra los 437 libros del catálogo y contra todo <code>recommended.json</code>: nunca tuvo ficha propia. No es King, no es de tus autores ya devorados.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d1">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La premisa, los personajes principales y el dato del doctorado real de la autora están verificados contra Wikipedia, reseñas de Anika Entre Libros y Editorial Alma, y la propia ficha de Google Play Books del original; cero detalles sobre quién mueve la momia o cómo se resuelve.</p>
+      <p><b>Sobre el audio:</b> busqué audiolibro o resumen en Google Play para tu edición en español y no encontré ninguno — sí existe el audiolibro del original en inglés (narrado por Susan O'Malley), pero cambiar de idioma a mitad de una saga que empezás en español no te sirve. Si aparece una versión en español más adelante, la sumo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Le damos una noche?</h2>
+    <div class="cta rev d1">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:M5-019','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-019','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-019','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-29-peters-misterio-egipto','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-29-peters-misterio-egipto','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-29-peters-misterio-egipto','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">Un dato más, para afinar la próxima
+      <div>
+        <button onclick="engageAnswer('rec-canal:2026-08-29-peters-misterio-egipto','llegando_bien',this)">📱 Me están llegando bien las notis</button>
+        <button onclick="engageAnswer('rec-canal:2026-08-29-peters-misterio-egipto','fallando',this)">⚠️ Están fallando / llegan tarde</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-29-peters-misterio-egipto','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-29-peters-misterio-egipto','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-29-peters-misterio-egipto','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-29-peters-misterio-egipto','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-29-peters-misterio-egipto" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-29-peters-misterio-egipto" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(241,230,210,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-29-peters-misterio-egipto',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">«Yo soy la única heroína que conozco capaz de resolver un asesinato y coordinar un vestuario de safari al mismo tiempo.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.2rem;max-width:44ch">Parafraseado del tono de la serie — no cita textual exacta de esta edición puntual.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante M5 · datos verificados contra Wikipedia, Anika Entre Libros, Editorial Alma y la ficha de Google Play Books del original, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#ingBox .ing').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#ingBox .ing').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
