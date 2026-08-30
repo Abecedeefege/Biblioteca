@@ -2,6 +2,15 @@
   "_comment": "Registry of C's recommendation cards. The hub (index.html) renders this list; the recommendation agent appends one entry per delivery and never repeats a slug.",
   "recs": [
     {
+      "slug": "2026-08-30-ditlevsen-copenhagen-trilogy",
+      "date": "2026-08-30",
+      "title": "The Copenhagen Trilogy",
+      "author": "Tove Ditlevsen",
+      "emoji": "🌅",
+      "flag": "new · memoir",
+      "teaser": "Childhood, Youth, Dependency — three short Danish books from 1967–71 about a Vesterbro girl who decided at ten she would be a poet, and what it cost. You own her short stories; this is the book they were orbiting, and the missing hinge between your Plath shelf and your Ernaux shelf."
+    },
+    {
       "slug": "2026-08-23-hartman-wayward-lives",
       "date": "2026-08-23",
       "title": "Wayward Lives, Beautiful Experiments",

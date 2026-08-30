@@ -1,17 +1,24 @@
 # Perfil lector de C — memoria del agente
 
-_Última corrida: 2026-08-23 (domingo). Sin feedback de C todavía: el perfil
-sigue apoyado solo en el catálogo de sus estantes._
+_Última corrida: 2026-08-30 (domingo). Segunda semana consecutiva sin
+feedback de C: el perfil sigue apoyado solo en el catálogo de sus estantes._
 
 ## Estado
 
 App entregada a C el **2026-08-19T09:21:35Z** (ver `C/agent/handoff.json`).
 Desde esa marca su feedback cuenta; lo anterior eran pruebas del dueño.
 
-**Todavía no hay ni un evento suyo.** En la corrida del 2026-08-23,
-`sync/engagement.json` (actualizado 2026-08-23T04:37:52Z, 409 eventos) tenía
-0 eventos con `device: "C"` — solo `Andy`, `Sofi`, `C-test` (8, nunca se
-leen) y `sin-nombre` (106, todos de julio, anteriores al handoff).
+**Todavía no hay ni un evento suyo.** En la corrida del 2026-08-30,
+`sync/engagement.json` (actualizado 2026-08-30T04:54:17Z, 436 eventos) seguía
+con 0 eventos `device: "C"` — solo `Andy` (214), `sin-nombre` (108, todos de
+julio, anteriores al handoff), `Sofi` (106) y `C-test` (8, nunca se leen).
+Once días después del handoff, el canal sigue mudo.
+
+**El push del 2026-08-23 no salió.** La entrada `2026-08-23-rec-c` de
+`notifications/queue.json` quedó en `status: "expired"`, `sent_at: null`,
+sin `fail_reason`: no había dispositivo `C` al que entregar. La ficha de
+Hartman sí quedó publicada en el hub. Lo mismo va a pasar con la de esta
+semana si no se suscribe antes de las 17:30 de París.
 
 **Tampoco está suscripta**: `notifications/subscription.json` no tiene
 entrada de dispositivo `C`, solo `C-test`. Es decir: C todavía no abrió la
@@ -28,9 +35,12 @@ app desde su teléfono ni pasó el onboarding. Consecuencias:
   de las 17:30 de París, sale; si no, se pierde solo ese push y la ficha
   igual queda publicada en el hub.
 
-**Para Andy**: si querés que le lleguen, hay que confirmar que C abrió
+**Para Andy (segunda vez, y ahora con un push perdido de evidencia)**: si
+querés que le lleguen, hay que confirmar que C abrió
 `https://abecedeefege.github.io/Biblioteca/C/recs/` y aceptó las
-notificaciones. Hasta entonces esto es un hub que se llena solo.
+notificaciones. Hasta entonces esto es un hub que se llena solo: dos fichas
+publicadas, cero pushes entregados, cero señales de ella. El sistema está
+sano — lo único que falta es el onboarding desde su teléfono.
 
 ## Cadencia vigente
 
@@ -67,7 +77,15 @@ notificaciones. Hasta entonces esto es un hub que se llena solo.
 4. **Historiografía discutible** (nueva, 2026-08-23): libros que pelean con
    el método mismo — Hartman, Trouillot (Silencing the Past), Fuentes
    (Dispossessed Lives). Tiene el equipo completo para arbitrar la pelea.
-5. Wildcard: japonesas contemporáneas (tiene Murata, Aoyama, Ishiguro).
+5. **Vidas convertidas en forma** (nueva, 2026-08-30): la pared que arman
+   Ernaux ×3, Cusk (Outline, B2-003), Ali Smith ×4, Didion ×3, Plath
+   (poemas B2-008 + The Bell Jar B1-015 + Red Comet B6-001), Ditlevsen
+   (A2-030), Heti (A2-029), Babitz (B2-006). Autoficción y memoir con
+   disciplina formal. De acá salió la elección de esta semana; si vuelve
+   `not_for_me`, la veta se apaga y se rota a feminismo con evidencia.
+6. Wildcard: japonesas contemporáneas (tiene Murata, Aoyama, Ishiguro —
+   Aoyama **en alemán**, dato útil: lee traducciones al alemán, no solo
+   originales).
 
 ## Ya entregado (no repetir)
 
@@ -77,6 +95,7 @@ notificaciones. Hasta entonces esto es un hub que se llena solo.
 | 2026-08-18 | Invisible Women — Caroline Criado Perez | _pendiente_ |
 | 2026-08-18 | The Dawn of Everything — Graeber & Wengrow | _pendiente_ |
 | 2026-08-23 | Wayward Lives, Beautiful Experiments — Saidiya Hartman | _pendiente_ |
+| 2026-08-30 | The Copenhagen Trilogy — Tove Ditlevsen | _pendiente_ |
 
 ## Descartados en corrida (para no volver a evaluarlos)
 
@@ -84,6 +103,15 @@ notificaciones. Hasta entonces esto es un hub que se llena solo.
   Ojo con la veta Alexievich: si alguna vez se recomienda, tiene que ser
   otro título (Second-hand Time, Chernobyl Prayer) y avisando que ya tiene
   uno suyo.
+- **Outline (Cusk)** — ya lo tiene: `B2-003`. Si alguna vez toca Cusk, va
+  Transit o Kudos, avisando que tiene el primero.
+- **The Trouble with Happiness (Ditlevsen)** — ya lo tiene: `A2-030`. Por
+  eso la del 2026-08-30 es la Trilogía, no los cuentos.
+- Evaluados y descartados el 2026-08-30 por solaparse con lo ya entregado:
+  **Yoko Tawada, Memoirs of a Polar Bear** (fuerte por la veta alemana +
+  japonesa, pero repite el eje RDA/Berlín de Kairos — guardarlo para más
+  adelante) y **Trouillot, Silencing the Past** (misma discusión de método
+  que Hartman, hace siete días).
 
 ## Notas de C
 

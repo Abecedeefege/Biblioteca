@@ -1064,6 +1064,19 @@
       "sent_at": null,
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-27"
+    },
+    {
+      "id": "2026-08-30-rec-c",
+      "title": "🌅 “In the morning there was hope”",
+      "body": "The Copenhagen Trilogy, by Tove Ditlevsen: three short books about a Vesterbro girl who decided at ten she'd be a poet. You own her stories — this is the one they were orbiting.",
+      "url": "https://abecedeefege.github.io/Biblioteca/C/recs/2026-08-30-ditlevsen-copenhagen-trilogy.html",
+      "to": "C",
+      "send_at": "2026-08-30T17:30:00+02:00",
+      "expires_at": "2026-08-30T22:30:00+02:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "rec-c-agent 2026-08-30"
     }
   ]
 }
