@@ -3734,7 +3734,33 @@
       "device": "Andy",
       "slug": "2026-08-26-herrigel-zen-tiro-arco",
       "value": "like"
+    },
+    {
+      "id": "mtb7j493-zw4j2v",
+      "type": "dwell",
+      "ts": "2026-08-27T07:34:35.079Z",
+      "page": "2026-08-26-herrigel-zen-tiro-arco.html",
+      "device": "Andy",
+      "dwell_s": 404,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mtfbrvxq-ib6reb",
+      "type": "notification_clicked",
+      "ts": "2026-08-30T04:44:27.374Z",
+      "page": "2026-08-29-fogg-tiny-habits.html",
+      "device": "Andy",
+      "nid": "2026-08-29-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mtfbrvxs-xpa55p",
+      "type": "page_visit",
+      "ts": "2026-08-30T04:44:27.376Z",
+      "page": "2026-08-29-fogg-tiny-habits.html",
+      "device": "Andy",
+      "nid": "2026-08-29-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-27T07:34:09.775Z"
+  "_updated_at": "2026-08-30T04:44:28.916Z"
 }
