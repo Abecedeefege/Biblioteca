@@ -3778,7 +3778,16 @@
       "device": "Andy",
       "dwell_s": 489,
       "scroll_pct": 80
+    },
+    {
+      "id": "mtfc4i7x-f4hixd",
+      "type": "dwell",
+      "ts": "2026-08-30T04:54:16.125Z",
+      "page": "2026-08-29-fogg-tiny-habits.html",
+      "device": "Andy",
+      "dwell_s": 493,
+      "scroll_pct": 80
     }
   ],
-  "_updated_at": "2026-08-30T04:53:16.161Z"
+  "_updated_at": "2026-08-30T04:54:17.700Z"
 }
