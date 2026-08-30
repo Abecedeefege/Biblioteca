@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-29T19:05:00-03:00",
-  "_feedback_cutoff": "2026-08-27T07:34:08.690Z",
+  "_updated_at": "2026-08-30T19:00:00-03:00",
+  "_feedback_cutoff": "2026-08-30T04:54:16.125Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1664,10 +1664,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 493
       },
-      "learning": null
+      "learning": "Push llegó y se leyó de verdad: notification_clicked + 3 eventos de dwell creciente (478s→489s→493s, 80% scroll) la madrugada del 30/08 (~01:44-01:54 -03:00). Casi 8 minutos de lectura real sin cerrar veredicto todavía: la ficha engancha pero no convierte a botón. Canal confirmado sano para Andy."
     },
     {
       "id": "2026-08-29-peters-misterio-egipto",
@@ -1686,6 +1686,55 @@
       "page": "recs/2026-08-29-peters-misterio-egipto.html",
       "notified_by": "2026-08-29-rec-sofi",
       "why": "Redescubrimiento M5 con autora completamente nueva para ella: ni saga masiva ya devorada (King/Christie/Katzenbach/Carlisle) ni autor de moda. Elizabeth Peters (seudonimo de la egiptologa real Barbara Mertz) escribe aventura victoriana con humor, tono mas cerca de Joyce/Osman que de sus libros mas oscuros. Verificado titulo (ingles y espanol) y autora contra el catalogo completo y recommended.json: sin coincidencias.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-30-dalailama-arte-felicidad",
+      "date": "2026-08-30",
+      "kind": "redescubrimiento",
+      "title": "The Art of Happiness: A Handbook for Living",
+      "author": "Dalai Lama & Howard C. Cutler, M.D.",
+      "language": "en",
+      "topics": [
+        "espiritualidad_oriental",
+        "positividad",
+        "wisdom"
+      ],
+      "book_ref": "L4-021",
+      "audience": "andy",
+      "page": "recs/2026-08-30-dalailama-arte-felicidad.html",
+      "notified_by": "2026-08-30-rec-andy",
+      "why": "Redescubrimiento que sube un escalón la veta oriental abierta con Herrigel (26/08, único voto real: me_tienta+like). Entrevista real de un psiquiatra occidental al Dalai Lama, cruza espiritualidad oriental con positividad/autosuperación, ambas declaradas el día 1. Verificado título+autor contra el catálogo completo y recommended.json: primera ficha propia.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-30-haig-como-detener-tiempo",
+      "date": "2026-08-30",
+      "kind": "nuevo",
+      "title": "How to Stop Time",
+      "author": "Matt Haig",
+      "language": "en",
+      "topics": [
+        "ficcion_especulativa",
+        "romance_atemporal"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-08-30-haig-como-detener-tiempo.html",
+      "notified_by": "2026-08-30-rec-sofi",
+      "why": "Tercer ángulo del único autor con acierto pleno confirmado de Sofi (Biblioteca de medianoche, lo_quiero+love 27/07); The Humans (26/08) sigue mudo por el corte de canal previo. Mismo tono cálido y especulativo, mecanismo distinto (inmortalidad en vez de vidas paralelas). Verificado título (inglés y español) y autor contra el catálogo completo y recommended.json: sin coincidencias.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

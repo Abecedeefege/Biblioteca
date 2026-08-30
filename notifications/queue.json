@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-29T22:12:30.932Z",
+  "_updated_at": "2026-08-30T19:00:00-03:00",
   "notifications": [
     {
       "id": "2026-08-29-rec-andy",
@@ -1077,6 +1077,32 @@
       "sent_at": null,
       "fail_reason": null,
       "created_by": "rec-c-agent 2026-08-30"
+    },
+    {
+      "id": "2026-08-30-rec-andy",
+      "title": "☸️ El nivel 2 de tu veta oriental",
+      "body": "El arte de la felicidad, de tu L4-021: el Dalai Lama interrogado por un psiquiatra. Seguis la racha que abrio Herrigel.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-30-dalailama-arte-felicidad.html",
+      "to": "Andy",
+      "send_at": "2026-08-30T19:00:00-03:00",
+      "expires_at": "2026-08-30T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-30"
+    },
+    {
+      "id": "2026-08-30-rec-sofi",
+      "title": "⏳ Otro Haig, esta vez con 400 años encima",
+      "body": "Cómo detener el tiempo: el mismo autor de tu Biblioteca de medianoche, ahora con un profesor que no envejece. Nuevo, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-30-haig-como-detener-tiempo.html",
+      "to": "Sofi",
+      "send_at": "2026-08-30T19:00:00-03:00",
+      "expires_at": "2026-08-30T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-30"
     }
   ]
 }
