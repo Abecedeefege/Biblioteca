@@ -3760,7 +3760,16 @@
       "page": "2026-08-29-fogg-tiny-habits.html",
       "device": "Andy",
       "nid": "2026-08-29-rec-andy"
+    },
+    {
+      "id": "mtfc24uj-7k2tur",
+      "type": "dwell",
+      "ts": "2026-08-30T04:52:25.483Z",
+      "page": "2026-08-29-fogg-tiny-habits.html",
+      "device": "Andy",
+      "dwell_s": 478,
+      "scroll_pct": 80
     }
   ],
-  "_updated_at": "2026-08-30T04:44:28.916Z"
+  "_updated_at": "2026-08-30T04:52:27.675Z"
 }
