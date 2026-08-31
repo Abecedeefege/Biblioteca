@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-08-30T23:02:34.918Z",
+  "_updated_at": "2026-08-31T19:00:00-03:00",
   "notifications": [
     {
       "id": "2026-08-29-rec-andy",
@@ -1103,6 +1103,32 @@
       "sent_at": "2026-08-30T23:02:34.917Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-08-30"
+    },
+    {
+      "id": "2026-08-31-rec-andy",
+      "title": "🧠 El otro Brewer que tenés sin abrir",
+      "body": "La mente ansiosa: el mismo autor de Deshacer la ansiedad (que sigue en el estante) explica por qué nos enganchamos con todo.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-31-brewer-mente-ansiosa.html",
+      "to": "Andy",
+      "send_at": "2026-08-31T19:00:00-03:00",
+      "expires_at": "2026-08-31T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-31"
+    },
+    {
+      "id": "2026-08-31-rec-sofi",
+      "title": "👑🐕 La Reina vuelve a investigar",
+      "body": "A Three Dog Problem: secuela de tu Windsor Knot (sigue muda). Un cuerpo junto a la pileta de Buckingham y un cuadro perdido.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-08-31-bennett-three-dog-problem.html",
+      "to": "Sofi",
+      "send_at": "2026-08-31T19:00:00-03:00",
+      "expires_at": "2026-08-31T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-08-31"
     }
   ]
 }

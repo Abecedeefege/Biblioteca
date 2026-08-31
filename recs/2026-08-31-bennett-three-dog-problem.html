@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>👑🐕 A Three Dog Problem · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#161225;
+  --tinta2:#1E1830;
+  --marfil:#F1ECE0;
+  --lino:#B7ACC4;
+  --borgona:#A73B4E;
+  --borgona-hi:#CC5E71;
+  --oro:#C9A24B;
+  --oro-hi:#E6C171;
+  --linea:rgba(241,236,224,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--tinta);color:var(--marfil);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--borgona);color:var(--marfil)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--oro-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(241,236,224,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--oro),var(--borgona-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--lino);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(22,18,37,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--oro-hi);border-color:var(--oro)}
+
+.seccion{padding:clamp(3.6rem,9vw,6.5rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:800px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.6rem,1.2rem + 2.5vw,2.5rem);line-height:1.18;margin-bottom:1.1rem}
+.bajada{color:var(--lino);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--marfil)}
+.parr.suave{color:var(--lino)}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 7rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 6%,#2C2040 0%,var(--tinta) 62%)}
+.blason{position:absolute;top:9%;left:50%;transform:translateX(-50%);font-size:3rem;opacity:.16;z-index:0;filter:blur(.3px)}
+.hero-int{position:relative;z-index:2;max-width:680px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--oro-hi);border:1px solid rgba(201,162,75,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(1.7rem,1.1rem + 3.6vw,2.75rem);line-height:1.14}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--borgona-hi)}
+.hero .sub{color:var(--lino);margin:1.35rem auto 2.2rem;max-width:47ch}
+.cta-btn{display:inline-block;background:var(--oro);color:#2B2107;border:none;border-radius:999px;padding:.9rem 1.8rem;font-weight:600;font-size:.98rem;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.cta-btn:hover{background:var(--oro-hi);transform:translateY(-2px)}
+.hero-hint{position:absolute;bottom:1.2rem;left:0;right:0;z-index:2;color:var(--lino);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;animation:latido 2.6s ease-in-out infinite}
+@keyframes latido{0%,100%{opacity:.3}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.hero-hint{animation:none;opacity:.6}}
+
+.alt{background:var(--tinta2)}
+.cita{border-left:3px solid var(--oro);padding:.2rem 0 .2rem 1.15rem;margin:1.9rem 0;font-family:var(--serif);font-size:clamp(1.05rem,1rem + .6vw,1.28rem);line-height:1.5;font-style:italic;color:var(--marfil)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--lino)}
+
+/* ---------- los tres hilos del caso (interactivo) ---------- */
+.pistas{display:grid;gap:.7rem;margin:1.7rem 0 1rem}
+@media(min-width:640px){.pistas{grid-template-columns:1fr 1fr}}
+.pista{background:rgba(241,236,224,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem 1.05rem;text-align:left;transition:all .2s ease;color:var(--marfil)}
+.pista:hover:not(.abierta){border-color:var(--oro);transform:translateY(-2px)}
+.pista .ico{font-size:1.3rem;display:block;margin-bottom:.4rem}
+.pista .nombre{font-size:.88rem;color:var(--lino);font-weight:600}
+.pista.abierta{background:rgba(167,59,78,.14);border-color:var(--borgona)}
+.pista .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--oro-hi);font-size:.87rem;margin-top:.5rem;line-height:1.45}
+.pista.abierta .obs{display:block}
+.pista.abierta .nombre{opacity:.7}
+.pistas-hint{text-align:center;color:var(--lino);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(241,236,224,.04);border:1px solid var(--linea);border-radius:14px;padding:1.3rem 1.2rem;margin-top:1.5rem}
+.ficha dl{display:grid;gap:.75rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--oro);font-weight:700}
+.ficha dd{font-size:.95rem;color:var(--marfil);margin-top:.15rem}
+.honestidad{background:rgba(167,59,78,.1);border:1px solid rgba(167,59,78,.34);border-radius:14px;padding:1.2rem;margin-top:1.4rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--borgona-hi);font-weight:700;margin-bottom:.55rem}
+.honestidad p{font-size:.94rem;line-height:1.6;color:var(--marfil)}
+.honestidad p + p{margin-top:.8rem}
+
+/* ---------- CTAs ---------- */
+.cta,.react{background:rgba(241,236,224,.05);border:1px solid var(--linea);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.2rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(241,236,224,.07);color:var(--marfil);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--oro);color:var(--oro-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--oro-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--marfil)}
+
+.cierre{text-align:center;padding-bottom:4.5rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,1rem + 1vw,1.5rem);line-height:1.45;max-width:32ch;margin:0 auto 1.6rem}
+footer{border-top:1px solid var(--linea);padding:1.8rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--lino);line-height:1.6}
+a.hub{color:var(--oro-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--oro);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="blason" aria-hidden="true">👑</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · De tu M5-026 · la secuela</span>
+    <h1>A Three Dog Problem</h1>
+    <p class="autor">S.J. Bennett · <em>Her Majesty the Queen Investigates</em>, libro 2</p>
+    <p class="sub">Un empleado de Buckingham aparece muerto junto a la pileta del palacio. La policía dice accidente. La Reina —otra vez— no está tan segura. Mismo tono que The Windsor Knot, un caso nuevo: esta vez el problema tiene tres perros de por medio.</p>
+    <a class="cta-btn" href="#puente">Por qué justo este ↓</a>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Por qué te lo traigo</p>
+    <h2 class="titulo rev d1">The Windsor Knot sigue mudo — le doy su secuela igual</h2>
+    <p class="bajada rev d2">Te di el primer libro de esta serie el 23/08 (M5-025) como experimento: separar si tu acierto con Osman fue por el género "detective improbable con humor británico" en general, o específicamente por Osman. Todavía no tengo respuesta — ni un click. No es solo esta ficha: nada tuyo tiene voto desde el 20/08, aunque tu suscripción sigue activa y tus pushes salen bien. Es un problema de canal, no de gusto, así que sigo construyendo con la mejor información que tengo en vez de parar.</p>
+    <p class="parr rev d2">Por eso hoy no pruebo algo nuevo: te doy la continuación directa. Mismo elenco (la Reina, su asistente Rozie Oshodi), mismo tono cozy sin gore, caso distinto — para que si en algún momento agarrás el primero, el segundo ya te esté esperando en el mismo estante en vez de tener que pedirlo.</p>
+    <div class="cita rev d3">«El título alude al "problema de tres pipas" de Sherlock Holmes — solo que acá son tres perros, y quien camina con ellos para pensar es la Reina.»<span>Paráfrasis verificada contra reseñas de Northern Reader y Crossexamining Crime sobre el origen del título.</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Otoño de 2016: Brexit, una primera ministra nueva y un cuerpo junto a la pileta</h2>
+    <p class="bajada rev d2">Meses después del referéndum del Brexit, con Theresa May recién asumida y Estados Unidos en medio de una elección convulsionada, un empleado del palacio aparece muerto junto a la pileta de Buckingham. La policía lo cierra como accidente. La Reina no está convencida — y mientras tanto, Rozie Oshodi (su secretaria privada adjunta, ya conocida del libro 1) investiga por su cuenta un cuadro favorito que colgaba junto a su dormitorio y que la Marina Real parece haberse apropiado sin permiso. De fondo, empiezan a circular cartas anónimas perturbadoras dentro del palacio.</p>
+    <p class="parr rev d2">Es cozy crime otra vez: la Reina no sale a interrogar a nadie con lupa, sabe a quién pedirle que investigue por ella, con total discreción. Ambientado en hechos reales de 2016 (igual que el primero mezclaba abril de ese año), la trama entrelaza el misterio inventado con la política real del momento.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="pistas-sec">
+  <div class="centro">
+    <p class="kicker rev">Tres hilos, un solo caso</p>
+    <h2 class="titulo rev d1">La Reina resuelve caminando con sus perros</h2>
+    <p class="bajada rev d2">El libro entrelaza tres líneas hasta que convergen. Tocá cada una:</p>
+    <div class="pistas rev d3" id="pistasBox">
+      <button type="button" class="pista" data-obs="La policía lo llama accidente. La Reina, con décadas de trato con gente que miente por oficio, sospecha que hay algo más — y otra vez es la única que se da el permiso de dudar de la versión oficial."><span class="ico">🏊</span><span class="nombre">El cuerpo en la pileta</span><span class="obs"></span></button>
+      <button type="button" class="pista" data-obs="Un cuadro que colgaba junto al dormitorio de la Reina desapareció del lugar de siempre. Rozie tira del hilo y llega hasta la Marina Real, que parece habérselo quedado sin autorización formal."><span class="ico">🖼️</span><span class="nombre">El cuadro perdido</span><span class="obs"></span></button>
+      <button type="button" class="pista" data-obs="En paralelo, empiezan a aparecer cartas sin firma dentro del palacio, con un tono que incomoda a todo el personal. Nadie sabe todavía si están conectadas con la muerte junto a la pileta."><span class="ico">✉️</span><span class="nombre">Las cartas anónimas</span><span class="obs"></span></button>
+      <button type="button" class="pista" data-obs="El título es un guiño directo al 'problema de tres pipas' de Sherlock Holmes: la Reina camina los jardines del palacio con tres de sus corgis para pensar con calma — su versión personal de fumar una pipa para razonar un caso difícil."><span class="ico">🐕</span><span class="nombre">El problema de los tres perros</span><span class="obs"></span></button>
+    </div>
+    <p class="pistas-hint">No te digo cómo conecta todo. Pero ya sabés qué hace ella cuando algo no le cierra: sale a caminar.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Tu ejemplar</dt><dd>Estante M5-026, en inglés — sin lectura registrada de tu lado (ni en <code>enrichment.json</code> ni en <code>recommended.json</code>).</dd>
+        <dt>Edición</dt><dd><em>A Three Dog Problem</em>, segundo libro de <em>Her Majesty the Queen Investigates</em>, 2021 (Bonnier/Zaffre). Autora: S.J. Bennett.</dd>
+        <dt>Vetas que cruza</dt><dd>Cozy crime con humor, continuación directa de tu M5-025 (23/08) — todavía sin veredicto tuyo, así que esto es la secuela esperándote, no una apuesta nueva.</dd>
+        <dt>Audiolibro</dt><dd>Existe en inglés, narrado por Samantha Bond (confirmado por Audible/Amazon UK) — busqué el link directo de Google Play y no encontré uno que resuelva de forma confiable, así que no te dejo uno roto: si querés escucharlo, buscalo por "A Three Dog Problem Samantha Bond" directo en la app.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La trama, los tres hilos del caso y el origen del título salen de reseñas publicadas (Northern Reader, Crossexamining Crime, The Reading Room) y de fichas editoriales (Amazon, Goodreads, la propia web de la autora) — no revelo quién es el responsable de la muerte junto a la pileta ni cómo se resuelve el cuadro.</p>
+      <p><b>Guardia:</b> verifiqué título y autora contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: sin coincidencias previas de "A Three Dog Problem". Igual que con el libro 1, tu Kindle no siempre coincide con lo fichado — si ya lo leíste ahí, el botón de abajo lo registra igual.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Lo agarrás esta noche?</h2>
+    <p class="bajada rev d2">No hace falta haber leído el primero para arrancar éste — cada caso cierra en su propio libro.</p>
+    <div class="cta rev d2">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:M5-026','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-026','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:M5-026','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-31-bennett-three-dog-problem','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-31-bennett-three-dog-problem','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-08-31-bennett-three-dog-problem','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">Un dato más, para afinar la próxima
+      <div>
+        <button onclick="engageAnswer('rec-canal:2026-08-31-bennett-three-dog-problem','llegando_bien',this)">📱 Me están llegando bien las notis</button>
+        <button onclick="engageAnswer('rec-canal:2026-08-31-bennett-three-dog-problem','fallando',this)">⚠️ Están fallando / llegan tarde</button>
+        <button onclick="engageAnswer('rec-canal:2026-08-31-bennett-three-dog-problem','primera_vez',this)">👋 Primera vez que veo una de estas fichas</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-08-31-bennett-three-dog-problem','love',this)">😍</button>
+        <button onclick="engageReact('2026-08-31-bennett-three-dog-problem','like',this)">🙂</button>
+        <button onclick="engageReact('2026-08-31-bennett-three-dog-problem','meh',this)">😐</button>
+        <button onclick="engageReact('2026-08-31-bennett-three-dog-problem','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-08-31-bennett-three-dog-problem" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-08-31-bennett-three-dog-problem" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-08-31-bennett-three-dog-problem',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">«Tres perros bastan para pensar lo que tres pipas pensaban antes.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">La Reina, versión de sobremesa de Sherlock Holmes.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu estante M5, secuela directa de tu M5-025 · datos verificados contra reseñas publicadas (Northern Reader, Crossexamining Crime, The Reading Room) y fichas editoriales, a agosto de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#pistasBox .pista').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(el.classList.contains('abierta')) return;
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

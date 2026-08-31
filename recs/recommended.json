@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-30T19:00:00-03:00",
+  "_updated_at": "2026-08-31T19:00:00-03:00",
   "_feedback_cutoff": "2026-08-30T04:54:16.125Z",
   "recommendations": [
     {
@@ -1735,6 +1735,56 @@
       "page": "recs/2026-08-30-haig-como-detener-tiempo.html",
       "notified_by": "2026-08-30-rec-sofi",
       "why": "Tercer ángulo del único autor con acierto pleno confirmado de Sofi (Biblioteca de medianoche, lo_quiero+love 27/07); The Humans (26/08) sigue mudo por el corte de canal previo. Mismo tono cálido y especulativo, mecanismo distinto (inmortalidad en vez de vidas paralelas). Verificado título (inglés y español) y autor contra el catálogo completo y recommended.json: sin coincidencias.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-31-brewer-mente-ansiosa",
+      "date": "2026-08-31",
+      "kind": "nuevo",
+      "title": "The Craving Mind (La mente ansiosa)",
+      "author": "Judson Brewer",
+      "language": "es",
+      "topics": [
+        "neurociencia",
+        "mindfulness",
+        "habitos",
+        "autosuperacion"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-08-31-brewer-mente-ansiosa.html",
+      "notified_by": "2026-08-31-rec-andy",
+      "why": "Regimen DIARIO: ayer (30/08) Andy tuvo redescub (Dalai Lama) -> hoy le toca nuevo, y Sofi recibe la redescub. Cero eventos nuevos de Sofi en sync/engagement.json desde el cutoff (sigue muda desde el 20/08); de Andy tampoco hay voto de boton nuevo desde Herrigel (26/08), aunque el canal esta confirmado sano (dwell fuerte en Flow/Huxley/Fogg). Elegido Judson Brewer, 'The Craving Mind' / 'La mente ansiosa' (2017): mismo autor de 'Deshacer la ansiedad' (L4-028), que Andy ya tiene en el estante sin abrir desde antes del 20/08 y sin voto -- jugada de 'autor identitario/ya en casa' (regla confirmada x3 con Bach) pero aplicada a un libro DISTINTO, el que arma el mapa completo del enganche (cigarrillos, celular, amor) antes de la aplicacion puntual a la ansiedad. Cruza neurociencia + mindfulness + habitos (conecta con Fogg 'Tiny Habits', 29/08, su dwell mas fuerte reciente) y con la veta de atencion/no-fuerza-bruta que vienen reforzando Herrigel y el Dalai Lama. GUARDIA: verificado 'The Craving Mind' / 'La mente ansiosa' / 'Judson Brewer' contra los 437 libros del catalogo completo (unico Brewer en casa es L4-028, titulo distinto) y contra todo recommended.json: sin coincidencias. Contenido (habit loop, estudio de cigarrillos, tecnica R.A.I.N., cita de Sayadaw U Pandita citada por Brewer) verificado cruzando Goodreads, Shortform y drjud.com (sitio propio del autor); la parte del libro sobre 'el amor' del subtitulo se declara en la ficha con menos detalle verificado que las otras dos, sin inventar contenido de capitulo. Precio y stock verificados hoy en Buscalibre Uruguay en ingles ($924 UYU) y en español, edicion Booket -misma coleccion que su Brewer sin abrir- ($711 UYU). Audiolibro en ingles confirmado por busqueda cruzada (Google Play bloquea bots, igual que en fichas anteriores). Se suma un 'aparte' directo a Andy en la ficha (pedido del PROFILE del 30/08): avisarle en persona que Sofi lleva mas de un mes sin ninguna señal, ya con boton de canal probado sin respuesta.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-08-31-bennett-three-dog-problem",
+      "date": "2026-08-31",
+      "kind": "redescubrimiento",
+      "title": "A Three Dog Problem",
+      "author": "S.J. Bennett",
+      "language": "en",
+      "topics": [
+        "misterio",
+        "cozy"
+      ],
+      "book_ref": "M5-026",
+      "audience": "sofi",
+      "page": "recs/2026-08-31-bennett-three-dog-problem.html",
+      "notified_by": "2026-08-31-rec-sofi",
+      "why": "Regimen DIARIO: a Sofi le toca redescubrimiento hoy (Andy tuvo nuevo). Su ultima nueva señal real de boton sigue siendo el 20/08 (Klune, me_tienta+love) -- cero eventos desde entonces pese a suscripcion activa y pushes con 201. Elegido M5-026 'A Three Dog Problem' (S.J. Bennett), libro 2 de la serie cuyo libro 1 ('The Windsor Knot', M5-025) le di el 23/08 y sigue sin ningun click: en vez de abandonar el experimento o forzar una veta nueva sin señal para calibrar, se le da la secuela directa -- mismo elenco y tono, caso distinto -- para que estar disponible en el estante en cuanto retome el primero, y para seguir separando 'Osman puntual' de 'el genero cozy con protagonista improbable' en general apenas conteste algo. GUARDIA: verificado titulo 'A Three Dog Problem' y autora 'S.J. Bennett' contra los 437 libros del catalogo completo (unico match esperado M5-026) y contra todo recommended.json: sin coincidencias previas de este titulo. Sin read_status 'leido' en data/enrichment.json (publicacion 2021 confirmada ahi) -- con la salvedad estandar de su Kindle. Trama (cuerpo junto a la pileta de Buckingham, el cuadro de la Marina Real, las cartas anonimas, el origen del titulo en el 'problema de tres pipas' de Sherlock Holmes) verificada contra reseñas publicadas (Northern Reader, Crossexamining Crime, The Reading Room) y fichas editoriales (Amazon, Goodreads), sin revelar la resolucion. Audiolibro en ingles narrado por Samantha Bond confirmado por Audible/Amazon UK, pero el link de Google Play que encontre devolvio 404 real (no el 403 tipico de bloqueo de bots) -- se declara la existencia sin link roto, cumpliendo la politica de honestidad. Redescubrimiento: sin link de compra, CTA de compromiso fisico estandar + boton rec-canal (mismo que ayer) para seguir tratando de distinguir 'nunca llego' de 'llego y no engancho'.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
