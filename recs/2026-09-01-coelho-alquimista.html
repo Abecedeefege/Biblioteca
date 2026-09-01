@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🐑 El Alquimista · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#1B1730;
+  --fondo2:#241E3D;
+  --texto:#F5E9D3;
+  --bruma:#B8A888;
+  --oro:#D4A62A;
+  --oro-hi:#F0C851;
+  --cobalto:#5A6FB0;
+  --cobalto-hi:#8496D4;
+  --linea:rgba(245,233,211,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--oro);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--oro-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(245,233,211,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cobalto),var(--oro-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(27,23,48,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--oro-hi);border-color:var(--oro)}
+
+.seccion{padding:clamp(3.4rem,8.5vw,6rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:780px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.55rem,1.2rem + 2.3vw,2.35rem);line-height:1.2;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: desierto de noche, estrellas y dunas ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 8%,#3A2E5C 0%,var(--fondo) 62%)}
+.estrellas{position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 20% 25%,rgba(245,233,211,.55) 0,transparent 60%),radial-gradient(1.5px 1.5px at 75% 15%,rgba(245,233,211,.45) 0,transparent 60%),radial-gradient(1px 1px at 60% 35%,rgba(245,233,211,.5) 0,transparent 60%),radial-gradient(1.5px 1.5px at 35% 45%,rgba(245,233,211,.4) 0,transparent 60%),radial-gradient(1px 1px at 90% 40%,rgba(245,233,211,.4) 0,transparent 60%),radial-gradient(1.5px 1.5px at 12% 55%,rgba(245,233,211,.4) 0,transparent 60%);opacity:.9}
+.duna{position:absolute;bottom:0;left:0;right:0;height:26%;background:linear-gradient(180deg,transparent 0%,rgba(212,166,42,.13) 100%);border-top:1px solid rgba(212,166,42,.18)}
+.hero-int{position:relative;z-index:2;max-width:660px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--oro-hi);border:1px solid rgba(212,166,42,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.6rem,1.1rem + 3.2vw,2.5rem);line-height:1.16}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--cobalto-hi)}
+.hero .sub{color:var(--bruma);margin:1.3rem auto 1.7rem;max-width:47ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--oro);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.03rem,1rem + .55vw,1.25rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- tres maestros del camino (interactivo) ---------- */
+.recetario{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(245,233,211,.03)}
+.recGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.herr{background:rgba(245,233,211,.045);border:1px solid var(--linea);border-radius:14px;padding:1.1rem .9rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.herr:hover:not(.abierta){border-color:var(--oro);transform:translateY(-2px)}
+.herr .ico{font-size:1.5rem;display:block;margin-bottom:.45rem}
+.herr .nombre{font-size:.85rem;color:var(--bruma);font-weight:600}
+.herr.abierta{background:rgba(212,166,42,.14);border-color:var(--oro)}
+.herr .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--oro-hi);font-size:.84rem;margin-top:.5rem;line-height:1.42}
+.herr.abierta .obs{display:block}
+.herr.abierta .nombre{display:none}
+.rec-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(245,233,211,.04);border:1px solid var(--linea);border-radius:14px;padding:1.25rem 1.15rem;margin-top:1.4rem}
+.ficha dl{display:grid;gap:.72rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--oro);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(90,111,176,.14);border:1px solid rgba(90,111,176,.4);border-radius:14px;padding:1.15rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--cobalto-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
+.compra a{display:inline-block;background:var(--oro);color:#1B1730;border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--oro-hi);transform:translateY(-2px)}
+
+.cta,.react{background:rgba(245,233,211,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(245,233,211,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--oro);color:var(--oro-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--oro-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.08rem,1rem + .95vw,1.45rem);line-height:1.46;max-width:36ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--oro-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--oro);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="estrellas" aria-hidden="true"></div>
+  <div class="duna" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · De tu L4 · L4-015</span>
+    <h1>El Alquimista</h1>
+    <p class="autor">Paulo Coelho · <em>O Alquimista</em> (1988)</p>
+    <p class="sub">Vuelvo a tu combo más seguro: la fábula corta. Bach te dio dos aciertos (Ilusiones, Gaviota) y Hesse te dejó pegado 200 segundos sin votar. Esta es la fábula que le falta a esa fila — la de un pastor que vende sus ovejas por un sueño recurrente, y la tenés en el estante desde siempre sin abrir.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="puente">
+  <div class="centro">
+    <p class="kicker rev">Cómo se armó este libro</p>
+    <h2 class="titulo rev d1">La editorial lo abandonó. Coelho la convenció con su propia frase</h2>
+    <p class="bajada rev d2">Coelho escribió El Alquimista en dos semanas de 1987 y lo publicó en Brasil en 1988 con una editorial pequeña. Vendió tan poco que la editorial le devolvió los derechos. En vez de resignarse, se plantó frente a otro sello con el mismo argumento que después sería el corazón del libro — "cuando querés algo, todo el universo conspira para ayudarte a conseguirlo" — y les dijo que confiaba en que esta vez sí iba a vender. Aceptaron, sin poder explicar del todo por qué. En tres años vendió medio millón de copias solo en Brasil.</p>
+    <p class="parr rev d2">De ahí escaló a fenómeno global: más de 65 millones de copias, más de 300 semanas en la lista de bestsellers del New York Times, y en 2009 el Récord Guinness al libro más traducido por un autor vivo (67 idiomas al momento del récord). Tu ejemplar es la traducción al español de Grijalbo/DeBolsillo — nunca abierto, según lo que tengo registrado.</p>
+    <div class="cita rev d3">«Cuando quieres algo, todo el universo conspira para ayudarte a conseguirlo.»<span>Melquisedec, el Rey de Salem, a Santiago — la frase que el propio Coelho usó para convencer a su segunda editorial. Verificada de forma cruzada (Cultura Genial, Lifeder, frasesypensamientos.com.ar y decenas de compilaciones que coinciden en la atribución y el contexto).</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Un pastor vende sus ovejas por un sueño que se repite dos veces</h2>
+    <p class="bajada rev d2">Santiago es un pastor andaluz que no le pide mucho a la vida: vagar con sus ovejas, un poco de vino en el odre, un libro en la alforja. Pero tiene el mismo sueño dos veces — un tesoro enterrado al pie de las pirámides de Egipto — y un viejo que dice ser rey (Melquisedec, rey de Salem) lo convence de que ese sueño es su "Leyenda Personal": lo único que de verdad quiso hacer siempre. Al otro día vende el rebaño y cruza a África.</p>
+    <p class="parr rev d2">Ahí lo roban en Tánger, se queda sin nada, y termina trabajando casi un año para un mercader de cristales que dejó de perseguir su propia Meca por miedo a que, una vez cumplido el sueño, ya no le quede nada por desear. Con lo ganado retoma el viaje, cruza el desierto en una caravana, se enamora de Fátima en un oasis, y termina de aprendiz de un Alquimista que lo lleva a atravesar territorio tribal en guerra para llegar, por fin, a las pirámides.</p>
+    <div class="cita rev d3">«El miedo a sufrir es peor que el sufrimiento mismo. Y ningún corazón sufrió jamás cuando fue en busca de sus sueños, porque cada minuto de búsqueda es un minuto de encuentro con Dios y con la eternidad.»<span>El Alquimista, a Santiago — verificada de forma cruzada (Lifeder, Cultura Genial, El taller de Reina Ubu).</span></div>
+  </div>
+</section>
+
+<section class="seccion alt" id="maestros">
+  <div class="centro">
+    <p class="kicker rev">Tres maestros, tres piezas</p>
+    <h2 class="titulo rev d1">Nadie le enseña lo mismo dos veces</h2>
+    <p class="bajada rev d2">Cada personaje que Santiago cruza en el camino le entrega una pieza distinta de la misma idea — escuchar el corazón, leer "el Lenguaje del Mundo". Tocá cada uno:</p>
+    <div class="recetario rev d3">
+      <div class="recGrid" id="herrBox">
+        <div class="herr abierta" data-obs="El primero y el que arranca todo: le nombra el sueño («Leyenda Personal») y le explica la regla central del libro — cuando de verdad querés algo, el universo entero se reorganiza para ayudarte. Sin este empujón, Santiago se queda pastoreando ovejas para siempre, cómodo y sin arriesgar nada."><span class="ico">👑</span><span class="nombre">1. Melquisedec</span><span class="obs">El primero y el que arranca todo: le nombra el sueño («Leyenda Personal») y le explica la regla central del libro — cuando de verdad querés algo, el universo entero se reorganiza para ayudarte. Sin este empujón, Santiago se queda pastoreando ovejas para siempre, cómodo y sin arriesgar nada.</span></div>
+        <div class="herr" data-obs="Lo contrata sin nada tras el robo de Tánger. Es la advertencia encarnada: pasó la vida soñando con ir a La Meca y nunca fue, porque le da miedo que cumplir el sueño le saque las ganas de seguir viviendo. Santiago aprende ahí la diferencia entre soñar cómodo y perseguir de verdad."><span class="ico">🏺</span><span class="nombre">2. El mercader de cristales</span><span class="obs"></span></div>
+        <div class="herr" data-obs="Lo encuentra ya en el desierto, cruzando territorio tribal en guerra. No le da respuestas: le enseña a leer las señales del viento, del sol, de la arena — el «Lenguaje del Mundo» que todo lo vivo comparte. Es el único que lo empuja a terminar el viaje en vez de quedarse con Fátima en el oasis."><span class="ico">🧪</span><span class="nombre">3. El Alquimista</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="rec-hint">El giro final: cuando por fin llega a las pirámides, un asalto le revela que el tesoro estaba enterrado bajo el árbol de España donde tuvo el sueño la primera vez. El viaje entero era el punto, no el mapa.</p>
+  </div>
+</section>
+
+<section class="seccion" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo ahora</p>
+    <h2 class="titulo rev d1">Tu combo más seguro, en su versión más grande</h2>
+    <p class="bajada rev d2">Fábula corta es lo que mejor te viene funcionando en toda la corrida: Ilusiones (nuevo, me_tienta+like, dwell 410s/100%) y Jonathan Livingston Seagull (redescub, me_tienta+like, dwell 395s) son tus dos aciertos más limpios de Bach, y Siddhartha de Hesse te dejó 200 segundos de lectura real aunque sin cerrar voto. Los tres redescubrimientos más recientes (Herrigel, Huxley, Dalai Lama) te llevaron por la veta oriental/filosófica — hoy vuelvo al terreno de la fábula pura, el que hasta ahora nunca falló.</p>
+    <p class="parr suave rev d3">Riesgo que declaro de frente: este no es un libro de nicho como Bach — es probablemente la fábula más leída del planeta (65 millones de copias, récord Guinness). Hay más chance de que ya lo hayas leído hace años que con cualquier otro redescubrimiento que te di. Si es así, no lo tomo como error de guardia — al contrario, confirma que la veta funciona; solo dejame saberlo abajo para no repetir el nivel de fama en la próxima.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Tu ejemplar</dt><dd>L4-015, edición en español (Grijalbo/DeBolsillo). Sin lectura registrada de tu lado.</dd>
+        <dt>Original</dt><dd><em>O Alquimista</em>, Rio de Janeiro, 1988. En español desde 1990 (trad. Montserrat Mira).</dd>
+        <dt>Estructura</dt><dd>Prólogo + dos partes, ~180 páginas — se lee en una sentada larga o dos cortas.</dd>
+        <dt>Guardia</dt><dd>Verificado título y autor contra los 437 libros del catálogo y contra todo <code>recommended.json</code>: primera vez que tiene ficha propia. Único Coelho en la casa.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La estructura, los personajes (Melquisedec, el mercader de cristales, el Englishman, el Alquimista, Fátima) y el giro final salen de resúmenes y análisis cruzados (Wikipedia en inglés, Cultura Genial, Lifeder, StuDocu) que coinciden entre sí; no repito diálogos completos que no pude confirmar palabra por palabra en una edición específica.</p>
+      <p><b>Sobre el audio:</b> el audiolibro en español está en Google Play, narrado por Michelle Jenner — verificado por búsqueda cruzada título+autor+narradora (Amazon/Audible España confirman el mismo nombre); Google Play bloquea la verificación automática por link, limitación ya conocida.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="escuchar">
+  <div class="centro">
+    <p class="kicker rev">A pedido tuyo (24/08)</p>
+    <h2 class="titulo rev d1">También se puede escuchar</h2>
+    <p class="bajada rev d2">Ya lo tenés en papel, en español — el audiolibro completo te sirve para la caminata o el auto sin cambiar de idioma:</p>
+    <div class="compra rev d2">
+      <a href="https://play.google.com/store/audiobooks/details/El_Alquimista?id=AQAAAED8TlEOvM&hl=es_419">🎧 Audiolibro en Google Play (español, narrado por Michelle Jenner)</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+    <div class="cta rev d1">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L4-015','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-015','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-015','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-01-coelho-alquimista','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-01-coelho-alquimista','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-01-coelho-alquimista','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-01-coelho-alquimista','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-01-coelho-alquimista','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-01-coelho-alquimista','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-01-coelho-alquimista','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-09-01-coelho-alquimista" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-01-coelho-alquimista" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-01-coelho-alquimista',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">«Es la posibilidad de realizar un sueño lo que hace que la vida sea interesante.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">Melquisedec, el Rey de Salem — verificada de forma cruzada (Lifeder, Cultura Genial).</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu L4 · datos verificados contra Wikipedia (inglés), Cultura Genial, Lifeder, StuDocu y la nota de HuffPost sobre el origen editorial del libro, citas verificadas de forma cruzada entre fuentes independientes, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#herrBox .herr').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#herrBox .herr').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

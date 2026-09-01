@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-08-31T19:00:00-03:00",
+  "_updated_at": "2026-09-01T19:00:00-03:00",
   "_feedback_cutoff": "2026-08-30T04:54:16.125Z",
   "recommendations": [
     {
@@ -1785,6 +1785,57 @@
       "page": "recs/2026-08-31-bennett-three-dog-problem.html",
       "notified_by": "2026-08-31-rec-sofi",
       "why": "Regimen DIARIO: a Sofi le toca redescubrimiento hoy (Andy tuvo nuevo). Su ultima nueva señal real de boton sigue siendo el 20/08 (Klune, me_tienta+love) -- cero eventos desde entonces pese a suscripcion activa y pushes con 201. Elegido M5-026 'A Three Dog Problem' (S.J. Bennett), libro 2 de la serie cuyo libro 1 ('The Windsor Knot', M5-025) le di el 23/08 y sigue sin ningun click: en vez de abandonar el experimento o forzar una veta nueva sin señal para calibrar, se le da la secuela directa -- mismo elenco y tono, caso distinto -- para que estar disponible en el estante en cuanto retome el primero, y para seguir separando 'Osman puntual' de 'el genero cozy con protagonista improbable' en general apenas conteste algo. GUARDIA: verificado titulo 'A Three Dog Problem' y autora 'S.J. Bennett' contra los 437 libros del catalogo completo (unico match esperado M5-026) y contra todo recommended.json: sin coincidencias previas de este titulo. Sin read_status 'leido' en data/enrichment.json (publicacion 2021 confirmada ahi) -- con la salvedad estandar de su Kindle. Trama (cuerpo junto a la pileta de Buckingham, el cuadro de la Marina Real, las cartas anonimas, el origen del titulo en el 'problema de tres pipas' de Sherlock Holmes) verificada contra reseñas publicadas (Northern Reader, Crossexamining Crime, The Reading Room) y fichas editoriales (Amazon, Goodreads), sin revelar la resolucion. Audiolibro en ingles narrado por Samantha Bond confirmado por Audible/Amazon UK, pero el link de Google Play que encontre devolvio 404 real (no el 403 tipico de bloqueo de bots) -- se declara la existencia sin link roto, cumpliendo la politica de honestidad. Redescubrimiento: sin link de compra, CTA de compromiso fisico estandar + boton rec-canal (mismo que ayer) para seguir tratando de distinguir 'nunca llego' de 'llego y no engancho'.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-01-coelho-alquimista",
+      "date": "2026-09-01",
+      "kind": "redescubrimiento",
+      "title": "El Alquimista",
+      "author": "Paulo Coelho",
+      "language": "es",
+      "topics": [
+        "fabula",
+        "espiritualidad",
+        "autosuperacion"
+      ],
+      "book_ref": "L4-015",
+      "audience": "andy",
+      "page": "recs/2026-09-01-coelho-alquimista.html",
+      "notified_by": "2026-09-01-rec-andy",
+      "why": "Regimen DIARIO: ayer (31/08) Andy tuvo nuevo (Brewer) -> hoy le toca redescubrimiento, y Sofi recibe la nueva. Vuelta al combo mas seguro confirmado en toda la corrida: fabula corta (Bach 2/2 aciertos plenos -- Ilusiones nuevo me_tienta+like dwell 410s, Gaviota redescub me_tienta+like dwell 395s -- y Hesse Siddhartha con dwell 200s sin voto). Los ultimos 3 redescubrimientos (Herrigel, Huxley, Dalai Lama) venian de la veta oriental/filosofica; hoy se rota a fabula pura. Elegido L4-015 El Alquimista (Coelho), unico Coelho de la casa, sin lectura registrada. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json: primera ficha propia. RIESGO declarado de frente en la ficha: es probablemente la fabula mas leida del planeta (65M+ copias, record Guinness 2009 a libro mas traducido por autor vivo), mucho mas masivo que Bach o Hesse -- alto riesgo real de ya_lo_lei, pero se interpreta igual como acierto de punteria si pasa (fabula sigue siendo la veta ganadora), no como fallo de guardia. Contenido (Melquisedec, mercader de cristales, el Alquimista, giro final del tesoro bajo el arbol de España) verificado cruzando Wikipedia en ingles, Cultura Genial, Lifeder y StuDocu; anecdota real del origen editorial (primera editorial lo abandono, Coelho convencio a la segunda con la frase del universo que conspira, medio millon de copias en 3 anos en Brasil) verificada contra HuffPost. Citas verificadas contra multiples compilaciones que coinciden en atribucion y contexto (no tienen numero de pagina por variar entre ediciones, declarado como tal). Link de compra no aplica (redescubrimiento, ya esta en casa). Audiolibro en español confirmado en Google Play narrado por Michelle Jenner, cruzado con Audible/Amazon España que confirman el mismo nombre; Google Play devuelve 403 a curl/bots (bloqueo conocido, no error real).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-01-backman-ove",
+      "date": "2026-09-01",
+      "kind": "nuevo",
+      "title": "Un hombre llamado Ove",
+      "author": "Fredrik Backman",
+      "language": "es",
+      "topics": [
+        "literatura_contemporanea",
+        "found_family",
+        "duelo",
+        "humor_negro"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-09-01-backman-ove.html",
+      "notified_by": "2026-09-01-rec-sofi",
+      "why": "Regimen DIARIO: ayer (31/08) Sofi tuvo redescubrimiento (Bennett) -> hoy le toca nueva, y Andy recibe el redescub. CAMBIO FUERTE de veta (7+ semanas seguidas sin ninguna senal de boton en sync/engagement.json pese a suscripcion activa y pushes con 201, en 6 generos distintos ya probados dentro de la familia misterio/cozy/especulativo): se sale por completo de esa familia hacia literatura contemporanea de personaje, sin crimen ni pista que seguir. Se mantiene lo unico confirmado que funciono de verdad -- su acierto pleno (Biblioteca de medianoche, lo_quiero+love, audiencia todos, 27/07) arranca tambien de alguien que quiere morirse y termina en un lugar calido -- aplicando ese mismo arco emocional con otro autor y sin fantasia. GUARDIA: verificado titulo (ingles y espanol) y autora contra los 437 libros del catalogo completo y contra todo recommended.json: sin coincidencias. Contenido (premisa, estructura presente/pasado, personajes Parvaneh/Patrick/Sonja, el accidente de bus, el gato) verificado cruzando LitCharts (guia de estudio con pagina exacta), SuperSummary y resenas editoriales; cita central citada con pagina (cap. 5, pag. 37, LitCharts) mas una segunda citada de forma consistente en Medium y guias de lectura, traducida por mi y declarada como tal. Precio verificado hoy en Buscalibre Uruguay: edicion en espanol (HarperCollins) desde 1.000 pesos uruguayos via JSON embebido del producto (distinta de una edicion usada importada mucho mas cara que tambien aparece en el buscador, aclarado en la ficha). Audiolibro en espanol confirmado en Google Play (narrado por Javier Gauna, id verificado con 200 OK) y cruzado con Audible/Amazon en espanol que confirman el mismo narrador. RIESGO declarado de frente: dos adaptaciones al cine (Suecia 2015, nominada a 2 Oscar; \"A Man Called Otto\" con Tom Hanks 2022/2023) -- se suma micro-pregunta rec-vio-pelicula para diagnosticar si ya la vio.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

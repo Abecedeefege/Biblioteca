@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🔧 Un hombre llamado Ove · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#1A2226;
+  --fondo2:#212C31;
+  --texto:#E8EDEE;
+  --bruma:#8FA3AB;
+  --naranja:#C1541F;
+  --naranja-hi:#E37A3E;
+  --gris:#4E6672;
+  --gris-hi:#7A97A3;
+  --linea:rgba(232,237,238,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--naranja);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--naranja-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(232,237,238,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gris),var(--naranja-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(26,34,38,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--naranja-hi);border-color:var(--naranja)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--naranja-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: barrio nórdico gris, una ventana naranja ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 10%,#2C3A41 0%,var(--fondo) 62%)}
+.tejado{position:absolute;top:0;left:0;right:0;height:38%;background:linear-gradient(180deg,rgba(78,102,114,.28) 0%,transparent 100%)}
+.ventana{position:absolute;top:14%;left:50%;transform:translateX(-50%);width:min(30vw,110px);height:min(30vw,110px);border-radius:6px;background:radial-gradient(circle,rgba(193,84,31,.34) 0%,transparent 72%)}
+.hero-int{position:relative;z-index:2;max-width:650px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--naranja-hi);border:1px solid rgba(193,84,31,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.55rem,1.1rem + 3vw,2.4rem);line-height:1.18}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--gris-hi)}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:47ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--naranja);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- tres piezas del mecanismo (interactivo) ---------- */
+.reglas{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(232,237,238,.03)}
+.regGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.reg{background:rgba(232,237,238,.045);border:1px solid var(--linea);border-radius:14px;padding:1.05rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.reg:hover:not(.abierta){border-color:var(--naranja);transform:translateY(-2px)}
+.reg .ico{font-size:1.5rem;display:block;margin-bottom:.4rem}
+.reg .nombre{font-size:.83rem;color:var(--bruma);font-weight:600}
+.reg.abierta{background:rgba(193,84,31,.16);border-color:var(--naranja)}
+.reg .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--naranja-hi);font-size:.83rem;margin-top:.5rem;line-height:1.42}
+.reg.abierta .obs{display:block}
+.reg.abierta .nombre{display:none}
+.reg-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(232,237,238,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--naranja-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(78,102,114,.2);border:1px solid rgba(78,102,114,.45);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--gris-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
+.compra a{display:inline-block;background:var(--naranja);color:#1A2226;border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--naranja-hi);transform:translateY(-2px)}
+
+.cta,.react{background:rgba(232,237,238,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(232,237,238,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--naranja);color:var(--naranja-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--naranja-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:36ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--naranja-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--naranja);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="tejado" aria-hidden="true"></div>
+  <div class="ventana" aria-hidden="true"></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · Libro nuevo · fuera de tu radar habitual</span>
+    <h1>Un hombre llamado Ove</h1>
+    <p class="autor">Fredrik Backman · <em>En man som heter Ove</em> (2012)</p>
+    <p class="sub">Ni misterio ni cozy ni oscuro — un cambio de veta a propósito. Ove tiene 59 años, acaba de perder a su mujer, está decidido a matarse, y sus nuevos vecinos no paran de interrumpirle el plan.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Un gruñón que revisa cada radiador del barrio, todas las mañanas</h2>
+    <p class="bajada rev d2">Ove es el vecino que todos evitan: cascarrabias, obsesivo con las reglas del complejo de casas (nada de autos donde no corresponde, ni bicicletas fuera de lugar), viudo hace semanas y sin trabajo después de treinta y tantos años en el mismo puesto. El libro arranca con él intentando colgarse de un gancho que instaló él mismo en el techo — y siendo interrumpido por Parvaneh y Patrick, la pareja embarazada que acaba de mudarse enfrente y que, maniobrando espantosamente una casa rodante, le destroza el cerco.</p>
+    <p class="parr rev d2">Cada intento de suicidio de Ove en el presente se cruza con un capítulo del pasado — cómo conoció a Sonja, la única persona que le vio algo más que el ceño fruncido; el accidente de bus camino a España que la dejó en silla de ruedas embarazada; el cáncer que se la llevó cuatro años atrás. El libro alterna así, presente y pasado, hasta que las interrupciones de los vecinos dejan de ser una molestia y se vuelven, sin que él lo decida del todo, una razón para seguir.</p>
+    <div class="cita rev d3">«He was a man of black and white. And she was color. All the color he had.»<span>(«Él era un hombre de blanco y negro. Y ella era color. Todo el color que tenía.») — cap. 5, pág. 37. Verificado con cita de la página exacta (LitCharts, guía de estudio del libro).</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="mecanismo">
+  <div class="centro">
+    <p class="kicker rev">Tres piezas del mecanismo</p>
+    <h2 class="titulo rev d1">Comedia negra, historia de amor y found family, todo en el mismo tipo</h2>
+    <p class="bajada rev d2">No es una novela triste con chistes de relleno: son estas tres piezas encajando a la vez. Tocá cada una:</p>
+    <div class="reglas rev d3">
+      <div class="regGrid" id="regBox">
+        <div class="reg abierta" data-obs="El libro no esconde que Ove intenta matarse varias veces en las primeras páginas — y los saca adelante con un humor tan seco que incomoda antes de dar risa. No es tono liviano sobre un tema grave: es la forma en que Ove, incapaz de pedir ayuda con palabras, termina pidiéndola con gestos (arreglar la bicicleta del vecino, rescatar un gato)."><span class="ico">😐</span><span class="nombre">1. El plan de Ove</span><span class="obs">El libro no esconde que Ove intenta matarse varias veces en las primeras páginas — y los saca adelante con un humor tan seco que incomoda antes de dar risa. No es tono liviano sobre un tema grave: es la forma en que Ove, incapaz de pedir ayuda con palabras, termina pidiéndola con gestos (arreglar la bicicleta del vecino, rescatar un gato).</span></div>
+        <div class="reg" data-obs="Los capítulos del pasado son la mitad del libro, no un flashback de relleno: ahí se entera el lector de quién era Ove antes de ser 'el gruñón' — el accidente de bus, la silla de ruedas de Sonja, el hijo que perdieron esa noche, y por qué él dejó que su identidad entera se redujera a las reglas del barrio después de eso."><span class="ico">🚌</span><span class="nombre">2. Sonja, en el pasado</span><span class="obs"></span></div>
+        <div class="reg" data-obs="Parvaneh, Patrick, sus dos hijas, un gato que se instala solo, un adolescente gay al que la familia echó, un periodista amateur: ninguno le pide permiso a Ove para necesitarlo. El libro es, en el fondo, sobre cómo te arma una comunidad alguien que no sabe pedir ayuda directamente."><span class="ico">🏘️</span><span class="nombre">3. Los vecinos nuevos</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="reg-hint">Las tres arman la misma pregunta: ¿cuánto puede cambiar un hombre que se define por sus reglas, cuando alguien las rompe por él, sin querer, todos los días?</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo esta, justo ahora</p>
+    <h2 class="titulo rev d1">Cambio fuerte de veta, no otro nombre en la misma góndola</h2>
+    <p class="bajada rev d2">Llevás desde el 20/08 sin ninguna señal de botón, en seis géneros distintos que probé (fantasía cálida, gótico, cozy fantasy, histórico, secuela cozy, misterio clásico) — todos dentro de la misma familia amplia de "misterio/cozy/especulativo cálido". Hoy pruebo algo genuinamente distinto: no hay crimen, no hay pista que seguir, es literatura contemporánea de personaje. Lo que sí mantengo es lo que probó funcionar de verdad: tu único acierto pleno confirmado (Biblioteca de medianoche, lo_quiero+love) también arranca de un lugar oscuro — alguien que quiere morirse — y termina siendo, contra todo pronóstico, un libro que hace bien. Ove hace ese mismo movimiento, con más humor y menos fantasía.</p>
+    <p class="parr suave rev d3">Riesgo que declaro de frente: hay dos películas. La sueca de 2015 (Rolf Lassgård, nominada a dos Oscar — Mejor Película de Habla no Inglesa y Mejor Maquillaje) y la versión de Hollywood "A Man Called Otto" (Tom Hanks, 2022/2023), bastante vista. Si ya viste alguna, el libro tiene el doble de historia de Sonja que ninguna de las dos películas llega a mostrar — pero avisame igual abajo, para no repetir esto.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>En man som heter Ove</em>, Suecia, 2012. Primer libro de Backman, publicado antes de los 30 años.</dd>
+        <dt>En español</dt><dd><em>Un hombre llamado Ove</em>, trad. Carmen Montes Cano, Salamandra/Grijalbo, ~340 páginas.</dd>
+        <dt>Vetas que cruza</dt><dd>Found family + registro agridulce (tu acierto pleno con Haig) — sin fantasía ni especulación, versión "realista" de esa misma fórmula.</dd>
+        <dt>Dónde está en la casa</dt><dd>En ningún lado. Verifiqué título y autor contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: sin coincidencias.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La premisa, la estructura presente/pasado, los personajes (Parvaneh, Patrick, Sonja, el gato) y las citas de esta ficha están verificados de forma cruzada entre LitCharts (guía de estudio con página exacta), SuperSummary y reseñas editoriales; no reviso el final ni cómo se resuelve la relación de Ove con el periodista Julio.</p>
+      <p><b>Sobre el audio:</b> el audiolibro completo en español está en Google Play, narrado por Javier Gauna — mismo narrador confirmado también en Audible/Amazon en español, cruzado por título+autor+narrador. Google Play bloquea la verificación automática por link, limitación ya conocida.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Conseguirlo</p>
+    <h2 class="titulo rev d1">Hay edición en español disponible hoy</h2>
+    <p class="bajada rev d2">Lo busqué hoy en Buscalibre Uruguay: la edición en español (HarperCollins, tapa blanda) figura desde $1.000 pesos uruguayos — hay también una edición usada importada bastante más cara, así que fijate cuál elegís al entrar al link.</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=Un+hombre+llamado+Ove+Fredrik+Backman">Conseguilo en español (desde ~$1.000 UYU)</a>
+      <a href="https://play.google.com/store/audiobooks/details/Man_Called_Ove_A_Un_hombre_llamado_Ove_Spanish_edi?id=AQAAAEAC4iyiPM&hl=es&gl=US">🎧 Audiolibro en Google Play (español, narrado por Javier Gauna)</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d2">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-01-backman-ove','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-01-backman-ove','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-01-backman-ove','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-01-backman-ove','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-01-backman-ove','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Viste alguna de las dos películas?
+      <div>
+        <button onclick="engageAnswer('rec-vio-pelicula:2026-09-01-backman-ove','sueca_2015',this)">🇸🇪 La sueca (2015)</button>
+        <button onclick="engageAnswer('rec-vio-pelicula:2026-09-01-backman-ove','otto_2022',this)">🎬 La de Tom Hanks</button>
+        <button onclick="engageAnswer('rec-vio-pelicula:2026-09-01-backman-ove','ninguna',this)">🙅 Ninguna</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">Un dato más, para afinar la próxima
+      <div>
+        <button onclick="engageAnswer('rec-canal:2026-09-01-backman-ove','llegando_bien',this)">📱 Me están llegando bien las notis</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-01-backman-ove','fallando',this)">⚠️ Están fallando / llegan tarde</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-01-backman-ove','primera_vez',this)">👋 Primera vez que veo una de estas fichas</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-01-backman-ove','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-01-backman-ove','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-01-backman-ove','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-01-backman-ove','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-09-01-backman-ove" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-01-backman-ove" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-01-backman-ove',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">«Querer a alguien es como mudarte a una casa.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">Fredrik Backman («Loving someone is like moving into a house», traducción propia) — sobre por qué Ove nunca se mudó después de la muerte de Sonja. Citada en Medium y en varias guías de lectura que coinciden en el pasaje.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para Sofi · datos verificados contra LitCharts, SuperSummary, Wikipedia y el stock de Buscalibre Uruguay, citas cruzadas entre fuentes independientes, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#regBox .reg').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#regBox .reg').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
