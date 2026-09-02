@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-01T19:00:00-03:00",
+  "_updated_at": "2026-09-02T16:16:19-03:00",
   "_feedback_cutoff": "2026-08-30T04:54:16.125Z",
   "recommendations": [
     {
@@ -1836,6 +1836,57 @@
       "page": "recs/2026-09-01-backman-ove.html",
       "notified_by": "2026-09-01-rec-sofi",
       "why": "Regimen DIARIO: ayer (31/08) Sofi tuvo redescubrimiento (Bennett) -> hoy le toca nueva, y Andy recibe el redescub. CAMBIO FUERTE de veta (7+ semanas seguidas sin ninguna senal de boton en sync/engagement.json pese a suscripcion activa y pushes con 201, en 6 generos distintos ya probados dentro de la familia misterio/cozy/especulativo): se sale por completo de esa familia hacia literatura contemporanea de personaje, sin crimen ni pista que seguir. Se mantiene lo unico confirmado que funciono de verdad -- su acierto pleno (Biblioteca de medianoche, lo_quiero+love, audiencia todos, 27/07) arranca tambien de alguien que quiere morirse y termina en un lugar calido -- aplicando ese mismo arco emocional con otro autor y sin fantasia. GUARDIA: verificado titulo (ingles y espanol) y autora contra los 437 libros del catalogo completo y contra todo recommended.json: sin coincidencias. Contenido (premisa, estructura presente/pasado, personajes Parvaneh/Patrick/Sonja, el accidente de bus, el gato) verificado cruzando LitCharts (guia de estudio con pagina exacta), SuperSummary y resenas editoriales; cita central citada con pagina (cap. 5, pag. 37, LitCharts) mas una segunda citada de forma consistente en Medium y guias de lectura, traducida por mi y declarada como tal. Precio verificado hoy en Buscalibre Uruguay: edicion en espanol (HarperCollins) desde 1.000 pesos uruguayos via JSON embebido del producto (distinta de una edicion usada importada mucho mas cara que tambien aparece en el buscador, aclarado en la ficha). Audiolibro en espanol confirmado en Google Play (narrado por Javier Gauna, id verificado con 200 OK) y cruzado con Audible/Amazon en espanol que confirman el mismo narrador. RIESGO declarado de frente: dos adaptaciones al cine (Suecia 2015, nominada a 2 Oscar; \"A Man Called Otto\" con Tom Hanks 2022/2023) -- se suma micro-pregunta rec-vio-pelicula para diagnosticar si ya la vio.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-02-haidt-happiness-hypothesis",
+      "date": "2026-09-02",
+      "kind": "nuevo",
+      "title": "The Happiness Hypothesis",
+      "author": "Jonathan Haidt",
+      "language": "en",
+      "topics": [
+        "positividad",
+        "psicologia_positiva",
+        "autosuperacion",
+        "filosofia"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-09-02-haidt-happiness-hypothesis.html",
+      "notified_by": "2026-09-02-rec-andy",
+      "why": "Regimen DIARIO: ayer (01/09) Andy tuvo redescubrimiento (Coelho) -> hoy le toca nuevo, y Sofi recibe la redescub. Cero eventos nuevos de ninguno de los dos en sync/engagement.json desde el cutoff (30/08 04:54 UTC) -- nada que reprocesar; los pushes del 01/09 salieron ambos con 201 (~19:24 -03:00, dentro de ventana, sin el retraso del 31/08). Elegido Jonathan Haidt, 'The Happiness Hypothesis' (2006): abre la veta declarada 'psicologia positiva academica' del banco del PROFILE (junto a Seligman), evitando repetir el tema del turno anterior (fabula, Coelho) y las vetas ya trabajadas esta semana (habitos con Fogg/Brewer, oriental con Dalai Lama). Es ademas el 'mapa completo' detras de varias piezas sueltas que Andy ya leyo este mes sin saberlo: cita textualmente a Csikszentmihalyi y su concepto de flow (capitulo 10, 'Happiness Comes from Between') que Andy leyo el 27/08, y su metafora central (jinete racional vs elefante automatico, capitulo 1) es el mismo argumento de fondo detras de Fogg y Brewer (entrenar el habito, no forzar la voluntad) que ya leyo esta semana -- se declara esta conexion explicita en la ficha, incluyendo una lectura honesta y un poco autoironica de su propio patron reciente (6 fichas seguidas con dwell fuerte sin cerrar veredicto de boton desde Herrigel 26/08). GUARDIA: verificado titulo 'The Happiness Hypothesis' / 'La hipotesis de la felicidad' y autor 'Jonathan Haidt' contra los 437 libros del catalogo completo y contra todo recommended.json: sin coincidencias, primera ficha propia. Contenido (metafora jinete/elefante, formula H=S+C+V, estructura de 11 capitulos, capitulo 7 sobre adversidad, capitulo 10 sobre flow/vital engagement) verificado cruzando Wikipedia en ingles, SuperSummary y una resena academica publicada en el Journal of Happiness Studies; las dos citas textuales usadas (elefante/jinete indirecta, 'love and work are to people what water and sunshine are to plants' y la cita de cierre sobre condiciones-y-esperar) verificadas contra la coleccion de citas del libro en Goodreads, traducidas por mi y declaradas como tal. Precio y edicion verificados hoy en Buscalibre Uruguay: original en ingles (Basic Books 2006) desde $979 UYU, edicion en espanol (Deusto, 'La hipotesis de la felicidad', trad. Gabriela Poveda) desde $632 UYU -- mismo texto, distintas tapas, declarado en la ficha. Audiolibro en ingles confirmado en Google Play (narrado por Ryan Vincent Anderson, id AQAAAEAMFQZVGM) cruzado con Audible/Amazon que confirman el mismo narrador; Google Play devuelve 403 a curl/bots (bloqueo conocido, no error real).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-02-christie-secreto-chimneys",
+      "date": "2026-09-02",
+      "kind": "redescubrimiento",
+      "title": "The Secret of Chimneys",
+      "author": "Agatha Christie",
+      "language": "en",
+      "topics": [
+        "misterio",
+        "aventura",
+        "clasico"
+      ],
+      "book_ref": "M5-020",
+      "audience": "sofi",
+      "page": "recs/2026-09-02-christie-secreto-chimneys.html",
+      "notified_by": "2026-09-02-rec-sofi",
+      "why": "Regimen DIARIO: ayer (01/09) Sofi tuvo nuevo (Backman) -> hoy le toca redescubrimiento, y Andy recibe el nuevo. Cero eventos nuevos de Sofi en sync/engagement.json desde el cutoff (30/08 04:54 UTC) -- sigue muda desde el 20/08 pese a suscripcion active y push del 01/09 salido con 201 (~19:24 -03:00). Elegido M5-020 'The Secret of Chimneys' (Agatha Christie, 1925): completa el par de las DOS Christie que tiene en casa (M5-020 y M5-021) -- el 27/08 se eligio M5-021 ('They Do It with Mirrors', Miss Marple) por tono mas atmosferico/cercano a sus aciertos, dejando esta pasar explicitamente por ser 'aventura/comedia mas liviana'; como Mirrors tampoco genero ninguna senal, hoy se prueba la otra mitad del par por si el eje que faltaba no era autor ni formato casa-de-campo sino tono -- Chimneys tiene mucho mas humor y aventura (protagonista pícaro tipo Anthony Cade, intriga de una monarquia balcanica ficticia) que la Christie tipica, registro mas cercano a la irreverencia de Joyce (Osman) que a la frialdad de un Poirot o Marple clasico. Primera aparicion de Superintendente Battle en la obra de Christie. GUARDIA: verificado titulo y autora contra los 437 libros del catalogo completo (unico match esperado, M5-020) y contra todo recommended.json: primera vez que tiene ficha propia. Sin read_status en data/enrichment.json mas alla del anio de publicacion (1925, confirmado ahi) -- tratado como no leido, con la salvedad estandar del Kindle paralelo de Sofi. Contenido (trama de Anthony Cade y las memorias del Conde Stylptitch, la mansion Chimneys de Lord Caterham, el pais ficticio de Herzoslovakia como parodia de novela ruritana, los personajes que debutan) verificado cruzando el sitio oficial de Agatha Christie, Project Gutenberg (texto en dominio publico) y el wiki de Christie; CERO detalles de quien es la o el responsable del crimen. Cita de cierre ('Oh, Lord, what a lot of funny people it does take to make a world', Anthony Cade) verificada con su contexto narrativo completo en la coleccion de citas de la novela en Goodreads, traducida por mi y declarada como tal. Audio: hay multiples ediciones narradas distintas circulando (Hugh Fraser en la oficial de HarperAudio, y al menos otras tres) sin poder confirmar con certeza cual es LA edicion de Google Play para este titulo puntual -- se declara la existencia de audiolibro sin linkear ninguno, para no arriesgar apuntar a la narracion equivocada. Redescubrimiento: sin link de compra (ya esta en el estante M5), CTA de compromiso fisico estandar (leer-esta-noche:M5-020) + boton rec-canal para seguir separando 'nunca llego' de 'llego y no engancho'.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

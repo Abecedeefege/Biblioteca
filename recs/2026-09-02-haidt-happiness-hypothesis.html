@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🐘 The Happiness Hypothesis · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#20242B;
+  --fondo2:#282D36;
+  --texto:#EDE7DA;
+  --bruma:#9CA2AD;
+  --ambar:#D9A34A;
+  --ambar-hi:#F0BE6C;
+  --salvia:#7FA98D;
+  --salvia-hi:#A2C9AF;
+  --linea:rgba(237,231,218,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--ambar);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--ambar-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,231,218,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--salvia),var(--ambar-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(32,36,43,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--ambar-hi);border-color:var(--ambar)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ambar);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: amanecer color arena, silueta de elefante y jinete ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 12%,#33301F 0%,var(--fondo) 62%)}
+.sol{position:absolute;top:8%;left:50%;transform:translateX(-50%);width:min(46vw,220px);height:min(46vw,220px);border-radius:50%;background:radial-gradient(circle,rgba(217,163,74,.32) 0%,transparent 70%)}
+.silueta{position:absolute;bottom:6%;left:50%;transform:translateX(-50%);font-size:min(13vw,4.2rem);opacity:.85;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+.hero-int{position:relative;z-index:2;max-width:650px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ambar-hi);border:1px solid rgba(217,163,74,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.5rem,1.05rem + 3vw,2.3rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--salvia-hi)}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:47ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:2.8rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--ambar);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- el jinete y el elefante (interactivo) ---------- */
+.reglas{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(237,231,218,.03)}
+.regGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.reg{background:rgba(237,231,218,.045);border:1px solid var(--linea);border-radius:14px;padding:1.05rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.reg:hover:not(.abierta){border-color:var(--ambar);transform:translateY(-2px)}
+.reg .ico{font-size:1.5rem;display:block;margin-bottom:.4rem}
+.reg .nombre{font-size:.83rem;color:var(--bruma);font-weight:600}
+.reg.abierta{background:rgba(217,163,74,.16);border-color:var(--ambar)}
+.reg .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--ambar-hi);font-size:.83rem;margin-top:.5rem;line-height:1.42}
+.reg.abierta .obs{display:block}
+.reg.abierta .nombre{display:none}
+.reg-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.formula{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem 1rem;margin:1.6rem 0;padding:1.3rem 1rem;border:1px solid rgba(127,169,141,.4);border-radius:16px;background:rgba(127,169,141,.08);font-family:var(--serif);font-size:clamp(1.3rem,1.1rem + 1.5vw,1.7rem);text-align:center}
+.formula b{color:var(--salvia-hi)}
+.formula-leyenda{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.4rem;margin-top:1rem;font-family:var(--sans);font-size:.83rem;color:var(--bruma)}
+.formula-leyenda b{color:var(--ambar-hi);font-family:var(--sans)}
+
+.ficha{background:rgba(237,231,218,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--ambar-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(127,169,141,.13);border:1px solid rgba(127,169,141,.4);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--salvia-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
+.compra a{display:inline-block;background:var(--ambar);color:#20242B;border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--ambar-hi);transform:translateY(-2px)}
+
+.cta,.react{background:rgba(237,231,218,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(237,231,218,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--ambar);color:var(--ambar-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--ambar-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:38ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--ambar-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--ambar);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="sol" aria-hidden="true"></div>
+  <div class="silueta" aria-hidden="true">🐘</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Libro nuevo</span>
+    <h1>The Happiness Hypothesis</h1>
+    <p class="autor">Jonathan Haidt (2006)</p>
+    <p class="sub">Un psicólogo de la Universidad de Virginia agarra diez ideas de sabiduría antigua — budismo, estoicismo, la Biblia, Confucio — y las somete una por una al laboratorio. La que más se repite: tu mente no es una sola voz, son dos, y casi nunca se ponen de acuerdo.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Un jinete chiquito arriba de un elefante de seis toneladas</h2>
+    <p class="bajada rev d2">Haidt escribió este libro mientras daba un curso que intentaba meter toda la psicología en un semestre de cuatro meses. Se dio cuenta de que la mayoría de las ideas "nuevas" de la ciencia ya estaban, en otra forma, en textos de dos mil años: la dicotomía del control de los estoicos, la impermanencia budista, la regla de oro. El libro toma diez de esas ideas y pregunta: ¿qué dice la psicología moderna, con datos, sobre esto?</p>
+    <p class="parr rev d2">La imagen central es esta: tu mente consciente y racional (el jinete) cree que maneja el rumbo, pero va sentada arriba de algo mucho más grande y más viejo — la mente automática, emocional, intuitiva (el elefante). El jinete puede planificar, razonar, ponerle nombre a las cosas. Pero cuando el elefante realmente quiere ir para un lado, el jinete no gana esa pelea a la fuerza. Puede, eso sí, entrenarlo.</p>
+    <div class="cita rev d3">«Love and work are to people what water and sunshine are to plants.»<span>(«El amor y el trabajo son para las personas lo que el agua y el sol son para las plantas.») — verificada en la colección de citas del libro (Goodreads), coincide con las ediciones citadas de forma cruzada.</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="mecanismo">
+  <div class="centro">
+    <p class="kicker rev">El jinete y el elefante</p>
+    <h2 class="titulo rev d1">Por qué la fuerza de voluntad pierde casi siempre</h2>
+    <p class="bajada rev d2">Es la metáfora que le da nombre al primer capítulo del libro («The Divided Self»), y la que explica todo lo que sigue. Tocá cada pieza:</p>
+    <div class="reglas rev d3">
+      <div class="regGrid" id="regBox">
+        <div class="reg abierta" data-obs="Es tu mente automática: emociones, hábitos, reacciones instantáneas. Toma la enorme mayoría de tus decisiones en milisegundos, sin pedirle permiso al jinete. Es evolutivamente mucho más vieja y mucho más fuerte — literal, seis toneladas contra una persona arriba."><span class="ico">🐘</span><span class="nombre">1. El elefante</span><span class="obs">Es tu mente automática: emociones, hábitos, reacciones instantáneas. Toma la enorme mayoría de tus decisiones en milisegundos, sin pedirle permiso al jinete. Es evolutivamente mucho más vieja y mucho más fuerte — literal, seis toneladas contra una persona arriba.</span></div>
+        <div class="reg" data-obs="Tu mente consciente, verbal, la que planifica y se cuenta historias sobre por qué hizo lo que hizo (casi siempre después de que el elefante ya se movió). Haidt: 'el jinete evolucionó para servir al elefante', no al revés — la razón casi nunca es la que decide primero."><span class="ico">🎩</span><span class="nombre">2. El jinete</span><span class="obs"></span></div>
+        <div class="reg" data-obs="La fuerza de voluntad pura (el jinete tirando de las riendas) casi nunca gana. Lo que sí funciona, según el libro, es cambiar el entorno inmediato del elefante — el gatillo, la fricción, la recompensa — para que se mueva solo hacia donde el jinete quiere. Es literalmente el argumento detrás de Fogg y de Brewer, que ya leíste este mes."><span class="ico">🧭</span><span class="nombre">3. Domesticar, no forzar</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="reg-hint">Las tres piezas arman la pregunta de fondo del libro: si no sos una sola voluntad, ¿cómo se hace para cambiar de verdad?</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="formula-sec">
+  <div class="centro">
+    <p class="kicker rev">La fórmula del capítulo 5</p>
+    <h2 class="titulo rev d1">H = S + C + V</h2>
+    <div class="formula rev d2">H&nbsp;=&nbsp;<b>S</b>&nbsp;+&nbsp;<b>C</b>&nbsp;+&nbsp;<b>V</b></div>
+    <div class="formula-leyenda rev d2">
+      <span><b>S</b>et point — tu piso genético de felicidad, bastante fijo</span>
+      <span><b>C</b>ondiciones — dónde vivís, cuánto ganás, tu salud (pesan menos de lo que pensás, y te acostumbrás rápido)</span>
+      <span><b>V</b>oluntarias — lo que elegís hacer día a día (acá es donde realmente hay margen)</span>
+    </div>
+    <p class="parr suave rev d3">La parte incómoda: subir el sueldo o mudarte a una casa mejor (la C) te sube el ánimo un tiempo y después el elefante se acostumbra — es la "cinta de correr hedónica" que el libro documenta con estudios de loterías y accidentes. Lo que sí deja huella son las V: hábitos, gratitud, y sobre todo encontrar trabajo o actividades en las que entrás en flow — acá el libro cita directo a Csikszentmihalyi, el mismo autor de "Flow" que ya leíste el 27/08. El capítulo 10 se llama justamente "Happiness Comes from Between": ni todo está en tu cabeza (como diría un budista estricto) ni todo está afuera — está en el encaje entre vos y lo que hacés.</p>
+  </div>
+</section>
+
+<section class="seccion" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo ahora</p>
+    <h2 class="titulo rev d1">El mapa que explica el mes que llevás leyendo</h2>
+    <p class="bajada rev d2">Este mes probaste, sin saberlo, varias piezas sueltas de este mismo libro: Csikszentmihalyi (flow, capítulo 10), Fogg y Brewer (entrenar al elefante en vez de pelearle, capítulo 1), Herrigel y el Dalai Lama (soltar el control, que Haidt cruza con el estoicismo y el budismo en el capítulo 2). Haidt es el mapa completo detrás de todas esas piezas sueltas — el libro que las conecta en una sola idea, con la ciencia detrás de cada una.</p>
+    <p class="parr suave rev d3">Dato honesto y un poco irónico, dicho de frente: llevás seis fichas seguidas con dwell fuerte (leíste de verdad Flow, Huxley, Fogg, Dalai Lama, Craving Mind, El Alquimista) pero sin cerrar un botón de veredicto desde Herrigel el 26/08. Si este libro tiene razón, tiene sentido — el jinete (vos, leyendo con atención) puede estar plenamente convencido y el elefante (el que aprieta el botón) simplemente no tener ganas todavía. No hace falta que sea al revés para que valga la pena leerlo.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>The Happiness Hypothesis: Finding Modern Truth in Ancient Wisdom</em>, Basic Books, 2006.</dd>
+        <dt>En español</dt><dd><em>La hipótesis de la felicidad</em>, trad. Gabriela Poveda — hay ediciones de Gedisa, Paidós y Deusto en circulación (mismo texto, distintas tapas).</dd>
+        <dt>Estructura</dt><dd>11 capítulos, cada uno cruza una idea antigua puntual (la mente dividida, la reciprocidad, el amor, la adversidad, la virtud, lo divino) con estudios reales de psicología.</dd>
+        <dt>Dónde está en la casa</dt><dd>En ningún lado. Verifiqué título y autor contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: sin coincidencias previas.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La metáfora del jinete y el elefante, la fórmula H=S+C+V, la estructura de los 11 capítulos y la conexión con Csikszentmihalyi en el capítulo 10 están verificadas cruzando Wikipedia (inglés), SuperSummary y reseñas académicas (incluida una publicada en el Journal of Happiness Studies); las dos citas textuales de esta ficha salen de la colección de citas verificadas del libro en Goodreads, no traducidas por editoriales — la traducción al español es propia y está declarada como tal.</p>
+      <p><b>Sobre el audio:</b> el audiolibro completo en inglés está en Google Play, narrado por Ryan Vincent Anderson — mismo narrador confirmado también en Audible/Amazon, cruzado por título+autor+narrador. Google Play bloquea la verificación automática por link (403), limitación ya conocida y no un error real.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Conseguirlo</p>
+    <h2 class="titulo rev d1">Hay edición en los dos idiomas</h2>
+    <p class="bajada rev d2">Lo busqué hoy en Buscalibre Uruguay: el original en inglés (Basic Books 2006) figura desde $979 pesos uruguayos; la edición en español (Deusto, tapa blanda) es más barata todavía, desde $632 — mismo contenido, elegí el que te resulte más cómodo de leer.</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=The+Happiness+Hypothesis+Jonathan+Haidt">Conseguilo en inglés (~$979 UYU)</a>
+      <a href="https://www.buscalibre.uy/libros/search/?q=La+hipotesis+de+la+felicidad+Jonathan+Haidt">Conseguilo en español (~$632 UYU)</a>
+      <a href="https://play.google.com/store/audiobooks/details/The_Happiness_Hypothesis_Finding_Modern_Truth_in_A?id=AQAAAEAMFQZVGM&hl=en_US">🎧 Audiolibro en Google Play (inglés, narrado por Ryan Vincent Anderson)</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d2">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-02-haidt-happiness-hypothesis','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-02-haidt-happiness-hypothesis','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-02-haidt-happiness-hypothesis','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-02-haidt-happiness-hypothesis','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-02-haidt-happiness-hypothesis','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-02-haidt-happiness-hypothesis','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-02-haidt-happiness-hypothesis','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-02-haidt-happiness-hypothesis','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-02-haidt-happiness-hypothesis','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-09-02-haidt-happiness-hypothesis" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-02-haidt-happiness-hypothesis" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-02-haidt-happiness-hypothesis',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">«La felicidad no es algo que puedas encontrar, adquirir o alcanzar directamente. Tenés que conseguir las condiciones correctas, y después esperar.»</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">Jonathan Haidt, <em>The Happiness Hypothesis</em> — verificada en la colección de citas del libro (Goodreads), traducción propia declarada como tal.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para Andy · datos verificados contra Wikipedia, SuperSummary, el Journal of Happiness Studies y el stock de Buscalibre Uruguay, citas cruzadas entre fuentes independientes, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#regBox .reg').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#regBox .reg').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-01T22:24:29.785Z",
+  "_updated_at": "2026-09-02T19:16:19.000Z",
   "notifications": [
     {
       "id": "2026-08-29-rec-andy",
@@ -1155,6 +1155,32 @@
       "sent_at": "2026-09-01T22:24:29.784Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-09-01"
+    },
+    {
+      "id": "2026-09-02-rec-andy",
+      "title": "🐘 El que explica por qué no votás",
+      "body": "The Happiness Hypothesis: la ciencia (jinete y elefante) de por qué leés todo entero y nunca cerrás el botón. Nuevo, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-02-haidt-happiness-hypothesis.html",
+      "to": "Andy",
+      "send_at": "2026-09-02T19:00:00-03:00",
+      "expires_at": "2026-09-02T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-02"
+    },
+    {
+      "id": "2026-09-02-rec-sofi",
+      "title": "👑 La otra Agatha que tenés en casa",
+      "body": "El secreto de Chimneys: la Christie con humor y una corona balcánica perdida, no la fría de Mirrors.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-02-christie-secreto-chimneys.html",
+      "to": "Sofi",
+      "send_at": "2026-09-02T19:00:00-03:00",
+      "expires_at": "2026-09-02T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-02"
     }
   ]
 }
