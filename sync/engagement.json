@@ -3872,7 +3872,16 @@
       "page": "2026-09-01-coelho-alquimista.html",
       "device": "Andy",
       "nid": "2026-09-03-rec-andy-recordatorio"
+    },
+    {
+      "id": "mtlxtw9j-wsudq4",
+      "type": "answer",
+      "ts": "2026-09-03T19:48:29.719Z",
+      "page": "2026-09-01-coelho-alquimista.html",
+      "device": "Andy",
+      "qid": "rec-nota:2026-09-01-coelho-alquimista",
+      "value": "Agrégale a todas las recomendaciones un icono de play para poder escuchar un breve resumen del libro y sus main insights"
     }
   ],
-  "_updated_at": "2026-09-03T19:45:36.037Z"
+  "_updated_at": "2026-09-03T19:48:32.434Z"
 }
