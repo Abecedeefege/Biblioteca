@@ -3787,7 +3787,24 @@
       "device": "Andy",
       "dwell_s": 493,
       "scroll_pct": 80
+    },
+    {
+      "id": "mtkui4z7-irxw2k",
+      "type": "notification_clicked",
+      "ts": "2026-09-03T01:27:36.115Z",
+      "page": "2026-09-02-haidt-happiness-hypothesis.html",
+      "device": "Andy",
+      "nid": "2026-09-02-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mtkui4z8-u78h5e",
+      "type": "page_visit",
+      "ts": "2026-09-03T01:27:36.116Z",
+      "page": "2026-09-02-haidt-happiness-hypothesis.html",
+      "device": "Andy",
+      "nid": "2026-09-02-rec-andy"
     }
   ],
-  "_updated_at": "2026-08-30T04:54:17.700Z"
+  "_updated_at": "2026-09-03T01:27:38.063Z"
 }
