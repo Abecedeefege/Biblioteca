@@ -3837,7 +3837,16 @@
       "page": "2026-09-02-haidt-happiness-hypothesis.html",
       "type": "page_visit",
       "device": "sin-nombre"
+    },
+    {
+      "id": "mtkupsq0-fhu3i1",
+      "type": "answer",
+      "ts": "2026-09-03T01:33:33.480Z",
+      "page": "2026-09-02-haidt-happiness-hypothesis.html",
+      "device": "Andy",
+      "qid": "rec-nota:2026-09-02-haidt-happiness-hypothesis",
+      "value": "Quiero que incluyas un resumen en formato audio de 30 segundos con cada recomendación nueva\n\nTambién asumir que si no abrí una notificación, es porque no tenia tiempo.  Podés volverme a mandar una al tiempo si no la abri"
     }
   ],
-  "_updated_at": "2026-09-03T01:30:53.661Z"
+  "_updated_at": "2026-09-03T01:33:35.677Z"
 }
