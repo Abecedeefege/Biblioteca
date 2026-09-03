@@ -3846,7 +3846,33 @@
       "device": "Andy",
       "qid": "rec-nota:2026-09-02-haidt-happiness-hypothesis",
       "value": "Quiero que incluyas un resumen en formato audio de 30 segundos con cada recomendación nueva\n\nTambién asumir que si no abrí una notificación, es porque no tenia tiempo.  Podés volverme a mandar una al tiempo si no la abri"
+    },
+    {
+      "id": "mtkuq1us-xnp78g",
+      "type": "dwell",
+      "ts": "2026-09-03T01:33:45.316Z",
+      "page": "2026-09-02-haidt-happiness-hypothesis.html",
+      "device": "Andy",
+      "dwell_s": 369,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mtlxq4q6-oqbc9f",
+      "type": "notification_clicked",
+      "ts": "2026-09-03T19:45:34.063Z",
+      "page": "2026-09-01-coelho-alquimista.html",
+      "device": "Andy",
+      "nid": "2026-09-03-rec-andy-recordatorio",
+      "src": "push"
+    },
+    {
+      "id": "mtlxq4qa-ec7mj5",
+      "type": "page_visit",
+      "ts": "2026-09-03T19:45:34.066Z",
+      "page": "2026-09-01-coelho-alquimista.html",
+      "device": "Andy",
+      "nid": "2026-09-03-rec-andy-recordatorio"
     }
   ],
-  "_updated_at": "2026-09-03T01:33:35.677Z"
+  "_updated_at": "2026-09-03T19:45:36.037Z"
 }
