@@ -3804,7 +3804,40 @@
       "page": "2026-09-02-haidt-happiness-hypothesis.html",
       "device": "Andy",
       "nid": "2026-09-02-rec-andy"
+    },
+    {
+      "id": "mtkr3cna-tu1uyw",
+      "ts": "2026-09-02T23:52:07.366Z",
+      "page": "index.html",
+      "type": "page_visit",
+      "device": "C"
+    },
+    {
+      "id": "mtkr3h5f-4dh9mw",
+      "ts": "2026-09-02T23:52:13.203Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "C",
+      "dwell_s": 5,
+      "scroll_pct": 23
+    },
+    {
+      "id": "mtkui6l3-ig5sgr",
+      "ts": "2026-09-03T01:27:38.200Z",
+      "nid": "2026-09-02-rec-andy",
+      "src": "push",
+      "page": "2026-09-02-haidt-happiness-hypothesis.html",
+      "type": "notification_clicked",
+      "device": "sin-nombre"
+    },
+    {
+      "id": "mtkui6l5-m9p365",
+      "ts": "2026-09-03T01:27:38.202Z",
+      "nid": "2026-09-02-rec-andy",
+      "page": "2026-09-02-haidt-happiness-hypothesis.html",
+      "type": "page_visit",
+      "device": "sin-nombre"
     }
   ],
-  "_updated_at": "2026-09-03T01:27:38.063Z"
+  "_updated_at": "2026-09-03T01:30:53.661Z"
 }
