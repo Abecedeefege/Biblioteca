@@ -3925,7 +3925,16 @@
       "page": "2026-09-03-chodron-budismo.html",
       "device": "Andy",
       "nid": "2026-09-03-rec-andy"
+    },
+    {
+      "id": "mtm69bvv-gto301",
+      "type": "answer",
+      "ts": "2026-09-03T23:44:26.731Z",
+      "page": "2026-09-03-chodron-budismo.html",
+      "device": "Andy",
+      "qid": "rec-nota:2026-09-03-chodron-budismo",
+      "value": "Sigo sin ver mi botón de play con un audio describiendo el libro y sus main insights"
     }
   ],
-  "_updated_at": "2026-09-03T23:43:01.162Z"
+  "_updated_at": "2026-09-03T23:44:29.265Z"
 }
