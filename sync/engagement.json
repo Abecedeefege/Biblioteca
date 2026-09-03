@@ -3881,7 +3881,25 @@
       "device": "Andy",
       "qid": "rec-nota:2026-09-01-coelho-alquimista",
       "value": "Agrégale a todas las recomendaciones un icono de play para poder escuchar un breve resumen del libro y sus main insights"
+    },
+    {
+      "id": "mtlxtyly-840yhx",
+      "type": "answer",
+      "ts": "2026-09-03T19:48:32.758Z",
+      "page": "2026-09-01-coelho-alquimista.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-09-01-coelho-alquimista",
+      "value": "ya_lo_lei"
+    },
+    {
+      "id": "mtlxtz8g-jpkq4c",
+      "type": "reaction",
+      "ts": "2026-09-03T19:48:33.568Z",
+      "page": "2026-09-01-coelho-alquimista.html",
+      "device": "Andy",
+      "slug": "2026-09-01-coelho-alquimista",
+      "value": "like"
     }
   ],
-  "_updated_at": "2026-09-03T19:48:32.434Z"
+  "_updated_at": "2026-09-03T19:48:35.342Z"
 }
