@@ -3899,7 +3899,33 @@
       "device": "Andy",
       "slug": "2026-09-01-coelho-alquimista",
       "value": "like"
+    },
+    {
+      "id": "mtlxu25x-k0xkpt",
+      "type": "dwell",
+      "ts": "2026-09-03T19:48:37.365Z",
+      "page": "2026-09-01-coelho-alquimista.html",
+      "device": "Andy",
+      "dwell_s": 183,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mtm67gh9-l6b2c5",
+      "type": "notification_clicked",
+      "ts": "2026-09-03T23:42:59.373Z",
+      "page": "2026-09-03-chodron-budismo.html",
+      "device": "Andy",
+      "nid": "2026-09-03-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mtm67gha-jw4tq3",
+      "type": "page_visit",
+      "ts": "2026-09-03T23:42:59.374Z",
+      "page": "2026-09-03-chodron-budismo.html",
+      "device": "Andy",
+      "nid": "2026-09-03-rec-andy"
     }
   ],
-  "_updated_at": "2026-09-03T19:48:35.342Z"
+  "_updated_at": "2026-09-03T23:43:01.162Z"
 }
