@@ -1,166 +1,139 @@
 # Perfil de gustos — recomendador de Bibliotequeando
 
 ## ⚖️ MEZCLA + RÉGIMEN — DIARIO desde 20/08 (reemplaza el semanal del 05/08)
-**DOS fichas por día, todos los días**: UNA para Andy y UNA para Sofi, cada
-una elegida por SU perfil y SU feedback. Entre las dos del día: **UNA de
-libro nuevo y UNA de la biblioteca de la casa**, alternando cada día quién
-recibe la nueva (mirar en `recommended.json` qué recibió cada uno el día
-anterior). Push personal a cada uno, ambos ~19:00 -03:00
-(`"to":"Andy"` / `"to":"Sofi"`). Si el día ya tiene fichas pre-armadas,
-cuentan para su destinatario (una `todos` cuenta para ambos) y solo se
-construye lo que falte, manteniendo el par nuevo+biblioteca.
-Cine/series NO cambia (viernes ~19:00, `todos`, fuera del par).
-**⚠️ Nota de mantenimiento (vigente desde 21/08, sigue sin sincronizar):**
-`.claude/commands/recomendacion.md` sigue describiendo el régimen SEMANAL
-del 05/08 (Gate de día domingo) — quedó desactualizado al restablecerse el
-diario el 20/08. Esta sección de PROFILE manda hasta que alguien
-sincronice el comando; no es territorio que yo pueda tocar.
+**DOS fichas por día**: UNA para Andy y UNA para Sofi, cada una según SU
+perfil y SU feedback. Entre las dos: UNA nueva y UNA de la biblioteca de
+la casa, alternando quién recibe la nueva (ver `recommended.json`, qué
+recibió cada uno ayer). Push personal a cada uno, ambos ~19:00 -03:00
+(`"to":"Andy"`/`"to":"Sofi"`). Fichas pre-armadas cuentan para su
+destinatario; construir solo lo que falte, manteniendo el par
+nuevo+biblioteca. Cine/series no cambia (viernes ~19:00, `todos`).
+**⚠️ Sin sincronizar desde 21/08**: `.claude/commands/recomendacion.md`
+sigue describiendo el régimen semanal del 05/08 (Gate domingo) — esta
+sección manda hasta que alguien lo actualice; no es territorio mío.
 
-## 🎧 Google Play en todas las fichas nuevas (desde 24/08)
-Pedido de Andy: toda ficha nueva (y redescub si existe) suma link a
-**audiolibro** de Google Play si existe, verificado SIEMPRE por búsqueda
-cruzada título+autor(+narrador) — Google Play devuelve 403 a bots (se usa
-igual, bloqueo conocido). Un 404 real (no la página de bloqueo) es link
-inválido: se declara la existencia sin link. Cuando hay varias ediciones
-narradas distintas circulando y no se puede identificar con certeza cuál
-es la de Google Play (caso Chimneys 02/09), se declara existencia sin
-linkear ninguna — mismo espíritu que el 404 real, para no apuntar a la
-narración equivocada.
+## 🎧🔔 rec-nota de Andy 03/09 (PRIORIDAD MÁXIMA) — dos pedidos activos
+1. **Audio de 30s en cada ficha `nuevo`**: implementado hoy (Sofi/Haig)
+   con Web Speech API, 100% cliente, sin build ni tocar `engage.js`.
+   Botón ▶️/⏸️ + micro-pregunta `rec-audio`. Estándar desde hoy en todo
+   `kind:nuevo`.
+2. **Noti sin click ≠ desinterés — reenviar después**: se encontró que
+   Dalai Lama (30/08), Brewer (31/08) y Alquimista (01/09) tienen CERO
+   eventos — corrige una lectura previa errónea de esta sección (el
+   "dwell fuerte sin botón" era solo de Fogg 29/08). Acción hoy:
+   recordatorio solo para el más reciente (Alquimista,
+   `2026-09-03-rec-andy-recordatorio`, 16:30-18:45), no los tres juntos.
+   **Regla nueva**: cada corrida, si el último push de Andy sigue sin
+   `notification_clicked` a las 24-48h, reencolar recordatorio a la
+   MISMA página antes de sumar libro nuevo. Sofi es otro caso (ver abajo).
 
-## 🚨 Sofi: silencio de canal prolongado (actualizado 02/09)
-Cero eventos suyos en `sync/engagement.json` desde el 20/08 — 14 días
-corridos, 14 fichas, en 7 géneros/autores distintos ya probados (cozy,
-gótico, histórico, especulativo cálido, fantasía cálida, literatura
-contemporánea sin crimen, y hoy clásico de aventura con humor), pese a
-suscripción `active` y pushes saliendo con 201 confirmado en
-`send_log.json`. Canal de Andy sano en paralelo → ya no se explica por bug
-del dispatcher. Sigo construyendo fichas de calidad; parar no diagnostica
-nada. Plan si sigue muda: agotar el banco limpio de M5 (queda Sherlock x4,
-Delany libro 2) antes de repetir autor.
+## 🎧 Google Play en fichas nuevas (desde 24/08)
+Toda ficha nueva (y redescub si existe) suma audiolibro de Google Play
+si existe, verificado por título+autor(+narrador) — 403 a bots es
+bloqueo conocido, se usa igual. 404 real o varias narraciones sin poder
+identificar cuál es la de Google Play = declarar existencia sin linkear
+(Chimneys 02/09, Budismo-es y Razones-es 03/09; inglés sí confirmado).
 
-## ✅ Canal de Andy confirmado sano (30/08)
-Prueba de lectura real: dwells crecientes y fuertes en varias fichas
-recientes (Fogg 493s/80%, otras similares). Último voto de BOTÓN sigue
-siendo Herrigel (26/08, `me_tienta`+`like`) — desde entonces 7 fichas
-seguidas (Flow/Huxley/Fogg/Dalai Lama/Craving Mind/Alquimista/hoy Haidt)
-sin cerrar veredicto pese a dwell fuerte en varias: dato de contenido o
-fricción del CTA, no de entrega.
+## 🚨 Sofi: silencio de canal prolongado (03/09)
+Cero eventos desde el 20/08 — 15 fichas, 8 vetas probadas, pese a
+`active` + 201 siempre. Distinto del caso de Andy: acá es total (ni un
+evento de ningún tipo), más señal de dispositivo/canal que de gusto —
+por eso NO se le aplica el reenvío en bloque (sería spamear 15 pushes).
+Hoy se prueba volver a Matt Haig (su único acierto pleno) en un género
+nuevo para ella. Si sigue en cero, próximo paso es sospechar del canal.
 
-## 📅 02/09 — hoy
-Cero eventos nuevos de ninguno de los dos desde el cutoff (30/08 04:54
-UTC) — nada que reprocesar; ambos pushes del 01/09 salieron (`sent`,
-201, ~19:24 -03:00, dentro de ventana y sin el retraso del 31/08).
-Régimen: ayer Andy tuvo redescub (Coelho) → hoy nuevo; Sofi tuvo nuevo
-(Backman) → hoy redescub.
-**Andy → Jonathan Haidt, *The Happiness Hypothesis*** (nuevo): abre la
-veta "psicología positiva académica" del banco (con Seligman de reserva).
-Es el mapa que conecta piezas sueltas que ya leyó este mes sin saberlo:
-cita a Csikszentmihalyi/flow (que leyó el 27/08) y su metáfora central
-(jinete vs elefante) es el mismo argumento detrás de Fogg/Brewer (entrenar
-el hábito, no forzar la voluntad). Ficha incluye una lectura honesta y
-autoirónica de su propio patrón (dwell fuerte, sin botón) a la luz del
-propio libro.
-**Sofi → Agatha Christie, *The Secret of Chimneys*** (redescub, M5-020):
-completa el par de sus DOS Christie en casa — el 27/08 se priorizó M5-021
-(Mirrors) por tono más atmosférico y se dejó esta pasar por "más liviana";
-como Mirrors tampoco generó señal, hoy se prueba el otro extremo (más
-humor y aventura, registro más cercano a Joyce/Osman que a Marple clásica).
-Pushes `2026-09-02-rec-andy`/`-rec-sofi` encolados 19:00 -03:00.
+## ✅ Canal de Andy — matizado (03/09)
+Distinguir "abrió y no votó" (Fogg 29/08 dwell 493s, Herrigel 26/08
+botón, Haidt 02/09 click+nota — señal de contenido/CTA) de "nunca
+abrió" (Dalai Lama/Brewer/Alquimista 30/08-01/09 — señal de tiempo, ver
+rec-nota arriba). Se trackean por separado de ahora en más.
 
-### Log resumido 25/08–01/09
-25/08 Andy→Seth *Being You* (nuevo) / Sofi→Doyle *Baskerville* (redescub).
-26/08 Andy→Herrigel *Zen tiro con arco* (redescub, **me_tienta+like**,
-último voto de botón de Andy) / Sofi→Haig *The Humans* (nuevo).
-27/08 Andy→Csikszentmihalyi *Flow* (nuevo) / Sofi→Christie *Mirrors*
-(redescub). 28/08 Andy→Huxley *Doors of Perception* (redescub) / Sofi→
-Klune *In the Lives of Puppets* (nuevo). 29/08 Andy→Fogg *Tiny Habits*
-(nuevo, dwell fuerte 493s/80%) / Sofi→Peters *Misterio en Egipto*
-(redescub). 30/08 Andy→Dalai Lama *The Art of Happiness* (redescub) /
-Sofi→Haig *How to Stop Time* (nuevo). 31/08 Andy→Brewer *The Craving
-Mind* (nuevo) / Sofi→Bennett *A Three Dog Problem* (redescub, secuela de
-Windsor Knot). 01/09 Andy→Coelho *El Alquimista* (redescub) / Sofi→
-Backman *Un hombre llamado Ove* (nuevo, cambio de familia de género).
-Ninguna ficha de Sofi tiene feedback desde el 20/08.
+## 📅 03/09 — hoy
+Único evento del cutoff (30/08): rec-nota de Andy en Haidt, ambos
+pedidos con acción tomada (arriba). Régimen: ayer Andy nuevo (Haidt) →
+hoy redescub; Sofi redescub (Chimneys) → hoy nuevo.
+**Andy → Thubten Chodron, *Budismo para principiantes* (L4-016)**
+(redescub): preguntas y respuestas sueltas, se lee en 2 minutos —
+responde directo a su pedido de reenvío/formato corto. Guardia de
+identidad reforzada: NO es Pema Chödrön (confusión previa ya evitada).
+**Sofi → Matt Haig, *Razones para seguir viviendo*** (nuevo): su único
+autor con acierto pleno, pero memoir real — cambio de estante, no otro
+nombre de misterio. Tema sensible declarado de frente. Ediciones ES
+agotadas hoy en Buscalibre — declarado, con ebook verificado como
+alternativa. Pushes `-rec-andy`/`-rec-sofi` 19:00 + `-rec-andy-
+recordatorio` (Alquimista, 16:30-18:45).
+
+### Log resumido 26/08–02/09
+26/08 Andy→Herrigel *Zen* (redescub, **me_tienta+like**, único botón en
+3 semanas) / Sofi→Haig *Humans* (nuevo). 27/08 Andy→Csikszentmihalyi
+*Flow* (nuevo) / Sofi→Christie *Mirrors* (redescub). 28/08 Andy→Huxley
+*Doors* (redescub) / Sofi→Klune *Puppets* (nuevo). 29/08 Andy→Fogg *Tiny
+Habits* (nuevo, dwell 493s sin botón) / Sofi→Peters *Egipto* (redescub).
+30/08 Andy→Dalai Lama *Art of Happiness* (redescub, CERO) / Sofi→Haig
+*Stop Time* (nuevo). 31/08 Andy→Brewer *Craving Mind* (nuevo, CERO) /
+Sofi→Bennett *3 Dog Problem* (redescub). 01/09 Andy→Coelho *Alquimista*
+(redescub, CERO → recordatorio hoy) / Sofi→Backman *Ove* (nuevo). 02/09
+Andy→Haidt *Happiness Hypothesis* (nuevo, **click+nota**) / Sofi→
+Christie *Chimneys* (redescub). Sofi sin feedback desde el 20/08.
 
 ## 📚 Contexto fijo
 Catálogo: 437 volúmenes (re-extraer `/tmp/catalog.json` cada corrida).
-Suscripción: Andy y Sofi `active`. M2/M3/M4/M6 pasaron a vitrinas pero
-libros siguen fichados con su id de siempre.
+Suscripción: Andy y Sofi `active`.
 
 ### Sofi — vetas confirmadas
-Salas: sala King (R4+R5, 50 libros), salón del crimen (M5), rincón Valeria
-(M6, quemado). Aciertos duros: **Dicker Harry Quebert `lo_quiero`+`love`**
-(17/07); **Klune-Casa-mar-azul `me_tienta`+`love`** (05/08, su ÚNICA señal
-desde el 20/08); **Haig *Biblioteca de medianoche* `lo_quiero`+`love`**
-(27/07, audiencia todos) — patrón "arranca oscuro, termina cálido".
-Romance contemporáneo (Henry x2): descartado.
-**Guardia máxima misterio/cozy**: `ya_lo_lei` en King, Katzenbach,
-Carlisle, Benavent, Henry — sagas masivas ya devoradas por Kindle.
-- Quemados: Osman t.1-2, Dicker Harry Quebert, Hill, King R5-018,
-  Katzenbach M5-024, Carlisle M5-012, Benavent M6-001-009, Henry (ambos),
-  Coyle M5-011, Klune-Puerta, Heap House, Bennett-Windsor y libro 2,
-  Klune-Somewhere, Doyle-Baskerville, Haig-Biblioteca-medianoche,
-  Haig-The-Humans, Christie-Mirrors M5-021, Klune-Puppets,
-  Peters-Misterio-en-Egipto M5-019, Haig-How-to-Stop-Time, Backman-Ove
-  (fuera del catálogo), Christie-Chimneys M5-020 (usado 02/09).
-- Banco redescub: M5-016 Delany libro 2 (esperar señal de M5-014). NO usar
-  M5-022, M5-009, M5-008, M5-002, M6 entero (romance/no visto). Limpios en
-  M5: Sherlock x4 (M5-033/006/034/035/036).
-- Banco nuevo: Haig *Reasons to Stay Alive* (memoir, mismo autor de su
-  acierto pleno) — próximo candidato si sigue muda. Si tras 2-3 nuevos más
-  sigue sin señal, priorizar redescub confirmado en casa por sobre nuevo.
+Salas: King (R4+R5, 50 libros), M5, M6 (quemado). Aciertos duros (todos
+pre-20/08): **Dicker HQ `lo_quiero`+`love`**; **Klune-mar-azul
+`me_tienta`+`love`**; **Haig *Medianoche* `lo_quiero`+`love`** (todos,
+su ÚNICA señal de toda la serie — por eso se vuelve a Haig hoy). Romance
+contemporáneo (Henry x2): descartado. Guardia máxima misterio/cozy:
+`ya_lo_lei` en King, Katzenbach, Carlisle, Benavent, Henry.
+- Quemados: Osman t.1-2, Dicker HQ, Hill, King R5-018, Katzenbach
+  M5-024, Carlisle M5-012, Benavent M6-001-009, Henry x2, Coyle M5-011,
+  Klune x3, Heap House, Bennett+secuela, Doyle-Baskerville, Haig x3,
+  Christie x2, Peters-Egipto, Backman-Ove.
+- Banco redescub: M5-016 Delany 2 (esperar señal), Sherlock x4 en M5
+  (M5-033/006/034/035/036) si Haig tampoco engancha.
+- Banco nuevo: agotado el círculo misterio/cozy de primera línea — hoy
+  género distinto. Si Haig no da señal, sospechar del canal antes que
+  del gusto (15 fichas, cero eventos de ningún tipo).
 
 ### Andy — datos duros
-Estante L4 (28 + 5 nuevos agosto). Gustos: wellness, autosuperación,
-positividad, astronomía, neurociencia, espiritualidad oriental, finanzas,
-fábulas. Idioma indistinto. Regla confirmada x3: autor identitario/ya-en-
-casa > clásico consagrado sin dueño (Bach 2/2; Brewer 31/08). Fábula
-corta (Bach, Hesse, Coelho) sigue siendo su combo más seguro sin ningún
-miss. Último voto de botón: Herrigel 26/08 (`me_tienta`+`like`); desde
-entonces 7 fichas sin cerrar veredicto pese a dwell fuerte en varias.
-- Aciertos: Rovelli, Bach Ilusiones, Holiday (plenos); Cosmos, Bach
-  Gaviota, Herrigel (redescub, `me_tienta`+`like`). `ya_lo_lei`: Frankl,
-  Meditaciones (clásicos sin dueño).
-- Astronomía en pausa: L5-024 Hoyle, L5-021 Whipple. Estoicismo: banco
-  Séneca Cartas a Lucilio. Cuerpo/sueño: Walker con primer voto real.
-  Neurociencia/hábitos/mindfulness: Seth, Huxley, Fogg, Brewer, todos sin
-  veredicto. Oriental nivel 3 en Dalai Lama (30/08), en pausa.
-- Banco nuevo: Seligman (psicología positiva, par de Haidt usado hoy),
-  Sapolsky *Behave* (en pausa), mindfulness (Thich Nhat Hanh, Kabat-Zinn —
-  Pema Chödrön descartada por confusión con Thubten Chodron, L4-016),
-  oriental (*Tao Te Ching*, Alan Watts, Suzuki), hábitos (Wendy Wood,
-  esperar voto real antes de sumar tercer libro de esa veta).
-- Banco redescub: usado 26/08 L4-010, 28/08 L4-014, 30/08 L4-021, 01/09
-  L4-015. Próxima prioridad: L4-016 *Budismo para principiantes*. Astro:
-  L5-024, L5-021.
+Estante L4 (28+5). Gustos: wellness, autosuperación, positividad,
+astronomía, neurociencia, oriental, finanzas, fábulas. Idioma
+indistinto. Regla confirmada: autor identitario > clásico sin dueño.
+Fábula corta (Bach, Hesse, Coelho) sigue siendo el combo más seguro.
+- Botón: Rovelli, Bach Ilusiones, Holiday (plenos, pre-20/08); Herrigel
+  (redescub, 26/08); Haidt (click+nota, 03/09, sin veredicto).
+- Astronomía en pausa: L5-024, L5-021. Estoicismo: Séneca. Sueño:
+  Walker sin voto. Oriental: Dalai Lama (sin abrir) → hoy Chodron.
+- Banco nuevo: Seligman, Sapolsky *Behave*, mindfulness (Thich Nhat
+  Hanh, Kabat-Zinn), oriental (*Tao Te Ching*, Watts, Suzuki), Wendy
+  Wood (esperar voto real primero).
+- Banco redescub: usado 26-30/08 L4-010/014/021, 01/09 L4-015, 03/09
+  L4-016. Astro: L5-024, L5-021.
 
 ## 🛡️ Guardia
-"Nuevo": título+autor contra catálogo completo (sin tildes) y contra
-`recommended.json` — incluir variantes de nombre parecidas (caso Pema
-Chödrön / Thubten Chodron). Campo `to` obligatorio en `queue.json`.
-Revisar `subscription.json` cada corrida. `read_status` de enrichment NO
-confiable para Sofi (Kindle paralelo); para Andy sí. Buscalibre: siempre
-`buscalibre.uy/libros/search/?q=…`; para precio exacto, leer el precio
-embebido del producto directo — un mismo título puede tener varias
-ediciones a precios muy distintos (declarar cuál se cita). Google Play
-404 real (no bloqueo) = link malo: declarar sin publicar, nunca inventar
-un ID; lo mismo si hay múltiples narraciones y no se puede identificar
-con certeza cuál es la de Google Play (Chimneys 02/09).
+Título+autor contra catálogo (sin tildes) y `recommended.json` —
+incluir variantes de nombre (Pema Chödrön/Thubten Chodron, rechequeado
+03/09). Campo `to` obligatorio en `queue.json`. Revisar
+`subscription.json` cada corrida. `read_status` de enrichment no
+confiable para Sofi (Kindle paralelo); para Andy sí. Si TODAS las
+ediciones de Buscalibre figuran agotadas (caso Razones-es 03/09),
+declararlo y sumar alternativa verificada en vez de ocultarlo.
 
-## 🔭 Qué mirar (próxima corrida — 03/09, régimen diario)
-Mañana se invierte: Andy redescub, Sofi nuevo. (1) Confirmar en
-`send_log.json` que `2026-09-02-rec-andy`/`-sofi` salieron ~19:00 -03:00.
-(2) Sofi: primer dato de Chimneys (tono humor/aventura) — si sigue muda,
-pasar a Sherlock x4 en M5 antes de repetir autor. (3) Si Andy cierra por
-fin un voto de botón en cualquiera de las 7 fichas pendientes, usarlo
-fuerte — es la señal más valiosa acumulada hasta ahora.
+## 🔭 Qué mirar (próxima corrida — 04/09)
+Se invierte: Andy nuevo, Sofi redescub. (1) Primeras respuestas
+`rec-audio`/`rec-formato`. (2) Confirmar en `send_log.json` que los 3
+pushes de hoy salieron. (3) Si Alquimista sigue sin abrirse pese al
+recordatorio, no insistir una tercera vez. (4) Primer dato de Haig-
+memoir en Sofi: si hay señal profundizar; si sigue en cero, evaluar
+canal antes que gusto.
 
 ## 🎬 CINE + 🧳 viaje (fuera del ciclo)
-Cine: 1/semana, `todos`, viernes ~19:00. Sofi evita gore/subtítulos
-siempre; Andy evita "triste", nunca doblado. Severance "me tienta" Andy —
-candidata fuerte para la próxima función. Sin Función Nº2 desde 31/07,
-fuera del alcance de esta corrida.
+Cine: 1/semana, `todos`, viernes ~19:00. Sofi evita gore/subtítulos;
+Andy evita "triste", nunca doblado. Severance "me tienta" Andy —
+candidata fuerte. Sin Función Nº2 desde 31/07.
 
 ## 🧭 Sugerencias hub
-`recs/index.html` lista todo leyendo `recommended.json` por fetch — cero
-mantenimiento manual. NO TOCAR (ni este ni `recs/setup.html`).
+`recs/index.html` lee `recommended.json` por fetch — cero mantenimiento
+manual. NO TOCAR (ni este ni `recs/setup.html`).

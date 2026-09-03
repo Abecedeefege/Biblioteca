@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-02T16:16:19-03:00",
-  "_feedback_cutoff": "2026-08-30T04:54:16.125Z",
+  "_updated_at": "2026-09-03T16:30:00-03:00",
+  "_feedback_cutoff": "2026-09-03T01:33:33.480Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1865,10 +1865,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
+        "clicked": true,
         "dwell_s": 0
       },
-      "learning": null
+      "learning": "Clickeo el push (03/09 01:27 UTC, ~22:27 -03:00 de la noche del 02/09 -- normal, no 'perdido') y dejo un rec-nota de PRIORIDAD MAXIMA con dos pedidos concretos: (1) sumar un resumen en audio de 30 segundos a cada recomendacion NUEVA; (2) no interpretar una notificacion sin click como desinteres -- reenviarla mas tarde si no la abrio. Accion tomada esta corrida: (1) implementado -- boton de audio con Web Speech API (100% cliente, sin build ni dependencias) en la ficha nueva de hoy (Sofi/Haig), documentado en PROFILE como estandar desde ahora para todo 'nuevo'. (2) Se cruzo el historial real: Dalai Lama (30/08), Brewer (31/08) y El Alquimista/Coelho (01/09) tienen CERO eventos -- ni siquiera un click -- a diferencia de lo que asumia PROFILE ('dwell fuerte en varias'), que en realidad referia solo a Fogg (29/08, 493s). Se re-encolo hoy un recordatorio (mismo id de pagina, push nuevo '2026-09-03-rec-andy-recordatorio') apuntando a El Alquimista, el mas reciente de los tres sin abrir -- no los tres juntos, para no saturarlo. Ver PROFILE seccion rec-nota 03/09 para el detalle completo."
     },
     {
       "id": "2026-09-02-christie-secreto-chimneys",
@@ -1887,6 +1887,58 @@
       "page": "recs/2026-09-02-christie-secreto-chimneys.html",
       "notified_by": "2026-09-02-rec-sofi",
       "why": "Regimen DIARIO: ayer (01/09) Sofi tuvo nuevo (Backman) -> hoy le toca redescubrimiento, y Andy recibe el nuevo. Cero eventos nuevos de Sofi en sync/engagement.json desde el cutoff (30/08 04:54 UTC) -- sigue muda desde el 20/08 pese a suscripcion active y push del 01/09 salido con 201 (~19:24 -03:00). Elegido M5-020 'The Secret of Chimneys' (Agatha Christie, 1925): completa el par de las DOS Christie que tiene en casa (M5-020 y M5-021) -- el 27/08 se eligio M5-021 ('They Do It with Mirrors', Miss Marple) por tono mas atmosferico/cercano a sus aciertos, dejando esta pasar explicitamente por ser 'aventura/comedia mas liviana'; como Mirrors tampoco genero ninguna senal, hoy se prueba la otra mitad del par por si el eje que faltaba no era autor ni formato casa-de-campo sino tono -- Chimneys tiene mucho mas humor y aventura (protagonista pícaro tipo Anthony Cade, intriga de una monarquia balcanica ficticia) que la Christie tipica, registro mas cercano a la irreverencia de Joyce (Osman) que a la frialdad de un Poirot o Marple clasico. Primera aparicion de Superintendente Battle en la obra de Christie. GUARDIA: verificado titulo y autora contra los 437 libros del catalogo completo (unico match esperado, M5-020) y contra todo recommended.json: primera vez que tiene ficha propia. Sin read_status en data/enrichment.json mas alla del anio de publicacion (1925, confirmado ahi) -- tratado como no leido, con la salvedad estandar del Kindle paralelo de Sofi. Contenido (trama de Anthony Cade y las memorias del Conde Stylptitch, la mansion Chimneys de Lord Caterham, el pais ficticio de Herzoslovakia como parodia de novela ruritana, los personajes que debutan) verificado cruzando el sitio oficial de Agatha Christie, Project Gutenberg (texto en dominio publico) y el wiki de Christie; CERO detalles de quien es la o el responsable del crimen. Cita de cierre ('Oh, Lord, what a lot of funny people it does take to make a world', Anthony Cade) verificada con su contexto narrativo completo en la coleccion de citas de la novela en Goodreads, traducida por mi y declarada como tal. Audio: hay multiples ediciones narradas distintas circulando (Hugh Fraser en la oficial de HarperAudio, y al menos otras tres) sin poder confirmar con certeza cual es LA edicion de Google Play para este titulo puntual -- se declara la existencia de audiolibro sin linkear ninguno, para no arriesgar apuntar a la narracion equivocada. Redescubrimiento: sin link de compra (ya esta en el estante M5), CTA de compromiso fisico estandar (leer-esta-noche:M5-020) + boton rec-canal para seguir separando 'nunca llego' de 'llego y no engancho'.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-03-chodron-budismo",
+      "date": "2026-09-03",
+      "kind": "redescubrimiento",
+      "title": "Budismo para principiantes",
+      "author": "Thubten Chodron",
+      "language": "es",
+      "topics": [
+        "espiritualidad",
+        "oriental",
+        "autosuperacion",
+        "meditacion"
+      ],
+      "book_ref": "L4-016",
+      "audience": "andy",
+      "page": "recs/2026-09-03-chodron-budismo.html",
+      "notified_by": "2026-09-03-rec-andy",
+      "why": "Regimen DIARIO: ayer (02/09) Andy tuvo nuevo (Haidt) -> hoy le toca redescubrimiento, y Sofi recibe el nuevo. Cutoff previo (30/08 04:54 UTC) procesado hoy: el evento clave es el rec-nota de Andy en la ficha de Haidt (03/09 01:33 UTC, PRIORIDAD MAXIMA) con dos pedidos -- resumen en audio de 30s en cada nuevo, y no asumir desinteres de una noti sin click (reenviar despues). Al cruzar el historial real se encontro que Dalai Lama (30/08), Brewer (31/08) y El Alquimista (01/09) tienen CERO eventos -- ni un click -- los tres seguidos, justo la semana que el declara mas ocupada. Por eso hoy, en vez de otra narrativa larga, se elige L4-016 'Budismo para principiantes' (Thubten Chodron, prologo del Dalai Lama): un libro literalmente armado en preguntas y respuestas sueltas por tema, pensado para leerse en fragmentos de dos minutos -- la forma exacta que su propio feedback pide. Prioridad ya marcada en PROFILE desde el 30/08 (banco redescub L4, siguiente tras Dalai Lama). GUARDIA de identidad reforzada: se verifico explicitamente que Thubten Chodron (monja estadounidense, tradicion tibetana Gelug, fundadora de Sravasti Abbey) NO es Pema Chodron (maestra de tradicion Shambhala, ex alumna de Chogyam Trungpa) -- la confusion entre ambas ya habia hecho descartar una recomendacion anterior, declarado explicitamente en la ficha para que quede zanjado. Titulo y autora verificados contra los 437 libros del catalogo completo y contra todo recommended.json: primera vez que tiene ficha propia (unico match esperado, L4-016). Sin read_status en data/enrichment.json -- tratado como no leido. Contenido (biografia de Chodron via thubtenchodron.org/Wikipedia/Sravasti Abbey, estructura de preguntas y respuestas via Goodreads, y las tres preguntas usadas en la ficha -- que nos hace infelices, que es el karma, por que ayudar a otros -- con la cita verbatim de la metafora mano/pie) verificado cruzando esas fuentes independientes. Redescubrimiento: sin link de compra (ya esta en el estante L4), CTA de compromiso fisico estandar (leer-esta-noche:L4-016) + micro-pregunta nueva rec-formato para medir si el formato de consulta corta le funciona mejor que la narrativa larga con poco tiempo libre. Audio: existe audiolibro de la edicion en espanol (Alianza Editorial) segun libreria digitales pero sin poder confirmar con certeza su ficha exacta en Google Play -- declarado sin link; la edicion en ingles si esta confirmada (Gabra Zackman, Audible/Google Play).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-03-haig-razones-seguir-viviendo",
+      "date": "2026-09-03",
+      "kind": "nuevo",
+      "title": "Razones para seguir viviendo",
+      "author": "Matt Haig",
+      "language": "es",
+      "topics": [
+        "memoir",
+        "salud_mental",
+        "positividad",
+        "sentido"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-09-03-haig-razones-seguir-viviendo.html",
+      "notified_by": "2026-09-03-rec-sofi",
+      "why": "Regimen DIARIO: ayer (02/09) Sofi tuvo redescubrimiento (Christie Chimneys) -> hoy le toca nuevo, y Andy recibe el redescub. Sofi sigue sin ningun evento propio desde el 20/08 (15 fichas ya, ver PROFILE) -- no hay feedback suyo que procesar hoy tampoco. Elegido 'Reasons to Stay Alive' / 'Razones para seguir viviendo' (Matt Haig, 2015), candidato marcado en PROFILE desde el 02/09 como proximo si seguia muda: es el UNICO autor con acierto pleno confirmado en toda su serie (La Biblioteca de la Medianoche, lo_quiero+love, 27/07) pero en un genero totalmente distinto -- memoir real sobre depresion, no ficcion ni misterio -- probando si lo que la engancho fue Haig como autor/registro (oscuro-que-termina-en-luz) y no el envoltorio de fantasia. Riesgo de tema sensible (intento de suicidio) declarado de frente en la ficha, con salida explicita si no es el momento. GUARDIA: verificado titulo (ingles y espanol) y autor contra los 437 libros del catalogo completo y contra todo recommended.json: sin coincidencias, primera ficha propia del libro (Haig si aparece antes, con La Biblioteca de la Medianoche y The Humans, libros distintos). Contenido (la crisis real en Ibiza a los 24 anios, la estructura en cinco partes Falling/Landing/Rising/Living/Being, las citas) verificado cruzando Wikipedia, SuperSummary, matthaig.com y la coleccion de citas de Goodreads. PRECIO/DISPONIBILIDAD: las 6 ediciones en espanol (Seix Barral y Planeta, 2013/2014/2016) figuran AGOTADAS hoy en Buscalibre Uruguay -- declarado honestamente en la ficha en vez de ocultarlo, con el ebook de Google Play Books (verificado 200) como alternativa inmediata de compra. Audio: audiolibro en ingles narrado por el propio Matt Haig confirmado en Google Play; no se pudo confirmar con la misma certeza una edicion en espanol en esa plataforma, declarado asi. NUEVO ESTANDAR (pedido de Andy 03/09, rec-nota PRIORIDAD MAXIMA): primera ficha con boton de resumen en audio de 30 segundos (Web Speech API, sin build ni dependencias, no toca engage.js) -- desde hoy estandar en toda ficha de kind:nuevo, con su propia micro-pregunta rec-audio para medir si se usa.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

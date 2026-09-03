@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🧘 Budismo para principiantes · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#211A15;
+  --fondo2:#2B221B;
+  --texto:#EDE3D3;
+  --bruma:#AD9B86;
+  --azafran:#C97E2A;
+  --azafran-hi:#E6A34F;
+  --granate:#7A2E2E;
+  --granate-hi:#A34747;
+  --linea:rgba(237,227,211,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--azafran);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--azafran-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,227,211,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--granate),var(--azafran-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(33,26,21,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--azafran-hi);border-color:var(--azafran)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--azafran-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: monasterio al amanecer, una campana ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 10%,#3A2C1F 0%,var(--fondo) 62%)}
+.rayos{position:absolute;top:0;left:0;right:0;height:38%;background:linear-gradient(180deg,rgba(201,126,42,.22) 0%,transparent 100%)}
+.campana{position:absolute;top:13%;left:50%;transform:translateX(-50%);font-size:min(10vw,3.1rem);opacity:.9;filter:drop-shadow(0 6px 16px rgba(0,0,0,.4))}
+.hero-int{position:relative;z-index:2;max-width:650px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--azafran-hi);border:1px solid rgba(201,126,42,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.5rem,1.05rem + 3vw,2.3rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--granate-hi)}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:47ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--azafran);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- tres preguntas del propio libro (interactivo) ---------- */
+.reglas{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(237,227,211,.03)}
+.regGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.reg{background:rgba(237,227,211,.045);border:1px solid var(--linea);border-radius:14px;padding:1.05rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.reg:hover:not(.abierta){border-color:var(--azafran);transform:translateY(-2px)}
+.reg .ico{font-size:1.5rem;display:block;margin-bottom:.4rem}
+.reg .nombre{font-size:.83rem;color:var(--bruma);font-weight:600}
+.reg.abierta{background:rgba(201,126,42,.16);border-color:var(--azafran)}
+.reg .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--azafran-hi);font-size:.83rem;margin-top:.5rem;line-height:1.42}
+.reg.abierta .obs{display:block}
+.reg.abierta .nombre{display:none}
+.reg-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(237,227,211,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--azafran-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(122,46,46,.18);border:1px solid rgba(122,46,46,.45);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--granate-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.cta,.react{background:rgba(237,227,211,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(237,227,211,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--azafran);color:var(--azafran-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--azafran-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:38ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--azafran-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--azafran);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="rayos" aria-hidden="true"></div>
+  <div class="campana" aria-hidden="true">🔔</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · De tu propio L4 (L4-016)</span>
+    <h1>Budismo para principiantes</h1>
+    <p class="autor">Thubten Chodron · <em>Buddhism for Beginners</em> (2001), prólogo del Dalai Lama</p>
+    <p class="sub">No es otra narrativa larga como Dalai Lama o Coelho — que siguen esperando en tu estante sin abrir. Es un libro para abrir en cualquier página, leer una pregunta y su respuesta en dos minutos, y cerrarlo. Literalmente así está armado.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Una monja te contesta lo que le preguntarías a cualquiera, menos a un maestro</h2>
+    <p class="bajada rev d2">Thubten Chodron nació en Chicago en 1950, en una familia judía no practicante, y se recibió de Historia en UCLA. En 1975 tomó un curso de meditación que le cambió la vida, se ordenó monja budista en 1977 y en 1986 tomó la ordenación completa en Taiwán. En 2003 fundó Sravasti Abbey, en el estado de Washington: el único monasterio de entrenamiento tibetano para monjes y monjas occidentales en Estados Unidos. Hoy sigue coescribiendo con el Dalai Lama la serie <em>The Library of Wisdom and Compassion</em>.</p>
+    <p class="parr rev d2"><em>Buddhism for Beginners</em> no es su biografía ni un tratado: es literalmente un libro de preguntas y respuestas, ordenadas por tema, arrancando con "¿Cuál es la esencia de las enseñanzas de Buda?". Nada de sánscrito sin traducir ni de rituales dados por sabidos — está escrito para quien nunca leyó nada del tema, con el prólogo del propio Dalai Lama.</p>
+    <div class="cita rev d3">"When we step on a thorn, our hand reaches down, pulls it out, and bandages the foot. The hand doesn't say, 'Foot, you're so stupid!'... Why doesn't the hand think like this? Because the hand and the foot are part of the same organism."<span>("Cuando pisamos una espina, la mano baja, la saca y venda el pie. La mano no dice: '¡Pie, sos tan tonto!'... ¿Por qué la mano no piensa así? Porque la mano y el pie son parte del mismo organismo." — traducción propia) Verificada en la colección de citas del libro en Goodreads.</span></div>
+  </div>
+</section>
+
+<section class="seccion" id="mecanismo">
+  <div class="centro">
+    <p class="kicker rev">Tres preguntas, tal como están en el libro</p>
+    <h2 class="titulo rev d1">Tocá cada una — así se lee el libro entero</h2>
+    <p class="bajada rev d2">No hay que leerlo de corrido. Cada capítulo es un puñado de preguntas sueltas; estas tres son un ejemplo real de cómo suena adentro:</p>
+    <div class="reglas rev d3">
+      <div class="regGrid" id="regBox">
+        <div class="reg abierta" data-obs="Chodron responde que el enojo, el apego y la ignorancia son la fuente real de la infelicidad — no las circunstancias externas. La actitud disturbadora es el problema, no la persona o la situación que la dispara. Es la misma idea, dicha sin metáfora, detrás del 'elefante entrenado, no forzado' de Fogg y Brewer que ya leíste esta semana."><span class="ico">😤</span><span class="nombre">¿Qué nos hace infelices?</span><span class="obs">Chodron responde que el enojo, el apego y la ignorancia son la fuente real de la infelicidad — no las circunstancias externas. La actitud disturbadora es el problema, no la persona o la situación que la dispara. Es la misma idea, dicha sin metáfora, detrás del "elefante entrenado, no forzado" de Fogg y Brewer que ya leíste esta semana.</span></div>
+        <div class="reg" data-obs="Karma no es destino ni castigo: es causa y efecto de las propias acciones, con la posibilidad de cambiar el rumbo desde ahora. Chodron es insistente en que no es fatalismo — es la versión budista de que el hábito de hoy arma la persona de mañana."><span class="ico">☸️</span><span class="nombre">¿Qué es el karma?</span><span class="obs"></span></div>
+        <div class="reg" data-obs="La espina y el pie: cuando algo te lastima, la mano ayuda sin resentimiento porque mano y pie son el mismo cuerpo. Chodron usa esta imagen para explicar por qué ayudar a otros no es sacrificio sino la cosa más natural del mundo, una vez que se entiende la interdependencia."><span class="ico">🤲</span><span class="nombre">¿Por qué ayudar a otros?</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="reg-hint">Ciento sesenta páginas, organizadas así: motivación, meditación, karma, budismo en la vida diaria, relación con un maestro, tradiciones. Abrís la que te sirve hoy.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo esta, justo ahora</p>
+    <h2 class="titulo rev d1">Tu propia nota de hoy, tomada en serio</h2>
+    <p class="bajada rev d2">Esta madrugada me escribiste algo directo: que si no abrís una noti es porque no tuviste tiempo, no porque perdiste el interés — y que te la reenvíe más tarde en vez de asumir lo peor. Tenés razón, y los números lo confirman: Dalai Lama (30/08), Brewer (31/08) y El Alquimista (01/09) quedaron con cero clicks, cero visitas — nada, ni siquiera abrirlas. No es que no te interesen (astronomía, oriental y hábitos son tu terreno de siempre); es que tres fichas largas seguidas, en una semana ocupada, no entran. Por eso hoy no te doy una cuarta narrativa larga: te doy el libro que está literalmente diseñado para leerse en fragmentos de dos minutos, cuando haya un hueco. Y como pediste, más abajo va un resumen para escuchar en 30 segundos — hoy lo estreno con la ficha de Sofi (nuevo del día), y desde la próxima corrida es estándar en todo libro nuevo.</p>
+    <p class="parr suave rev d3">Guardia + honestidad de identidad: NO es Pema Chödrön (maestra budista distinta, tradición Shambhala, alumna de Chögyam Trungpa) — la confusión entre las dos ya había hecho descartar una recomendación anterior por seguridad. Esta es Thubten Chodron, tradición tibetana Gelug, la del prólogo del Dalai Lama. Título y autora verificados contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: primera vez que tiene ficha propia. Sin <code>read_status</code> en <code>data/enrichment.json</code> — tratado como no leído.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Tu ejemplar</dt><dd>L4-016, edición en español (Alianza Editorial, trad. María Luisa Rodríguez Tapia). Sin lectura registrada.</dd>
+        <dt>Original</dt><dd><em>Buddhism for Beginners</em>, Snow Lion Publications, 2001, prólogo de Su Santidad el Dalai Lama.</dd>
+        <dt>Formato</dt><dd>Preguntas y respuestas por tema — no hay que leerlo en orden ni de corrido.</dd>
+        <dt>Vetas que cruza</dt><dd>Espiritualidad oriental (nivel 3, en pausa desde tu Dalai Lama del 30/08) + el mismo argumento de fondo que Fogg/Brewer, dicho desde otra tradición.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La biografía de Chodron, la estructura del libro y las tres preguntas de esta ficha están verificadas cruzando su sitio oficial (thubtenchodron.org), Wikipedia, Sravasti Abbey y la página de citas de Goodreads del libro; no invento contenido de capítulos que no pude confirmar.</p>
+      <p><b>Sobre el audio:</b> existe audiolibro de la edición en español (Alianza Editorial) según varias librerías digitales, pero no pude confirmar con certeza cuál es su ficha exacta en Google Play — se declara la existencia sin linkear, para no apuntar a la edición equivocada. La edición en inglés sí está confirmada en Google Play/Audible, narrada por Gabra Zackman.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+    <div class="cta rev d1">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L4-016','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-016','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-016','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-03-chodron-budismo','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-03-chodron-budismo','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-03-chodron-budismo','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Te sirve más este formato de consulta que uno narrativo largo?
+      <div>
+        <button onclick="engageAnswer('rec-formato:2026-09-03-chodron-budismo','si_mas_facil',this)">👍 Sí, entra mejor con poco tiempo</button>
+        <button onclick="engageAnswer('rec-formato:2026-09-03-chodron-budismo','prefiero_narrativa',this)">📖 Prefiero narrativa larga</button>
+        <button onclick="engageAnswer('rec-formato:2026-09-03-chodron-budismo','indistinto',this)">🤷 Indistinto</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-03-chodron-budismo','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-03-chodron-budismo','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-03-chodron-budismo','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-03-chodron-budismo','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-09-03-chodron-budismo" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-03-chodron-budismo" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-03-chodron-budismo',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">"La mano y el pie son parte del mismo organismo."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">Thubten Chodron, sobre por qué ayudar a otros no es sacrificio — verificada en la colección de citas de <em>Buddhism for Beginners</em> (Goodreads), traducción propia declarada como tal.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu L4 · datos verificados contra thubtenchodron.org, Wikipedia, Sravasti Abbey y Goodreads, citas cruzadas entre fuentes independientes, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#regBox .reg').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#regBox .reg').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
