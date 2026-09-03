@@ -664,6 +664,13 @@
       "device": "Sofi",
       "ts": "2026-09-02T23:48:52.072Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "2026-09-03-rec-andy-recordatorio",
+      "device": "Andy",
+      "ts": "2026-09-03T19:43:36.904Z",
+      "status_code": 201
     }
   ]
 }
