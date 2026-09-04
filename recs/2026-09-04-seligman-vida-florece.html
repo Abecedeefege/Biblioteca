@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🌱 La vida que florece · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#16231C;
+  --fondo2:#1E2E24;
+  --texto:#EAF0E7;
+  --bruma:#9DB0A2;
+  --dorado:#D9A441;
+  --dorado-hi:#F0C169;
+  --verde:#4C7A5D;
+  --verde-hi:#6FA080;
+  --linea:rgba(234,240,231,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--dorado);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--dorado-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(234,240,231,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--verde),var(--dorado-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(22,35,28,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--dorado-hi);border-color:var(--dorado)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dorado-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: amanecer sobre un jardín que recién abre ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 10%,#243B2C 0%,var(--fondo) 62%)}
+.amanecer{position:absolute;top:0;left:0;right:0;height:38%;background:linear-gradient(180deg,rgba(217,164,65,.2) 0%,transparent 100%)}
+.brote{position:absolute;top:14%;left:50%;transform:translateX(-50%);font-size:min(11vw,3.2rem);opacity:.9;filter:drop-shadow(0 6px 16px rgba(0,0,0,.4))}
+.hero-int{position:relative;z-index:2;max-width:650px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--dorado-hi);border:1px solid rgba(217,164,65,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.5rem,1.05rem + 3vw,2.3rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--verde-hi)}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:47ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--dorado);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- audio resumen (estándar en TODA ficha desde 04/09) ---------- */
+.audio{background:rgba(217,164,65,.1);border:1px solid rgba(217,164,65,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--dorado);color:#16231C;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--dorado-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--dorado-hi);font-weight:500}
+
+/* ---------- las cinco letras de PERMA (interactivo) ---------- */
+.reglas{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(234,240,231,.03)}
+.regGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.6rem}
+.reg{background:rgba(234,240,231,.045);border:1px solid var(--linea);border-radius:14px;padding:.95rem .75rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.reg:hover:not(.abierta){border-color:var(--dorado);transform:translateY(-2px)}
+.reg .ico{font-size:1.4rem;display:block;margin-bottom:.35rem}
+.reg .nombre{font-size:.8rem;color:var(--bruma);font-weight:600}
+.reg.abierta{background:rgba(217,164,65,.16);border-color:var(--dorado)}
+.reg .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--dorado-hi);font-size:.82rem;margin-top:.5rem;line-height:1.42}
+.reg.abierta .obs{display:block}
+.reg.abierta .nombre{display:none}
+.reg-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(234,240,231,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--dorado-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(76,122,93,.22);border:1px solid rgba(76,122,93,.5);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--verde-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
+.compra a{display:inline-block;background:var(--dorado);color:#16231C;border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--dorado-hi);transform:translateY(-2px)}
+.compra a.sec{background:transparent;color:var(--texto);border:1px solid var(--linea)}
+.compra a.sec:hover{border-color:var(--dorado);color:var(--dorado-hi)}
+
+.cta,.react{background:rgba(234,240,231,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(234,240,231,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--dorado);color:var(--dorado-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--dorado-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:38ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--dorado-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--dorado);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="amanecer" aria-hidden="true"></div>
+  <div class="brote" aria-hidden="true">🌱</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Libro nuevo · la ciencia detrás de Haidt</span>
+    <h1>La vida que florece</h1>
+    <p class="autor">Martin E. P. Seligman · <em>Flourish</em> (2011)</p>
+    <p class="sub">El mismo terreno que enganchó a Jonathan Haidt (tu click + nota del 02/09), pero contado por el psicólogo que inventó el campo: el fundador de la psicología positiva, diez años después de su primer librazo sobre la felicidad, admitiendo que se había quedado corto.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">El tipo que fundó la ciencia de la felicidad, corrigiéndose a sí mismo</h2>
+    <p class="bajada rev d2">Martin Seligman fue presidente de la Asociación Americana de Psicología en 1998 y es el nombre que más se asocia con la psicología positiva: el estudio científico de lo que hace que una vida valga la pena, no solo de lo que la enferma. Su primer libro grande, <em>La auténtica felicidad</em> (2002), proponía que el objetivo era subir el puntaje de "satisfacción con la vida". Acá, una década después, se retracta en parte: dice que ese único número era demasiado poco, y que perseguirlo a veces ni siquiera correlaciona con estar mejor.</p>
+    <p class="parr rev d2">En su lugar propone la <b>teoría del bienestar</b>, armada en cinco ingredientes independientes que juntos hacen que alguien "florezca" — de ahí el título. No es otro libro de autoayuda con anécdotas sueltas: es el resumen, para público general, de años de estudios con miles de personas sobre qué predice de verdad una vida que se siente bien vivida.</p>
+    <div class="cita rev d3">"I now think that the topic of positive psychology is well-being, that the gold standard for measuring well-being is flourishing, and that the goal of positive psychology is to increase flourishing."<span>("Ahora pienso que el tema de la psicología positiva es el bienestar, que la vara para medirlo es florecer, y que el objetivo de la psicología positiva es aumentar cuánto florecemos." — traducción propia) Verificada en la colección de citas del libro en Goodreads.</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera — estándar desde hoy en toda recomendación, nueva o redescubrimiento.</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="mecanismo">
+  <div class="centro">
+    <p class="kicker rev">Las cinco letras de PERMA</p>
+    <h2 class="titulo rev d1">Bienestar no es un número, son cinco ingredientes distintos</h2>
+    <p class="bajada rev d2">Cada letra se cultiva por separado — podés tener mucho de una y poco de otra. Tocá cada una:</p>
+    <div class="reglas rev d3">
+      <div class="regGrid" id="regBox">
+        <div class="reg abierta" data-obs="Alegría, gratitud, esperanza, disfrute: mucho más amplio que 'estar contento'. Es el ingrediente más fácil de sentir pero, solo, el más pobre de los cinco para sostener una vida."><span class="ico">😊</span><span class="nombre">P · Emoción positiva</span><span class="obs">Alegría, gratitud, esperanza, disfrute: mucho más amplio que 'estar contento'. Es el ingrediente más fácil de sentir pero, solo, el más pobre de los cinco para sostener una vida.</span></div>
+        <div class="reg" data-obs="Estar tan metido en algo que se te pasa el tiempo volando: el estado de 'flow' que Seligman toma de Csikszentmihalyi (el mismo autor de Flow, que ya te recomendé el 27/08). Se mide después de la actividad, nunca durante — mientras estás en flow, no hay lugar para pensar en vos mismo."><span class="ico">🌀</span><span class="nombre">E · Compromiso</span><span class="obs"></span></div>
+        <div class="reg" data-obs="En sus propios datos, tener vínculos genuinos es el predictor más fuerte de bienestar de los cinco. Seligman cuenta que cuando le pide a sus alumnos que hagan algo altruista y algo placentero para ellos mismos, el efecto del gesto altruista dura más y se siente más profundo."><span class="ico">🤝</span><span class="nombre">R · Vínculos</span><span class="obs"></span></div>
+        <div class="reg" data-obs="Pertenecer a algo más grande que uno mismo y servirlo — una causa, una fe, una familia, un oficio. Es el ingrediente que más cuesta improvisar de un día para el otro, pero el que más resiste a los golpes."><span class="ico">🧭</span><span class="nombre">M · Sentido</span><span class="obs"></span></div>
+        <div class="reg" data-obs="Perseguir el dominio, el éxito o la maestría en algo por sí mismos, no solo por el trofeo o el aplauso. Seligman usa el ejemplo de jugadores de bridge de torneo, que compiten años por la partida en sí, no por el premio."><span class="ico">🏆</span><span class="nombre">A · Logro</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="reg-hint">El libro dedica un capítulo entero a cada letra, con ejercicios y estudios propios — no es solo el acrónimo.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo este, justo ahora</p>
+    <h2 class="titulo rev d1">Seguir tirando del único hilo que mostró señal esta semana</h2>
+    <p class="bajada rev d2">El 02/09 abriste <em>The Happiness Hypothesis</em> de Jonathan Haidt, dejaste un click confirmado y una nota de puño y letra — la señal más clara de compromiso con contenido que tenemos en semanas, aunque todavía sin veredicto. Haidt y Seligman fueron colegas y coautores de papers sobre esto mismo: la ciencia de la felicidad y el florecimiento humano, con modelos memorables (el jinete y el elefante de uno, las cinco letras de PERMA del otro) en vez de consejos sueltos. En lugar de cambiar de tema por las dudas, hoy profundizo la misma veta con la fuente más citada del campo — y roto de vuelta la espiritualidad oriental (Dalai Lama, Coelho, Chodron: tres seguidas) para no gastarla.</p>
+    <p class="parr suave rev d3">Riesgo que declaro de frente: son 416 páginas y un tono más académico que <em>La auténtica felicidad</em> o que Haidt — tiene capítulos sobre educación positiva y ejército que no todos disfrutan igual. Si te resulta pesado, decímelo en la nota de abajo: la próxima vuelvo a algo más narrativo y corto, en la línea de Chodron.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>Flourish: A Visionary New Understanding of Happiness and Well-being</em>, Free Press / Simon &amp; Schuster, 2011.</dd>
+        <dt>En español</dt><dd><em>La vida que florece</em>, trad. Mercè Diago Esteva y Abel Debritto Cabezas, Ediciones B, 2011, 416 páginas.</dd>
+        <dt>Vetas que cruza</dt><dd>Positividad, autosuperación y ciencia de la mente — continúa el único hilo con señal real esta semana (Haidt, click + nota, 02/09).</dd>
+        <dt>Dónde está en la casa</dt><dd>En ningún lado. Verifiqué título y autor contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: sin coincidencias (Sapolsky se mencionó de pasada en una lista de ebooks de viaje del 20/07, pero nunca tuvo ficha propia — este es el primer Seligman).</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La biografía de Seligman, la estructura en PERMA y las citas de esta ficha están verificadas cruzando el Positive Psychology Center de la Universidad de Pennsylvania (que Seligman dirige), Wikipedia y la colección de citas del libro en Goodreads.</p>
+      <p><b>Sobre disponibilidad:</b> hoy la edición en español figura en stock en Buscalibre Uruguay, nueva, a $1.190 UYU (con 50% de descuento sobre $2.380 UYU) — no la convierto a dólares con precisión porque el tipo de cambio fluctúa; el número en pesos es el que vi en vivo hoy.</p>
+      <p><b>Sobre el ebook y el audio:</b> encontré dos fichas de la edición en español en Google Books, pero ninguna con confirmación clara de venta de ebook ahí (parecen listados solo bibliográficos) — prefiero no linkear a algo que capaz no está — así que para leer hoy mismo el camino confirmado es el papel en Buscalibre. El audiolibro en inglés, narrado por Jesse Boggs, sí está confirmado en Google Play; no encontré con la misma certeza una narración en español en esa plataforma.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Conseguirlo</p>
+    <h2 class="titulo rev d1">Con stock hoy, con descuento</h2>
+    <p class="bajada rev d2">La edición en español está disponible ahora en Buscalibre Uruguay:</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=La+vida+que+florece+Martin+Seligman">Conseguilo (~$1.190 UYU, en stock hoy)</a>
+      <a class="sec" href="https://play.google.com/store/audiobooks/details/Flourish_A_Visionary_New_Understanding_of_Happines?id=AQAAAIB8div2RM&hl=en_US">🎧 Audiolibro en inglés, narrado por Jesse Boggs</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d1">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-04-seligman-vida-florece','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-04-seligman-vida-florece','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-04-seligman-vida-florece','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-04-seligman-vida-florece','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-04-seligman-vida-florece','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-04-seligman-vida-florece','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-04-seligman-vida-florece','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-04-seligman-vida-florece','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Se sintió denso o académico, comparado con Chodron/Haidt?
+      <div>
+        <button onclick="engageAnswer('rec-densidad:2026-09-04-seligman-vida-florece','denso',this)">📚 Sí, pesado</button>
+        <button onclick="engageAnswer('rec-densidad:2026-09-04-seligman-vida-florece','justo',this)">👍 Justo</button>
+        <button onclick="engageAnswer('rec-densidad:2026-09-04-seligman-vida-florece','no_lo_vi',this)">🤷 No llegué a verlo</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-04-seligman-vida-florece','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-04-seligman-vida-florece','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-04-seligman-vida-florece','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-04-seligman-vida-florece','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-09-04-seligman-vida-florece" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-04-seligman-vida-florece" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-04-seligman-vida-florece',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">"Para florecer hace falta, además, emoción positiva, sentido, logro y vínculos."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">Martin Seligman, sobre por qué minimizar el sufrimiento no alcanza — verificada en la colección de citas de <em>Flourish</em> (Goodreads), traducción propia declarada como tal.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para Andy · datos verificados contra el Positive Psychology Center (UPenn), Wikipedia, Buscalibre Uruguay y Goodreads, citas cruzadas entre fuentes independientes, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#regBox .reg').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#regBox .reg').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "La vida que florece, de Martin Seligman. El fundador de la psicología positiva vuelve, diez años después de su primer libro sobre la felicidad, a decir que buscar solo estar contento no alcanza. Propone el modelo P E R M A: emoción positiva, compromiso, vínculos, sentido y logro, cinco ingredientes que se cultivan por separado. La idea central: minimizar el sufrimiento no es suficiente para florecer, hace falta sumar, no solo restar.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

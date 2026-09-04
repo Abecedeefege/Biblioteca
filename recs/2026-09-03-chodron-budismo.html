@@ -76,6 +76,13 @@ img,svg{max-width:100%}
 .reg.abierta .nombre{display:none}
 .reg-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
 
+/* ---------- audio resumen (extendido a TODA ficha 04/09, pedido de Andy) ---------- */
+.audio{background:rgba(201,126,42,.1);border:1px solid rgba(201,126,42,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--azafran);color:#211A15;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--azafran-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--azafran-hi);font-weight:500}
+
 .ficha{background:rgba(237,227,211,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
 .ficha dl{display:grid;gap:.7rem}
 .ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--azafran-hi);font-weight:700}
@@ -125,6 +132,16 @@ a.hub{color:var(--azafran-hi);text-decoration:none;font-weight:600;border-bottom
     <p class="bajada rev d2">Thubten Chodron nació en Chicago en 1950, en una familia judía no practicante, y se recibió de Historia en UCLA. En 1975 tomó un curso de meditación que le cambió la vida, se ordenó monja budista en 1977 y en 1986 tomó la ordenación completa en Taiwán. En 2003 fundó Sravasti Abbey, en el estado de Washington: el único monasterio de entrenamiento tibetano para monjes y monjas occidentales en Estados Unidos. Hoy sigue coescribiendo con el Dalai Lama la serie <em>The Library of Wisdom and Compassion</em>.</p>
     <p class="parr rev d2"><em>Buddhism for Beginners</em> no es su biografía ni un tratado: es literalmente un libro de preguntas y respuestas, ordenadas por tema, arrancando con "¿Cuál es la esencia de las enseñanzas de Buda?". Nada de sánscrito sin traducir ni de rituales dados por sabidos — está escrito para quien nunca leyó nada del tema, con el prólogo del propio Dalai Lama.</p>
     <div class="cita rev d3">"When we step on a thorn, our hand reaches down, pulls it out, and bandages the foot. The hand doesn't say, 'Foot, you're so stupid!'... Why doesn't the hand think like this? Because the hand and the foot are part of the same organism."<span>("Cuando pisamos una espina, la mano baja, la saca y venda el pie. La mano no dice: '¡Pie, sos tan tonto!'... ¿Por qué la mano no piensa así? Porque la mano y el pie son parte del mismo organismo." — traducción propia) Verificada en la colección de citas del libro en Goodreads.</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Corrección de hoy (04/09): tu pedido era para <b>todas</b> las fichas, no solo las nuevas — ya vale acá también. Escuchá el resumen en 30 segundos:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
   </div>
 </section>
 
@@ -190,6 +207,14 @@ a.hub{color:var(--azafran-hi);text-decoration:none;font-weight:600;border-bottom
         <button onclick="engageAnswer('rec-veredicto:2026-09-03-chodron-budismo','me_tienta',this)">🤔 Me tentaste</button>
         <button onclick="engageAnswer('rec-veredicto:2026-09-03-chodron-budismo','ya_lo_lei',this)">✔️ Ya lo leí</button>
         <button onclick="engageAnswer('rec-veredicto:2026-09-03-chodron-budismo','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-03-chodron-budismo','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-03-chodron-budismo','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-03-chodron-budismo','no_funciono',this)">⚠️ No me funcionó</button>
         <span class="q-hint"></span>
       </div>
     </div>
@@ -267,6 +292,38 @@ function enviarNota(recId,btn){
       el.querySelector('.obs').textContent=el.getAttribute('data-obs');
     });
   });
+
+  // --- Resumen en audio (30s), agregado 04/09: extendido a toda ficha (antes solo
+  // "nuevo"), por pedido explícito de Andy vía rec-nota en esta misma página el 03/09.
+  var TEXTO_RESUMEN = "Budismo para principiantes, de Thubten Chodron. Una monja budista norteamericana contesta, en preguntas y respuestas sueltas, las dudas más básicas: qué nos hace infelices, qué es el karma, por qué ayudar a otros. No hace falta leerlo de corrido — abrís la pregunta que te sirve hoy y la cerrás en dos minutos. La idea central: el enojo, el apego y la ignorancia, no las circunstancias, son la fuente real de la infelicidad.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
 })();
 </script>
 <script src="../engage/engage.js"></script>

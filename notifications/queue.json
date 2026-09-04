@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-03T23:34:50.707Z",
+  "_updated_at": "2026-09-04T16:20:00.000Z",
   "notifications": [
     {
       "id": "2026-08-29-rec-andy",
@@ -1220,6 +1220,32 @@
       "sent_at": "2026-09-03T23:34:50.706Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-09-03"
+    },
+    {
+      "id": "2026-09-04-rec-andy",
+      "title": "🌱 La ciencia detrás de tu click con Haidt",
+      "body": "La vida que florece: Seligman, el fundador de la psicología positiva, con el modelo PERMA. Nuevo, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-04-seligman-vida-florece.html",
+      "to": "Andy",
+      "send_at": "2026-09-04T19:00:00-03:00",
+      "expires_at": "2026-09-04T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-04"
+    },
+    {
+      "id": "2026-09-04-rec-sofi",
+      "title": "🔍 El origen de todos tus detectives",
+      "body": "Las Aventuras de Sherlock Holmes: doce casos cortos de 15 minutos, ya en tu estante M5, nunca abierto.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-04-doyle-aventuras-sherlock.html",
+      "to": "Sofi",
+      "send_at": "2026-09-04T19:00:00-03:00",
+      "expires_at": "2026-09-04T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-04"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-03T16:30:00-03:00",
-  "_feedback_cutoff": "2026-09-03T01:33:33.480Z",
+  "_updated_at": "2026-09-04T16:10:41-03:00",
+  "_feedback_cutoff": "2026-09-03T23:44:26.731Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1811,12 +1811,12 @@
       "notified_by": "2026-09-01-rec-andy",
       "why": "Regimen DIARIO: ayer (31/08) Andy tuvo nuevo (Brewer) -> hoy le toca redescubrimiento, y Sofi recibe la nueva. Vuelta al combo mas seguro confirmado en toda la corrida: fabula corta (Bach 2/2 aciertos plenos -- Ilusiones nuevo me_tienta+like dwell 410s, Gaviota redescub me_tienta+like dwell 395s -- y Hesse Siddhartha con dwell 200s sin voto). Los ultimos 3 redescubrimientos (Herrigel, Huxley, Dalai Lama) venian de la veta oriental/filosofica; hoy se rota a fabula pura. Elegido L4-015 El Alquimista (Coelho), unico Coelho de la casa, sin lectura registrada. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json: primera ficha propia. RIESGO declarado de frente en la ficha: es probablemente la fabula mas leida del planeta (65M+ copias, record Guinness 2009 a libro mas traducido por autor vivo), mucho mas masivo que Bach o Hesse -- alto riesgo real de ya_lo_lei, pero se interpreta igual como acierto de punteria si pasa (fabula sigue siendo la veta ganadora), no como fallo de guardia. Contenido (Melquisedec, mercader de cristales, el Alquimista, giro final del tesoro bajo el arbol de España) verificado cruzando Wikipedia en ingles, Cultura Genial, Lifeder y StuDocu; anecdota real del origen editorial (primera editorial lo abandono, Coelho convencio a la segunda con la frase del universo que conspira, medio millon de copias en 3 anos en Brasil) verificada contra HuffPost. Citas verificadas contra multiples compilaciones que coinciden en atribucion y contexto (no tienen numero de pagina por variar entre ediciones, declarado como tal). Link de compra no aplica (redescubrimiento, ya esta en casa). Audiolibro en español confirmado en Google Play narrado por Michelle Jenner, cruzado con Audible/Amazon España que confirman el mismo nombre; Google Play devuelve 403 a curl/bots (bloqueo conocido, no error real).",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "veredicto": "ya_lo_lei",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 183
       },
-      "learning": null
+      "learning": "Abrio via el push de recordatorio (03/09 19:45 -03:00, 2 dias y medio tarde) -- confirma que el reenvio SI convierte, no era desinteres. Veredicto ya_lo_lei + like: punteria de tema correcta (fabula/oriental transformadora) pero SIN descubrimiento, ya lo habia leido -- sube la vara de novedad para clasicos obvios del genero (Coelho, Bach, Hesse): a partir de ahora preferir angulos menos evidentes o autores menos mainstream dentro de esa veta salvo relectura explicita. Ademas dejo un rec-nota de PRIORIDAD MAXIMA escalando el pedido de audio del 02/09: queria el boton de resumen en TODAS las recomendaciones, no solo en las nuevas (el estandar de ayer solo cubria kind:nuevo). Accion tomada hoy (04/09): retrofit del boton de audio en la ficha de Chodron/Budismo (03/09, redescubrimiento) que seguia sin tenerlo, y extension del estandar a TODA ficha nueva de hoy en adelante, sin importar el kind -- ver ambas fichas de hoy y PROFILE."
     },
     {
       "id": "2026-09-01-backman-ove",
@@ -1866,7 +1866,7 @@
         "veredicto": null,
         "reaccion": null,
         "clicked": true,
-        "dwell_s": 0
+        "dwell_s": 369
       },
       "learning": "Clickeo el push (03/09 01:27 UTC, ~22:27 -03:00 de la noche del 02/09 -- normal, no 'perdido') y dejo un rec-nota de PRIORIDAD MAXIMA con dos pedidos concretos: (1) sumar un resumen en audio de 30 segundos a cada recomendacion NUEVA; (2) no interpretar una notificacion sin click como desinteres -- reenviarla mas tarde si no la abrio. Accion tomada esta corrida: (1) implementado -- boton de audio con Web Speech API (100% cliente, sin build ni dependencias) en la ficha nueva de hoy (Sofi/Haig), documentado en PROFILE como estandar desde ahora para todo 'nuevo'. (2) Se cruzo el historial real: Dalai Lama (30/08), Brewer (31/08) y El Alquimista/Coelho (01/09) tienen CERO eventos -- ni siquiera un click -- a diferencia de lo que asumia PROFILE ('dwell fuerte en varias'), que en realidad referia solo a Fogg (29/08, 493s). Se re-encolo hoy un recordatorio (mismo id de pagina, push nuevo '2026-09-03-rec-andy-recordatorio') apuntando a El Alquimista, el mas reciente de los tres sin abrir -- no los tres juntos, para no saturarlo. Ver PROFILE seccion rec-nota 03/09 para el detalle completo."
     },
@@ -1916,10 +1916,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
+        "clicked": true,
         "dwell_s": 0
       },
-      "learning": null
+      "learning": "Abrio el push del dia (03/09 23:42 -03:00, mismo dia) y dejo un rec-nota de PRIORIDAD MAXIMA: 'Sigo sin ver mi boton de play con un audio describiendo el libro y sus main insights' -- se referia a que esta ficha (redescubrimiento) no tenia el boton, porque el estandar del 03/09 solo cubria kind:nuevo. Confirma la escalada de la nota en El Alquimista (ver esa entrada). Accion tomada hoy (04/09): se retrofit el boton de audio (resumen de 30s, Web Speech API) directamente en este archivo (recs/2026-09-03-chodron-budismo.html), y el estandar pasa a cubrir TODA ficha, nueva o redescubrimiento, desde hoy."
     },
     {
       "id": "2026-09-03-haig-razones-seguir-viviendo",
@@ -1939,6 +1939,57 @@
       "page": "recs/2026-09-03-haig-razones-seguir-viviendo.html",
       "notified_by": "2026-09-03-rec-sofi",
       "why": "Regimen DIARIO: ayer (02/09) Sofi tuvo redescubrimiento (Christie Chimneys) -> hoy le toca nuevo, y Andy recibe el redescub. Sofi sigue sin ningun evento propio desde el 20/08 (15 fichas ya, ver PROFILE) -- no hay feedback suyo que procesar hoy tampoco. Elegido 'Reasons to Stay Alive' / 'Razones para seguir viviendo' (Matt Haig, 2015), candidato marcado en PROFILE desde el 02/09 como proximo si seguia muda: es el UNICO autor con acierto pleno confirmado en toda su serie (La Biblioteca de la Medianoche, lo_quiero+love, 27/07) pero en un genero totalmente distinto -- memoir real sobre depresion, no ficcion ni misterio -- probando si lo que la engancho fue Haig como autor/registro (oscuro-que-termina-en-luz) y no el envoltorio de fantasia. Riesgo de tema sensible (intento de suicidio) declarado de frente en la ficha, con salida explicita si no es el momento. GUARDIA: verificado titulo (ingles y espanol) y autor contra los 437 libros del catalogo completo y contra todo recommended.json: sin coincidencias, primera ficha propia del libro (Haig si aparece antes, con La Biblioteca de la Medianoche y The Humans, libros distintos). Contenido (la crisis real en Ibiza a los 24 anios, la estructura en cinco partes Falling/Landing/Rising/Living/Being, las citas) verificado cruzando Wikipedia, SuperSummary, matthaig.com y la coleccion de citas de Goodreads. PRECIO/DISPONIBILIDAD: las 6 ediciones en espanol (Seix Barral y Planeta, 2013/2014/2016) figuran AGOTADAS hoy en Buscalibre Uruguay -- declarado honestamente en la ficha en vez de ocultarlo, con el ebook de Google Play Books (verificado 200) como alternativa inmediata de compra. Audio: audiolibro en ingles narrado por el propio Matt Haig confirmado en Google Play; no se pudo confirmar con la misma certeza una edicion en espanol en esa plataforma, declarado asi. NUEVO ESTANDAR (pedido de Andy 03/09, rec-nota PRIORIDAD MAXIMA): primera ficha con boton de resumen en audio de 30 segundos (Web Speech API, sin build ni dependencias, no toca engage.js) -- desde hoy estandar en toda ficha de kind:nuevo, con su propia micro-pregunta rec-audio para medir si se usa.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-04-seligman-vida-florece",
+      "date": "2026-09-04",
+      "kind": "nuevo",
+      "title": "La vida que florece",
+      "author": "Martin E. P. Seligman",
+      "language": "es",
+      "topics": [
+        "positividad",
+        "autosuperacion",
+        "wellness",
+        "ciencia_de_la_felicidad"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-09-04-seligman-vida-florece.html",
+      "notified_by": "2026-09-04-rec-andy",
+      "why": "Regimen DIARIO: ayer (03/09) Andy tuvo redescubrimiento (Chodron/Budismo) -> hoy le toca nuevo, y Sofi recibe el redescub. Elegido 'Flourish' / 'La vida que florece' (Martin Seligman, 2011), del banco nuevo de PROFILE: continua la UNICA veta con señal real esta semana (Haidt, click confirmado + rec-nota, 02/09, sin veredicto todavia) en vez de cambiar de tema por las dudas -- Seligman y Haidt son colegas en el campo de la ciencia de la felicidad, con modelos memorables (PERMA / jinete-elefante). Ademas rota fuera de espiritualidad oriental (Dalai Lama 30/08, Coelho 01/09, Chodron 03/09: tres seguidas) para no quemar esa veta. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- sin coincidencias (Sapolsky aparecio de pasada en una lista de ebooks de viaje del 20/07 pero nunca tuvo ficha propia; este es el primer Seligman, primera ficha propia). Contenido (biografia de Seligman, estructura PERMA, las citas) verificado cruzando el Positive Psychology Center de UPenn, Wikipedia y la coleccion de citas de Goodreads. PRECIO/DISPONIBILIDAD: edicion en español en stock hoy en Buscalibre Uruguay, $1.190 UYU (50% off de $2.380 UYU) -- verificado en vivo. Ebook en español: encontre dos fichas en Google Books pero sin confirmacion de venta ahi (parecen solo bibliograficas) -- no linkeado para no mandar a un producto que capaz no esta. Audio: audiolibro en ingles narrado por Jesse Boggs confirmado en Google Play (403 a bots es bloqueo conocido, se linkea igual); no se confirmo con la misma certeza una edicion en español en esa plataforma, declarado asi. ESTANDAR EXTENDIDO HOY (pedido escalado de Andy, rec-nota en Alquimista 03/09 y Chodron 03/09, PRIORIDAD MAXIMA): el boton de resumen en audio de 30s ya no es solo de kind:nuevo -- desde hoy va en TODA ficha, nueva o redescubrimiento (ver tambien el redescub de Sofi de hoy y el retrofit aplicado a la ficha de Chodron de ayer).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-04-doyle-aventuras-sherlock",
+      "date": "2026-09-04",
+      "kind": "redescubrimiento",
+      "title": "Las Aventuras de Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "detective",
+        "clasico"
+      ],
+      "book_ref": "M5-036",
+      "audience": "sofi",
+      "page": "recs/2026-09-04-doyle-aventuras-sherlock.html",
+      "notified_by": "2026-09-04-rec-sofi",
+      "why": "Regimen DIARIO: ayer (03/09) Sofi tuvo nuevo (Haig/Razones) -> hoy le toca redescubrimiento, y Andy recibe el nuevo. Sofi sigue sin ningun evento propio desde el 20/08 (16 fichas ya, 8 vetas probadas, ver PROFILE) -- no hay feedback suyo que procesar hoy. Elegido 'Las Aventuras de Sherlock Holmes' (Arthur Conan Doyle, M5-036, edicion Alma Clasicos): vuelve a un autor ya usado con exito relativo (El Perro de los Baskerville, 25/08, sin feedback pero sin rechazo tampoco) pero prueba un formato distinto a proposito -- doce casos autoconclusivos de 15-20 minutos en vez de una novela completa, por si el problema de fondo es de tiempo/formato y no de gusto (la misma logica de 'formato corto' que se probo con Chodron para Andy el 03/09). GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- nunca tuvo ficha propia (distinto de El Perro de los Baskerville, M5-004, ya usado el 25/08). NO es ninguno de los 50 King de R4/R5 (guardia especial pedida por el dueño). Sin entrada en data/enrichment.json (read_status desconocido, tratado como no leido). Contenido (orden de publicacion, tramas de los 5 casos destacados, la cita de apertura de 'Escandalo en Bohemia') verificado cruzando Wikipedia (es/en) y el texto original de dominio publico. Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche, M5-036). Audio: al ser dominio publico existen varias versiones LibriVox gratuitas y una edicion narrada por Ruth Golding confirmada en Google Play (403 a bots, bloqueo conocido, se linkea igual en el resumen de texto pero SIN link de compra al ser gratuito/dominio publico); no se confirmo una narracion en español en esa plataforma. ESTANDAR EXTENDIDO HOY: boton de resumen en audio de 30s tambien en este redescubrimiento (antes solo en 'nuevo'), por el mismo pedido escalado de Andy -- ver ficha de Andy de hoy y el retrofit en la ficha de Chodron de ayer.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
