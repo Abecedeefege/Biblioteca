@@ -3934,7 +3934,33 @@
       "device": "Andy",
       "qid": "rec-nota:2026-09-03-chodron-budismo",
       "value": "Sigo sin ver mi botón de play con un audio describiendo el libro y sus main insights"
+    },
+    {
+      "id": "mtm69hun-72ujk6",
+      "type": "dwell",
+      "ts": "2026-09-03T23:44:34.463Z",
+      "page": "2026-09-03-chodron-budismo.html",
+      "device": "Andy",
+      "dwell_s": 95,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mtnkbqcd-amshjs",
+      "type": "notification_clicked",
+      "ts": "2026-09-04T23:05:59.581Z",
+      "page": "2026-09-04-seligman-vida-florece.html",
+      "device": "Andy",
+      "nid": "2026-09-04-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mtnkbqcf-o2mx9x",
+      "type": "page_visit",
+      "ts": "2026-09-04T23:05:59.583Z",
+      "page": "2026-09-04-seligman-vida-florece.html",
+      "device": "Andy",
+      "nid": "2026-09-04-rec-andy"
     }
   ],
-  "_updated_at": "2026-09-03T23:44:29.265Z"
+  "_updated_at": "2026-09-04T23:06:00.928Z"
 }
