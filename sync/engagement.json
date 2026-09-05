@@ -3960,7 +3960,33 @@
       "page": "2026-09-04-seligman-vida-florece.html",
       "device": "Andy",
       "nid": "2026-09-04-rec-andy"
+    },
+    {
+      "id": "mtnkd8gg-oqqa0v",
+      "type": "dwell",
+      "ts": "2026-09-04T23:07:09.712Z",
+      "page": "2026-09-04-seligman-vida-florece.html",
+      "device": "Andy",
+      "dwell_s": 70,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mtozccru-2tho5f",
+      "type": "notification_clicked",
+      "ts": "2026-09-05T22:54:09.066Z",
+      "page": "2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
+      "device": "Andy",
+      "nid": "2026-09-05-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mtozccrw-931eew",
+      "type": "page_visit",
+      "ts": "2026-09-05T22:54:09.068Z",
+      "page": "2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
+      "device": "Andy",
+      "nid": "2026-09-05-rec-andy"
     }
   ],
-  "_updated_at": "2026-09-04T23:06:00.928Z"
+  "_updated_at": "2026-09-05T22:54:10.180Z"
 }
