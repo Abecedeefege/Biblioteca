@@ -3986,7 +3986,16 @@
       "page": "2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
       "device": "Andy",
       "nid": "2026-09-05-rec-andy"
+    },
+    {
+      "id": "mtozczjs-6bz5xw",
+      "type": "dwell",
+      "ts": "2026-09-05T22:54:38.584Z",
+      "page": "2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
+      "device": "Andy",
+      "dwell_s": 30,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-09-05T22:54:10.180Z"
+  "_updated_at": "2026-09-05T22:54:41.171Z"
 }
