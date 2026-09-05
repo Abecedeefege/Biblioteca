@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-04T16:10:41-03:00",
-  "_feedback_cutoff": "2026-09-03T23:44:26.731Z",
+  "_updated_at": "2026-09-05T16:14:20-03:00",
+  "_feedback_cutoff": "2026-09-04T23:05:59.583Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -1990,6 +1990,48 @@
       "page": "recs/2026-09-04-doyle-aventuras-sherlock.html",
       "notified_by": "2026-09-04-rec-sofi",
       "why": "Regimen DIARIO: ayer (03/09) Sofi tuvo nuevo (Haig/Razones) -> hoy le toca redescubrimiento, y Andy recibe el nuevo. Sofi sigue sin ningun evento propio desde el 20/08 (16 fichas ya, 8 vetas probadas, ver PROFILE) -- no hay feedback suyo que procesar hoy. Elegido 'Las Aventuras de Sherlock Holmes' (Arthur Conan Doyle, M5-036, edicion Alma Clasicos): vuelve a un autor ya usado con exito relativo (El Perro de los Baskerville, 25/08, sin feedback pero sin rechazo tampoco) pero prueba un formato distinto a proposito -- doce casos autoconclusivos de 15-20 minutos en vez de una novela completa, por si el problema de fondo es de tiempo/formato y no de gusto (la misma logica de 'formato corto' que se probo con Chodron para Andy el 03/09). GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- nunca tuvo ficha propia (distinto de El Perro de los Baskerville, M5-004, ya usado el 25/08). NO es ninguno de los 50 King de R4/R5 (guardia especial pedida por el dueño). Sin entrada en data/enrichment.json (read_status desconocido, tratado como no leido). Contenido (orden de publicacion, tramas de los 5 casos destacados, la cita de apertura de 'Escandalo en Bohemia') verificado cruzando Wikipedia (es/en) y el texto original de dominio publico. Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche, M5-036). Audio: al ser dominio publico existen varias versiones LibriVox gratuitas y una edicion narrada por Ruth Golding confirmada en Google Play (403 a bots, bloqueo conocido, se linkea igual en el resumen de texto pero SIN link de compra al ser gratuito/dominio publico); no se confirmo una narracion en español en esa plataforma. ESTANDAR EXTENDIDO HOY: boton de resumen en audio de 30s tambien en este redescubrimiento (antes solo en 'nuevo'), por el mismo pedido escalado de Andy -- ver ficha de Andy de hoy y el retrofit en la ficha de Chodron de ayer.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-05-kiyosaki-padre-rico-padre-pobre",
+      "date": "2026-09-05",
+      "kind": "redescubrimiento",
+      "title": "Padre Rico, Padre Pobre",
+      "author": "Robert T. Kiyosaki",
+      "language": "es",
+      "topics": ["finanzas", "negocios", "autosuperacion"],
+      "book_ref": "L4-013",
+      "audience": "andy",
+      "page": "recs/2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
+      "notified_by": "2026-09-05-rec-andy",
+      "why": "Regimen DIARIO: ayer (04/09) Andy tuvo nuevo (Seligman) -> hoy le toca redescubrimiento, y Sofi recibe el nuevo. Elegido Padre Rico, Padre Pobre (Kiyosaki, L4-013): primera vez en 51 fichas que tocamos finanzas/negocios, gusto declarado por Andy desde el 15/07 y nunca usado -- rota lejos de wellness/oriental/ciencia de la felicidad, los ultimos temas seguidos. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- L4-013 nunca antes recomendado, sin lectura registrada en enrichment.json. Contenido (las seis lecciones, cronologia de publicacion 1997/2000, historia de los dos padres, revelacion posterior de Richard Kimi) verificado cruzando Wikipedia (ingles) y citas de Goodreads. HONESTIDAD: se declara de frente la controversia real del libro (critica de John T. Reed sobre errores facticos, resena de Slate calificandolo de 'fabulesco') en la seccion de letra chica, en vez de venderlo como manual tecnico sin matices. Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche, L4-013). Boton de audio de 30s incluido (estandar en toda ficha desde 04/09). Sin feedback nuevo de Andy sobre Haidt/Chodron/Seligman todavia (todos con click o dwell, sin veredicto) -- no bloquea, se sigue trackeando.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-05-flynn-heridas-abiertas",
+      "date": "2026-09-05",
+      "kind": "nuevo",
+      "title": "Heridas Abiertas",
+      "author": "Gillian Flynn",
+      "language": "es",
+      "topics": ["suspenso_psicologico", "misterio", "gotico_sureno"],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-09-05-flynn-heridas-abiertas.html",
+      "notified_by": "2026-09-05-rec-sofi",
+      "why": "Regimen DIARIO: ayer (04/09) Sofi tuvo redescubrimiento (Doyle/Sherlock) -> hoy le toca nuevo, y Andy recibe el redescub. CAMBIO FUERTE deliberado (regla de PROFILE: 3+ recomendaciones seguidas sin feedback -> probar cambio fuerte de veta): van 16 fichas de Sofi desde el 20/08 sin un solo evento, en 8 vetas de cozy/romance/memoir. En vez de otro nombre mas del mismo circulo agotado, pivoteo hacia el registro de sus 50 King (oscuro, denso) pero con autora nueva: Gillian Flynn (Sharp Objects, 2006), su primera novela, antes de Perdida/Gone Girl. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo (no aparece Flynn en ningun estante) y contra todo recommended.json -- primera ficha propia, NO es ninguno de los 50 King de R4/R5 (guardia especial pedida por el dueno). Contenido (biografia de Flynn, trama, primera linea del libro, adaptacion HBO 2018) verificado cruzando LitCharts, SuperSummary, Goodreads y Wikipedia. AVISO DE CONTENIDO explicito y declarado de frente en la ficha (autolesion de la protagonista, tratada sin eufemismos en la novela) antes del veredicto, para decision informada. PRECIO/DISPONIBILIDAD: edicion en espanol (Heridas Abiertas, trad. Ana Alcaina) verificada en vivo hoy en Buscalibre Uruguay, $806-1.173 UYU segun edicion (la mayoria 50% off). Audiolibro en ingles narrado por Ann Marie Lee confirmado en Google Play y Audible (403 a bots en Google Play es bloqueo conocido, se linkea igual); sin confirmar narracion en espanol. Boton de audio de 30s incluido. Micro-pregunta extra rec-tono para medir si el cambio de registro suma o resta, ademas de rec-canal para seguir descartando problema de canal vs. de gusto.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

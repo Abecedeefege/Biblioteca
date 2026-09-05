@@ -1246,6 +1246,32 @@
       "sent_at": "2026-09-04T23:05:49.414Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-09-04"
+    },
+    {
+      "id": "2026-09-05-rec-andy",
+      "title": "💰 La plata que nunca te recomendé",
+      "body": "Padre Rico, Padre Pobre: tu veta de finanzas, declarada desde julio y nunca usada. Ya en tu estante L4, para hoy.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
+      "to": "Andy",
+      "send_at": "2026-09-05T19:00:00-03:00",
+      "expires_at": "2026-09-05T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-05"
+    },
+    {
+      "id": "2026-09-05-rec-sofi",
+      "title": "🌾 La autora de Perdida, para vos",
+      "body": "Heridas Abiertas (Gillian Flynn): el mismo terreno oscuro que tus King, autora nueva. Nuevo, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-05-flynn-heridas-abiertas.html",
+      "to": "Sofi",
+      "send_at": "2026-09-05T19:00:00-03:00",
+      "expires_at": "2026-09-05T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-05"
     }
   ]
 }
