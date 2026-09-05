@@ -3995,7 +3995,25 @@
       "device": "Andy",
       "dwell_s": 30,
       "scroll_pct": 0
+    },
+    {
+      "id": "mtozfsha-ot0hjm",
+      "type": "answer",
+      "ts": "2026-09-05T22:56:49.390Z",
+      "page": "2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
+      "device": "Andy",
+      "qid": "leer-esta-noche:L4-013",
+      "value": "ya_leido"
+    },
+    {
+      "id": "mtozftit-0sknxw",
+      "type": "answer",
+      "ts": "2026-09-05T22:56:50.741Z",
+      "page": "2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
+      "device": "Andy",
+      "qid": "rec-veredicto:2026-09-05-kiyosaki-padre-rico-padre-pobre",
+      "value": "ya_lo_lei"
     }
   ],
-  "_updated_at": "2026-09-05T22:54:41.171Z"
+  "_updated_at": "2026-09-05T22:56:50.884Z"
 }
