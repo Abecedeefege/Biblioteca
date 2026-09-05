@@ -4022,7 +4022,16 @@
       "device": "Andy",
       "qid": "rec-audio:2026-09-05-kiyosaki-padre-rico-padre-pobre",
       "value": "si_lo_use"
+    },
+    {
+      "id": "mtozg1ba-wqyblj",
+      "type": "answer",
+      "ts": "2026-09-05T22:57:00.838Z",
+      "page": "2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
+      "device": "Andy",
+      "qid": "rec-veta:2026-09-05-kiyosaki-padre-rico-padre-pobre",
+      "value": "cualquiera"
     }
   ],
-  "_updated_at": "2026-09-05T22:56:57.455Z"
+  "_updated_at": "2026-09-05T22:57:01.920Z"
 }
