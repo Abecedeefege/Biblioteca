@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🧠 Buenos Hábitos, Malos Hábitos · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#1B2119;
+  --fondo2:#232B20;
+  --texto:#EDEFE7;
+  --bruma:#A8AF9C;
+  --terra:#C77B4B;
+  --terra-hi:#E4A272;
+  --sage:#7C9473;
+  --sage-hi:#9DB894;
+  --linea:rgba(237,239,231,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--terra);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--terra-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,239,231,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sage),var(--terra-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(27,33,25,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--terra-hi);border-color:var(--terra)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: una cocina ordenada antes de empezar a cocinar ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 10%,#2C3527 0%,var(--fondo) 62%)}
+.brillo{position:absolute;top:0;left:0;right:0;height:38%;background:linear-gradient(180deg,rgba(199,123,75,.16) 0%,transparent 100%)}
+.icono-hero{position:absolute;top:14%;left:50%;transform:translateX(-50%);font-size:min(11vw,3.2rem);opacity:.9;filter:drop-shadow(0 6px 16px rgba(0,0,0,.4))}
+.hero-int{position:relative;z-index:2;max-width:650px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--terra-hi);border:1px solid rgba(199,123,75,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.5rem,1.05rem + 3vw,2.3rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--sage-hi)}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:47ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--terra);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- audio resumen (estándar en TODA ficha desde 04/09) ---------- */
+.audio{background:rgba(199,123,75,.1);border:1px solid rgba(199,123,75,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--terra);color:#1B2119;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--terra-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--terra-hi);font-weight:500}
+
+/* ---------- el mismo vos, otro cuarto (interactivo) ---------- */
+.cuartos{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(237,239,231,.03)}
+.cuartoGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem}
+.cuarto{background:rgba(237,239,231,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.cuarto:hover:not(.abierta){border-color:var(--terra);transform:translateY(-2px)}
+.cuarto .ico{font-size:1.5rem;display:block;margin-bottom:.4rem}
+.cuarto .nombre{font-size:.82rem;color:var(--bruma);font-weight:600}
+.cuarto.abierta{background:rgba(199,123,75,.16);border-color:var(--terra)}
+.cuarto .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--terra-hi);font-size:.85rem;margin-top:.55rem;line-height:1.42;text-align:left}
+.cuarto.abierta .obs{display:block}
+.cuarto.abierta .nombre{display:none}
+.cuarto-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(237,239,231,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--terra-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(124,148,115,.22);border:1px solid rgba(124,148,115,.5);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--sage-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.cta,.react{background:rgba(237,239,231,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(237,239,231,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--terra);color:var(--terra-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--terra-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+.comprar{display:inline-block;margin-top:1.3rem;background:var(--terra);color:#1B2119;text-decoration:none;font-weight:700;padding:.85rem 1.5rem;border-radius:999px;font-size:.95rem;transition:all .2s ease}
+.comprar:hover{background:var(--terra-hi);transform:translateY(-2px)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:38ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--terra-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--terra);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="brillo" aria-hidden="true"></div>
+  <div class="icono-hero" aria-hidden="true">🍳</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Libro nuevo</span>
+    <h1>Buenos Hábitos, Malos Hábitos</h1>
+    <p class="autor">Wendy Wood · <em>Good Habits, Bad Habits</em> (2019 / Urano, 2020)</p>
+    <p class="sub">Hace ocho días Fogg te tuvo casi ocho minutos leyendo (tu dwell más alto en semanas) sin cerrar un botón — la veta hábitos funciona. Esta es la otra mitad del mapa: no cómo diseñar un hábito diminuto, sino por qué el 43% de lo que hacés todos los días no lo decidís vos.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Treinta años de laboratorio contra la fuerza de voluntad</h2>
+    <p class="bajada rev d2">Wendy Wood es psicóloga social, profesora emérita de Psicología y Negocios en la Universidad del Sur de California (USC), ex presidenta de las dos sociedades más grandes de su campo (Society for Personality and Social Psychology y Association for Psychological Science) y su investigación acumula cerca de 60.000 citas académicas. "Buenos Hábitos, Malos Hábitos" (2019, en español desde 2020 por Urano) resume tres décadas de estudios propios: siguió gente en su vida diaria, las hacía sonar un buscapersonas cada hora y les preguntaba qué estaban haciendo en ese momento — y en qué estaban pensando mientras lo hacían.</p>
+    <p class="parr rev d2">El resultado, su hallazgo más citado: un 43% de lo que hacemos cada día lo hacemos en piloto automático, pensando en otra cosa. La conclusión incómoda del libro es que la fuerza de voluntad casi no importa para ese 43% — lo que importa es el contexto que lo dispara.</p>
+    <div class="cita rev d3">"We spend a shocking 43 percent of our day doing things without thinking about them."<span>("Pasamos un impactante 43% del día haciendo cosas sin pensar en ellas." — traducción propia.) Verificada contra la página del libro en USC Dornsife.</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="mecanismo">
+  <div class="centro">
+    <p class="kicker rev">El mismo vos, otro cuarto</p>
+    <h2 class="titulo rev d1">Tocá cada ejemplo del libro</h2>
+    <p class="bajada rev d2">Wood usa la idea de "mise en place" de los cocineros profesionales — armar el mostrador antes de cocinar — como metáfora central: no se trata de decidir mejor, sino de que la decisión ya esté tomada por el lugar donde estás parado.</p>
+    <div class="cuartos rev d3">
+      <div class="cuartoGrid" id="cuartoBox">
+        <div class="cuarto abierta" data-obs="Un hábito no es débil carácter: es tu cerebro ahorrando esfuerzo. Se arma con tres piezas — una señal de contexto estable (la hora, el lugar, quién está al lado), la repetición, y una recompensa. Ninguna de las tres es 'decidir'."><span class="ico">🧠</span><span class="nombre">1 · Qué es un hábito de verdad</span><span class="obs"></span></div>
+        <div class="cuarto" data-obs="En sus estudios, la gente que cambió de ciudad o de trabajo abandonó hábitos viejos (buenos y malos) mucho más fácil que la que se quedó en el mismo lugar — porque las señales de contexto que los disparaban ya no estaban."><span class="ico">📦</span><span class="nombre">2 · Por qué mudarte te cambia hasta el gimnasio</span><span class="obs"></span></div>
+        <div class="cuarto" data-obs="Wood mide 'fricción' en segundos y pasos: agregar 20 segundos a una acción (guardar las papas fritas en la alacena de arriba, dejar el control remoto en otro cuarto) baja drásticamente cuánto la repetís, aunque tu motivación sea idéntica."><span class="ico">⏱️</span><span class="nombre">3 · Veinte segundos alcanzan</span><span class="obs"></span></div>
+        <div class="cuarto" data-obs="La metáfora que le da nombre a la sección: un cocinero no confía en acordarse de la sal a mitad de la receta, la deja servida antes de prender el fuego. Armar tu entorno de antemano reemplaza la fuerza de voluntad en el momento."><span class="ico">🍳</span><span class="nombre">4 · Mise en place</span><span class="obs"></span></div>
+        <div class="cuarto" data-obs="Un hábito no se 'vence' con determinación en el momento — según Wood, eso es justo cuando el circuito automático es más fuerte. Se desarma cambiando la señal que lo dispara, antes de llegar a ese momento."><span class="ico">🔀</span><span class="nombre">5 · Romper uno viejo</span><span class="obs"></span></div>
+        <div class="cuarto" data-obs="Los hábitos no son solo defectos: son el motivo por el que no reinventás cómo cepillarte los dientes cada mañana. Liberan a la mente consciente para lo que sí necesita atención real."><span class="ico">✅</span><span class="nombre">6 · El lado bueno del piloto automático</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="cuarto-hint">Es el reverso exacto de Fogg: él te dice cómo diseñar el hábito nuevo; ella te dice por qué el entorno pesa más que las ganas.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo este, justo ahora</p>
+    <h2 class="titulo rev d1">La otra mitad del mapa que abrió Fogg</h2>
+    <p class="bajada rev d2">El 29/08 "Tiny Habits" de BJ Fogg fue tu lectura más larga en semanas — casi ocho minutos reales, con scroll completo — aunque todavía sin botón cerrado. En vez de repetir la veta finanzas de ayer (Kiyosaki, que ya tenías leído) o volver a lo oriental (tres fichas seguidas en pausa desde entonces), hoy profundizo exactamente esa veta ganadora con una segunda voz: Fogg es diseño de producto y "empezá diminuto"; Wood es la investigadora de base, más escéptica del rol de la motivación y más enfocada en el entorno que rodea la decisión. Dos lentes sobre el mismo problema, no el mismo libro dos veces.</p>
+    <p class="parr suave rev d3">Sobre tu respuesta de ayer a la micro-pregunta de Kiyosaki ("cualquiera, sorprendeme"): tomé la libertad de rotar lejos de finanzas hoy, hacia una veta con evidencia real de enganche (Fogg) en vez de forzar otra ronda de dinero sin señal clara todavía.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>Good Habits, Bad Habits: The Science of Making Positive Changes That Stick</em>, Farrar, Straus and Giroux, 2019.</dd>
+        <dt>En español</dt><dd><em>Buenos Hábitos, Malos Hábitos</em>, Urano, 2020, trad. Victoria E. Horrillo Ledesma.</dd>
+        <dt>No lo tenés</dt><dd>Verificado título y autora contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: sin coincidencias, primera ficha propia.</dd>
+        <dt>Vetas que cruza</dt><dd>Hábitos y conducta — la veta con tu dwell más alto reciente (Fogg, 493s).</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. El hallazgo del 43%, las tres piezas del hábito (señal, repetición, recompensa) y la metáfora del "mise en place" están verificados cruzando la página oficial del libro en USC Dornsife y reseñas cruzadas (Blinkist, Shortform).</p>
+      <p><b>Diferencia real con Fogg, no defecto:</b> este libro es más diagnóstico que recetario — te explica CON MÁS EVIDENCIA por qué funciona el entorno, pero da menos pasos concretos numerados que "Tiny Habits". Si lo que te enganchó de Fogg fue el método paso a paso, este te va a dar más ciencia y menos checklist; te lo digo de frente para que sepas qué esperar.</p>
+    </div>
+    <a class="comprar" href="https://www.buscalibre.uy/libros/search/?q=buenos+habitos+malos+habitos+wendy+wood" target="_blank" rel="noopener">Conseguilo (~USD 23, edición en español, Buscalibre UY)</a>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d1">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-06-wood-buenos-habitos-malos-habitos','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-06-wood-buenos-habitos-malos-habitos','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-06-wood-buenos-habitos-malos-habitos','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-06-wood-buenos-habitos-malos-habitos','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-06-wood-buenos-habitos-malos-habitos','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-06-wood-buenos-habitos-malos-habitos','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-06-wood-buenos-habitos-malos-habitos','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-06-wood-buenos-habitos-malos-habitos','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Te sirve más el método paso a paso (Fogg) o la ciencia de fondo (Wood)?
+      <div>
+        <button onclick="engageAnswer('rec-metodo:2026-09-06-wood-buenos-habitos-malos-habitos','paso_a_paso',this)">📋 Paso a paso</button>
+        <button onclick="engageAnswer('rec-metodo:2026-09-06-wood-buenos-habitos-malos-habitos','la_ciencia',this)">🔬 La ciencia</button>
+        <button onclick="engageAnswer('rec-metodo:2026-09-06-wood-buenos-habitos-malos-habitos','los_dos',this)">🤝 Los dos por igual</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-06-wood-buenos-habitos-malos-habitos','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-06-wood-buenos-habitos-malos-habitos','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-06-wood-buenos-habitos-malos-habitos','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-06-wood-buenos-habitos-malos-habitos','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-09-06-wood-buenos-habitos-malos-habitos" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-06-wood-buenos-habitos-malos-habitos" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-06-wood-buenos-habitos-malos-habitos',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"A habit is a sort of mental shortcut to repeat what we did in the past that worked for us."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">("Un hábito es una especie de atajo mental para repetir lo que en el pasado nos funcionó." — traducción propia.) Verificada contra la página oficial del libro en USC Dornsife.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para vos · datos verificados contra USC Dornsife, Buscalibre Uruguay y Google Play, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#cuartoBox .cuarto').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#cuartoBox .cuarto').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "Buenos Hábitos, Malos Hábitos, de Wendy Wood, psicóloga de la Universidad del Sur de California. Treinta años de investigación muestran que el 43% de lo que hacemos cada día es piloto automático, no decisión consciente. La fuerza de voluntad casi no importa: lo que importa es el contexto. Un hábito se arma con una señal estable, repetición y recompensa. La clave del libro es la mise en place de los cocineros: armar el entorno antes, para que la buena decisión ya esté tomada.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

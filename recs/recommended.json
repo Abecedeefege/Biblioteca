@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-05T16:14:20-03:00",
-  "_feedback_cutoff": "2026-09-04T23:05:59.583Z",
+  "_updated_at": "2026-09-06T16:30:00-03:00",
+  "_feedback_cutoff": "2026-09-05T22:57:02.382Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -2012,12 +2012,12 @@
       "notified_by": "2026-09-05-rec-andy",
       "why": "Regimen DIARIO: ayer (04/09) Andy tuvo nuevo (Seligman) -> hoy le toca redescubrimiento, y Sofi recibe el nuevo. Elegido Padre Rico, Padre Pobre (Kiyosaki, L4-013): primera vez en 51 fichas que tocamos finanzas/negocios, gusto declarado por Andy desde el 15/07 y nunca usado -- rota lejos de wellness/oriental/ciencia de la felicidad, los ultimos temas seguidos. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- L4-013 nunca antes recomendado, sin lectura registrada en enrichment.json. Contenido (las seis lecciones, cronologia de publicacion 1997/2000, historia de los dos padres, revelacion posterior de Richard Kimi) verificado cruzando Wikipedia (ingles) y citas de Goodreads. HONESTIDAD: se declara de frente la controversia real del libro (critica de John T. Reed sobre errores facticos, resena de Slate calificandolo de 'fabulesco') en la seccion de letra chica, en vez de venderlo como manual tecnico sin matices. Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche, L4-013). Boton de audio de 30s incluido (estandar en toda ficha desde 04/09). Sin feedback nuevo de Andy sobre Haidt/Chodron/Seligman todavia (todos con click o dwell, sin veredicto) -- no bloquea, se sigue trackeando.",
       "feedback": {
-        "veredicto": null,
-        "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "veredicto": "ya_lo_lei",
+        "reaccion": "like",
+        "clicked": true,
+        "dwell_s": 30
       },
-      "learning": null
+      "learning": "CUARTO 'ya_lo_lei' en la serie: fisicamente ya_leido (leer-esta-noche) y veredicto ya_lo_lei -- Andy ya conocia este clasico de memoria, cero descubrimiento, pero reaccion 'like' confirma punteria de veta correcta. rec-veta respondida 'cualquiera' (sin preferencia fuerte entre seguir en finanzas o volver a lo conocido) -- senal neutra, no bloquea ninguna direccion. rec-audio respondida 'si_lo_use': primera confirmacion real de uso del boton de audio. Accion: evitar reofrecer clasicos de finanzas ultra-masivos (Kiyosaki-tier) sin angulo nuevo; si se vuelve a finanzas, ir a L4-001/006/009 (menos manidos) en vez de otro superventas obvio."
     },
     {
       "id": "2026-09-05-flynn-heridas-abiertas",
@@ -2032,6 +2032,48 @@
       "page": "recs/2026-09-05-flynn-heridas-abiertas.html",
       "notified_by": "2026-09-05-rec-sofi",
       "why": "Regimen DIARIO: ayer (04/09) Sofi tuvo redescubrimiento (Doyle/Sherlock) -> hoy le toca nuevo, y Andy recibe el redescub. CAMBIO FUERTE deliberado (regla de PROFILE: 3+ recomendaciones seguidas sin feedback -> probar cambio fuerte de veta): van 16 fichas de Sofi desde el 20/08 sin un solo evento, en 8 vetas de cozy/romance/memoir. En vez de otro nombre mas del mismo circulo agotado, pivoteo hacia el registro de sus 50 King (oscuro, denso) pero con autora nueva: Gillian Flynn (Sharp Objects, 2006), su primera novela, antes de Perdida/Gone Girl. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo (no aparece Flynn en ningun estante) y contra todo recommended.json -- primera ficha propia, NO es ninguno de los 50 King de R4/R5 (guardia especial pedida por el dueno). Contenido (biografia de Flynn, trama, primera linea del libro, adaptacion HBO 2018) verificado cruzando LitCharts, SuperSummary, Goodreads y Wikipedia. AVISO DE CONTENIDO explicito y declarado de frente en la ficha (autolesion de la protagonista, tratada sin eufemismos en la novela) antes del veredicto, para decision informada. PRECIO/DISPONIBILIDAD: edicion en espanol (Heridas Abiertas, trad. Ana Alcaina) verificada en vivo hoy en Buscalibre Uruguay, $806-1.173 UYU segun edicion (la mayoria 50% off). Audiolibro en ingles narrado por Ann Marie Lee confirmado en Google Play y Audible (403 a bots en Google Play es bloqueo conocido, se linkea igual); sin confirmar narracion en espanol. Boton de audio de 30s incluido. Micro-pregunta extra rec-tono para medir si el cambio de registro suma o resta, ademas de rec-canal para seguir descartando problema de canal vs. de gusto.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-06-wood-buenos-habitos-malos-habitos",
+      "date": "2026-09-06",
+      "kind": "nuevo",
+      "title": "Buenos Hábitos, Malos Hábitos",
+      "author": "Wendy Wood",
+      "language": "es",
+      "topics": ["habitos", "conducta", "autosuperacion", "psicologia"],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-09-06-wood-buenos-habitos-malos-habitos.html",
+      "notified_by": "2026-09-06-rec-andy",
+      "why": "Regimen DIARIO: ayer (05/09) Andy tuvo redescubrimiento (Kiyosaki) -> hoy le toca nuevo, y Sofi recibe la redescub. Kiyosaki cerro con ya_lo_lei (cuarto seguido) y rec-veta 'cualquiera' (sin preferencia de continuar finanzas) -- en vez de forzar otra ronda de finanzas sin senal, profundizo la UNICA veta con dwell fuerte confirmado en 4 semanas: habitos (Fogg, 29/08, 493s sin voto). Elegida Wendy Wood, 'Good Habits, Bad Habits' / 'Buenos Habitos, Malos Habitos' (2019/Urano 2020): segunda voz de la misma veta, deliberadamente distinta de Fogg (ella es la investigadora de base -- 43% de acciones diarias en piloto automatico, entorno por sobre fuerza de voluntad -- el, diseno de producto de 'empeza diminuto'). GUARDIA: verificado titulo y autora contra los 437 libros del catalogo completo y contra todo recommended.json -- sin coincidencias, primera ficha propia. Contenido (hallazgo del 43%, las tres piezas del habito -- senal, repeticion, recompensa --, metafora 'mise en place') verificado cruzando la pagina oficial del libro en USC Dornsife y resenas cruzadas (Blinkist, Shortform); credenciales de la autora (Provost Professor Emerita de Psicologia y Negocios, USC, ex presidenta de SPSP y APS) verificadas en Wikipedia. PRECIO/DISPONIBILIDAD: edicion en espanol (Urano 2020) verificada en vivo hoy en Buscalibre Uruguay, $926 UYU (45% off de $1.684), en stock -- link de compra verificado 200 antes de publicar. Audiolibro en ingles narrado por la propia autora confirmado en Google Play (link verificado 200, no bloqueo de bots esta vez); no se confirmo edicion en espanol en esa plataforma, declarado asi. HONESTIDAD: se declara de frente que el libro es mas diagnostico/cientifico que recetario paso a paso (a diferencia de Fogg), para que Andy sepa que esperar si lo que le engancho de Fogg fue el metodo concreto.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-06-doyle-memorias-sherlock",
+      "date": "2026-09-06",
+      "kind": "redescubrimiento",
+      "title": "Las Memorias de Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "language": "es",
+      "topics": ["misterio", "detective", "clasico"],
+      "book_ref": "M5-035",
+      "audience": "sofi",
+      "page": "recs/2026-09-06-doyle-memorias-sherlock.html",
+      "notified_by": "2026-09-06-rec-sofi",
+      "why": "Regimen DIARIO: ayer (05/09) Sofi tuvo nuevo (Flynn) -> hoy le toca redescubrimiento, y Andy recibe el nuevo. CERO eventos de Flynn tambien (17 fichas seguidas en cero desde el 20/08, ni siquiera con el cambio fuerte de veta de ayer) -- ver escalada en PROFILE: ya no se trata solo de hipotesis de gusto, apunta a problema de canal (push que no llega o no se abre) mas que de contenido. Elegido M5-035 'Las Memorias de Sherlock Holmes' (Doyle, 1893): continua el canon ya iniciado con 'Las Aventuras' (04/09, tambien cero) un tomo mas adelante, con el gancho real mas fuerte de toda la serie hasta ahora -- el cierre del volumen es 'El Problema Final', el relato donde Doyle mato a Holmes y 20.000 lectores cancelaron su suscripcion a The Strand en 1893. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- M5-035 nunca tuvo ficha propia (distinto de M5-036 Aventuras, 04/09, y M5-004 Baskerville, 25/08). NO es ninguno de los 50 King de R4/R5 (guardia especial pedida por el dueno). Sin entrada en data/enrichment.json -- read_status desconocido, tratado como no leido. Contenido (los 12 casos y su orden, la biografia de la decision de Doyle de matar a Holmes, la reaccion real de 20.000+ suscripciones canceladas) verificado cruzando Wikipedia (en/es) y la Enciclopedia Arthur Conan Doyle; la leyenda de los brazaletes negros de luto se declara EXPLICITAMENTE como probablemente apocrifa/exagerada (sin registro real de prensa de la epoca, atribuida a Adrian Conan Doyle) en vez de presentarla como hecho. Citas verificadas contra el texto original de 'The Adventure of the Final Problem' (dominio publico) y coleccion de citas cruzada en Goodreads. Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche, M5-035) + micro-pregunta rec-canal (en vez de rec-tono, dado el cero total de ayer) para seguir intentando distinguir problema de canal vs. de gusto ahora que la sospecha es mas fuerte. Se le senala explicitamente a Andy en el cuerpo de la ficha (parrafo 'por que justo este') que revise el canal de Sofi del lado del telefono, y se escala aparte en el reporte final de esta corrida.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

@@ -1272,6 +1272,32 @@
       "sent_at": "2026-09-05T22:49:40.325Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-09-05"
+    },
+    {
+      "id": "2026-09-06-rec-andy",
+      "title": "🧠 Lo que Fogg no te dijo sobre hábitos",
+      "body": "Wendy Wood (USC): 43% de lo que hacés es piloto automático. No es fuerza de voluntad — es diseño del entorno.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-06-wood-buenos-habitos-malos-habitos.html",
+      "to": "Andy",
+      "send_at": "2026-09-06T19:00:00-03:00",
+      "expires_at": "2026-09-06T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-06"
+    },
+    {
+      "id": "2026-09-06-rec-sofi",
+      "title": "🖤 Londres se puso de luto por él, Sofi",
+      "body": "Las Memorias de Sherlock Holmes: 12 casos, y el último hizo cancelar 20.000 suscripciones en 1893. Ya en tu M5.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-06-doyle-memorias-sherlock.html",
+      "to": "Sofi",
+      "send_at": "2026-09-06T19:00:00-03:00",
+      "expires_at": "2026-09-06T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-06"
     }
   ]
 }

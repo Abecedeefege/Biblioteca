@@ -18,62 +18,65 @@ API, cliente puro) y audiolibro de Google Play si existe, por
 título+autor(+narrador) — 403 a bots es bloqueo conocido, se usa igual.
 Narración dudosa o sin confirmar = declarar existencia sin linkear.
 
-## 🚨 Sofi: 16 fichas seguidas en cero, hoy CAMBIO FUERTE (05/09)
-Cero eventos desde el 20/08 (16 fichas, 8 vetas: cozy, thriller nórdico,
-romance, memoir con Haig x3 — ni un click en ninguna). Aplico la regla
-de "3+ sin feedback → cambio fuerte": hoy pivoteo del cozy agotado a su
-otro estante confirmado, los 50 King, pero con autora nueva (Gillian
-Flynn, ver 05/09 abajo). Si esto tampoco da señal, la próxima corrida
-hay que asumir en serio que es el canal (dispositivo/push), no el gusto,
-y proponerle a Sofi un chequeo directo del lado del dueño.
+## 🚨🚨 Sofi: 17 fichas seguidas en CERO — ya no es hipótesis, es canal (06/09)
+El cambio fuerte del 05/09 (Flynn/suspenso denso) TAMBIÉN dio cero — ni
+click ni page_visit — pese a `subscription.json` "active" y 201 en las
+17/17 entregas. 8 vetas agotadas sin una sola señal desde el 20/08.
+**Diagnóstico: ya no es gusto, apunta a canal roto del dispositivo de
+Sofi.** Acción hoy: ficha de Doyle/Memorias lo señala explícito, se sumó
+`rec-canal` de nuevo, y **se escaló por notificación al dueño en esta
+corrida** pidiendo chequeo manual del teléfono (permisos, si el ícono
+siquiera aparece). Si sigue en cero tras eso: dejar de gastar vetas
+nuevas en ella y mandar un push de puro diagnóstico, sin libro.
 
 ## ✅ Canal de Andy — dos patrones distintos
 "Abrió y no votó" (Fogg 29/08 dwell 493s, Herrigel 26/08 botón, Haidt
 02/09 click+nota dwell 369s, Chodron 03/09 click, Seligman 04/09
 click+visita — señal de contenido/CTA, no de desinterés) vs. "nunca
 abrió" (Dalai Lama/Brewer 30-31/08 — señal de tiempo, se corrige con
-recordatorio si se repite). Ningún veredicto todavía en Haidt, Chodron
-ni Seligman — no bloquea, se sigue trackeando.
+recordatorio si se repite). Kiyosaki 05/09: SÍ cerró botón (ya_lo_lei +
+like + audio usado) — primer veredicto cerrado desde Coelho 01/09.
+Todavía sin veredicto: Haidt, Chodron, Seligman.
 
-## 📅 05/09 — hoy
-Cutoff avanzado a 04/09 23:05:59 UTC. 3 eventos nuevos, todos de Andy:
-dwell en Chodron (95s, 100% scroll) y click+visita en Seligman (mismo
-push, ~10s después de enviado). Sofi: otro día sin ningún evento
-(Sherlock de ayer también en cero). Régimen: ayer Andy nuevo (Seligman)
-→ hoy redescub; Sofi redescub (Sherlock) → hoy nuevo.
-**Andy → Robert Kiyosaki, *Padre Rico, Padre Pobre* (L4-013)**
-(redescub): primera vez en 51 fichas que tocamos finanzas/negocios —
-gusto declarado desde el 15/07, nunca usado. Rota lejos de wellness/
-oriental/ciencia de la felicidad (las últimas rachas). Honestidad
-declarada de frente en la ficha: John T. Reed y Slate lo critican por
-errores fácticos y narrativa "fabulesca" — se lo presenta como cambio
-de mentalidad, no manual técnico. Nueva micro-pregunta `rec-veta` para
-saber si seguir en finanzas o volver a lo conocido.
-**Sofi → Gillian Flynn, *Heridas Abiertas* (Sharp Objects, 2006)**
-(nuevo, cambio fuerte): su primera novela, antes de *Perdida*/Gone Girl.
-Mismo registro oscuro y denso que sus 50 King, autora nunca probada.
-Aviso de contenido declarado de frente (autolesión de la protagonista,
-tratada sin eufemismos) antes del veredicto. Nueva micro-pregunta
-`rec-tono` para medir si el cambio de registro suma o resta. Precio
-verificado en vivo: $806-1.173 UYU según edición en Buscalibre UY.
-Pushes `-rec-andy`/`-rec-sofi` 19:00.
+## 📅 06/09 — hoy
+Cutoff avanzado a 05/09 22:57:02 UTC. 1 evento nuevo relevante, de Andy
+sobre Kiyosaki (05/09): click+visita, dwell 30s, `leer-esta-noche=
+ya_leido`, veredicto `ya_lo_lei` (CUARTO seguido — puntería de veta
+correcta, cero descubrimiento otra vez), `rec-audio=si_lo_use` (primera
+confirmación real de uso del botón), `rec-veta=cualquiera` (sin
+preferencia de seguir en finanzas). Sofi: cero de nuevo en Flynn — ver
+sección de arriba. Régimen: ayer Andy redescub (Kiyosaki) → hoy nuevo;
+Sofi nuevo (Flynn) → hoy redescub.
+**Andy → Wendy Wood, *Buenos Hábitos, Malos Hábitos*** (nuevo): en vez
+de forzar otra ronda de finanzas sin señal de continuidad, profundizo la
+ÚNICA veta con dwell fuerte confirmado en 4 semanas (Fogg, 493s).
+Segunda voz deliberadamente distinta: investigación de base (43% de
+acciones en piloto automático, entorno > fuerza de voluntad) en vez del
+método paso a paso de Fogg. Precio y audiolibro verificados en vivo (200
+en ambos links). Nueva micro-pregunta `rec-metodo` (¿te sirve más el
+paso a paso o la ciencia de fondo?) para afinar qué autor de la veta
+seguir.
+**Sofi → Arthur Conan Doyle, *Las Memorias de Sherlock Holmes* (M5-035)**
+(redescub): continúa el canon Doyle un tomo después de "Las Aventuras"
+(04/09, también cero), con el gancho real más fuerte de la serie — "El
+Problema Final", el relato donde Doyle mató a Holmes y 20.000 lectores
+cancelaron su suscripción a The Strand en 1893 (verificado; la leyenda
+de los brazaletes negros de luto se declara explícitamente como
+apócrifa). Pushes `-rec-andy`/`-rec-sofi` hoy 19:00 -03:00.
 
-### Log resumido 29/08–04/09 (26-28/08 en `recommended.json`)
-29/08 Andy→Fogg *Tiny Habits* (nuevo, dwell 493s) / Sofi→Peters *Egipto*
-(redescub). 30/08 Andy→Dalai Lama *Art of Happiness* (redescub, CERO) /
-Sofi→Haig *Stop Time* (nuevo). 31/08 Andy→Brewer *Craving Mind* (nuevo,
-CERO) / Sofi→Bennett *3 Dog Problem* (redescub). 01/09 Andy→Coelho
-*Alquimista* (redescub, `ya_lo_lei`+`like` tras recordatorio) / Sofi→
-Backman *Ove* (nuevo). 02/09 Andy→Haidt *Happiness Hypothesis* (nuevo,
-click+nota, dwell 369s) / Sofi→Christie *Chimneys* (redescub). 03/09
-Andy→Chodron *Budismo* (redescub, click + nota audio) / Sofi→Haig
-*Razones* (nuevo, CERO). 04/09 Andy→Seligman *La vida que florece*
-(nuevo, click+visita) / Sofi→Doyle *Aventuras de Sherlock Holmes*
-(redescub, CERO).
+### Log resumido 29/08–05/09 (26-28/08 en `recommended.json`)
+29/08 Fogg/nuevo(493s) · Peters/redescub. 30/08 DalaiLama/redescub(CERO)
+· Haig-Stop-Time/nuevo. 31/08 Brewer/nuevo(CERO) · Bennett/redescub.
+01/09 Coelho/redescub(`ya_lo_lei`+like) · Backman/nuevo. 02/09 Haidt/
+nuevo(click+nota,369s) · Christie-Chimneys/redescub. 03/09 Chodron/
+redescub(click+audio) · Haig-Razones/nuevo(CERO). 04/09 Seligman/nuevo
+(click) · Doyle-Aventuras/redescub(CERO). 05/09 Kiyosaki/redescub
+(`ya_lo_lei`+like+audio) · Flynn/nuevo(CERO, 17ª). Formato: Andy·Sofi.
 
 ## 📚 Contexto fijo
 Catálogo: 437 volúmenes (re-extraer `/tmp/catalog.json` cada corrida).
-Suscripción: Andy y Sofi `active`.
+Suscripción: Andy y Sofi `active` (Sofi con sospecha de canal roto, ver
+arriba pese al status).
 
 ### Sofi — vetas confirmadas
 Salas: King (R4+R5, 50 libros), M5, M6 (quemado). Aciertos duros (todos
@@ -82,39 +85,39 @@ pre-20/08): **Dicker HQ `lo_quiero`+`love`**; **Klune-mar-azul
 su única señal real). Romance contemporáneo (Henry x2): descartado.
 Guardia máxima misterio/cozy: `ya_lo_lei` en King, Katzenbach, Carlisle,
 Benavent, Henry.
-- Quemados (nuevo o redescub ya usado): Osman t.1-2, Dicker HQ, Hill,
-  King R5-018, Katzenbach M5-024, Carlisle M5-012, Benavent M6-001-009,
-  Henry x2, Coyle M5-011, Klune x3, Heap House, Bennett+secuela, Doyle-
-  Baskerville, Doyle-Aventuras (M5-036), Haig x3, Christie x2, Peters-
-  Egipto, Backman-Ove.
-- Banco redescub: M5-016 Delany 2, Sherlock resto en M5 (M5-033/006/
-  034/035, quedan 4).
-- Banco nuevo: círculo cozy/misterio de primera línea agotado — probado
-  hoy el pivote a suspenso denso (Flynn). Si tampoco da señal: Tana
-  French, Paula Hawkins o directo un King de R4/R5 como "nuevo"
-  (aunque esté en casa, presentado como relectura recomendada) antes de
-  declarar el canal roto.
+- Quemados: Osman t.1-2, Dicker HQ, Hill, King R5-018, Katzenbach M5-024,
+  Carlisle M5-012, Benavent M6-001-009, Henry x2, Coyle M5-011, Klune x3,
+  Heap House, Bennett+secuela, Doyle-Baskerville/Aventuras(M5-036)/
+  Memorias(M5-035,06/09), Haig x3, Christie x2, Peters-Egipto, Backman-
+  Ove, Flynn-Heridas.
+- Banco redescub: M5-016 Delany 2, M5-006 *El Regreso* y M5-034 *Su
+  Último Saludo* (canon Doyle), M5-033 (compendio DK, última opción).
+- Banco nuevo: círculo cozy agotado, Flynn tampoco dio señal. Si
+  Doyle-Memorias también da cero: Tana French o Paula Hawkins como
+  último intento antes de asumir 100% canal roto.
 
 ### Andy — datos duros
 Estante L4 (28+5). Gustos: wellness, autosuperación, positividad,
 astronomía, neurociencia, oriental, finanzas, fábulas. Idioma
 indistinto. Regla confirmada: autor identitario > clásico sin dueño.
 Fábula corta (Bach, Hesse, Coelho) sigue siendo el combo más seguro.
-- Botón: Rovelli, Bach Ilusiones, Holiday (plenos, pre-20/08); Herrigel
-  (redescub, 26/08); Haidt, Chodron, Seligman (click confirmado, sin
-  veredicto todavía).
-- Alquimista (01/09): `ya_lo_lei`+`like` — sube la vara de novedad en
-  fábula/oriental clásica.
+- Botón cerrado: Rovelli, Bach Ilusiones, Holiday, Coelho, Kiyosaki
+  (todos con veredicto real). Sin veredicto todavía: Haidt, Chodron,
+  Seligman (los tres con click/dwell confirmado).
+- Finanzas: Kiyosaki 05/09 → `ya_lo_lei`, `rec-veta=cualquiera` (sin
+  urgencia de volver ahí). Si se retoma, ir a L4-001 (Reed Hastings) o
+  L4-006 (Covey), menos manidos que Kiyosaki.
+- Hábitos: veta con MÁS engagement crudo del último mes (Fogg 493s de
+  dwell). 06/09 Wendy Wood segunda voz de esa veta. `rec-metodo` nueva
+  para ver si prefiere recetario (Fogg) o ciencia de base (Wood).
 - Astronomía en pausa: L5-024, L5-021. Estoicismo: Séneca. Sueño:
   Walker sin voto. Oriental: 3 usados seguidos (Dalai Lama/Coelho/
-  Chodron) — en pausa. Finanzas: Kiyosaki usado hoy (05/09), primera
-  vez en la veta — ver honestidad declarada en la ficha.
-- Banco nuevo: Sapolsky *Behave* (denso, esperar señal de Seligman
-  primero), mindfulness (Thich Nhat Hanh, Kabat-Zinn), oriental (en
-  pausa, ver arriba), Wendy Wood.
-- Banco redescub: usado 26-30/08 L4-010/014/021, 01/09 L4-015, 03/09
-  L4-016, 05/09 L4-013. Astro: L5-024, L5-021. Finanzas: L4-001 (Reed
-  Hastings), L4-006 (Covey), L4-009 quedan sin usar si la veta funciona.
+  Chodron) — en pausa.
+- Banco nuevo: Sapolsky *Behave* (esperar veredicto de Seligman
+  primero), mindfulness (Thich Nhat Hanh, Kabat-Zinn), Wendy Wood usado
+  hoy.
+- Banco redescub: usado 26/08-05/09 L4-010/013/014/015/016/021. Astro:
+  L5-024, L5-021. Finanzas: L4-001, L4-006, L4-009 sin usar.
 
 ## 🛡️ Guardia
 Título+autor contra catálogo (sin tildes) y `recommended.json` —
@@ -124,17 +127,15 @@ obligatorio en `queue.json`. Revisar `subscription.json` cada corrida.
 para Andy sí. Si TODAS las ediciones de Buscalibre figuran agotadas,
 declararlo y sumar alternativa verificada en vez de ocultarlo.
 
-## 🔭 Qué mirar (próxima corrida — 06/09)
-Se invierte: Andy nuevo, Sofi redescub. (1) Veredicto de Haidt, Chodron
-y Seligman (los tres con click, sin voto todavía) — si siguen sin votar
-24-48h más, aplicar la regla de recordatorio antes de sumar libro
-nuevo. (2) `rec-veta` de Kiyosaki: si pide volver a wellness, hacerlo;
-si pide más finanzas, seguir con L4-001/006/009. (3) Cualquier evento
-de Sofi en Flynn (aunque sea un solo click) es la señal más importante
-de las últimas dos semanas — si aparece, profundizar en suspenso denso
-(Tana French, Paula Hawkins); si sigue en CERO total, escalar la
-sospecha de canal roto en el próximo reporte. (4) Confirmar en
-`send_log.json` que los 2 pushes de hoy (05/09) salieron con 201.
+## 🔭 Qué mirar (próxima corrida — 07/09)
+Se invierte: Andy redescub, Sofi nuevo. (1) Veredicto de Haidt, Chodron,
+Seligman — recordatorio si siguen sin votar. (2) `rec-metodo` de Wood:
+"paso a paso"→volver a autores tipo Fogg; "la ciencia"→investigadores
+de base (Sapolsky cuando cierre Seligman). (3) **CRÍTICO**: cualquier
+evento de Sofi en Doyle-Memorias sería la primera señal en 17 fichas y
+cambiaría el diagnóstico; si sigue en cero, mandar un push de puro
+diagnóstico sin libro. (4) Confirmar 201 en `send_log.json` y si el
+chequeo manual del teléfono de Sofi (pedido hoy al dueño) dio algo.
 
 ## 🎬 CINE + 🧳 viaje (fuera del ciclo)
 Cine: 1/semana, `todos`, viernes ~19:00. Sofi evita gore/subtítulos;
