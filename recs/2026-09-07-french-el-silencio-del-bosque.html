@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🌲 El Silencio del Bosque · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#10160F;
+  --fondo2:#182018;
+  --texto:#E7EDE3;
+  --bruma:#93A18E;
+  --musgo:#3E5A3C;
+  --musgo-hi:#6B9367;
+  --niebla:#5C6E72;
+  --niebla-hi:#89A0A4;
+  --linea:rgba(231,237,227,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--musgo);color:var(--texto)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--musgo-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(231,237,227,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--niebla),var(--musgo-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(16,22,15,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--musgo-hi);border-color:var(--musgo)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--musgo-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: un bosque irlandés cerrándose sobre un claro ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 10%,#1E2C1C 0%,var(--fondo) 62%)}
+.neblina{position:absolute;top:0;left:0;right:0;height:38%;background:linear-gradient(180deg,rgba(62,90,60,.22) 0%,transparent 100%)}
+.arbol{position:absolute;top:13%;left:50%;transform:translateX(-50%);font-size:min(11vw,3.2rem);opacity:.9;filter:drop-shadow(0 6px 16px rgba(0,0,0,.5))}
+.hero-int{position:relative;z-index:2;max-width:650px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--musgo-hi);border:1px solid rgba(62,90,60,.55);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.5rem,1.05rem + 3vw,2.3rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--niebla-hi)}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:47ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--musgo);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- audio resumen (estándar en TODA ficha desde 04/09) ---------- */
+.audio{background:rgba(62,90,60,.14);border:1px solid rgba(62,90,60,.45);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--musgo);color:#E7EDE3;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--musgo-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--musgo-hi);font-weight:500}
+
+/* ---------- cuatro hilos del bosque (interactivo) ---------- */
+.reglas{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(231,237,227,.03)}
+.regGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem}
+.reg{background:rgba(231,237,227,.045);border:1px solid var(--linea);border-radius:14px;padding:.95rem .75rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.reg:hover:not(.abierta){border-color:var(--musgo);transform:translateY(-2px)}
+.reg .ico{font-size:1.4rem;display:block;margin-bottom:.35rem}
+.reg .nombre{font-size:.8rem;color:var(--bruma);font-weight:600}
+.reg.abierta{background:rgba(62,90,60,.2);border-color:var(--musgo)}
+.reg .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--musgo-hi);font-size:.82rem;margin-top:.5rem;line-height:1.42}
+.reg.abierta .obs{display:block}
+.reg.abierta .nombre{display:none}
+.reg-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(231,237,227,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--musgo-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(92,110,114,.28);border:1px solid rgba(92,110,114,.55);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--niebla-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.compra{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
+.compra a{display:inline-block;background:var(--musgo);color:#E7EDE3;border-radius:999px;padding:.85rem 1.5rem;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.compra a:hover{background:var(--musgo-hi);transform:translateY(-2px)}
+.compra a.sec{background:transparent;color:var(--texto);border:1px solid var(--linea)}
+.compra a.sec:hover{border-color:var(--musgo);color:var(--musgo-hi)}
+
+.cta,.react{background:rgba(231,237,227,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(231,237,227,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--musgo);color:var(--musgo-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--musgo-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:38ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--musgo-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--musgo);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="neblina" aria-hidden="true"></div>
+  <div class="arbol" aria-hidden="true">🌲</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · Libro nuevo</span>
+    <h1>El Silencio del Bosque</h1>
+    <p class="autor">Tana French · <em>In the Woods</em> (2007)</p>
+    <p class="sub">La autora irlandesa que la crítica compara con tus 50 King por densidad y atmósfera, con un misterio de infancia que nunca se cerró debajo del que están investigando ahora. Primera vez que la probamos.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Dos casos, veinte años de distancia, el mismo bosque</h2>
+    <p class="bajada rev d2">Tana French es una autora estadounidense radicada en Dublín desde chica, con formación como actriz de teatro antes de escribir. <em>In the Woods</em> (2007) es su primera novela, ganadora del Edgar, el Anthony y el Macavity a mejor primera novela — el arranque de su serie Dublin Murder Squad, hoy con siete títulos.</p>
+    <p class="parr rev d2">En 1984, tres chicos de doce años entran a jugar al bosque de Knocknaree, a las afueras de Dublín. Solo uno vuelve: lo encuentran parado contra un árbol, las zapatillas empapadas de sangre que no es suya, sin memoria de lo que pasó ni rastro de sus dos amigos. Veinte años después, ese chico —ahora detective de homicidios bajo un nombre distinto— vuelve al mismo bosque a investigar el asesinato de una nena de doce años, con su compañera Cassie Maddox, sin decirle a nadie del caso que él es el otro sobreviviente de aquel verano.</p>
+    <div class="cita rev d3">"What I warn you to remember is that I am a detective. Our relationship with truth is fundamental but cracked, refracting confusingly like fragmented glass... I crave truth. And I lie."<span>("Lo que te advierto que recuerdes es que soy detective. Nuestra relación con la verdad es fundamental pero está agrietada... Ansío la verdad. Y miento." — traducción propia.) Primera línea del libro, verificada cruzando Goodreads y el extracto publicado en ReadingGroupGuides.</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="mecanismo">
+  <div class="centro">
+    <p class="kicker rev">Cuatro hilos del bosque</p>
+    <h2 class="titulo rev d1">Elegí por dónde entrar — tocá cada uno</h2>
+    <p class="bajada rev d2">Los dos casos —el de 1984 y el de hoy— avanzan juntos, sin que el libro te prometa que el primero se va a resolver.</p>
+    <div class="reglas rev d3">
+      <div class="regGrid" id="regBox">
+        <div class="reg abierta" data-obs="Una nena de doce años aparece muerta en el mismo bosque donde, veinte años antes, desaparecieron sin dejar rastro los otros dos chicos. El detective a cargo es, en secreto, el único sobreviviente de aquel caso jamás resuelto."><span class="ico">🔎</span><span class="nombre">El caso nuevo</span><span class="obs"></span></div>
+        <div class="reg" data-obs="1984: tres chicos entran al bosque de Knocknaree a la tarde. A la noche encuentran a uno solo, mudo, con las zapatillas llenas de sangre ajena. Nunca se supo qué pasó con los otros dos — y el libro no promete resolverlo."><span class="ico">🌲</span><span class="nombre">El caso viejo</span><span class="obs"></span></div>
+        <div class="reg" data-obs="Rob Ryan narra en primera persona, bajo un apellido que se cambió para que nadie en el trabajo sepa quién fue de chico. Es un narrador que él mismo advierte, en la primera línea, que no es del todo confiable."><span class="ico">✍️</span><span class="nombre">Rob</span><span class="obs"></span></div>
+        <div class="reg" data-obs="Cassie Maddox es su compañera y su persona de mayor confianza en la fuerza — la relación entre los dos, construida a fuerza de bromas y secretos compartidos, es lo que la crítica señala como el corazón real del libro, más que el misterio en sí."><span class="ico">🤝</span><span class="nombre">Cassie</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="reg-hint">Dublin Murder Squad tiene siete libros; cada uno cambia de narrador, así que este funciona solo, sin pedirte nada leído antes.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo esta, justo ahora</p>
+    <h2 class="titulo rev d1">Otra puerta hacia tus 50 King, sin ser King</h2>
+    <p class="bajada rev d2">La semana pasada probé el registro más oscuro (Flynn) y volví al canon de Sherlock (Doyle); las dos vías siguen sin una señal clara todavía. Hoy pruebo un tercer camino, más cercano a por qué en algún momento llegaron 50 libros de Stephen King a tu estante: no el thriller veloz de vuelta de página, sino el que se toma su tiempo — atmósfera densa, un misterio de infancia sin resolver debajo del caso principal, y una relación entre los dos detectives que sostiene el libro tanto como el crimen. Tana French es, para buena parte de la crítica en habla inglesa, la heredera literaria de ese tipo de suspenso lento y denso — nunca antes probada acá.</p>
+    <p class="parr suave rev d3">Guardia de nombre: esta es Tana French, la irlandesa de Dublin Murder Squad — no confundir con ninguna otra "French" de misterio. Verificado título y autora contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>, con atención extra a que no sea ninguno de tus 50 King: no lo es, autora completamente distinta.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>In the Woods</em>, Viking Press, 17 de mayo de 2007. Primera novela de Tana French, 429 páginas. Ganadora del premio Edgar 2008 a mejor primera novela.</dd>
+        <dt>En español</dt><dd><em>El Silencio del Bosque</em>, trad. Isabel Margelí Bailo. Edición más reciente: AdN (Alianza de Novelas), 2024, tapa blanda.</dd>
+        <dt>Vetas que cruza</dt><dd>Suspenso denso y atmosférico, con un misterio sin cierre garantizado — el terreno adyacente a tus 50 King, autora nunca probada.</dd>
+        <dt>Dónde está en la casa</dt><dd>En ningún lado. Verifiqué título (en inglés y en español) y autora contra los 437 libros del catálogo completo y contra todo <code>recommended.json</code>: sin coincidencias. No es ninguno de los 50 King de R4/R5.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La biografía de French, los premios, la trama y la primera línea del libro están verificados cruzando SuperSummary, Goodreads, Wikipedia y el extracto oficial publicado en ReadingGroupGuides/Bookreporter. Un aviso de trama, sin spoiler puntual pero real: el caso de 1984 es un hilo que el libro deliberadamente no cierra del todo — es una decisión narrativa muy comentada (a favor y en contra) por lectores y crítica, no un error mío de ficha.</p>
+      <p><b>Sobre disponibilidad:</b> la edición en español (AdN, 2024, trad. Isabel Margelí Bailo) figura hoy en stock en Buscalibre Uruguay a $798 UYU (55% de descuento sobre $1.772 UYU) — verificado en vivo hoy. El audiolibro en inglés, narrado por Steven Crossley (Penguin Random House Audio, edición íntegra), está confirmado en Google Play; no encontré con la misma certeza una narración en español en ninguna plataforma.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="conseguir">
+  <div class="centro">
+    <p class="kicker rev">Conseguirlo</p>
+    <h2 class="titulo rev d1">Con stock hoy, con descuento</h2>
+    <p class="bajada rev d2">La edición en español está disponible ahora en Buscalibre Uruguay:</p>
+    <div class="compra rev d2">
+      <a href="https://www.buscalibre.uy/libros/search/?q=El+Silencio+del+Bosque+Tana+French">Conseguilo (~$798 UYU, en stock hoy)</a>
+      <a class="sec" href="https://play.google.com/store/audiobooks/details/In_the_Woods_A_Novel?id=AQAAAAAE0GjQfM">🎧 Audiolibro en inglés, narrado por Steven Crossley</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+    <div class="cta rev d1">¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-07-french-el-silencio-del-bosque','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-07-french-el-silencio-del-bosque','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-07-french-el-silencio-del-bosque','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-07-french-el-silencio-del-bosque','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-07-french-el-silencio-del-bosque','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-07-french-el-silencio-del-bosque','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-07-french-el-silencio-del-bosque','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-07-french-el-silencio-del-bosque','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Este tono denso y lento te suma o preferís volver al cozy?
+      <div>
+        <button onclick="engageAnswer('rec-tono:2026-09-07-french-el-silencio-del-bosque','me_suma',this)">🌲 Me suma, dale más así</button>
+        <button onclick="engageAnswer('rec-tono:2026-09-07-french-el-silencio-del-bosque','prefiero_cozy',this)">☕ Prefiero el cozy de antes</button>
+        <button onclick="engageAnswer('rec-tono:2026-09-07-french-el-silencio-del-bosque','cualquiera',this)">🤷 Cualquiera, dale señal</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">Un dato más, para afinar la próxima
+      <div>
+        <button onclick="engageAnswer('rec-canal:2026-09-07-french-el-silencio-del-bosque','llegando_bien',this)">📱 Me están llegando bien las notis</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-07-french-el-silencio-del-bosque','fallando',this)">⚠️ Están fallando / llegan tarde</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-07-french-el-silencio-del-bosque','primera_vez',this)">👋 Primera vez que veo una de estas fichas</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-07-french-el-silencio-del-bosque','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-07-french-el-silencio-del-bosque','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-07-french-el-silencio-del-bosque','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-07-french-el-silencio-del-bosque','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-09-07-french-el-silencio-del-bosque" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-07-french-el-silencio-del-bosque" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-07-french-el-silencio-del-bosque',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">"I crave truth. And I lie."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">("Ansío la verdad. Y miento." — traducción propia.) Última línea de la primera página del libro, verificada en Goodreads y en el extracto publicado por la editorial.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · libro nuevo para Sofi · datos verificados contra SuperSummary, Goodreads, Wikipedia, ReadingGroupGuides/Bookreporter y Buscalibre Uruguay, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#regBox .reg').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#regBox .reg').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "El Silencio del Bosque, de Tana French. En 1984, tres chicos entran a jugar a un bosque cerca de Dublín. Solo uno vuelve, sin memoria de lo que pasó. Veinte años después, ese chico es detective de homicidios y, bajo un nombre distinto, investiga el asesinato de otra nena en el mismo bosque, junto a su compañera Cassie. Primera novela de la autora, ganadora del premio Edgar. Suspenso denso y atmosférico, el terreno más cercano a tus King que probamos hasta ahora.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

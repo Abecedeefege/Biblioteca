@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-06T23:04:44.806Z",
+  "_updated_at": "2026-09-07T16:10:00-03:00",
   "notifications": [
     {
       "id": "2026-08-29-rec-andy",
@@ -1298,6 +1298,32 @@
       "sent_at": "2026-09-06T23:04:44.805Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-09-06"
+    },
+    {
+      "id": "2026-09-07-rec-andy",
+      "title": "🔭 La veta que dejaste pausada 5 semanas",
+      "body": "Frontiers of Astronomy (Fred Hoyle, 1955): el que bautizó el Big Bang burlándose de él. Ya en tu L5.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-07-hoyle-frontiers-astronomy.html",
+      "to": "Andy",
+      "send_at": "2026-09-07T19:00:00-03:00",
+      "expires_at": "2026-09-07T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-07"
+    },
+    {
+      "id": "2026-09-07-rec-sofi",
+      "title": "🌲 Otra puerta a tus King, sin ser King",
+      "body": "El Silencio del Bosque (Tana French): mismo terreno denso, autora nunca probada. Nuevo, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-07-french-el-silencio-del-bosque.html",
+      "to": "Sofi",
+      "send_at": "2026-09-07T19:00:00-03:00",
+      "expires_at": "2026-09-07T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-07"
     }
   ]
 }

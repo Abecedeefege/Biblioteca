@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-06T16:30:00-03:00",
+  "_updated_at": "2026-09-07T19:00:00-03:00",
   "_feedback_cutoff": "2026-09-05T22:57:02.382Z",
   "recommendations": [
     {
@@ -2005,7 +2005,11 @@
       "title": "Padre Rico, Padre Pobre",
       "author": "Robert T. Kiyosaki",
       "language": "es",
-      "topics": ["finanzas", "negocios", "autosuperacion"],
+      "topics": [
+        "finanzas",
+        "negocios",
+        "autosuperacion"
+      ],
       "book_ref": "L4-013",
       "audience": "andy",
       "page": "recs/2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
@@ -2026,7 +2030,11 @@
       "title": "Heridas Abiertas",
       "author": "Gillian Flynn",
       "language": "es",
-      "topics": ["suspenso_psicologico", "misterio", "gotico_sureno"],
+      "topics": [
+        "suspenso_psicologico",
+        "misterio",
+        "gotico_sureno"
+      ],
       "book_ref": null,
       "audience": "sofi",
       "page": "recs/2026-09-05-flynn-heridas-abiertas.html",
@@ -2047,7 +2055,12 @@
       "title": "Buenos Hábitos, Malos Hábitos",
       "author": "Wendy Wood",
       "language": "es",
-      "topics": ["habitos", "conducta", "autosuperacion", "psicologia"],
+      "topics": [
+        "habitos",
+        "conducta",
+        "autosuperacion",
+        "psicologia"
+      ],
       "book_ref": null,
       "audience": "andy",
       "page": "recs/2026-09-06-wood-buenos-habitos-malos-habitos.html",
@@ -2068,12 +2081,67 @@
       "title": "Las Memorias de Sherlock Holmes",
       "author": "Arthur Conan Doyle",
       "language": "es",
-      "topics": ["misterio", "detective", "clasico"],
+      "topics": [
+        "misterio",
+        "detective",
+        "clasico"
+      ],
       "book_ref": "M5-035",
       "audience": "sofi",
       "page": "recs/2026-09-06-doyle-memorias-sherlock.html",
       "notified_by": "2026-09-06-rec-sofi",
       "why": "Regimen DIARIO: ayer (05/09) Sofi tuvo nuevo (Flynn) -> hoy le toca redescubrimiento, y Andy recibe el nuevo. CERO eventos de Flynn tambien (17 fichas seguidas en cero desde el 20/08, ni siquiera con el cambio fuerte de veta de ayer) -- ver escalada en PROFILE: ya no se trata solo de hipotesis de gusto, apunta a problema de canal (push que no llega o no se abre) mas que de contenido. Elegido M5-035 'Las Memorias de Sherlock Holmes' (Doyle, 1893): continua el canon ya iniciado con 'Las Aventuras' (04/09, tambien cero) un tomo mas adelante, con el gancho real mas fuerte de toda la serie hasta ahora -- el cierre del volumen es 'El Problema Final', el relato donde Doyle mato a Holmes y 20.000 lectores cancelaron su suscripcion a The Strand en 1893. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo y contra todo recommended.json -- M5-035 nunca tuvo ficha propia (distinto de M5-036 Aventuras, 04/09, y M5-004 Baskerville, 25/08). NO es ninguno de los 50 King de R4/R5 (guardia especial pedida por el dueno). Sin entrada en data/enrichment.json -- read_status desconocido, tratado como no leido. Contenido (los 12 casos y su orden, la biografia de la decision de Doyle de matar a Holmes, la reaccion real de 20.000+ suscripciones canceladas) verificado cruzando Wikipedia (en/es) y la Enciclopedia Arthur Conan Doyle; la leyenda de los brazaletes negros de luto se declara EXPLICITAMENTE como probablemente apocrifa/exagerada (sin registro real de prensa de la epoca, atribuida a Adrian Conan Doyle) en vez de presentarla como hecho. Citas verificadas contra el texto original de 'The Adventure of the Final Problem' (dominio publico) y coleccion de citas cruzada en Goodreads. Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche, M5-035) + micro-pregunta rec-canal (en vez de rec-tono, dado el cero total de ayer) para seguir intentando distinguir problema de canal vs. de gusto ahora que la sospecha es mas fuerte. Se le senala explicitamente a Andy en el cuerpo de la ficha (parrafo 'por que justo este') que revise el canal de Sofi del lado del telefono, y se escala aparte en el reporte final de esta corrida.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-07-hoyle-frontiers-astronomy",
+      "date": "2026-09-07",
+      "kind": "redescubrimiento",
+      "title": "Frontiers of Astronomy",
+      "author": "Fred Hoyle",
+      "language": "en",
+      "topics": [
+        "astronomia",
+        "ciencia",
+        "historia_de_la_ciencia"
+      ],
+      "book_ref": "L5-024",
+      "audience": "andy",
+      "page": "recs/2026-09-07-hoyle-frontiers-astronomy.html",
+      "notified_by": "2026-09-07-rec-andy",
+      "why": "Regimen DIARIO: ayer (06/09) Andy tuvo nuevo (Wood) -> hoy le toca redescubrimiento, y Sofi recibe el nuevo (ver PROFILE 'Que mirar 07/09', ya anotado de la corrida anterior). Sin feedback nuevo desde el cutoff (0 eventos en sync/engagement.json posteriores a 2026-09-05T22:57:02.382Z): las fichas del 06/09 (Wood para Andy, Doyle-Memorias para Sofi) salieron hace ~19-20h y todavia no tienen ni click ni voto de ninguno de los dos, asi que no hay senal nueva que procesar hoy. Elegido L5-024 'Frontiers of Astronomy' (Fred Hoyle, 1955), del banco de redescubrimiento de astronomia que estaba sin usar: es la veta con MEJOR puntoria real de toda la corrida (Rovelli 16/07 'lo_quiero' dwell 182s, Sagan 22/07 'me_tienta' dwell 187s) y que llevaba desde el 04/08 (mas de un mes) sin retomarse, mientras las ultimas semanas rotaron por habitos/finanzas/positividad sin cerrar botones. Angulo: Hoyle acuno sin querer el termino 'Big Bang' en una transmision de la BBC de 1949 para burlarse de esa teoria, y el libro (1955) es su defensa mas elocuente del estado estacionario -- la teoria rival que perdio 9 anios despues con el descubrimiento de la radiacion de fondo cosmico (1964). Honestidad dura: la estructura de capitulos citada sale de resenas/descripciones editoriales (no de lectura propia del texto completo) y se presenta como tal; la cita de Hoyle (frase del Big Bang) y el episodio del Nobel 1983 de Fowler (colaborador de Hoyle en el paper B2FH de nucleosintesis estelar, premio que no incluyo a Hoyle) estan verificados cruzando Oxford Academic/Astronomy & Geophysics, Scientific American y CERN Courier. GUARDIA: verificado titulo y autor contra los 437 libros del catalogo completo (via /tmp/catalog.json) y contra todo recommended.json: primera vez que tiene ficha propia, no coincide con ningun otro item. Sin read_status en data/enrichment.json (solo first_published:1955) -- tratado como no leido. Busque activamente un audiolibro (Google Play, Audible) y no encontre ninguno -- se declara la ausencia en vez de inventar o linkear algo dudoso; disponible en cambio para prestamo digital gratuito en Internet Archive. Es redescubrimiento: sin link de compra, CTA de compromiso fisico estandar (leer-esta-noche, L5-024) + micro-pregunta rec-veta para saber si seguir en astronomia la proxima vez que le toque redescubrimiento.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-07-french-el-silencio-del-bosque",
+      "date": "2026-09-07",
+      "kind": "nuevo",
+      "title": "El Silencio del Bosque",
+      "author": "Tana French",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "suspenso",
+        "detective",
+        "atmosferico"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-09-07-french-el-silencio-del-bosque.html",
+      "notified_by": "2026-09-07-rec-sofi",
+      "why": "Regimen DIARIO: ayer (06/09) Sofi tuvo redescubrimiento (Doyle-Memorias) -> hoy le toca nuevo. Sin feedback nuevo desde el cutoff (0 eventos posteriores a 2026-09-05T22:57:02.382Z): la ficha de Doyle-Memorias del 06/09 salio hace ~19-20h y todavia no tiene ni click ni voto, asi que la racha de 17 fichas seguidas en cero (ver PROFILE, diagnostico de canal roto escalado al dueno el 06/09) no se puede confirmar ni descartar todavia con esta corrida -- se mantiene la sospecha, sin escalar de nuevo hasta tener mas datos. Siguiendo el banco de candidatos del PROFILE ('Si Doyle-Memorias tambien da cero: Tana French o Paula Hawkins como ultimo intento antes de asumir 100% canal roto'), elegi a Tana French, 'In the Woods' / 'El Silencio del Bosque' (2007): primera novela de la autora, premio Edgar, comparada por la critica con el registro denso y atmosferico de sus 50 King, nunca probada antes como veta. GUARDIA REFORZADA (pedido explicito con los King): verificado titulo en ingles Y en espanol, y autora, contra los 437 libros del catalogo completo (via /tmp/catalog.json, sin tildes, subcadenas) y contra todo recommended.json -- sin coincidencias, no es ninguno de los 50 King de R4/R5 ni ningun otro item ya recomendado. Honestidad dura: biografia de French, premios, trama y primera linea del libro verificados cruzando SuperSummary, Goodreads, Wikipedia y el extracto oficial publicado en ReadingGroupGuides/Bookreporter; el hilo del caso de 1984 se declara explicitamente como deliberadamente sin cierre total, en vez de prometer una resolucion que el libro no da. Precio y stock de la edicion en espanol (AdN 2024, trad. Isabel Margeli Bailo, $798 UYU con 55% dcto sobre $1.772 UYU) verificados en vivo hoy en Buscalibre Uruguay (link de compra verificado 200 antes de publicar). Audiolibro en ingles (Steven Crossley, Penguin Random House Audio) confirmado via busqueda web (titulo, narrador y duracion coinciden); el link de Google Play linkeado igual pese al 403 a bots conocido de esa plataforma (bloqueo de bot documentado en PROFILE, no significa que el recurso no exista). Es nuevo: con link de compra + veredicto completo de 5 opciones + micro-pregunta rec-tono para medir si el tono mas denso suma o resta frente al cozy previo.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

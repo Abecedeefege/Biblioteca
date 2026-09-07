@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🔭 Frontiers of Astronomy · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#0D1321;
+  --fondo2:#141C33;
+  --texto:#E8ECF4;
+  --bruma:#8D96AC;
+  --dorado:#D4A537;
+  --dorado-hi:#F0C666;
+  --nebula:#4A5C8C;
+  --nebula-hi:#7C8FC7;
+  --linea:rgba(232,236,244,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--dorado);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--dorado-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(232,236,244,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--nebula),var(--dorado-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(13,19,33,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--dorado-hi);border-color:var(--dorado)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dorado-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: un telescopio de posguerra apuntando a un cielo cargado de estrellas ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 10%,#1C2848 0%,var(--fondo) 62%)}
+.estrellas{position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 20% 30%,#fff 100%,transparent),radial-gradient(1.5px 1.5px at 70% 18%,#fff 100%,transparent),radial-gradient(1px 1px at 85% 45%,#fff 100%,transparent),radial-gradient(1px 1px at 35% 65%,#fff 100%,transparent),radial-gradient(2px 2px at 55% 12%,#fff 100%,transparent),radial-gradient(1px 1px at 10% 75%,#fff 100%,transparent),radial-gradient(1.5px 1.5px at 92% 70%,#fff 100%,transparent);opacity:.55}
+.brillo{position:absolute;top:0;left:0;right:0;height:38%;background:linear-gradient(180deg,rgba(212,165,55,.14) 0%,transparent 100%)}
+.icono-hero{position:absolute;top:14%;left:50%;transform:translateX(-50%);font-size:min(11vw,3.2rem);opacity:.9;filter:drop-shadow(0 6px 16px rgba(0,0,0,.4))}
+.hero-int{position:relative;z-index:2;max-width:650px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--dorado-hi);border:1px solid rgba(212,165,55,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.5rem,1.05rem + 3vw,2.3rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--nebula-hi)}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:47ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--dorado);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+/* ---------- audio resumen (estándar en TODA ficha desde 04/09) ---------- */
+.audio{background:rgba(212,165,55,.1);border:1px solid rgba(212,165,55,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--dorado);color:#0D1321;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--dorado-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--dorado-hi);font-weight:500}
+
+/* ---------- cinco escalas del libro (interactivo) ---------- */
+.reglas{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(232,236,244,.03)}
+.regGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem}
+.reg{background:rgba(232,236,244,.045);border:1px solid var(--linea);border-radius:14px;padding:1.05rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.reg:hover:not(.abierta){border-color:var(--dorado);transform:translateY(-2px)}
+.reg .ico{font-size:1.5rem;display:block;margin-bottom:.4rem}
+.reg .nombre{font-size:.82rem;color:var(--bruma);font-weight:600}
+.reg.abierta{background:rgba(212,165,55,.16);border-color:var(--dorado)}
+.reg .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--dorado-hi);font-size:.84rem;margin-top:.55rem;line-height:1.42;text-align:left}
+.reg.abierta .obs{display:block}
+.reg.abierta .nombre{display:none}
+.reg-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(232,236,244,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--dorado-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(74,92,140,.22);border:1px solid rgba(74,92,140,.5);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--nebula-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.cta,.react{background:rgba(232,236,244,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(232,236,244,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--dorado);color:var(--dorado-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--dorado-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:38ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--dorado-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--dorado);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="estrellas" aria-hidden="true"></div>
+  <div class="brillo" aria-hidden="true"></div>
+  <div class="icono-hero" aria-hidden="true">🔭</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · De tu propio L5 (L5-024)</span>
+    <h1>Frontiers of Astronomy</h1>
+    <p class="autor">Fred Hoyle (1955)</p>
+    <p class="sub">Hace cinco semanas que no toco tu veta de astronomía — la única con DOS veredictos reales y positivos en toda esta corrida (Rovelli "lo quiero", Sagan "me tienta"). Hoy vuelvo ahí, con un libro que ya tenés en el estante y nunca abriste.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">El astrónomo que le puso nombre a la teoría que más odiaba</h2>
+    <p class="bajada rev d2">Fred Hoyle (1915–2001) fue profesor de Cambridge, uno de los astrofísicos más influyentes del siglo XX y, en sus ratos libres, autor de ciencia ficción (<em>The Black Cloud</em>, 1957). Junto a Hermann Bondi y Thomas Gold propuso en 1948 la teoría del estado estacionario: un universo sin principio ni fin, donde se crea materia nueva todo el tiempo para llenar el espacio que deja la expansión. En una charla de radio de la BBC en 1949, para burlarse de la teoría rival, acuñó al pasar el término "Big Bang" — el nombre le quedó pegado a la idea que él pasó el resto de su vida tratando de derrotar.</p>
+    <p class="parr rev d2"><em>Frontiers of Astronomy</em> es de 1955, en pleno apogeo de esa pelea: 360 páginas que llevan al lector desde la física atómica y el Sistema Solar hasta la Vía Láctea, el origen de las galaxias y las teorías del universo — para cerrar con la defensa más elocuente que Hoyle escribió de su propio estado estacionario. Según reseñas y libreros especializados, inspiró a toda una generación de futuros astrónomos, aunque su tesis central terminó perdiendo.</p>
+    <div class="cita rev d3">"the hypothesis that all the matter in the universe was created in one big bang at a particular time in the remote past"<span>(Fred Hoyle, transmisión de radio de la BBC, 28 de marzo de 1949 — la frase con la que sin querer bautizó al Big Bang. Verificada cruzando Oxford Academic/Astronomy & Geophysics y Scientific American.)</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="mecanismo">
+  <div class="centro">
+    <p class="kicker rev">Cinco escalas, de la Tierra al borde del universo</p>
+    <h2 class="titulo rev d1">Tocá cada una — así avanza el libro</h2>
+    <p class="bajada rev d2">Hoyle organiza el libro como un zoom que se va alejando: empieza en lo más chico y termina en la pregunta más grande de todas.</p>
+    <div class="reglas rev d3">
+      <div class="regGrid" id="regBox">
+        <div class="reg abierta" data-obs="Arranca de adentro hacia afuera: física atómica y nuclear, el Sistema Solar (Tierra, Sol, Luna y planetas) — la base necesaria antes de salir del barrio cósmico."><span class="ico">⚛️</span><span class="nombre">1 · Lo más cerca</span><span class="obs"></span></div>
+        <div class="reg" data-obs="De ahí a la Vía Láctea entera: cómo se agrupan las estrellas, qué las distingue entre sí, y por primera vez la escala deja de ser humana."><span class="ico">🌌</span><span class="nombre">2 · Tu galaxia</span><span class="obs"></span></div>
+        <div class="reg" data-obs="El libro sale de la Vía Láctea hacia las otras galaxias: sus tipos, sus distancias enormes, y la evidencia de que el universo se expande — el dato que después terminó jugando en contra de la propia teoría de Hoyle."><span class="ico">🌠</span><span class="nombre">3 · Otras galaxias</span><span class="obs"></span></div>
+        <div class="reg" data-obs="El cierre: la defensa del estado estacionario, con la creación continua de materia como su pieza central. Es la parte más fechada del libro — y la más honesta para leer hoy sabiendo cómo siguió la historia."><span class="ico">♾️</span><span class="nombre">4 · Su apuesta</span><span class="obs"></span></div>
+        <div class="reg" data-obs="Nueve años después de este libro, en 1964, la radiación de fondo cósmico confirmó el Big Bang y el estado estacionario quedó descartado por la comunidad científica. Hoyle nunca lo aceptó del todo — murió en 2001 todavía defendiendo variantes de su idea."><span class="ico">📡</span><span class="nombre">5 · Lo que vino después</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="reg-hint">Un libro que se equivocó en la pregunta más grande que se hizo — y que igual formó a una generación entera de astrónomos en el camino.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo este, justo ahora</p>
+    <h2 class="titulo rev d1">La veta que más te gustó y que dejé quieta cinco semanas</h2>
+    <p class="bajada rev d2">Repasando toda la corrida hasta hoy, astronomía es la única veta con dos veredictos reales y positivos: Rovelli el 16/07 ("lo quiero", 182 segundos de lectura) y Sagan el 22/07 ("me tienta", 187 segundos) — más señal que semanas enteras de hábitos, finanzas o positividad, donde las fichas se abren pero no cierran botón. La última vez que te mandé algo de esta veta fue el 04/08 (Rovelli otra vez). Un mes y medio después, la retomo — no con otro libro por comprar, sino con uno que ya está parado en tu L5 hace quién sabe cuánto.</p>
+    <p class="parr suave rev d3">Elegí a propósito no otro Rovelli ni otro Sagan: Hoyle es una voz distinta, de otra época, y con un ángulo que ninguno de los dos tiene — vas a leer la defensa en primera persona de una teoría que después perdió, escrita por el tipo que sin querer le puso nombre a la que ganó. No es solo divulgación: es historia de la ciencia contada por uno de sus protagonistas equivocados.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Tu ejemplar</dt><dd>L5-024, edición en inglés, Signet T2309 (Fred L. Whipple y otros títulos de esa colección comparten estante). Sin lectura registrada.</dd>
+        <dt>Original</dt><dd><em>Frontiers of Astronomy</em>, William Heinemann, 1955, 360 páginas, ilustrado con fotografías y diagramas astronómicos.</dd>
+        <dt>El autor, en una línea</dt><dd>Coautor en 1957 del célebre "paper B²FH" sobre nucleosíntesis estelar (cómo las estrellas fabrican los elementos químicos) — trabajo tan influyente que en 1983 le dio el Nobel de Física a su colaborador William Fowler. Hoyle quedó afuera del premio, algo que buena parte de la comunidad astronómica todavía discute como una injusticia.</dd>
+        <dt>Vetas que cruza</dt><dd>Astronomía — tu veta con mejor puntería real, en pausa desde el 04/08.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La biografía de Hoyle, la cronología del estado estacionario, el origen del término "Big Bang" en su transmisión de la BBC de 1949 y el episodio del Nobel de 1983 están verificados cruzando Oxford Academic (Astronomy & Geophysics), Scientific American, CERN Courier y Wikipedia. La descripción de los capítulos del libro sale de reseñas de libreros y descripciones editoriales — no de una lectura propia del texto completo, así que la presento como estructura general, no como cita exacta de cada capítulo.</p>
+      <p><b>Sobre el audio:</b> busqué específicamente una edición en audiolibro (Google Play, Audible) y no encontré ninguna — es un libro de divulgación de 1955, hoy fuera de catálogo comercial activo, sin narración conocida. Sí está disponible para préstamo digital gratuito en Internet Archive, por si preferís esa vía a bajar el ejemplar físico del estante.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+    <div class="cta rev d1">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L5-024','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L5-024','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L5-024','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-07-hoyle-frontiers-astronomy','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-07-hoyle-frontiers-astronomy','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-07-hoyle-frontiers-astronomy','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-07-hoyle-frontiers-astronomy','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-07-hoyle-frontiers-astronomy','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-07-hoyle-frontiers-astronomy','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d2">¿Volvemos pronto a astronomía o probamos otra veta la próxima?
+      <div>
+        <button onclick="engageAnswer('rec-veta:2026-09-07-hoyle-frontiers-astronomy','mas_astronomia',this)">🔭 Más astronomía</button>
+        <button onclick="engageAnswer('rec-veta:2026-09-07-hoyle-frontiers-astronomy','otra_veta',this)">🔀 Otra veta</button>
+        <button onclick="engageAnswer('rec-veta:2026-09-07-hoyle-frontiers-astronomy','cualquiera',this)">🤷 Cualquiera</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-07-hoyle-frontiers-astronomy','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-07-hoyle-frontiers-astronomy','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-07-hoyle-frontiers-astronomy','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-07-hoyle-frontiers-astronomy','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+    <div class="cta rev d3">
+      <label for="nota-2026-09-07-hoyle-frontiers-astronomy" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-07-hoyle-frontiers-astronomy" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-07-hoyle-frontiers-astronomy',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre alt">
+  <p class="frase rev">"...all the matter in the universe was created in one big bang..."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:44ch">Fred Hoyle, BBC, 28 de marzo de 1949 — la frase que bautizó, en tono burlón, a la teoría que terminó ganándole. Verificada cruzando Oxford Academic y Scientific American.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · redescubrimiento de tu L5 · datos verificados contra Oxford Academic (Astronomy &amp; Geophysics), Scientific American, CERN Courier y Wikipedia, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#regBox .reg').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#regBox .reg').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "Frontiers of Astronomy, de Fred Hoyle, 1955. El astrónomo que en 1949, para burlarse de una teoría rival, acuñó sin querer el término Big Bang. El libro recorre la física atómica, el Sistema Solar, la Vía Láctea y las otras galaxias, para cerrar con la defensa de su propia teoría, el estado estacionario: un universo sin principio, con materia creándose todo el tiempo. Nueve años después, la radiación de fondo cósmico confirmó el Big Bang y su teoría perdió. Es tu veta de astronomía, la que mejor puntería real tuvo hasta ahora.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
