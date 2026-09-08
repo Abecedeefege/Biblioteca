@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🧠 Compórtate · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#0A0E17;
+  --fondo2:#111827;
+  --texto:#E7E9F4;
+  --bruma:#8C93AC;
+  --violeta:#8C7CF6;
+  --violeta-hi:#AEA2FF;
+  --coral:#FF7A59;
+  --coral-hi:#FF9A80;
+  --linea:rgba(231,233,244,.13);
+  --serif:'Newsreader',Georgia,serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --disp:'Space Grotesk',var(--sans);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--violeta);color:#0A0E17}
+h1,h2,h3,.disp{font-family:var(--disp);font-weight:600}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--violeta-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(231,233,244,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--violeta),var(--coral))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(10,14,23,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--violeta-hi);border-color:var(--violeta)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-family:var(--disp);font-size:.71rem;letter-spacing:.2em;text-transform:uppercase;color:var(--violeta-hi);font-weight:600;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.2rem);line-height:1.24;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:62ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: sinapsis pulsando en la oscuridad ---------- */
+.hero{position:relative;min-height:96svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5.5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 90% at 50% 8%,#1A2036 0%,var(--fondo) 64%)}
+.synapse-field{position:absolute;inset:0;z-index:0;opacity:.75}
+.synapse-field span{position:absolute;border-radius:50%;background:var(--violeta);box-shadow:0 0 14px 3px rgba(140,124,246,.55);animation:pulso 3.4s ease-in-out infinite}
+.synapse-field span.c{background:var(--coral);box-shadow:0 0 14px 3px rgba(255,122,89,.5)}
+@keyframes pulso{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.25)}}
+.hero-int{position:relative;z-index:2;max-width:660px}
+.rotulo{display:inline-block;font-family:var(--disp);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--violeta-hi);border:1px solid rgba(140,124,246,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.7rem,1.15rem + 3.4vw,2.7rem);line-height:1.12;letter-spacing:-.01em}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--coral-hi)}
+.hero .en{color:var(--bruma);font-size:.86rem;margin-top:.3rem}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:48ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--violeta);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.02em;color:var(--bruma)}
+
+/* ---------- audio resumen (estándar en TODA ficha desde 04/09) ---------- */
+.audio{background:rgba(140,124,246,.1);border:1px solid rgba(140,124,246,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--violeta);color:#0A0E17;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--violeta-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--violeta-hi);font-weight:500}
+
+/* ---------- audiolibro Google Play ---------- */
+.abox{background:rgba(255,122,89,.09);border:1px solid rgba(255,122,89,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0}
+.abox p{font-size:.9rem;color:var(--bruma)}
+.abox p + p{margin-top:.6rem}
+.abox a{display:inline-block;margin-top:.8rem;color:var(--coral-hi);font-weight:600;text-decoration:none;border-bottom:1px solid var(--coral);padding-bottom:2px}
+
+/* ---------- las escalas de tiempo (interactivo, corazón de la ficha) ---------- */
+.linea-tiempo{position:relative;margin:1.9rem 0 1rem;padding-left:1.9rem}
+.linea-tiempo::before{content:'';position:absolute;left:.55rem;top:.4rem;bottom:.4rem;width:2px;background:linear-gradient(180deg,var(--violeta),var(--coral))}
+.tl{position:relative;margin-bottom:.65rem;cursor:pointer}
+.tl-cabeza{display:flex;align-items:center;gap:.75rem;padding:.85rem .95rem;border:1px solid var(--linea);border-radius:14px;background:rgba(231,233,244,.03);transition:all .2s ease}
+.tl:hover .tl-cabeza:not(.abierta){border-color:var(--violeta)}
+.tl-cabeza.abierta{background:rgba(140,124,246,.12);border-color:var(--violeta)}
+.tl-dot{position:absolute;left:-1.65rem;top:1.05rem;width:.6rem;height:.6rem;border-radius:50%;background:var(--violeta);box-shadow:0 0 0 4px var(--fondo)}
+.tl-ico{font-size:1.25rem;flex-shrink:0}
+.tl-time{font-family:var(--disp);font-size:.86rem;font-weight:600;color:var(--texto)}
+.tl-flecha{margin-left:auto;color:var(--bruma);font-size:.8rem;transition:transform .2s ease}
+.tl-cabeza.abierta .tl-flecha{transform:rotate(90deg);color:var(--violeta-hi)}
+.tl-obs{display:none;font-family:var(--serif);font-style:italic;color:var(--violeta-hi);font-size:.9rem;line-height:1.5;padding:.75rem 1rem .3rem 1rem}
+.tl-cabeza.abierta + .tl-obs{display:block}
+.tl-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:1rem;font-style:italic}
+
+/* ---------- mini-quiz mito testosterona ---------- */
+.quiz{margin-top:1.9rem;border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;background:rgba(255,122,89,.05)}
+.quiz p.q{font-weight:600;margin-bottom:.9rem}
+.quiz .opciones{display:flex;flex-wrap:wrap;gap:.55rem}
+.quiz button{background:rgba(231,233,244,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.6rem 1rem;font-size:.9rem;transition:all .2s ease}
+.quiz button:hover:not(:disabled){border-color:var(--coral);color:var(--coral-hi)}
+.quiz-resp{display:none;margin-top:.9rem;font-size:.92rem;color:var(--bruma);line-height:1.55}
+.quiz-resp.on{display:block}
+
+.ficha{background:rgba(231,233,244,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-family:var(--disp);font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--violeta-hi);font-weight:600}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(140,124,246,.1);border:1px solid rgba(140,124,246,.35);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-family:var(--disp);font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--violeta-hi);font-weight:600;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.cta,.react{background:rgba(231,233,244,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(231,233,244,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--violeta);color:var(--violeta-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--violeta-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.comprar{display:inline-block;margin-top:1.15rem;background:linear-gradient(90deg,var(--violeta),var(--coral));color:#0A0E17;text-decoration:none;font-weight:700;font-family:var(--disp);padding:.9rem 1.5rem;border-radius:999px;font-size:.98rem;transition:transform .2s ease,filter .2s ease}
+.comprar:hover{transform:translateY(-2px);filter:brightness(1.08)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:40ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--violeta-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--violeta);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="synapse-field" aria-hidden="true">
+    <span style="top:18%;left:12%;width:10px;height:10px;animation-delay:.1s"></span>
+    <span class="c" style="top:12%;left:78%;width:7px;height:7px;animation-delay:1.1s"></span>
+    <span style="top:30%;left:88%;width:9px;height:9px;animation-delay:.6s"></span>
+    <span class="c" style="top:65%;left:8%;width:8px;height:8px;animation-delay:1.7s"></span>
+    <span style="top:78%;left:70%;width:11px;height:11px;animation-delay:.3s"></span>
+    <span class="c" style="top:52%;left:50%;width:6px;height:6px;animation-delay:2.1s"></span>
+    <span style="top:8%;left:45%;width:6px;height:6px;animation-delay:1.4s"></span>
+  </div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Primera vez que la veta neuro tiene libro grande</span>
+    <h1>Compórtate</h1>
+    <p class="autor">Robert M. Sapolsky</p>
+    <p class="en"><em>Behave: The Biology of Humans at Our Best and Worst</em> (2017)</p>
+    <p class="sub">Por qué la gente hace lo que hace, contado hacia atrás en el tiempo: desde el segundo exacto en que un dedo aprieta un gatillo (o suelta una mano), hasta millones de años de evolución que empujan esa misma fracción de segundo. Treinta años de clase en Stanford, en un solo libro.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Un libro que retrocede en el tiempo para explicar un solo gesto</h2>
+    <p class="bajada rev d2">Sapolsky es neuroendocrinólogo y primatólogo, profesor en Stanford desde los años 80 y famoso por pasar parte de cada año estudiando babuinos salvajes en Kenia. <em>Behave</em> salió en 2017 por Penguin Press, ganó el premio de ciencia del LA Times Book Prize ese mismo año y fue bestseller del New York Times. La edición en español, <em>Compórtate</em>, la publicó Capitán Swing en Madrid el 18 de febrero de 2019, traducida por Pedro Pacheco González — 984 páginas en tapa blanda.</p>
+    <p class="parr rev d2">La estructura es el truco del libro y también su argumento central. Arranca con un comportamiento cualquiera — uno bueno, uno cruel — y va para atrás, capa por capa: qué pasó un segundo antes en el cerebro, qué hormonas actuaron horas o días antes, qué aprendizajes se grabaron meses antes, qué pasó en la adolescencia, en la cuna, en el útero, qué genes entran en juego y con qué cultura interactúan, y finalmente qué presión evolutiva viene empujando todo eso desde hace cientos de miles o millones de años. Cada capítulo es una escala de tiempo distinta hacia el mismo instante.</p>
+    <div class="cita rev d3">"Words have power. They can save, cure, uplift, devastate, deflate, and kill."<span>("Las palabras tienen poder. Pueden salvar, curar, elevar, devastar, hundir y matar." — traducción propia.) Cita verificada en la página de citas de <em>Behave</em> en Goodreads.</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="escalas">
+  <div class="centro">
+    <p class="kicker rev">El corazón del libro</p>
+    <h2 class="titulo rev d1">Las escalas de tiempo — tocá cada una</h2>
+    <p class="bajada rev d2">Así está armado <em>Compórtate</em>, capítulo por capítulo, yendo del presente hacia el pasado más profundo:</p>
+    <div class="linea-tiempo rev d3" id="tlBox">
+      <div class="tl">
+        <div class="tl-cabeza abierta" data-obs="Amígdala contra corteza prefrontal, disparando en milisegundos. Ahí se decide, en el margen más estrecho posible, si el impulso gana o si el freno alcanza a llegar antes.">
+          <span class="tl-dot"></span><span class="tl-ico">🧠</span><span class="tl-time">Un segundo antes</span><span class="tl-flecha">▶</span>
+        </div>
+        <p class="tl-obs">Amígdala contra corteza prefrontal, disparando en milisegundos. Ahí se decide, en el margen más estrecho posible, si el impulso gana o si el freno alcanza a llegar antes.</p>
+      </div>
+      <div class="tl">
+        <div class="tl-cabeza" data-obs="Un olor, una cara, una palabra de más te empuja sin que lo notes conscientemente. El contexto sensorial inmediato pesa antes de que creas que empezaste a 'pensar' nada.">
+          <span class="tl-dot"></span><span class="tl-ico">👁️</span><span class="tl-time">Segundos a minutos antes</span><span class="tl-flecha">▶</span>
+        </div>
+        <p class="tl-obs"></p>
+      </div>
+      <div class="tl">
+        <div class="tl-cabeza" data-obs="Testosterona, cortisol, oxitocina. Ninguna 'causa' la conducta por sí sola — pero cambian cuánto pesa cada opción que ya estabas por tomar. El capítulo que más mitos populares desarma.">
+          <span class="tl-dot"></span><span class="tl-ico">💉</span><span class="tl-time">Horas a días antes</span><span class="tl-flecha">▶</span>
+        </div>
+        <p class="tl-obs"></p>
+      </div>
+      <div class="tl">
+        <div class="tl-cabeza" data-obs="Lo que viviste hace poco reconfigura físicamente el cerebro. La plasticidad neuronal graba el aprendizaje reciente y ese cableado nuevo entra a jugar en la próxima decisión.">
+          <span class="tl-dot"></span><span class="tl-ico">🔄</span><span class="tl-time">Días a meses antes</span><span class="tl-flecha">▶</span>
+        </div>
+        <p class="tl-obs"></p>
+      </div>
+      <div class="tl">
+        <div class="tl-cabeza" data-obs="La corteza prefrontal — el freno, el 'hacer lo difícil cuando es lo correcto' — es de las últimas regiones del cerebro en terminar de madurar: recién cerca de los 25 años. Explica bastante de por qué la adolescencia es como es.">
+          <span class="tl-dot"></span><span class="tl-ico">🎢</span><span class="tl-time">Adolescencia</span><span class="tl-flecha">▶</span>
+        </div>
+        <p class="tl-obs"></p>
+      </div>
+      <div class="tl">
+        <div class="tl-cabeza" data-obs="Lo que pasó en el útero y en la primera infancia deja huellas medibles en cómo responde el cuerpo al estrés años después, aunque no exista ningún recuerdo consciente de eso.">
+          <span class="tl-dot"></span><span class="tl-ico">👶</span><span class="tl-time">La cuna y el útero</span><span class="tl-flecha">▶</span>
+        </div>
+        <p class="tl-obs"></p>
+      </div>
+      <div class="tl">
+        <div class="tl-cabeza" data-obs="No existe 'el gen de la violencia' ni de ninguna otra conducta compleja. Casi todo gen relevante se activa distinto según el ambiente — es interacción, no destino escrito de antemano.">
+          <span class="tl-dot"></span><span class="tl-ico">🧬</span><span class="tl-time">Genes y cultura</span><span class="tl-flecha">▶</span>
+        </div>
+        <p class="tl-obs"></p>
+      </div>
+      <div class="tl">
+        <div class="tl-cabeza" data-obs="Por qué distinguimos 'Nosotros' de 'Ellos' en fracciones de segundo, con solo ver una cara: es herencia evolutiva muy vieja, forjada en cientos de miles de años de ecología ancestral — pero el libro también muestra que ese círculo se puede entrenar y ampliar.">
+          <span class="tl-dot"></span><span class="tl-ico">🌍</span><span class="tl-time">Cientos a miles de años antes</span><span class="tl-flecha">▶</span>
+        </div>
+        <p class="tl-obs"></p>
+      </div>
+    </div>
+    <p class="tl-hint">Ocho capas del mismo instante. El libro sostiene que no hay ningún punto de la línea donde "empieza" la decisión — todo es causa encadenada.</p>
+
+    <div class="quiz rev d3">
+      <p class="q">🧪 Mini prueba, antes de seguir: ¿la testosterona causa agresión?</p>
+      <div class="opciones" id="quizBox">
+        <button onclick="responderQuiz('si',this)">Sí, es lo que siempre se dice</button>
+        <button onclick="responderQuiz('no',this)">No, es más complicado</button>
+      </div>
+      <p class="quiz-resp" id="quizResp"></p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo este, justo ahora</p>
+    <h2 class="titulo rev d1">La veta que quedó pendiente desde el vuelo</h2>
+    <p class="bajada rev d2">El 6 de agosto, en la ficha de los cinco ebooks para el vuelo de 20 horas, ya habíamos anotado que tu veta neuro estaba declarada desde el primer día pero nunca había tenido un libro grande — y Sapolsky apareció ahí mencionado, no recomendado. En esa ficha te quedaste el tiempo más largo que registramos hasta hoy, 549 segundos, más que con cualquiera de los otros cuatro libros, pero sin votar por ninguno en particular. Hoy es la primera vez que Sapolsky se recomienda formal y específicamente para vos, solo.</p>
+    <p class="parr suave rev d3">Encaja además con tu regla de siempre: autor con voz propia por encima del clásico sin dueño. Sapolsky no es un divulgador genérico — es el mismo tipo que da la clase en Stanford, que pasó veranos con babuinos en Kenia, y que escribe con un humor bastante ácido incluso cuando el tema es oscuro. Y linkea con wellness y espiritualidad oriental por otro lado: el libro dedica páginas enteras a por qué la compasión entrenada (meditación, contacto, contexto) cambia mediblemente cómo reacciona el cuerpo al estrés — ciencia dura encontrándose con algo que ya venís leyendo desde otro ángulo.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>Behave: The Biology of Humans at Our Best and Worst</em>, Robert M. Sapolsky. Penguin Press, 2 de mayo de 2017. Premio de ciencia del LA Times Book Prize 2017; bestseller del New York Times.</dd>
+        <dt>En español</dt><dd><em>Compórtate: La biología que hay detrás de nuestros mejores y peores comportamientos</em>. Capitán Swing Libros, Madrid, 1ª edición 18/02/2019. Traducción de Pedro Pacheco González. 984 páginas, tapa blanda con solapas. ISBN 978-84-949879-9-1.</dd>
+        <dt>Precio de referencia</dt><dd>~UYU 1.989 en Buscalibre Uruguay (con descuento sobre el precio de tapa) ≈ USD 50 al tipo de cambio de esta semana. Puede variar según stock y librería.</dd>
+        <dt>En tu catálogo</dt><dd>No está en tus 437 volúmenes fichados ni había sido recomendado formalmente antes de hoy — solo mencionado, de pasada, el 06/08.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. Estructura, año, editorial, traductor y premio están verificados cruzando Wikipedia (artículo en inglés del libro), la ficha oficial de Capitán Swing, Buscalibre y varias librerías españolas (Tipos Infames, La Central, Pasajes) que coinciden en la fecha de la primera edición en español.</p>
+      <p><b>Una corrección respecto de la mención del 06/08:</b> esa ficha citaba "Capitán Swing, 2020" para la edición en español. Revisando ahora con más fuentes cruzadas, la primera edición es del 18 de febrero de 2019 — lo dejo corregido acá.</p>
+      <p><b>Sobre el libro en sí:</b> son casi 1.000 páginas y el propio Sapolsky avisa, en el arranque, que los primeros dos capítulos de neuroanatomía dura se pueden saltear y retomar después sin perderse nada. No es lectura que haga sentir bien todo el tiempo — buena parte muestra lo peor que hacemos como especie, no solo lo mejor. Y el libro toma una posición fuerte y polémica sobre el libre albedrío (básicamente, que no existe tal cosa) que no todo el mundo comparte ni falta que hace compartir para sacarle el resto.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este?</h2>
+
+    <div class="cta rev d1">
+      ¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-08-sapolsky-comportate','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-08-sapolsky-comportate','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-08-sapolsky-comportate','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-08-sapolsky-comportate','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-08-sapolsky-comportate','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">
+      ¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-08-sapolsky-comportate','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-08-sapolsky-comportate','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-08-sapolsky-comportate','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <a class="comprar rev d2" href="https://www.buscalibre.uy/libros/search/?q=Comp%C3%B3rtate+Robert+Sapolsky" target="_blank" rel="noopener">Conseguilo (~USD 50) →</a>
+
+    <div class="abox rev d3">
+      <p>🎧 <b>¿Audiolibro?</b> El original en inglés existe como audiolibro en Google Play, narrado por Michael Goldstrom.</p>
+      <p>De la edición en español no encontré confirmación de que exista como audiolibro en Google Play ni en otra plataforma — lo digo así, sin inventar un link que no pude verificar.</p>
+      <a href="https://play.google.com/store/audiobooks/details/Behave_The_Biology_of_Humans_at_Our_Best_and_Worst?id=AQAAAECMUngS5M&hl=en_US&gl=US" target="_blank" rel="noopener">Ver audiolibro en inglés en Google Play →</a>
+    </div>
+
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-08-sapolsky-comportate','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-08-sapolsky-comportate','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-08-sapolsky-comportate','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-08-sapolsky-comportate','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">
+      <label for="nota-2026-09-08-sapolsky-comportate" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-08-sapolsky-comportate" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-08-sapolsky-comportate',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"You don't have to choose between being scientific and being compassionate."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:46ch">("No tenés que elegir entre ser científico y ser compasivo." — traducción propia.) Cita verificada en la página de citas de <em>Behave</em> en Goodreads.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · primera recomendación formal de la veta neuro, para Andy · datos verificados contra Wikipedia (inglés), la ficha oficial de Capitán Swing, Goodreads y Buscalibre Uruguay, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  // línea de tiempo: un solo nodo abierto a la vez
+  $$('#tlBox .tl-cabeza').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#tlBox .tl-cabeza').forEach(function(z){ z.classList.remove('abierta'); });
+      el.classList.add('abierta');
+      var obs=el.nextElementSibling;
+      if(obs) obs.textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // mini quiz mito testosterona
+  window.responderQuiz=function(val,btn){
+    var resp=document.getElementById('quizResp');
+    $$('#quizBox button').forEach(function(b){ b.disabled=true; });
+    if(val==='no'){
+      resp.textContent='Correcto, según el libro: la testosterona no "crea" agresión de la nada. Lo que hace, según Sapolsky, es volver más costoso ignorar una amenaza al status — amplifica lo que ya estaba en juego, no lo inventa. Es uno de los mitos que más tiempo le dedica a desarmar.';
+    } else {
+      resp.textContent='Es el mito más instalado, y el libro le dedica un capítulo entero a desarmarlo: la testosterona no "crea" agresión de la nada, amplifica lo que ya estaba en juego cuando hay una amenaza al status. La causa nunca es una sola hormona sola.';
+    }
+    resp.classList.add('on');
+    window.engageAnswer('rec-mito-testosterona:2026-09-08-sapolsky-comportate',val,btn);
+  };
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "Compórtate, de Robert Sapolsky. Un libro de dos mil diecisiete que explica un solo gesto humano yendo hacia atrás en el tiempo: qué pasa en el cerebro un segundo antes, qué hormonas actúan horas antes, qué aprendizajes meses antes, qué pasó en la adolescencia, en la infancia, en los genes, y qué presión evolutiva viene empujando todo eso desde hace cientos de miles de años. La idea central: ningún comportamiento tiene una sola causa, y entender eso no nos vuelve menos responsables, nos vuelve más precisos sobre qué se puede cambiar.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

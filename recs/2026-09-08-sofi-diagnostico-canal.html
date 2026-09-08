@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🕵️ ¿Te llegan las fichas? · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#151022;
+  --fondo2:#1D1730;
+  --texto:#EDE7F5;
+  --bruma:#A79CC2;
+  --lupa:#C9A24B;
+  --lupa-hi:#E4BE6C;
+  --linea:rgba(237,231,245,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--lupa-hi);outline-offset:3px;border-radius:6px}
+
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(21,16,34,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--lupa-hi);border-color:var(--lupa)}
+
+.hero{position:relative;min-height:46svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5.2rem 1.35rem 2.4rem;background:radial-gradient(120% 80% at 50% 0%,#2A2140 0%,var(--fondo) 65%)}
+.lupa-ico{font-size:2.4rem;margin-bottom:1rem;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5))}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--lupa-hi);border:1px solid rgba(201,162,75,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.1rem}
+.hero h1{font-size:clamp(1.4rem,1.05rem + 2.6vw,2.05rem);line-height:1.25;max-width:22ch}
+.hero .sub{color:var(--bruma);margin-top:1.1rem;max-width:46ch}
+
+.seccion{padding:1.6rem clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:640px;margin:0 auto}
+.parr{margin-top:1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.lista{margin-top:1rem;padding-left:1.2rem;color:var(--bruma)}
+.lista li{margin-top:.35rem}
+
+.cta,.react{background:rgba(237,231,245,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta.principal{border-color:rgba(201,162,75,.55);background:rgba(201,162,75,.08)}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(237,231,245,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.75rem 1.1rem;font-size:.92rem;font-weight:500;transition:all .2s ease;text-align:left}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--lupa);color:var(--lupa-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none;opacity:.55}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--lupa-hi);font-weight:500;display:block;margin-top:.5rem}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding:2.6rem 1.25rem 4rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1rem + .6vw,1.2rem);color:var(--bruma);max-width:36ch;margin:0 auto}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--lupa-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--lupa);padding-bottom:2px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="lupa-ico" aria-hidden="true">🕵️‍♀️🔍</div>
+  <span class="rotulo">Para vos, Sofi · sin libro hoy</span>
+  <h1>Antes de mandarte otro libro, necesito saber una cosa</h1>
+  <p class="sub">18 fichas seguidas — misterio cozy, thrillers, Doyle, Tana French el jueves pasado — y ni una señal tuya. Puede ser que ninguna te cerró. Puede ser que ni te estén llegando. Hoy freno el libro y te pregunto directo.</p>
+</header>
+
+<main>
+<section class="seccion">
+  <div class="centro">
+    <p class="parr">Sé que no es de gusto: pasé por 50 de tus King como referencia, cozy inglés, nórdico, hasta un thriller bien oscuro (Flynn) y una autora nueva pensada justo para tu veta (French). Cero clics, cero dwell, cero de nada en ninguna — ni en las fichas ni en los pushes que las avisan.</p>
+    <p class="parr suave">Así que en vez de arriesgar otro libro a ciegas, te dejo tres preguntas cortas. Tocá la que te calce — es lo único que necesito hoy.</p>
+  </div>
+</section>
+
+<section class="seccion" id="diagnostico">
+  <div class="centro">
+    <div class="cta principal">
+      ¿Qué pasa con los avisos?
+      <div>
+        <button onclick="engageAnswer('rec-canal:2026-09-08-sofi-diagnostico-canal','llegan_no_elijo',this)">📲 Me llegan bien, simplemente ninguna me cerró</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-08-sofi-diagnostico-canal','no_me_llegan',this)">🚫 No me está llegando ningún aviso hace rato</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-08-sofi-diagnostico-canal','juntadas_reviso',this)">📥 Se me juntaron, las estoy revisando ahora</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-08-sofi-diagnostico-canal','primera_vez',this)">👋 Es la primera vez que veo esto</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta">
+      Si te llegan pero ninguna te tienta, ¿qué querés que pruebe distinto?
+      <div>
+        <button onclick="engageAnswer('rec-veta-sofi:2026-09-08-sofi-diagnostico-canal','mas_king',this)">👑 Más directo a tu veta King, sin rodeos</button>
+        <button onclick="engageAnswer('rec-veta-sofi:2026-09-08-sofi-diagnostico-canal','otra_cosa_total',this)">🔀 Algo totalmente distinto al misterio</button>
+        <button onclick="engageAnswer('rec-veta-sofi:2026-09-08-sofi-diagnostico-canal','pausa',this)">⏸️ Pará un tiempo, ya vuelvo a pedir</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="react">
+      ¿Llegaste a ver esta ficha completa?
+      <div>
+        <button onclick="engageReact('2026-09-08-sofi-diagnostico-canal','love',this)" title="La vi entera">👀</button>
+        <button onclick="engageReact('2026-09-08-sofi-diagnostico-canal','like',this)" title="La vi por arriba">🙂</button>
+        <button onclick="engageReact('2026-09-08-sofi-diagnostico-canal','no',this)" title="Recién ahora, después de mucho">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta">
+      <label for="nota-2026-09-08-sofi-diagnostico-canal" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-08-sofi-diagnostico-canal" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-08-sofi-diagnostico-canal',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <script>
+    function enviarNota(recId,btn){
+      var ta=document.getElementById('nota-'+recId);
+      var txt=(ta&&ta.value||'').trim();
+      var hint=btn.parentElement.querySelector('.q-hint');
+      if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+      window.engageAnswer('rec-nota:'+recId,txt,btn);
+      if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+    }
+    </script>
+  </div>
+</section>
+
+<section class="seccion cierre">
+  <p class="frase">En cuanto sepa cuál de las tres es, mañana volvés a tener libro.</p>
+  <p style="margin-top:1.4rem"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · chequeo de canal para Sofi · sin recomendación de libro hoy, a propósito.<br>Mañana vuelve el libro, con lo que contestes acá.</footer>
+
+<script src="../engage/engage.js"></script>
+</body>
+</html>

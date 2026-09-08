@@ -1324,6 +1324,32 @@
       "sent_at": "2026-09-07T23:47:10.375Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-09-07"
+    },
+    {
+      "id": "2026-09-08-rec-andy",
+      "title": "🧠 La veta que nunca tuvo libro grande",
+      "body": "Compórtate (Sapolsky): la clase de 30 años de Stanford sobre por qué hacemos lo que hacemos. Nuevo, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-08-sapolsky-comportate.html",
+      "to": "Andy",
+      "send_at": "2026-09-08T19:00:00-03:00",
+      "expires_at": "2026-09-08T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-08"
+    },
+    {
+      "id": "2026-09-08-rec-sofi",
+      "title": "🕵️ Freno el libro: contame algo rápido",
+      "body": "20 fichas sin señal tuya: ¿no te llegan los avisos o ninguna te cerró? 30 segundos, sin libro hoy.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-08-sofi-diagnostico-canal.html",
+      "to": "Sofi",
+      "send_at": "2026-09-08T19:00:00-03:00",
+      "expires_at": "2026-09-08T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-08"
     }
   ]
 }

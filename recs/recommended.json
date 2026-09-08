@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-07T19:00:00-03:00",
+  "_updated_at": "2026-09-08T19:00:00-03:00",
   "_feedback_cutoff": "2026-09-05T22:57:02.382Z",
   "recommendations": [
     {
@@ -2142,6 +2142,48 @@
       "page": "recs/2026-09-07-french-el-silencio-del-bosque.html",
       "notified_by": "2026-09-07-rec-sofi",
       "why": "Regimen DIARIO: ayer (06/09) Sofi tuvo redescubrimiento (Doyle-Memorias) -> hoy le toca nuevo. Sin feedback nuevo desde el cutoff (0 eventos posteriores a 2026-09-05T22:57:02.382Z): la ficha de Doyle-Memorias del 06/09 salio hace ~19-20h y todavia no tiene ni click ni voto, asi que la racha de 17 fichas seguidas en cero (ver PROFILE, diagnostico de canal roto escalado al dueno el 06/09) no se puede confirmar ni descartar todavia con esta corrida -- se mantiene la sospecha, sin escalar de nuevo hasta tener mas datos. Siguiendo el banco de candidatos del PROFILE ('Si Doyle-Memorias tambien da cero: Tana French o Paula Hawkins como ultimo intento antes de asumir 100% canal roto'), elegi a Tana French, 'In the Woods' / 'El Silencio del Bosque' (2007): primera novela de la autora, premio Edgar, comparada por la critica con el registro denso y atmosferico de sus 50 King, nunca probada antes como veta. GUARDIA REFORZADA (pedido explicito con los King): verificado titulo en ingles Y en espanol, y autora, contra los 437 libros del catalogo completo (via /tmp/catalog.json, sin tildes, subcadenas) y contra todo recommended.json -- sin coincidencias, no es ninguno de los 50 King de R4/R5 ni ningun otro item ya recomendado. Honestidad dura: biografia de French, premios, trama y primera linea del libro verificados cruzando SuperSummary, Goodreads, Wikipedia y el extracto oficial publicado en ReadingGroupGuides/Bookreporter; el hilo del caso de 1984 se declara explicitamente como deliberadamente sin cierre total, en vez de prometer una resolucion que el libro no da. Precio y stock de la edicion en espanol (AdN 2024, trad. Isabel Margeli Bailo, $798 UYU con 55% dcto sobre $1.772 UYU) verificados en vivo hoy en Buscalibre Uruguay (link de compra verificado 200 antes de publicar). Audiolibro en ingles (Steven Crossley, Penguin Random House Audio) confirmado via busqueda web (titulo, narrador y duracion coinciden); el link de Google Play linkeado igual pese al 403 a bots conocido de esa plataforma (bloqueo de bot documentado en PROFILE, no significa que el recurso no exista). Es nuevo: con link de compra + veredicto completo de 5 opciones + micro-pregunta rec-tono para medir si el tono mas denso suma o resta frente al cozy previo.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-08-sapolsky-comportate",
+      "date": "2026-09-08",
+      "kind": "nuevo",
+      "title": "Compórtate",
+      "author": "Robert M. Sapolsky",
+      "language": "es",
+      "topics": ["neurociencia", "wellness", "espiritualidad"],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-09-08-sapolsky-comportate.html",
+      "notified_by": "2026-09-08-rec-andy",
+      "why": "Primera recomendación formal de la veta neurociencia de Andy, declarada desde julio pero sin libro grande todavía: en L4 solo tiene The Brain That Changes Itself (L4-011) y Eagleman (fichado 30/07). Sapolsky ya había sido MENCIONADO (no recomendado) el 06/08 en la ficha especial de ebooks de vuelo, donde Andy tuvo el dwell más alto registrado en cualquier ficha (549s) sin votar por ningún libro individual — hoy rota formal y exclusivamente para él. Cumple la regla de perfil 'autor identitario > clásico sin dueño' y cruza con oriental/wellness por el ángulo de compasión entrenada + biología del estrés. Original Behave (Penguin Press, 2017, LA Times Book Prize de ciencia); español Compórtate (Capitán Swing, 1ª ed. 18/02/2019, trad. Pedro Pacheco González, 984 págs.) — corregí en la ficha el año 2020 que había quedado mal citado en la mención del 06/08. Guardia: título y autor verificados contra el catálogo completo (437 vol.) y contra todo recommended.json, sin coincidencias. Link de compra (buscalibre.uy) y audiolibro en inglés (Google Play, narrador Michael Goldstrom) verificados en vivo (HTTP 200); no se pudo confirmar audiolibro en español, declarado así en la ficha en vez de inventarlo.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-08-sofi-diagnostico-canal",
+      "date": "2026-09-08",
+      "kind": "encuesta",
+      "title": "¿Te están llegando las fichas, Sofi?",
+      "author": null,
+      "language": "es",
+      "topics": ["diagnostico", "canal"],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-09-08-sofi-diagnostico-canal.html",
+      "notified_by": "2026-09-08-rec-sofi",
+      "why": "20 fichas de libro seguidas para Sofi sin ninguna señal (veredicto, click, dwell o reacción) — el último acierto duro es de antes del 20/08. French (07/09), último intento planeado del banco antes de asumir canal roto, también dio cero: sync/engagement.json no tiene NINGÚN evento nuevo desde 2026-09-05T22:57:02Z, ni de Sofi ni de Andy (confirmado también contra notifications/send_log.json: los pushes salen 201 sin excepción, y el workflow push-dispatch que corre cada 10 min y sincroniza el relay de Supabase no reporta errores — no hay evidencia de una falla técnica del lado del servidor). Con la veta agotada y el plan ya escrito en PROFILE.md, se frena el libro por hoy y se pregunta directo si el problema es de gusto o de canal. Nota importante para la próxima corrida: el silencio desde el 05/09 22:57 UTC ahora incluye también a Andy (Wood 06/09 y Hoyle 07/09 sin ninguna señal, cosa que no le pasaba antes) — reabre la duda de si esto es específico de Sofi o si es un corte más amplio (viaje/ausencia de la casa, o un problema compartido del lado cliente) que ninguna corrida anterior había detectado.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
