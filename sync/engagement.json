@@ -4066,7 +4066,16 @@
       "page": "2026-09-08-sapolsky-comportate.html",
       "device": "Andy",
       "nid": "2026-09-08-rec-andy"
+    },
+    {
+      "id": "mttziuwf-aql22v",
+      "type": "answer",
+      "ts": "2026-09-09T10:58:03.375Z",
+      "page": "2026-09-08-sapolsky-comportate.html",
+      "device": "Andy",
+      "qid": "rec-mito-testosterona:2026-09-08-sapolsky-comportate",
+      "value": "no"
     }
   ],
-  "_updated_at": "2026-09-09T10:54:21.186Z"
+  "_updated_at": "2026-09-09T10:58:04.508Z"
 }
