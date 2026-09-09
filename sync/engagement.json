@@ -4040,7 +4040,33 @@
       "device": "Andy",
       "slug": "2026-09-05-kiyosaki-padre-rico-padre-pobre",
       "value": "like"
+    },
+    {
+      "id": "mtozg9g0-xmlvgk",
+      "type": "dwell",
+      "ts": "2026-09-05T22:57:11.376Z",
+      "page": "2026-09-05-kiyosaki-padre-rico-padre-pobre.html",
+      "device": "Andy",
+      "dwell_s": 178,
+      "scroll_pct": 96
+    },
+    {
+      "id": "mttze2g6-apsdxe",
+      "type": "notification_clicked",
+      "ts": "2026-09-09T10:54:19.878Z",
+      "page": "2026-09-08-sapolsky-comportate.html",
+      "device": "Andy",
+      "nid": "2026-09-08-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mttze2g9-jcpb6u",
+      "type": "page_visit",
+      "ts": "2026-09-09T10:54:19.881Z",
+      "page": "2026-09-08-sapolsky-comportate.html",
+      "device": "Andy",
+      "nid": "2026-09-08-rec-andy"
     }
   ],
-  "_updated_at": "2026-09-05T22:57:04.609Z"
+  "_updated_at": "2026-09-09T10:54:21.186Z"
 }
