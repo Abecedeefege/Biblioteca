@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-08T22:03:33.822Z",
+  "_updated_at": "2026-09-09T19:00:00-03:00",
   "notifications": [
     {
       "id": "2026-08-29-rec-andy",
@@ -1350,6 +1350,32 @@
       "sent_at": "2026-09-08T22:03:33.822Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-09-08"
+    },
+    {
+      "id": "2026-09-09-rec-andy",
+      "title": "🦊 El fabulista que faltaba en tu estante",
+      "body": "El Principito, sin abrir en tu L4-024 — el clásico que le gana a Bach, Hesse y Coelho en lectores, y todavía no probaste.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-09-saint-exupery-principito.html",
+      "to": "Andy",
+      "send_at": "2026-09-09T19:00:00-03:00",
+      "expires_at": "2026-09-09T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-09"
+    },
+    {
+      "id": "2026-09-09-rec-sofi",
+      "title": "🚆 El thriller que vendió 23 millones de copias",
+      "body": "La chica del tren (Paula Hawkins): tres mujeres cuentan la misma historia, ninguna dice toda la verdad. Nuevo, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-09-hawkins-chica-del-tren.html",
+      "to": "Sofi",
+      "send_at": "2026-09-09T19:00:00-03:00",
+      "expires_at": "2026-09-09T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-09"
     }
   ]
 }

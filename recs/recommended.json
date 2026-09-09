@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-08T19:00:00-03:00",
-  "_feedback_cutoff": "2026-09-05T22:57:02.382Z",
+  "_updated_at": "2026-09-09T19:00:00-03:00",
+  "_feedback_cutoff": "2026-09-09T10:58:03.375Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -2019,7 +2019,7 @@
         "veredicto": "ya_lo_lei",
         "reaccion": "like",
         "clicked": true,
-        "dwell_s": 30
+        "dwell_s": 178
       },
       "learning": "CUARTO 'ya_lo_lei' en la serie: fisicamente ya_leido (leer-esta-noche) y veredicto ya_lo_lei -- Andy ya conocia este clasico de memoria, cero descubrimiento, pero reaccion 'like' confirma punteria de veta correcta. rec-veta respondida 'cualquiera' (sin preferencia fuerte entre seguir en finanzas o volver a lo conocido) -- senal neutra, no bloquea ninguna direccion. rec-audio respondida 'si_lo_use': primera confirmacion real de uso del boton de audio. Accion: evitar reofrecer clasicos de finanzas ultra-masivos (Kiyosaki-tier) sin angulo nuevo; si se vuelve a finanzas, ir a L4-001/006/009 (menos manidos) en vez de otro superventas obvio."
     },
@@ -2157,12 +2157,40 @@
       "title": "Compórtate",
       "author": "Robert M. Sapolsky",
       "language": "es",
-      "topics": ["neurociencia", "wellness", "espiritualidad"],
+      "topics": [
+        "neurociencia",
+        "wellness",
+        "espiritualidad"
+      ],
       "book_ref": null,
       "audience": "andy",
       "page": "recs/2026-09-08-sapolsky-comportate.html",
       "notified_by": "2026-09-08-rec-andy",
       "why": "Primera recomendación formal de la veta neurociencia de Andy, declarada desde julio pero sin libro grande todavía: en L4 solo tiene The Brain That Changes Itself (L4-011) y Eagleman (fichado 30/07). Sapolsky ya había sido MENCIONADO (no recomendado) el 06/08 en la ficha especial de ebooks de vuelo, donde Andy tuvo el dwell más alto registrado en cualquier ficha (549s) sin votar por ningún libro individual — hoy rota formal y exclusivamente para él. Cumple la regla de perfil 'autor identitario > clásico sin dueño' y cruza con oriental/wellness por el ángulo de compasión entrenada + biología del estrés. Original Behave (Penguin Press, 2017, LA Times Book Prize de ciencia); español Compórtate (Capitán Swing, 1ª ed. 18/02/2019, trad. Pedro Pacheco González, 984 págs.) — corregí en la ficha el año 2020 que había quedado mal citado en la mención del 06/08. Guardia: título y autor verificados contra el catálogo completo (437 vol.) y contra todo recommended.json, sin coincidencias. Link de compra (buscalibre.uy) y audiolibro en inglés (Google Play, narrador Michael Goldstrom) verificados en vivo (HTTP 200); no se pudo confirmar audiolibro en español, declarado así en la ficha en vez de inventarlo.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": true,
+        "dwell_s": 0
+      },
+      "learning": "Click de notificación confirmado 09/09 10:54 (tras 3 días de silencio total en la casa, reanuda la señal). Contestó el mini-quiz del mito de la testosterona con 'no' (rec-mito-testosterona) — usó el interactivo, buena señal de engagement con el formato, pero sin veredicto de libro todavía (rec-veredicto pendiente). No cambia mezcla ni veta hasta que vote."
+    },
+    {
+      "id": "2026-09-08-sofi-diagnostico-canal",
+      "date": "2026-09-08",
+      "kind": "encuesta",
+      "title": "¿Te están llegando las fichas, Sofi?",
+      "author": null,
+      "language": "es",
+      "topics": [
+        "diagnostico",
+        "canal"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-09-08-sofi-diagnostico-canal.html",
+      "notified_by": "2026-09-08-rec-sofi",
+      "why": "20 fichas de libro seguidas para Sofi sin ninguna señal (veredicto, click, dwell o reacción) — el último acierto duro es de antes del 20/08. French (07/09), último intento planeado del banco antes de asumir canal roto, también dio cero: sync/engagement.json no tiene NINGÚN evento nuevo desde 2026-09-05T22:57:02Z, ni de Sofi ni de Andy (confirmado también contra notifications/send_log.json: los pushes salen 201 sin excepción, y el workflow push-dispatch que corre cada 10 min y sincroniza el relay de Supabase no reporta errores — no hay evidencia de una falla técnica del lado del servidor). Con la veta agotada y el plan ya escrito en PROFILE.md, se frena el libro por hoy y se pregunta directo si el problema es de gusto o de canal. Nota importante para la próxima corrida: el silencio desde el 05/09 22:57 UTC ahora incluye también a Andy (Wood 06/09 y Hoyle 07/09 sin ninguna señal, cosa que no le pasaba antes) — reabre la duda de si esto es específico de Sofi o si es un corte más amplio (viaje/ausencia de la casa, o un problema compartido del lado cliente) que ninguna corrida anterior había detectado.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
@@ -2172,18 +2200,46 @@
       "learning": null
     },
     {
-      "id": "2026-09-08-sofi-diagnostico-canal",
-      "date": "2026-09-08",
-      "kind": "encuesta",
-      "title": "¿Te están llegando las fichas, Sofi?",
-      "author": null,
+      "id": "2026-09-09-saint-exupery-principito",
+      "date": "2026-09-09",
+      "audience": "andy",
+      "kind": "redescubrimiento",
+      "title": "El Principito",
+      "author": "Antoine de Saint-Exupéry",
       "language": "es",
-      "topics": ["diagnostico", "canal"],
-      "book_ref": null,
+      "topics": [
+        "fabula",
+        "espiritualidad",
+        "autosuperacion"
+      ],
+      "book_ref": "L4-024",
+      "page": "recs/2026-09-09-saint-exupery-principito.html",
+      "notified_by": "2026-09-09-rec-andy",
+      "why": "Fabula corta = combo mas seguro de Andy (Bach, Hesse, Coelho ya usados); el clasico mas grande de la veta seguia sin tocar y esta sin abrir en su propio L4-024.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-09-hawkins-chica-del-tren",
+      "date": "2026-09-09",
       "audience": "sofi",
-      "page": "recs/2026-09-08-sofi-diagnostico-canal.html",
-      "notified_by": "2026-09-08-rec-sofi",
-      "why": "20 fichas de libro seguidas para Sofi sin ninguna señal (veredicto, click, dwell o reacción) — el último acierto duro es de antes del 20/08. French (07/09), último intento planeado del banco antes de asumir canal roto, también dio cero: sync/engagement.json no tiene NINGÚN evento nuevo desde 2026-09-05T22:57:02Z, ni de Sofi ni de Andy (confirmado también contra notifications/send_log.json: los pushes salen 201 sin excepción, y el workflow push-dispatch que corre cada 10 min y sincroniza el relay de Supabase no reporta errores — no hay evidencia de una falla técnica del lado del servidor). Con la veta agotada y el plan ya escrito en PROFILE.md, se frena el libro por hoy y se pregunta directo si el problema es de gusto o de canal. Nota importante para la próxima corrida: el silencio desde el 05/09 22:57 UTC ahora incluye también a Andy (Wood 06/09 y Hoyle 07/09 sin ninguna señal, cosa que no le pasaba antes) — reabre la duda de si esto es específico de Sofi o si es un corte más amplio (viaje/ausencia de la casa, o un problema compartido del lado cliente) que ninguna corrida anterior había detectado.",
+      "kind": "nuevo",
+      "title": "La chica del tren",
+      "author": "Paula Hawkins",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "thriller psicologico"
+      ],
+      "book_ref": null,
+      "page": "recs/2026-09-09-hawkins-chica-del-tren.html",
+      "notified_by": "2026-09-09-rec-sofi",
+      "why": "Candidata del banco tras agotar el circulo cozy; thriller psicologico de enorme alcance (23M+ copias), veta distinta a King/Osman/cozy ya usados. Vuelve el libro tras el dia de diagnostico (08/09), sin respuesta de Sofi.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
