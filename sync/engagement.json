@@ -4075,7 +4075,33 @@
       "device": "Andy",
       "qid": "rec-mito-testosterona:2026-09-08-sapolsky-comportate",
       "value": "no"
+    },
+    {
+      "id": "mttzjgyq-rd8uh6",
+      "type": "dwell",
+      "ts": "2026-09-09T10:58:31.970Z",
+      "page": "2026-09-08-sapolsky-comportate.html",
+      "device": "Andy",
+      "dwell_s": 252,
+      "scroll_pct": 89
+    },
+    {
+      "id": "mtw5x5qa-m9bhux",
+      "type": "notification_clicked",
+      "ts": "2026-09-10T23:32:40.642Z",
+      "page": "2026-09-10-mack-fin-de-todo.html",
+      "device": "Andy",
+      "nid": "2026-09-10-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mtw5x5qc-panfaw",
+      "type": "page_visit",
+      "ts": "2026-09-10T23:32:40.644Z",
+      "page": "2026-09-10-mack-fin-de-todo.html",
+      "device": "Andy",
+      "nid": "2026-09-10-rec-andy"
     }
   ],
-  "_updated_at": "2026-09-09T10:58:04.508Z"
+  "_updated_at": "2026-09-10T23:32:43.249Z"
 }
