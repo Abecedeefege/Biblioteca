@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-09T19:00:00-03:00",
+  "_updated_at": "2026-09-10T16:12:55-03:00",
   "_feedback_cutoff": "2026-09-09T10:58:03.375Z",
   "recommendations": [
     {
@@ -2240,6 +2240,56 @@
       "page": "recs/2026-09-09-hawkins-chica-del-tren.html",
       "notified_by": "2026-09-09-rec-sofi",
       "why": "Candidata del banco tras agotar el circulo cozy; thriller psicologico de enorme alcance (23M+ copias), veta distinta a King/Osman/cozy ya usados. Vuelve el libro tras el dia de diagnostico (08/09), sin respuesta de Sofi.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-10-mack-fin-de-todo",
+      "date": "2026-09-10",
+      "kind": "nuevo",
+      "title": "El fin de todo (Astrofísicamente hablando)",
+      "author": "Katie Mack",
+      "language": "es",
+      "topics": [
+        "astronomia",
+        "ciencia",
+        "asombro",
+        "sentido"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-09-10-mack-fin-de-todo.html",
+      "notified_by": "2026-09-10-rec-andy",
+      "why": "Siguiente escalón de su veta más consistente (Rovelli ACIERTO PLENO, Sagan y Hawking bien en redescub, Tyson 28/07): Katie Mack era el próximo nombre señalado en el banco desde el learning de Rovelli. Mismo formato de capítulos cortos, pregunta nueva (no cómo empezó el universo, cómo termina). Hoy le tocaba 'nuevo' por alternancia (ayer 09/09 tuvo redescub con El Principito). Guardia: verificado título+autor contra catálogo completo (437 vol.) y recommended.json, sin coincidencias. Stock: edición en papel agotada hoy en Buscalibre UY — declarado en la ficha con alternativa de ebook verificada, no oculto.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-10-doyle-regreso-sherlock",
+      "date": "2026-09-10",
+      "kind": "redescubrimiento",
+      "title": "El Regreso de Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "detective-clasico"
+      ],
+      "book_ref": "M5-006",
+      "audience": "sofi",
+      "page": "recs/2026-09-10-doyle-regreso-sherlock.html",
+      "notified_by": "2026-09-10-rec-sofi",
+      "why": "Tercer libro de la serie Doyle en su M5 (Aventuras 04/09, Memorias 06/09 -ambas sin feedback aún-), banco redescub explícito en PROFILE ('sin uso desde el corte'). Cierra narrativamente el cliffhanger de Reichenbach con el que terminan Las Memorias: el regreso real de Holmes tras fingir su muerte. Hoy le tocaba redescubrimiento por alternancia (ayer 09/09 tuvo nuevo con La chica del tren). Sin read_status ni señal de lectura previa en data/enrichment.json (a diferencia de los King donde varios 'sin leer' resultaron falsos). Guardia especial de los 50 King respetada: no es King, es Doyle canon. Verificado título+autor contra catálogo completo y recommended.json, sin coincidencias.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

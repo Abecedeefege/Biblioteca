@@ -20,21 +20,15 @@ API, cliente puro) y audiolibro de Google Play si existe, por
 título+autor(+narrador) — 403 a bots es bloqueo conocido, se usa igual.
 Narración dudosa o sin confirmar = declarar existencia sin linkear.
 
-## 🚨 09/09 — canal de Sofi: 5+ semanas en cero, escalado a Andy
-Sin NINGÚN evento de Sofi en `sync/engagement.json` desde 2026-08-05
-(ni siquiera respondió el diagnóstico directo del 08/09). El canal de
-Andy en cambio SE RECUPERÓ: notification_clicked + page_visit + una
-respuesta de mini-quiz el 09/09 a las 10:54-10:58 UTC, sobre Sapolsky
-(07/09-08/09 habían quedado en cero — era el mismo corte de 3 días que
-afectaba a toda la casa, no desinterés). Con Andy de vuelta y Sofi
-todavía muda, la hipótesis "corte de toda la casa" ya no explica el
-silencio de Sofi — es algo específico de su canal (probablemente Apple
-Web Push necesitando reconfirmación en su iPhone, dado `subscription.json`
-en `active` sin invalidar y `send_log.json` en 201 siempre). Hoy
-(09/09) le agregué a la ficha de Andy un bloque `rec-alerta-sofi`
-pidiéndole que chequee con ella. **Si para el 16/09 sigue en cero pese
-a esa alerta, la siguiente escalada es más directa** (nota propia más
-insistente, o sugerir reinstalar la PWA).
+## 🚨 09/10 — canal de Sofi: 5+ semanas en cero, escalado a Andy el 09/09
+Sigue sin NINGÚN evento de Sofi desde 2026-08-05 (tampoco respondió el
+`rec-alerta-sofi` del 09/09 ni el diagnóstico del 08/09).
+`subscription.json` en `active` para ambos — no es un problema de
+suscripción caída, es algo del canal de Sofi en sí. **Faltan 6 días
+para el umbral del 16/09**: si sigue en cero, escalar más directo
+(nota insistente en la ficha de Andy, o reinstalar la PWA en su
+iPhone). Sigo eligiendo con la misma disciplina de guardia mientras
+tanto — el silencio es de canal, no evidencia de contenido fallando.
 
 ## ✅ Canal de Andy — activo, dos patrones
 "Abrió y no votó" (dwell/click sin veredicto: Fogg, Herrigel, Haidt,
@@ -44,19 +38,26 @@ sin señal — coincide con el corte de 3 días, no asumir desinterés en
 hábitos/astronomía todavía. Sapolsky (08/09): clickeó el push y usó el
 mini-quiz de testosterona (`no`) pero sin veredicto de libro aún.
 
-## 📅 09/09 — hoy
-Régimen: ayer Andy=nuevo (Sapolsky) → hoy Andy=redescub; la nueva del
-día le toca a Sofi (alternancia por par, ver régimen arriba — el
-redescub que a Sofi le tocaba el 08/09 quedó reemplazado por el
-diagnóstico, así que su nuevo de hoy no rompe su propia rotación real).
-**Andy → *El Principito*, Antoine de Saint-Exupéry (1943, redescub,
-L4-024)**: fábula corta es su combo más seguro (Bach, Hesse, Coelho ya
-usados) y el clásico más grande de la veta nunca se había tocado; libro
-corto, bueno para retomar ritmo tras el corte. **Sofi → *La chica del
-tren*, Paula Hawkins (2015, nuevo)**: candidata del banco tras agotar
-el círculo cozy; thriller psicológico masivo (23M+ copias), veta
-distinta a King/Osman/cozy. Guardia: ninguno de los dos títulos está en
-el catálogo (437 vol.) ni en `recommended.json` previo.
+## 📅 09/10 — hoy
+Cero eventos nuevos en `sync/engagement.json` desde el cutoff del
+09/09 (10:58 UTC) — nada que procesar de feedback hoy; Sapolsky,
+Principito y chica del tren siguen sin veredicto. Régimen: ayer
+09/09 Andy=redescub (Principito) → hoy Andy=nuevo; Sofi=nuevo ayer →
+hoy redescub (alternancia por par). **Andy → *El fin de todo
+(Astrofísicamente hablando)*, Katie Mack (2020, nuevo, astronomía)**:
+siguiente escalón de su veta más consistente (Rovelli ACIERTO PLENO,
+Sagan/Hawking bien en redescub, Tyson 28/07) — Mack era el próximo
+nombre señalado desde el learning original de Rovelli. Ojo: edición en
+papel agotada hoy en Buscalibre UY, declarado en la ficha con
+alternativa de ebook verificada (~€9,49) en vez de ocultarlo. **Sofi →
+*El Regreso de Sherlock Holmes*, Arthur Conan Doyle (1905, redescub,
+M5-006)**: tercer libro de la serie Doyle (Aventuras 04/09, Memorias
+06/09, ninguna con feedback aún) — cierra narrativamente el cliffhanger
+de Reichenbach con el que terminan Las Memorias. Banco redescub
+explícito en PROFILE, sin señal de lectura previa en enrichment.
+Guardia: ambos títulos verificados contra catálogo (437 vol.) y
+`recommended.json` previo, sin coincidencias; Doyle-Regreso no es
+ninguno de los 50 King.
 
 ## 📚 Contexto fijo
 Catálogo: 437 volúmenes (re-extraer `/tmp/catalog.json` cada corrida).
@@ -72,14 +73,15 @@ Guardia máxima misterio/cozy: `ya_lo_lei` en King, Katzenbach, Carlisle,
 Benavent, Henry.
 - Quemados: Osman t.1-2, Dicker HQ, Hill, King R5-018, Katzenbach M5-024,
   Carlisle M5-012, Benavent M6-001-009, Henry x2, Coyle M5-011, Klune x3,
-  Heap House, Bennett+secuela, Doyle-Baskerville/Aventuras/Memorias,
-  Haig x3, Christie x2, Peters-Egipto, Backman-Ove, Flynn-Heridas,
-  French-Silencio del Bosque, Hawkins-chica-del-tren (hoy).
+  Heap House, Bennett+secuela, Doyle-Baskerville/Aventuras/Memorias/
+  Regreso (M5-006, hoy), Haig x3, Christie x2, Peters-Egipto, Backman-Ove,
+  Flynn-Heridas, French-Silencio del Bosque, Hawkins-chica-del-tren.
 - Banco redescub (sin uso desde el corte, sin señal para priorizar):
-  M5-016 Delany 2, M5-006 *El Regreso* y M5-034 *Su Último Saludo*
-  (canon Doyle), M5-033 (compendio DK).
-- Banco nuevo: círculo cozy agotado; Hawkins usada hoy. Sin candidata
-  fuerte siguiente — reponer con WebSearch cuando toque su próximo nuevo.
+  M5-016 Delany 2, M5-034 *Su Último Saludo* (canon Doyle, cuarto de la
+  serie) y M5-033 (compendio DK).
+- Banco nuevo: círculo cozy agotado; Hawkins y Doyle-Regreso ya usados.
+  Sin candidata fuerte siguiente — reponer con WebSearch cuando toque su
+  próximo nuevo.
 
 ### Andy — datos duros
 Estante L4 (28+5), L5 astronomía (33). Gustos: wellness, autosuperación,
@@ -89,14 +91,18 @@ dueño; fábula corta sigue siendo el combo más seguro (ahora con
 Saint-Exupéry también usado).
 - Botón cerrado: Rovelli, Bach Ilusiones, Holiday, Coelho, Kiyosaki.
   Sin veredicto: Haidt, Chodron, Seligman, Wood, Hoyle, Sapolsky,
-  Saint-Exupéry (hoy) — la mayoría con click/dwell ya confirmado.
+  Saint-Exupéry, Mack (hoy) — la mayoría con click/dwell ya confirmado.
 - Neurociencia: abierta 08/09 con Sapolsky, sin veredicto todavía. Si
   cierra bien, banco sigue con mindfulness (Thich Nhat Hanh, Kabat-Zinn)
   evitando repetir oriental (3 usados seguidos en agosto).
 - Hábitos: mejor engagement crudo pre-corte (Fogg 493s dwell). Wood
   (06/09) sigue sin señal — no asumir desinterés, esperar más datos.
-- Astronomía: retomada 07/09 (Hoyle, L5-024), sin señal aún. L5-021
-  queda si repite bien. Finanzas: cerrada con Kiyosaki, sin urgencia.
+- Astronomía: retomada 07/09 (Hoyle, L5-024) y llevada un paso más
+  allá hoy con Mack (nuevo, "el fin" en vez de "el origen"), ninguna
+  con señal aún. L5-021 queda si el redescub repite bien. Banco nuevo
+  de astronomía se queda corto tras Mack — reponer (Sean Carroll es el
+  siguiente nombre natural) antes de que vuelva a tocarle. Finanzas:
+  cerrada con Kiyosaki, sin urgencia.
 
 ## 🛡️ Guardia
 Título+autor contra catálogo (sin tildes) y `recommended.json` —
@@ -107,12 +113,14 @@ ediciones de Buscalibre figuran agotadas, declararlo y sumar
 alternativa verificada en vez de ocultarlo.
 
 ## 🔭 Qué mirar (próxima corrida)
-(1) ¿Contestó Andy el `rec-alerta-sofi` de hoy, o llegó señal nueva de
-Sofi (aunque sea al fin al diagnóstico del 08/09)? Actuar en
-consecuencia (volver a libro normal, cambiar veta, o escalar más fuerte
-si sigue en cero para el 16/09). (2) Veredicto de Haidt, Chodron,
-Seligman, Wood, Hoyle, Sapolsky, Saint-Exupéry. (3) Confirmar 201 en
-`send_log.json` de los dos pushes de hoy.
+(1) ¿Contestó Andy el `rec-alerta-sofi` del 09/09, o llegó señal nueva
+de Sofi (aunque sea al fin al diagnóstico del 08/09)? Van quedando 6
+días para el umbral del 16/09 — si sigue en cero, escalar más fuerte.
+(2) Veredicto de Haidt, Chodron, Seligman, Wood, Hoyle, Sapolsky,
+Saint-Exupéry, Mack (Andy) y de las tres fichas Doyle sin voto de Sofi
+(Aventuras, Memorias, Regreso). (3) Confirmar 201 en `send_log.json` de
+los dos pushes de hoy (09/10). (4) Reponer banco nuevo de astronomía
+para Andy (Sean Carroll) antes de que vuelva a tocarle esa veta.
 
 ## 🎬 CINE + 🧳 viaje (fuera del ciclo)
 Cine: 1/semana, `todos`, viernes ~19:00. Sofi evita gore/subtítulos;

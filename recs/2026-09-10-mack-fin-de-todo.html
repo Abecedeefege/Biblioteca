@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🌌 El fin de todo · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#07060F;
+  --fondo2:#0F0D1E;
+  --texto:#EAE8F7;
+  --bruma:#96919F;
+  --nebula:#7C6FF0;
+  --nebula-hi:#A69BFF;
+  --quasar:#F0518C;
+  --quasar-hi:#FF80AE;
+  --linea:rgba(234,232,247,.13);
+  --serif:'Newsreader',Georgia,serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --disp:'Space Grotesk',var(--sans);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--nebula);color:#07060F}
+h1,h2,h3,.disp{font-family:var(--disp);font-weight:600}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--nebula-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(234,232,247,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--nebula),var(--quasar))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(7,6,15,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--nebula-hi);border-color:var(--nebula)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-family:var(--disp);font-size:.71rem;letter-spacing:.2em;text-transform:uppercase;color:var(--nebula-hi);font-weight:600;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.2rem);line-height:1.24;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:62ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: campo estelar muriendo lentamente ---------- */
+.hero{position:relative;min-height:96svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5.5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 90% at 50% 8%,#1B1436 0%,var(--fondo) 64%)}
+.star-field{position:absolute;inset:0;z-index:0}
+.star-field span{position:absolute;border-radius:50%;background:var(--nebula-hi);box-shadow:0 0 10px 2px rgba(166,155,255,.6);animation:apaga 4.6s ease-in-out infinite}
+.star-field span.q{background:var(--quasar-hi);box-shadow:0 0 10px 2px rgba(255,128,174,.55)}
+@keyframes apaga{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:.15;transform:scale(.5)}}
+.hero-int{position:relative;z-index:2;max-width:660px}
+.rotulo{display:inline-block;font-family:var(--disp);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--nebula-hi);border:1px solid rgba(124,111,240,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.6rem,1.1rem + 3.2vw,2.55rem);line-height:1.14;letter-spacing:-.01em}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--quasar-hi)}
+.hero .en{color:var(--bruma);font-size:.86rem;margin-top:.3rem}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:48ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--nebula);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.02em;color:var(--bruma)}
+
+/* ---------- audio resumen (estándar en TODA ficha desde 04/09) ---------- */
+.audio{background:rgba(124,111,240,.1);border:1px solid rgba(124,111,240,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--nebula);color:#07060F;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--nebula-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--nebula-hi);font-weight:500}
+
+/* ---------- audiolibro Google Play ---------- */
+.abox{background:rgba(240,81,140,.09);border:1px solid rgba(240,81,140,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0}
+.abox p{font-size:.9rem;color:var(--bruma)}
+.abox p + p{margin-top:.6rem}
+.abox a{display:inline-block;margin-top:.8rem;color:var(--quasar-hi);font-weight:600;text-decoration:none;border-bottom:1px solid var(--quasar);padding-bottom:2px}
+
+/* ---------- cinco finales del universo (interactivo, corazón de la ficha) ---------- */
+.finales{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(234,232,247,.03)}
+.finGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem}
+.fin{background:rgba(234,232,247,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.fin:hover:not(.abierta){border-color:var(--nebula);transform:translateY(-2px)}
+.fin .ico{font-size:1.5rem;display:block;margin-bottom:.35rem}
+.fin .nombre{font-size:.82rem;color:var(--bruma);font-weight:600}
+.fin.abierta{background:rgba(124,111,240,.16);border-color:var(--nebula)}
+.fin .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--nebula-hi);font-size:.84rem;margin-top:.5rem;line-height:1.44}
+.fin.abierta .obs{display:block}
+.fin.abierta .nombre{display:none}
+.fin-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(234,232,247,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-family:var(--disp);font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--nebula-hi);font-weight:600}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(124,111,240,.1);border:1px solid rgba(124,111,240,.35);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-family:var(--disp);font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--nebula-hi);font-weight:600;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.cta,.react{background:rgba(234,232,247,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(234,232,247,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--nebula);color:var(--nebula-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--nebula-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.comprar{display:inline-block;margin-top:1.15rem;background:linear-gradient(90deg,var(--nebula),var(--quasar));color:#07060F;text-decoration:none;font-weight:700;font-family:var(--disp);padding:.9rem 1.5rem;border-radius:999px;font-size:.98rem;transition:transform .2s ease,filter .2s ease}
+.comprar:hover{transform:translateY(-2px);filter:brightness(1.08)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:40ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--nebula-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--nebula);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="star-field" aria-hidden="true">
+    <span style="top:16%;left:14%;width:9px;height:9px;animation-delay:.1s"></span>
+    <span class="q" style="top:10%;left:76%;width:6px;height:6px;animation-delay:1.4s"></span>
+    <span style="top:32%;left:88%;width:8px;height:8px;animation-delay:.7s"></span>
+    <span class="q" style="top:68%;left:9%;width:7px;height:7px;animation-delay:2.1s"></span>
+    <span style="top:80%;left:68%;width:10px;height:10px;animation-delay:.4s"></span>
+    <span class="q" style="top:50%;left:48%;width:5px;height:5px;animation-delay:2.6s"></span>
+    <span style="top:6%;left:44%;width:6px;height:6px;animation-delay:1.8s"></span>
+    <span style="top:24%;left:60%;width:5px;height:5px;animation-delay:3.1s"></span>
+  </div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · El siguiente paso después de Rovelli, Sagan y Tyson</span>
+    <h1>El fin de todo</h1>
+    <p class="autor">Katie Mack</p>
+    <p class="en"><em>The End of Everything (Astrophysically Speaking)</em> (2020)</p>
+    <p class="sub">No cómo empezó el universo — cómo termina. Una astrofísica de partículas te lleva por cinco finales posibles, todos reales según la física que tenemos hoy, contados con el mismo humor con el que ella misma explica que se le enfría el café.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">La pregunta que Rovelli y Sagan dejaron abierta a propósito</h2>
+    <p class="bajada rev d2">Katie Mack es astrofísica teórica, especialista en cosmología de partículas y profesora asociada en North Carolina State University. Antes de escribir este libro ya era conocida en Twitter/X (@AstroKatie) por explicar física de frontera con humor filoso. <em>The End of Everything</em> salió el 4 de agosto de 2020 por Scribner y fue elegido libro del año por NPR, The Guardian y Smithsonian Magazine. La edición en español, <em>El fin de todo (Astrofísicamente hablando)</em>, la publicó Crítica (Barcelona) en 2021, traducida por Joan Lluís Riera, dentro de la colección Drakontos.</p>
+    <p class="parr rev d2">El libro tiene seis capítulos: uno de arranque que repasa cómo llegamos a entender la expansión del universo, y cinco más — uno por cada final posible que la cosmología actual no logra descartar. No es ciencia ficción: cada escenario sale de ecuaciones reales, y la que decide cuál se cumple es una sola variable que todavía no terminamos de medir bien: el comportamiento de la energía oscura.</p>
+    <div class="cita rev d3">"Everything you see is in the past, as far as you're concerned."<span>("Todo lo que ves está en el pasado, en lo que a vos respecta." — sobre que la luz que vemos de cualquier estrella tardó años, siglos o milenios en llegar.) Cita verificada en la página de citas del libro en Goodreads.</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="finales-sec">
+  <div class="centro">
+    <p class="kicker rev">El corazón del libro</p>
+    <h2 class="titulo rev d1">Cinco finales posibles — tocá cada uno</h2>
+    <p class="bajada rev d2">Así se puede terminar todo, según lo que sabemos hoy de física:</p>
+    <div class="finales rev d3">
+      <div class="finGrid" id="finBox">
+        <div class="fin abierta" data-obs="Si la expansión del universo se frenara y revirtiera, todo colapsaría de vuelta sobre sí mismo — el Big Bang corriendo al revés, terminando en un estado ultra caliente y denso. Los datos actuales de energía oscura lo hacen el menos probable de los cinco, pero no lo descartan del todo."><span class="ico">🌀</span><span class="nombre">Gran Implosión</span><span class="obs"></span></div>
+        <div class="fin" data-obs="El favorito actual de los cosmólogos: el universo sigue expandiéndose para siempre, cada vez más rápido, hasta que las galaxias quedan tan lejos entre sí que ni la luz las conecta. Todo se enfría, se diluye, se apaga — la misma entropía que enfría tu café, a escala cósmica, durante un tiempo casi incomprensible."><span class="ico">🥶</span><span class="nombre">Muerte térmica</span><span class="obs"></span></div>
+        <div class="fin" data-obs="Si la energía oscura no es constante sino que crece con el tiempo, la expansión se acelera tanto que termina venciendo hasta las fuerzas que mantienen unidos los átomos: primero se separan las galaxias, después las estrellas, después los planetas, y en el instante final, el propio espacio entre partículas se desgarra."><span class="ico">💥</span><span class="nombre">Gran Desgarro</span><span class="obs"></span></div>
+        <div class="fin" data-obs="El más inquietante de los cinco: el vacío que creemos estable podría no serlo del todo. Si en algún punto del universo aparece una burbuja de 'vacío verdadero', se expande a la velocidad de la luz reescribiendo las leyes físicas a su paso — y como viaja a la velocidad de la luz, jamás la veríamos venir. Podría pasar en cualquier momento, en cualquier parte, ahora mismo."><span class="ico">🫧</span><span class="nombre">Desintegración del vacío</span><span class="obs"></span></div>
+        <div class="fin" data-obs="La idea más especulativa: que la expansión se revierte, todo colapsa, y de ese colapso nace un nuevo Big Bang — un universo que muere y renace en ciclos, quizás para siempre. Mack es honesta: es la que tiene menos sustento en la física actual, pero la incluye porque no se puede descartar por completo."><span class="ico">🔁</span><span class="nombre">El rebote</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="fin-hint">La propia Mack dice que su favorito personal —el que más la fascina, no el que más desea— es la desintegración del vacío. En el libro explica por qué, con la misma calma con la que explica todo lo demás.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="autor">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo este, justo ahora</p>
+    <h2 class="titulo rev d1">El siguiente escalón de tu veta más consistente</h2>
+    <p class="bajada rev d2">Astronomía es, con distancia, tu combo más parejo: Rovelli fue tu ACIERTO PLENO original, Sagan y Hawking te sostuvieron bien en redescubrimiento, Tyson te llevó un paso más allá el 28/07. Katie Mack es el próximo nombre que el banco venía señalando desde entonces — la generación siguiente de divulgadoras de cosmos, con el mismo formato de capítulos cortos que te funciona (Rovelli: 97 páginas; acá, seis capítulos, ninguno maratónico) pero yendo hacia una pregunta que todavía no habíamos tocado: no cómo empezó todo, sino cómo termina.</p>
+    <p class="parr suave rev d3">También conecta con tu veta de sentido y positividad, aunque no lo parezca a primera vista: el libro cierra explícitamente en que pensar en el final del universo no deprime, da contexto — un argumento con el mismo espíritu que Frankl o Marco Aurelio, pero puesto a escala cósmica en vez de personal.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>The End of Everything (Astrophysically Speaking)</em>, Katie Mack. Scribner, 4 de agosto de 2020. Libro del año según NPR, The Guardian y Smithsonian Magazine.</dd>
+        <dt>En español</dt><dd><em>El fin de todo (Astrofísicamente hablando)</em>. Editorial Crítica (Barcelona), colección Drakontos, 2021. Traducción de Joan Lluís Riera. ISBN 978-84-9199-275-2.</dd>
+        <dt>Disponibilidad papel</dt><dd>Agotada hoy en Buscalibre Uruguay (única edición listada, tapa dura). No lo oculto: verificado en vivo, cero unidades en stock ahora mismo.</dd>
+        <dt>Alternativa verificada</dt><dd>Ebook en español disponible en Casa del Libro / Google Play Libros, ~€9,49 (~USD 10). Si preferís papel, vale reintentar Buscalibre en unas semanas o buscar en librerías físicas de Montevideo.</dd>
+        <dt>En tu catálogo</dt><dd>No está en tus 437 volúmenes fichados ni había sido recomendado antes — verificado título y autor contra el catálogo completo y contra <code>recommended.json</code>.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. Estructura de capítulos, biografía de la autora, fecha y premios están verificados cruzando Wikipedia, la página oficial de Katie Mack (astrokatie.com), la ficha de Simon & Schuster y la edición española de Crítica. Las citas están verificadas contra la página de citas del libro en Goodreads.</p>
+      <p><b>Sobre el stock:</b> chequeé Buscalibre Uruguay en vivo antes de armar esta ficha — hoy figura agotado. Te lo digo directo en vez de mostrarte un precio que ya no aplica; el ebook es la opción confirmada disponible ahora mismo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este?</h2>
+
+    <div class="cta rev d1">
+      ¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-10-mack-fin-de-todo','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-10-mack-fin-de-todo','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-10-mack-fin-de-todo','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-10-mack-fin-de-todo','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-10-mack-fin-de-todo','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">
+      🌌 De los cinco finales, ¿cuál te deja pensando más?
+      <div>
+        <button onclick="engageAnswer('rec-final-favorito:2026-09-10-mack-fin-de-todo','implosion',this)">🌀 Gran Implosión</button>
+        <button onclick="engageAnswer('rec-final-favorito:2026-09-10-mack-fin-de-todo','termica',this)">🥶 Muerte térmica</button>
+        <button onclick="engageAnswer('rec-final-favorito:2026-09-10-mack-fin-de-todo','desgarro',this)">💥 Gran Desgarro</button>
+        <button onclick="engageAnswer('rec-final-favorito:2026-09-10-mack-fin-de-todo','vacio',this)">🫧 Desintegración del vacío</button>
+        <button onclick="engageAnswer('rec-final-favorito:2026-09-10-mack-fin-de-todo','rebote',this)">🔁 El rebote</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <a class="comprar rev d2" href="https://www.buscalibre.uy/libros/search/?q=El+fin+de+todo+Katie+Mack" target="_blank" rel="noopener">Ver en Buscalibre (papel agotado hoy) →</a>
+
+    <div class="abox rev d3">
+      <p>📱 <b>¿Ebook?</b> Sí, confirmado en español: Casa del Libro / Google Play Libros, ~€9,49. Es la vía más rápida mientras el papel vuelve a stock.</p>
+      <p>🎧 <b>¿Audiolibro?</b> El original en inglés existe en Google Play, narrado por Gabra Zackman — con la propia Katie Mack leyendo la introducción. No encontré confirmación de una narración en español, así que lo digo así en vez de arriesgar un link que no pude verificar.</p>
+      <a href="https://play.google.com/store/audiobooks/details/The_End_of_Everything_Astrophysically_Speaking?id=AQAAAEDsGkdauM&hl=en_US" target="_blank" rel="noopener">Ver audiolibro en inglés en Google Play →</a>
+    </div>
+
+    <div class="cta rev d2">
+      ¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-10-mack-fin-de-todo','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-10-mack-fin-de-todo','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-10-mack-fin-de-todo','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-10-mack-fin-de-todo','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-10-mack-fin-de-todo','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-10-mack-fin-de-todo','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-10-mack-fin-de-todo','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">
+      <label for="nota-2026-09-10-mack-fin-de-todo" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-10-mack-fin-de-todo" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-10-mack-fin-de-todo',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"Acknowledging an ultimate end gives us context, meaning, even hope."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:46ch">("Reconocer un final último nos da contexto, sentido, incluso esperanza." — traducción propia.) Cita verificada en la página de citas del libro en Goodreads.</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · siguiente paso de tu veta de astronomía, para Andy · datos verificados contra Wikipedia, astrokatie.com, Simon &amp; Schuster, Goodreads y Buscalibre Uruguay (chequeo de stock en vivo), a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#finBox .fin').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#finBox .fin').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "El fin de todo, de Katie Mack, dos mil veinte. Una astrofísica de partículas te lleva por cinco finales posibles del universo, todos reales según la física actual: la Gran Implosión, si todo colapsa de nuevo; la muerte térmica, si todo se enfría y se diluye para siempre; el Gran Desgarro, si la expansión termina desgarrando el espacio mismo; la desintegración del vacío, la más inquietante, una burbuja que podría aparecer en cualquier momento y reescribir las leyes físicas a la velocidad de la luz; y el rebote, un universo que muere y renace en ciclos. La propia autora dice que pensar en el final no deprime, da contexto.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
