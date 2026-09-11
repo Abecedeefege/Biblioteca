@@ -1,0 +1,3110 @@
+{
+ "_comment": "Procedencia de las tapas de /sala/. Lo escribe tools/sala_covers.py contra la API pública de Open Library; el browser nunca lo escribe.",
+ "_source": "https://openlibrary.org",
+ "_books_with_cover": 185,
+ "books": {
+  "L2-001": {
+   "cover": "L2-001.jpg",
+   "w": 280,
+   "h": 399,
+   "ol_key": "/works/OL43649413W",
+   "ol_title": "The poetical works of John Keats",
+   "ol_authors": [
+    "John Keats"
+   ],
+   "ol_first_published": 1840
+  },
+  "L2-002": {
+   "cover": "L2-002.jpg",
+   "w": 280,
+   "h": 428,
+   "ol_key": "/works/OL85227W",
+   "ol_title": "Les Chouans",
+   "ol_authors": [
+    "Honoré de Balzac"
+   ],
+   "ol_first_published": 1834
+  },
+  "L2-003": {
+   "cover": "L2-003.jpg",
+   "w": 280,
+   "h": 461,
+   "ol_key": "/works/OL85243W",
+   "ol_title": "Eugénie Grandet",
+   "ol_authors": [
+    "Honoré de Balzac"
+   ],
+   "ol_first_published": 1868
+  },
+  "L2-004": {
+   "cover": "L2-004.jpg",
+   "w": 280,
+   "h": 470,
+   "ol_key": "/works/OL85154W",
+   "ol_title": "Les petits bourgeois",
+   "ol_authors": [
+    "Honoré de Balzac"
+   ],
+   "ol_first_published": 1892
+  },
+  "L2-005": {
+   "cover": "L2-005.jpg",
+   "w": 280,
+   "h": 460,
+   "ol_key": "/works/OL85234W",
+   "ol_title": "Le cousin Pons",
+   "ol_authors": [
+    "Honoré de Balzac"
+   ],
+   "ol_first_published": 1873
+  },
+  "L2-006": {
+   "cover": "L2-006.jpg",
+   "w": 280,
+   "h": 456,
+   "ol_key": "/works/OL85229W",
+   "ol_title": "Le curé de village",
+   "ol_authors": [
+    "Honoré de Balzac"
+   ],
+   "ol_first_published": 1841
+  },
+  "L2-007": {
+   "cover": "L2-007.jpg",
+   "w": 128,
+   "h": 207,
+   "ol_key": "/works/OL722543W",
+   "ol_title": "Obras completas",
+   "ol_authors": [
+    "Federico García Lorca"
+   ],
+   "ol_first_published": 1955
+  },
+  "L2-008": {
+   "cover": "L2-008.jpg",
+   "w": 280,
+   "h": 420,
+   "ol_key": "/works/OL503666W",
+   "ol_title": "Don Quijote de la Mancha",
+   "ol_authors": [
+    "Miguel de Cervantes Saavedra"
+   ],
+   "ol_first_published": 1600
+  },
+  "L2-009": {
+   "cover": "L2-009.jpg",
+   "w": 280,
+   "h": 420,
+   "ol_key": "/works/OL503666W",
+   "ol_title": "Don Quijote de la Mancha",
+   "ol_authors": [
+    "Miguel de Cervantes Saavedra"
+   ],
+   "ol_first_published": 1600
+  },
+  "L2-010": {
+   "cover": "L2-010.jpg",
+   "w": 280,
+   "h": 420,
+   "ol_key": "/works/OL503666W",
+   "ol_title": "Don Quijote de la Mancha",
+   "ol_authors": [
+    "Miguel de Cervantes Saavedra"
+   ],
+   "ol_first_published": 1600
+  },
+  "L3-001": {
+   "cover": "L3-001.jpg",
+   "w": 271,
+   "h": 500,
+   "ol_key": "/works/OL362698W",
+   "ol_title": "As You Like It",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1734
+  },
+  "L3-002": {
+   "cover": "L3-002.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL362427W",
+   "ol_title": "Romeo and Juliet",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1597
+  },
+  "L3-003": {
+   "cover": "L3-003.jpg",
+   "w": 280,
+   "h": 458,
+   "ol_key": "/works/OL258902W",
+   "ol_title": "Macbeth",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1508
+  },
+  "L3-004": {
+   "cover": "L3-004.jpg",
+   "w": 280,
+   "h": 384,
+   "ol_key": "/works/OL362694W",
+   "ol_title": "Twelfth Night, or What You Will",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1734
+  },
+  "L3-005": {
+   "cover": "L3-005.jpg",
+   "w": 280,
+   "h": 453,
+   "ol_key": "/works/OL7373136W",
+   "ol_title": "Shakespeare in Europe",
+   "ol_authors": [
+    "Oswald LeWinter"
+   ],
+   "ol_first_published": 1963
+  },
+  "L3-006": {
+   "cover": "L3-006.jpg",
+   "w": 280,
+   "h": 373,
+   "ol_key": "/works/OL15735685W",
+   "ol_title": "The Songs and Sonnets of William Shakespeare",
+   "ol_authors": [
+    "William Shakespeare",
+    "Charles Robinson ",
+    "Charles Robinson"
+   ],
+   "ol_first_published": 1900
+  },
+  "L3-007": {
+   "cover": "L3-007.jpg",
+   "w": 280,
+   "h": 416,
+   "ol_key": "/works/OL509018W",
+   "ol_title": "Shakespeare without tears",
+   "ol_authors": [
+    "Margaret Webster"
+   ],
+   "ol_first_published": 1942
+  },
+  "L3-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-009": {
+   "cover": "L3-009.jpg",
+   "w": 280,
+   "h": 458,
+   "ol_key": "/works/OL4317545W",
+   "ol_title": "Twisted tales from Shakespeare",
+   "ol_authors": [
+    "Richard Willard Armour"
+   ],
+   "ol_first_published": 1957
+  },
+  "L3-010": {
+   "cover": "L3-010.jpg",
+   "w": 280,
+   "h": 447,
+   "ol_key": "/works/OL10471669W",
+   "ol_title": "Shakespeare and myself",
+   "ol_authors": [
+    "George Mikes"
+   ],
+   "ol_first_published": 1952
+  },
+  "L3-011": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-012": {
+   "cover": "L3-012.jpg",
+   "w": 280,
+   "h": 456,
+   "ol_key": "/works/OL14917333W",
+   "ol_title": "Romeo and Juliet / West Side Story",
+   "ol_authors": [
+    "William Shakespeare",
+    "Arthur Laurents"
+   ],
+   "ol_first_published": 1965
+  },
+  "L3-013": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-014": {
+   "cover": "L3-014.jpg",
+   "w": 128,
+   "h": 202,
+   "ol_key": "/works/OL8162305W",
+   "ol_title": "Shakespearean Tragedy",
+   "ol_authors": [
+    "A.C. Bradley"
+   ],
+   "ol_first_published": 1949
+  },
+  "L3-015": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-016": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-018": {
+   "cover": "L3-018.jpg",
+   "w": 280,
+   "h": 394,
+   "ol_key": "/works/OL258850W",
+   "ol_title": "Othello",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1622
+  },
+  "L3-019": {
+   "cover": "L3-019.jpg",
+   "w": 280,
+   "h": 417,
+   "ol_key": "/works/OL25978172W",
+   "ol_title": "Romeo und Julia",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1964
+  },
+  "L3-020": {
+   "cover": "L3-020.jpg",
+   "w": 280,
+   "h": 388,
+   "ol_key": "/works/OL9170454W",
+   "ol_title": "Hamlet",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1603
+  },
+  "L3-021": {
+   "cover": "L3-021.jpg",
+   "w": 271,
+   "h": 400,
+   "ol_key": "/works/OL26735832W",
+   "ol_title": "Die Lustigen Weiber Von Windsor. das Wintermärchen. Titus Andronicus",
+   "ol_authors": [
+    "Deutsche Shakespeare-Gesellschaft",
+    "August Wilhelm Schlegel",
+    "Ludwig Tieck",
+    "H. Ulrici",
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1870
+  },
+  "L3-022": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-023": {
+   "cover": "L3-023.jpg",
+   "w": 258,
+   "h": 400,
+   "ol_key": "/works/OL26734742W",
+   "ol_title": "König Lear. Troilus und Cressida. Ende Gut, Alles Gut",
+   "ol_authors": [
+    "Deutsche Shakespeare-Gesellschaft",
+    "August Wilhelm Schlegel",
+    "Ludwig Tieck",
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1851
+  },
+  "L3-024": {
+   "cover": "L3-024.jpg",
+   "w": 280,
+   "h": 444,
+   "ol_key": "/works/OL31174747W",
+   "ol_title": "Shakespeare's Merchant of Venice. der Kaufmann Von Venedig",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1879
+  },
+  "L3-025": {
+   "cover": "L3-025.jpg",
+   "w": 280,
+   "h": 440,
+   "ol_key": "/works/OL74119W",
+   "ol_title": "Shakespeare",
+   "ol_authors": [
+    "Bill Bryson"
+   ],
+   "ol_first_published": 2007
+  },
+  "L3-026": {
+   "cover": "L3-026.jpg",
+   "w": 280,
+   "h": 347,
+   "ol_key": "/works/OL8027045W",
+   "ol_title": "The Complete Works of Shakespeare [38 plays, 4 poems, sonnets]",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1991
+  },
+  "L3-027": {
+   "cover": "L3-027.jpg",
+   "w": 280,
+   "h": 413,
+   "ol_key": "/works/OL362684W",
+   "ol_title": "Richard III",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1597
+  },
+  "L3-028": {
+   "cover": "L3-028.jpg",
+   "w": 280,
+   "h": 406,
+   "ol_key": "/works/OL258758W",
+   "ol_title": "The Merchant of Venice",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1600
+  },
+  "L3-029": {
+   "cover": "L3-029.jpg",
+   "w": 280,
+   "h": 388,
+   "ol_key": "/works/OL9170454W",
+   "ol_title": "Hamlet",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1603
+  },
+  "L3-030": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "L3-031": {
+   "cover": "L3-031.jpg",
+   "w": 280,
+   "h": 388,
+   "ol_key": "/works/OL9170454W",
+   "ol_title": "Hamlet",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1603
+  },
+  "L3-032": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-033": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "L3-034": {
+   "cover": "L3-034.jpg",
+   "w": 271,
+   "h": 500,
+   "ol_key": "/works/OL362698W",
+   "ol_title": "As You Like It",
+   "ol_authors": [
+    "William Shakespeare"
+   ],
+   "ol_first_published": 1734
+  },
+  "L3-035": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "L3-036": {
+   "cover": "L3-036.jpg",
+   "w": 280,
+   "h": 420,
+   "ol_key": "/works/OL258820W",
+   "ol_title": "The Stratford Shakespeare Anthology",
+   "ol_authors": [
+    "William Shakespeare",
+    "Levi Fox"
+   ],
+   "ol_first_published": 1979
+  },
+  "L3-037": {
+   "cover": "L3-037.jpg",
+   "w": 280,
+   "h": 356,
+   "ol_key": "/works/OL14861417W",
+   "ol_title": "Julius Caesar in Shakespeare, Shaw, and the ancients",
+   "ol_authors": [
+    "G. B. Harrison"
+   ],
+   "ol_first_published": 1960
+  },
+  "L3-038": {
+   "cover": "L3-038.jpg",
+   "w": 280,
+   "h": 425,
+   "ol_key": "/works/OL4083172W",
+   "ol_title": "Will in the World",
+   "ol_authors": [
+    "Stephen Greenblatt"
+   ],
+   "ol_first_published": 2004
+  },
+  "L3-039": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-040": {
+   "cover": "L3-040.jpg",
+   "w": 280,
+   "h": 393,
+   "ol_key": "/works/OL261785W",
+   "ol_title": "Shakespeare",
+   "ol_authors": [
+    "Anthony Burgess"
+   ],
+   "ol_first_published": 1970
+  },
+  "L3-041": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-042": {
+   "cover": "L3-042.jpg",
+   "w": 280,
+   "h": 440,
+   "ol_key": "/works/OL1989985W",
+   "ol_title": "The life and times of William Shakespeare",
+   "ol_authors": [
+    "Peter Levi"
+   ],
+   "ol_first_published": 1988
+  },
+  "L3-043": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-044": {
+   "cover": "L3-044.jpg",
+   "w": 280,
+   "h": 378,
+   "ol_key": "/works/OL1631509W",
+   "ol_title": "The Collector's Shakespeare",
+   "ol_authors": [
+    "Geoffrey Ashton"
+   ],
+   "ol_first_published": 1990
+  },
+  "L3-045": {
+   "cover": "L3-045.jpg",
+   "w": 280,
+   "h": 458,
+   "ol_key": "/works/OL18210039W",
+   "ol_title": "J.K. Rowling vista por J.K. Rowling",
+   "ol_authors": [
+    "Lindsey Fraser"
+   ],
+   "ol_first_published": 2001
+  },
+  "L3-046": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-047": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L3-048": {
+   "cover": "L3-048.jpg",
+   "w": 280,
+   "h": 432,
+   "ol_key": "/works/OL37618594W",
+   "ol_title": "Harry Potter y el Prisionero de Azkaban (Ed. Minalima)",
+   "ol_authors": [
+    "J. K. Rowling"
+   ],
+   "ol_first_published": 2024
+  },
+  "L3-049": {
+   "cover": "L3-049.jpg",
+   "w": 280,
+   "h": 439,
+   "ol_key": "/works/OL31201698W",
+   "ol_title": "Harry Potter y el cáliz de fuego",
+   "ol_authors": [
+    "J. K. Rowling"
+   ],
+   "ol_first_published": 2006
+  },
+  "L4-001": {
+   "cover": "L4-001.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL35105551W",
+   "ol_title": "Aquí no hay reglas",
+   "ol_authors": [
+    "Reed Hastings",
+    "Erin Meyer",
+    "Efrén del Valle Peñamil"
+   ],
+   "ol_first_published": 2023
+  },
+  "L4-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L4-003": {
+   "cover": "L4-003.jpg",
+   "w": 280,
+   "h": 424,
+   "ol_key": "/works/OL17801359W",
+   "ol_title": "¡Tómate un respiro! Mindfulness",
+   "ol_authors": [
+    "Mario Alonso Puig"
+   ],
+   "ol_first_published": 2017
+  },
+  "L4-025": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L4-004": {
+   "cover": "L4-004.jpg",
+   "w": 280,
+   "h": 424,
+   "ol_key": "/works/OL4781037W",
+   "ol_title": "Count Down",
+   "ol_authors": [
+    "Steve Olson"
+   ],
+   "ol_first_published": 2004
+  },
+  "L4-005": {
+   "cover": "L4-005.jpg",
+   "w": 280,
+   "h": 436,
+   "ol_key": "/works/OL16334490W",
+   "ol_title": "Your brain is God",
+   "ol_authors": [
+    "Timothy Leary"
+   ],
+   "ol_first_published": 2001
+  },
+  "L4-006": {
+   "cover": "L4-006.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL2629977W",
+   "ol_title": "The 7 Habits of Highly Effective People",
+   "ol_authors": [
+    "Stephen R. Covey",
+    "Sean Covey"
+   ],
+   "ol_first_published": 1989
+  },
+  "L4-007": {
+   "cover": "L4-007.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL20048387W",
+   "ol_title": "Solve for happy",
+   "ol_authors": [
+    "Mo Gawdat"
+   ],
+   "ol_first_published": 2016
+  },
+  "L4-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L4-009": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L4-010": {
+   "cover": "L4-010.jpg",
+   "w": 280,
+   "h": 407,
+   "ol_key": "/works/OL34811601W",
+   "ol_title": "Zen en el arte del tiro con arco",
+   "ol_authors": [
+    "Eugen Herrigel",
+    "Juan Jorge Thomas"
+   ],
+   "ol_first_published": 2022
+  },
+  "L4-011": {
+   "cover": "L4-011.jpg",
+   "w": 280,
+   "h": 420,
+   "ol_key": "/works/OL8254843W",
+   "ol_title": "The Brain That Changes Itself",
+   "ol_authors": [
+    "Norman Doidge"
+   ],
+   "ol_first_published": 2007
+  },
+  "L4-012": {
+   "cover": "L4-012.jpg",
+   "w": 280,
+   "h": 444,
+   "ol_key": "/works/OL34911959W",
+   "ol_title": "El arte de la guerra",
+   "ol_authors": [
+    "孙武 (Sun Tzu)",
+    "Albert Galvany"
+   ],
+   "ol_first_published": 2017
+  },
+  "L4-013": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L4-014": {
+   "cover": "L4-014.jpg",
+   "w": 280,
+   "h": 484,
+   "ol_key": "/works/OL64441W",
+   "ol_title": "The doors of perception",
+   "ol_authors": [
+    "Aldous Huxley"
+   ],
+   "ol_first_published": 1954
+  },
+  "L4-015": {
+   "cover": "L4-015.jpg",
+   "w": 280,
+   "h": 427,
+   "ol_key": "/works/OL27690419W",
+   "ol_title": "El alquimista",
+   "ol_authors": [
+    "Paulo Coelho"
+   ],
+   "ol_first_published": 2016
+  },
+  "L4-016": {
+   "cover": "L4-016.jpg",
+   "w": 280,
+   "h": 432,
+   "ol_key": "/works/OL26451052W",
+   "ol_title": "Budismo para principiantes",
+   "ol_authors": [
+    "Thubten Chodron"
+   ],
+   "ol_first_published": 2013
+  },
+  "L4-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L4-018": {
+   "cover": "L4-018.jpg",
+   "w": 280,
+   "h": 376,
+   "ol_key": "/works/OL318900W",
+   "ol_title": "The Prophet",
+   "ol_authors": [
+    "Kahlil Gibran"
+   ],
+   "ol_first_published": 1900
+  },
+  "L4-019": {
+   "cover": "L4-019.jpg",
+   "w": 280,
+   "h": 445,
+   "ol_key": "/works/OL17356845W",
+   "ol_title": "Big Magic",
+   "ol_authors": [
+    "Elizabeth Gilbert"
+   ],
+   "ol_first_published": 2014
+  },
+  "L4-026": {
+   "cover": "L4-026.jpg",
+   "w": 280,
+   "h": 456,
+   "ol_key": "/works/OL20142280W",
+   "ol_title": "Cómo hacer que te pasen cosas buenas",
+   "ol_authors": [
+    "Marian Rojas Estapé"
+   ],
+   "ol_first_published": 2018
+  },
+  "L4-020": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L4-021": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L4-022": {
+   "cover": "L4-022.jpg",
+   "w": 280,
+   "h": 280,
+   "ol_key": "/works/OL21208765W",
+   "ol_title": "Boy, the Mole, the Fox and the Horse",
+   "ol_authors": [
+    "Charlie Mackesy"
+   ],
+   "ol_first_published": 2019
+  },
+  "L4-023": {
+   "cover": "L4-023.jpg",
+   "w": 280,
+   "h": 436,
+   "ol_key": "/works/OL872932W",
+   "ol_title": "Siddhartha",
+   "ol_authors": [
+    "Hermann Hesse"
+   ],
+   "ol_first_published": 1922
+  },
+  "L4-024": {
+   "cover": "L4-024.jpg",
+   "w": 280,
+   "h": 393,
+   "ol_key": "/works/OL34766796W",
+   "ol_title": "El Principito",
+   "ol_authors": [
+    "Antoine de Saint-Exupéry",
+    "Marie Mersoye"
+   ],
+   "ol_first_published": 2018
+  },
+  "L4-027": {
+   "cover": null,
+   "reason": "tapa no descargable"
+  },
+  "L4-028": {
+   "cover": "L4-028.jpg",
+   "w": 280,
+   "h": 429,
+   "ol_key": "/works/OL27962912W",
+   "ol_title": "Deshacer la ansiedad",
+   "ol_authors": [
+    "Judson Brewer"
+   ],
+   "ol_first_published": 2022
+  },
+  "L5-001": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-004": {
+   "cover": "L5-004.jpg",
+   "w": 280,
+   "h": 430,
+   "ol_key": "/works/OL269887W",
+   "ol_title": "Theories of the Universe (Library of Scientific Thought)",
+   "ol_authors": [
+    "Milton K. Munitz"
+   ],
+   "ol_first_published": 1965
+  },
+  "L5-005": {
+   "cover": "L5-005.jpg",
+   "w": 280,
+   "h": 453,
+   "ol_key": "/works/OL160814W",
+   "ol_title": "Exploring the heavens",
+   "ol_authors": [
+    "Clyde Fisher"
+   ],
+   "ol_first_published": 1937
+  },
+  "L5-006": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-007": {
+   "cover": "L5-007.jpg",
+   "w": 280,
+   "h": 465,
+   "ol_key": "/works/OL1892617W",
+   "ol_title": "A Brief History of Time",
+   "ol_authors": [
+    "Stephen Hawking"
+   ],
+   "ol_first_published": 1988
+  },
+  "L5-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-009": {
+   "cover": "L5-009.jpg",
+   "w": 280,
+   "h": 409,
+   "ol_key": "/works/OL6119374W",
+   "ol_title": "Stars, men and atoms",
+   "ol_authors": [
+    "Heinz Haber"
+   ],
+   "ol_first_published": 1962
+  },
+  "L5-010": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-011": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-012": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-013": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-014": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-015": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-016": {
+   "cover": "L5-016.jpg",
+   "w": 280,
+   "h": 439,
+   "ol_key": "/works/OL1136291W",
+   "ol_title": "The creation of the universe",
+   "ol_authors": [
+    "George Gamow"
+   ],
+   "ol_first_published": 1952
+  },
+  "L5-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-018": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-019": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-020": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-021": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-022": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-023": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-024": {
+   "cover": "L5-024.jpg",
+   "w": 280,
+   "h": 435,
+   "ol_key": "/works/OL14858980W",
+   "ol_title": "Frontiers of astronomy",
+   "ol_authors": [
+    "Fred Hoyle"
+   ],
+   "ol_first_published": 1955
+  },
+  "L5-025": {
+   "cover": "L5-025.jpg",
+   "w": 280,
+   "h": 442,
+   "ol_key": "/works/OL1136295W",
+   "ol_title": "The birth and death of the sun",
+   "ol_authors": [
+    "George Gamow"
+   ],
+   "ol_first_published": 1940
+  },
+  "L5-026": {
+   "cover": "L5-026.jpg",
+   "w": 280,
+   "h": 496,
+   "ol_key": "/works/OL46334W",
+   "ol_title": "Of Time and Space and Other Things [17 essays]",
+   "ol_authors": [
+    "Isaac Asimov"
+   ],
+   "ol_first_published": 1965
+  },
+  "L5-027": {
+   "cover": "L5-027.jpg",
+   "w": 280,
+   "h": 462,
+   "ol_key": "/works/OL31365314W",
+   "ol_title": "The Origin Of Earth",
+   "ol_authors": [
+    "W.M. Smart"
+   ],
+   "ol_first_published": 1955
+  },
+  "L5-028": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-029": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-030": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-031": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L5-032": {
+   "cover": "L5-032.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL15829966W",
+   "ol_title": "Cosmos",
+   "ol_authors": [
+    "Carl Sagan"
+   ],
+   "ol_first_published": 1980
+  },
+  "L5-MEDIA": {
+   "cover": "L5-MEDIA.jpg",
+   "w": 280,
+   "h": 416,
+   "ol_key": "/works/OL17808951W",
+   "ol_title": "From the earth to the moon",
+   "ol_authors": [
+    "Gregory Feeley"
+   ],
+   "ol_first_published": 1997
+  },
+  "L6-001": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-004": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-005": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-006": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-007": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-009": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-010": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-011": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-012": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-013": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-014": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-015": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-016": {
+   "cover": null,
+   "reason": "tapa no descargable"
+  },
+  "L6-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-018": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-019": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-020": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-021": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-022": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-023": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-024": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-025": {
+   "cover": "L6-025.jpg",
+   "w": 128,
+   "h": 191,
+   "ol_key": "/works/OL1012529W",
+   "ol_title": "Mitos, leyendas y tradiciones de la Banda Oriental",
+   "ol_authors": [
+    "Gonzalo Abella"
+   ],
+   "ol_first_published": 2001
+  },
+  "L6-026": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-027": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-028": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-029": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-030": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-031": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-033": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L7-001": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L7-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L7-003": {
+   "cover": "L7-003.jpg",
+   "w": 280,
+   "h": 464,
+   "ol_key": "/works/OL24314214W",
+   "ol_title": "Obras completas en colaboración - 1. Con Adolfo Bioy Casares",
+   "ol_authors": [
+    "Jorge Luis Borges"
+   ],
+   "ol_first_published": 1981
+  },
+  "L7-004": {
+   "cover": "L7-004.jpg",
+   "w": 280,
+   "h": 399,
+   "ol_key": "/works/OL25917022W",
+   "ol_title": "Cien años de Soledad. Edición Conmemorativa de la RAE / One Hundred Years of Sol Itude. Conmemorative Edition",
+   "ol_authors": [
+    "Gabriel García Márquez"
+   ],
+   "ol_first_published": 2021
+  },
+  "L7-005": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L7-006": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L7-007": {
+   "cover": "L7-007.jpg",
+   "w": 280,
+   "h": 438,
+   "ol_key": "/works/OL1132652W",
+   "ol_title": "Manon Lescaut",
+   "ol_authors": [
+    "Abbé Prévost"
+   ],
+   "ol_first_published": 1734
+  },
+  "L7-008": {
+   "cover": "L7-008.jpg",
+   "w": 280,
+   "h": 403,
+   "ol_key": "/works/OL8705203W",
+   "ol_title": "Martín Fierro",
+   "ol_authors": [
+    "José Hernández"
+   ],
+   "ol_first_published": 1894
+  },
+  "L3-050": {
+   "cover": "L3-050.jpg",
+   "w": 280,
+   "h": 429,
+   "ol_key": "/works/OL8193478W",
+   "ol_title": "Oliver Twist",
+   "ol_authors": [
+    "Charles Dickens"
+   ],
+   "ol_first_published": 1822
+  },
+  "L3-051": {
+   "cover": "L3-051.jpg",
+   "w": 280,
+   "h": 419,
+   "ol_key": "/works/OL8300174W",
+   "ol_title": "Barnaby Rudge",
+   "ol_authors": [
+    "Charles Dickens",
+    "Eileen Warren Norris"
+   ],
+   "ol_first_published": 1840
+  },
+  "L7-009": {
+   "cover": "L7-009.jpg",
+   "w": 280,
+   "h": 442,
+   "ol_key": "/works/OL863808W",
+   "ol_title": "Ivanhoe",
+   "ol_authors": [
+    "Sir Walter Scott"
+   ],
+   "ol_first_published": 1800
+  },
+  "L7-010": {
+   "cover": "L7-010.jpg",
+   "w": 280,
+   "h": 458,
+   "ol_key": "/works/OL1095427W",
+   "ol_title": "Jane Eyre",
+   "ol_authors": [
+    "Charlotte Brontë"
+   ],
+   "ol_first_published": 1847
+  },
+  "L7-011": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L7-012": {
+   "cover": "L7-012.jpg",
+   "w": 280,
+   "h": 431,
+   "ol_key": "/works/OL262591W",
+   "ol_title": "The Refugees",
+   "ol_authors": [
+    "Arthur Conan Doyle"
+   ],
+   "ol_first_published": 1891
+  },
+  "L7-013": {
+   "cover": "L7-013.jpg",
+   "w": 280,
+   "h": 442,
+   "ol_key": "/works/OL66562W",
+   "ol_title": "Sense and Sensibility",
+   "ol_authors": [
+    "Jane Austen"
+   ],
+   "ol_first_published": 1811
+  },
+  "L8-001": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L8-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L8-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L8-004": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "L8-005": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L8-006": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L8-007": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-032": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "L6-MEDIA": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M2-001": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M2-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M2-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M2-004": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M2-005": {
+   "cover": "M2-005.jpg",
+   "w": 280,
+   "h": 307,
+   "ol_key": "/works/OL54653W",
+   "ol_title": "Rembrandt",
+   "ol_authors": [
+    "Rembrandt Harmenszoon van Rijn",
+    "Holm Bevers",
+    "Rembrandt",
+    "Gary Schwartz",
+    "Ludwig Munz",
+    "Bob Haak",
+    "Christopher Brown"
+   ],
+   "ol_first_published": 1900
+  },
+  "M3-001": {
+   "cover": "M3-001.jpg",
+   "w": 128,
+   "h": 180,
+   "ol_key": "/works/OL518262W",
+   "ol_title": "Vincent van Gogh",
+   "ol_authors": [
+    "Vincent van Gogh",
+    "Colta Ives",
+    "Sjraar van Heugten",
+    "Marije Vellekoop",
+    "Ingo F. Walther",
+    "Rainer Metzger",
+    "Louis van Tilborgh",
+    "Johannes von Uitert",
+    "Schapiro, Meyer"
+   ],
+   "ol_first_published": 1914
+  },
+  "M3-002": {
+   "cover": "M3-002.jpg",
+   "w": 280,
+   "h": 393,
+   "ol_key": "/works/OL8357911W",
+   "ol_title": "The Story of Art, 16th Edition (Gombrich, Ernst Hans Josef//Story of Art)",
+   "ol_authors": [
+    "E. H. Gombrich"
+   ],
+   "ol_first_published": 1995
+  },
+  "M3-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M3-004": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M3-005": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M3-006": {
+   "cover": "M3-006.jpg",
+   "w": 280,
+   "h": 345,
+   "ol_key": "/works/OL1001044W",
+   "ol_title": "Henry Moore",
+   "ol_authors": [
+    "David Sylvester",
+    "Henry Moore",
+    "J. Hedgecoe",
+    "Alan Bowness",
+    "Herbert Edward Read",
+    "Ann Garrould"
+   ],
+   "ol_first_published": 1934
+  },
+  "M3-007": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M3-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M3-009": {
+   "cover": "M3-009.jpg",
+   "w": 280,
+   "h": 367,
+   "ol_key": "/works/OL1351074W",
+   "ol_title": "Velázquez",
+   "ol_authors": [
+    "Santiago Alcolea",
+    "Diego Velázquez"
+   ],
+   "ol_first_published": 1989
+  },
+  "M3-010": {
+   "cover": "M3-010.jpg",
+   "w": 280,
+   "h": 436,
+   "ol_key": "/works/OL3800617W",
+   "ol_title": "Auguste Rodin",
+   "ol_authors": [
+    "Rainer Maria Rilke"
+   ],
+   "ol_first_published": 1907
+  },
+  "M3-011": {
+   "cover": "M3-011.jpg",
+   "w": 230,
+   "h": 346,
+   "ol_key": "/works/OL17802920W",
+   "ol_title": "Leonardo da Vinci",
+   "ol_authors": [
+    "Walter Isaacson",
+    "Jordi Ainaud i Escudero",
+    "Beruryah Ben Barukh"
+   ],
+   "ol_first_published": 2017
+  },
+  "M5-033": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-034": {
+   "cover": "M5-034.jpg",
+   "w": 280,
+   "h": 412,
+   "ol_key": "/works/OL34910421W",
+   "ol_title": "Su último saludo",
+   "ol_authors": [
+    "Arthur Conan Doyle",
+    "Juan Antonio Molina Foix"
+   ],
+   "ol_first_published": 2014
+  },
+  "M5-006": {
+   "cover": "M5-006.jpg",
+   "w": 280,
+   "h": 442,
+   "ol_key": "/works/OL35099793W",
+   "ol_title": "EL REGRESO DE SHERLOCK HOLMES",
+   "ol_authors": [
+    "Arthur Conan Doyle"
+   ],
+   "ol_first_published": 2016
+  },
+  "M5-004": {
+   "cover": "M5-004.jpg",
+   "w": 280,
+   "h": 386,
+   "ol_key": "/works/OL34754783W",
+   "ol_title": "El perro de los Baskerville",
+   "ol_authors": [
+    "Arthur Conan Doyle",
+    "Lourdes Huanqui Talavera"
+   ],
+   "ol_first_published": 2018
+  },
+  "M5-035": {
+   "cover": "M5-035.jpg",
+   "w": 280,
+   "h": 458,
+   "ol_key": "/works/OL14930190W",
+   "ol_title": "Las Memorias de Sherlock Holmes. I",
+   "ol_authors": [
+    "Arthur Conan Doyle"
+   ],
+   "ol_first_published": 2004
+  },
+  "M5-036": {
+   "cover": "M5-036.jpg",
+   "w": 280,
+   "h": 381,
+   "ol_key": "/works/OL24148559W",
+   "ol_title": "Las aventuras de Sherlock Holmes",
+   "ol_authors": [
+    "Arthur Conan Doyle",
+    "María Jesús Sevillano Ureta"
+   ],
+   "ol_first_published": 2014
+  },
+  "M5-011": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-012": {
+   "cover": "M5-012.jpg",
+   "w": 280,
+   "h": 400,
+   "ol_key": "/works/OL35670970W",
+   "ol_title": "Asesinato entre libros",
+   "ol_authors": [
+    "Kate Carlisle"
+   ],
+   "ol_first_published": 2023
+  },
+  "M5-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-037": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-038": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-015": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-013": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-018": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-016": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-014": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-019": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-021": {
+   "cover": "M5-021.jpg",
+   "w": 280,
+   "h": 471,
+   "ol_key": "/works/OL471871W",
+   "ol_title": "They Do It with Mirrors",
+   "ol_authors": [
+    "Agatha Christie"
+   ],
+   "ol_first_published": 1952
+  },
+  "M5-020": {
+   "cover": "M5-020.jpg",
+   "w": 280,
+   "h": 419,
+   "ol_key": "/works/OL472542W",
+   "ol_title": "The Secret of Chimneys",
+   "ol_authors": [
+    "Agatha Christie"
+   ],
+   "ol_first_published": 1925
+  },
+  "M5-025": {
+   "cover": "M5-025.jpg",
+   "w": 280,
+   "h": 280,
+   "ol_key": "/works/OL24217799W",
+   "ol_title": "The Windsor Knot",
+   "ol_authors": [
+    "SJ Bennett"
+   ],
+   "ol_first_published": 2021
+  },
+  "M5-026": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-039": {
+   "cover": "M5-039.jpg",
+   "w": 280,
+   "h": 424,
+   "ol_key": "/works/OL22437732W",
+   "ol_title": "El Club del Crimen de los Jueves",
+   "ol_authors": [
+    "Richard Osman",
+    "Claudia Conde Fisas"
+   ],
+   "ol_first_published": 2020
+  },
+  "M5-024": {
+   "cover": "M5-024.jpg",
+   "w": 280,
+   "h": 428,
+   "ol_key": "/works/OL26378580W",
+   "ol_title": "El Psicoanalista",
+   "ol_authors": [
+    "John Katzenbach"
+   ],
+   "ol_first_published": 2017
+  },
+  "M5-010": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-007": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-001": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-002": {
+   "cover": "M5-002.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL22291618W",
+   "ol_title": "Las alas de Sophie",
+   "ol_authors": [
+    "Alice Kellen"
+   ],
+   "ol_first_published": 2020
+  },
+  "M5-005": {
+   "cover": "M5-005.jpg",
+   "w": 280,
+   "h": 395,
+   "ol_key": "/works/OL34811231W",
+   "ol_title": "Estudio en escarlata",
+   "ol_authors": [
+    "Lourdes Íñiguez Barrena",
+    "Arthur Conan Doyle",
+    "Luisa Vera"
+   ],
+   "ol_first_published": 2013
+  },
+  "M5-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-009": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-022": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-023": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-027": {
+   "cover": "M5-027.jpg",
+   "w": 280,
+   "h": 450,
+   "ol_key": "/works/OL27719743W",
+   "ol_title": "El Matarife",
+   "ol_authors": [
+    "Sándor Márai"
+   ],
+   "ol_first_published": 2022
+  },
+  "M5-028": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M5-029": {
+   "cover": "M5-029.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL6012967W",
+   "ol_title": "El Camino de La Felicidad",
+   "ol_authors": [
+    "Jorge Bucay"
+   ],
+   "ol_first_published": 2001
+  },
+  "M5-030": {
+   "cover": "M5-030.jpg",
+   "w": 280,
+   "h": 421,
+   "ol_key": "/works/OL6012946W",
+   "ol_title": "El Camino Del Encuentro/the Meeting Road",
+   "ol_authors": [
+    "Jorge Bucay"
+   ],
+   "ol_first_published": 2001
+  },
+  "M5-031": {
+   "cover": "M5-031.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL6012969W",
+   "ol_title": "El Camino de Las Lagrimas",
+   "ol_authors": [
+    "Jorge Bucay"
+   ],
+   "ol_first_published": 2001
+  },
+  "M5-032": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M6-001": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M6-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M6-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M6-004": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M6-005": {
+   "cover": "M6-005.jpg",
+   "w": 196,
+   "h": 300,
+   "ol_key": "/works/OL17346075W",
+   "ol_title": "Mi isla",
+   "ol_authors": [
+    "Elísabet Benavent"
+   ],
+   "ol_first_published": 2016
+  },
+  "M6-006": {
+   "cover": "M6-006.jpg",
+   "w": 280,
+   "h": 432,
+   "ol_key": "/works/OL17888082W",
+   "ol_title": "Fuimos canciones",
+   "ol_authors": [
+    "Elísabet Benavent"
+   ],
+   "ol_first_published": 2018
+  },
+  "M6-007": {
+   "cover": "M6-007.jpg",
+   "w": 280,
+   "h": 429,
+   "ol_key": "/works/OL17866744W",
+   "ol_title": "Seremos recuerdos",
+   "ol_authors": [
+    "Elísabet Benavent"
+   ],
+   "ol_first_published": 2018
+  },
+  "M6-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M6-009": {
+   "cover": "M6-009.jpg",
+   "w": 267,
+   "h": 405,
+   "ol_key": "/works/OL27738253W",
+   "ol_title": "Todas esas cosas que te diré mañana",
+   "ol_authors": [
+    "Elísabet Benavent"
+   ],
+   "ol_first_published": 2022
+  },
+  "M7-001": {
+   "cover": "M7-001.jpg",
+   "w": 280,
+   "h": 496,
+   "ol_key": "/works/OL1085433W",
+   "ol_title": "Volpone",
+   "ol_authors": [
+    "Ben Jonson"
+   ],
+   "ol_first_published": 1709
+  },
+  "M7-002": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "M7-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-004": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-005": {
+   "cover": "M7-005.jpg",
+   "w": 280,
+   "h": 440,
+   "ol_key": "/works/OL16032787W",
+   "ol_title": "A Treasury of the world's best loved poems",
+   "ol_authors": null,
+   "ol_first_published": 1980
+  },
+  "M7-006": {
+   "cover": "M7-006.jpg",
+   "w": 280,
+   "h": 432,
+   "ol_key": "/works/OL5036952W",
+   "ol_title": "I, Claudius",
+   "ol_authors": [
+    "Robert Graves"
+   ],
+   "ol_first_published": 1934
+  },
+  "M7-007": {
+   "cover": "M7-007.jpg",
+   "w": 280,
+   "h": 362,
+   "ol_key": "/works/OL19834041W",
+   "ol_title": "Chemie",
+   "ol_authors": [
+    "Charles E. Mortimer",
+    "Ulrich Müller"
+   ],
+   "ol_first_published": 2007
+  },
+  "M7-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-009": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-010": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-012": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-013": {
+   "cover": "M7-013.jpg",
+   "w": 280,
+   "h": 443,
+   "ol_key": "/works/OL17907665W",
+   "ol_title": "Historia de la conquista del Peru",
+   "ol_authors": [
+    "William Hickling Prescott"
+   ],
+   "ol_first_published": 1853
+  },
+  "M7-014": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-015": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-016": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "M7-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-018": {
+   "cover": "M7-018.jpg",
+   "w": 125,
+   "h": 187,
+   "ol_key": "/works/OL230415W",
+   "ol_title": "César Birotteau",
+   "ol_authors": [
+    "Honoré de Balzac"
+   ],
+   "ol_first_published": 1896
+  },
+  "M7-019": {
+   "cover": "M7-019.jpg",
+   "w": 280,
+   "h": 444,
+   "ol_key": "/works/OL13100730W",
+   "ol_title": "The Confessions of J.J. Rousseau: With The Reveries of the Solitary Walker",
+   "ol_authors": [
+    "Jean-Jacques Rousseau"
+   ],
+   "ol_first_published": 1783
+  },
+  "M4-001": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M4-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M4-003": {
+   "cover": "M4-003.jpg",
+   "w": 280,
+   "h": 399,
+   "ol_key": "/works/OL54503W",
+   "ol_title": "Goya",
+   "ol_authors": [
+    "Francisco Goya"
+   ],
+   "ol_first_published": 1919
+  },
+  "M4-004": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M4-005": {
+   "cover": "M4-005.jpg",
+   "w": 280,
+   "h": 355,
+   "ol_key": "/works/OL2228735W",
+   "ol_title": "Vermeer",
+   "ol_authors": [
+    "Albert Blankert",
+    "Gilles Aillaud"
+   ],
+   "ol_first_published": 1981
+  },
+  "M4-006": {
+   "cover": "M4-006.jpg",
+   "w": 280,
+   "h": 435,
+   "ol_key": "/works/OL35351007W",
+   "ol_title": "The eye of Picasso",
+   "ol_authors": [
+    "Roland Penrose"
+   ],
+   "ol_first_published": 1967
+  },
+  "M4-007": {
+   "cover": "M4-007.jpg",
+   "w": 280,
+   "h": 387,
+   "ol_key": "/works/OL957949W",
+   "ol_title": "Renoir",
+   "ol_authors": [
+    "Auguste Renoir"
+   ],
+   "ol_first_published": 1920
+  },
+  "M4-008": {
+   "cover": "M4-008.jpg",
+   "w": 280,
+   "h": 329,
+   "ol_key": "/works/OL33813137W",
+   "ol_title": "Aboriginal Painting from Australia",
+   "ol_authors": [
+    "Charles P. Mountford"
+   ],
+   "ol_first_published": 1964
+  },
+  "M4-009": {
+   "cover": "M4-009.jpg",
+   "w": 280,
+   "h": 442,
+   "ol_key": "/works/OL31702352W",
+   "ol_title": "Spanish frescoes of the Romanesque period",
+   "ol_authors": [
+    "Juan Ainaud de Lasarte"
+   ],
+   "ol_first_published": 1962
+  },
+  "M4-010": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M4-011": {
+   "cover": "M4-011.jpg",
+   "w": 280,
+   "h": 445,
+   "ol_key": "/works/OL578527W",
+   "ol_title": "Miró",
+   "ol_authors": [
+    "Joan Miró",
+    "Richard W. Gassen",
+    "Hubertus Gassner",
+    "Rosa Maria Malet",
+    "Eva Beate Bode",
+    "Joan Baixas"
+   ],
+   "ol_first_published": 1955
+  },
+  "M4-012": {
+   "cover": null,
+   "reason": "tapa no descargable"
+  },
+  "M4-013": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M4-022": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "M4-014": {
+   "cover": "M4-014.jpg",
+   "w": 280,
+   "h": 338,
+   "ol_key": "/works/OL2707308W",
+   "ol_title": "The Ajanta caves",
+   "ol_authors": [
+    "Benoy K. Behl"
+   ],
+   "ol_first_published": 1998
+  },
+  "M4-015": {
+   "cover": "M4-015.jpg",
+   "w": 280,
+   "h": 365,
+   "ol_key": "/works/OL2783995W",
+   "ol_title": "Calder",
+   "ol_authors": [
+    "Alexander Calder"
+   ],
+   "ol_first_published": 1966
+  },
+  "M4-016": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M4-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M4-018": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M4-019": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M4-020": {
+   "cover": "M4-020.jpg",
+   "w": 280,
+   "h": 338,
+   "ol_key": "/works/OL20224409W",
+   "ol_title": "Gauguin",
+   "ol_authors": [
+    "Ingo F. Walther"
+   ],
+   "ol_first_published": 1996
+  },
+  "M4-021": {
+   "cover": "M4-021.jpg",
+   "w": 280,
+   "h": 393,
+   "ol_key": "/works/OL7640981W",
+   "ol_title": "Modern American painting",
+   "ol_authors": [
+    "Boswell, Peyton",
+    "Boswell, Peyton"
+   ],
+   "ol_first_published": 1939
+  },
+  "M7-011": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "M7-020": {
+   "cover": "M7-020.jpg",
+   "w": 280,
+   "h": 475,
+   "ol_key": "/works/OL230920W",
+   "ol_title": "Oeuvres complètes de Chateaubriand",
+   "ol_authors": [
+    "François-René de Chateaubriand"
+   ],
+   "ol_first_published": 1849
+  },
+  "M7-021": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-022": {
+   "cover": "M7-022.jpg",
+   "w": 280,
+   "h": 495,
+   "ol_key": "/works/OL495946W",
+   "ol_title": "Longfellow's poetical works",
+   "ol_authors": [
+    "Henry Wadsworth Longfellow"
+   ],
+   "ol_first_published": 1878
+  },
+  "M7-023": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-024": {
+   "cover": "M7-024.jpg",
+   "w": 280,
+   "h": 397,
+   "ol_key": "/works/OL695926W",
+   "ol_title": "Dufy",
+   "ol_authors": [
+    "Dora Perez-Tibi"
+   ],
+   "ol_first_published": 1989
+  },
+  "M7-025": {
+   "cover": "M7-025.jpg",
+   "w": 128,
+   "h": 151,
+   "ol_key": "/works/OL106335W",
+   "ol_title": "Pieter Bruegel",
+   "ol_authors": [
+    "Mike Venezia"
+   ],
+   "ol_first_published": 1992
+  },
+  "M7-026": {
+   "cover": "M7-026.jpg",
+   "w": 280,
+   "h": 333,
+   "ol_key": "/works/OL1339460W",
+   "ol_title": "El Greco",
+   "ol_authors": [
+    "Greco"
+   ],
+   "ol_first_published": 1910
+  },
+  "M7-027": {
+   "cover": "M7-027.jpg",
+   "w": 280,
+   "h": 359,
+   "ol_key": "/works/OL6980349W",
+   "ol_title": "Maurice Utrillo",
+   "ol_authors": [
+    "Utrillo, Maurice"
+   ],
+   "ol_first_published": 1940
+  },
+  "M7-028": {
+   "cover": "M7-028.jpg",
+   "w": 280,
+   "h": 375,
+   "ol_key": "/works/OL1298851W",
+   "ol_title": "Sandro Botticelli",
+   "ol_authors": [
+    "Ady, Julia Mary Cartwright"
+   ],
+   "ol_first_published": 1800
+  },
+  "M7-029": {
+   "cover": "M7-029.jpg",
+   "w": 280,
+   "h": 338,
+   "ol_key": "/works/OL20224409W",
+   "ol_title": "Gauguin",
+   "ol_authors": [
+    "Ingo F. Walther"
+   ],
+   "ol_first_published": 1996
+  },
+  "M7-030": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M7-031": {
+   "cover": "M7-031.jpg",
+   "w": 280,
+   "h": 440,
+   "ol_key": "/works/OL31397541W",
+   "ol_title": "Searching for Your Ancestors",
+   "ol_authors": [
+    "Gilbert H. Doane"
+   ],
+   "ol_first_published": 1960
+  },
+  "M8-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-004": {
+   "cover": "M8-004.jpg",
+   "w": 280,
+   "h": 443,
+   "ol_key": "/works/OL4286177W",
+   "ol_title": "Diccionario etimológico de la lengua castellana, precedido de unos rudimentos de etimología",
+   "ol_authors": [
+    "Pedro Felipe Monlau y Roca"
+   ],
+   "ol_first_published": 1941
+  },
+  "M8-005": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-006": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-007": {
+   "cover": "M8-007.jpg",
+   "w": 280,
+   "h": 388,
+   "ol_key": "/works/OL11760206W",
+   "ol_title": "Vocabulario y refranero criollo",
+   "ol_authors": [
+    "Tito Saubidet Gache"
+   ],
+   "ol_first_published": 1943
+  },
+  "M8-008": {
+   "cover": "M8-008.jpg",
+   "w": 280,
+   "h": 413,
+   "ol_key": "/works/OL1506809W",
+   "ol_title": "Diccionario geografico del Uruguay",
+   "ol_authors": [
+    "Orestes Araújo"
+   ],
+   "ol_first_published": 1900
+  },
+  "M8-009": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-010": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-011": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-012": {
+   "cover": "M8-012.jpg",
+   "w": 280,
+   "h": 405,
+   "ol_key": "/works/OL2210756W",
+   "ol_title": "Vocabulario rioplatense razonado",
+   "ol_authors": [
+    "Daniel Granada"
+   ],
+   "ol_first_published": 1889
+  },
+  "M8-013": {
+   "cover": "M8-013.jpg",
+   "w": 280,
+   "h": 405,
+   "ol_key": "/works/OL2210756W",
+   "ol_title": "Vocabulario rioplatense razonado",
+   "ol_authors": [
+    "Daniel Granada"
+   ],
+   "ol_first_published": 1889
+  },
+  "M8-014": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-015": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-016": {
+   "cover": "M8-016.jpg",
+   "w": 280,
+   "h": 422,
+   "ol_key": "/works/OL15969543W",
+   "ol_title": "Lessings Nathan der Weise",
+   "ol_authors": [
+    "Gotthold Ephraim Lessing"
+   ],
+   "ol_first_published": 1894
+  },
+  "M8-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-018": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-019": {
+   "cover": "M8-019.jpg",
+   "w": 280,
+   "h": 178,
+   "ol_key": "/works/OL995955W",
+   "ol_title": "Tratado de Tordesillas",
+   "ol_authors": [
+    "Juan Pérez de Tudela y Bueso"
+   ],
+   "ol_first_published": 1985
+  },
+  "M8-001": {
+   "cover": "M8-001.jpg",
+   "w": 280,
+   "h": 391,
+   "ol_key": "/works/OL124973W",
+   "ol_title": "Rand McNally universal world atlas",
+   "ol_authors": [
+    "Rand McNally"
+   ],
+   "ol_first_published": 1982
+  },
+  "M8-020": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "M8-002": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "R2-001": {
+   "cover": "R2-001.jpg",
+   "w": 280,
+   "h": 429,
+   "ol_key": "/works/OL20228150W",
+   "ol_title": "Terrible, True Tales from the Tower of London",
+   "ol_authors": [
+    "Peter Cottrill",
+    "Historic Royal Palaces (Great Britain) Staff"
+   ],
+   "ol_first_published": null
+  },
+  "R2-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-003": {
+   "cover": "R2-003.jpg",
+   "w": 280,
+   "h": 376,
+   "ol_key": "/works/OL8666239W",
+   "ol_title": "BYGONE DAYS IN THE PEAK DISTRICT",
+   "ol_authors": [
+    "Lindsey, and Dudley Fowkes Porter"
+   ],
+   "ol_first_published": 1986
+  },
+  "R2-004": {
+   "cover": "R2-004.jpg",
+   "w": 280,
+   "h": 435,
+   "ol_key": "/works/OL10506758W",
+   "ol_title": "Westminster Abbey",
+   "ol_authors": [
+    "Jocelyn Perkins"
+   ],
+   "ol_first_published": 1937
+  },
+  "R2-005": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-006": {
+   "cover": "R2-006.jpg",
+   "w": 280,
+   "h": 350,
+   "ol_key": "/works/OL6421440W",
+   "ol_title": "The Channel Island",
+   "ol_authors": [
+    "Harald Eggert"
+   ],
+   "ol_first_published": 1980
+  },
+  "R2-007": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-009": {
+   "cover": "R2-009.jpg",
+   "w": 280,
+   "h": 412,
+   "ol_key": "/works/OL17727610W",
+   "ol_title": "Animals of East Africa",
+   "ol_authors": [
+    "C. A. Spinage"
+   ],
+   "ol_first_published": 1962
+  },
+  "R2-010": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "R2-011": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-012": {
+   "cover": "R2-012.jpg",
+   "w": 280,
+   "h": 377,
+   "ol_key": "/works/OL14852764W",
+   "ol_title": "New York",
+   "ol_authors": [
+    "Harris, Bill"
+   ],
+   "ol_first_published": 1987
+  },
+  "R2-013": {
+   "cover": "R2-013.jpg",
+   "w": 280,
+   "h": 436,
+   "ol_key": "/works/OL2702055W",
+   "ol_title": "New England",
+   "ol_authors": [
+    "Suzi Forbes Chase"
+   ],
+   "ol_first_published": 1994
+  },
+  "R2-014": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-015": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-016": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-018": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-019": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-020": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-021": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-022": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R2-023": {
+   "cover": "R2-023.jpg",
+   "w": 280,
+   "h": 365,
+   "ol_key": "/works/OL2825063W",
+   "ol_title": "Jacques Cousteau's Amazon journey",
+   "ol_authors": [
+    "Jacques Yves Cousteau"
+   ],
+   "ol_first_published": 1984
+  },
+  "R2-024": {
+   "cover": "R2-024.jpg",
+   "w": 280,
+   "h": 345,
+   "ol_key": "/works/OL2276698W",
+   "ol_title": "Tierra del Fuego",
+   "ol_authors": [
+    "Sylvia Iparraguirre"
+   ],
+   "ol_first_published": 2000
+  },
+  "R3-001": {
+   "cover": "R3-001.jpg",
+   "w": 280,
+   "h": 367,
+   "ol_key": "/works/OL1198178W",
+   "ol_title": "Heritage of Britain",
+   "ol_authors": [
+    "A. L. Rowse"
+   ],
+   "ol_first_published": 1977
+  },
+  "R3-002": {
+   "cover": "R3-002.jpg",
+   "w": 280,
+   "h": 403,
+   "ol_key": "/works/OL6135935W",
+   "ol_title": "The Country life book of Queen Elizabeth the Queen Mother",
+   "ol_authors": [
+    "Godfrey Walker Talbot"
+   ],
+   "ol_first_published": 1978
+  },
+  "R3-003": {
+   "cover": "R3-003.jpg",
+   "w": 280,
+   "h": 396,
+   "ol_key": "/works/OL880608W",
+   "ol_title": "South Africa the Beautiful",
+   "ol_authors": [
+    "Brian Johnson Barker"
+   ],
+   "ol_first_published": 1991
+  },
+  "R3-004": {
+   "cover": "R3-004.jpg",
+   "w": 280,
+   "h": 400,
+   "ol_key": "/works/OL6573852W",
+   "ol_title": "London",
+   "ol_authors": [
+    "David Gibbon"
+   ],
+   "ol_first_published": 1985
+  },
+  "R3-005": {
+   "cover": "R3-005.jpg",
+   "w": 280,
+   "h": 407,
+   "ol_key": "/works/OL5465611W",
+   "ol_title": "London",
+   "ol_authors": [
+    "Fred Housego"
+   ],
+   "ol_first_published": 1982
+  },
+  "R3-006": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R3-007": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R3-008": {
+   "cover": "R3-008.jpg",
+   "w": 280,
+   "h": 383,
+   "ol_key": "/works/OL1168432W",
+   "ol_title": "Frankreich",
+   "ol_authors": [
+    "Martin Hürlimann"
+   ],
+   "ol_first_published": 1927
+  },
+  "R3-009": {
+   "cover": "R3-009.jpg",
+   "w": 280,
+   "h": 423,
+   "ol_key": "/works/OL5031646W",
+   "ol_title": "Mexico City",
+   "ol_authors": [
+    "Jim Johnston"
+   ],
+   "ol_first_published": 2006
+  },
+  "R3-010": {
+   "cover": "R3-010.jpg",
+   "w": 280,
+   "h": 370,
+   "ol_key": "/works/OL1881524W",
+   "ol_title": "Portrait of California",
+   "ol_authors": [
+    "Ray Atkeson"
+   ],
+   "ol_first_published": 1980
+  },
+  "R3-011": {
+   "cover": "R3-011.jpg",
+   "w": 259,
+   "h": 400,
+   "ol_key": "/works/OL21199334W",
+   "ol_title": "Lonely Planet - Peru",
+   "ol_authors": [
+    "Lonely Planet Publications Staff",
+    "Alex Egerton",
+    "Mark Johanson",
+    "Carolyn McCarthy",
+    "Brendan Sainsbury"
+   ],
+   "ol_first_published": 2016
+  },
+  "R3-012": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R3-013": {
+   "cover": "R3-013.jpg",
+   "w": 280,
+   "h": 370,
+   "ol_key": "/works/OL4458060W",
+   "ol_title": "Jerusalem",
+   "ol_authors": [
+    "Teddy Kollek"
+   ],
+   "ol_first_published": 1968
+  },
+  "R3-014": {
+   "cover": "R3-014.jpg",
+   "w": 280,
+   "h": 431,
+   "ol_key": "/works/OL31918530W",
+   "ol_title": "Masada",
+   "ol_authors": [
+    "Yigael Yadin"
+   ],
+   "ol_first_published": 1966
+  },
+  "R3-015": {
+   "cover": null,
+   "reason": "tapa no descargable"
+  },
+  "R3-016": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R3-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R3-018": {
+   "cover": "R3-018.jpg",
+   "w": 280,
+   "h": 231,
+   "ol_key": "/works/OL3679918W",
+   "ol_title": "America's wonderlands",
+   "ol_authors": [
+    "James W. Buel"
+   ],
+   "ol_first_published": 1893
+  },
+  "R3-019": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-001": {
+   "cover": "R4-001.jpg",
+   "w": 280,
+   "h": 478,
+   "ol_key": "/works/OL81626W",
+   "ol_title": "Carrie",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1974
+  },
+  "R4-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-004": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-005": {
+   "cover": "R4-005.jpg",
+   "w": 280,
+   "h": 438,
+   "ol_key": "/works/OL81634W",
+   "ol_title": "Misery",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1978
+  },
+  "R4-006": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-007": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-009": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-010": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-011": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-012": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-013": {
+   "cover": "R4-013.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL81593W",
+   "ol_title": "The Tommyknockers",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1985
+  },
+  "R4-014": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-015": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-016": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-018": {
+   "cover": "R4-018.jpg",
+   "w": 280,
+   "h": 436,
+   "ol_key": "/works/OL16820059W",
+   "ol_title": "Mr. Mercedes",
+   "ol_authors": [
+    "Stephen King",
+    "Stephen king",
+    "Ingah Mikhaʼeli"
+   ],
+   "ol_first_published": 2013
+  },
+  "R4-019": {
+   "cover": "R4-019.jpg",
+   "w": 280,
+   "h": 432,
+   "ol_key": "/works/OL81610W",
+   "ol_title": "Cujo",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1981
+  },
+  "R4-020": {
+   "cover": "R4-020.jpg",
+   "w": 280,
+   "h": 440,
+   "ol_key": "/works/OL149119W",
+   "ol_title": "Duma Key",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2008
+  },
+  "R4-021": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-022": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-023": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R4-024": {
+   "cover": "R4-024.jpg",
+   "w": 280,
+   "h": 431,
+   "ol_key": "/works/OL81597W",
+   "ol_title": "Cell",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2006
+  },
+  "R4-025": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-026": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-011": {
+   "cover": "R5-011.jpg",
+   "w": 280,
+   "h": 424,
+   "ol_key": "/works/OL81623W",
+   "ol_title": "Firestarter",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1980
+  },
+  "R5-001": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-004": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-005": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-006": {
+   "cover": "R5-006.jpg",
+   "w": 280,
+   "h": 449,
+   "ol_key": "/works/OL2794739W",
+   "ol_title": "Blaze",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2007
+  },
+  "R5-007": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-009": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-010": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-012": {
+   "cover": "R5-012.jpg",
+   "w": 280,
+   "h": 464,
+   "ol_key": "/works/OL16806826W",
+   "ol_title": "Joyland",
+   "ol_authors": [
+    "Stephen King",
+    "Michael Kelly."
+   ],
+   "ol_first_published": 2011
+  },
+  "R5-013": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-014": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-015": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-016": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-018": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-019": {
+   "cover": "R5-019.jpg",
+   "w": 280,
+   "h": 431,
+   "ol_key": "/works/OL16002468W",
+   "ol_title": "11/22/63",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1925
+  },
+  "R5-020": {
+   "cover": "R5-020.jpg",
+   "w": 280,
+   "h": 439,
+   "ol_key": "/works/OL24229351W",
+   "ol_title": "Billy Summers",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2021
+  },
+  "R5-021": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-022": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-023": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R5-024": {
+   "cover": "R5-024.jpg",
+   "w": 280,
+   "h": 491,
+   "ol_key": "/works/OL34057778W",
+   "ol_title": "Holly",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2023
+  },
+  "R5-025": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R6-NATGEO": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-001": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-002": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-004": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-005": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-006": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-007": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-018": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-008": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-009": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-010": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-019": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-011": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-012": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-013": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-014": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-015": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-016": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R7-017": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R8-001": {
+   "cover": "R8-001.jpg",
+   "w": 280,
+   "h": 398,
+   "ol_key": "/works/OL267417W",
+   "ol_title": "The Chinese Century",
+   "ol_authors": [
+    "Oded Shenkar"
+   ],
+   "ol_first_published": 2004
+  },
+  "R8-002": {
+   "cover": "R8-002.jpg",
+   "w": 280,
+   "h": 326,
+   "ol_key": "/works/OL13582730W",
+   "ol_title": "The Underground Terracotta Army of Emperor Qin Shi Huang",
+   "ol_authors": [
+    "Fu Tianchou"
+   ],
+   "ol_first_published": 1985
+  },
+  "R8-003": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R8-004": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R8-005": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R8-006": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R8-007": {
+   "cover": null,
+   "reason": "sin match en open library"
+  },
+  "R8-008": {
+   "cover": null,
+   "reason": "título incierto"
+  },
+  "TOP-001": {
+   "cover": "TOP-001.jpg",
+   "w": 280,
+   "h": 420,
+   "ol_key": "/works/OL503666W",
+   "ol_title": "Don Quijote de la Mancha",
+   "ol_authors": [
+    "Miguel de Cervantes Saavedra"
+   ],
+   "ol_first_published": 1600
+  },
+  "TOP-002": {
+   "cover": "TOP-002.jpg",
+   "w": 280,
+   "h": 420,
+   "ol_key": "/works/OL503666W",
+   "ol_title": "Don Quijote de la Mancha",
+   "ol_authors": [
+    "Miguel de Cervantes Saavedra"
+   ],
+   "ol_first_published": 1600
+  }
+ }
+}

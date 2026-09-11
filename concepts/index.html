@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bibliotequeando — Cuatro conceptos de app</title>
-<meta name="description" content="Cuatro rediseños completos de la app de la biblioteca: Códice, Ateneo, La Gaceta y El Fichero.">
+<title>Bibliotequeando — Cinco conceptos de app</title>
+<meta name="description" content="Cinco rediseños completos de la app de la biblioteca: Códice, Ateneo, La Gaceta, El Fichero y La Sala de Lectura.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,14 +38,16 @@
   .concept.ateneo{border-top:4px solid #b0413f}.concept.ateneo h2{color:#d98a85}.concept.ateneo .tag{color:#b0413f}
   .concept.gaceta{border-top:4px solid #ded4bc}.concept.gaceta h2{color:#efe8d4}.concept.gaceta .tag{color:#ded4bc}
   .concept.fichero{border-top:4px solid #8a6b1d}.concept.fichero h2{color:#d9bc6b}.concept.fichero .tag{color:#b8912e}
+  .concept.sala{border-top:4px solid #9c6b3f;grid-column:1/-1}.concept.sala h2{color:#e0a96d}.concept.sala .tag{color:#c98a4d}
+  @media(max-width:720px){.concept.sala{grid-column:auto}}
   .foot{margin-top:40px;font-size:12px;color:#7d715c;text-align:center;max-width:68ch;line-height:1.7}
   .foot a{color:#c9a45c;text-decoration:underline}
 </style>
 </head>
 <body>
   <p class="pre">Bibliotequeando · laboratorio de rediseño · MMXXVI</p>
-  <h1>Una biblioteca,<br><em>cuatro apps posibles</em></h1>
-  <p class="lede">Los mismos 437 volúmenes, las mismas fotos reales de los estantes — cuatro maneras completamente distintas de vivirlos. En todas hay un botón ⇄ para saltar de una experiencia a otra.</p>
+  <h1>Una biblioteca,<br><em>cinco apps posibles</em></h1>
+  <p class="lede">Los mismos 437 volúmenes, las mismas fotos reales de los estantes — cinco maneras completamente distintas de vivirlos. En todas hay un botón ⇄ para saltar de una experiencia a otra.</p>
 
   <div class="duo">
     <a class="concept codice" href="codice.html">
@@ -103,8 +105,22 @@
       </ul>
       <span class="go">Abrir El Fichero →</span>
     </a>
+
+    <a class="concept sala" href="../sala/">
+      <div class="num">Concepto V</div>
+      <h2>La Sala de Lectura</h2>
+      <div class="tag">La biblioteca en tres dimensiones</div>
+      <p>El mueble de la casa hecho objeto: tres columnas, ocho estantes y los 437 lomos parados donde están de verdad. Se toca un lomo y ese estante sale a la mesa, con tapa y ficha.</p>
+      <ul>
+        <li>Los 437 libros en el mueble, en una sola malla</li>
+        <li>Tapas reales de Open Library; las que faltan se componen</li>
+        <li>Recorrido guiado: seis paradas que cuentan la casa</li>
+        <li>Anda en teléfono, notebook y proyector, sin instalar nada</li>
+      </ul>
+      <span class="go">Entrar a la Sala →</span>
+    </a>
   </div>
 
-  <p class="foot">Los cuatro conceptos leen el catálogo canónico embebido en <a href="../index.html">index.html</a> (no lo duplican ni lo tocan), más el overlay de años de <code>data/enrichment.json</code>, el contenido editorial de <code>concepts/editorial.json</code> y las landings de colección de <code>concepts/collections.json</code>.</p>
+  <p class="foot">Los cinco conceptos leen el catálogo canónico embebido en <a href="../index.html">index.html</a> (no lo duplican ni lo tocan), más el overlay de años de <code>data/enrichment.json</code>, el contenido editorial de <code>concepts/editorial.json</code> y las landings de colección de <code>concepts/collections.json</code>. La Sala de Lectura suma su copia de lectura en <code>sala/data/catalog.json</code> y las tapas de <code>sala/covers/</code>.</p>
 </body>
 </html>

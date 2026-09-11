@@ -1,0 +1,5941 @@
+{
+ "_comment": "Catálogo compacto para el demo 3D de /sala/. Derivado: el canónico sigue siendo inline-catalog en index.html. Se regenera con tools/sala_covers.py.",
+ "library": {
+  "owner_note": "Personal library — cataloged 2026-05-19; re-cataloged 2026-08 from 19 new photographs",
+  "structure": {
+   "columns": 3,
+   "labels": [
+    "L (Left)",
+    "M (Middle)",
+    "R (Right)"
+   ],
+   "shelves_per_column": 8,
+   "notation": "Shelf 1 is the top (mug display); shelves 2-8 contain books, top-to-bottom",
+   "annex": "2026-08 re-cataloging: the middle column is now half display — M2 Egyptian pieces, M3 FRIENDS Funkos, M4 frames and candles, M6 the Smith-Corona typewriter. Its books consolidated into M5 (mystery), M7 (antique reference + the Mentor-UNESCO art series from M4) and M8 (dictionaries and atlases, the formerly anonymous row). Book ids are accession numbers: the prefix records where a book was first cataloged, not where it lives; real location = containing shelf."
+  }
+ },
+ "generated_at": "2026-09-11T01:37:17+0000",
+ "books_total": 437,
+ "books_with_cover": 185,
+ "shelves": [
+  {
+   "id": "L1",
+   "label": "Left column, top shelf",
+   "theme": "Travel mug display (decorative)",
+   "books": []
+  },
+  {
+   "id": "L2",
+   "label": "Left column, shelf 2",
+   "theme": "Balzac vellum set + Spanish/French classics",
+   "books": [
+    {
+     "id": "L2-001",
+     "title": "The Poetical Works of John Keats",
+     "author": "John Keats",
+     "publisher": "Grant Richards",
+     "binding": "antique leather",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 30",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?an=keats&tn=poetical+works&pi=grant+richards",
+     "year": 1907,
+     "year_confidence": "aprox",
+     "year_note": "Edición Grant Richards; los poemas de Keats son de 1814-1820, murió en 1821 a los 25",
+     "cover": "L2-001.jpg",
+     "cw": 280,
+     "ch": 399
+    },
+    {
+     "id": "L2-002",
+     "title": "Les Chouans / L'Enfant Maudit",
+     "author": "Honoré de Balzac",
+     "series": "Œuvres Complètes (vellum)",
+     "language": "French",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 32",
+     "buy_url": "https://www.abebooks.fr/servlet/SearchResults?an=balzac&kn=oeuvres+completes+vellum",
+     "year": 1829,
+     "year_confidence": "alta",
+     "year_note": "Les Chouans, primera novela firmada Balzac",
+     "cover": "L2-002.jpg",
+     "cw": 280,
+     "ch": 428
+    },
+    {
+     "id": "L2-003",
+     "title": "Eugénie Grandet / Le Père Goriot",
+     "author": "Honoré de Balzac",
+     "series": "Œuvres Complètes (vellum)",
+     "language": "French",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 38",
+     "buy_url": "https://www.abebooks.fr/servlet/SearchResults?an=balzac&kn=oeuvres+completes+vellum",
+     "year": 1833,
+     "year_confidence": "alta",
+     "year_note": "Eugénie Grandet 1833; Le Père Goriot 1835",
+     "cover": "L2-003.jpg",
+     "cw": 280,
+     "ch": 461
+    },
+    {
+     "id": "L2-004",
+     "title": "Les Petits Bourgeois I-II",
+     "author": "Honoré de Balzac",
+     "series": "Œuvres Complètes (vellum)",
+     "language": "French",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 32",
+     "buy_url": "https://www.abebooks.fr/servlet/SearchResults?an=balzac&kn=oeuvres+completes+vellum",
+     "cover": "L2-004.jpg",
+     "cw": 280,
+     "ch": 470
+    },
+    {
+     "id": "L2-005",
+     "title": "Le Cousin Pons / Modeste Mignon",
+     "author": "Honoré de Balzac",
+     "series": "Œuvres Complètes (vellum)",
+     "language": "French",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 35",
+     "buy_url": "https://www.abebooks.fr/servlet/SearchResults?an=balzac&kn=oeuvres+completes+vellum",
+     "cover": "L2-005.jpg",
+     "cw": 280,
+     "ch": 460
+    },
+    {
+     "id": "L2-006",
+     "title": "Le Curé de Village / Le Médecin de Campagne",
+     "author": "Honoré de Balzac",
+     "series": "Œuvres Complètes (vellum)",
+     "language": "French",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 32",
+     "buy_url": "https://www.abebooks.fr/servlet/SearchResults?an=balzac&kn=oeuvres+completes+vellum",
+     "cover": "L2-006.jpg",
+     "cw": 280,
+     "ch": 456
+    },
+    {
+     "id": "L2-007",
+     "title": "Obras Completas",
+     "author": "Federico García Lorca",
+     "publisher": "Aguilar",
+     "binding": "leather with embossed figure",
+     "language": "Spanish",
+     "topics": [
+      "classics",
+      "latin-american"
+     ],
+     "price": "USD 45",
+     "buy_url": "https://www.abebooks.com/Federico-Garc%C3%ADa-Lorca-Obras-completas-Aguilar/22858526250/bd",
+     "cover": "L2-007.jpg",
+     "cw": 128,
+     "ch": 207
+    },
+    {
+     "id": "L2-008",
+     "title": "Don Quijote de la Mancha, Tomo I (vol. 100)",
+     "author": "Miguel de Cervantes",
+     "binding": "antique leather with rosettes",
+     "language": "Spanish",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/don-quijote/autor/cervantes",
+     "cover": "L2-008.jpg",
+     "cw": 280,
+     "ch": 420
+    },
+    {
+     "id": "L2-009",
+     "title": "Don Quijote de la Mancha, Tomo II (vol. 101)",
+     "author": "Miguel de Cervantes",
+     "binding": "antique leather with rosettes",
+     "language": "Spanish",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/don-quijote/autor/cervantes",
+     "cover": "L2-009.jpg",
+     "cw": 280,
+     "ch": 420
+    },
+    {
+     "id": "L2-010",
+     "title": "Don Quijote de la Mancha",
+     "author": "Miguel de Cervantes",
+     "binding": "maroon cloth",
+     "series": "Clásicos Cúspide",
+     "language": "Spanish",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/don-quijote/autor/cervantes",
+     "cover": "L2-010.jpg",
+     "cw": 280,
+     "ch": 420
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "label": "Left column, shelf 3",
+   "theme": "Shakespeare collection",
+   "books": [
+    {
+     "id": "L3-001",
+     "title": "As You Like It",
+     "author": "William Shakespeare",
+     "format": "orange paperback",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=as+you+like+it+shakespeare+paperback",
+     "year": 1599,
+     "year_confidence": "aprox",
+     "cover": "L3-001.jpg",
+     "cw": 271,
+     "ch": 500
+    },
+    {
+     "id": "L3-002",
+     "title": "Romeo and Juliet",
+     "author": "William Shakespeare",
+     "format": "orange paperback",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=romeo+juliet+shakespeare+paperback",
+     "year": 1595,
+     "year_confidence": "aprox",
+     "year_note": "Fechas de composición shakespeareanas siempre aproximadas",
+     "cover": "L3-002.jpg",
+     "cw": 280,
+     "ch": 426
+    },
+    {
+     "id": "L3-003",
+     "title": "Macbeth",
+     "author": "William Shakespeare",
+     "format": "orange paperback",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=macbeth+shakespeare+paperback",
+     "year": 1606,
+     "year_confidence": "aprox",
+     "cover": "L3-003.jpg",
+     "cw": 280,
+     "ch": 458
+    },
+    {
+     "id": "L3-004",
+     "title": "Twelfth Night",
+     "author": "William Shakespeare",
+     "format": "orange paperback",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=twelfth+night+shakespeare+paperback",
+     "year": 1601,
+     "year_confidence": "aprox",
+     "cover": "L3-004.jpg",
+     "cw": 280,
+     "ch": 384
+    },
+    {
+     "id": "L3-005",
+     "title": "Shakespeare in Europe",
+     "author": "Oswald LeWinter (ed.)",
+     "publisher": "Meridian Books M156",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?an=oswald+lewinter&tn=shakespeare+in+europe",
+     "cover": "L3-005.jpg",
+     "cw": 280,
+     "ch": 453
+    },
+    {
+     "id": "L3-006",
+     "title": "The Sonnets of William Shakespeare",
+     "author": "William Shakespeare",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=sonnets+shakespeare+paperback",
+     "year": 1609,
+     "year_confidence": "alta",
+     "year_note": "Los Sonetos se publicaron en 1609",
+     "cover": "L3-006.jpg",
+     "cw": 280,
+     "ch": 373
+    },
+    {
+     "id": "L3-007",
+     "title": "Shakespeare Without Tears",
+     "author": "Margaret Webster",
+     "publisher": "Penguin",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/book-search/title/shakespeare-without-tears/author/margaret-webster/",
+     "cover": "L3-007.jpg",
+     "cw": 280,
+     "ch": 416
+    },
+    {
+     "id": "L3-008",
+     "title": "Shakespeare and the Idea of the Play",
+     "author": "Anne Righter",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/9780140530018/Shakespeare-Idea-Play-Righter-Anne-0140530010/plp"
+    },
+    {
+     "id": "L3-009",
+     "title": "Twisted Tales from Shakespeare",
+     "author": "Richard Armour",
+     "topics": [
+      "shakespeare"
+     ],
+     "note": "title legible, author inferred",
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/book-search/title/twisted-tales-from-shakespeare/author/armour-richard/",
+     "cover": "L3-009.jpg",
+     "cw": 280,
+     "ch": 458
+    },
+    {
+     "id": "L3-010",
+     "title": "Shakespeare and Myself",
+     "author": "George Mikes (text) & David Langdon (drawings)",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/book-search/title/shakespeare-and-myself/author/george-mikes/",
+     "cover": "L3-010.jpg",
+     "cw": 280,
+     "ch": 447
+    },
+    {
+     "id": "L3-011",
+     "title": "The Age of Shakespeare",
+     "author": "unknown editor",
+     "series": "A Guide to English Literature - 2 (Pelican)",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=age+of+shakespeare+guide+english+literature"
+    },
+    {
+     "id": "L3-012",
+     "title": "Romeo and Juliet & West Side Story",
+     "publisher": "Dell Laurel (0440-07485)",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=romeo+juliet+west+side+story+dell+laurel",
+     "cover": "L3-012.jpg",
+     "cw": 280,
+     "ch": 456
+    },
+    {
+     "id": "L3-013",
+     "title": "The Complete Works of Shakespeare",
+     "author": "ed. G.L. Kittredge",
+     "publisher": "Ginn and Company",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 30",
+     "buy_url": "https://www.abebooks.com/book-search/title/complete-works-shakespeare/author/kittredge-george-lyman/"
+    },
+    {
+     "id": "L3-014",
+     "title": "Shakespearean Tragedy: Hamlet, Othello, King Lear, Macbeth",
+     "author": "A.C. Bradley",
+     "publisher": "Macmillan",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/book-search/title/shakespearean-tragedy/author/a-c-bradley/",
+     "cover": "L3-014.jpg",
+     "cw": 128,
+     "ch": 202
+    },
+    {
+     "id": "L3-015",
+     "title": "Was ihr wollt / Wie es euch gefällt",
+     "author": "William Shakespeare",
+     "series": "Shakespeare Englisch und Deutsch",
+     "language": "English/German",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.reclam.de/autor-innen/von-a-bis-z/shakespeare"
+    },
+    {
+     "id": "L3-016",
+     "title": "Sommernachtstraum / Wintermärchen",
+     "author": "William Shakespeare",
+     "series": "Shakespeare Englisch und Deutsch",
+     "language": "English/German",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.reclam.de/autor-innen/von-a-bis-z/shakespeare"
+    },
+    {
+     "id": "L3-017",
+     "title": "Komödie der Irrungen / Der Widerspenstigen Zähmung",
+     "author": "William Shakespeare",
+     "series": "Shakespeare Englisch und Deutsch",
+     "language": "English/German",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.reclam.de/autor-innen/von-a-bis-z/shakespeare"
+    },
+    {
+     "id": "L3-018",
+     "title": "Othello",
+     "author": "William Shakespeare",
+     "series": "Shakespeare Englisch und Deutsch",
+     "language": "English/German",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.reclam.de/produktdetail/othello-englisch-deutsch-9783150098301",
+     "year": 1603,
+     "year_confidence": "aprox",
+     "cover": "L3-018.jpg",
+     "cw": 280,
+     "ch": 394
+    },
+    {
+     "id": "L3-019",
+     "title": "Romeo und Julia",
+     "author": "William Shakespeare",
+     "series": "Shakespeare Englisch und Deutsch",
+     "language": "English/German",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.reclam.de/autor-innen/von-a-bis-z/shakespeare",
+     "cover": "L3-019.jpg",
+     "cw": 280,
+     "ch": 417
+    },
+    {
+     "id": "L3-020",
+     "title": "Hamlet",
+     "author": "William Shakespeare",
+     "series": "Shakespeare Englisch und Deutsch",
+     "language": "English/German",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.reclam.de/produktdetail/hamlet-englisch-deutsch-9783150187005",
+     "year": 1600,
+     "year_confidence": "aprox",
+     "cover": "L3-020.jpg",
+     "cw": 280,
+     "ch": 388
+    },
+    {
+     "id": "L3-021",
+     "title": "Die lustigen Weiber von Windsor",
+     "author": "William Shakespeare",
+     "series": "Shakespeare Englisch und Deutsch",
+     "language": "English/German",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.reclam.de/autor-innen/von-a-bis-z/shakespeare",
+     "cover": "L3-021.jpg",
+     "cw": 271,
+     "ch": 400
+    },
+    {
+     "id": "L3-022",
+     "title": "König Richard III",
+     "author": "William Shakespeare",
+     "series": "Shakespeare Englisch und Deutsch",
+     "language": "English/German",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.reclam.de/autor-innen/von-a-bis-z/shakespeare",
+     "year": 1593,
+     "year_confidence": "aprox"
+    },
+    {
+     "id": "L3-023",
+     "title": "König Lear",
+     "author": "William Shakespeare",
+     "series": "Shakespeare Englisch und Deutsch",
+     "language": "English/German",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.reclam.de/autor-innen/von-a-bis-z/shakespeare",
+     "year": 1606,
+     "year_confidence": "aprox",
+     "cover": "L3-023.jpg",
+     "cw": 258,
+     "ch": 400
+    },
+    {
+     "id": "L3-024",
+     "title": "Kaufmann von Venedig",
+     "author": "William Shakespeare",
+     "series": "Shakespeare Englisch und Deutsch",
+     "language": "English/German",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.reclam.de/autor-innen/von-a-bis-z/shakespeare",
+     "year": 1596,
+     "year_confidence": "aprox",
+     "cover": "L3-024.jpg",
+     "cw": 280,
+     "ch": 444
+    },
+    {
+     "id": "L3-025",
+     "title": "Shakespeare: Complete Works, History, Life and Notes",
+     "binding": "maroon cloth",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=shakespeare+complete+works+history+life+notes",
+     "cover": "L3-025.jpg",
+     "cw": 280,
+     "ch": 440
+    },
+    {
+     "id": "L3-026",
+     "title": "The Complete Works",
+     "author": "William Shakespeare",
+     "binding": "navy with diamond emblem",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=shakespeare+complete+works",
+     "cover": "L3-026.jpg",
+     "cw": 280,
+     "ch": 347
+    },
+    {
+     "id": "L3-027",
+     "title": "Richard III",
+     "author": "William Shakespeare",
+     "series": "school edition (Dewey 822.3 Sha)",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 7",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=richard+iii+shakespeare+school+edition",
+     "year": 1593,
+     "year_confidence": "aprox",
+     "cover": "L3-027.jpg",
+     "cw": 280,
+     "ch": 413
+    },
+    {
+     "id": "L3-028",
+     "title": "The Merchant of Venice",
+     "author": "William Shakespeare",
+     "series": "school edition (Dewey 822.3 Sha)",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 7",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=merchant+venice+shakespeare+school+edition",
+     "year": 1596,
+     "year_confidence": "aprox",
+     "cover": "L3-028.jpg",
+     "cw": 280,
+     "ch": 406
+    },
+    {
+     "id": "L3-029",
+     "title": "Hamlet",
+     "author": "William Shakespeare",
+     "series": "school edition (Dewey 822.3 Sha)",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 7",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=hamlet+shakespeare+school+edition",
+     "cover": "L3-029.jpg",
+     "cw": 280,
+     "ch": 388
+    },
+    {
+     "id": "L3-030",
+     "title": "UNK-L3-030",
+     "binding": "dark spine, no visible text",
+     "topics": [
+      "shakespeare"
+     ],
+     "note": "Tall dark spine between school editions and Hamlet paperback",
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=shakespeare"
+    },
+    {
+     "id": "L3-031",
+     "title": "Hamlet",
+     "author": "William Shakespeare",
+     "publisher": "Bantam (FC4864, 50¢)",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=hamlet+bantam+FC4864",
+     "cover": "L3-031.jpg",
+     "cw": 280,
+     "ch": 388
+    },
+    {
+     "id": "L3-032",
+     "title": "Bacon-Shakespeare Anatomy",
+     "author": "R.L. Eagle / W.S. Melsome",
+     "publisher": "Stuyvesant House, New York",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=bacon+shakespeare+anatomy+eagle+melsome"
+    },
+    {
+     "id": "L3-033",
+     "title": "UNK-L3-033",
+     "binding": "dark cloth",
+     "topics": [
+      "shakespeare"
+     ],
+     "note": "Between Melsome and As You Like It",
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=shakespeare"
+    },
+    {
+     "id": "L3-034",
+     "title": "As You Like It",
+     "author": "William Shakespeare",
+     "binding": "maroon cloth",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=as+you+like+it+shakespeare+paperback",
+     "year": 1599,
+     "year_confidence": "aprox",
+     "cover": "L3-034.jpg",
+     "cw": 271,
+     "ch": 500
+    },
+    {
+     "id": "L3-035",
+     "title": "A Shakespeare ??? Asur",
+     "binding": "green cloth",
+     "topics": [
+      "shakespeare"
+     ],
+     "note": "Title partially obscured — possibly 'A Shakespearean Tour' or treasure",
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=shakespeare"
+    },
+    {
+     "id": "L3-036",
+     "title": "The Stratford Shakespeare Anthology",
+     "binding": "yellow",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=stratford+shakespeare+anthology",
+     "cover": "L3-036.jpg",
+     "cw": 280,
+     "ch": 420
+    },
+    {
+     "id": "L3-037",
+     "title": "Julius Caesar in Shakespeare, Shaw and the Ancients",
+     "author": "G.B. Harrison",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=julius+caesar+shakespeare+shaw+ancients+harrison",
+     "year": 1599,
+     "year_confidence": "aprox",
+     "year_note": "Julius Caesar ~1599; el volumen es un estudio comparado",
+     "cover": "L3-037.jpg",
+     "cw": 280,
+     "ch": 356
+    },
+    {
+     "id": "L3-038",
+     "title": "Will in the World",
+     "author": "Stephen Greenblatt",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://wwnorton.com/books/9780393352603",
+     "year": 2004,
+     "year_confidence": "alta",
+     "year_note": "Stephen Greenblatt, biografía",
+     "cover": "L3-038.jpg",
+     "cw": 280,
+     "ch": 425
+    },
+    {
+     "id": "L3-039",
+     "title": "Shakespeare's Songs and Poems",
+     "author": "Edward Hubler",
+     "publisher": "McGraw-Hill",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=shakespeare+songs+poems+hubler"
+    },
+    {
+     "id": "L3-040",
+     "title": "Shakespeare",
+     "author": "Anthony Burgess",
+     "publisher": "Penguin (0-14-00.5441-2)",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/book-search/title/shakespeare/author/anthony-burgess/",
+     "cover": "L3-040.jpg",
+     "cw": 280,
+     "ch": 393
+    },
+    {
+     "id": "L3-041",
+     "title": "Macbeth (illustrated by Salvador Dalí)",
+     "author": "William Shakespeare; Salvador Dalí (illus.)",
+     "publisher": "Doubleday",
+     "topics": [
+      "shakespeare",
+      "art"
+     ],
+     "price": "USD 125",
+     "buy_url": "https://www.abebooks.com/book-search/title/macbeth/kw/dali/",
+     "year": 1946,
+     "year_confidence": "aprox",
+     "year_note": "Edición Doubleday con ilustraciones de Salvador Dalí"
+    },
+    {
+     "id": "L3-042",
+     "title": "The Life and Times of William Shakespeare",
+     "author": "Peter Levi",
+     "publisher": "Wings Books",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/book-search/title/life-times-william-shakespeare/author/peter-levi/",
+     "cover": "L3-042.jpg",
+     "cw": 280,
+     "ch": 440
+    },
+    {
+     "id": "L3-043",
+     "title": "Sonnets by William Shakespeare",
+     "binding": "tan cloth",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=sonnets+shakespeare"
+    },
+    {
+     "id": "L3-044",
+     "title": "The Collector's Shakespeare",
+     "author": "Geoffrey Ashton",
+     "publisher": "Crescent Books",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.abebooks.com/book-search/title/collectors-shakespeare/author/geoffrey-ashton/",
+     "cover": "L3-044.jpg",
+     "cw": 280,
+     "ch": 378
+    },
+    {
+     "id": "L3-045",
+     "title": "J.K. Rowling, vista por J.K. Rowling",
+     "author": "Lindsey Fraser",
+     "language": "Spanish",
+     "topics": [
+      "shakespeare"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=lindsey+fraser+rowling+vista",
+     "cover": "L3-045.jpg",
+     "cw": 280,
+     "ch": 458
+    },
+    {
+     "id": "L3-046",
+     "title": "Harry Potter y la Piedra Filosofal",
+     "author": "J.K. Rowling",
+     "publisher": "Emecé/Salamandra",
+     "language": "Spanish",
+     "topics": [
+      "shakespeare",
+      "young-adult"
+     ],
+     "price": "USD 16",
+     "buy_url": "https://www.casadellibro.com/libro-harry-potter-y-la-piedra-filosofal/9788498382662/1702767",
+     "year": 1997,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "L3-047",
+     "title": "Harry Potter y la Cámara Secreta",
+     "author": "J.K. Rowling",
+     "publisher": "Emecé/Salamandra",
+     "language": "Spanish",
+     "topics": [
+      "shakespeare",
+      "young-adult"
+     ],
+     "price": "USD 16",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Harry+Potter+Camara+Secreta",
+     "year": 1998,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "L3-048",
+     "title": "Harry Potter y el Prisionero de Azkabán",
+     "author": "J.K. Rowling",
+     "publisher": "Salamandra",
+     "language": "Spanish",
+     "topics": [
+      "shakespeare",
+      "young-adult"
+     ],
+     "price": "USD 16",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Harry+Potter+Prisionero+Azkaban",
+     "year": 1999,
+     "year_confidence": "alta",
+     "cover": "L3-048.jpg",
+     "cw": 280,
+     "ch": 432
+    },
+    {
+     "id": "L3-049",
+     "title": "Harry Potter y el Cáliz de Fuego",
+     "author": "J.K. Rowling",
+     "publisher": "Salamandra",
+     "language": "Spanish",
+     "topics": [
+      "shakespeare",
+      "young-adult"
+     ],
+     "price": "USD 17",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Harry+Potter+Caliz+de+Fuego",
+     "year": 2000,
+     "year_confidence": "alta",
+     "cover": "L3-049.jpg",
+     "cw": 280,
+     "ch": 439
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "label": "Left column, shelf 4",
+   "theme": "Self-help, philosophy, personal development",
+   "books": [
+    {
+     "id": "L4-001",
+     "title": "Aquí no hay reglas",
+     "author": "Reed Hastings & Erin Meyer",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Aqu%C3%AD+no+hay+reglas+Reed+Hastings+%26+Erin+Meyer",
+     "year": 2020,
+     "year_confidence": "alta",
+     "cover": "L4-001.jpg",
+     "cw": 280,
+     "ch": 426
+    },
+    {
+     "id": "L4-002",
+     "title": "Hábitos Atómicos",
+     "author": "James Clear",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Habitos+Atomicos+James+Clear",
+     "year": 2018,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "L4-003",
+     "title": "Tómate un respiro: Mindfulness",
+     "author": "Dr. Mario Alonso Puig",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=T%C3%B3mate+un+respiro%3A+Mindfulness+Dr.+Mario+Alonso+Puig",
+     "cover": "L4-003.jpg",
+     "cw": 280,
+     "ch": 424
+    },
+    {
+     "id": "L4-025",
+     "title": "Calmar la mente",
+     "author": "Lucas Raspall",
+     "topics": [
+      "wisdom"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Grijalbo, lomo azul; entre ¡Tómate un respiro! y Count Down."
+    },
+    {
+     "id": "L4-004",
+     "title": "Count Down",
+     "author": "Steve Olson",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Count+Down+Steve+Olson",
+     "cover": "L4-004.jpg",
+     "cw": 280,
+     "ch": 424
+    },
+    {
+     "id": "L4-005",
+     "title": "Your Brain is God",
+     "author": "Timothy Leary",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Your+Brain+is+God+Timothy+Leary",
+     "cover": "L4-005.jpg",
+     "cw": 280,
+     "ch": 436
+    },
+    {
+     "id": "L4-006",
+     "title": "The 7 Habits of Highly Effective People",
+     "author": "Stephen R. Covey",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=The+7+Habits+of+Highly+Effective+People+Stephen+R.+Covey",
+     "year": 1989,
+     "year_confidence": "alta",
+     "cover": "L4-006.jpg",
+     "cw": 280,
+     "ch": 426
+    },
+    {
+     "id": "L4-007",
+     "title": "Solve for Happy",
+     "author": "Mo Gawdat",
+     "publisher": "Gallery Books",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Solve+for+Happy+Mo+Gawdat",
+     "year": 2017,
+     "year_confidence": "alta",
+     "cover": "L4-007.jpg",
+     "cw": 280,
+     "ch": 426
+    },
+    {
+     "id": "L4-008",
+     "title": "Este dolor no es mío",
+     "author": "Mark Wolynn",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Este+dolor+no+es+m%C3%ADo+Mark+Wolynn",
+     "year": 2016,
+     "year_confidence": "alta",
+     "year_note": "Original: It Didn't Start with You"
+    },
+    {
+     "id": "L4-009",
+     "title": "How to Give Zero F*cks",
+     "author": "Stephen Wildish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=How+to+Give+Zero+F%2Acks+Stephen+Wildish"
+    },
+    {
+     "id": "L4-010",
+     "title": "Zen en el arte del tiro con arco",
+     "author": "Eugen Herrigel",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Zen+en+el+arte+del+tiro+con+arco+Eugen+Herrigel",
+     "year": 1948,
+     "year_confidence": "alta",
+     "year_note": "Publicado en alemán; Herrigel, arquería zen",
+     "cover": "L4-010.jpg",
+     "cw": 280,
+     "ch": 407
+    },
+    {
+     "id": "L4-011",
+     "title": "The Brain That Changes Itself",
+     "author": "Norman Doidge",
+     "publisher": "Penguin",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=The+Brain+That+Changes+Itself+Norman+Doidge",
+     "year": 2007,
+     "year_confidence": "alta",
+     "cover": "L4-011.jpg",
+     "cw": 280,
+     "ch": 420
+    },
+    {
+     "id": "L4-012",
+     "title": "El Arte de la Guerra",
+     "author": "Sun Tzu",
+     "publisher": "Bublok",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Arte+de+la+Guerra+Sun+Tzu",
+     "year": -500,
+     "year_confidence": "aprox",
+     "year_note": "Sun Tzu, siglo V a.C. aprox",
+     "cover": "L4-012.jpg",
+     "cw": 280,
+     "ch": 444
+    },
+    {
+     "id": "L4-013",
+     "title": "Padre Rico Padre Pobre",
+     "author": "Robert T. Kiyosaki",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Padre+Rico+Padre+Pobre+Robert+T.+Kiyosaki",
+     "year": 1997,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "L4-014",
+     "title": "The Doors of Perception",
+     "author": "Aldous Huxley",
+     "series": "Spiritual Classics",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=The+Doors+of+Perception+Aldous+Huxley",
+     "year": 1954,
+     "year_confidence": "alta",
+     "cover": "L4-014.jpg",
+     "cw": 280,
+     "ch": 484
+    },
+    {
+     "id": "L4-015",
+     "title": "El Alquimista",
+     "author": "Paulo Coelho",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Alquimista+Paulo+Coelho",
+     "year": 1988,
+     "year_confidence": "alta",
+     "cover": "L4-015.jpg",
+     "cw": 280,
+     "ch": 427
+    },
+    {
+     "id": "L4-016",
+     "title": "Budismo para principiantes",
+     "author": "Thubten Chodron",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Budismo+para+principiantes+Thubten+Chodron",
+     "cover": "L4-016.jpg",
+     "cw": 280,
+     "ch": 432
+    },
+    {
+     "id": "L4-017",
+     "title": "Jonathan Livingston Seagull",
+     "author": "Richard Bach",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Jonathan+Livingston+Seagull+Richard+Bach",
+     "year": 1970,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "L4-018",
+     "title": "The Prophet",
+     "author": "Kahlil Gibran",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=The+Prophet+Kahlil+Gibran",
+     "year": 1923,
+     "year_confidence": "alta",
+     "cover": "L4-018.jpg",
+     "cw": 280,
+     "ch": 376
+    },
+    {
+     "id": "L4-019",
+     "title": "Big Magic",
+     "author": "Elizabeth Gilbert",
+     "publisher": "Riverhead Books",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Big+Magic+Elizabeth+Gilbert",
+     "year": 2015,
+     "year_confidence": "alta",
+     "cover": "L4-019.jpg",
+     "cw": 280,
+     "ch": 445
+    },
+    {
+     "id": "L4-026",
+     "title": "Cómo hacer que te pasen cosas buenas",
+     "author": "Marian Rojas Estapé",
+     "topics": [
+      "wisdom"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Espasa, lomo blanco; entre Big Magic y La llamada del coraje.",
+     "cover": "L4-026.jpg",
+     "cw": 280,
+     "ch": 456
+    },
+    {
+     "id": "L4-020",
+     "title": "La Llamada del Coraje",
+     "author": "Ryan Holiday",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Llamada+del+Coraje+Ryan+Holiday",
+     "year": 2021,
+     "year_confidence": "alta",
+     "year_note": "Original: Courage Is Calling"
+    },
+    {
+     "id": "L4-021",
+     "title": "The Art of Happiness (10th Anniversary Edition)",
+     "author": "Dalai Lama & Howard C. Cutler, M.D.",
+     "publisher": "Riverhead Books",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=The+Art+of+Happiness+%2810th+Anniversary+Edition%29+Dalai+Lama+%26+Howard+C.+Cutler%2C+M.D.",
+     "year": 1998,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "L4-022",
+     "title": "The Boy, the Mole, the Fox and the Horse",
+     "author": "Charlie Mackesy",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=The+Boy%2C+the+Mole%2C+the+Fox+and+the+Horse+Charlie+Mackesy",
+     "year": 2019,
+     "year_confidence": "alta",
+     "cover": "L4-022.jpg",
+     "cw": 280,
+     "ch": 280
+    },
+    {
+     "id": "L4-023",
+     "title": "Siddhartha",
+     "author": "Hermann Hesse",
+     "topics": [
+      "wisdom"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Siddhartha+Hermann+Hesse",
+     "year": 1922,
+     "year_confidence": "alta",
+     "cover": "L4-023.jpg",
+     "cw": 280,
+     "ch": 436
+    },
+    {
+     "id": "L4-024",
+     "title": "El Principito",
+     "author": "Antoine de Saint-Exupéry",
+     "language": "Spanish",
+     "topics": [
+      "wisdom"
+     ],
+     "note": "Partial spine visible at end of shelf",
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Principito+Antoine+de+Saint-Exup%C3%A9ry",
+     "year": 1943,
+     "year_confidence": "alta",
+     "cover": "L4-024.jpg",
+     "cw": 280,
+     "ch": 393
+    },
+    {
+     "id": "L4-027",
+     "title": "Siete breves lecciones de física",
+     "author": "Carlo Rovelli",
+     "topics": [
+      "wisdom",
+      "science"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Anagrama Compactos nº 709."
+    },
+    {
+     "id": "L4-028",
+     "title": "Deshacer la ansiedad",
+     "author": "Judson Brewer",
+     "topics": [
+      "wisdom"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Booket, aún envuelto en film; último del estante.",
+     "cover": "L4-028.jpg",
+     "cw": 280,
+     "ch": 429
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "label": "Left column, shelf 5",
+   "theme": "Astronomy and cosmology",
+   "books": [
+    {
+     "id": "L5-001",
+     "title": "Astronomía para todos",
+     "author": "unknown",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "note": "Spine partially obscured",
+     "price": "NotFound",
+     "buy_url": "https://www.iberlibro.com/servlet/SearchResults?sts=t&tn=Astronom%C3%ADa+para+todos"
+    },
+    {
+     "id": "L5-002",
+     "title": "Manual de Astronomía",
+     "author": "Ignacio Puig, S.J.",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 25",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/manual-de-astronomia/autor/ignacio-puig/"
+    },
+    {
+     "id": "L5-003",
+     "title": "Los Mundos Lejanos (Segunda edición)",
+     "author": "Bruno H. Bürgel",
+     "publisher": "Hachette (likely Argentine ed.)",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/los-mundos-lejanos/autor/burgel/"
+    },
+    {
+     "id": "L5-004",
+     "title": "Theories of the Universe",
+     "author": "Milton K. Munitz (ed.)",
+     "publisher": "Free Press",
+     "topics": [
+      "astronomy"
+     ],
+     "note": "Anthology incl. Eddington, Einstein, Galileo, Gamow, Herschel, Hoyle, Hubble, Huygens, Kant, Kepler, Lemaître, Lucretius, Newton, Plato, Ptolemy",
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/book-search/title/theories-of-the-universe/author/munitz/",
+     "year": 1957,
+     "year_confidence": "aprox",
+     "year_note": "Antología Munitz: de Platón y Lucrecio a Lemaître y Hoyle",
+     "cover": "L5-004.jpg",
+     "cw": 280,
+     "ch": 430
+    },
+    {
+     "id": "L5-005",
+     "title": "Exploring the Heavens",
+     "author": "Dr. Clyde Fisher",
+     "publisher": "Crowell",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/book-search/title/exploring-the-heavens/author/clyde-fisher/",
+     "cover": "L5-005.jpg",
+     "cw": 280,
+     "ch": 453
+    },
+    {
+     "id": "L5-006",
+     "title": "Los Sistemas del Mundo",
+     "author": "S.A. Gurev",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/los-sistemas-del-mundo/autor/gurev/"
+    },
+    {
+     "id": "L5-007",
+     "title": "A Brief History of Time",
+     "author": "Stephen W. Hawking",
+     "publisher": "Bantam",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=A+Brief+History+of+Time+Stephen+W.+Hawking",
+     "year": 1988,
+     "year_confidence": "alta",
+     "cover": "L5-007.jpg",
+     "cw": 280,
+     "ch": 465
+    },
+    {
+     "id": "L5-008",
+     "title": "Nueva Imagen del Universo",
+     "author": "George W. Gray",
+     "publisher": "Librería Hachette",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/NUEVA-IMAGEN-UNIVERSO-GRAY-George-W/6083577902/bd"
+    },
+    {
+     "id": "L5-009",
+     "title": "Stars, Men and Atoms",
+     "author": "Heinz Haber",
+     "publisher": "Golden Press",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/book-search/title/stars-men-and-atoms/author/heinz-haber/",
+     "cover": "L5-009.jpg",
+     "cw": 280,
+     "ch": 409
+    },
+    {
+     "id": "L5-010",
+     "title": "Galileo",
+     "author": "unknown",
+     "publisher": "Basic Books?",
+     "topics": [
+      "astronomy"
+     ],
+     "note": "Title 'GALILEO' visible vertically, author/publisher unclear",
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/book-search/title/galileo/"
+    },
+    {
+     "id": "L5-011",
+     "title": "Nueve Planetas",
+     "author": "Alan E. Nourse",
+     "publisher": "Editorial Roble",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/nueve-planetas/autor/nourse/"
+    },
+    {
+     "id": "L5-012",
+     "title": "Biografía de la Tierra",
+     "author": "George Gamow",
+     "publisher": "Espasa-Calpe",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/biografia-de-la-tierra/autor/gamow/",
+     "year": 1941,
+     "year_confidence": "aprox",
+     "year_note": "Gamow, A Biography of Earth"
+    },
+    {
+     "id": "L5-013",
+     "title": "La Vida en otros mundos",
+     "author": "Sir Harold Spencer Jones",
+     "publisher": "Espasa-Calpe Argentina",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/la-vida-en-otros-mundos/autor/spencer-jones/",
+     "year": 1940,
+     "year_confidence": "aprox",
+     "year_note": "Spencer Jones fue Astrónomo Real"
+    },
+    {
+     "id": "L5-014",
+     "title": "Entre los... (Espasa-Calpe)",
+     "author": "Fletcher",
+     "topics": [
+      "astronomy"
+     ],
+     "note": "Partial title; likely 'Entre los planetas' or similar",
+     "price": "USD 15",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/entre-los-planetas/autor/fletcher-watson/"
+    },
+    {
+     "id": "L5-015",
+     "title": "The Modern Universe",
+     "author": "Raymond A. Lyttleton",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/book-search/title/the-modern-universe/author/lyttleton/"
+    },
+    {
+     "id": "L5-016",
+     "title": "The Creation of the Universe",
+     "author": "George Gamow",
+     "publisher": "The Viking Press",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/book-search/title/creation-universe/author/gamow/",
+     "year": 1952,
+     "year_confidence": "alta",
+     "cover": "L5-016.jpg",
+     "cw": 280,
+     "ch": 439
+    },
+    {
+     "id": "L5-017",
+     "title": "The Royal Observatory, Greenwich",
+     "author": "Sir Harold Spencer Jones",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/book-search/title/royal-observatory-greenwich/author/spencer-jones/"
+    },
+    {
+     "id": "L5-018",
+     "title": "La Última Sensación del Siglo XX",
+     "author": "Z. Oyarzábal",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "note": "Buenos Aires 1946",
+     "price": "NotFound",
+     "buy_url": "https://www.iberlibro.com/servlet/SearchResults?sts=t&tn=La+%C3%9Altima+Sensaci%C3%B3n+del+Siglo+XX+Oyarz%C3%A1bal",
+     "year": 1946,
+     "year_confidence": "aprox",
+     "year_note": "La ficha dice Buenos Aires 1946"
+    },
+    {
+     "id": "L5-019",
+     "title": "La Vía Láctea",
+     "author": "Bart J. Bok y Priscilla F. Bok",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.iberlibro.com/LACTEA-Bok-Bart-J-Priscilla-F/697308793/bd",
+     "year": 1941,
+     "year_confidence": "aprox",
+     "year_note": "Bart y Priscilla Bok, matrimonio de astrónomos"
+    },
+    {
+     "id": "L5-020",
+     "title": "Átomos, estrellas y nebulosas",
+     "author": "Goldberg",
+     "topics": [
+      "astronomy"
+     ],
+     "note": "Re-catalogación 2026-08: el lomo termina en «…LDBERG» — autor corregido (antes «Goldsby (?)»).",
+     "price": "NotFound",
+     "buy_url": "https://www.iberlibro.com/servlet/SearchResults?sts=t&tn=%C3%81tomos+estrellas+y+nebulosas"
+    },
+    {
+     "id": "L5-021",
+     "title": "Tierra, Luna y Planetas",
+     "author": "Fred L. Whipple",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/tierra-luna-y-planetas/autor/whipple/",
+     "year": 1941,
+     "year_confidence": "aprox"
+    },
+    {
+     "id": "L5-022",
+     "title": "La Astronomía en el Antiguo Testamento",
+     "author": "Juan Chiapar Lloy (?)",
+     "series": "Colección Austral 526",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/la-astronomia-en-el-antiguo-testamento/autor/juan-v-schiaparelli/"
+    },
+    {
+     "id": "L5-023",
+     "title": "Más allá del Sol — La estructura del universo",
+     "author": "Desiderio Papp",
+     "series": "Colección Austral 443",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.iberlibro.com/M%C3%A1s-all%C3%A1-sol-Papp-Desiderio-1895-1993/30873080597/bd"
+    },
+    {
+     "id": "L5-024",
+     "title": "Frontiers of Astronomy",
+     "author": "Fred Hoyle",
+     "publisher": "Signet T2309",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/book-search/title/frontiers-of-astronomy/author/fred-hoyle/",
+     "year": 1955,
+     "year_confidence": "alta",
+     "cover": "L5-024.jpg",
+     "cw": 280,
+     "ch": 435
+    },
+    {
+     "id": "L5-025",
+     "title": "The Birth and Death of the Sun",
+     "author": "George Gamow",
+     "publisher": "Mentor MD120",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/book-search/title/the-birth-and-death-of-the-sun/author/george-gamow/",
+     "year": 1940,
+     "year_confidence": "alta",
+     "cover": "L5-025.jpg",
+     "cw": 280,
+     "ch": 442
+    },
+    {
+     "id": "L5-026",
+     "title": "Of Time and Space and Other Things",
+     "author": "Isaac Asimov",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 9",
+     "buy_url": "https://www.abebooks.com/9780380003259/Time-Space-Things-Asimov-Isaac-0380003252/plp",
+     "year": 1965,
+     "year_confidence": "alta",
+     "cover": "L5-026.jpg",
+     "cw": 280,
+     "ch": 496
+    },
+    {
+     "id": "L5-027",
+     "title": "The Origin of the Earth",
+     "author": "W.M. Smart",
+     "publisher": "Pelican A339",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/book-search/title/the-origin-of-the-earth/author/w-m-smart/",
+     "cover": "L5-027.jpg",
+     "cw": 280,
+     "ch": 462
+    },
+    {
+     "id": "L5-028",
+     "title": "Stargazers",
+     "author": "James T. de Kay",
+     "publisher": "MB 50¢",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/book-search/title/stargazers/author/james-t-de-kay/"
+    },
+    {
+     "id": "L5-029",
+     "title": "La Luna, nuestro satélite natural",
+     "author": "Franklyn M. Branley",
+     "language": "Spanish",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.iberlibro.com/LUNA-NUESTRO-SAT%C3%89LITE-NATURAL-BRANLEY-Franklyn/4919011650/bd"
+    },
+    {
+     "id": "L5-030",
+     "title": "New Handbook of the Heavens",
+     "author": "Hubert J. Bernhard, Dorothy A. Bennett, Hugh S. Rice",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/book-search/title/new-handbook-of-the-heavens/"
+    },
+    {
+     "id": "L5-031",
+     "title": "A Popular Introduction to Astronomy",
+     "publisher": "Mentor MD114, 50¢",
+     "topics": [
+      "astronomy"
+     ],
+     "note": "Spine partially obscured by stacked book",
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?sts=t&tn=popular+introduction+to+astronomy+mentor"
+    },
+    {
+     "id": "L5-032",
+     "title": "Cosmos",
+     "author": "Carl Sagan",
+     "format": "large hardcover",
+     "topics": [
+      "astronomy"
+     ],
+     "price": "USD 25",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Cosmos+Carl+Sagan",
+     "year": 1980,
+     "year_confidence": "alta",
+     "cover": "L5-032.jpg",
+     "cw": 280,
+     "ch": 426
+    },
+    {
+     "id": "L5-MEDIA",
+     "title": "From the Earth to the Moon — The Signature Edition (DVD set)",
+     "publisher": "HBO / Tom Hanks / Imagine Entertainment",
+     "format": "boxed DVD set (12 episodes, 12 hours)",
+     "topics": [
+      "astronomy"
+     ],
+     "buy_url": "https://listado.mercadolibre.com.uy/from-the-earth-to-the-moon-the-signature-edition-dvd-set",
+     "cover": "L5-MEDIA.jpg",
+     "cw": 280,
+     "ch": 416
+    }
+   ]
+  },
+  {
+   "id": "L6",
+   "label": "Left column, shelf 6",
+   "theme": "Uruguay & Montevideo history",
+   "books": [
+    {
+     "id": "L6-001",
+     "title": "Viaje al Antiguo Montevideo: Retrospectiva gráfico-testimonial",
+     "author": "Carlos Menck Freire / Juan Antonio Varese",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: el lomo dice «Menck», no «Merck».",
+     "price": "USD 32",
+     "buy_url": "https://www.libreriapocho.com.uy/products/viaje-al-antiguo-montevideo-varese-menck-freire"
+    },
+    {
+     "id": "L6-002",
+     "title": "Nomenclatura de Montevideo",
+     "author": "Alfredo R. Castellanos",
+     "publisher": "Concejo Departamental de Montevideo, 1962",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 20",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/autor/alfredo-castellanos/titulo/nomenclatura-de-montevideo"
+    },
+    {
+     "id": "L6-003",
+     "title": "Nomenclatura de Montevideo (second copy)",
+     "author": "Alfredo R. Castellanos",
+     "publisher": "Concejo Departamental de Montevideo, 1962",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 20",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/autor/alfredo-castellanos/titulo/nomenclatura-de-montevideo"
+    },
+    {
+     "id": "L6-004",
+     "title": "El Primer Observatorio de Montevideo",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.libreriapocho.com.uy/search?q=primer+observatorio+montevideo"
+    },
+    {
+     "id": "L6-005",
+     "title": "Nomenclatura de Montevideo — Designaciones 1985-1989",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://anaforas.fic.edu.uy/jspui/handle/123456789/5626"
+    },
+    {
+     "id": "L6-006",
+     "title": "Nomenclatura de Montevideo — Designaciones 1990-1994",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://anaforas.fic.edu.uy/jspui/handle/123456789/5626"
+    },
+    {
+     "id": "L6-007",
+     "title": "Historia del Desarrollo Edilicio y Urbanístico de Montevideo (1829-1914)",
+     "author": "Alfredo R. Castellanos",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/autor/alfredo-castellanos/titulo/historia-desarrollo-edilicio"
+    },
+    {
+     "id": "L6-008",
+     "title": "Montevideo es así — Historia de sus calles",
+     "author": "Ricardo Goldaracena",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://books.google.com/books/about/Montevideo_es_as%C3%AD.html?id=D4hxAAAAMAAJ"
+    },
+    {
+     "id": "L6-009",
+     "title": "Cabalgando en la Frontera — Historia de los Blandengues Orientales",
+     "publisher": "Banda Oriental",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://pmb.parlamento.gub.uy/pmb/opac_css/index.php?lvl=notice_display&id=25638"
+    },
+    {
+     "id": "L6-010",
+     "title": "Boulevard Sarandí",
+     "author": "Milton Schinca",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://tremendoslibros.com/libro/boulevard-sarandi-2-250-anos-de-montevideo-anecdotas-gentes-sucesos/"
+    },
+    {
+     "id": "L6-011",
+     "title": "Punta Carretas: dos siglos de historia",
+     "author": "María Teresa Scaron",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: título y autora corregidos leyendo el lomo.",
+     "price": "USD 18",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/autor/pivel-devoto/titulo/dos-siglos"
+    },
+    {
+     "id": "L6-012",
+     "title": "Una historia silenciada: las relaciones diplomáticas de España y Uruguay durante el primer franquismo (1936-1955), Tomo II",
+     "author": "Carlos Zubillaga",
+     "publisher": "PEITHO – Sociedad de Análisis Político",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: título/autor estaban cruzados con L6-013 (el lomo amarillo es Zubillaga).",
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/relaciones-diplomaticas-espana-uruguay/autor/goodman"
+    },
+    {
+     "id": "L6-013",
+     "title": "Los militares y la democracia: el futuro de las relaciones cívico-militares en América Latina",
+     "author": "Goodman / Mendelson / Rial",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: título/autor estaban cruzados con L6-012.",
+     "price": "USD 18",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/autor/carlos-zubillaga/titulo/historia-silenciada-militares"
+    },
+    {
+     "id": "L6-014",
+     "title": "Historia del Uruguay, Tomo II",
+     "author": "M.L. Cooligham & M. Schurmann",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: posible entrada fantasma — solo hay UN Coolighan/Schurmann en el estante y la etiqueta «Tomo II» pertenece al lomo de Zubillaga (L6-012).",
+     "price": "USD 12",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/autor/cooligham-schurmann/titulo/historia-del-uruguay"
+    },
+    {
+     "id": "L6-015",
+     "title": "Historia del Uruguay (red volume)",
+     "author": "M.L. Cooligham & M. Schurmann",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/autor/cooligham-schurmann/titulo/historia-del-uruguay"
+    },
+    {
+     "id": "L6-016",
+     "title": "The Battle of the River Plate",
+     "author": "Dudley Pope",
+     "publisher": "Alison Press / Secker & Warburg",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/9780436377501/Battle-River-Plate-Pope-Dudley-0436377500/plp",
+     "year": 1956,
+     "year_confidence": "aprox",
+     "year_note": "Dudley Pope sobre el Graf Spee, diciembre de 1939 frente a Montevideo"
+    },
+    {
+     "id": "L6-017",
+     "title": "Charlas del Abuelo",
+     "author": "Roberto J. Ellis",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://listado.mercadolibre.com.uy/charlas-abuelo-ellis"
+    },
+    {
+     "id": "L6-018",
+     "title": "La Banda Oriental en la lucha de los imperios (1947)",
+     "author": "José Claudio Williman (h) & Carlos Panizza Pons",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.mercadolibre.com.uy/historia-uruguaya-tomo-1-segunda-parte-1503-1810-la-banda-oriental-en-la-lucha-de-los-imperios-de-jose-claudio-williman-editorial-ediciones-banda-oriental-edicion-1-en-espanol/p/MLU30089409"
+    },
+    {
+     "id": "L6-019",
+     "title": "Rosas y Montevideo",
+     "author": "Jacques Duprey",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: confirma «Duprey» (el catálogo dudaba «Dupley»).",
+     "price": "USD 18",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/rosas-y-montevideo/autor/dumas"
+    },
+    {
+     "id": "L6-020",
+     "title": "El Gaucho Florido",
+     "author": "Carlos Reyles",
+     "language": "Spanish",
+     "format": "antique novel, crumbling spine",
+     "topics": [
+      "uruguay",
+      "latin-american"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/el-gaucho-florido/autor/reyles-carlos/"
+    },
+    {
+     "id": "L6-021",
+     "title": "Purpúreo está el 'Río como mar'",
+     "author": "Carlos M. Princivalle",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 20",
+     "buy_url": "https://listado.mercadolibre.com.uy/princivalle-purpureo-rio-mar"
+    },
+    {
+     "id": "L6-022",
+     "title": "La vida cotidiana en la colonia",
+     "author": "Washington Lockhart",
+     "publisher": "ARCA",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://es.wikipedia.org/wiki/Washington_Lockhart"
+    },
+    {
+     "id": "L6-023",
+     "title": "Negros esclavos y negros libres",
+     "author": "Isabel Barreto Mesano (?)",
+     "series": "Caminos de ayer",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://listado.mercadolibre.com.uy/negros-esclavos-libres-caminos-ayer"
+    },
+    {
+     "id": "L6-024",
+     "title": "Educación Cívica",
+     "author": "Enrique Vescovi (?)",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://listado.mercadolibre.com.uy/educacion-civica-vescovi"
+    },
+    {
+     "id": "L6-025",
+     "title": "Mitos, Leyendas y Tradiciones de la Banda Oriental",
+     "author": "Gonzalo Abella",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://puroverso.uy/producto/mitos-leyendas-y-tradiciones-de-la-banda-oriental/",
+     "cover": "L6-025.jpg",
+     "cw": 128,
+     "ch": 191
+    },
+    {
+     "id": "L6-026",
+     "title": "Personajes de mi pueblo",
+     "author": "Emilio Carlos Tacconi",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://listado.mercadolibre.com.uy/tacconi-personajes-mi-pueblo"
+    },
+    {
+     "id": "L6-027",
+     "title": "Los Hacedores",
+     "author": "Juan Ackermann",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://es.wikipedia.org/wiki/Juan_Antonio_Ackermann"
+    },
+    {
+     "id": "L6-028",
+     "title": "Rivera",
+     "publisher": "El País – Banda Oriental, vol. 3",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (L6 fotografiado completo); puede estar en fila trasera o haberse mudado.",
+     "price": "USD 12",
+     "buy_url": "https://www.bandaoriental.com.uy/shop/"
+    },
+    {
+     "id": "L6-029",
+     "title": "Lavalleja",
+     "publisher": "El País – Banda Oriental, vol. 2",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (L6 fotografiado completo); puede estar en fila trasera o haberse mudado.",
+     "price": "USD 12",
+     "buy_url": "https://www.bandaoriental.com.uy/shop/"
+    },
+    {
+     "id": "L6-030",
+     "title": "El País — Fernando Assunção, vol. 6",
+     "author": "Fernando Assunção",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (L6 fotografiado completo); puede estar en fila trasera o haberse mudado.",
+     "price": "USD 14",
+     "buy_url": "https://listado.mercadolibre.com.uy/assuncao-el-pais-vol-6"
+    },
+    {
+     "id": "L6-031",
+     "title": "Historias de la vida privada en el Uruguay (1780-1870) — Entre la honra y el desorden",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (L6 fotografiado completo); puede estar en fila trasera o haberse mudado.",
+     "price": "USD 24",
+     "buy_url": "https://tremendoslibros.com/libro/historias-de-la-vida-privada-en-el-uruguay-1/"
+    },
+    {
+     "id": "L6-033",
+     "title": "¿Cuántos eran los...?",
+     "author": "Jacinto R. Carranza",
+     "language": "Spanish",
+     "format": "crumbling antique book",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (L6 fotografiado completo); puede estar en fila trasera o haberse mudado.",
+     "price": "NotFound",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/cuantos-eran"
+    }
+   ]
+  },
+  {
+   "id": "L7",
+   "label": "Left column, shelf 7",
+   "theme": "Latinoamericana + Dickens y clásicos ingleses antiguos (llegados en 2026-08)",
+   "books": [
+    {
+     "id": "L7-001",
+     "title": "Cuentos Completos I",
+     "author": "Horacio Quiroga",
+     "language": "Spanish",
+     "format": "boxed set",
+     "topics": [
+      "uruguay",
+      "latin-american"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.libreriahernandez.com/l/cuentos-completos/422393/9789507319204"
+    },
+    {
+     "id": "L7-002",
+     "title": "Cuentos Completos II",
+     "author": "Horacio Quiroga",
+     "language": "Spanish",
+     "format": "boxed set",
+     "topics": [
+      "uruguay",
+      "latin-american"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.libreriahernandez.com/l/cuentos-completos/422393/9789507319204"
+    },
+    {
+     "id": "L7-003",
+     "title": "Obras Completas en colaboración",
+     "author": "Jorge Luis Borges",
+     "publisher": "Emecé",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "latin-american"
+     ],
+     "price": "USD 25",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Obras+Completas+en+colaboraci%C3%B3n+Jorge+Luis+Borges",
+     "cover": "L7-003.jpg",
+     "cw": 280,
+     "ch": 464
+    },
+    {
+     "id": "L7-004",
+     "title": "Cien Años de Soledad (Edición Conmemorativa)",
+     "author": "Gabriel García Márquez",
+     "publisher": "Real Academia Española / Alfaguara",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "latin-american"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Cien+A%C3%B1os+de+Soledad+%28Edici%C3%B3n+Conmemorativa%29+Gabriel+Garc%C3%ADa+M%C3%A1rquez",
+     "cover": "L7-004.jpg",
+     "cw": 280,
+     "ch": 399
+    },
+    {
+     "id": "L7-005",
+     "title": "Los Descendientes de Cristóbal Colón",
+     "author": "Rafael Nieto y Cortadellas",
+     "publisher": "Sociedad Colón Panamericana",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "latin-american",
+      "genealogy"
+     ],
+     "price": "USD 120",
+     "buy_url": "https://www.buscalibre.cl/libro-los-descendientes-de-cristobal-colon/1088093/p/1088093"
+    },
+    {
+     "id": "L7-006",
+     "title": "Martín Fierro '72",
+     "author": "José Hernández",
+     "binding": "gold cloth",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "latin-american"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/martin-fierro/autor/jose-hernandez"
+    },
+    {
+     "id": "L7-007",
+     "title": "Manon Lescaut",
+     "author": "L'Abbé Prévost",
+     "binding": "antique maroon leather",
+     "language": "French",
+     "topics": [
+      "uruguay",
+      "classics",
+      "latin-american"
+     ],
+     "price": "USD 28",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/manon-lescaut/autor/prevost",
+     "cover": "L7-007.jpg",
+     "cw": 280,
+     "ch": 438
+    },
+    {
+     "id": "L7-008",
+     "title": "Martín Fierro",
+     "author": "José Hernández",
+     "binding": "black with gold lettering",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "latin-american"
+     ],
+     "note": "Behind boxed Quiroga set",
+     "price": "USD 18",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/martin-fierro/autor/jose-hernandez",
+     "year": 1872,
+     "year_confidence": "alta",
+     "year_note": "La ida 1872; La vuelta de Martín Fierro 1879",
+     "cover": "L7-008.jpg",
+     "cw": 280,
+     "ch": 403
+    },
+    {
+     "id": "L3-050",
+     "title": "Oliver Twist",
+     "author": "Charles Dickens",
+     "binding": "dark green cloth",
+     "topics": [
+      "shakespeare"
+     ],
+     "note": "Re-catalogación 2026-08: identificado — Chapman & Hall, tela verde; mudado a L7, apilado bajo las jarras de peltre.",
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=chapman+hall+shakespeare",
+     "cover": "L3-050.jpg",
+     "cw": 280,
+     "ch": 429
+    },
+    {
+     "id": "L3-051",
+     "title": "Barnaby Rudge",
+     "author": "Charles Dickens",
+     "binding": "dark green cloth",
+     "topics": [
+      "shakespeare"
+     ],
+     "note": "Re-catalogación 2026-08: identificado — Chapman & Hall, tela verde; mudado a L7, apilado bajo las jarras de peltre.",
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=chapman+hall+shakespeare",
+     "cover": "L3-051.jpg",
+     "cw": 280,
+     "ch": 419
+    },
+    {
+     "id": "L7-009",
+     "title": "Ivanhoe",
+     "author": "Sir Walter Scott",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Collins, tela granate con dorados; procedencia probable: la fila anónima M8-002.",
+     "cover": "L7-009.jpg",
+     "cw": 280,
+     "ch": 442
+    },
+    {
+     "id": "L7-010",
+     "title": "Jane Eyre",
+     "author": "Charlotte Brontë",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Nelson, tela azul oscura; procedencia probable: la fila anónima M8-002.",
+     "cover": "L7-010.jpg",
+     "cw": 280,
+     "ch": 458
+    },
+    {
+     "id": "L7-011",
+     "title": "The Old Curiosity Shop, Vol. I",
+     "author": "Charles Dickens",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Tela verde muy gastada; procedencia probable: la fila anónima M8-002."
+    },
+    {
+     "id": "L7-012",
+     "title": "The Refugees",
+     "author": "Arthur Conan Doyle",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Nelson, lomo rosado gastado.",
+     "cover": "L7-012.jpg",
+     "cw": 280,
+     "ch": 431
+    },
+    {
+     "id": "L7-013",
+     "title": "Sense and Sensibility",
+     "author": "Jane Austen",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Caligrafía dorada sobre tela verde azulada.",
+     "cover": "L7-013.jpg",
+     "cw": 280,
+     "ch": 442
+    }
+   ]
+  },
+  {
+   "id": "L8",
+   "label": "Left column, bottom shelf",
+   "theme": "Uruguay photo books and archives + fascículos y prensa de El País (bajados de L6)",
+   "books": [
+    {
+     "id": "L8-001",
+     "title": "El álbum de figuritas — Cien años en el Uruguay",
+     "author": "Marcos Silvera Antúnez",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 28",
+     "buy_url": "https://isbn.cloud/9789974553200/el-album-de-figuritas/"
+    },
+    {
+     "id": "L8-002",
+     "title": "Arqueología de las Tierras Bajas",
+     "publisher": "Ministerio de Educación y Cultura, Uruguay",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 25",
+     "buy_url": "https://listado.mercadolibre.com.uy/arqueologia-tierras-bajas"
+    },
+    {
+     "id": "L8-003",
+     "title": "Carrasco — El misterioso encanto de un barrio",
+     "author": "Caubarrère & Monzón",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://listado.mercadolibre.com.uy/carrasco-misterioso-encanto-caubarrere-monzon"
+    },
+    {
+     "id": "L8-004",
+     "title": "UNK-L8-004",
+     "binding": "red folio, no title visible",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "NotFound",
+     "buy_url": "https://listado.mercadolibre.com.uy/uruguay-fotos-album"
+    },
+    {
+     "id": "L8-005",
+     "title": "Historia del Uruguay en imágenes",
+     "publisher": "El País / BSE Banco de Seguros",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 35",
+     "buy_url": "https://listado.mercadolibre.com.uy/historia-uruguay-imagenes-el-pais"
+    },
+    {
+     "id": "L8-006",
+     "title": "Mil Fotos Rescatadas del Olvido — 90 años El País (1918-2008)",
+     "publisher": "El País",
+     "language": "Spanish",
+     "format": "9-volume boxed set",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 90",
+     "buy_url": "https://articulo.mercadolibre.com.uy/MLU-466085290-mil-fotos-rescatadas-del-olvido-90-anos-el-pais-9-tomos-_JM"
+    },
+    {
+     "id": "L8-007",
+     "title": "Old newspaper bundles (El País and others)",
+     "format": "stacked antique newspapers",
+     "topics": [
+      "uruguay"
+     ],
+     "buy_url": "https://listado.mercadolibre.com.uy/old-newspaper-bundles-el-pa%C3%ADs-and-others"
+    },
+    {
+     "id": "L6-032",
+     "title": "Prudencio Vázquez y Vega — Estudios, Selección de Textos y Discursos",
+     "language": "Spanish",
+     "topics": [
+      "uruguay"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://listado.mercadolibre.com.uy/prudencio-vazquez-vega"
+    },
+    {
+     "id": "L6-MEDIA",
+     "title": "Uruguay El País y sus 19 Departamentos (DVD set, 19 discs)",
+     "language": "Spanish",
+     "format": "complete DVD set: Maldonado, Rocha, Cerro Largo, Canelones, Salto, Paysandú, Colonia, Rivera, San José, Durazno, Tacuarembó, Río Negro, Florida, Lavalleja, Soriano, Artigas, Flores, Montevideo, Treinta y Tres",
+     "topics": [
+      "uruguay"
+     ],
+     "buy_url": "https://listado.mercadolibre.com.uy/uruguay-el-pa%C3%ADs-y-sus-19-departamentos-dvd-set-19-discs"
+    }
+   ]
+  },
+  {
+   "id": "M1",
+   "label": "Middle column, top shelf",
+   "theme": "Travel mug display (decorative)",
+   "books": []
+  },
+  {
+   "id": "M2",
+   "label": "Middle column, shelf 2",
+   "theme": "Large-format art books (top stack) — el estante es ahora exhibición egipcia; los libros siguen fichados acá hasta ubicarlos",
+   "books": [
+    {
+     "id": "M2-001",
+     "title": "La Última Cena (Leonardo)",
+     "author": "Leonardo da Vinci (subject)",
+     "language": "Spanish/Italian",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (piezas egipcias); ubicación a confirmar.",
+     "price": "USD 35",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=last+supper+leonardo+oversize"
+    },
+    {
+     "id": "M2-002",
+     "title": "Picasso (Hebrew edition)",
+     "binding": "tan cloth with Picasso's signature on spine",
+     "language": "Hebrew",
+     "topics": [
+      "art"
+     ],
+     "note": "Spine reads פיכאסו — Re-catalogación 2026-08: no visto — el estante es ahora exhibición (piezas egipcias); ubicación a confirmar.",
+     "price": "USD 30",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=picasso+hebrew+oversize"
+    },
+    {
+     "id": "M2-003",
+     "title": "Vincent — Vol. I",
+     "author": "Julius Meier-Graefe",
+     "binding": "tan cloth",
+     "topics": [
+      "art"
+     ],
+     "note": "Biography of Van Gogh — Re-catalogación 2026-08: no visto — el estante es ahora exhibición (piezas egipcias); ubicación a confirmar.",
+     "price": "USD 75",
+     "buy_url": "https://www.abebooks.com/Vincent-Text--Tafelband-Meier-Graefe-Julius-Gogh/30618376033/bd"
+    },
+    {
+     "id": "M2-004",
+     "title": "Vincent — Vol. II",
+     "author": "Julius Meier-Graefe",
+     "binding": "tan cloth",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (piezas egipcias); ubicación a confirmar.",
+     "price": "USD 75",
+     "buy_url": "https://www.abebooks.com/Vincent-Text--Tafelband-Meier-Graefe-Julius-Gogh/30618376033/bd"
+    },
+    {
+     "id": "M2-005",
+     "title": "Rembrandt",
+     "publisher": "Reynal & Co. (0162)",
+     "format": "oversized hardcover",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (piezas egipcias); ubicación a confirmar.",
+     "price": "USD 30",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=rembrandt+reynal+company+oversize",
+     "cover": "M2-005.jpg",
+     "cw": 280,
+     "ch": 307
+    }
+   ]
+  },
+  {
+   "id": "M3",
+   "label": "Middle column, shelf 3",
+   "theme": "Art monographs & history — el estante es ahora la vitrina de Funkos de FRIENDS; los libros siguen fichados acá hasta ubicarlos",
+   "books": [
+    {
+     "id": "M3-001",
+     "title": "Vincent van Gogh",
+     "binding": "white spine",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 28",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=vincent+van+gogh+monograph",
+     "cover": "M3-001.jpg",
+     "cw": 128,
+     "ch": 180
+    },
+    {
+     "id": "M3-002",
+     "title": "Gombrich – Historia del Arte",
+     "author": "E.H. Gombrich (transl. by Garriga)",
+     "language": "Spanish",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 45",
+     "buy_url": "https://www.amazon.es/Historia-Del-Arte-16%C2%AA-Edici%C3%B3n/dp/0714898708",
+     "cover": "M3-002.jpg",
+     "cw": 280,
+     "ch": 393
+    },
+    {
+     "id": "M3-003",
+     "title": "Pintura Uruguaya",
+     "publisher": "Capital AFAP",
+     "language": "Spanish",
+     "topics": [
+      "art",
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 25",
+     "buy_url": "https://libreriaambulanteuruguay.com/products/pintura-uruguaya"
+    },
+    {
+     "id": "M3-004",
+     "title": "Van Gogh's 'Diary'",
+     "publisher": "Meridian 3",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 16",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=van+gogh+diary+meridian"
+    },
+    {
+     "id": "M3-005",
+     "title": "Museo del Prado I",
+     "language": "Spanish",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 25",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=museo+del+prado"
+    },
+    {
+     "id": "M3-006",
+     "title": "Henry Moore: Hacia el Futuro en el Museo Nacional de Artes Visuales",
+     "language": "Spanish",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 30",
+     "buy_url": "https://mnav.gub.uy/cms.php?c=118",
+     "cover": "M3-006.jpg",
+     "cw": 280,
+     "ch": 345
+    },
+    {
+     "id": "M3-007",
+     "title": "El azulejo en la arquitectura del Río de la Plata, Siglos XVIII y XIX",
+     "language": "Spanish",
+     "topics": [
+      "art",
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 35",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=azulejo+arquitectura+rio+plata"
+    },
+    {
+     "id": "M3-008",
+     "title": "Obras desaparecidas en el incendio del MAM — Torres-García",
+     "language": "Spanish",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 40",
+     "buy_url": "https://mnav.gub.uy/cms.php?c=118"
+    },
+    {
+     "id": "M3-009",
+     "title": "Velázquez",
+     "binding": "art monograph",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 22",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=velazquez+art+monograph",
+     "cover": "M3-009.jpg",
+     "cw": 280,
+     "ch": 367
+    },
+    {
+     "id": "M3-010",
+     "title": "Auguste Rodin",
+     "binding": "red large-format",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 22",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=auguste+rodin+art+monograph",
+     "cover": "M3-010.jpg",
+     "cw": 280,
+     "ch": 436
+    },
+    {
+     "id": "M3-011",
+     "title": "Leonardo da Vinci",
+     "binding": "black large-format",
+     "topics": [
+      "art"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (Funkos de FRIENDS); ubicación a confirmar.",
+     "price": "USD 25",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=leonardo+da+vinci+art+monograph",
+     "cover": "M3-011.jpg",
+     "cw": 230,
+     "ch": 346
+    }
+   ]
+  },
+  {
+   "id": "M4",
+   "label": "Middle column, shelf 4",
+   "theme": "Mentor UNESCO World Art Series (complete-ish set) — ahora exhibición (portarretratos y velas); la serie Mentor-UNESCO vive en M7 desde 2026-08",
+   "books": []
+  },
+  {
+   "id": "M5",
+   "label": "Middle column, shelf 5",
+   "theme": "Misterio y cozy mystery — el set Sherlock completo, la colección Alma y thrillers (estante reordenado en 2026-08)",
+   "books": [
+    {
+     "id": "M5-033",
+     "title": "El Libro de Sherlock Holmes",
+     "author": "DK (ed.)",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Re-catalogación 2026-08: alta — DK, lomo negro con letras doradas; abre la fila Sherlock."
+    },
+    {
+     "id": "M5-034",
+     "title": "Su Último Saludo",
+     "author": "Arthur Conan Doyle",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Alma Clásicos, lomo violeta.",
+     "cover": "M5-034.jpg",
+     "cw": 280,
+     "ch": 412
+    },
+    {
+     "id": "M5-006",
+     "title": "El Regreso de Sherlock Holmes",
+     "author": "Arthur Conan Doyle",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Regreso+de+Sherlock+Holmes+Arthur+Conan+Doyle",
+     "year": 1905,
+     "year_confidence": "alta",
+     "year_note": "El regreso oficial de Holmes tras Reichenbach",
+     "cover": "M5-006.jpg",
+     "cw": 280,
+     "ch": 442
+    },
+    {
+     "id": "M5-004",
+     "title": "El Perro de los Baskerville",
+     "author": "Arthur Conan Doyle",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Perro+de+los+Baskerville+Arthur+Conan+Doyle",
+     "year": 1902,
+     "year_confidence": "alta",
+     "year_note": "Publicada tras 'matar' a Holmes en 1893, pero ambientada antes de Reichenbach; la resurrección real es M5-006 (relatos de 1903, libro 1905)",
+     "cover": "M5-004.jpg",
+     "cw": 280,
+     "ch": 386
+    },
+    {
+     "id": "M5-035",
+     "title": "Las Memorias de Sherlock Holmes",
+     "author": "Arthur Conan Doyle",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Alma Clásicos, lomo verde azulado.",
+     "cover": "M5-035.jpg",
+     "cw": 280,
+     "ch": 458
+    },
+    {
+     "id": "M5-036",
+     "title": "Las Aventuras de Sherlock Holmes",
+     "author": "Arthur Conan Doyle",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Alma Clásicos, lomo verde oscuro.",
+     "cover": "M5-036.jpg",
+     "cw": 280,
+     "ch": 381
+    },
+    {
+     "id": "M5-011",
+     "title": "Blanca Navidad y café negro",
+     "author": "Cleo Coyle",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Blanca+Navidad+y+caf%C3%A9+negro+Cleo+Coyle"
+    },
+    {
+     "id": "M5-012",
+     "title": "Asesinato entre libros",
+     "author": "Kate Carlisle",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Asesinato+entre+libros+Kate+Carlisle",
+     "cover": "M5-012.jpg",
+     "cw": 280,
+     "ch": 400
+    },
+    {
+     "id": "M5-017",
+     "title": "Mentiras encubiertas",
+     "author": "Kate Carlisle",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Mentiras+encubiertas+Kate+Carlisle"
+    },
+    {
+     "id": "M5-037",
+     "title": "Enigma Bajo las Sábanas",
+     "author": "Kate Carlisle",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Colección cozy mystery Alma, lomo gris."
+    },
+    {
+     "id": "M5-038",
+     "title": "Tinta y Sombras",
+     "author": "Ellery Adams",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Colección cozy mystery Alma, lomo gris."
+    },
+    {
+     "id": "M5-015",
+     "title": "El enigma del diario secreto",
+     "author": "Ellery Adams",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+enigma+del+diario+secreto+Ellery+Adams"
+    },
+    {
+     "id": "M5-013",
+     "title": "Secretos entre libros",
+     "author": "Ellery Adams",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Secretos+entre+libros+Ellery+Adams"
+    },
+    {
+     "id": "M5-018",
+     "title": "Misterio en el club de lectura",
+     "author": "Ellery Adams",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Misterio+en+el+club+de+lectura+Ellery+Adams"
+    },
+    {
+     "id": "M5-016",
+     "title": "Un cadáver en Baker Street",
+     "author": "Vicki Delany",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Un+cad%C3%A1ver+en+Baker+Street+Vicki+Delany"
+    },
+    {
+     "id": "M5-014",
+     "title": "Elemental, querida lectora",
+     "author": "Vicki Delany",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Elemental%2C+querida+lectora+Vicki+Delany"
+    },
+    {
+     "id": "M5-019",
+     "title": "Misterio en Egipto",
+     "author": "Elizabeth Peters",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Misterio+en+Egipto+Elizabeth+Peters"
+    },
+    {
+     "id": "M5-021",
+     "title": "They Do It With Mirrors",
+     "author": "Agatha Christie",
+     "publisher": "HarperCollins",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=They+Do+It+With+Mirrors+Agatha+Christie",
+     "year": 1952,
+     "year_confidence": "alta",
+     "cover": "M5-021.jpg",
+     "cw": 280,
+     "ch": 471
+    },
+    {
+     "id": "M5-020",
+     "title": "The Secret of Chimneys",
+     "author": "Agatha Christie",
+     "publisher": "Word Cloud Classics",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=The+Secret+of+Chimneys+Agatha+Christie",
+     "year": 1925,
+     "year_confidence": "alta",
+     "cover": "M5-020.jpg",
+     "cw": 280,
+     "ch": 419
+    },
+    {
+     "id": "M5-025",
+     "title": "The Windsor Knot",
+     "author": "S.J. Bennett",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=The+Windsor+Knot+S.J.+Bennett",
+     "year": 2020,
+     "year_confidence": "alta",
+     "cover": "M5-025.jpg",
+     "cw": 280,
+     "ch": 280
+    },
+    {
+     "id": "M5-026",
+     "title": "A Three Dog Problem",
+     "author": "S.J. Bennett",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=A+Three+Dog+Problem+S.J.+Bennett",
+     "year": 2021,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "M5-039",
+     "title": "El Club del Crimen de los Jueves",
+     "author": "Richard Osman",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Booket, negro con «CRIMEN» en rojo.",
+     "cover": "M5-039.jpg",
+     "cw": 280,
+     "ch": 424
+    },
+    {
+     "id": "M5-024",
+     "title": "El Psicoanalista",
+     "author": "John Katzenbach",
+     "publisher": "B",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Psicoanalista+John+Katzenbach",
+     "year": 2002,
+     "year_confidence": "alta",
+     "year_note": "Original: The Analyst",
+     "cover": "M5-024.jpg",
+     "cw": 280,
+     "ch": 428
+    },
+    {
+     "id": "M5-010",
+     "title": "El envío",
+     "author": "Sebastian Fitzek",
+     "publisher": "B (Ediciones B)",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+env%C3%ADo+Sebastian+Fitzek"
+    },
+    {
+     "id": "M5-003",
+     "title": "Terapia",
+     "author": "Sebastian Fitzek",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Terapia+Sebastian+Fitzek",
+     "year": 2006,
+     "year_confidence": "alta",
+     "year_note": "Die Therapie, debut de Fitzek"
+    },
+    {
+     "id": "M5-007",
+     "title": "Los Secretos de Heap House (Trilogía Iremonger, Libro 1)",
+     "author": "Edward Carey",
+     "publisher": "Blackie Books",
+     "language": "Spanish",
+     "topics": [
+      "mystery",
+      "young-adult"
+     ],
+     "price": "USD 25",
+     "buy_url": "https://www.casadellibro.com/libro-los-secretos-de-heap-house-trilogia-iremonger-1/9788419654335/14013245"
+    },
+    {
+     "id": "M5-001",
+     "title": "La librera detective",
+     "author": "Sue Minix",
+     "publisher": "HarperCollins",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.casadellibro.com/libro-la-librera-detective/9788410640900/16433120"
+    },
+    {
+     "id": "M5-002",
+     "title": "Las alas de Sophie",
+     "author": "Alice Kellen",
+     "language": "Spanish",
+     "topics": [
+      "mystery",
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Las+alas+de+Sophie+Alice+Kellen",
+     "cover": "M5-002.jpg",
+     "cw": 280,
+     "ch": 426
+    },
+    {
+     "id": "M5-005",
+     "title": "Estudio en Escarlata",
+     "author": "Arthur Conan Doyle",
+     "publisher": "Alma",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el resto del set Alma que se reordenó en M5.",
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Estudio+en+Escarlata+Arthur+Conan+Doyle",
+     "year": 1887,
+     "year_confidence": "alta",
+     "year_note": "Primera aparición de Sherlock Holmes",
+     "cover": "M5-005.jpg",
+     "cw": 280,
+     "ch": 395
+    },
+    {
+     "id": "M5-008",
+     "title": "Una Mujer Rebelde (Bridgerton, Libro 3)",
+     "author": "Julia Quinn",
+     "language": "Spanish",
+     "topics": [
+      "mystery",
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Una+Mujer+Rebelde+%28Bridgerton%2C+Libro+3%29+Julia+Quinn",
+     "year": 2001,
+     "year_confidence": "alta",
+     "year_note": "An Offer from a Gentleman"
+    },
+    {
+     "id": "M5-009",
+     "title": "Alice: Return to Wonderland",
+     "author": "Anna James",
+     "publisher": "HQ Children's Books",
+     "topics": [
+      "mystery",
+      "young-adult"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 18",
+     "buy_url": "https://www.waterstones.com/book/alice-with-a-why/anna-james/matthew-land/9780008773823"
+    },
+    {
+     "id": "M5-022",
+     "title": "Ciudades de papel (Paper Towns)",
+     "author": "John Green",
+     "language": "Spanish",
+     "topics": [
+      "mystery",
+      "young-adult"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Ciudades+de+papel+%28Paper+Towns%29+John+Green",
+     "year": 2008,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "M5-023",
+     "title": "Buscando a Alaska (Looking for Alaska)",
+     "author": "John Green",
+     "publisher": "Castillo",
+     "language": "Spanish",
+     "topics": [
+      "mystery",
+      "young-adult"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 13",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Buscando+a+Alaska+%28Looking+for+Alaska%29+John+Green",
+     "year": 2005,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "M5-027",
+     "title": "El Matarife",
+     "author": "Sándor Márai",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 18",
+     "buy_url": "https://www.casadellibro.com/libro-el-matarife/9788418681196/12744084",
+     "cover": "M5-027.jpg",
+     "cw": 280,
+     "ch": 450
+    },
+    {
+     "id": "M5-028",
+     "title": "El Secreto (The Secret)",
+     "author": "Rhonda Byrne",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 18",
+     "buy_url": "https://www.buscalibre.us/libro-el-secreto/9788479536442/p/1150935",
+     "year": 2006,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "M5-029",
+     "title": "El Camino de la Felicidad",
+     "author": "Jorge Bucay",
+     "language": "Spanish",
+     "topics": [
+      "mystery",
+      "wisdom"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Camino+de+la+Felicidad+Jorge+Bucay",
+     "cover": "M5-029.jpg",
+     "cw": 280,
+     "ch": 426
+    },
+    {
+     "id": "M5-030",
+     "title": "El Camino del Encuentro",
+     "author": "Jorge Bucay",
+     "language": "Spanish",
+     "topics": [
+      "mystery",
+      "wisdom"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Camino+del+Encuentro+Jorge+Bucay",
+     "cover": "M5-030.jpg",
+     "cw": 280,
+     "ch": 421
+    },
+    {
+     "id": "M5-031",
+     "title": "El Camino de las Lágrimas",
+     "author": "Jorge Bucay",
+     "language": "Spanish",
+     "topics": [
+      "mystery",
+      "wisdom"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Camino+de+las+L%C3%A1grimas+Jorge+Bucay",
+     "cover": "M5-031.jpg",
+     "cw": 280,
+     "ch": 426
+    },
+    {
+     "id": "M5-032",
+     "title": "Pequeñas conversaciones con la muerte",
+     "author": "Bhupathi Sadhu (?)",
+     "language": "Spanish",
+     "topics": [
+      "mystery"
+     ],
+     "note": "Author rotated on spine, hard to read — Re-catalogación 2026-08: no visto — no está con el set en el estante reordenado; ubicación a confirmar.",
+     "price": "USD 8",
+     "buy_url": "https://escaramuza.com.uy/pequenas-conversaciones-con-la-muerte/121943/124754"
+    }
+   ]
+  },
+  {
+   "id": "M6",
+   "label": "Middle column, shelf 6",
+   "theme": "Elísabet Benavent novels (near-complete collection) — el estante es ahora la vitrina de la máquina de escribir Smith-Corona; la saga sigue fichada acá hasta ubicarla",
+   "books": [
+    {
+     "id": "M6-001",
+     "title": "En los zapatos de Valeria (Valeria 1)",
+     "author": "Elísabet Benavent",
+     "language": "Spanish",
+     "topics": [
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora la vitrina de la Smith-Corona; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=En+los+zapatos+de+Valeria+Benavent",
+     "year": 2013,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "M6-002",
+     "title": "Valeria en el espejo (Valeria 2)",
+     "author": "Elísabet Benavent",
+     "language": "Spanish",
+     "topics": [
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora la vitrina de la Smith-Corona; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://latam.casadellibro.com/libro-valeria-en-el-espejo/9788483655382/2203640",
+     "year": 2013,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "M6-003",
+     "title": "Valeria en blanco y negro (Valeria 3)",
+     "author": "Elísabet Benavent",
+     "language": "Spanish",
+     "topics": [
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora la vitrina de la Smith-Corona; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Valeria+en+blanco+y+negro+Benavent",
+     "year": 2013,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "M6-004",
+     "title": "Valeria al desnudo (Valeria 4)",
+     "author": "Elísabet Benavent",
+     "language": "Spanish",
+     "topics": [
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora la vitrina de la Smith-Corona; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Valeria+al+desnudo+Benavent",
+     "year": 2013,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "M6-005",
+     "title": "Mi isla",
+     "author": "Elísabet Benavent",
+     "language": "Spanish",
+     "topics": [
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora la vitrina de la Smith-Corona; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Mi+isla+El%C3%ADsabet+Benavent",
+     "year": 2016,
+     "year_confidence": "alta",
+     "cover": "M6-005.jpg",
+     "cw": 196,
+     "ch": 300
+    },
+    {
+     "id": "M6-006",
+     "title": "Fuimos canciones",
+     "author": "Elísabet Benavent",
+     "publisher": "Suma",
+     "language": "Spanish",
+     "topics": [
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora la vitrina de la Smith-Corona; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Fuimos+canciones+El%C3%ADsabet+Benavent",
+     "year": 2018,
+     "year_confidence": "alta",
+     "cover": "M6-006.jpg",
+     "cw": 280,
+     "ch": 432
+    },
+    {
+     "id": "M6-007",
+     "title": "Seremos recuerdos",
+     "author": "Elísabet Benavent",
+     "publisher": "Suma",
+     "language": "Spanish",
+     "topics": [
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora la vitrina de la Smith-Corona; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Seremos+recuerdos+El%C3%ADsabet+Benavent",
+     "year": 2018,
+     "year_confidence": "alta",
+     "cover": "M6-007.jpg",
+     "cw": 280,
+     "ch": 429
+    },
+    {
+     "id": "M6-008",
+     "title": "Cómo no escribí nuestra historia",
+     "author": "Elísabet Benavent",
+     "publisher": "Suma",
+     "language": "Spanish",
+     "topics": [
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora la vitrina de la Smith-Corona; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=C%C3%B3mo+no+escrib%C3%AD+nuestra+historia+El%C3%ADsabet+Benavent",
+     "year": 2019,
+     "year_confidence": "aprox"
+    },
+    {
+     "id": "M6-009",
+     "title": "Todas esas cosas que te diré mañana",
+     "author": "Elísabet Benavent",
+     "publisher": "Suma",
+     "language": "Spanish",
+     "topics": [
+      "romance"
+     ],
+     "note": "Re-catalogación 2026-08: no visto — el estante es ahora la vitrina de la Smith-Corona; ubicación a confirmar.",
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Todas+esas+cosas+que+te+dir%C3%A9+ma%C3%B1ana+El%C3%ADsabet+Benavent",
+     "year": 2022,
+     "year_confidence": "alta",
+     "cover": "M6-009.jpg",
+     "cw": 267,
+     "ch": 405
+    }
+   ]
+  },
+  {
+   "id": "M7",
+   "label": "Middle column, shelf 7",
+   "theme": "Referencia antigua — clásicos, mitología, Who’s Who y la serie Mentor-UNESCO (llegada de M4 en 2026-08)",
+   "books": [
+    {
+     "id": "M7-001",
+     "title": "Volpone",
+     "author": "Ben Jonson",
+     "binding": "white spine",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/volpone/autor/ben-jonson/",
+     "cover": "M7-001.jpg",
+     "cw": 280,
+     "ch": 496
+    },
+    {
+     "id": "M7-002",
+     "title": "UNK-M7-002",
+     "binding": "small white book, illegible spine",
+     "topics": [
+      "classics"
+     ],
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=antique+book"
+    },
+    {
+     "id": "M7-003",
+     "title": "Zeigt mir Adams Testament",
+     "author": "Paul Herrmann",
+     "binding": "decorative dark spine",
+     "language": "German",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/zeigt-mir-adams-testament/autor/paul-herrmann"
+    },
+    {
+     "id": "M7-004",
+     "title": "Sieben vorbei und acht verweht",
+     "author": "Paul Herrmann",
+     "language": "German",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/sieben-vorbei-acht-verweht/autor/paul-herrmann"
+    },
+    {
+     "id": "M7-005",
+     "title": "A Treasury of the World's Best Loved Poems",
+     "binding": "brown",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=treasury+world+best+loved+poems",
+     "cover": "M7-005.jpg",
+     "cw": 280,
+     "ch": 440
+    },
+    {
+     "id": "M7-006",
+     "title": "I, Claudius / Claudius the God",
+     "author": "Robert Graves",
+     "publisher": "Penguin",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/9780140003185/Claudius-Robert-Graves-0140003185/plp",
+     "cover": "M7-006.jpg",
+     "cw": 280,
+     "ch": 432
+    },
+    {
+     "id": "M7-007",
+     "title": "Chemie (?)",
+     "binding": "large antique vellum, gold spine",
+     "topics": [
+      "classics",
+      "science"
+     ],
+     "note": "Spine reads CHEMIE — appears to be a German chemistry volume; preceding word unclear",
+     "price": "USD 18",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=chemie+german+vintage",
+     "cover": "M7-007.jpg",
+     "cw": 280,
+     "ch": 362
+    },
+    {
+     "id": "M7-008",
+     "title": "Tesoro de la Lengua Castellana, Vol. 3 (NN)",
+     "author": "Julio Cejador y Frauca",
+     "binding": "antique leather",
+     "language": "Spanish",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 50",
+     "buy_url": "https://www.abebooks.com/book-search/title/tesoro-lengua-castellana"
+    },
+    {
+     "id": "M7-009",
+     "title": "The Greek Myths, Vol. I",
+     "author": "Robert Graves",
+     "publisher": "Penguin",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/book-search/title/greek-myths/author/robert-graves/"
+    },
+    {
+     "id": "M7-010",
+     "title": "The Greek Myths, Vol. II",
+     "author": "Robert Graves",
+     "publisher": "Penguin",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/book-search/title/greek-myths/author/robert-graves/"
+    },
+    {
+     "id": "M7-012",
+     "title": "Refranero Clásico",
+     "author": "J. Suñé Benages",
+     "publisher": "Clásicos Cúspide",
+     "language": "Spanish",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 28",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/refranero-clasico/autor/sune-benages"
+    },
+    {
+     "id": "M7-013",
+     "title": "Historia de la Conquista del Perú",
+     "author": "William H. Prescott",
+     "binding": "dark cloth",
+     "language": "Spanish",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 25",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/conquista-del-peru/autor/prescott",
+     "cover": "M7-013.jpg",
+     "cw": 280,
+     "ch": 443
+    },
+    {
+     "id": "M7-014",
+     "title": "El Greco",
+     "author": "Augusto L. Mayer",
+     "publisher": "Ediciones Iberia",
+     "binding": "ornate gold-leaf spine",
+     "language": "Spanish",
+     "topics": [
+      "art",
+      "classics"
+     ],
+     "price": "USD 35",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/el-greco/autor/mayer/editorial/iberia"
+    },
+    {
+     "id": "M7-015",
+     "title": "Who's Who 1944",
+     "publisher": "Macmillan",
+     "binding": "large red cloth",
+     "topics": [
+      "classics",
+      "reference"
+     ],
+     "price": "USD 35",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=whos+who+1944+macmillan"
+    },
+    {
+     "id": "M7-016",
+     "title": "UNK-M7-016",
+     "binding": "dark green cloth",
+     "topics": [
+      "classics"
+     ],
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=antique+book"
+    },
+    {
+     "id": "M7-017",
+     "title": "Marx, Engels y los Poetas",
+     "author": "Peter Demetz",
+     "language": "Spanish",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=marx+engels+poetas+demetz"
+    },
+    {
+     "id": "M7-018",
+     "title": "César Birotteau",
+     "author": "Honoré de Balzac",
+     "binding": "vellum w/ red label",
+     "language": "French/Spanish?",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/cesar-birotteau/autor/balzac",
+     "cover": "M7-018.jpg",
+     "cw": 125,
+     "ch": 187
+    },
+    {
+     "id": "M7-019",
+     "title": "The Confessions",
+     "author": "Jean-Jacques Rousseau (or St. Augustine)",
+     "binding": "tan leather",
+     "topics": [
+      "classics"
+     ],
+     "note": "Author not visible on spine",
+     "price": "USD 22",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/confessions/autor/rousseau",
+     "cover": "M7-019.jpg",
+     "cw": 280,
+     "ch": 444
+    },
+    {
+     "id": "M4-001",
+     "title": "Flemish Portraits / The Initiators of Surrealism",
+     "series": "Mentor UNESCO MY 967",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+art&sortby=17"
+    },
+    {
+     "id": "M4-002",
+     "title": "Greek Mosaics of the Byzantine Period",
+     "series": "Mentor UNESCO MY 966",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+art&sortby=17"
+    },
+    {
+     "id": "M4-003",
+     "title": "Goya",
+     "series": "Mentor UNESCO MQ 591",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+goya",
+     "cover": "M4-003.jpg",
+     "cw": 280,
+     "ch": 399
+    },
+    {
+     "id": "M4-004",
+     "title": "Matisse and the Nude",
+     "series": "Mentor UNESCO MQ 696",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+matisse+nude"
+    },
+    {
+     "id": "M4-005",
+     "title": "Vermeer",
+     "series": "Mentor UNESCO MY 876",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+vermeer",
+     "cover": "M4-005.jpg",
+     "cw": 280,
+     "ch": 355
+    },
+    {
+     "id": "M4-006",
+     "title": "The Eye of Picasso",
+     "series": "Mentor UNESCO MQ 770",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+picasso",
+     "cover": "M4-006.jpg",
+     "cw": 280,
+     "ch": 435
+    },
+    {
+     "id": "M4-007",
+     "title": "Renoir",
+     "series": "Mentor UNESCO MQ 771",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+renoir",
+     "cover": "M4-007.jpg",
+     "cw": 280,
+     "ch": 387
+    },
+    {
+     "id": "M4-008",
+     "title": "Aboriginal Paintings from Australia",
+     "series": "Mentor UNESCO MQ 769",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+aboriginal+australia",
+     "cover": "M4-008.jpg",
+     "cw": 280,
+     "ch": 329
+    },
+    {
+     "id": "M4-009",
+     "title": "Spanish Frescoes of the Romanesque Period",
+     "series": "Mentor UNESCO MQ 582",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+spanish+frescoes",
+     "cover": "M4-009.jpg",
+     "cw": 280,
+     "ch": 442
+    },
+    {
+     "id": "M4-010",
+     "title": "The Stave Church Paintings — Mediaeval Art from Norway",
+     "series": "Mentor UNESCO MQ 456",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=stave+church+paintings+mentor+unesco"
+    },
+    {
+     "id": "M4-011",
+     "title": "Miró",
+     "series": "Mentor UNESCO MQ 645",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+miro",
+     "cover": "M4-011.jpg",
+     "cw": 280,
+     "ch": 445
+    },
+    {
+     "id": "M4-012",
+     "title": "Modigliani",
+     "series": "Mentor UNESCO MQ 774",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+modigliani"
+    },
+    {
+     "id": "M4-013",
+     "title": "Mexican Wall Paintings of the Maya and Aztec Periods",
+     "series": "Mentor UNESCO MQ 697",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mexican+wall+paintings+maya+aztec"
+    },
+    {
+     "id": "M4-022",
+     "title": "UNK-M4-022",
+     "series": "Mentor UNESCO MY 968",
+     "topics": [
+      "art"
+     ],
+     "note": "Last in row, title not legible — Re-catalogación 2026-08: probablemente entre los 1-2 lomos Mentor-UNESCO desvaídos vistos en M7.",
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mentor+unesco+MY+968"
+    },
+    {
+     "id": "M4-014",
+     "title": "The Ajanta Caves — Early Buddhist Paintings from India",
+     "series": "Mentor UNESCO MQ 526",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=ajanta+caves+mentor+unesco",
+     "cover": "M4-014.jpg",
+     "cw": 280,
+     "ch": 338
+    },
+    {
+     "id": "M4-015",
+     "title": "Calder — Mobiles and Stabiles",
+     "series": "Mentor UNESCO MQ 510",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=calder+mobiles+stabiles+mentor",
+     "cover": "M4-015.jpg",
+     "cw": 280,
+     "ch": 365
+    },
+    {
+     "id": "M4-016",
+     "title": "Turkish Miniatures from the 13th to the 18th Century",
+     "series": "Mentor UNESCO MY 877",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=turkish+miniatures+mentor+unesco"
+    },
+    {
+     "id": "M4-017",
+     "title": "Israeli Mosaics of the Byzantine Period",
+     "series": "Mentor UNESCO MQ 646",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=israeli+mosaics+byzantine+mentor"
+    },
+    {
+     "id": "M4-018",
+     "title": "Etruscan Sculptures",
+     "series": "Mentor UNESCO MQ 640",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=etruscan+sculptures+mentor+unesco"
+    },
+    {
+     "id": "M4-019",
+     "title": "Czechoslovakian Miniatures from Romanesque and Gothic Manuscripts",
+     "series": "Mentor UNESCO MQ 695",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=czechoslovakian+miniatures+mentor+unesco"
+    },
+    {
+     "id": "M4-020",
+     "title": "Gauguin",
+     "series": "Mentor UNESCO MQ 588",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=gauguin+mentor+unesco",
+     "cover": "M4-020.jpg",
+     "cw": 280,
+     "ch": 338
+    },
+    {
+     "id": "M4-021",
+     "title": "Modern American Painting",
+     "series": "Mentor UNESCO MY 878",
+     "topics": [
+      "art"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=modern+american+painting+mentor+unesco",
+     "cover": "M4-021.jpg",
+     "cw": 280,
+     "ch": 393
+    },
+    {
+     "id": "M7-011",
+     "title": "UNK-M7-011",
+     "binding": "red cloth",
+     "topics": [
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=antique+book"
+    },
+    {
+     "id": "M7-020",
+     "title": "Œuvres de Chateaubriand: Atala et René",
+     "author": "François-René de Chateaubriand",
+     "binding": "antique leather",
+     "language": "French",
+     "topics": [
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 30",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/atala-rene/autor/chateaubriand",
+     "cover": "M7-020.jpg",
+     "cw": 280,
+     "ch": 475
+    },
+    {
+     "id": "M7-021",
+     "title": "The Poems of Coleridge",
+     "author": "Samuel Taylor Coleridge",
+     "publisher": "Humphrey Milford",
+     "binding": "green cloth",
+     "topics": [
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 35",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?an=coleridge&tn=poems&pi=humphrey+milford"
+    },
+    {
+     "id": "M7-022",
+     "title": "Longfellow's Poetical Works",
+     "author": "Henry Wadsworth Longfellow",
+     "binding": "decorative dark spine",
+     "topics": [
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 30",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=longfellow+poetical+works",
+     "cover": "M7-022.jpg",
+     "cw": 280,
+     "ch": 495
+    },
+    {
+     "id": "M7-023",
+     "title": "Antique pamphlet collection (~25 thin booklets)",
+     "format": "stapled pamphlets, mostly art monographs and early-20th-century booklets",
+     "topics": [
+      "classics"
+     ],
+     "note": "Bundle of thin booklets; individual titles not legible from photo — Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 40",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=antique+pamphlets+collection"
+    },
+    {
+     "id": "M7-024",
+     "title": "Dufy",
+     "series": "Barnes & Noble Art Series",
+     "topics": [
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=dufy+barnes+noble+art+series",
+     "cover": "M7-024.jpg",
+     "cw": 280,
+     "ch": 397
+    },
+    {
+     "id": "M7-025",
+     "title": "Pieter Bruegel",
+     "series": "Welt in Farbe",
+     "language": "German",
+     "topics": [
+      "art",
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 14",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=bruegel+welt+farbe",
+     "cover": "M7-025.jpg",
+     "cw": 128,
+     "ch": 151
+    },
+    {
+     "id": "M7-026",
+     "title": "El Greco",
+     "series": "Barnes & Noble Art Series",
+     "topics": [
+      "art",
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 12",
+     "buy_url": "https://www.ebay.de/itm/284806122677",
+     "cover": "M7-026.jpg",
+     "cw": 280,
+     "ch": 333
+    },
+    {
+     "id": "M7-027",
+     "title": "Maurice Utrillo",
+     "topics": [
+      "art",
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 14",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=maurice+utrillo+art+monograph",
+     "cover": "M7-027.jpg",
+     "cw": 280,
+     "ch": 359
+    },
+    {
+     "id": "M7-028",
+     "title": "Sandro Botticelli",
+     "topics": [
+      "art",
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 14",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=sandro+botticelli+art+monograph",
+     "cover": "M7-028.jpg",
+     "cw": 280,
+     "ch": 375
+    },
+    {
+     "id": "M7-029",
+     "title": "Gauguin",
+     "topics": [
+      "art",
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 14",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=gauguin+art+monograph",
+     "cover": "M7-029.jpg",
+     "cw": 280,
+     "ch": 338
+    },
+    {
+     "id": "M7-030",
+     "title": "Reflejos del Uruguay",
+     "author": "Gustavo Guarino (?)",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "classics"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 22",
+     "buy_url": "https://listado.mercadolibre.com.uy/reflejos-del-uruguay"
+    },
+    {
+     "id": "M7-031",
+     "title": "Searching for Your Ancestors",
+     "author": "Gilbert H. Doane",
+     "publisher": "Bantam Non-Fiction (53/07880-3)",
+     "topics": [
+      "classics",
+      "genealogy"
+     ],
+     "note": "Re-catalogación 2026-08: no visto (M7 se reordenó).",
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=searching+ancestors+doane+bantam",
+     "cover": "M7-031.jpg",
+     "cw": 280,
+     "ch": 440
+    }
+   ]
+  },
+  {
+   "id": "M8",
+   "label": "Middle column, bottom shelf",
+   "theme": "Diccionarios y atlas — la vieja fila anónima, ahora con nombre (re-catalogada en 2026-08)",
+   "books": [
+    {
+     "id": "M8-003",
+     "title": "Novísimo Diccionario de la Lengua Castellana con Suplementos",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Cuero granate antiguo con dorados; abre el estante."
+    },
+    {
+     "id": "M8-004",
+     "title": "Diccionario Etimológico de la Lengua Castellana",
+     "author": "Pedro Felipe Monlau",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Cuero marrón claro con nervios.",
+     "cover": "M8-004.jpg",
+     "cw": 280,
+     "ch": 443
+    },
+    {
+     "id": "M8-005",
+     "title": "Larousse Gran Diccionario English-Spanish / Español-Inglés, vol. 1",
+     "author": "Larousse",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Tela roja con dorados."
+    },
+    {
+     "id": "M8-006",
+     "title": "Larousse Gran Diccionario English-Spanish / Español-Inglés, vol. 2",
+     "author": "Larousse",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Tela roja con dorados."
+    },
+    {
+     "id": "M8-007",
+     "title": "Vocabulario y Refranero Criollo",
+     "author": "Tito Saubidet",
+     "topics": [
+      "reference",
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Editorial Guillermo Kraft.",
+     "cover": "M8-007.jpg",
+     "cw": 280,
+     "ch": 388
+    },
+    {
+     "id": "M8-008",
+     "title": "Diccionario Geográfico del Uruguay",
+     "author": "Orestes Araújo",
+     "topics": [
+      "reference",
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Tela verde oliva gastada.",
+     "cover": "M8-008.jpg",
+     "cw": 280,
+     "ch": 413
+    },
+    {
+     "id": "M8-009",
+     "title": "Diccionario del Español del Uruguay",
+     "author": "Academia Nacional de Letras del Uruguay",
+     "topics": [
+      "reference",
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Amarillo claro."
+    },
+    {
+     "id": "M8-010",
+     "title": "Diccionario Uruguayo Documentado",
+     "author": "Academia Nacional de Letras",
+     "topics": [
+      "reference",
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Rústica tostada fina, años 60."
+    },
+    {
+     "id": "M8-011",
+     "title": "Diccionario Etimológico",
+     "author": "Fernando Corripio",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Bruguera, marrón con casetones plateados."
+    },
+    {
+     "id": "M8-012",
+     "title": "Vocabulario Rioplatense Razonado, Tomo I (A-D)",
+     "author": "Daniel Granada",
+     "topics": [
+      "reference",
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Clásicos Uruguayos vol. 25, Montevideo 1957.",
+     "cover": "M8-012.jpg",
+     "cw": 280,
+     "ch": 405
+    },
+    {
+     "id": "M8-013",
+     "title": "Vocabulario Rioplatense Razonado, Tomo II (E-Z)",
+     "author": "Daniel Granada",
+     "topics": [
+      "reference",
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Clásicos Uruguayos vol. 26, Montevideo 1957.",
+     "cover": "M8-013.jpg",
+     "cw": 280,
+     "ch": 405
+    },
+    {
+     "id": "M8-014",
+     "title": "Historia de los Descubrimientos Geográficos, tomo 3",
+     "author": "Paul Herrmann",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Editorial Labor; dialoga con los Herrmann alemanes de B4."
+    },
+    {
+     "id": "M8-015",
+     "title": "La Aventura de los Primeros Descubrimientos (Historia de los Descubrimientos Geográficos, tomo 1)",
+     "author": "Paul Herrmann",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Editorial Labor, sobrecubierta muy rota."
+    },
+    {
+     "id": "M8-016",
+     "title": "Lessing's Nathan (Nathan der Weise)",
+     "author": "G. E. Lessing",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Tomito antiguo azul con letras góticas doradas.",
+     "cover": "M8-016.jpg",
+     "cw": 280,
+     "ch": 422
+    },
+    {
+     "id": "M8-017",
+     "title": "El Libro de los Perros",
+     "author": "Ricardo Goldaracena",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Rústica Arca; tapa con foto B/N de un niño montado en un perro."
+    },
+    {
+     "id": "M8-018",
+     "title": "Testamento y Codicilo de la Reina Isabel la Católica",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Folio facsimilar crema, acostado en la pila derecha."
+    },
+    {
+     "id": "M8-019",
+     "title": "Tratado de Tordesillas",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Folio facsimilar crema, acostado bajo el Testamento.",
+     "cover": "M8-019.jpg",
+     "cw": 280,
+     "ch": 178
+    },
+    {
+     "id": "M8-001",
+     "title": "Rand McNally Universal World Atlas",
+     "publisher": "Rand McNally",
+     "format": "large folio atlas",
+     "topics": [
+      "reference"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=rand+mcnally+universal+world+atlas",
+     "cover": "M8-001.jpg",
+     "cw": 280,
+     "ch": 391
+    },
+    {
+     "id": "M8-020",
+     "title": "El Atlas de Nuestro Tiempo",
+     "author": "Selecciones del Reader's Digest",
+     "topics": [
+      "reference"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Tela beige grande, base de la pila derecha."
+    },
+    {
+     "id": "M8-002",
+     "title": "UNK-M8-002 through UNK-M8-NN",
+     "binding": "row of various antique-spine books with illegible titles in low resolution",
+     "topics": [
+      "miscellaneous"
+     ],
+     "note": "Re-catalogación 2026-08: la fila anónima se dispersó — la mayoría habría aparecido identificada en M8 (diccionarios, ahora con nombre) y L7 (clásicos ingleses). Quedan restos por confirmar.",
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=antique+reference"
+    }
+   ]
+  },
+  {
+   "id": "R1",
+   "label": "Right column, top shelf",
+   "theme": "Travel mug display (decorative)",
+   "books": []
+  },
+  {
+   "id": "R2",
+   "label": "Right column, shelf 2",
+   "theme": "Travel & geography (top stack)",
+   "books": [
+    {
+     "id": "R2-001",
+     "title": "Terrible True Tales from the Tower of London",
+     "publisher": "Historic Royal Palaces",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.historicroyalpalaces.com/terribletruetales-towerlondon-stories-ravens-childrenhistorybook-1.html",
+     "cover": "R2-001.jpg",
+     "cw": 280,
+     "ch": 429
+    },
+    {
+     "id": "R2-002",
+     "title": "Paris en 160 photos",
+     "publisher": "Hachette",
+     "language": "French",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=paris+160+photos+hachette"
+    },
+    {
+     "id": "R2-003",
+     "title": "Bygone Days in the Peak District",
+     "author": "Porter and Fowkes",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=bygone+days+peak+district+porter+fowkes",
+     "cover": "R2-003.jpg",
+     "cw": 280,
+     "ch": 376
+    },
+    {
+     "id": "R2-004",
+     "title": "Westminster Abbey",
+     "publisher": "Pitkin English",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=westminster+abbey+pitkin",
+     "cover": "R2-004.jpg",
+     "cw": 280,
+     "ch": 435
+    },
+    {
+     "id": "R2-005",
+     "title": "Ireland",
+     "author": "Jill and Leon Uris",
+     "publisher": "Corgi",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=ireland+jill+leon+uris+corgi"
+    },
+    {
+     "id": "R2-006",
+     "title": "The Channel Islands",
+     "author": "Harald Eggert",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=channel+islands+harald+eggert",
+     "cover": "R2-006.jpg",
+     "cw": 280,
+     "ch": 350
+    },
+    {
+     "id": "R2-007",
+     "title": "Berlin",
+     "binding": "black w/ white text",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=berlin+photo+book"
+    },
+    {
+     "id": "R2-008",
+     "title": "Bonn — Ein Stadtbild im Wandel",
+     "publisher": "Wartberg Verlag",
+     "language": "German",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=bonn+stadtbild+wandel+wartberg"
+    },
+    {
+     "id": "R2-009",
+     "title": "Animals of East Africa — The Wild Realm",
+     "publisher": "National Geographic Society",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=animals+east+africa+wild+realm+national+geographic",
+     "cover": "R2-009.jpg",
+     "cw": 280,
+     "ch": 412
+    },
+    {
+     "id": "R2-010",
+     "title": "UNK-R2-010",
+     "binding": "blue book, partial title visible",
+     "topics": [
+      "travel"
+     ],
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=travel+geography"
+    },
+    {
+     "id": "R2-011",
+     "title": "Buenos Aires, Buenos Aires",
+     "author": "Alicia D'Amico, Sara Facio, Julio Cortázar",
+     "publisher": "Editorial Sudamericana",
+     "language": "Spanish/English",
+     "topics": [
+      "travel",
+      "latin-american"
+     ],
+     "price": "USD 200",
+     "buy_url": "https://www.abebooks.com/book-search/title/buenos-aires/author/alicia-damico-facio-julio-cortazar/"
+    },
+    {
+     "id": "R2-012",
+     "title": "New York: City of Many Dreams",
+     "author": "Bill Harris",
+     "publisher": "Crescent",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=new+york+city+many+dreams+harris+crescent",
+     "cover": "R2-012.jpg",
+     "cw": 280,
+     "ch": 377
+    },
+    {
+     "id": "R2-013",
+     "title": "New England",
+     "author": "Suzi Forbes",
+     "publisher": "Crescent",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=new+england+suzi+forbes+crescent",
+     "cover": "R2-013.jpg",
+     "cw": 280,
+     "ch": 436
+    },
+    {
+     "id": "R2-014",
+     "title": "Bad Soden — Tor zum Taunus",
+     "publisher": "SBV",
+     "language": "German",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=bad+soden+taunus+sbv"
+    },
+    {
+     "id": "R2-015",
+     "title": "Ancient America",
+     "series": "Time-Life 'Great Ages of Man'",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.thriftbooks.com/series/great-ages-of-man/119524/"
+    },
+    {
+     "id": "R2-016",
+     "title": "Merian XXIII.1 — Berlin",
+     "publisher": "Merian",
+     "language": "German",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 8",
+     "buy_url": "https://www.abebooks.com/collections/sc/merian-hefte/6bGwNKzwzgoMh3IDBbKeR7"
+    },
+    {
+     "id": "R2-017",
+     "title": "Unsterbliches Berlin",
+     "author": "Wieselmann",
+     "language": "German",
+     "topics": [
+      "travel"
+     ],
+     "note": "Re-catalogación 2026-08: lectura corregida del lomo (antes «Unterirdisches Berlin / A. Westmann?»).",
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=unterirdisches+berlin"
+    },
+    {
+     "id": "R2-018",
+     "title": "The Making of Modern New York — Through the Eyes of Robert Bracklow",
+     "format": "Plain Sights fotobuch",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 25",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=making+modern+new+york+robert+moses"
+    },
+    {
+     "id": "R2-019",
+     "title": "Germany",
+     "binding": "yellow large book, title illegible",
+     "topics": [
+      "travel"
+     ],
+     "note": "Re-catalogación 2026-08: el lomo está invertido y se lee «GERMANY» — tela amarillenta; falta confirmar edición.",
+     "price": "NotFound",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=travel+geography"
+    },
+    {
+     "id": "R2-020",
+     "title": "Deutschland",
+     "binding": "antique red cloth",
+     "language": "German",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=deutschland+photo+book"
+    },
+    {
+     "id": "R2-021",
+     "title": "England",
+     "author": "E.O. Hoppé",
+     "binding": "tan cloth with gold lettering",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 25",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?an=hoppe+e+o&tn=england"
+    },
+    {
+     "id": "R2-022",
+     "title": "Paris",
+     "author": "Fritz Henle and Elliot Paul",
+     "binding": "blue",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=fritz+henle+elliot+paul+paris"
+    },
+    {
+     "id": "R2-023",
+     "title": "Jacques Cousteau's Amazon Journey",
+     "author": "Jacques Cousteau & Mose Richards",
+     "publisher": "Abrams",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 30",
+     "buy_url": "https://www.abebooks.com/9780810918139/Jacques-Cousteaus-Amazon-Journey-Cousteau-0810918137/plp",
+     "cover": "R2-023.jpg",
+     "cw": 280,
+     "ch": 365
+    },
+    {
+     "id": "R2-024",
+     "title": "Tierra del Fuego — Una Biografía del Fin del Mundo",
+     "language": "Spanish",
+     "topics": [
+      "travel",
+      "uruguay"
+     ],
+     "price": "USD 35",
+     "buy_url": "https://www.libreriadesnivel.com/libros/tierra-del-fuego/9789879916698/",
+     "cover": "R2-024.jpg",
+     "cw": 280,
+     "ch": 345
+    }
+   ]
+  },
+  {
+   "id": "R3",
+   "label": "Right column, shelf 3",
+   "theme": "Travel & geography (Britain, Americas, Middle East)",
+   "books": [
+    {
+     "id": "R3-001",
+     "title": "Heritage of Britain",
+     "author": "A.L. Rowse",
+     "publisher": "St Michael",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=heritage+britain+rowse+st+michael",
+     "cover": "R3-001.jpg",
+     "cw": 280,
+     "ch": 367
+    },
+    {
+     "id": "R3-002",
+     "title": "Country Life Book of Queen Elizabeth The Queen Mother",
+     "publisher": "Country Life",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.abebooks.com/9780600368618/Country-Life-Book-Queen-Elizabeth-0600368610/plp",
+     "cover": "R3-002.jpg",
+     "cw": 280,
+     "ch": 403
+    },
+    {
+     "id": "R3-003",
+     "title": "South Africa the Beautiful",
+     "publisher": "Struik",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=south+africa+beautiful+struik",
+     "cover": "R3-003.jpg",
+     "cw": 280,
+     "ch": 396
+    },
+    {
+     "id": "R3-004",
+     "title": "London",
+     "author": "David Gibbon",
+     "publisher": "Colour Library International",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=london+david+gibbon+colour+library",
+     "cover": "R3-004.jpg",
+     "cw": 280,
+     "ch": 400
+    },
+    {
+     "id": "R3-005",
+     "title": "London — A Portrait of Britain's Historic Capital",
+     "author": "Fred Housego",
+     "publisher": "Hamlyn",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=london+portrait+britain+housego+hamlyn",
+     "cover": "R3-005.jpg",
+     "cw": 280,
+     "ch": 407
+    },
+    {
+     "id": "R3-006",
+     "title": "Color Collection — Schleswig-Holstein",
+     "language": "German/English",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=color+collection+schleswig+holstein"
+    },
+    {
+     "id": "R3-007",
+     "title": "Die schönsten Dörfer und Städte",
+     "language": "German",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=schoensten+doerfer+staedte"
+    },
+    {
+     "id": "R3-008",
+     "title": "Frankreich",
+     "author": "Martin Hürlimann",
+     "binding": "tan cloth",
+     "language": "German",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=frankreich+martin+huerlimann",
+     "cover": "R3-008.jpg",
+     "cw": 280,
+     "ch": 383
+    },
+    {
+     "id": "R3-009",
+     "title": "Mexico City",
+     "series": "Famous Cities of the World (Spring Books)",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=mexico+city+famous+cities+world",
+     "cover": "R3-009.jpg",
+     "cw": 280,
+     "ch": 423
+    },
+    {
+     "id": "R3-010",
+     "title": "California",
+     "author": "Atkeson & Muench",
+     "publisher": "Belding",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=california+atkeson+muench+belding",
+     "cover": "R3-010.jpg",
+     "cw": 280,
+     "ch": 370
+    },
+    {
+     "id": "R3-011",
+     "title": "Lonely Planet Peru",
+     "publisher": "Lonely Planet",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.rizzolibookstore.com/product/peru-12e",
+     "cover": "R3-011.jpg",
+     "cw": 259,
+     "ch": 400
+    },
+    {
+     "id": "R3-012",
+     "title": "En Foco — La Guía Turística de Uruguay",
+     "language": "Spanish",
+     "topics": [
+      "travel",
+      "uruguay"
+     ],
+     "price": "USD 13",
+     "buy_url": "https://www.puroverso.com.uy/libros/varios/76926-LO-MEJOR-DE-URUGUAY---GUIA-EN-FOCO-detail.html"
+    },
+    {
+     "id": "R3-013",
+     "title": "Jerusalem",
+     "author": "Teddy Kollek & Moshe Pearlman",
+     "publisher": "Steimatzky",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=jerusalem+teddy+kollek+steimatzky",
+     "cover": "R3-013.jpg",
+     "cw": 280,
+     "ch": 370
+    },
+    {
+     "id": "R3-014",
+     "title": "Masada",
+     "author": "Yigael Yadin",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=masada+yigael+yadin",
+     "cover": "R3-014.jpg",
+     "cw": 280,
+     "ch": 431
+    },
+    {
+     "id": "R3-015",
+     "title": "Fabled Cities of Central Asia: Samarkand, Bukhara, Khiva",
+     "author": "Vadim Gippenreiter & Robin Magowan",
+     "publisher": "Abbeville Press",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 25",
+     "buy_url": "https://www.abebooks.com/9780896599642/Fabled-Cities-Central-Asia-Samarkand-0896599647/plp"
+    },
+    {
+     "id": "R3-016",
+     "title": "The Acropolis (Greek text on spine)",
+     "language": "Greek",
+     "topics": [
+      "travel"
+     ],
+     "note": "Spine letters ΑΚΡΟΠΟΛΙΣ",
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=acropolis+greek+text+spine"
+    },
+    {
+     "id": "R3-017",
+     "title": "The Pacific States",
+     "series": "Time-Life Library of America",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 10",
+     "buy_url": "https://www.publishinghistory.com/time-life-library-of-america-time-life-books.html"
+    },
+    {
+     "id": "R3-018",
+     "title": "America's Wonderlands — The National Parks",
+     "publisher": "National Geographic Society",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=americas+wonderlands+national+parks+national+geographic",
+     "cover": "R3-018.jpg",
+     "cw": 280,
+     "ch": 231
+    },
+    {
+     "id": "R3-019",
+     "title": "Singapore — Our World in Colour",
+     "publisher": "The Guidebook Company Limited",
+     "topics": [
+      "travel"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=singapore+world+colour+guidebook+company"
+    }
+   ]
+  },
+  {
+   "id": "R4",
+   "label": "Right column, shelf 4",
+   "theme": "Stephen King (white-spine 'Biblioteca' edition)",
+   "books": [
+    {
+     "id": "R4-001",
+     "title": "Carrie",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.casadellibro.com/libro-carrie/9788401498886/368439",
+     "year": 1974,
+     "year_confidence": "alta",
+     "cover": "R4-001.jpg",
+     "cw": 280,
+     "ch": 478
+    },
+    {
+     "id": "R4-002",
+     "title": "La Zona Muerta (The Dead Zone)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Zona+Muerta+Stephen+King",
+     "year": 1979,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-003",
+     "title": "La Larga Marcha (The Long Walk)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Larga+Marcha+%28The+Long+Walk%29+Stephen+King",
+     "year": 1979,
+     "year_confidence": "alta",
+     "year_note": "Publicada como Richard Bachman"
+    },
+    {
+     "id": "R4-004",
+     "title": "La Caja de Botones de Gwendy (Gwendy's Button Box)",
+     "author": "Stephen King & Richard Chizmar",
+     "publisher": "Suma",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Caja+de+Botones+de+Gwendy+%28Gwendy%27s+Button+Box%29+Stephen+King+%26+Richard+Chizmar",
+     "year": 2017,
+     "year_confidence": "alta",
+     "year_note": "Coescrita con Richard Chizmar"
+    },
+    {
+     "id": "R4-005",
+     "title": "Misery",
+     "author": "Stephen King",
+     "publisher": "Suma",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Misery+Stephen+King",
+     "year": 1987,
+     "year_confidence": "alta",
+     "cover": "R4-005.jpg",
+     "cw": 280,
+     "ch": 438
+    },
+    {
+     "id": "R4-006",
+     "title": "Elevación (Elevation)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Elevaci%C3%B3n+%28Elevation%29+Stephen+King",
+     "year": 2018,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-007",
+     "title": "Las dos después de medianoche (Four Past Midnight, part 2)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Las+dos+despu%C3%A9s+de+medianoche+%28Four+Past+Midnight%2C+part+2%29+Stephen+King",
+     "year": 1990,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-008",
+     "title": "La Llegada de los Tres (The Drawing of the Three — Dark Tower II)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Llegada+de+los+Tres+%28The+Drawing+of+the+Three+%E2%80%94+Dark+Tower+II%29+Stephen+King",
+     "year": 1987,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-009",
+     "title": "Mientras Escribo (On Writing)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Mientras+Escribo+%28On+Writing%29+Stephen+King",
+     "year": 2000,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-010",
+     "title": "El Misterio de Salem's Lot",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Misterio+de+Salem%27s+Lot+Stephen+King",
+     "year": 1975,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-011",
+     "title": "Fin de Guardia (End of Watch)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King 102/78",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Fin+de+Guardia+%28End+of+Watch%29+Stephen+King",
+     "year": 2016,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-012",
+     "title": "Desesperación (Desperation)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King 102/78",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Desesperaci%C3%B3n+%28Desperation%29+Stephen+King",
+     "year": 1996,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-013",
+     "title": "Tommyknockers",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King 102/15",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Tommyknockers+Stephen+King",
+     "year": 1987,
+     "year_confidence": "alta",
+     "cover": "R4-013.jpg",
+     "cw": 280,
+     "ch": 426
+    },
+    {
+     "id": "R4-014",
+     "title": "La Milla Verde (The Green Mile)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Milla+Verde+%28The+Green+Mile%29+Stephen+King",
+     "year": 1996,
+     "year_confidence": "alta",
+     "year_note": "Publicada por entregas: 6 fascículos mensuales"
+    },
+    {
+     "id": "R4-015",
+     "title": "Todo Oscuro, Sin Estrellas (Full Dark, No Stars)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King 102/67",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king",
+      "astronomy"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Todo+Oscuro%2C+Sin+Estrellas+%28Full+Dark%2C+No+Stars%29+Stephen+King",
+     "year": 2010,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-016",
+     "title": "El Bazar de los Malos Sueños (The Bazaar of Bad Dreams)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King 102/77",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Bazar+de+los+Malos+Sue%C3%B1os+%28The+Bazaar+of+Bad+Dreams%29+Stephen+King",
+     "year": 2015,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-017",
+     "title": "Todo es Eventual (Everything's Eventual)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King 102/43",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Todo+es+Eventual+%28Everything%27s+Eventual%29+Stephen+King",
+     "year": 2002,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-018",
+     "title": "Mr. Mercedes",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Mr.+Mercedes+Stephen+King",
+     "year": 2014,
+     "year_confidence": "alta",
+     "cover": "R4-018.jpg",
+     "cw": 280,
+     "ch": 436
+    },
+    {
+     "id": "R4-019",
+     "title": "Cujo",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King 102/74",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Cujo+Stephen+King",
+     "year": 1981,
+     "year_confidence": "alta",
+     "cover": "R4-019.jpg",
+     "cw": 280,
+     "ch": 432
+    },
+    {
+     "id": "R4-020",
+     "title": "Duma Key",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Duma+Key+Stephen+King",
+     "year": 2008,
+     "year_confidence": "alta",
+     "cover": "R4-020.jpg",
+     "cw": 280,
+     "ch": 440
+    },
+    {
+     "id": "R4-021",
+     "title": "Quién Pierde Paga (Finders Keepers)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King 102/76",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Qui%C3%A9n+Pierde+Paga+%28Finders+Keepers%29+Stephen+King",
+     "year": 2015,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-022",
+     "title": "Cementerio de Animales (Pet Sematary)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Cementerio+de+Animales+%28Pet+Sematary%29+Stephen+King",
+     "year": 1983,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-023",
+     "title": "Después (Later)",
+     "author": "Stephen King",
+     "publisher": "Plaza & Janés",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Despu%C3%A9s+%28Later%29+Stephen+King",
+     "year": 2021,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R4-024",
+     "title": "Cell",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 12",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Cell+Stephen+King",
+     "year": 2006,
+     "year_confidence": "alta",
+     "cover": "R4-024.jpg",
+     "cw": 280,
+     "ch": 431
+    },
+    {
+     "id": "R4-025",
+     "title": "IT (mini collector's edition with Pennywise figurine)",
+     "author": "Stephen King",
+     "format": "miniature book + figure",
+     "topics": [
+      "stephen-king"
+     ],
+     "buy_url": "https://listado.mercadolibre.com.uy/it-mini-collectors-edition-with-pennywise-figurine",
+     "year": 1986,
+     "year_confidence": "alta"
+    }
+   ]
+  },
+  {
+   "id": "R5",
+   "label": "Right column, shelf 5",
+   "theme": "Stephen King (black-cover modern editions)",
+   "books": [
+    {
+     "id": "R5-026",
+     "title": "Carrie (edición tapa dura oscura)",
+     "author": "Stephen King",
+     "series": "Biblioteca Stephen King",
+     "topics": [
+      "stephen-king"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Segunda Carrie de la casa (la blanca Debolsillo es R4-001): tapa dura oscura con letras naranjas, primera del estante."
+    },
+    {
+     "id": "R5-011",
+     "title": "Firestarter",
+     "author": "Stephen King",
+     "publisher": "Hodder",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Firestarter+Stephen+King",
+     "year": 1980,
+     "year_confidence": "alta",
+     "cover": "R5-011.jpg",
+     "cw": 280,
+     "ch": 424
+    },
+    {
+     "id": "R5-001",
+     "title": "La Tienda (Needful Things)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Tienda+%28Needful+Things%29+Stephen+King",
+     "year": 1991,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-002",
+     "title": "Las Cuatro Estaciones II (Different Seasons, part 2)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Las+Cuatro+Estaciones+II+%28Different+Seasons%2C+part+2%29+Stephen+King",
+     "year": 1982,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-003",
+     "title": "Las Cuatro Estaciones I (Different Seasons, part 1)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Las+Cuatro+Estaciones+I+%28Different+Seasons%2C+part+1%29+Stephen+King",
+     "year": 1982,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-004",
+     "title": "Torre Oscura (The Dark Tower)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Torre+Oscura+%28The+Dark+Tower%29+Stephen+King",
+     "year": 2004,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-005",
+     "title": "El Resplandor (The Shining)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Resplandor+Stephen+King",
+     "year": 1977,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-006",
+     "title": "Blaze",
+     "author": "Stephen King (as Richard Bachman)",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Blaze+Stephen+King+%28as+Richard+Bachman%29",
+     "year": 2007,
+     "year_confidence": "alta",
+     "year_note": "Publicada como Richard Bachman, manuscrito de ~1973 rescatado",
+     "cover": "R5-006.jpg",
+     "cw": 280,
+     "ch": 449
+    },
+    {
+     "id": "R5-007",
+     "title": "Pesadillas y Alucinaciones I (Nightmares and Dreamscapes)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Pesadillas+y+Alucinaciones+I+%28Nightmares+and+Dreamscapes%29+Stephen+King",
+     "year": 1993,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-008",
+     "title": "Pesadillas y Alucinaciones II (Nightmares and Dreamscapes)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Pesadillas+y+Alucinaciones+II+%28Nightmares+and+Dreamscapes%29+Stephen+King",
+     "year": 1993,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-009",
+     "title": "El Fugitivo (The Running Man)",
+     "author": "Stephen King (as Richard Bachman)",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Fugitivo+%28The+Running+Man%29+Stephen+King+%28as+Richard+Bachman%29",
+     "year": 1982,
+     "year_confidence": "alta",
+     "year_note": "Publicada como Richard Bachman"
+    },
+    {
+     "id": "R5-010",
+     "title": "La Historia de Lisey (Lisey's Story)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Historia+de+Lisey+%28Lisey%27s+Story%29+Stephen+King",
+     "year": 2006,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-012",
+     "title": "Joyland",
+     "author": "Stephen King",
+     "publisher": "Hodder",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Joyland+Stephen+King",
+     "year": 2013,
+     "year_confidence": "alta",
+     "cover": "R5-012.jpg",
+     "cw": 280,
+     "ch": 464
+    },
+    {
+     "id": "R5-013",
+     "title": "Por los Aires (Flight or Fright)",
+     "author": "Stephen King & Bev Vincent (eds.)",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Por+los+Aires+%28Flight+or+Fright%29+Stephen+King+%26+Bev+Vincent+%28eds.%29",
+     "year": 2018,
+     "year_confidence": "alta",
+     "year_note": "Antología editada por King y Bev Vincent"
+    },
+    {
+     "id": "R5-014",
+     "title": "La Mitad Oscura (The Dark Half)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Mitad+Oscura+%28The+Dark+Half%29+Stephen+King",
+     "year": 1989,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-015",
+     "title": "La Sangre Manda (If It Bleeds)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Sangre+Manda+%28If+It+Bleeds%29+Stephen+King",
+     "year": 2020,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-016",
+     "title": "Doctor Sueño (Doctor Sleep)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Doctor+Sue%C3%B1o+%28Doctor+Sleep%29+Stephen+King",
+     "year": 2013,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-017",
+     "title": "Cuento de Hadas (Fairy Tale)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Cuento+de+Hadas+%28Fairy+Tale%29+Stephen+King",
+     "year": 2022,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-018",
+     "title": "Si te gusta la oscuridad (You Like It Darker)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Si+te+gusta+la+oscuridad+%28You+Like+It+Darker%29+Stephen+King",
+     "year": 2024,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-019",
+     "title": "22/11/63 (11/22/63)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=22%2F11%2F63+%2811%2F22%2F63%29+Stephen+King",
+     "year": 2011,
+     "year_confidence": "alta",
+     "cover": "R5-019.jpg",
+     "cw": 280,
+     "ch": 431
+    },
+    {
+     "id": "R5-020",
+     "title": "Billy Summers",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Billy+Summers+Stephen+King",
+     "year": 2021,
+     "year_confidence": "alta",
+     "cover": "R5-020.jpg",
+     "cw": 280,
+     "ch": 439
+    },
+    {
+     "id": "R5-021",
+     "title": "Bellas Durmientes (Sleeping Beauties)",
+     "author": "Stephen King & Owen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Bellas+Durmientes+%28Sleeping+Beauties%29+Stephen+King+%26+Owen+King",
+     "year": 2017,
+     "year_confidence": "alta",
+     "year_note": "Coescrita con su hijo Owen King"
+    },
+    {
+     "id": "R5-022",
+     "title": "El Visitante (The Outsider)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Visitante+%28The+Outsider%29+Stephen+King",
+     "year": 2018,
+     "year_confidence": "alta"
+    },
+    {
+     "id": "R5-023",
+     "title": "No tengas miedo",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "note": "Spanish title — possibly an edition of 'Just After Sunset' or 'Don't Be Afraid'; confirm in person",
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=No+tengas+miedo+Stephen+King"
+    },
+    {
+     "id": "R5-024",
+     "title": "Holly",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=Holly+Stephen+King",
+     "year": 2023,
+     "year_confidence": "alta",
+     "cover": "R5-024.jpg",
+     "cw": 280,
+     "ch": 491
+    },
+    {
+     "id": "R5-025",
+     "title": "El Instituto (The Institute)",
+     "author": "Stephen King",
+     "language": "Spanish",
+     "topics": [
+      "stephen-king"
+     ],
+     "price": "USD 15",
+     "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Instituto+%28The+Institute%29+Stephen+King",
+     "year": 2019,
+     "year_confidence": "alta"
+    }
+   ]
+  },
+  {
+   "id": "R6",
+   "label": "Right column, shelf 6",
+   "theme": "National Geographic magazine archive",
+   "books": [
+    {
+     "id": "R6-NATGEO",
+     "title": "National Geographic magazine collection",
+     "publisher": "National Geographic Society",
+     "format": "approximately 100+ issues stacked vertically",
+     "topics": [
+      "reference"
+     ],
+     "note": "Special issues include the blue «November 1993 Special Edition: Water» (fecha corregida en la Re-catalogación 2026-08; antes se citaba como March 1992). Un número en español, Mayo 2000, cierra el rango.",
+     "price": "USD 60",
+     "buy_url": "https://listado.mercadolibre.com.uy/national-geographic-coleccion"
+    }
+   ]
+  },
+  {
+   "id": "R7",
+   "label": "Right column, shelf 7",
+   "theme": "Genealogy & chemistry course materials (family-authored)",
+   "books": [
+    {
+     "id": "R7-001",
+     "title": "Génesis de la Familia Uruguaya (deluxe single volume, paper-wrapped)",
+     "author": "Juan Alejandro Apolant",
+     "binding": "antique cloth in paper jacket",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "genealogy"
+     ],
+     "price": "USD 75",
+     "buy_url": "https://www.libreriapocho.com.uy/products/genesis-de-la-familia-uruguaya-3-tomos-juan-alejandro-apolant"
+    },
+    {
+     "id": "R7-002",
+     "title": "Génesis de la Familia Uruguaya (deluxe binding)",
+     "author": "Juan Alejandro Apolant",
+     "binding": "black leather with gold tooling",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "genealogy"
+     ],
+     "price": "USD 75",
+     "buy_url": "https://www.libreriapocho.com.uy/products/genesis-de-la-familia-uruguaya-3-tomos-juan-alejandro-apolant"
+    },
+    {
+     "id": "R7-003",
+     "title": "Génesis de la Familia Uruguaya, Tomo IV (Índices)",
+     "author": "Juan Alejandro Apolant",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "genealogy"
+     ],
+     "price": "USD 50",
+     "buy_url": "http://www.linardiyrisso.com/antiguos/historia/283_COLECCION_HISTORIA.pdf",
+     "year": 1975,
+     "year_confidence": "alta",
+     "year_note": "2a ed. ampliada, Imprenta Vinaak — dato de la propia ficha del catálogo"
+    },
+    {
+     "id": "R7-004",
+     "title": "Génesis de la Familia Uruguaya, Tomo III",
+     "author": "Juan Alejandro Apolant",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "genealogy"
+     ],
+     "price": "USD 60",
+     "buy_url": "http://www.linardiyrisso.com/antiguos/historia/283_COLECCION_HISTORIA.pdf",
+     "year": 1975,
+     "year_confidence": "alta",
+     "year_note": "idem"
+    },
+    {
+     "id": "R7-005",
+     "title": "Génesis de la Familia Uruguaya, Tomo II",
+     "author": "Juan Alejandro Apolant",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "genealogy"
+     ],
+     "price": "USD 60",
+     "buy_url": "http://www.linardiyrisso.com/antiguos/historia/283_COLECCION_HISTORIA.pdf",
+     "year": 1975,
+     "year_confidence": "alta",
+     "year_note": "idem"
+    },
+    {
+     "id": "R7-006",
+     "title": "Génesis de la Familia Uruguaya, Tomo I",
+     "author": "Juan Alejandro Apolant",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "genealogy"
+     ],
+     "price": "USD 60",
+     "buy_url": "http://www.linardiyrisso.com/antiguos/historia/283_COLECCION_HISTORIA.pdf",
+     "year": 1975,
+     "year_confidence": "alta",
+     "year_note": "idem"
+    },
+    {
+     "id": "R7-007",
+     "title": "Crónica del Naufragio del Navío Nuestra Señora de la Luz",
+     "binding": "blue spine",
+     "language": "Spanish",
+     "topics": [
+      "miscellaneous"
+     ],
+     "price": "USD 35",
+     "buy_url": "https://articulo.mercadolibre.com.uy/MLU-684011792-cronica-del-naufragio-de-navio-nuestra-senora-de-la-luz-1752-_JM"
+    },
+    {
+     "id": "R7-018",
+     "title": "La obra de J. A. Apolant desde Galicia",
+     "author": "José Monterroso Devesa",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Folleto blanco fino, entre Crónica del Naufragio y Operativo Patagonia."
+    },
+    {
+     "id": "R7-008",
+     "title": "Operativo Patagonia",
+     "author": "Juan Alejandro Apolant",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "genealogy"
+     ],
+     "price": "USD 35",
+     "buy_url": "http://tiempodehistoria.org/home/book/genesis-de-la-familia-uruguaya-y-operativo-patagonia/",
+     "year": 1970,
+     "year_confidence": "aprox"
+    },
+    {
+     "id": "R7-009",
+     "title": "La Ruina de la Ciudadela de Montevideo",
+     "author": "Juan Alejandro Apolant",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "genealogy"
+     ],
+     "note": "Re-catalogación 2026-08: título corregido leyendo el lomo (antes «La Villa, La Ciudadela de Montevideo»).",
+     "price": "USD 35",
+     "buy_url": "https://opac.um.edu.uy/index.php?lvl=author_see&id=2654"
+    },
+    {
+     "id": "R7-010",
+     "title": "Die wirtschaftsfriedliche Arbeitnehmerbewegung (Vols. VIII-X)",
+     "author": "Juan Alejandro Apolant",
+     "language": "German",
+     "topics": [
+      "uruguay",
+      "genealogy"
+     ],
+     "price": "USD 30",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/wirtschaftsfriedliche-arbeitnehmerbewegung"
+    },
+    {
+     "id": "R7-019",
+     "title": "Die wirtschaftsfriedliche Arbeitnehmerbewegung, vols. III al VII",
+     "author": "Juan Alejandro Apolant",
+     "topics": [
+      "uruguay"
+     ],
+     "note": "Re-catalogación 2026-08: alta — Lomo forrado rotulado «III al VII», junto al volumen VIII al X (R7-010)."
+    },
+    {
+     "id": "R7-011",
+     "title": "Instantáneas de la Época Colonial",
+     "author": "Juan Alejandro Apolant",
+     "publisher": "ARCA",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "genealogy"
+     ],
+     "price": "USD 28",
+     "buy_url": "https://opac.um.edu.uy/index.php?lvl=author_see&id=2654"
+    },
+    {
+     "id": "R7-012",
+     "title": "Cinética de los Sistemas Dispersos",
+     "author": "G.E. Villar",
+     "language": "Spanish",
+     "format": "softcover textbook",
+     "topics": [
+      "science"
+     ],
+     "note": "Re-catalogación 2026-08: confirma «Cinética» (no «Crítica»).",
+     "price": "USD 28",
+     "buy_url": "https://listado.mercadolibre.com.uy/villar-cinetica-sistemas-dispersos",
+     "year": 1940,
+     "year_confidence": "alta",
+     "year_note": "El año figura en el título de la ficha"
+    },
+    {
+     "id": "R7-013",
+     "title": "Apuntes de Química Técnica, Tomo II",
+     "author": "G.E. Villar",
+     "language": "Spanish",
+     "topics": [
+      "science"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://listado.mercadolibre.com.uy/villar-quimica-tecnica"
+    },
+    {
+     "id": "R7-014",
+     "title": "Apuntes de Química Técnica, Tomo I (1967)",
+     "author": "G.E. Villar",
+     "language": "Spanish",
+     "topics": [
+      "science"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://listado.mercadolibre.com.uy/villar-quimica-tecnica",
+     "year": 1967,
+     "year_confidence": "alta",
+     "year_note": "El año figura en la ficha"
+    },
+    {
+     "id": "R7-015",
+     "title": "El Átomo y su Energía",
+     "author": "G.E. Villar",
+     "language": "Spanish",
+     "topics": [
+      "science"
+     ],
+     "price": "USD 18",
+     "buy_url": "https://listado.mercadolibre.com.uy/villar-atomo-energia"
+    },
+    {
+     "id": "R7-016",
+     "title": "Coloides",
+     "author": "G.E. Villar",
+     "language": "Spanish",
+     "topics": [
+      "science"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://listado.mercadolibre.com.uy/villar-coloides"
+    },
+    {
+     "id": "R7-017",
+     "title": "G.E. Villar — chemistry lecture-note pamphlets (~20 stapled booklets)",
+     "author": "G.E. Villar",
+     "language": "Spanish",
+     "format": "stapled lecture-note pamphlets",
+     "topics": [
+      "science"
+     ],
+     "note": "Bundle of thin pamphlets between bound chemistry volumes",
+     "price": "USD 25",
+     "buy_url": "https://listado.mercadolibre.com.uy/villar-quimica-apuntes"
+    }
+   ]
+  },
+  {
+   "id": "R8",
+   "label": "Right column, bottom shelf",
+   "theme": "Oversized & antique books",
+   "books": [
+    {
+     "id": "R8-001",
+     "title": "The Chinese Century",
+     "publisher": "Random House",
+     "binding": "red w/ Chinese-style border",
+     "topics": [
+      "miscellaneous"
+     ],
+     "price": "USD 25",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=chinese+century+random+house+oversize",
+     "cover": "R8-001.jpg",
+     "cw": 280,
+     "ch": 398
+    },
+    {
+     "id": "R8-002",
+     "title": "The Underground Terracotta Army of Emperor Qin Shi Huang",
+     "publisher": "New World Press",
+     "topics": [
+      "miscellaneous"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=terracotta+army+emperor+qin+new+world+press",
+     "cover": "R8-002.jpg",
+     "cw": 280,
+     "ch": 326
+    },
+    {
+     "id": "R8-003",
+     "title": "The New Our Bodies, Ourselves",
+     "author": "Boston Women's Health Book Collective",
+     "topics": [
+      "miscellaneous"
+     ],
+     "price": "USD 14",
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=new+our+bodies+ourselves+boston"
+    },
+    {
+     "id": "R8-004",
+     "title": "La Ciencia Matemática de los Mayas",
+     "publisher": "Kailas Editorial (Tucán 43)",
+     "language": "Spanish",
+     "topics": [
+      "miscellaneous"
+     ],
+     "price": "USD 20",
+     "buy_url": "https://www.kailas.es/libros/"
+    },
+    {
+     "id": "R8-005",
+     "title": "Grandes Pechos, Amplias Caderas (Big Breasts and Wide Hips)",
+     "author": "Mo Yan",
+     "publisher": "Kailas Editorial",
+     "language": "Spanish",
+     "topics": [
+      "miscellaneous"
+     ],
+     "price": "USD 22",
+     "buy_url": "https://www.kailas.es/libros/biblioteca-mo-yan/grandes-pechos-amplias-caderas/"
+    },
+    {
+     "id": "R8-006",
+     "title": "Martín Fierro (small leather edition)",
+     "author": "José Hernández",
+     "binding": "small leather with embossed cartouche",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "latin-american"
+     ],
+     "price": "USD 35",
+     "buy_url": "https://listado.mercadolibre.com.uy/martin-fierro-cuero"
+    },
+    {
+     "id": "R8-007",
+     "title": "Martín Fierro (cowhide-bound edition)",
+     "author": "José Hernández",
+     "binding": "rustic cowhide",
+     "language": "Spanish",
+     "topics": [
+      "uruguay",
+      "latin-american"
+     ],
+     "price": "USD 75",
+     "buy_url": "https://listado.mercadolibre.com.uy/martin-fierro-cuero-vacuno"
+    },
+    {
+     "id": "R8-008",
+     "title": "UNK-R8-008",
+     "binding": "antique vellum, no visible spine text",
+     "topics": [
+      "miscellaneous"
+     ],
+     "note": "Old vellum-bound book at right of shelf",
+     "price": "NotFound",
+     "buy_url": "https://listado.mercadolibre.com.uy/"
+    }
+   ]
+  },
+  {
+   "id": "TOP",
+   "label": "Top of bookcase (above mug shelves)",
+   "theme": "Display only — leather-bound Don Quijote",
+   "books": [
+    {
+     "id": "TOP-001",
+     "title": "Don Quijote de la Mancha, Tomo I (deluxe red leather)",
+     "author": "Miguel de Cervantes Saavedra",
+     "binding": "red leather with gold tooling",
+     "language": "Spanish",
+     "topics": [
+      "classics"
+     ],
+     "note": "Displayed flat on top of bookcase with carved Quixote/Sancho figurines",
+     "price": "USD 60",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/don-quijote/autor/cervantes",
+     "year": 1605,
+     "year_confidence": "alta",
+     "cover": "TOP-001.jpg",
+     "cw": 280,
+     "ch": 420
+    },
+    {
+     "id": "TOP-002",
+     "title": "Don Quijote de la Mancha, Tomo II (deluxe red leather)",
+     "author": "Miguel de Cervantes Saavedra",
+     "binding": "red leather with gold tooling",
+     "language": "Spanish",
+     "topics": [
+      "classics"
+     ],
+     "price": "USD 60",
+     "buy_url": "https://www.iberlibro.com/buscar-libro/titulo/don-quijote/autor/cervantes",
+     "year": 1615,
+     "year_confidence": "alta",
+     "cover": "TOP-002.jpg",
+     "cw": 280,
+     "ch": 420
+    }
+   ]
+  }
+ ]
+}

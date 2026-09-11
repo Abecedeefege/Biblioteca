@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>La Sala de Lectura — Bibliotequeando</title>
+<meta name="description" content="La Sala de Lectura: la biblioteca de la casa como mueble en tres dimensiones. Los 437 libros del catálogo, estante por estante.">
+<meta name="theme-color" content="#150e09">
+
+<!-- ====== La Sala de Lectura ======
+     Demo 3D del catálogo: el mueble de tres columnas × ocho estantes con los
+     libros de verdad, y una mesa donde se despliega el estante elegido.
+
+     De dónde sale cada cosa:
+       · datos   → data/catalog.json, derivado del catálogo canónico
+                   (index.html → inline-catalog) + data/enrichment.json.
+                   Se regenera con `python3 tools/sala_covers.py`.
+       · tapas   → covers/<id>.jpg, bajadas de Open Library (ver data/covers.json).
+       · three.js → vendor/, versión fija: nada de CDN en vivo durante una demo.
+     Esta carpeta es solo de lectura: no escribe en el catálogo ni toca a los
+     agentes. Inspirado en reading-room (MIT) de Travis Fischer — ver README.md.  -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+<link rel="icon" href="../icon-192.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<style>
+:root{
+  --room:#150e09; --wood:#5a3d27; --wood-d:#3c2818;
+  --brass:#c9a227; --card:#f4ead0; --ink:#33291f; --ink-soft:#5c4f3e;
+  --red:#b3372e; --line:rgba(244,234,208,.16);
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--room);color:var(--card);
+  font-family:var(--sans);-webkit-font-smoothing:antialiased;overscroll-behavior:none}
+body{overflow:hidden;touch-action:none}
+canvas{display:block;position:fixed;inset:0;width:100%;height:100%}
+
+/* luz de la sala: una lámpara cálida arriba y sombra en los bordes */
+#vignette{position:fixed;inset:0;pointer-events:none;z-index:2;
+  background:
+    radial-gradient(120% 85% at 50% 8%, rgba(255,196,120,.16), transparent 55%),
+    radial-gradient(120% 120% at 50% 60%, transparent 45%, rgba(8,5,3,.72) 100%);
+  mix-blend-mode:normal}
+
+.hud{position:fixed;z-index:5;pointer-events:none}
+.hud button,.hud a{pointer-events:auto}
+
+/* ---------- barra de arriba ---------- */
+#top{top:0;left:0;right:0;display:flex;align-items:flex-start;gap:12px;
+  padding:16px clamp(14px,3vw,28px);
+  background:linear-gradient(to bottom,rgba(10,6,4,.82),transparent)}
+#where{flex:1;min-width:0}
+#where h1{margin:0;font-family:var(--serif);font-weight:600;letter-spacing:.02em;
+  font-size:clamp(20px,3.2vw,30px);line-height:1.1}
+#where p{margin:4px 0 0;font-size:clamp(12px,1.5vw,14px);color:rgba(244,234,208,.62);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btn{font:600 13px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;
+  color:var(--card);background:rgba(244,234,208,.07);border:1px solid var(--line);
+  border-radius:999px;padding:10px 16px;cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:7px;white-space:nowrap;
+  transition:background .18s,border-color .18s,transform .18s}
+.btn:hover{background:rgba(244,234,208,.14);border-color:rgba(244,234,208,.3)}
+.btn:active{transform:scale(.97)}
+.btn.brass{background:rgba(201,162,39,.16);border-color:rgba(201,162,39,.45);color:#f0d98a}
+#tools{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+
+/* ---------- estantes ---------- */
+#shelfbar{left:0;right:0;bottom:0;padding:34px clamp(10px,3vw,24px) calc(14px + var(--safe-b));
+  background:linear-gradient(to top,rgba(10,6,4,.88),transparent);
+  -webkit-mask-image:none}
+#chips{display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;padding:2px;
+  scrollbar-width:none;pointer-events:auto;scroll-snap-type:x proximity}
+#chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;scroll-snap-align:center;cursor:pointer;text-align:left;
+  background:rgba(244,234,208,.06);border:1px solid var(--line);border-radius:12px;
+  padding:9px 13px;color:var(--card);font-family:var(--sans);min-width:118px;
+  transition:background .18s,border-color .18s,transform .18s}
+.chip:hover{background:rgba(244,234,208,.13);transform:translateY(-2px)}
+.chip[aria-pressed="true"]{background:rgba(201,162,39,.2);border-color:rgba(201,162,39,.55)}
+.chip b{display:block;font:700 13px/1.2 var(--sans);letter-spacing:.08em}
+.chip span{display:block;font-size:11px;line-height:1.3;margin-top:3px;
+  color:rgba(244,234,208,.6);max-width:190px;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+
+/* ---------- ficha del libro ---------- */
+#card{position:fixed;z-index:6;right:0;top:0;bottom:0;width:min(420px,86vw);
+  background:linear-gradient(160deg,#f7eed8,#ece0c3);color:var(--ink);
+  box-shadow:-24px 0 60px rgba(0,0,0,.55);overflow-y:auto;overscroll-behavior:contain;
+  transform:translateX(101%);transition:transform .42s cubic-bezier(.22,.9,.3,1);
+  padding:clamp(22px,3vw,34px);padding-bottom:40px}
+#card.on{transform:none}
+#card .cover{margin:0 0 18px;text-align:center}
+#card .cover img{max-width:min(220px,52%);width:auto;height:auto;border-radius:3px;
+  box-shadow:0 14px 34px rgba(40,26,12,.42),0 0 0 1px rgba(51,41,31,.14)}
+#card .kicker{font:700 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--red)}
+#card h2{font-family:var(--serif);font-weight:700;font-size:clamp(24px,3.4vw,32px);
+  line-height:1.12;margin:10px 0 6px}
+#card .author{font-family:var(--serif);font-size:19px;color:var(--ink-soft);margin:0 0 18px}
+#card dl{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;margin:0 0 18px;font-size:14px}
+#card dt{font-weight:700;color:var(--ink-soft);white-space:nowrap}
+#card dd{margin:0}
+#card .note{font-family:var(--serif);font-size:17px;line-height:1.45;
+  border-left:3px solid rgba(179,55,46,.5);padding-left:13px;margin:0 0 18px}
+#card .topics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+#card .topics i{font-style:normal;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  background:rgba(51,41,31,.09);border-radius:999px;padding:5px 10px;font-weight:600}
+#card .acts{display:flex;gap:10px;flex-wrap:wrap}
+#card .acts .btn{color:var(--ink);background:rgba(51,41,31,.07);border-color:rgba(51,41,31,.22)}
+#card .acts .btn:hover{background:rgba(51,41,31,.14)}
+#close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;
+  border:1px solid rgba(51,41,31,.22);background:rgba(51,41,31,.06);color:var(--ink);
+  font-size:19px;line-height:1;cursor:pointer}
+@media (max-width:720px){
+  #top{flex-direction:column;gap:10px;padding-top:12px}
+  #tools{width:100%;justify-content:flex-start}
+  .btn{padding:9px 13px;font-size:11.5px}
+  #card{right:0;left:0;top:auto;width:auto;max-height:76vh;border-radius:20px 20px 0 0;
+    transform:translateY(103%);box-shadow:0 -20px 50px rgba(0,0,0,.55);
+    padding-bottom:calc(30px + var(--safe-b))}
+  #card.on{transform:none}
+}
+
+/* ---------- recorrido ---------- */
+body.recorriendo #shelfbar{opacity:0;pointer-events:none}
+#shelfbar{transition:opacity .4s}
+#caption{left:50%;bottom:clamp(96px,16vh,150px);transform:translateX(-50%) translateY(12px);
+  width:min(640px,92vw);text-align:center;opacity:0;transition:opacity .5s,transform .5s}
+#caption.on{opacity:1;transform:translateX(-50%)}
+#caption{padding:18px 20px;border-radius:16px;
+  background:radial-gradient(120% 140% at 50% 50%,rgba(12,8,5,.82),rgba(12,8,5,0) 72%)}
+#caption b{display:block;font-family:var(--serif);font-size:clamp(22px,3.6vw,34px);
+  font-weight:600;line-height:1.15;text-shadow:0 2px 18px rgba(0,0,0,.8)}
+#caption span{display:block;margin-top:8px;font-size:clamp(13px,1.8vw,16px);
+  color:rgba(244,234,208,.78);text-shadow:0 2px 14px rgba(0,0,0,.9)}
+#tourbar{left:50%;bottom:calc(20px + var(--safe-b));transform:translateX(-50%);
+  display:none;gap:8px;align-items:center}
+#tourbar.on{display:flex}
+
+/* ---------- tooltip del lomo ---------- */
+#tip{position:fixed;z-index:4;pointer-events:none;opacity:0;transition:opacity .15s;
+  background:rgba(14,9,6,.92);border:1px solid var(--line);border-radius:9px;
+  padding:8px 11px;max-width:260px;font-size:13px;line-height:1.3;
+  box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#tip b{display:block;font-weight:600}
+#tip span{color:rgba(244,234,208,.6);font-size:12px}
+
+/* ---------- portada / carga ---------- */
+#gate{position:fixed;inset:0;z-index:20;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:18px;text-align:center;
+  padding:28px;background:radial-gradient(120% 90% at 50% 35%,#221710,#0c0805 70%);
+  transition:opacity .7s}
+#gate.gone{opacity:0;pointer-events:none}
+#gate h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,9vw,80px);
+  margin:0;letter-spacing:.01em;line-height:1}
+#gate .sub{font-size:clamp(14px,2.2vw,18px);color:rgba(244,234,208,.66);margin:0;
+  max-width:34ch;line-height:1.5}
+#gate .stats{display:flex;gap:clamp(16px,4vw,42px);margin:6px 0 4px;flex-wrap:wrap;
+  justify-content:center}
+#gate .stats div{min-width:78px}
+#gate .stats b{display:block;font-family:var(--serif);font-size:clamp(26px,5vw,40px);
+  font-weight:600;color:var(--brass)}
+#gate .stats span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(244,234,208,.5)}
+#enter{font-size:15px;padding:15px 34px}
+#enter[disabled]{opacity:.45;cursor:progress}
+#bar{width:min(280px,70vw);height:3px;border-radius:2px;background:rgba(244,234,208,.14);
+  overflow:hidden}
+#bar i{display:block;height:100%;width:0;background:var(--brass);transition:width .3s}
+#gate small{font-size:11px;color:rgba(244,234,208,.34);letter-spacing:.04em}
+#gate small a{color:rgba(244,234,208,.5)}
+
+#fallback{position:fixed;inset:0;z-index:30;display:none;flex-direction:column;
+  align-items:center;justify-content:center;gap:16px;padding:32px;text-align:center;
+  background:var(--room)}
+#fallback.on{display:flex}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms !important}}
+</style>
+</head>
+<body>
+
+<div id="tip"></div>
+<div id="vignette"></div>
+
+<div class="hud" id="top">
+  <div id="where">
+    <h1 id="where-t">La Sala de Lectura</h1>
+    <p id="where-s">437 libros · 25 estantes · tres columnas</p>
+  </div>
+  <div id="tools">
+    <button class="btn brass" id="tour-btn">Recorrido</button>
+    <button class="btn" id="back-btn" hidden>Volver a la sala</button>
+    <a class="btn" href="../concepts/fichero.html">El Fichero</a>
+  </div>
+</div>
+
+<div class="hud" id="shelfbar"><div id="chips"></div></div>
+
+<div class="hud" id="caption"><b></b><span></span></div>
+<div class="hud" id="tourbar">
+  <button class="btn" id="tour-prev">‹ Anterior</button>
+  <button class="btn" id="tour-next">Siguiente ›</button>
+  <button class="btn" id="tour-stop">Salir del recorrido</button>
+</div>
+
+<aside id="card" aria-live="polite">
+  <button id="close" aria-label="Cerrar ficha">✕</button>
+  <div id="card-body"></div>
+</aside>
+
+<div id="gate">
+  <h1>La Sala de Lectura</h1>
+  <p class="sub">La biblioteca de la casa, mueble y todo: tres columnas, ocho estantes,
+     los libros donde están de verdad.</p>
+  <div class="stats">
+    <div><b id="s-books">—</b><span>libros</span></div>
+    <div><b id="s-shelves">—</b><span>estantes</span></div>
+    <div><b id="s-covers">—</b><span>con tapa</span></div>
+  </div>
+  <button class="btn brass" id="enter" disabled>Preparando la sala…</button>
+  <div id="bar"><i></i></div>
+  <small>Tocá un lomo para sacar el libro del estante.</small>
+</div>
+
+<div id="fallback">
+  <h1 style="font-family:var(--serif);font-weight:600">La Sala de Lectura necesita WebGL</h1>
+  <p style="max-width:40ch;color:rgba(244,234,208,.7)">Este navegador no puede dibujar la sala en 3D.
+     El catálogo completo sigue disponible en el fichero de siempre.</p>
+  <a class="btn brass" href="../concepts/fichero.html">Ir al Fichero</a>
+</div>
+
+<script type="module" src="sala.js"></script>
+</body>
+</html>
