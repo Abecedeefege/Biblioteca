@@ -533,11 +533,14 @@ const coverCache = new Map()
 function loadCoverImage(book) {
   if (!book.cover) return Promise.resolve(null)
   if (coverCache.has(book.id)) return coverCache.get(book.id)
+  // en el sitio las tapas son archivos; en la versión de un solo archivo
+  // (tools/sala_bundle.py) vienen embebidas como data: URI
+  const src = (window.SALA_COVERS && window.SALA_COVERS[book.id]) || 'covers/' + book.cover
   const p = new Promise((resolve) => {
     const img = new Image()
     img.onload = () => resolve(img)
     img.onerror = () => resolve(null)
-    img.src = 'covers/' + book.cover
+    img.src = src
   })
   coverCache.set(book.id, p)
   return p
@@ -1108,8 +1111,9 @@ function cardHTML(book, shelf, look) {
 async function boot() {
   let data
   try {
-    const res = await fetch('data/catalog.json')
-    data = await res.json()
+    const inline = document.getElementById('catalogo-inline')
+    data = inline ? JSON.parse(inline.textContent)
+      : await (await fetch('data/catalog.json')).json()
   } catch (err) {
     $('#fallback').classList.add('on')
     return
