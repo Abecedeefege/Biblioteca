@@ -32,6 +32,13 @@ una página suelta que dibuja el mueble real de la casa.
   en `sala/data/covers.json`. Los libros sin tapa no quedan en blanco: se les
   compone una con lo que dice la ficha (color según encuadernación y tema,
   título, autor, editorial).
+- **Ficha del libro**: la misma que El Fichero. Campos y ubicación salen del
+  catálogo; la descripción, el dato del archivista y la bio del autor de
+  `concepts/editorial.json`; el cajón de `concepts/collections.json`; la crítica
+  de afuera del mismo `concepts/reviews.js`; y los sellos LEÍDO · FAVORITO ·
+  PRESTADO comparten el cajón de El Fichero (`localStorage['fichero-v1']`), así
+  que lo sellado en un lado se ve en el otro. Los «véase además» se tocan y el
+  libro citado sale de su estante.
 - **three.js**: fijo en `sala/vendor/`, versión r170 (MIT). Nada de CDN en vivo:
   una demo no se cae porque el wifi de la sala ande mal.
 
@@ -59,5 +66,8 @@ Lo que permite que 437 libros anden en un teléfono:
 - **Texturas de mesa bajo demanda**: solo el estante abierto arma tapas
   (512 px en escritorio, 320 px en teléfono) y las libera al cerrarlo.
 
-`sala/` es de solo lectura: no escribe en el catálogo, no usa `localStorage` ni
-toca la cola de notificaciones ni a los agentes.
+`sala/` no escribe en el catálogo ni toca la cola de notificaciones ni a los
+agentes. Lo único que guarda son los sellos, en el mismo `localStorage` de El
+Fichero y en este dispositivo. Lo que todavía no trae de la ficha de allá son
+las polaroids: las fotos propias y la reseña de su dorso siguen viviendo solo
+en El Fichero.

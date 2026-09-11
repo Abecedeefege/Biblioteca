@@ -127,6 +127,36 @@ def load_catalog():
     return cat, enrich
 
 
+def load_editorial():
+    """El mismo contenido editorial que lee El Fichero: descripciones, datos y bios."""
+    path = os.path.join(ROOT, 'concepts', 'editorial.json')
+    if not os.path.exists(path):
+        return {'books': {}, 'authors': {}, 'topics': {}}
+    ed = json.load(open(path, encoding='utf-8'))
+    return {'books': ed.get('books', {}), 'authors': ed.get('authors', {}), 'topics': ed.get('topics', {})}
+
+
+def is_family(book):
+    """Autoría familiar: el criterio de El Fichero, palabra por palabra."""
+    return re.search(r'apolant|villar', (book.get('author_canonical') or book.get('author') or ''), re.I)
+
+
+def collection_of(book, shelf_id, cols, by_shelf):
+    """El cajón de El Fichero al que cae este libro (primero que lo contiene)."""
+    for col in cols:
+        f = col.get('filter') or {}
+        kind, value = f.get('type'), f.get('value')
+        if kind == 'shelf' and shelf_id == value:
+            return col
+        if kind == 'shelves' and shelf_id in (value or []):
+            return col
+        if kind == 'topic' and value in (book.get('topics') or []):
+            return col
+        if kind == 'family' and is_family(book):
+            return col
+    return None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--limit', type=int, default=0, help='procesar solo N libros sin tapa (prueba)')
@@ -184,31 +214,46 @@ def main():
     }, open(manifest_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
     # catálogo compacto para el demo (sin tocar el canónico de index.html)
+    ed = load_editorial()
+    cols_path = os.path.join(ROOT, 'concepts', 'collections.json')
+    cols = json.load(open(cols_path, encoding='utf-8'))['collections'] if os.path.exists(cols_path) else []
     shelves = []
     for s in cat['shelves']:
         out = []
         for b in s.get('books', []):
             e = enrich.get(b['id'], {})
             m = manifest.get(b['id'], {})
+            edb = ed['books'].get(b['id']) or {}
+            col = collection_of(b, s['id'], cols, None)
             out.append({k: v for k, v in {
                 'id': b['id'], 'title': b['title'], 'author': b.get('author'),
+                'author_canonical': b.get('author_canonical'),
                 'publisher': b.get('publisher'), 'binding': b.get('binding'),
                 'series': b.get('series'), 'language': b.get('language'),
                 'format': b.get('format'), 'topics': b.get('topics') or [],
-                'note': b.get('note'), 'price': b.get('price'), 'buy_url': b.get('buy_url'),
+                'note': b.get('note'), 'price': b.get('price'),
+                'price_note': b.get('price_note'), 'buy_url': b.get('buy_url'),
                 'year': e.get('first_published'), 'year_confidence': e.get('year_confidence'),
                 'year_note': e.get('note'),
+                'desc': edb.get('desc'), 'dato': edb.get('dato'),
+                'family': bool(is_family(b)) or None,
+                'col': {'key': col['key'], 'title': col['title']} if col else None,
                 'cover': m.get('cover'), 'cw': m.get('w'), 'ch': m.get('h'),
             }.items() if v not in (None, [], '')})
         shelves.append({'id': s['id'], 'label': s['label'], 'theme': s.get('theme'), 'books': out})
 
     json.dump({
         '_comment': 'Catálogo compacto para el demo 3D de /sala/. Derivado: el canónico sigue '
-                    'siendo inline-catalog en index.html. Se regenera con tools/sala_covers.py.',
+                    'siendo inline-catalog en index.html, el contenido editorial sigue siendo '
+                    'concepts/editorial.json y los cajones concepts/collections.json. '
+                    'Se regenera con tools/sala_covers.py.',
         'library': cat['library'],
         'generated_at': time.strftime('%Y-%m-%dT%H:%M:%S%z'),
         'books_total': sum(len(s['books']) for s in shelves),
         'books_with_cover': hits,
+        'authors': {k: v.get('bio') for k, v in ed['authors'].items() if v.get('bio')},
+        'topics': {k: v.get('label') or k for k, v in ed['topics'].items()},
+        'topic_desc': {k: v['desc'] for k, v in ed['topics'].items() if v.get('desc')},
         'shelves': shelves,
     }, open(os.path.join(DATA_DIR, 'catalog.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 

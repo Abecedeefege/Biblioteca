@@ -1079,33 +1079,119 @@ function coverFor(book, look, big) {
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
 
-function cardHTML(book, shelf, look) {
-  const rows = []
-  const row = (k, v) => { if (v) rows.push(`<dt>${k}</dt><dd>${esc(v)}</dd>`) }
-  if (book.year != null) {
-    row('Escrito', fmtYear(book.year) + (book.year_confidence === 'aprox' ? ' (aprox.)' : ''))
+/* La ficha: lo mismo que muestra El Fichero para ese libro — campos, descripción
+   editorial, «véase además», sellos, nota del archivista, crítica de afuera y
+   ficha de autor — sobre el catálogo de /sala/. */
+function hsh(str) {          // el mismo djb2 de El Fichero, para elegir igual que él
+  let h = 5381
+  for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) | 0
+  return Math.abs(h)
+}
+
+const SELLOS = { leido: 'Leído', favorito: 'Favorito', prestado: 'Prestado' }
+const SELLOS_LS = 'fichero-v1'           // el mismo cajón de sellos que El Fichero
+function leerSellos() {
+  try { return JSON.parse(localStorage.getItem(SELLOS_LS) || '{}') } catch (e) { return {} }
+}
+function guardarSellos(todos) {
+  try { localStorage.setItem(SELLOS_LS, JSON.stringify(todos)) } catch (e) {}
+}
+
+/** índice plano del catálogo, para las referencias cruzadas */
+function indexar(data) {
+  const libros = []
+  for (const shelf of data.shelves) {
+    shelf.books.forEach((book, i) => {
+      libros.push({ book, shelf, idx: i, n: shelf.books.length })
+    })
   }
-  row('Editorial', book.publisher)
-  row('Colección', book.series)
-  row('Encuadernación', book.binding)
-  row('Idioma', book.language)
-  row('Formato', book.format)
-  row('Estante', `${shelf.id} — ${shelf.label}`)
-  row('Ficha', book.id)
-  row('Valor estimado', book.price)
-  const note = book.note || book.year_note
+  return libros
+}
+
+function cruces(entrada, libros) {
+  const { book } = entrada
+  const mismoAutor = book.author_canonical
+    ? libros.filter((x) => x.book !== book && x.book.author_canonical === book.author_canonical).slice(0, 6)
+    : []
+  const temas = new Set(book.topics || [])
+  const mismaMateria = libros
+    .filter((x) => x.book !== book && !mismoAutor.includes(x) && (x.book.topics || []).some((t) => temas.has(t)))
+    .sort((a, b) => hsh(a.book.id + book.id) - hsh(b.book.id + book.id))
+    .slice(0, 5)
+  let decada = []
+  if (typeof book.year === 'number' && book.year > 1500) {
+    const d = Math.floor(book.year / 10) * 10
+    decada = libros.filter((x) => x.book !== book && typeof x.book.year === 'number'
+      && Math.floor(x.book.year / 10) * 10 === d).slice(0, 4)
+  }
+  return { mismoAutor, mismaMateria, decada, decadaLabel: decada.length ? Math.floor(book.year / 10) * 10 : null }
+}
+
+/** descripción: la editorial si existe, si no la que arma El Fichero con el tema */
+function descripcion(book, shelf, data) {
+  if (book.desc) return book.desc
+  const tema = (book.topics || [])[0]
+  const bits = [`Registro del catálogo: «${book.title}»${book.author ? ', de ' + book.author + '.' : '.'} `
+    + `Archivado bajo ${(shelf.theme || shelf.label || 'clasificación pendiente').toLowerCase()}.`]
+  if (data.topic_desc && data.topic_desc[tema]) bits.push(data.topic_desc[tema])
+  return bits.join(' ')
+}
+
+function refsHTML(titulo, lista) {
+  if (!lista.length) return ''
+  return `<div class="veasetit">${esc(titulo)}</div><div class="vease">${lista.map((x) =>
+    `<button data-ir="${esc(x.book.id)}">${esc(x.book.id)} «${
+      esc(x.book.title.replace(/\s*\(.*?\)/g, '').slice(0, 34))}»</button>`).join('')}</div>`
+}
+
+function cardHTML(entrada, look, data, libros) {
+  const { book, shelf, idx, n } = entrada
+  const label = (t) => (data.topics && data.topics[t]) || t
+  const sellos = leerSellos()[book.id] || {}
+  const refs = cruces(entrada, libros)
+  const bio = book.author_canonical && data.authors ? data.authors[book.author_canonical] : null
+
+  const campos = [
+    ['Autor/a', book.author || '— sin identificar —'],
+    ['Primera ed.', book.year != null
+      ? fmtYear(book.year) + (book.year_confidence === 'aprox' ? ' (aprox.)' : '') : 'sin datar'],
+    ['Idioma', book.language || '—'],
+    book.publisher && ['Editorial', book.publisher],
+    book.series && ['Serie', book.series],
+    book.binding && ['Encuadernación', book.binding],
+    book.format && ['Formato', book.format],
+    ['Ubicación', `Estante ${shelf.id}, posición ${idx + 1} de ${n} — ${shelf.theme || shelf.label}`],
+    book.col && ['Cajón', book.col.title],
+    ['Materia', (book.topics || []).map(label).join(' · ') || '—'],
+    book.price && ['Valor de ref.', book.price + (book.price_note ? ' (' + book.price_note + ')' : '')],
+    (book.note || book.year_note) && ['Nota del archivo', book.note || book.year_note],
+    ['Ficha', book.id],
+  ].filter(Boolean)
+
   return `
     <div class="cover">${coverFor(book, look, true)}</div>
-    <div class="kicker">${esc(shelf.theme || shelf.label)}</div>
+    <div class="callnum">${esc(book.id)} / ${esc((book.col ? book.col.key : 'gen').toUpperCase())}</div>
+    <div class="stamps">
+      ${book.family ? '<span class="stamp familia">Autoría familiar</span>' : ''}
+      ${Object.keys(SELLOS).filter((k) => sellos[k])
+        .map((k) => `<span class="stamp ${k}">${SELLOS[k]}</span>`).join('')}
+    </div>
     <h2>${esc(book.title)}</h2>
-    <p class="author">${esc(book.author || 'Autor sin fichar')}</p>
-    ${note ? `<p class="note">${esc(note)}</p>` : ''}
-    <dl>${rows.join('')}</dl>
-    ${(book.topics || []).length
-      ? `<div class="topics">${book.topics.map((t) => `<i>${esc(t)}</i>`).join('')}</div>` : ''}
-    <div class="acts">
-      ${book.buy_url ? `<a class="btn" href="${esc(book.buy_url)}" target="_blank" rel="noopener">Ver ediciones</a>` : ''}
-    </div>`
+    <p class="author">${esc(book.author || '— autor sin identificar —')}</p>
+    <dl>${campos.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+    <p class="desc">${esc(descripcion(book, shelf, data))}</p>
+    ${refsHTML('Véase además — mismo autor', refs.mismoAutor)}
+    ${refsHTML('Véase además — misma materia', refs.mismaMateria)}
+    ${refsHTML(`Coetáneos en esta casa (${refs.decadaLabel}s)`, refs.decada)}
+    ${book.buy_url ? `<div class="veasetit">Reposición</div>
+      <div class="vease"><a href="${esc(book.buy_url)}" target="_blank" rel="noopener">
+        Solicitar otro ejemplar al proveedor ↗${book.price ? ' — ' + esc(book.price) : ''}</a></div>` : ''}
+    <div class="sellobar">${Object.entries(SELLOS).map(([k, t]) =>
+      `<button class="sellobtn${sellos[k] ? ' on' : ''}" data-sello="${k}">Sellar: ${t}</button>`).join('')}</div>
+    ${book.dato ? `<div class="nota"><b>Nota abrochada por el archivista</b>${esc(book.dato)}</div>` : ''}
+    <div class="veasetit">Circulación externa — la crítica de afuera</div>
+    <div id="xr-slot"></div>
+    ${bio ? `<div class="nota autor"><b>Ficha de autor — ${esc(book.author_canonical)}</b>${esc(bio)}</div>` : ''}`
 }
 
 async function boot() {
@@ -1151,11 +1237,42 @@ async function boot() {
     for (const chip of els.chips.children) chip.setAttribute('aria-pressed', 'false')
     closeCard()
   }
+  const libros = indexar(data)
+  const porId = new Map(libros.map((e) => [e.book.id, e]))
+
+  function mostrarFicha(id) {
+    const entrada = porId.get(id)
+    if (!entrada) return
+    els.cardBody.innerHTML = cardHTML(entrada, sala.looks.get(id), data, libros)
+    els.card.classList.add('on')
+    els.card.scrollTop = 0
+
+    // «véase además»: el libro citado se saca de su estante y se abre su ficha
+    els.cardBody.querySelectorAll('[data-ir]').forEach((btn) => btn.addEventListener('click', () => {
+      const destino = porId.get(btn.dataset.ir)
+      if (!destino) return
+      stopTour()
+      const yaEnLaMesa = destino.shelf.id === sala.currentShelf
+        && sala.tableBooks.find((t) => t.book.id === destino.book.id)
+      if (yaEnLaMesa) sala.select(yaEnLaMesa)
+      else sala.openShelf(destino.shelf.id, destino.book.id)
+    }))
+
+    // los sellos son los mismos de El Fichero: mismo cajón en este dispositivo
+    els.cardBody.querySelectorAll('[data-sello]').forEach((btn) => btn.addEventListener('click', () => {
+      const todos = leerSellos()
+      const propios = (todos[id] = todos[id] || {})
+      propios[btn.dataset.sello] = !propios[btn.dataset.sello]
+      guardarSellos(todos)
+      mostrarFicha(id)
+    }))
+
+    if (window.ExtReviews) ExtReviews.render(entrada.book, els.cardBody.querySelector('#xr-slot'))
+  }
+
   sala.onSelect = (book) => {
     if (!book) return closeCard()
-    const shelf = sala.shelves.get(sala.currentShelf) || { id: '', label: '' }
-    els.cardBody.innerHTML = cardHTML(book, shelf, sala.looks.get(book.id))
-    els.card.classList.add('on')
+    mostrarFicha(book.id)
   }
   function closeCard() { els.card.classList.remove('on') }
   $('#close').addEventListener('click', () => { closeCard(); sala.select(null) })

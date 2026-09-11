@@ -64,6 +64,8 @@ def main():
     # el envoltorio del artifact pone <head> y <body>: acá va solo el contenido
     cuerpo = re.search(r'<body>(.*)</body>', html, re.S).group(1)
     cuerpo = re.sub(r'<script type="module" src="sala\.js"></script>', '', cuerpo)
+    cuerpo = re.sub(r'<script src="\.\./concepts/reviews\.js"></script>', '', cuerpo)
+    reviews = open(os.path.join(ROOT, 'concepts', 'reviews.js'), encoding='utf-8').read()
     estilo = re.search(r'<style>.*?</style>', html, re.S).group(0)
     titulo = '<title>La Sala de Lectura</title>'
     fuentes = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
@@ -72,6 +74,7 @@ def main():
 
     partes = [
         titulo, fuentes, estilo, cuerpo,
+        '<script>', reviews, '</script>',
         '<script id="catalogo-inline" type="application/json">',
         json.dumps(catalogo, ensure_ascii=False, separators=(',', ':')),
         '</script>',

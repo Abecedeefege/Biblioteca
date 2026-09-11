@@ -117,6 +117,48 @@ canvas{display:block;position:fixed;inset:0;width:100%;height:100%}
 #card .acts{display:flex;gap:10px;flex-wrap:wrap}
 #card .acts .btn{color:var(--ink);background:rgba(51,41,31,.07);border-color:rgba(51,41,31,.22)}
 #card .acts .btn:hover{background:rgba(51,41,31,.14)}
+
+/* ---------- la ficha, con lo mismo que muestra El Fichero ---------- */
+#card .callnum{font:700 10px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-soft);border:1px solid rgba(51,41,31,.22);border-radius:4px;
+  padding:5px 8px;display:inline-block}
+#card .stamps{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+#card .stamp{font:800 9.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;
+  border:1.5px solid currentColor;border-radius:3px;padding:5px 7px;transform:rotate(-1.4deg)}
+#card .stamp.familia{color:#2e6b45}
+#card .stamp.leido{color:var(--red)}
+#card .stamp.favorito{color:#8a6b1d}
+#card .stamp.prestado{color:#2b4a8a}
+#card h2{margin-top:12px}
+#card .desc{font-family:var(--serif);font-size:17px;line-height:1.5;margin:0 0 18px}
+#card .veasetit{font:700 10px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-soft);margin:18px 0 8px;padding-top:12px;
+  border-top:1px solid rgba(51,41,31,.16)}
+#card .vease{display:flex;flex-wrap:wrap;gap:6px}
+#card .vease button,#card .vease a{font:500 12px/1.3 var(--sans);text-align:left;
+  color:var(--ink);background:rgba(51,41,31,.06);border:1px solid rgba(51,41,31,.16);
+  border-radius:8px;padding:7px 10px;cursor:pointer;text-decoration:none}
+#card .vease button:hover,#card .vease a:hover{background:rgba(179,55,46,.12);
+  border-color:rgba(179,55,46,.4)}
+#card .sellobar{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+#card .sellobtn{font:700 10px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-soft);background:none;border:1px dashed rgba(51,41,31,.3);border-radius:6px;
+  padding:8px 10px;cursor:pointer}
+#card .sellobtn.on{color:var(--red);border-style:solid;border-color:rgba(179,55,46,.55);
+  background:rgba(179,55,46,.08)}
+#card .nota{margin-top:18px;font-family:var(--serif);font-size:16px;line-height:1.45;
+  background:rgba(51,41,31,.05);border-left:3px solid rgba(201,162,39,.6);
+  padding:12px 14px;border-radius:0 8px 8px 0}
+#card .nota b{display:block;font:700 10px/1 var(--sans);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:7px}
+#card .xr-row{display:flex;justify-content:space-between;gap:12px;align-items:baseline;
+  padding:7px 0;font-size:13px;border-bottom:1px dotted rgba(92,79,62,.45);flex-wrap:wrap}
+#card .xr-name{font:800 9px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-soft)}
+#card .xr-stars{color:var(--red);letter-spacing:2px}
+#card .xr-none,#card .xr-load{color:var(--ink-soft)}
+#card .xr-val a{color:var(--ink)}
+#card .xr-foot{font:500 9.5px/1.5 var(--sans);color:var(--ink-soft);padding-top:8px}
 #close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;
   border:1px solid rgba(51,41,31,.22);background:rgba(51,41,31,.06);color:var(--ink);
   font-size:19px;line-height:1;cursor:pointer}
@@ -243,6 +285,8 @@ body.recorriendo #shelfbar{opacity:0;pointer-events:none}
   <a class="btn brass" href="../concepts/fichero.html">Ir al Fichero</a>
 </div>
 
+<!-- la crítica de afuera es el mismo módulo que usa El Fichero -->
+<script src="../concepts/reviews.js"></script>
 <script type="module" src="sala.js"></script>
 </body>
 </html>
