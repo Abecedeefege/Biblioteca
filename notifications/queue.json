@@ -1,7 +1,33 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-10T23:24:21.771Z",
+  "_updated_at": "2026-09-11T19:05:00-03:00",
   "notifications": [
+    {
+      "id": "2026-09-11-rec-andy",
+      "title": "⚙️ El libro que ya tenés, la fuente de Fogg",
+      "body": "Hábitos Atómicos, de James Clear: el modelo que aprendiste la semana pasada, llevado a la práctica. Ya está en tu L4.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-11-clear-habitos-atomicos.html",
+      "to": "Andy",
+      "send_at": "2026-09-11T19:00:00-03:00",
+      "expires_at": "2026-09-11T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-11"
+    },
+    {
+      "id": "2026-09-11-rec-sofi",
+      "title": "🪄 Sofi, una casa de brujas y ningún crimen",
+      "body": "Tres nenas brujas, un bibliotecario protector y cero gore. El mismo calorcito que te gustó de Klune, otra autora.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-11-mandanna-sociedad-brujas.html",
+      "to": "Sofi",
+      "send_at": "2026-09-11T19:00:00-03:00",
+      "expires_at": "2026-09-11T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-11"
+    },
     {
       "id": "2026-09-10-rec-andy",
       "title": "🌌 El día que tu estante de cosmos se pregunte cómo termina",

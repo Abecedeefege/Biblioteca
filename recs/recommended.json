@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-10T16:12:55-03:00",
-  "_feedback_cutoff": "2026-09-09T10:58:03.375Z",
+  "_updated_at": "2026-09-11T19:05:00-03:00",
+  "_feedback_cutoff": "2026-09-11T13:21:05.283Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -2269,10 +2269,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
+        "clicked": true,
         "dwell_s": 0
       },
-      "learning": null
+      "learning": "Clickeó el push (10/09 23:32 UTC) y abrió la página, sin dwell ni veredicto todavía. Revisar en la próxima corrida."
     },
     {
       "id": "2026-09-10-doyle-regreso-sherlock",
@@ -2290,6 +2290,57 @@
       "page": "recs/2026-09-10-doyle-regreso-sherlock.html",
       "notified_by": "2026-09-10-rec-sofi",
       "why": "Tercer libro de la serie Doyle en su M5 (Aventuras 04/09, Memorias 06/09 -ambas sin feedback aún-), banco redescub explícito en PROFILE ('sin uso desde el corte'). Cierra narrativamente el cliffhanger de Reichenbach con el que terminan Las Memorias: el regreso real de Holmes tras fingir su muerte. Hoy le tocaba redescubrimiento por alternancia (ayer 09/09 tuvo nuevo con La chica del tren). Sin read_status ni señal de lectura previa en data/enrichment.json (a diferencia de los King donde varios 'sin leer' resultaron falsos). Guardia especial de los 50 King respetada: no es King, es Doyle canon. Verificado título+autor contra catálogo completo y recommended.json, sin coincidencias.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-11-clear-habitos-atomicos",
+      "date": "2026-09-11",
+      "kind": "redescubrimiento",
+      "title": "Hábitos Atómicos",
+      "author": "James Clear",
+      "language": "es",
+      "topics": [
+        "habitos",
+        "autosuperacion",
+        "sistemas"
+      ],
+      "book_ref": "L4-002",
+      "audience": "andy",
+      "page": "recs/2026-09-11-clear-habitos-atomicos.html",
+      "notified_by": "2026-09-11-rec-andy",
+      "why": "Régimen DIARIO: ayer (10/09) Andy tuvo nuevo (Mack) -> hoy le toca la biblioteca de la casa, y Sofi recibe la nueva. Cierra el hilo abierto con Brewer (20/08) y sobre todo Fogg (29/08, dwell altísimo 493s sin veredicto): el propio Clear usó el modelo B=MAP de Fogg para escribir este libro, ya en su estante L4-002 desde antes, sin abrir. Aplica el patrón confirmado 3 veces (Bach, Holiday, Rovelli): autor/libro ya-en-casa gana sobre riesgo de fama, aunque este sea probablemente el libro de hábitos más vendido que existe. Verificado título+autor contra el catálogo completo (único match esperado, L4-002) y recommended.json: nunca tuvo entrada propia (solo mencionado de paso en la ficha de Fogg). Estructura (6 partes, 20 capítulos) y cifras del gráfico 1,01^365/0,99^365 verificadas contra jamesclear.com (resumen oficial) y Wikipedia. Audiolibro en español confirmado en Google Play (narrador Arturo Guerrero).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-11-mandanna-sociedad-brujas",
+      "date": "2026-09-11",
+      "kind": "nuevo",
+      "title": "La sociedad secreta de brujas rebeldes",
+      "author": "Sangu Mandanna",
+      "language": "es",
+      "topics": [
+        "fantasia_calida",
+        "found-family",
+        "romance",
+        "brujas"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-09-11-mandanna-sociedad-brujas.html",
+      "notified_by": "2026-09-11-rec-sofi",
+      "why": "Régimen DIARIO: ayer (10/09) Sofi tuvo redescubrimiento (Doyle-Regreso) -> hoy le toca la nueva, y Andy recibe la biblioteca. Banco nuevo de Sofi estaba agotado según PROFILE ('círculo cozy agotado... sin candidata fuerte siguiente'); se repuso con WebSearch. Elegida por ser la misma fórmula que dio su única señal positiva clara en fantasía (Klune, me_tienta+love, 05/08: found-family cálido, sin gore) pero con una autora nunca antes recomendada (banco de Klune agotado, 3 títulos usados) en vez de forzar un cuarto título del mismo autor o volver al misterio/cozy que viene fallando por 'ya_lo_lei' con autores muy leídos. También cruza su pedido del 24/07 (romance con final feliz, sin melodrama), integrado como slow-burn secundario, no como eje central. Guardia: título+autora verificados contra el catálogo completo (437 vol., sin coincidencias) y contra todo recommended.json: Mandanna nunca aparece. Datos verificados cruzando Wikipedia, la ficha oficial de Penguin Random House y reseñas (incluida NPR); citas verificadas contra la colección de citas del libro en Goodreads. Link de compra verificado (200) en buscalibre.uy, desde ~$870 UYU. Audiolibro en español confirmado en Google Play (narradora Ariana Martínez Moreno).",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
