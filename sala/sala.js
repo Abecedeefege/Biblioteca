@@ -723,8 +723,7 @@ class Sala {
     this.scene.add(this.lamp)
 
     onStep(0.25)
-    const room = buildRoom(this.scene)
-    this.table = room.table
+    buildRoom(this.scene)
 
     // el texto de los lomos merece la tipografía de la casa
     await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 2500))])
@@ -761,8 +760,13 @@ class Sala {
     this.camera.aspect = innerWidth / innerHeight
     this.camera.updateProjectionMatrix()
     this.renderer.setSize(innerWidth, innerHeight)
-    if (this.mode === 'sala') this.setView(this.salaView(), 0.6)
-    else if (this.mode === 'mesa') this.setView(this.mesaView(), 0.6)
+    if (this.mode === 'sala') return this.setView(this.salaView(), 0.6)
+    // al girar el teléfono cambia el reparto sobre la mesa, no solo el encuadre:
+    // el estante se vuelve a servir con las medidas nuevas
+    clearTimeout(this.relayout)
+    const id = this.currentShelf
+    const elegido = this.selected?.book.id
+    this.relayout = setTimeout(() => this.openShelf(id, elegido), 260)
   }
 
   /* --------------------------------------------------------------- vistas -- */
@@ -773,12 +777,11 @@ class Sala {
   }
 
   shelfView(id) {
-    const shelf = this.shelves.get(id)
     const col = COL_X[id[0]] ?? 0
     const row = Number(id[1]) || 1
     const y = id === 'TOP' ? CASE.height + 0.2 : shelfFloorY(row) + CASE.inner / 2
     const dist = clamp(1.75 / Math.min(1.6, Math.max(0.62, this.camera.aspect)), 1.2, 2.6)
-    return { target: new THREE.Vector3(col, y, -0.1), dist, yaw: 0, pitch: 0.02, shelf }
+    return { target: new THREE.Vector3(col, y, -0.1), dist, yaw: 0, pitch: 0.02 }
   }
 
   /** ancho y fondo que ocupan los libros sobre la mesa, según la pantalla */
@@ -798,7 +801,10 @@ class Sala {
       // el punto de mira va un poco más allá de los libros: así quedan
       // centrados en la pantalla y no trepados al borde de arriba
       target: new THREE.Vector3(TABLE.x, TABLE.y + 0.03, TABLE.z - area.d * 0.16),
-      dist: clamp(Math.max(porAncho, porFondo) * 1.1, 1.3, 6), yaw: 0, pitch,
+      // en una pantalla baja (teléfono acostado) hay que abrir un poco más:
+      // si no, la fila de abajo queda tapada por la barra de estantes
+      dist: clamp(Math.max(porAncho, porFondo) * (innerHeight < 560 ? 1.26 : 1.1), 1.3, 6),
+      yaw: 0, pitch,
     }
   }
 
@@ -1317,16 +1323,34 @@ async function boot() {
   }
   requestAnimationFrame(loop)
 
-  /* -------------------------------------------------------------- entrada -- */
-  els.enter.disabled = false
-  els.enter.textContent = 'Entrar a la sala'
-  els.enter.addEventListener('click', () => {
+  /* -------------------------------------------------------------- entrada --
+     La URL puede pedir algo puntual, que para mostrarle la biblioteca a alguien
+     vale más que explicar dónde tocar:
+       ?estante=L3   abre ese estante sobre la mesa
+       ?libro=R4-007 abre su estante y su ficha
+       ?recorrido    entra directo al recorrido guiado */
+  const params = new URLSearchParams(location.search)
+  const pedido = {
+    estante: (params.get('estante') || '').toUpperCase(),
+    libro: (params.get('libro') || '').toUpperCase(),
+    recorrido: params.has('recorrido') || params.has('tour'),
+  }
+
+  function entrar(conRecorrido) {
     els.gate.classList.add('gone')
     setTimeout(() => els.gate.remove(), 800)
     sala.setView(sala.salaView(), 2.6)
-    sala.userPitch = -0.12
-    setTimeout(() => { sala.userPitch = 0 }, 60)
-  })
+    const libro = pedido.libro && sala.byId.get(pedido.libro)
+    if (conRecorrido) setTimeout(startTour, 900)
+    else if (libro) setTimeout(() => sala.openShelf(libro.shelf.id, libro.book.id), 1200)
+    else if (sala.shelves.get(pedido.estante)) setTimeout(() => sala.openShelf(pedido.estante), 1200)
+  }
+
+  els.enter.disabled = false
+  els.enter.textContent = 'Entrar a la sala'
+  $('#enter-tour').disabled = false
+  els.enter.addEventListener('click', () => entrar(pedido.recorrido))
+  $('#enter-tour').addEventListener('click', () => entrar(true))
 }
 
 if (!window.WebGLRenderingContext) $('#fallback').classList.add('on')

@@ -170,8 +170,10 @@ body.recorriendo #shelfbar{opacity:0;pointer-events:none}
   font-weight:600;color:var(--brass)}
 #gate .stats span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;
   color:rgba(244,234,208,.5)}
+.entradas{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 #enter{font-size:15px;padding:15px 34px}
-#enter[disabled]{opacity:.45;cursor:progress}
+#enter-tour{font-size:13px;padding:15px 22px}
+.entradas button[disabled]{opacity:.45;cursor:progress}
 #bar{width:min(280px,70vw);height:3px;border-radius:2px;background:rgba(244,234,208,.14);
   overflow:hidden}
 #bar i{display:block;height:100%;width:0;background:var(--brass);transition:width .3s}
@@ -225,7 +227,10 @@ body.recorriendo #shelfbar{opacity:0;pointer-events:none}
     <div><b id="s-shelves">—</b><span>estantes</span></div>
     <div><b id="s-covers">—</b><span>con tapa</span></div>
   </div>
-  <button class="btn brass" id="enter" disabled>Preparando la sala…</button>
+  <div class="entradas">
+    <button class="btn brass" id="enter" disabled>Preparando la sala…</button>
+    <button class="btn" id="enter-tour" disabled>Ver el recorrido</button>
+  </div>
   <div id="bar"><i></i></div>
   <small>Tocá un lomo para sacar el libro del estante.</small>
 </div>

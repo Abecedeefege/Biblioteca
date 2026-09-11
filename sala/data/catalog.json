@@ -14,9 +14,9 @@
    "annex": "2026-08 re-cataloging: the middle column is now half display — M2 Egyptian pieces, M3 FRIENDS Funkos, M4 frames and candles, M6 the Smith-Corona typewriter. Its books consolidated into M5 (mystery), M7 (antique reference + the Mentor-UNESCO art series from M4) and M8 (dictionaries and atlases, the formerly anonymous row). Book ids are accession numbers: the prefix records where a book was first cataloged, not where it lives; real location = containing shelf."
   }
  },
- "generated_at": "2026-09-11T01:37:17+0000",
+ "generated_at": "2026-09-11T02:05:00+0000",
  "books_total": 437,
- "books_with_cover": 185,
+ "books_with_cover": 230,
  "shelves": [
   {
    "id": "L1",
@@ -1221,7 +1221,10 @@
      "price": "USD 13",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=The+Art+of+Happiness+%2810th+Anniversary+Edition%29+Dalai+Lama+%26+Howard+C.+Cutler%2C+M.D.",
      "year": 1998,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "L4-021.jpg",
+     "cw": 280,
+     "ch": 442
     },
     {
      "id": "L4-022",
@@ -2451,7 +2454,10 @@
      ],
      "note": "Re-catalogación 2026-08: no visto — el estante es ahora exhibición (piezas egipcias); ubicación a confirmar.",
      "price": "USD 35",
-     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=last+supper+leonardo+oversize"
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=last+supper+leonardo+oversize",
+     "cover": "M2-001.jpg",
+     "cw": 280,
+     "ch": 372
     },
     {
      "id": "M2-002",
@@ -2463,7 +2469,10 @@
      ],
      "note": "Spine reads פיכאסו — Re-catalogación 2026-08: no visto — el estante es ahora exhibición (piezas egipcias); ubicación a confirmar.",
      "price": "USD 30",
-     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=picasso+hebrew+oversize"
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=picasso+hebrew+oversize",
+     "cover": "M2-002.jpg",
+     "cw": 280,
+     "ch": 347
     },
     {
      "id": "M2-003",
@@ -3066,7 +3075,10 @@
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Una+Mujer+Rebelde+%28Bridgerton%2C+Libro+3%29+Julia+Quinn",
      "year": 2001,
      "year_confidence": "alta",
-     "year_note": "An Offer from a Gentleman"
+     "year_note": "An Offer from a Gentleman",
+     "cover": "M5-008.jpg",
+     "cw": 280,
+     "ch": 420
     },
     {
      "id": "M5-009",
@@ -3094,7 +3106,10 @@
      "price": "USD 13",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Ciudades+de+papel+%28Paper+Towns%29+John+Green",
      "year": 2008,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "M5-022.jpg",
+     "cw": 280,
+     "ch": 431
     },
     {
      "id": "M5-023",
@@ -3139,7 +3154,10 @@
      "price": "USD 18",
      "buy_url": "https://www.buscalibre.us/libro-el-secreto/9788479536442/p/1150935",
      "year": 2006,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "M5-028.jpg",
+     "cw": 280,
+     "ch": 388
     },
     {
      "id": "M5-029",
@@ -3220,7 +3238,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=En+los+zapatos+de+Valeria+Benavent",
      "year": 2013,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "M6-001.jpg",
+     "cw": 280,
+     "ch": 424
     },
     {
      "id": "M6-002",
@@ -3234,7 +3255,10 @@
      "price": "USD 12",
      "buy_url": "https://latam.casadellibro.com/libro-valeria-en-el-espejo/9788483655382/2203640",
      "year": 2013,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "M6-002.jpg",
+     "cw": 280,
+     "ch": 426
     },
     {
      "id": "M6-003",
@@ -3248,7 +3272,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Valeria+en+blanco+y+negro+Benavent",
      "year": 2013,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "M6-003.jpg",
+     "cw": 280,
+     "ch": 422
     },
     {
      "id": "M6-004",
@@ -3262,7 +3289,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Valeria+al+desnudo+Benavent",
      "year": 2013,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "M6-004.jpg",
+     "cw": 280,
+     "ch": 426
     },
     {
      "id": "M6-005",
@@ -4744,7 +4774,10 @@
      ],
      "note": "Spine letters ΑΚΡΟΠΟΛΙΣ",
      "price": "USD 12",
-     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=acropolis+greek+text+spine"
+     "buy_url": "https://www.abebooks.com/servlet/SearchResults?kn=acropolis+greek+text+spine",
+     "cover": "R3-016.jpg",
+     "cw": 280,
+     "ch": 403
     },
     {
      "id": "R3-017",
@@ -4815,7 +4848,10 @@
      "price": "USD 14",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Zona+Muerta+Stephen+King",
      "year": 1979,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-002.jpg",
+     "cw": 280,
+     "ch": 429
     },
     {
      "id": "R4-003",
@@ -4830,7 +4866,10 @@
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Larga+Marcha+%28The+Long+Walk%29+Stephen+King",
      "year": 1979,
      "year_confidence": "alta",
-     "year_note": "Publicada como Richard Bachman"
+     "year_note": "Publicada como Richard Bachman",
+     "cover": "R4-003.jpg",
+     "cw": 280,
+     "ch": 465
     },
     {
      "id": "R4-004",
@@ -4845,7 +4884,10 @@
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Caja+de+Botones+de+Gwendy+%28Gwendy%27s+Button+Box%29+Stephen+King+%26+Richard+Chizmar",
      "year": 2017,
      "year_confidence": "alta",
-     "year_note": "Coescrita con Richard Chizmar"
+     "year_note": "Coescrita con Richard Chizmar",
+     "cover": "R4-004.jpg",
+     "cw": 280,
+     "ch": 433
     },
     {
      "id": "R4-005",
@@ -4875,7 +4917,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Elevaci%C3%B3n+%28Elevation%29+Stephen+King",
      "year": 2018,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-006.jpg",
+     "cw": 280,
+     "ch": 398
     },
     {
      "id": "R4-007",
@@ -4889,7 +4934,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Las+dos+despu%C3%A9s+de+medianoche+%28Four+Past+Midnight%2C+part+2%29+Stephen+King",
      "year": 1990,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-007.jpg",
+     "cw": 280,
+     "ch": 426
     },
     {
      "id": "R4-008",
@@ -4917,7 +4965,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Mientras+Escribo+%28On+Writing%29+Stephen+King",
      "year": 2000,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-009.jpg",
+     "cw": 280,
+     "ch": 433
     },
     {
      "id": "R4-010",
@@ -4945,7 +4996,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Fin+de+Guardia+%28End+of+Watch%29+Stephen+King",
      "year": 2016,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-011.jpg",
+     "cw": 280,
+     "ch": 427
     },
     {
      "id": "R4-012",
@@ -4959,7 +5013,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Desesperaci%C3%B3n+%28Desperation%29+Stephen+King",
      "year": 1996,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-012.jpg",
+     "cw": 280,
+     "ch": 436
     },
     {
      "id": "R4-013",
@@ -4991,7 +5048,10 @@
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Milla+Verde+%28The+Green+Mile%29+Stephen+King",
      "year": 1996,
      "year_confidence": "alta",
-     "year_note": "Publicada por entregas: 6 fascículos mensuales"
+     "year_note": "Publicada por entregas: 6 fascículos mensuales",
+     "cover": "R4-014.jpg",
+     "cw": 280,
+     "ch": 443
     },
     {
      "id": "R4-015",
@@ -5006,7 +5066,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Todo+Oscuro%2C+Sin+Estrellas+%28Full+Dark%2C+No+Stars%29+Stephen+King",
      "year": 2010,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-015.jpg",
+     "cw": 280,
+     "ch": 436
     },
     {
      "id": "R4-016",
@@ -5020,7 +5083,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Bazar+de+los+Malos+Sue%C3%B1os+%28The+Bazaar+of+Bad+Dreams%29+Stephen+King",
      "year": 2015,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-016.jpg",
+     "cw": 280,
+     "ch": 431
     },
     {
      "id": "R4-017",
@@ -5034,7 +5100,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Todo+es+Eventual+%28Everything%27s+Eventual%29+Stephen+King",
      "year": 2002,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-017.jpg",
+     "cw": 280,
+     "ch": 467
     },
     {
      "id": "R4-018",
@@ -5099,7 +5168,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Qui%C3%A9n+Pierde+Paga+%28Finders+Keepers%29+Stephen+King",
      "year": 2015,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-021.jpg",
+     "cw": 280,
+     "ch": 424
     },
     {
      "id": "R4-022",
@@ -5113,7 +5185,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Cementerio+de+Animales+%28Pet+Sematary%29+Stephen+King",
      "year": 1983,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-022.jpg",
+     "cw": 280,
+     "ch": 438
     },
     {
      "id": "R4-023",
@@ -5127,7 +5202,10 @@
      "price": "USD 12",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Despu%C3%A9s+%28Later%29+Stephen+King",
      "year": 2021,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-023.jpg",
+     "cw": 280,
+     "ch": 427
     },
     {
      "id": "R4-024",
@@ -5155,7 +5233,10 @@
      ],
      "buy_url": "https://listado.mercadolibre.com.uy/it-mini-collectors-edition-with-pennywise-figurine",
      "year": 1986,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R4-025.jpg",
+     "cw": 280,
+     "ch": 458
     }
    ]
   },
@@ -5172,7 +5253,10 @@
      "topics": [
       "stephen-king"
      ],
-     "note": "Re-catalogación 2026-08: alta — Segunda Carrie de la casa (la blanca Debolsillo es R4-001): tapa dura oscura con letras naranjas, primera del estante."
+     "note": "Re-catalogación 2026-08: alta — Segunda Carrie de la casa (la blanca Debolsillo es R4-001): tapa dura oscura con letras naranjas, primera del estante.",
+     "cover": "R5-026.jpg",
+     "cw": 280,
+     "ch": 478
     },
     {
      "id": "R5-011",
@@ -5201,7 +5285,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Tienda+%28Needful+Things%29+Stephen+King",
      "year": 1991,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-001.jpg",
+     "cw": 280,
+     "ch": 424
     },
     {
      "id": "R5-002",
@@ -5240,7 +5327,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Torre+Oscura+%28The+Dark+Tower%29+Stephen+King",
      "year": 2004,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-004.jpg",
+     "cw": 280,
+     "ch": 427
     },
     {
      "id": "R5-005",
@@ -5253,7 +5343,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Resplandor+Stephen+King",
      "year": 1977,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-005.jpg",
+     "cw": 280,
+     "ch": 438
     },
     {
      "id": "R5-006",
@@ -5310,7 +5403,10 @@
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Fugitivo+%28The+Running+Man%29+Stephen+King+%28as+Richard+Bachman%29",
      "year": 1982,
      "year_confidence": "alta",
-     "year_note": "Publicada como Richard Bachman"
+     "year_note": "Publicada como Richard Bachman",
+     "cover": "R5-009.jpg",
+     "cw": 280,
+     "ch": 476
     },
     {
      "id": "R5-010",
@@ -5323,7 +5419,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Historia+de+Lisey+%28Lisey%27s+Story%29+Stephen+King",
      "year": 2006,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-010.jpg",
+     "cw": 280,
+     "ch": 429
     },
     {
      "id": "R5-012",
@@ -5353,7 +5452,10 @@
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Por+los+Aires+%28Flight+or+Fright%29+Stephen+King+%26+Bev+Vincent+%28eds.%29",
      "year": 2018,
      "year_confidence": "alta",
-     "year_note": "Antología editada por King y Bev Vincent"
+     "year_note": "Antología editada por King y Bev Vincent",
+     "cover": "R5-013.jpg",
+     "cw": 280,
+     "ch": 426
     },
     {
      "id": "R5-014",
@@ -5366,7 +5468,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Mitad+Oscura+%28The+Dark+Half%29+Stephen+King",
      "year": 1989,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-014.jpg",
+     "cw": 280,
+     "ch": 433
     },
     {
      "id": "R5-015",
@@ -5379,7 +5484,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=La+Sangre+Manda+%28If+It+Bleeds%29+Stephen+King",
      "year": 2020,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-015.jpg",
+     "cw": 280,
+     "ch": 433
     },
     {
      "id": "R5-016",
@@ -5392,7 +5500,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Doctor+Sue%C3%B1o+%28Doctor+Sleep%29+Stephen+King",
      "year": 2013,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-016.jpg",
+     "cw": 280,
+     "ch": 423
     },
     {
      "id": "R5-017",
@@ -5405,7 +5516,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Cuento+de+Hadas+%28Fairy+Tale%29+Stephen+King",
      "year": 2022,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-017.jpg",
+     "cw": 280,
+     "ch": 443
     },
     {
      "id": "R5-018",
@@ -5418,7 +5532,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Si+te+gusta+la+oscuridad+%28You+Like+It+Darker%29+Stephen+King",
      "year": 2024,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-018.jpg",
+     "cw": 280,
+     "ch": 428
     },
     {
      "id": "R5-019",
@@ -5464,7 +5581,10 @@
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=Bellas+Durmientes+%28Sleeping+Beauties%29+Stephen+King+%26+Owen+King",
      "year": 2017,
      "year_confidence": "alta",
-     "year_note": "Coescrita con su hijo Owen King"
+     "year_note": "Coescrita con su hijo Owen King",
+     "cover": "R5-021.jpg",
+     "cw": 280,
+     "ch": 419
     },
     {
      "id": "R5-022",
@@ -5477,7 +5597,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Visitante+%28The+Outsider%29+Stephen+King",
      "year": 2018,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-022.jpg",
+     "cw": 280,
+     "ch": 435
     },
     {
      "id": "R5-023",
@@ -5518,7 +5641,10 @@
      "price": "USD 15",
      "buy_url": "https://www.buscalibre.uy/libros/search/?q=El+Instituto+%28The+Institute%29+Stephen+King",
      "year": 2019,
-     "year_confidence": "alta"
+     "year_confidence": "alta",
+     "cover": "R5-025.jpg",
+     "cw": 280,
+     "ch": 426
     }
    ]
   },
@@ -5854,7 +5980,10 @@
       "miscellaneous"
      ],
      "price": "USD 22",
-     "buy_url": "https://www.kailas.es/libros/biblioteca-mo-yan/grandes-pechos-amplias-caderas/"
+     "buy_url": "https://www.kailas.es/libros/biblioteca-mo-yan/grandes-pechos-amplias-caderas/",
+     "cover": "R8-005.jpg",
+     "cw": 280,
+     "ch": 395
     },
     {
      "id": "R8-006",
@@ -5867,7 +5996,10 @@
       "latin-american"
      ],
      "price": "USD 35",
-     "buy_url": "https://listado.mercadolibre.com.uy/martin-fierro-cuero"
+     "buy_url": "https://listado.mercadolibre.com.uy/martin-fierro-cuero",
+     "cover": "R8-006.jpg",
+     "cw": 280,
+     "ch": 403
     },
     {
      "id": "R8-007",
@@ -5880,7 +6012,10 @@
       "latin-american"
      ],
      "price": "USD 75",
-     "buy_url": "https://listado.mercadolibre.com.uy/martin-fierro-cuero-vacuno"
+     "buy_url": "https://listado.mercadolibre.com.uy/martin-fierro-cuero-vacuno",
+     "cover": "R8-007.jpg",
+     "cw": 280,
+     "ch": 403
     },
     {
      "id": "R8-008",

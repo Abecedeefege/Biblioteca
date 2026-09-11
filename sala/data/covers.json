@@ -1,7 +1,7 @@
 {
  "_comment": "Procedencia de las tapas de /sala/. Lo escribe tools/sala_covers.py contra la API pública de Open Library; el browser nunca lo escribe.",
  "_source": "https://openlibrary.org",
- "_books_with_cover": 185,
+ "_books_with_cover": 230,
  "books": {
   "L2-001": {
    "cover": "L2-001.jpg",
@@ -750,8 +750,16 @@
    "reason": "sin match en open library"
   },
   "L4-021": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "L4-021.jpg",
+   "w": 280,
+   "h": 442,
+   "ol_key": "/works/OL318761W",
+   "ol_title": "The art of happiness",
+   "ol_authors": [
+    "His Holiness Tenzin Gyatso the XIV Dalai Lama",
+    "Howard C. Cutler"
+   ],
+   "ol_first_published": 1998
   },
   "L4-022": {
    "cover": "L4-022.jpg",
@@ -1314,12 +1322,33 @@
    "reason": "sin match en open library"
   },
   "M2-001": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "M2-001.jpg",
+   "w": 280,
+   "h": 372,
+   "ol_key": "/works/OL695408W",
+   "ol_title": "Leonardo",
+   "ol_authors": [
+    "Leonardo da Vinci",
+    "Kunster",
+    "Erfinder",
+    "Wissenschaftler",
+    "Michael Desmond",
+    "Carlo Pedretti"
+   ],
+   "ol_first_published": 1946
   },
   "M2-002": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "M2-002.jpg",
+   "w": 280,
+   "h": 347,
+   "ol_key": "/works/OL145191W",
+   "ol_title": "Picasso",
+   "ol_authors": [
+    "Pablo Picasso",
+    "Jean-Louis Andral",
+    "Pierre Daix"
+   ],
+   "ol_first_published": 1926
   },
   "M2-003": {
    "cover": null,
@@ -1662,20 +1691,34 @@
    "ol_first_published": 2013
   },
   "M5-008": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "M5-008.jpg",
+   "w": 280,
+   "h": 420,
+   "ol_key": "/works/OL17847637W",
+   "ol_title": "Una mujer rebelde",
+   "ol_authors": [
+    "Julia Quinn"
+   ],
+   "ol_first_published": 2009
   },
   "M5-009": {
    "cover": null,
    "reason": "sin match en open library"
   },
   "M5-022": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "M5-022.jpg",
+   "w": 280,
+   "h": 431,
+   "ol_key": "/works/OL11822690W",
+   "ol_title": "Paper Towns",
+   "ol_authors": [
+    "John Green"
+   ],
+   "ol_first_published": 2008
   },
   "M5-023": {
    "cover": null,
-   "reason": "sin match en open library"
+   "reason": "tapa no descargable"
   },
   "M5-027": {
    "cover": "M5-027.jpg",
@@ -1689,8 +1732,15 @@
    "ol_first_published": 2022
   },
   "M5-028": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "M5-028.jpg",
+   "w": 280,
+   "h": 388,
+   "ol_key": "/works/OL8945665W",
+   "ol_title": "El Secreto",
+   "ol_authors": [
+    "Rhonda Byrne"
+   ],
+   "ol_first_published": 2010
   },
   "M5-029": {
    "cover": "M5-029.jpg",
@@ -1730,20 +1780,48 @@
    "reason": "sin match en open library"
   },
   "M6-001": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "M6-001.jpg",
+   "w": 280,
+   "h": 424,
+   "ol_key": "/works/OL17081996W",
+   "ol_title": "En los zapatos de Valeria",
+   "ol_authors": [
+    "Elísabet Benavent"
+   ],
+   "ol_first_published": 2014
   },
   "M6-002": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "M6-002.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL24490225W",
+   "ol_title": "Valeria en el espejo / Valeria in the Mirror",
+   "ol_authors": [
+    "Elísabet Benavent"
+   ],
+   "ol_first_published": 2016
   },
   "M6-003": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "M6-003.jpg",
+   "w": 280,
+   "h": 422,
+   "ol_key": "/works/OL20830852W",
+   "ol_title": "Valeria en blanco y negro",
+   "ol_authors": [
+    "Elísabet Benavent"
+   ],
+   "ol_first_published": 2015
   },
   "M6-004": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "M6-004.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL24142924W",
+   "ol_title": "Valeria al desnudo / Valeria Naked",
+   "ol_authors": [
+    "Elísabet Benavent"
+   ],
+   "ol_first_published": 2016
   },
   "M6-005": {
    "cover": "M6-005.jpg",
@@ -2638,8 +2716,15 @@
    "reason": "tapa no descargable"
   },
   "R3-016": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R3-016.jpg",
+   "w": 280,
+   "h": 403,
+   "ol_key": "/works/OL5182372W",
+   "ol_title": "The Acropolis",
+   "ol_authors": [
+    "Manolis Andronikos"
+   ],
+   "ol_first_published": 1980
   },
   "R3-017": {
    "cover": null,
@@ -2672,16 +2757,39 @@
    "ol_first_published": 1974
   },
   "R4-002": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-002.jpg",
+   "w": 280,
+   "h": 429,
+   "ol_key": "/works/OL81630W",
+   "ol_title": "The Dead Zone",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1979
   },
   "R4-003": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-003.jpg",
+   "w": 280,
+   "h": 465,
+   "ol_key": "/works/OL9973101W",
+   "ol_title": "The Long Walk",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1979
   },
   "R4-004": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-004.jpg",
+   "w": 280,
+   "h": 433,
+   "ol_key": "/works/OL18092161W",
+   "ol_title": "Gwendy's button box",
+   "ol_authors": [
+    "Stephen King",
+    "Richard Chizmar",
+    "Richard T. Chizmar"
+   ],
+   "ol_first_published": 2017
   },
   "R4-005": {
    "cover": "R4-005.jpg",
@@ -2695,32 +2803,67 @@
    "ol_first_published": 1978
   },
   "R4-006": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-006.jpg",
+   "w": 280,
+   "h": 398,
+   "ol_key": "/works/OL18021898W",
+   "ol_title": "Elevation",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2018
   },
   "R4-007": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-007.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL26382513W",
+   "ol_title": "DOS DESPUÉS DE LA MEDIANOCHE, LAS",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2013
   },
   "R4-008": {
    "cover": null,
    "reason": "sin match en open library"
   },
   "R4-009": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-009.jpg",
+   "w": 280,
+   "h": 433,
+   "ol_key": "/works/OL81601W",
+   "ol_title": "On Writing",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1999
   },
   "R4-010": {
    "cover": null,
    "reason": "sin match en open library"
   },
   "R4-011": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-011.jpg",
+   "w": 280,
+   "h": 427,
+   "ol_key": "/works/OL17357373W",
+   "ol_title": "End of Watch",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2000
   },
   "R4-012": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-012.jpg",
+   "w": 280,
+   "h": 436,
+   "ol_key": "/works/OL81611W",
+   "ol_title": "Desperation",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1996
   },
   "R4-013": {
    "cover": "R4-013.jpg",
@@ -2734,20 +2877,48 @@
    "ol_first_published": 1985
   },
   "R4-014": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-014.jpg",
+   "w": 280,
+   "h": 443,
+   "ol_key": "/works/OL45936451W",
+   "ol_title": "ЗЕЛЕНАЯ МИЛЯ [La milla verde]",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2004
   },
   "R4-015": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-015.jpg",
+   "w": 280,
+   "h": 436,
+   "ol_key": "/works/OL15374110W",
+   "ol_title": "Full Dark, No Stars",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2010
   },
   "R4-016": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-016.jpg",
+   "w": 280,
+   "h": 431,
+   "ol_key": "/works/OL17823750W",
+   "ol_title": "The Bazaar of Bad Dreams",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2015
   },
   "R4-017": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-017.jpg",
+   "w": 280,
+   "h": 467,
+   "ol_key": "/works/OL45936549W",
+   "ol_title": "Все предельно [Todo es eventual]",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2006
   },
   "R4-018": {
    "cover": "R4-018.jpg",
@@ -2785,16 +2956,39 @@
    "ol_first_published": 2008
   },
   "R4-021": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-021.jpg",
+   "w": 280,
+   "h": 424,
+   "ol_key": "/works/OL17333186W",
+   "ol_title": "Finders Keepers",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2014
   },
   "R4-022": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-022.jpg",
+   "w": 280,
+   "h": 438,
+   "ol_key": "/works/OL81631W",
+   "ol_title": "Pet Sematary",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1983
   },
   "R4-023": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-023.jpg",
+   "w": 280,
+   "h": 427,
+   "ol_key": "/works/OL24606672W",
+   "ol_title": "Después",
+   "ol_authors": [
+    "Stephen King",
+    "José Óscar Hernández Sendin",
+    "Ana Isabel Sánchez Díez"
+   ],
+   "ol_first_published": 2021
   },
   "R4-024": {
    "cover": "R4-024.jpg",
@@ -2808,12 +3002,26 @@
    "ol_first_published": 2006
   },
   "R4-025": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R4-025.jpg",
+   "w": 280,
+   "h": 458,
+   "ol_key": "/works/OL81613W",
+   "ol_title": "It",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1986
   },
   "R5-026": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-026.jpg",
+   "w": 280,
+   "h": 478,
+   "ol_key": "/works/OL81626W",
+   "ol_title": "Carrie",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1974
   },
   "R5-011": {
    "cover": "R5-011.jpg",
@@ -2827,8 +3035,15 @@
    "ol_first_published": 1980
   },
   "R5-001": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-001.jpg",
+   "w": 280,
+   "h": 424,
+   "ol_key": "/works/OL81607W",
+   "ol_title": "Needful Things",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1991
   },
   "R5-002": {
    "cover": null,
@@ -2839,12 +3054,27 @@
    "reason": "sin match en open library"
   },
   "R5-004": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-004.jpg",
+   "w": 280,
+   "h": 427,
+   "ol_key": "/works/OL17601832W",
+   "ol_title": "La torre oscura VII : la torre oscura. - 1. ed.",
+   "ol_authors": [
+    "Stephen King",
+    "Verónica Canales Medina"
+   ],
+   "ol_first_published": 2012
   },
   "R5-005": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-005.jpg",
+   "w": 280,
+   "h": 438,
+   "ol_key": "/works/OL81633W",
+   "ol_title": "The Shining",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1977
   },
   "R5-006": {
    "cover": "R5-006.jpg",
@@ -2866,12 +3096,26 @@
    "reason": "sin match en open library"
   },
   "R5-009": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-009.jpg",
+   "w": 280,
+   "h": 476,
+   "ol_key": "/works/OL149188W",
+   "ol_title": "The Running Man",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1982
   },
   "R5-010": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-010.jpg",
+   "w": 280,
+   "h": 429,
+   "ol_key": "/works/OL81589W",
+   "ol_title": "Lisey's Story",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2006
   },
   "R5-012": {
    "cover": "R5-012.jpg",
@@ -2886,28 +3130,89 @@
    "ol_first_published": 2011
   },
   "R5-013": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-013.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL19145813W",
+   "ol_title": "Flight or Fright",
+   "ol_authors": [
+    "Stephen King",
+    "Bev Vincent",
+    "Arthur Conan Doyle",
+    "Richard Matheson",
+    "Ambrose Bierce",
+    "E. C. Tubb",
+    "Tom Bissell",
+    "Dan Simmons",
+    "Cody Goodfellow",
+    "John Varley",
+    "Joe Hill",
+    "David J. Schow",
+    "Ray Bradbury",
+    "Roald Dahl",
+    "Peter Berresford Ellis",
+    "James L. Dickey",
+    "E. Michael Lewis",
+    "James Dickey",
+    "Thomas Carlisle Bissell"
+   ],
+   "ol_first_published": 2018
   },
   "R5-014": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-014.jpg",
+   "w": 280,
+   "h": 433,
+   "ol_key": "/works/OL81620W",
+   "ol_title": "The Dark Half",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 1989
   },
   "R5-015": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-015.jpg",
+   "w": 280,
+   "h": 433,
+   "ol_key": "/works/OL20663157W",
+   "ol_title": "If It Bleeds",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2020
   },
   "R5-016": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-016.jpg",
+   "w": 280,
+   "h": 423,
+   "ol_key": "/works/OL16806877W",
+   "ol_title": "Doctor Sleep",
+   "ol_authors": [
+    "Stephen King",
+    "José Óscar Hernández Sendin"
+   ],
+   "ol_first_published": 2013
   },
   "R5-017": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-017.jpg",
+   "w": 280,
+   "h": 443,
+   "ol_key": "/works/OL27589863W",
+   "ol_title": "Fairy Tale",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2022
   },
   "R5-018": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-018.jpg",
+   "w": 280,
+   "h": 428,
+   "ol_key": "/works/OL36914473W",
+   "ol_title": "You Like It Darker",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2024
   },
   "R5-019": {
    "cover": "R5-019.jpg",
@@ -2932,12 +3237,27 @@
    "ol_first_published": 2021
   },
   "R5-021": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-021.jpg",
+   "w": 280,
+   "h": 419,
+   "ol_key": "/works/OL17930363W",
+   "ol_title": "Sleeping Beauties",
+   "ol_authors": [
+    "Stephen King",
+    "Owen King"
+   ],
+   "ol_first_published": 2014
   },
   "R5-022": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-022.jpg",
+   "w": 280,
+   "h": 435,
+   "ol_key": "/works/OL17937105W",
+   "ol_title": "The Outsider",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2018
   },
   "R5-023": {
    "cover": null,
@@ -2955,8 +3275,15 @@
    "ol_first_published": 2023
   },
   "R5-025": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R5-025.jpg",
+   "w": 280,
+   "h": 426,
+   "ol_key": "/works/OL20126932W",
+   "ol_title": "The Institute",
+   "ol_authors": [
+    "Stephen King"
+   ],
+   "ol_first_published": 2019
   },
   "R6-NATGEO": {
    "cover": null,
@@ -3069,16 +3396,37 @@
    "reason": "sin match en open library"
   },
   "R8-005": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R8-005.jpg",
+   "w": 280,
+   "h": 395,
+   "ol_key": "/works/OL16808452W",
+   "ol_title": "Grandes pechos amplias caderas",
+   "ol_authors": [
+    "Mo Yan"
+   ],
+   "ol_first_published": 2013
   },
   "R8-006": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R8-006.jpg",
+   "w": 280,
+   "h": 403,
+   "ol_key": "/works/OL8705203W",
+   "ol_title": "Martín Fierro",
+   "ol_authors": [
+    "José Hernández"
+   ],
+   "ol_first_published": 1894
   },
   "R8-007": {
-   "cover": null,
-   "reason": "sin match en open library"
+   "cover": "R8-007.jpg",
+   "w": 280,
+   "h": 403,
+   "ol_key": "/works/OL8705203W",
+   "ol_title": "Martín Fierro",
+   "ol_authors": [
+    "José Hernández"
+   ],
+   "ol_first_published": 1894
   },
   "R8-008": {
    "cover": null,
