@@ -4101,7 +4101,50 @@
       "page": "2026-09-10-mack-fin-de-todo.html",
       "device": "Andy",
       "nid": "2026-09-10-rec-andy"
+    },
+    {
+      "id": "mtwz14pp-3z0cfu",
+      "ts": "2026-09-11T13:07:34.814Z",
+      "page": "index.html",
+      "type": "page_visit",
+      "device": "C"
+    },
+    {
+      "id": "mtwz17sh-emkrpy",
+      "ts": "2026-09-11T13:07:38.801Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "C",
+      "dwell_s": 4,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mtwz1hdz-spi610",
+      "ts": "2026-09-11T13:07:51.239Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "C",
+      "dwell_s": 12,
+      "scroll_pct": 100
+    },
+    {
+      "id": "mtwz1wc8-a49z83",
+      "ts": "2026-09-11T13:08:10.616Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "C",
+      "dwell_s": 19,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mtwzii2r-l0xj27",
+      "ts": "2026-09-11T13:21:05.283Z",
+      "page": "index.html",
+      "type": "dwell",
+      "device": "C",
+      "dwell_s": 3,
+      "scroll_pct": 100
     }
   ],
-  "_updated_at": "2026-09-10T23:32:43.249Z"
+  "_updated_at": "2026-09-11T17:00:08.111Z"
 }
