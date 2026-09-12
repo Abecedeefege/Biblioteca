@@ -4170,7 +4170,16 @@
       "page": "2026-09-11-clear-habitos-atomicos.html",
       "device": "Andy",
       "nid": "2026-09-11-rec-andy"
+    },
+    {
+      "id": "mtxnuv4p-iej7ko",
+      "type": "dwell",
+      "ts": "2026-09-12T00:42:32.857Z",
+      "page": "2026-09-11-clear-habitos-atomicos.html",
+      "device": "Andy",
+      "dwell_s": 86,
+      "scroll_pct": 43
     }
   ],
-  "_updated_at": "2026-09-12T00:41:07.865Z"
+  "_updated_at": "2026-09-12T00:42:34.820Z"
 }
