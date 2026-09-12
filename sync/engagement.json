@@ -4144,7 +4144,33 @@
       "device": "C",
       "dwell_s": 3,
       "scroll_pct": 100
+    },
+    {
+      "id": "mtw5xfl9-xq6xts",
+      "type": "dwell",
+      "ts": "2026-09-10T23:32:53.422Z",
+      "page": "2026-09-10-mack-fin-de-todo.html",
+      "device": "Andy",
+      "dwell_s": 13,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mtxnt0i4-cevzm9",
+      "type": "notification_clicked",
+      "ts": "2026-09-12T00:41:06.508Z",
+      "page": "2026-09-11-clear-habitos-atomicos.html",
+      "device": "Andy",
+      "nid": "2026-09-11-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mtxnt0i6-wu2bv9",
+      "type": "page_visit",
+      "ts": "2026-09-12T00:41:06.510Z",
+      "page": "2026-09-11-clear-habitos-atomicos.html",
+      "device": "Andy",
+      "nid": "2026-09-11-rec-andy"
     }
   ],
-  "_updated_at": "2026-09-11T17:00:08.111Z"
+  "_updated_at": "2026-09-12T00:41:07.865Z"
 }
