@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-11T23:33:22.303Z",
+  "_updated_at": "2026-09-12T16:10:00-03:00",
   "notifications": [
     {
       "id": "2026-09-11-rec-andy",
@@ -1428,6 +1428,32 @@
       "sent_at": "2026-09-09T23:42:46.822Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-09-09"
+    },
+    {
+      "id": "2026-09-12-rec-andy",
+      "title": "🍊 La veta que declaraste y no tocamos",
+      "body": "El Milagro de Mindfulness (Thich Nhat Hanh): tu veta oriental, prometida en julio, nunca usada. Escrito en plena guerra.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-12-hanh-milagro-mindfulness.html",
+      "to": "Andy",
+      "send_at": "2026-09-12T19:00:00-03:00",
+      "expires_at": "2026-09-12T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-12"
+    },
+    {
+      "id": "2026-09-12-rec-sofi",
+      "title": "🫖 Otro cadáver en tu librería favorita",
+      "body": "Un cadáver en Baker Street (Vicki Delany): secuela de Elemental, querida lectora, ya en tu M5. Autoconclusivo.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-12-delany-cadaver-baker-street.html",
+      "to": "Sofi",
+      "send_at": "2026-09-12T19:00:00-03:00",
+      "expires_at": "2026-09-12T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-12"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-11T19:05:00-03:00",
-  "_feedback_cutoff": "2026-09-11T13:21:05.283Z",
+  "_updated_at": "2026-09-12T19:00:00-03:00",
+  "_feedback_cutoff": "2026-09-12T00:42:32.857Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -2318,10 +2318,10 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
-        "dwell_s": 0
+        "clicked": true,
+        "dwell_s": 86
       },
-      "learning": null
+      "learning": "Clickeo el push (12/09 00:41) y quedo 86s con 43% de scroll -- en curso, todavia sin veredicto ni reaccion. Se suma a la racha de 'abrio y no voto' de Andy (ya son 7 fichas seguidas asi: Haidt, Chodron, Seligman, Wood, Hoyle, Sapolsky, Saint-Exupery, Mack, y ahora esta)."
     },
     {
       "id": "2026-09-11-mandanna-sociedad-brujas",
@@ -2341,6 +2341,58 @@
       "page": "recs/2026-09-11-mandanna-sociedad-brujas.html",
       "notified_by": "2026-09-11-rec-sofi",
       "why": "Régimen DIARIO: ayer (10/09) Sofi tuvo redescubrimiento (Doyle-Regreso) -> hoy le toca la nueva, y Andy recibe la biblioteca. Banco nuevo de Sofi estaba agotado según PROFILE ('círculo cozy agotado... sin candidata fuerte siguiente'); se repuso con WebSearch. Elegida por ser la misma fórmula que dio su única señal positiva clara en fantasía (Klune, me_tienta+love, 05/08: found-family cálido, sin gore) pero con una autora nunca antes recomendada (banco de Klune agotado, 3 títulos usados) en vez de forzar un cuarto título del mismo autor o volver al misterio/cozy que viene fallando por 'ya_lo_lei' con autores muy leídos. También cruza su pedido del 24/07 (romance con final feliz, sin melodrama), integrado como slow-burn secundario, no como eje central. Guardia: título+autora verificados contra el catálogo completo (437 vol., sin coincidencias) y contra todo recommended.json: Mandanna nunca aparece. Datos verificados cruzando Wikipedia, la ficha oficial de Penguin Random House y reseñas (incluida NPR); citas verificadas contra la colección de citas del libro en Goodreads. Link de compra verificado (200) en buscalibre.uy, desde ~$870 UYU. Audiolibro en español confirmado en Google Play (narradora Ariana Martínez Moreno).",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-12-hanh-milagro-mindfulness",
+      "date": "2026-09-12",
+      "kind": "nuevo",
+      "title": "El Milagro de Mindfulness",
+      "author": "Thich Nhat Hanh",
+      "language": "es",
+      "topics": [
+        "espiritualidad",
+        "oriental",
+        "wellness",
+        "mindfulness"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-09-12-hanh-milagro-mindfulness.html",
+      "notified_by": "2026-09-12-rec-andy",
+      "why": "Rota de veta despues de Habitos Atomicos (12/09 redescub, cierre del hilo de Fogg): en vez de otro libro de habitos, se va a espiritualidad oriental/mindfulness -- veta declarada desde 07/15 y nunca usada en 'nuevo' (solo tocada de refilon con Siddhartha, redescub). Formato corto (160 paginas) y poetico, el mismo combo que dio el ACIERTO PLENO con Rovelli. Historia de origen fuerte: escrito en 1974 como una carta larga a un monje companero (Hermano Quang) durante la guerra de Vietnam, publicado primero como 'The Miracle of Being Awake' (1974) y con su titulo definitivo recien en Beacon Press 1975 -- no es un tratado, es un manual de practicas concretas escrito en medio de una crisis real. Verificado titulo+autor contra el catalogo completo (437 vol.) y recommended.json: sin coincidencias (a diferencia de Siddhartha, que es ficcion sobre budismo, este es el propio Thich Nhat Hanh). Nota de guardia: Andy lleva 7 fichas seguidas 'abrio y no voto' (Haidt a esta altura) -- no cambio la estructura de la pagina todavia (mismo contrato que funciona en general), pero lo dejo marcado para revisar si hace falta simplificar el CTA.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-12-delany-cadaver-baker-street",
+      "date": "2026-09-12",
+      "kind": "redescubrimiento",
+      "title": "Un cadáver en Baker Street",
+      "author": "Vicki Delany",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "cozy",
+        "libros",
+        "sherlock-holmes"
+      ],
+      "book_ref": "M5-016",
+      "audience": "sofi",
+      "page": "recs/2026-09-12-delany-cadaver-baker-street.html",
+      "notified_by": "2026-09-12-rec-sofi",
+      "why": "Redescubrimiento del banco (PROFILE: 'M5-016 Delany 2'): segundo libro de la misma serie cozy Sherlock Holmes Bookshop que el M5-014 'Elemental, querida lectora' (recomendado 02/08, cero feedback hasta hoy). Elegido para romper la racha de Doyle canon en sus ultimos dos redescub (Memorias 09/06, Regreso 09/10, ambos sin voto): mismas protagonistas (Gemma Doyle, libreria; Jayne Wilson, salon de te), misma veta cozy-con-Sherlock que le funciono con Osman, pero autoconclusivo -- no hace falta haber leido el libro 1 para disfrutarlo, y la ficha lo dice de frente ya que no hay señal de que haya empezado esa serie. Guardia reforzada: verificado titulo+autor contra el catalogo completo y todo recommended.json (unico match esperado, M5-014, el libro 1 de la misma serie -- sin coincidencia de M5-016) y contra los 50 King con especial cuidado. Sigue sin haber NINGUN evento de Sofi desde el 05/08 (mismo canal en silencio); se elige igual con la misma disciplina de guardia, sin bajar el estandar por falta de señal.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
