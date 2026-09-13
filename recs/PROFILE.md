@@ -17,49 +17,58 @@ manda hasta que alguien lo actualice; no es territorio mío.
 ## 🎧 Audio 30s + Google Play, en TODA ficha (desde 04/09)
 Toda ficha (nueva o redescub) suma botón de resumen en audio (Web Speech
 API, cliente puro) y audiolibro de Google Play si existe, por
-título+autor(+narrador) — 403 a bots es bloqueo conocido, se usa igual.
-Narración dudosa o sin confirmar = declarar existencia sin linkear.
+título+autor(+narrador) — 403 a bots es bloqueo conocido; si otra fuente
+(WebFetch directo, Audible/Amazon) confirma el contenido, se declara igual,
+pero solo se LINKEA el URL de Google Play si el chequeo en vivo dio 200.
 
-## 🚨 09/12 — canal de Sofi: 5+ semanas en cero
-Sigue sin NINGÚN evento de Sofi desde 2026-08-05 (tampoco hoy).
-`subscription.json` en `active` para ambos — no es la suscripción, es
-el canal de Sofi en sí. **Faltan 4 días para el umbral del 16/09**: si
-sigue en cero ahí sí re-escalar fuerte en la ficha de Andy (no repetí
-el bloque de alerta hoy para no espamear). Sigo eligiendo con la misma
-disciplina de guardia — el silencio es de canal, no evidencia de
-contenido fallando.
+## 🚨 09/13 — canal de Sofi: sigue en cero, 3 días para el umbral
+Sigue sin NINGÚN evento de Sofi desde 2026-08-05 (tampoco hoy — cero
+eventos nuevos de nadie desde el 12/09 00:42 UTC). `subscription.json`
+en `active` para ambos. **Quedan 3 días para el umbral del 16/09**: si
+sigue en cero ahí sí re-escalar fuerte en la ficha de Andy. Se sigue
+eligiendo con la misma disciplina de guardia — el silencio es de canal,
+no evidencia de contenido fallando. Se sumó de nuevo la micro-pregunta
+`rec-canal` en la ficha de hoy (barata, puede confirmar si el problema es
+de notis).
 
-## ✅ Canal de Andy — activo, un patrón claro
-"Abrió y no votó" domina desde hace 7 fichas seguidas (Haidt, Chodron,
-Seligman, Wood, Hoyle, Sapolsky, Saint-Exupéry, Mack, Hábitos Atómicos):
-click/dwell alto pero sin veredicto, vs. el período previo con voto
-cerrado (Coelho `ya_lo_lei`, Kiyosaki `ya_lo_lei`+`like`+dwell 178s).
-Hábitos Atómicos (11/09) sumó click (12/09 00:41) + dwell 86s/43%
-scroll — en curso, sin veredicto. Vigilar si hace falta simplificar el
-CTA o si es el ritmo real de lectura de Andy — no asumir desinterés.
+## ✅ Canal de Andy — activo, racha de "abrió y no votó" crece
+Última vez que votó: Kiyosaki `ya_lo_lei` (05/09). Desde entonces, 7
+fichas seguidas sin veredicto (Wood, Hoyle, Sapolsky, Principito, Mack,
+Hábitos Atómicos, Milagro de Mindfulness) — con la de hoy (Doidge), 8 en
+juego. Click/dwell siguen apareciendo (Hábitos Atómicos: 86s/43% scroll),
+o sea que abre y lee, pero no cierra veredicto. No cambié la estructura
+de página todavía porque es la misma que le funcionó con Rovelli/Bach,
+pero si el redescub de Doidge de hoy tampoco cierra, la próxima corrida
+prueba algo distinto (veredicto más corto, o pregunta directa de canal).
 
-## 📅 09/12 — hoy
-Único evento nuevo: click+dwell de Andy en Hábitos Atómicos (ya arriba).
-Régimen: ayer Andy=redescub (Clear) → hoy nuevo; Sofi=nuevo (Mandanna)
-ayer → hoy redescub. **Andy → *El Milagro de Mindfulness*, Thich Nhat
-Hanh (1975, nuevo)**: rota de hábitos/conducta a espiritualidad
-oriental — veta declarada 15/07 y nunca tocada de frente (solo
-Siddhartha, ficción, sin veredicto). Formato corto (160p) y poético,
-mismo combo que dio el ACIERTO PLENO con Rovelli. Historia de origen
-fuerte: carta real a un monje en guerra, 1974-75. **Sofi → *Un cadáver
-en Baker Street*, Vicki Delany (2017, redescub, M5-016)**: banco
-"Delany 2" — secuela de *Elemental, querida lectora* (M5-014, 02/08,
-sin señal), rompe la racha de canon Doyle puro en sus últimos 2
-redescub (Memorias, Regreso — ninguno votado). Guardia: ambos
-verificados contra catálogo (437 vol.) y `recommended.json` completo,
-sin coincidencias nuevas; M5-016 nunca usado, distinto de M5-014.
-Ninguna cita verificable del interior de Delany en Goodreads — se usó
-una reseña real de Publishers Weekly en su lugar, citada tal cual, en
-vez de inventar una cita de libro. Audiolibro de Hanh confirmado en
-español (Audible, Miguel Ángel Jenner) pero sin link estable a Google
-Play encontrado — declarado sin linkear, como pide la guardia de
-honestidad. Mismo criterio con el audiolibro en inglés de Delany
-(narradora Kelly Clare): existencia confirmada, sin link verificado.
+## 📅 09/13 — hoy
+Cero eventos nuevos de feedback desde el cutoff (2026-09-12T00:42:32Z) —
+ni Andy ni Sofi interactuaron con las fichas de ayer (Hanh, Delany)
+todavía. Ambos pushes del 12/09 salieron 201 (confirmado en
+`send_log.json`). Régimen: ayer Andy=nuevo (Hanh) → hoy le toca la
+biblioteca; Sofi=redescub (Delany) → hoy le toca la nueva.
+**Andy → *The Brain That Changes Itself*, Norman Doidge (2007,
+redescub, L4-011)**: este libro ya había sido MENCIONADO dos veces sin
+recomendarse (ficha de Pollan 23/07, ficha de Sapolsky 08/09, ambas
+señalando que ya lo tiene en L4 sin abrir) — en vez de sumar un tercer
+"nuevo" a la veta neurociencia, se le devuelve el libro que ya tiene.
+Rota de espiritualidad oriental (ayer) a neurociencia (retoma el hilo
+abierto por Sapolsky/Eagleman, ninguno con veredicto aún). Seis casos
+del libro verificados contra Wikipedia (capítulos exactos) — se
+descartó a propósito usar a Ramachandran/taxistas de Londres por no
+poder confirmar que están en ESTE libro. Audiolibro en inglés confirmado
+Y linkeado (Google Play, Jim Bond, HTTP 200 en vivo). **Sofi → *Emily
+Wilde's Encyclopaedia of Faeries*, Heather Fawcett (2023, nuevo)**:
+banco repuesto ayer con Becky Chambers y Fawcett; se elige Fawcett por
+cruzar found-family cálido (su único acierto en fantasía, Klune) +
+estructura de investigación/expediente (su veta detective) + slow-burn
+sin melodrama (su pedido del 24/07) — más ambicioso que repetir found-
+family puro. Ambos verificados contra catálogo (437 vol.) y
+`recommended.json` completo, sin coincidencias nuevas. Edición española
+(Umbriel, feb-2023) verificada en Buscalibre Uruguay en vivo (HTTP 200,
+desde ~USD 23). Audiolibro en inglés (Ell Potter/Michael Dodds)
+declarado sin linkear: Google Play devolvió error al chequeo en vivo,
+aunque la fuente secundaria (Audible/Amazon) confirma que existe.
 
 ## 📚 Contexto fijo
 Catálogo: 437 volúmenes (re-extraer `/tmp/catalog.json` cada corrida).
@@ -76,18 +85,17 @@ Benavent, Henry.
 - Quemados: Osman t.1-2, Dicker HQ, Hill, King R5-018, Katzenbach M5-024,
   Carlisle M5-012, Benavent M6-001-009, Henry x2, Coyle M5-011, Klune x3,
   Heap House, Bennett+secuela, Doyle-Baskerville/Aventuras/Memorias/
-  Regreso (M5-006), Delany M5-014/M5-016 (hoy), Haig x3, Christie x2,
+  Regreso (M5-006), Delany M5-014/M5-016, Haig x3, Christie x2,
   Peters-Egipto, Backman-Ove, Flynn-Heridas, French-Silencio del Bosque,
-  Hawkins-chica-del-tren.
+  Hawkins-chica-del-tren, Mandanna, Fawcett-Emily Wilde (hoy).
 - Banco redescub: queda M5-034 *Su Último Saludo* (canon Doyle, cuarto
   de la serie) y M5-033 (compendio DK) — reponer con 2-3 nombres más
   antes de la próxima corrida de redescub (evitar más canon Doyle
   seguido; buscar otra autora de nicho tipo Delany/Minix).
-- Banco nuevo: círculo cozy agotado; Hawkins, Doyle-Regreso y Mandanna
-  (09/11) ya usados. Fantasía cálida found-family confirmada como veta
-  viva (Klune agotado x3, Mandanna nueva hoy) — buscar más nombres de
-  esa veta (Becky Chambers, Heather Fawcett) para el banco antes de que
-  vuelva a tocarle un nuevo.
+- Banco nuevo: Becky Chambers (Monk & Robot) queda como próximo nombre de
+  fantasía cálida found-family tras Fawcett hoy — reponer con 2-3 más
+  antes de que se agote (Heather Fawcett tiene 3 secuelas si esta
+  funciona). Círculo cozy clásico y Klune siguen agotados.
 
 ### Andy — datos duros
 Estante L4 (28+5), L5 astronomía (33). Gustos: wellness, autosuperación,
@@ -97,11 +105,12 @@ dueño; fábula corta sigue siendo el combo más seguro (ahora con
 Saint-Exupéry también usado).
 - Botón cerrado: Rovelli, Bach Ilusiones, Holiday, Coelho, Kiyosaki.
   Sin veredicto: Haidt, Chodron, Seligman, Wood, Hoyle, Sapolsky,
-  Saint-Exupéry, Mack, Hábitos Atómicos, Milagro de Mindfulness (hoy)
-  — lote pendiente, cada vez más largo.
-- Neurociencia/hábitos: Sapolsky y Fogg (493s dwell) abrieron la veta,
-  sin cerrar aún. Espiritualidad oriental: tocada de frente por primera
-  vez hoy (Hanh) — banco mindfulness ahora solo con Kabat-Zinn, reponer.
+  Saint-Exupéry, Mack, Hábitos Atómicos, Milagro de Mindfulness, Doidge
+  (hoy) — lote pendiente, cada vez más largo (ver alerta arriba).
+- Neurociencia/hábitos: Sapolsky y Fogg (493s dwell) abrieron la veta;
+  hoy se retoma con Doidge (redescub, ya en su estante) en vez de sumar
+  otro "nuevo". Espiritualidad oriental: tocada de frente con Hanh
+  (12/09) — banco mindfulness ahora solo con Kabat-Zinn, reponer.
 - Astronomía: retomada con Hoyle y llevada un paso más con Mack, sin
   señal aún. Banco nuevo corto tras Mack — reponer con Sean Carroll.
   Finanzas cerrada con Kiyosaki, sin urgencia.
@@ -115,17 +124,16 @@ ediciones de Buscalibre figuran agotadas, declararlo y sumar
 alternativa verificada en vez de ocultarlo.
 
 ## 🔭 Qué mirar (próxima corrida)
-(1) ¿Llegó señal nueva de Sofi? Quedan 4 días para el umbral del
-16/09 — si sigue en cero, escalar más fuerte en la ficha de Andy.
-(2) Veredicto del lote pendiente de Andy (9 fichas sin voto, ver
-arriba) y de las cinco fichas sin voto de Sofi (Doyle Aventuras/
-Memorias/Regreso, Mandanna, Delany-Baker-Street). (3) Confirmar 201 en
-`send_log.json` de los dos pushes de hoy (09/12). (4) Reponer banco
-nuevo de astronomía para Andy (Sean Carroll) y banco mindfulness
-(Kabat-Zinn queda solo); sumar 2-3 nombres a fantasía cálida
-found-family para Sofi (Becky Chambers, Heather Fawcett) y 2-3 autoras
-de nicho tipo Delany/Minix al banco redescub de Sofi (que se está
-quedando corto: solo M5-033/034).
+(1) ¿Llegó señal nueva de Sofi? Quedan 3 días para el umbral del 16/09
+— si sigue en cero, escalar más fuerte en la ficha de Andy. (2)
+Veredicto de Doidge (hoy) y de Hanh/Delany (ayer, sin señal todavía) —
+si Andy tampoco vota Doidge, considerar simplificar el CTA o preguntar
+directo por el canal. (3) Confirmar 201 en `send_log.json` de los dos
+pushes de hoy (09/13). (4) Reponer banco nuevo de astronomía para Andy
+(Sean Carroll) y banco mindfulness (Kabat-Zinn queda solo); sumar Becky
+Chambers al banco found-family de Sofi (queda solo ese nombre) y 2-3
+autoras de nicho tipo Delany/Minix al banco redescub de Sofi (M5-033/034
+nada más).
 
 ## 🎬 CINE + 🧳 viaje (fuera del ciclo)
 Cine: 1/semana, `todos`, viernes ~19:00. Sofi evita gore/subtítulos;

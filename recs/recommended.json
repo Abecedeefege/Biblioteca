@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-12T19:00:00-03:00",
+  "_updated_at": "2026-09-13T19:00:00-03:00",
   "_feedback_cutoff": "2026-09-12T00:42:32.857Z",
   "recommendations": [
     {
@@ -2393,6 +2393,57 @@
       "page": "recs/2026-09-12-delany-cadaver-baker-street.html",
       "notified_by": "2026-09-12-rec-sofi",
       "why": "Redescubrimiento del banco (PROFILE: 'M5-016 Delany 2'): segundo libro de la misma serie cozy Sherlock Holmes Bookshop que el M5-014 'Elemental, querida lectora' (recomendado 02/08, cero feedback hasta hoy). Elegido para romper la racha de Doyle canon en sus ultimos dos redescub (Memorias 09/06, Regreso 09/10, ambos sin voto): mismas protagonistas (Gemma Doyle, libreria; Jayne Wilson, salon de te), misma veta cozy-con-Sherlock que le funciono con Osman, pero autoconclusivo -- no hace falta haber leido el libro 1 para disfrutarlo, y la ficha lo dice de frente ya que no hay señal de que haya empezado esa serie. Guardia reforzada: verificado titulo+autor contra el catalogo completo y todo recommended.json (unico match esperado, M5-014, el libro 1 de la misma serie -- sin coincidencia de M5-016) y contra los 50 King con especial cuidado. Sigue sin haber NINGUN evento de Sofi desde el 05/08 (mismo canal en silencio); se elige igual con la misma disciplina de guardia, sin bajar el estandar por falta de señal.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-13-doidge-cerebro-cambia",
+      "date": "2026-09-13",
+      "kind": "redescubrimiento",
+      "title": "The Brain That Changes Itself",
+      "author": "Norman Doidge",
+      "language": "en",
+      "topics": [
+        "neurociencia",
+        "wellness",
+        "autosuperacion"
+      ],
+      "book_ref": "L4-011",
+      "audience": "andy",
+      "page": "recs/2026-09-13-doidge-cerebro-cambia.html",
+      "notified_by": "2026-09-13-rec-andy",
+      "why": "Régimen DIARIO: ayer (12/09) Andy tuvo nuevo (Hanh) -> hoy le toca la biblioteca de la casa, y Sofi recibe la nueva. Este libro ya había sido MENCIONADO dos veces sin recomendarse: en la ficha de Pollan (23/07, 'puente exacto entre Huxley, Leary y Doidge') y en la de Sapolsky (08/09, 'en L4 solo tiene The Brain That Changes Itself y Eagleman'). En vez de sumar un tercer 'nuevo' de neurociencia, se devuelve el libro que ya tiene sin abrir (L4-011, edición Penguin en inglés). Verificado título+autor contra el catálogo completo (437 vol., único match esperado L4-011) y contra todo recommended.json: nunca recomendado antes. Estructura de 11 capítulos y los 6 casos usados en la ficha (Bach-y-Rita, Arrowsmith Young, Merzenich, Schwartz/TOC, dolor crónico, imaginación) verificados contra Wikipedia (artículo del libro) y resúmenes independientes; se descartó a propósito incluir a Ramachandran/mirror-box y los taxistas de Londres por no poder confirmar que están en ESTE libro. Tres citas verificadas contra Goodreads. Audiolibro en inglés confirmado y linkeado (Google Play, narrador Jim Bond, HTTP 200 en vivo); sin confirmación de narración en español.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-13-fawcett-emily-wilde",
+      "date": "2026-09-13",
+      "kind": "nuevo",
+      "title": "Emily Wilde's Encyclopaedia of Faeries",
+      "author": "Heather Fawcett",
+      "language": "es",
+      "topics": [
+        "fantasia_calida",
+        "found-family",
+        "misterio",
+        "romance"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-09-13-fawcett-emily-wilde.html",
+      "notified_by": "2026-09-13-rec-sofi",
+      "why": "Régimen DIARIO: ayer (12/09) Sofi tuvo redescubrimiento (Delany) -> hoy le toca la nueva, y Andy recibe la biblioteca. Banco nuevo repuesto en la corrida del 12/09 con dos nombres (Becky Chambers, Heather Fawcett) tras agotar el círculo cozy y el banco Klune; se elige Fawcett por cruzar tres vetas a la vez: found-family cálido (su único acierto claro en fantasía, Klune 05/08), estructura de investigación/expediente (su veta detective) y romance slow-burn sin melodrama (su pedido explícito del 24/07). Verificado título+autora contra el catálogo completo (437 vol.) y contra todo recommended.json: nunca recomendada, ni ella ni ningún otro título de la serie. Edición española (Umbriel/Ediciones Urano, feb-2023, trad. María del Carmen Boy Ruiz) verificada en Buscalibre Uruguay en vivo (HTTP 200, desde ~USD 23). Cuatro citas verificadas contra Goodreads. Audiolibro en inglés (narradores Ell Potter y Michael Dodds) confirmado por fuente secundaria (Audible/Amazon) pero no linkeado: la página de Google Play no pudo abrirse en el chequeo en vivo. Su canal sigue sin ningún evento desde el 05/08 (más de 5 semanas); se mantiene la misma disciplina de guardia sin bajar el estándar por falta de señal.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-12T23:14:51.795Z",
+  "_updated_at": "2026-09-13T19:00:00-03:00",
   "notifications": [
     {
       "id": "2026-09-11-rec-andy",
@@ -1454,6 +1454,32 @@
       "sent_at": "2026-09-12T23:14:51.794Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-09-12"
+    },
+    {
+      "id": "2026-09-13-rec-andy",
+      "title": "🧠 El libro que dos fichas te debían",
+      "body": "The Brain That Changes Itself (Doidge): ya está en tu L4-011 sin abrir. Hoy te lo devolvemos, sin gastar un nuevo.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-13-doidge-cerebro-cambia.html",
+      "to": "Andy",
+      "send_at": "2026-09-13T19:00:00-03:00",
+      "expires_at": "2026-09-13T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-13"
+    },
+    {
+      "id": "2026-09-13-rec-sofi",
+      "title": "❄️ Una investigadora de hadas para vos",
+      "body": "Emily Wilde's Encyclopaedia of Faeries: found-family cálido + misterio + slow-burn, tu combo. Nuevo, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-13-fawcett-emily-wilde.html",
+      "to": "Sofi",
+      "send_at": "2026-09-13T19:00:00-03:00",
+      "expires_at": "2026-09-13T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-13"
     }
   ]
 }
