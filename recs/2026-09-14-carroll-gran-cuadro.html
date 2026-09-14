@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🌌 El Gran Cuadro · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#0B0E1A;
+  --fondo2:#11162A;
+  --texto:#EBEEF7;
+  --bruma:#8F96B5;
+  --nova:#F0B94C;
+  --nova-hi:#FFCE72;
+  --quasar:#6C8CF5;
+  --quasar-hi:#9AB2FF;
+  --linea:rgba(235,238,247,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--quasar);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--quasar-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(235,238,247,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--nova),var(--quasar-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(11,14,26,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--quasar-hi);border-color:var(--quasar)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--nova-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: campo de estrellas respirando, sin planeta, solo el vacío ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 8%,#1B2242 0%,var(--fondo) 62%)}
+.estrellas{position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 20% 30%,rgba(235,238,247,.9),transparent),radial-gradient(1px 1px at 70% 18%,rgba(235,238,247,.7),transparent),radial-gradient(1.5px 1.5px at 85% 55%,rgba(235,238,247,.8),transparent),radial-gradient(1px 1px at 40% 70%,rgba(235,238,247,.6),transparent),radial-gradient(1.5px 1.5px at 10% 65%,rgba(235,238,247,.7),transparent),radial-gradient(1px 1px at 60% 40%,rgba(235,238,247,.5),transparent),radial-gradient(1.5px 1.5px at 92% 80%,rgba(235,238,247,.6),transparent);opacity:.7}
+.halo{position:absolute;top:8%;left:50%;transform:translateX(-50%);width:min(70vw,260px);height:min(70vw,260px);border-radius:50%;background:radial-gradient(circle,rgba(240,185,76,.28) 0%,rgba(240,185,76,0) 70%);animation:respirar 5.5s ease-in-out infinite}
+@keyframes respirar{0%,100%{opacity:.5;transform:translateX(-50%) scale(.92)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+.silueta{position:absolute;top:14%;left:50%;transform:translateX(-50%);font-size:min(9vw,2.6rem);opacity:.9}
+.hero-int{position:relative;z-index:2;max-width:660px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--nova-hi);border:1px solid rgba(240,185,76,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.4rem,1rem + 2.8vw,2.15rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--quasar-hi)}
+.hero .en{color:var(--bruma);font-size:.86rem;margin-top:.3rem}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:49ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--quasar);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+.audio{background:rgba(108,140,245,.12);border:1px solid rgba(108,140,245,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--quasar);color:#0B0E1A;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--quasar-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--nova-hi);font-weight:500}
+
+.abox{background:rgba(240,185,76,.12);border:1px solid rgba(240,185,76,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0}
+.abox p{font-size:.9rem;color:var(--bruma)}
+.abox p + p{margin-top:.6rem}
+.abox a{display:inline-block;margin-top:.8rem;color:var(--nova-hi);font-weight:600;text-decoration:none;border-bottom:1px solid var(--nova);padding-bottom:2px}
+
+/* ---------- seis ideas del libro (corazón interactivo) ---------- */
+.historias{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(235,238,247,.03)}
+.histGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem}
+.hist{background:rgba(235,238,247,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.hist:hover:not(.abierta){border-color:var(--quasar);transform:translateY(-2px)}
+.hist .ico{font-size:1.5rem;display:block;margin-bottom:.35rem}
+.hist .nombre{font-size:.82rem;color:var(--bruma);font-weight:600}
+.hist.abierta{background:rgba(108,140,245,.16);border-color:var(--quasar)}
+.hist .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--quasar-hi);font-size:.84rem;margin-top:.5rem;line-height:1.44}
+.hist.abierta .obs{display:block}
+.hist.abierta .nombre{display:none}
+.hist-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(235,238,247,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--nova-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(240,185,76,.1);border:1px solid rgba(240,185,76,.4);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--nova-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.cta,.react{background:rgba(235,238,247,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(235,238,247,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--quasar);color:var(--quasar-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--nova-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+a.comprar{display:block;text-align:center;margin-top:1.15rem;background:var(--nova);color:#221803;text-decoration:none;font-weight:700;padding:1rem 1.2rem;border-radius:999px;font-size:1rem;transition:transform .2s ease,background .2s ease}
+a.comprar:hover{background:var(--nova-hi);transform:translateY(-2px)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:42ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--nova-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--nova);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="estrellas" aria-hidden="true"></div>
+  <div class="halo" aria-hidden="true"></div>
+  <div class="silueta" aria-hidden="true">🌌</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · Tu veta de astronomía, pero con la otra pregunta adentro</span>
+    <h1>El Gran Cuadro</h1>
+    <p class="autor">Sean Carroll</p>
+    <p class="en"><em>The Big Picture: On the Origins of Life, Meaning, and the Universe Itself</em> (2016)</p>
+    <p class="sub">Un físico de partículas se sienta a responder, con el mismo rigor con el que explica el Bosón de Higgs, la pregunta que tu estante viene rodeando hace meses: si el universo no viene con un propósito escrito de antemano, ¿de dónde sale el sentido? Cosmología real, cero new age.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Un físico, seis secciones, una sola pregunta de fondo</h2>
+    <p class="bajada rev d2">Sean Carroll es físico teórico: cuando escribió este libro (2016) investigaba en Caltech; hoy, en 2026, es profesor en Johns Hopkins. Su especialidad es la cosmología — la flecha del tiempo, la entropía, los orígenes del universo — pero acá se anima a cruzarla con algo que normalmente no comparte estante con la física: la pregunta de qué significa vivir bien sabiendo que nada te lo va a decir por vos.</p>
+    <p class="parr rev d2">El libro tiene seis partes — Cosmos, Understanding, Essence, Complexity, Thinking, Caring — y cincuenta capítulos cortos en unas 430 páginas. Arranca con el Big Bang y termina, literalmente, con consejos concretos de cómo vivir: no es un libro de física que de repente se pone filosófico, es un argumento único que atraviesa las dos cosas de punta a punta.</p>
+    <div class="cita rev d3">"As we understand the world better, the idea that it has a transcendent purpose seems increasingly untenable."<span>("A medida que entendemos mejor el mundo, la idea de que tiene un propósito trascendente se vuelve cada vez más insostenible." Cita verificada contra la página de citas del libro en Goodreads; traducción propia.)</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="historias-sec">
+  <div class="centro">
+    <p class="kicker rev">El corazón del libro</p>
+    <h2 class="titulo rev d1">Seis ideas del libro — tocá cada una</h2>
+    <p class="bajada rev d2">No son citas de tapa: son los argumentos centrales, uno por sección, en el orden en que Carroll los va construyendo.</p>
+    <div class="historias rev d3">
+      <div class="histGrid" id="histBox">
+        <div class="hist abierta" data-obs="Hay más de un vocabulario verdadero para describir lo mismo: 'un conjunto de átomos' y 'una persona pensando' son ambas descripciones reales del mismo objeto, en niveles distintos. No hace falta elegir una y descartar la otra — ni reducir todo a física, ni inventar una fuerza extra para explicar la mente. Sección Understanding."><span class="ico">🎭</span><span class="nombre">Más de un vocabulario verdadero</span><span class="obs"></span></div>
+        <div class="hist" data-obs="La 'Teoría Central': la física que gobierna tu vida cotidiana — todo lo que no sea un agujero negro o el primer instante del universo — ya está completamente descripta por el Modelo Estándar más la gravedad de Einstein. Carroll lo dice así de directo: no queda espacio matemático para una fuerza vital, una energía extra o un alma actuando sobre tu cuerpo. Sección Essence."><span class="ico">⚛️</span><span class="nombre">La física ya está completa</span><span class="obs"></span></div>
+        <div class="hist" data-obs="Sos un proceso, no una sustancia: como el remolino que se forma cuando servís la crema en el café, no sos una 'cosa' fija sino un patrón que se sostiene mientras materia y energía distintas pasan a través tuyo todo el tiempo. Por eso 'todos morimos' no es una tragedia ajena a la física: es exactamente lo que se espera de un proceso. Sección Complexity."><span class="ico">🌊</span><span class="nombre">Sos un proceso, no una sustancia</span><span class="obs"></span></div>
+        <div class="hist" data-obs="El universo no viene con instrucciones ni con un propósito escrito de antemano — y para Carroll esa es la parte buena, no la mala: si el sentido no está esperándote en ningún lado, el que construís vos importa más, no menos. Es una decisión creativa, no un descubrimiento. Sección Caring."><span class="ico">🕯️</span><span class="nombre">El sentido se construye, no se encuentra</span><span class="obs"></span></div>
+        <div class="hist" data-obs="Razonamiento bayesiano en criollo: no se trata de tener 'creencias' fijas que defendés a muerte, sino grados de confianza que ajustás en proporción a la evidencia nueva que aparece — ni aferrarte a todo, ni descartar de un salto ante el primer dato en contra. Sección Thinking."><span class="ico">🧮</span><span class="nombre">Creer un poco, no todo o nada</span><span class="obs"></span></div>
+        <div class="hist" data-obs="Por qué el pasado se siente fijo y el futuro abierto, aunque las leyes físicas no distinguen una dirección del tiempo de la otra: la respuesta está en la entropía, la especialidad de investigación de Carroll. Es el capítulo más técnico del libro, pero el que más veces cita en sus propias charlas. Sección Cosmos."><span class="ico">⏳</span><span class="nombre">Por qué el tiempo parece tener flecha</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="hist-hint">Hay más: mecánica cuántica interpretada sin misticismo, el origen de la vida sin milagro, la conciencia como "emergente" y no como añadido — pero estas seis son la columna vertebral del argumento.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="porque">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo este, justo ahora</p>
+    <h2 class="titulo rev d1">El cruce que tu estante venía pidiendo</h2>
+    <p class="bajada rev d2">Tu veta de astronomía es la más consistente de las tuyas — ACIERTO PLENO con Rovelli (16/07), acierto también en redescubrimiento con Cosmos (22/07), Hawking y Mack todavía esperando tu veredicto. Y en paralelo viene tu otra veta fuerte, la del sentido: Frankl, Bucay, Housel, Haig. Este libro no elige entre las dos: es, literalmente, un cosmólogo respondiendo la pregunta de Frankl con las herramientas de Rovelli. El banco de astronomía se había achicado después de Mack (10/09) — esta es la reposición que quedó anotada en tu perfil, y el cruce con sentido la hace más que "otro libro de física".</p>
+    <p class="parr suave rev d3">Aviso de honestidad, sin vueltas: llevás ocho fichas seguidas sin cerrar veredicto (Buenos Hábitos, Frontiers of Astronomy, Compórtate, El Principito, Mack, Hábitos Atómicos, Milagro de Mindfulness, Doidge) desde tu último "ya lo leí" con Kiyosaki el 05/09 — con esta, nueve en juego. Los clics y el dwell siguen apareciendo, así que sé que abrís las fichas; lo que no sé es si cerrar el botón te está costando por la fricción, por falta de tiempo, o porque las notis no te llegan cuando tenés cabeza para esto. En vez de seguir asumiendo, te lo pregunto directo más abajo — una sola vez, no hace falta escribir nada.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de sumarlo al estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>The Big Picture: On the Origins of Life, Meaning, and the Universe Itself</em>, Sean Carroll. Dutton, 2016, 470 páginas (Understanding-Essence-etc., 50 capítulos cortos en 6 partes).</dd>
+        <dt>En español</dt><dd><em>El Gran Cuadro: Los orígenes de la vida, su sentido y el universo entero</em>. Pasado y Presente, 2017. Verificado en Buscalibre Uruguay: la única edición en español está <strong>agotada</strong> ahora mismo — te lo digo tal cual, no lo escondo.</dd>
+        <dt>Alternativa verificada</dt><dd>Como tu estante es mitad y mitad, te dejo la edición original en inglés (Dutton, tapa blanda), disponible y verificada en vivo en Buscalibre Uruguay — el link de abajo apunta ahí.</dd>
+        <dt>En tu catálogo</dt><dd>Verificado título+autor contra el catálogo completo (437 vol., L5 incluido) y contra todo <code>recommended.json</code>: primera vez que aparece Sean Carroll — nunca recomendado ni mencionado antes.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La estructura de seis secciones y cincuenta capítulos, y los seis argumentos de la grilla, están verificados cruzando el artículo de Wikipedia sobre el libro con reseñas independientes (Skeptical Inquirer, Scientific American, la reseña larga de Mark Kelly). Las cuatro citas textuales están verificadas palabra por palabra contra la página de citas del libro en Goodreads; las traducciones al español son propias, así lo aviso. El audiolibro en inglés existe y lo narra el propio Sean Carroll (confirmado por Audible y por la reseña de AudioFile Magazine) — no linkeo el URL de Google Play porque el chequeo en vivo me devolvió error (bloqueo a bots conocido en esa plataforma), pero lo declaro porque otra fuente sí lo confirma.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+
+    <div class="cta rev d1">
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-14-carroll-gran-cuadro','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-14-carroll-gran-cuadro','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-14-carroll-gran-cuadro','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-14-carroll-gran-cuadro','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-14-carroll-gran-cuadro','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <a class="comprar rev d2" href="https://www.buscalibre.uy/libros/search/?q=The+Big+Picture+Sean+Carroll" target="_blank" rel="noopener">Conseguilo, edición en inglés (desde ~USD 20) →</a>
+
+    <div class="abox rev d3">
+      <p>🎧 <b>¿Audiolibro?</b> Sí, en inglés: lo narra el propio Sean Carroll (Penguin Audio, 2016), confirmado por Audible. No encontré confirmación de una edición en audio en español. Google Play devolvió error al chequeo en vivo, así que no linkeo ese URL en particular.</p>
+    </div>
+
+    <div class="cta rev d2">🌌 De las seis ideas, ¿cuál te voló más la cabeza?
+      <div>
+        <button onclick="engageAnswer('rec-idea-favorita:2026-09-14-carroll-gran-cuadro','vocabularios',this)">🎭 Los vocabularios</button>
+        <button onclick="engageAnswer('rec-idea-favorita:2026-09-14-carroll-gran-cuadro','fisica-completa',this)">⚛️ La física completa</button>
+        <button onclick="engageAnswer('rec-idea-favorita:2026-09-14-carroll-gran-cuadro','proceso',this)">🌊 Sos un proceso</button>
+        <button onclick="engageAnswer('rec-idea-favorita:2026-09-14-carroll-gran-cuadro','sentido',this)">🕯️ El sentido</button>
+        <button onclick="engageAnswer('rec-idea-favorita:2026-09-14-carroll-gran-cuadro','bayesiano',this)">🧮 Creer de a poco</button>
+        <button onclick="engageAnswer('rec-idea-favorita:2026-09-14-carroll-gran-cuadro','tiempo',this)">⏳ La flecha del tiempo</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-14-carroll-gran-cuadro','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-14-carroll-gran-cuadro','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-14-carroll-gran-cuadro','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">Una pregunta corta, para afinar cómo te las mando
+      <div>
+        <button onclick="engageAnswer('rec-canal:2026-09-14-carroll-gran-cuadro','llegan_bien_no_llego_a_votar',this)">📱 Me llegan bien, no llego a votar</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-14-carroll-gran-cuadro','llegan_tarde_o_mal',this)">⚠️ Me llegan tarde o mal</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-14-carroll-gran-cuadro','muy_largo',this)">📏 Está bien pero es largo</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-14-carroll-gran-cuadro','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-14-carroll-gran-cuadro','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-14-carroll-gran-cuadro','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-14-carroll-gran-cuadro','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">
+      <label for="nota-2026-09-14-carroll-gran-cuadro" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-14-carroll-gran-cuadro" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-14-carroll-gran-cuadro',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"We are the miracle, we human beings... a miracle in that it is wondrous and amazing how such complex, aware, creative, caring creatures could have arisen in perfect accordance with those laws."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:46ch">("Somos el milagro, nosotros los seres humanos... un milagro en el sentido de que es maravilloso y asombroso que criaturas tan complejas, conscientes, creativas y afectuosas hayan surgido en perfecta conformidad con esas leyes." — Sean Carroll. Cita verificada contra la página de citas del libro en Goodreads.)</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · veta de astronomía (Rovelli, Cosmos, Hawking, Mack) cruzada con la veta de sentido (Frankl, Bucay, Haig), para Andy · datos verificados contra Wikipedia, Goodreads, Buscalibre Uruguay y catálogo propio, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#histBox .hist').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#histBox .hist').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "El Gran Cuadro, de Sean Carroll, dos mil dieciséis. Un físico teórico cruza cosmología con la pregunta del sentido: naturalismo poético, la idea de que hay más de un vocabulario verdadero para describir lo mismo, átomos y personas conviviendo sin contradecirse. La física que gobierna tu vida cotidiana ya está completa, dice Carroll: no queda lugar para fuerzas ocultas. Sos un proceso, no una sustancia, como el remolino en el café. Sin propósito escrito de antemano en el universo, pero con sentido que se construye, no se encuentra. Tu veta de astronomía, cruzada con tu veta de sentido, en el mismo libro.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

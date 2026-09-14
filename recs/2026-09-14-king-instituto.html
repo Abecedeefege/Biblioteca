@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🚨 El Instituto · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#10151A;
+  --fondo2:#161D23;
+  --texto:#E9EEF1;
+  --bruma:#8CA0A8;
+  --alarma:#E24B3F;
+  --alarma-hi:#F27668;
+  --clinico:#4FB3AC;
+  --clinico-hi:#7ED4CD;
+  --linea:rgba(233,238,241,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--alarma);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--clinico-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(233,238,241,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--alarma),var(--clinico-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(16,21,26,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--clinico-hi);border-color:var(--clinico)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--alarma-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: pasillo institucional, una sola luz roja de alarma parpadeando ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 10%,#1C2B2E 0%,var(--fondo) 62%)}
+.halo{position:absolute;top:9%;left:50%;transform:translateX(-50%);width:min(66vw,240px);height:min(66vw,240px);border-radius:50%;background:radial-gradient(circle,rgba(226,75,63,.28) 0%,rgba(226,75,63,0) 70%);animation:alarma 2.4s ease-in-out infinite}
+@keyframes alarma{0%,100%{opacity:.35;transform:translateX(-50%) scale(.9)}50%{opacity:.85;transform:translateX(-50%) scale(1.05)}}
+.silueta{position:absolute;top:14%;left:50%;transform:translateX(-50%);font-size:min(9vw,2.6rem);opacity:.9}
+.hero-int{position:relative;z-index:2;max-width:660px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--alarma-hi);border:1px solid rgba(226,75,63,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.4rem,1rem + 2.8vw,2.15rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--clinico-hi)}
+.hero .en{color:var(--bruma);font-size:.86rem;margin-top:.3rem}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:49ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--alarma);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+.audio{background:rgba(79,179,172,.12);border:1px solid rgba(79,179,172,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--clinico);color:#0A1414;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--clinico-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--alarma-hi);font-weight:500}
+
+.abox{background:rgba(79,179,172,.12);border:1px solid rgba(79,179,172,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0}
+.abox p{font-size:.9rem;color:var(--bruma)}
+.abox p + p{margin-top:.6rem}
+.abox a{display:inline-block;margin-top:.8rem;color:var(--clinico-hi);font-weight:600;text-decoration:none;border-bottom:1px solid var(--clinico);padding-bottom:2px}
+
+/* ---------- seis ganchos del libro (corazón interactivo) ---------- */
+.historias{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(233,238,241,.03)}
+.histGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem}
+.hist{background:rgba(233,238,241,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.hist:hover:not(.abierta){border-color:var(--alarma);transform:translateY(-2px)}
+.hist .ico{font-size:1.5rem;display:block;margin-bottom:.35rem}
+.hist .nombre{font-size:.82rem;color:var(--bruma);font-weight:600}
+.hist.abierta{background:rgba(226,75,63,.14);border-color:var(--alarma)}
+.hist .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--alarma-hi);font-size:.84rem;margin-top:.5rem;line-height:1.44}
+.hist.abierta .obs{display:block}
+.hist.abierta .nombre{display:none}
+.hist-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(233,238,241,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--alarma-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(79,179,172,.1);border:1px solid rgba(79,179,172,.4);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--clinico-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.cta,.react{background:rgba(233,238,241,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(233,238,241,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--alarma);color:var(--alarma-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--alarma-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:42ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--clinico-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--clinico);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="halo" aria-hidden="true"></div>
+  <div class="silueta" aria-hidden="true">🚨</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · De tu propia R5-025, sin abrir</span>
+    <h1>El Instituto</h1>
+    <p class="autor">Stephen King</p>
+    <p class="en"><em>The Institute</em> (2019)</p>
+    <p class="sub">Un policía que para en un pueblo por casualidad. Un chico de doce años, demasiado inteligente para su propio bien, con un don menor que nadie toma en serio — hasta que lo secuestran. Nada de fantasmas ni payasos: la amenaza acá tiene organigrama, presupuesto y una puerta con tarjeta. King lo llamó, en broma, su libro "más político".</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Dos historias que no deberían tocarse — hasta que se tocan</h2>
+    <p class="bajada rev d2">Tim Jamieson es expolicía: decide ir de mochilero a Nueva York y, sin planearlo, se queda trabajando de vigilante nocturno en DuPray, un pueblo chico de Carolina del Sur. En paralelo, Luke Ellis tiene doce años, es un genio (nota altísima en dos universidades a la vez) con una telequinesis mínima que casi ni nota — hasta que una noche entran a su casa, matan a sus padres en silencio y se despierta en una habitación idéntica a la suya, en medio del bosque de Maine. Es el Instituto: ahí adentro hay más chicos como él, todos con algo — telequinesis, telepatía — y dos alas con nombres asépticos, Front Half y Back Half, que esconden propósitos muy distintos.</p>
+    <p class="parr rev d2">576 páginas, publicado en septiembre de 2019 (Scribner). Ganó el Goodreads Choice Award a mejor libro de terror de 2019 — el noveno premio de King en esa categoría — con 75.717 votos. Publishers Weekly lo describió como "el relato más desgarrador de chicos triunfando sobre el mal desde <em>It</em>".</p>
+    <div class="cita rev d3">"Great events turn on small hinges."<span>("Los grandes acontecimientos giran sobre bisagras pequeñas." Cita verificada contra la página de citas del libro en Goodreads; traducción propia.)</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="historias-sec">
+  <div class="centro">
+    <p class="kicker rev">El corazón del libro</p>
+    <h2 class="titulo rev d1">Seis ganchos del libro — tocá cada uno (sin spoilers del final)</h2>
+    <p class="bajada rev d2">Nada acá cuenta cómo termina — son las piezas con las que King arma el tablero.</p>
+    <div class="historias rev d3">
+      <div class="histGrid" id="histBox">
+        <div class="hist abierta" data-obs="Tim no busca nada: iba de mochilero a Nueva York, para en DuPray por plata y termina de vigilante nocturno. King lo deja ahí, viviendo su vida chica, sin saber que va a ser la pieza que le falta a la historia de Luke — el lector sí lo sabe, y esa espera es parte del enganche."><span class="ico">🕵️</span><span class="nombre">El policía que no buscaba nada</span><span class="obs"></span></div>
+        <div class="hist" data-obs="Luke no es el chico más poderoso del Instituto — su telequinesis es mínima, casi una curiosidad. Lo que tiene es una cabeza excepcional: notas altísimas, dos universidades peleándoselo a los doce años. La novela apuesta a la inteligencia como arma, no a la fuerza bruta del don."><span class="ico">🧠</span><span class="nombre">El genio con el don más chico</span><span class="obs"></span></div>
+        <div class="hist" data-obs="Front Half y Back Half no son solo dos alas del edificio: son dos etapas de un mismo proceso, con propósitos que se revelan de a poco. La arquitectura del Instituto ES el argumento — cada puerta cerrada esconde la siguiente pregunta."><span class="ico">🚪</span><span class="nombre">Front Half / Back Half</span><span class="obs"></span></div>
+        <div class="hist" data-obs="Maureen es la mucama del Instituto — la primera adulta que le hace un favor real a Luke, a un costo altísimo. King usa su personaje para mostrar que romper fila ahí adentro nunca es gratis, ni para los chicos ni para los grandes."><span class="ico">🧹</span><span class="nombre">Maureen, la que rompe fila</span><span class="obs"></span></div>
+        <div class="hist" data-obs="El corazón político del libro (King lo llamó así en entrevistas): qué hace un grupo de encerrados, cada uno con un pedacito de poder, cuando deciden que ya no tienen nada que perder. Avery, de diez años, con telepatía fuerte, es clave en esa parte."><span class="ico">🤝</span><span class="nombre">Los chicos que ya no tienen nada que perder</span><span class="obs"></span></div>
+        <div class="hist" data-obs="75.717 lectores votaron El Instituto como mejor libro de terror de 2019 en el Goodreads Choice Award — el noveno premio de King en esa categoría, en una lista que incluye a IT, Doctor Sueño y El Instituto de los últimos años."><span class="ico">🏆</span><span class="nombre">75.717 votos lo eligieron el mejor terror de 2019</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="hist-hint">Kirkus avisa que, si buscás el terror más puro de King (El Resplandor, IT), esta pega distinto — es más thriller de investigación con nervio político que horror sobrenatural puro. Te lo aviso para que sepas con qué te vas a encontrar.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="porque">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo este, justo ahora</p>
+    <h2 class="titulo rev d1">De la biblioteca, con cuidado especial</h2>
+    <p class="bajada rev d2">Ayer te tocó "nuevo" (Emily Wilde), hoy por alternancia te toca de la biblioteca de la casa — y tu R5 tiene 50 King esperando. Ya sé que ahí hay riesgo de "ya lo tengo leído": R5-018 (<em>Si te gusta la oscuridad</em>) ya salió así el 18/07. Por eso esta vez elegí uno de los 49 restantes que nunca te ofrecí ni mencioné en ninguna ficha — verificado contra el catálogo completo y contra todo <code>recommended.json</code> — y con una vuelta de tuerca: no es terror sobrenatural puro como tus mejores aciertos hasta ahora (Hill, la antología de King), es más cercano al misterio/thriller de investigación que te viene funcionando con Osman y Dicker, pero con la oscuridad más cruda que pediste con "cuanto_mas_oscuro_mejor". Un punto intermedio entre tus dos vetas ganadoras, en el mismo autor.</p>
+    <p class="parr suave rev d3">Aviso de honestidad: seguís en cero de feedback desde el 05/08 — ni un clic, ni un voto, en ninguna ficha desde entonces. <code>subscription.json</code> te marca activa, así que no es (que yo pueda ver) un problema de suscripción caída. Puede ser que las notis no te estén llegando, que te lleguen y no tengas el hábito de abrirlas, o que el contenido no te esté enganchando — no lo sé, y no quiero seguir adivinando solo. Te dejo la pregunta corta más abajo, una sola vez, sin compromiso.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de sacarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Tu ejemplar</dt><dd>R5-025, edición en español. En tu estante, sin lectura registrada (el <code>read_status</code> de enrichment no es confiable para vos por el Kindle en paralelo, así que lo trato como desconocido, no como garantía de que no lo leíste).</dd>
+        <dt>Original</dt><dd><em>The Institute</em>, Stephen King. Scribner, 10 de septiembre de 2019, 576 páginas.</dd>
+        <dt>En español</dt><dd><em>El Instituto</em>. Plaza & Janés (tapa dura, 2019) / Debolsillo (bolsillo, reediciones 2021 y 2023). Traducción de Carlos Milla Soler.</dd>
+        <dt>En tu catálogo</dt><dd>Verificado título+autor contra el catálogo completo (437 vol., incluidos los 50 de tu R4/R5) y contra todo <code>recommended.json</code>: nunca antes recomendado ni mencionado en ninguna ficha tuya ni de Andy.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La trama de Tim y Luke, Front Half/Back Half, Maureen y el rol de Avery están verificados cruzando el artículo de Wikipedia sobre la novela con recaps independientes (The Bibliofile, SuperSummary) que coinciden en los mismos hechos, sin destapar el final. El dato del Goodreads Choice Award (75.717 votos, noveno premio de King) está verificado contra la página oficial de los premios 2019. Las dos citas están verificadas palabra por palabra contra la página de citas del libro en Goodreads; las traducciones al español son propias, así lo aviso. El audiolibro en español (narrado por Alberto Santillán, Penguin Random House Audio) lo confirman Audible y Amazon — no linkeo el URL de Google Play porque el chequeo en vivo me devolvió error (bloqueo a bots conocido en esa plataforma).</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+
+    <div class="cta rev d1">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:R5-025','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:R5-025','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:R5-025','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-14-king-instituto','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-14-king-instituto','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-14-king-instituto','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="abox rev d2">
+      <p>🎧 <b>¿Audiolibro?</b> Sí, confirmado en español: narrado por Alberto Santillán (Penguin Random House Audio). No pude linkear el URL de Google Play — el chequeo en vivo dio error — pero la existencia está confirmada por otra fuente (Audible/Amazon).</p>
+    </div>
+
+    <div class="cta rev d2">🚨 De los seis ganchos, ¿cuál te tienta más?
+      <div>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-14-king-instituto','tim',this)">🕵️ Tim</button>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-14-king-instituto','luke',this)">🧠 Luke</button>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-14-king-instituto','institucion',this)">🚪 Front/Back Half</button>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-14-king-instituto','maureen',this)">🧹 Maureen</button>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-14-king-instituto','rebelion',this)">🤝 La rebelión</button>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-14-king-instituto','premio',this)">🏆 El premio</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-14-king-instituto','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-14-king-instituto','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-14-king-instituto','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">Un dato más, para afinar la próxima
+      <div>
+        <button onclick="engageAnswer('rec-canal:2026-09-14-king-instituto','llegando_bien',this)">📱 Me están llegando bien las notis</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-14-king-instituto','fallando',this)">⚠️ Están fallando / llegan tarde</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-14-king-instituto','primera_vez',this)">👋 Primera vez que veo una de estas fichas</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-14-king-instituto','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-14-king-instituto','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-14-king-instituto','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-14-king-instituto','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">
+      <label for="nota-2026-09-14-king-instituto" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-14-king-instituto" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-14-king-instituto',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"It came to him, with the force of a revelation, that you had to have been imprisoned to fully understand what freedom was."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:46ch">("Le llegó, con la fuerza de una revelación, que había que haber estado preso para entender del todo qué era la libertad." — Stephen King. Cita verificada contra la página de citas del libro en Goodreads.)</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · de tu R5 (50 King), para Sofi · datos verificados contra Wikipedia, Goodreads, el Goodreads Choice Awards 2019 y catálogo propio, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#histBox .hist').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#histBox .hist').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "El Instituto, de Stephen King, dos mil diecinueve. Tim, expolicía, para de casualidad en un pueblo chico de Carolina del Sur. Luke, doce años, genio, con una telequinesis mínima, es secuestrado la noche que matan a sus padres y despierta en el Instituto, en medio del bosque de Maine, con otros chicos con dones parecidos. Front Half y Back Half esconden propósitos distintos que se revelan de a poco. Nada de fantasmas: la amenaza tiene organigrama. Ganó el Goodreads Choice Award a mejor terror de dos mil diecinueve, con setenta y cinco mil votos. Más thriller de investigación con nervio político que terror sobrenatural puro.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

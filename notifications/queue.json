@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-13T23:18:24.792Z",
+  "_updated_at": "2026-09-14T19:00:00-03:00",
   "notifications": [
     {
       "id": "2026-09-11-rec-andy",
@@ -1480,6 +1480,32 @@
       "sent_at": "2026-09-13T23:18:24.788Z",
       "fail_reason": null,
       "created_by": "recomendacion-agent 2026-09-13"
+    },
+    {
+      "id": "2026-09-14-rec-andy",
+      "title": "🌌 El físico que cruza tus dos vetas",
+      "body": "El Gran Cuadro (Sean Carroll): tu astronomía + la pregunta del sentido, en un solo libro real. Nuevo, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-14-carroll-gran-cuadro.html",
+      "to": "Andy",
+      "send_at": "2026-09-14T19:00:00-03:00",
+      "expires_at": "2026-09-14T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-14"
+    },
+    {
+      "id": "2026-09-14-rec-sofi",
+      "title": "🚨 Un Instituto con organigrama, no fantasmas",
+      "body": "El Instituto (Stephen King): de tu R5, un King que nunca te ofrecí. Más investigación oscura que terror puro.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-14-king-instituto.html",
+      "to": "Sofi",
+      "send_at": "2026-09-14T19:00:00-03:00",
+      "expires_at": "2026-09-14T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-14"
     }
   ]
 }

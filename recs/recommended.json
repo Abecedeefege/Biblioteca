@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-13T19:00:00-03:00",
+  "_updated_at": "2026-09-14T19:00:00-03:00",
   "_feedback_cutoff": "2026-09-12T00:42:32.857Z",
   "recommendations": [
     {
@@ -2444,6 +2444,58 @@
       "page": "recs/2026-09-13-fawcett-emily-wilde.html",
       "notified_by": "2026-09-13-rec-sofi",
       "why": "Régimen DIARIO: ayer (12/09) Sofi tuvo redescubrimiento (Delany) -> hoy le toca la nueva, y Andy recibe la biblioteca. Banco nuevo repuesto en la corrida del 12/09 con dos nombres (Becky Chambers, Heather Fawcett) tras agotar el círculo cozy y el banco Klune; se elige Fawcett por cruzar tres vetas a la vez: found-family cálido (su único acierto claro en fantasía, Klune 05/08), estructura de investigación/expediente (su veta detective) y romance slow-burn sin melodrama (su pedido explícito del 24/07). Verificado título+autora contra el catálogo completo (437 vol.) y contra todo recommended.json: nunca recomendada, ni ella ni ningún otro título de la serie. Edición española (Umbriel/Ediciones Urano, feb-2023, trad. María del Carmen Boy Ruiz) verificada en Buscalibre Uruguay en vivo (HTTP 200, desde ~USD 23). Cuatro citas verificadas contra Goodreads. Audiolibro en inglés (narradores Ell Potter y Michael Dodds) confirmado por fuente secundaria (Audible/Amazon) pero no linkeado: la página de Google Play no pudo abrirse en el chequeo en vivo. Su canal sigue sin ningún evento desde el 05/08 (más de 5 semanas); se mantiene la misma disciplina de guardia sin bajar el estándar por falta de señal.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-14-carroll-gran-cuadro",
+      "date": "2026-09-14",
+      "kind": "nuevo",
+      "title": "El Gran Cuadro (The Big Picture)",
+      "author": "Sean Carroll",
+      "language": "en",
+      "topics": [
+        "astronomia",
+        "ciencia",
+        "sentido",
+        "filosofia"
+      ],
+      "book_ref": null,
+      "audience": "andy",
+      "page": "recs/2026-09-14-carroll-gran-cuadro.html",
+      "notified_by": "2026-09-14-rec-andy",
+      "why": "Régimen DIARIO: ayer (13/09) Andy tuvo redescubrimiento (Doidge) -> hoy le toca la nueva, y Sofi recibe la biblioteca. Banco de astronomía repuesto en el PROFILE tras Mack (10/09) con Sean Carroll como próximo nombre; se elige por cruzar dos vetas a la vez -- astronomía/física (la más consistente de Andy: ACIERTO PLENO con Rovelli, acierto en redescub con Cosmos) y la veta de sentido (Frankl, Bucay, Haig) -- sin repetir la veta de neurociencia del turno anterior (Doidge). Verificado título+autor contra el catálogo completo (437 vol.) y contra todo recommended.json: primera vez que aparece Sean Carroll. Edición en español (Pasado y Presente, 2017) verificada en Buscalibre Uruguay en vivo: agotada -- declarado en la ficha, se ofrece en su lugar la edición original en inglés (Dutton, HTTP 200 en vivo, desde ~USD 20), consistente con que Andy lee indistinto es/en. Cuatro citas verificadas contra Goodreads. Audiolibro en inglés (narrado por el propio autor) confirmado por fuente secundaria (Audible/AudioFile Magazine) pero no linkeado: Google Play devolvió error en el chequeo en vivo. Andy lleva 8 fichas seguidas sin cerrar veredicto desde Kiyosaki (05/09) pese a abrir y a veces quedarse dwell largo -- en vez de seguir asumiendo el motivo, se suma una micro-pregunta directa de canal (rec-canal) para diagnosticar sin esperar más semanas.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-14-king-instituto",
+      "date": "2026-09-14",
+      "kind": "redescubrimiento",
+      "title": "El Instituto (The Institute)",
+      "author": "Stephen King",
+      "language": "es",
+      "topics": [
+        "misterio",
+        "thriller",
+        "oscuro",
+        "investigacion"
+      ],
+      "book_ref": "R5-025",
+      "audience": "sofi",
+      "page": "recs/2026-09-14-king-instituto.html",
+      "notified_by": "2026-09-14-rec-sofi",
+      "why": "Régimen DIARIO: ayer (13/09) Sofi tuvo nuevo (Fawcett) -> hoy le toca la biblioteca, y Andy recibe la nueva. Redescubrimiento de su R5 (50 King) con cuidado especial pedido explícitamente: se evitó repetir canon Doyle (M5-034 quedaba como candidato pero el PROFILE pide variedad de autor tras Regreso de Sherlock Holmes 10/09 y Delany 12/09) y se evitó repetir autoras ya falladas (Carlisle, con 'ya_lo_lei'+'meh' el 22/07). Se eligió un King nunca ofrecido de los 49 restantes de su R5 (verificado contra el catálogo completo y contra todo recommended.json: sin coincidencias, el único King ya recomendado fue R5-018 el 18/07) y con un ángulo intermedio entre sus dos vetas ganadoras -- misterio/investigación (Osman, Dicker) y oscuro (Hill, 'cuanto_mas_oscuro_mejor') -- en vez de terror sobrenatural puro. Estructura y datos verificados contra Wikipedia y recaps independientes sin destapar el final; el dato del Goodreads Choice Award 2019 (75.717 votos) verificado contra la página oficial del premio. Dos citas verificadas contra Goodreads. Audiolibro en español (Alberto Santillán) confirmado por fuente secundaria pero no linkeado: Google Play devolvió error en el chequeo en vivo. Sofi sigue en cero de feedback desde el 05/08 (más de 5 semanas, subscription.json en 'active') -- se mantiene la misma disciplina de guardia y se repite la micro-pregunta rec-canal ya usada ayer, a 2 días del umbral del 16/09 marcado en el PROFILE.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
