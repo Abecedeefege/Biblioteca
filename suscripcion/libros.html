@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>📚 Suscripción — Libros recomendados</title>
+<meta name="description" content="Elegí cuántas fichas de libro por semana te manda Bibliotequeando, y qué días.">
+<meta name="theme-color" content="#4a3524">
+<link rel="icon" href="../icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;800&display=swap">
+<style>
+  :root{
+    --papel:#f1e8d4; --papel-claro:#faf5e8; --tinta:#2a1f12; --tinta-suave:#6b5b45;
+    --bordo:#7a1f23; --dorado:#b89348; --madera:#4a3524; --verde:#2d6a2d;
+    --type:'Special Elite','Courier New',monospace; --sans:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 3rem;background:var(--papel);color:var(--tinta);
+    font-family:Georgia,'Times New Roman',serif;line-height:1.55;
+    background-image:repeating-linear-gradient(0deg,transparent 0 27px,rgba(43,74,138,.055) 27px 28px)}
+  a{color:var(--bordo)}
+  .back{display:block;padding:.8rem 1rem;background:var(--madera);color:var(--papel);
+    text-decoration:none;font-family:var(--sans);font-size:.85rem;font-weight:600}
+  .back:hover{color:var(--dorado)}
+  main{max-width:40rem;margin:0 auto;padding:1.2rem 1rem}
+
+  .sello{display:inline-block;border:2px solid var(--bordo);color:var(--bordo);border-radius:4px;
+    padding:.15rem .5rem;transform:rotate(-2.5deg);font-family:var(--sans);font-size:.62rem;
+    font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+  h1{font-family:var(--type);font-weight:400;font-size:1.7rem;line-height:1.2;margin:.7rem 0 .3rem;color:var(--madera)}
+  .sub{font-style:italic;opacity:.75;margin:0 0 1.3rem;font-size:.95rem}
+
+  section{background:var(--papel-claro);border:1px solid var(--dorado);border-radius:6px;
+    padding:1rem 1.05rem 1.15rem;margin:0 0 1.1rem;box-shadow:0 2px 10px rgba(42,31,18,.07)}
+  h2{font-family:var(--type);font-weight:400;font-size:1.08rem;color:var(--bordo);margin:0 0 .5rem}
+  p{margin:.45rem 0;font-size:.95rem}
+  .hint{font-size:.84rem;opacity:.78;line-height:1.5}
+  .etiqueta{display:block;font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tinta-suave);margin:1rem 0 .45rem}
+  .etiqueta:first-child{margin-top:.2rem}
+
+  .fila{display:flex;flex-wrap:wrap;gap:.4rem}
+  .chip{font-family:var(--sans);font-size:.82rem;font-weight:600;cursor:pointer;
+    background:transparent;color:var(--madera);border:1.5px solid rgba(74,53,36,.4);
+    border-radius:999px;padding:.42rem .8rem;transition:all .12s}
+  .chip:hover{border-color:var(--madera)}
+  .chip[aria-pressed="true"]{background:var(--madera);border-color:var(--madera);color:var(--papel-claro)}
+  .chip.pausa[aria-pressed="true"]{background:var(--bordo);border-color:var(--bordo)}
+  .chip.dia{min-width:3.1rem;text-align:center;padding:.42rem .5rem}
+
+  .resumen{margin-top:1rem;padding:.75rem .85rem;border-left:4px solid var(--dorado);
+    background:rgba(184,147,72,.1);font-size:.93rem}
+  .resumen b{font-family:var(--type);font-weight:400}
+
+  button.accion{display:inline-block;margin:.9rem .4rem 0 0;padding:.68rem 1.1rem;
+    font-family:var(--sans);font-size:.95rem;font-weight:600;cursor:pointer;
+    background:var(--bordo);color:var(--papel);border:none;border-radius:4px}
+  button.accion.sec{background:var(--madera)}
+  button.accion:disabled{opacity:.45;cursor:default}
+
+  .status{font-size:.88rem;margin-top:.6rem;white-space:pre-line;min-height:1.1em}
+  .ok{color:var(--verde)} .err{color:var(--bordo)}
+  .vigente{font-family:var(--sans);font-size:.78rem;color:var(--tinta-suave);margin-top:.5rem}
+  .links{font-size:.92rem;line-height:1.9;margin:.3rem 0 0}
+  footer{max-width:40rem;margin:0 auto;padding:.4rem 1rem;font-size:.8rem;opacity:.7;text-align:center;font-style:italic}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+<main>
+  <span class="sello">Servicio de lecturas</span>
+  <h1>Suscripción a libros recomendados</h1>
+  <p class="sub">Cuántas fichas por semana querés, y qué días. Una ficha = un libro elegido para vos, con su experiencia y su veredicto.</p>
+
+  <section>
+    <h2>1 · ¿Para quién es esta elección?</h2>
+    <p class="hint">Cada lector de la casa tiene su propia cadencia: lo que elijas acá no le cambia nada al otro. «Toda la casa» fija el valor por defecto para quien no eligió lo suyo.</p>
+    <div class="fila" id="quien"></div>
+    <div class="vigente" id="quien-nota"></div>
+  </section>
+
+  <section>
+    <h2>2 · ¿Cuántas veces por semana?</h2>
+    <span class="etiqueta">Frecuencia</span>
+    <div class="fila" id="frec"></div>
+    <span class="etiqueta">Días (ajuste fino — mandan estos)</span>
+    <div class="fila" id="dias"></div>
+    <div class="resumen" id="resumen">…</div>
+    <button class="accion" id="guardar" onclick="guardar()">Guardar mi suscripción</button>
+    <div class="status" id="save-status"></div>
+    <div class="vigente" id="vigente"></div>
+  </section>
+
+  <section>
+    <h2>3 · Lo último que salió</h2>
+    <div id="ultimo" class="hint">Buscando en el registro de envíos…</div>
+    <p class="links">
+      <a href="ultima.html?de=libros">📬 Ver la última ficha enviada →</a><br>
+      <a href="../recs/">📚 Ver todas las recomendaciones →</a><br>
+      <a href="cine.html">🎬 Suscripción de películas y series →</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>¿No te suena el teléfono?</h2>
+    <p class="hint">La cadencia decide <em>cuándo</em> se manda; el permiso de notificaciones decide <em>si llega</em>. Si nunca activaste los avisos en este teléfono, o los pausaste alguna vez, se reactivan en
+    <a href="../engage/setup.html">ajustes de notificaciones</a>.</p>
+    <div class="vigente" id="canal"></div>
+  </section>
+</main>
+<footer>Las fichas se siguen archivando en el cajón aunque bajes la frecuencia: lo que cambia es cuántas veces suena el teléfono.</footer>
+
+<script src="suscripcion.js"></script>
+<script>
+(function(){
+  'use strict';
+  var STREAM='libros';
+  var $=function(id){return document.getElementById(id)};
+  var prefs=null, queue=null;
+  var sel={scope:'device', device:SUB.deviceName()||'Andy', enabled:true, per_week:7, days:[1,2,3,4,5,6,7]};
+
+  var QUIENES=[{v:'Andy',l:'Andy'},{v:'Sofi',l:'Sofi'},{v:'__casa__',l:'Toda la casa'}];
+
+  function chip(label,cls){
+    var b=document.createElement('button');
+    b.type='button'; b.className='chip'+(cls?' '+cls:''); b.textContent=label;
+    b.setAttribute('aria-pressed','false');
+    return b;
+  }
+  function marcar(cont,pred){
+    Array.prototype.forEach.call(cont.children,function(b,i){
+      b.setAttribute('aria-pressed', pred(b,i)?'true':'false');
+    });
+  }
+
+  function pintarQuien(){
+    var c=$('quien'); c.innerHTML='';
+    QUIENES.forEach(function(q){
+      var b=chip(q.l);
+      b.addEventListener('click',function(){
+        if(q.v==='__casa__'){ sel.scope='stream'; }
+        else { sel.scope='device'; sel.device=q.v; SUB.setDeviceName(q.v); }
+        cargarVigente(); marcar(c,function(x){return x===b});
+        $('quien-nota').textContent = q.v==='__casa__'
+          ? 'Vas a cambiar el valor por defecto de la casa (el que usa quien no eligió el suyo).'
+          : 'Vas a cambiar solamente la cadencia de ' + q.v + '.';
+      });
+      c.appendChild(b);
+    });
+    var actual = sel.scope==='stream' ? '__casa__' : sel.device;
+    marcar(c,function(b,i){return QUIENES[i].v===actual});
+    $('quien-nota').textContent = sel.scope==='stream'
+      ? 'Vas a cambiar el valor por defecto de la casa.'
+      : 'Vas a cambiar solamente la cadencia de ' + sel.device + '.';
+  }
+
+  function pintarFrec(){
+    var c=$('frec'); c.innerHTML='';
+    var opciones=[{n:0,l:'Pausar'},{n:1,l:'1 × semana'},{n:2,l:'2 × semana'},{n:3,l:'3 × semana'},
+                  {n:4,l:'4 × semana'},{n:5,l:'5 × semana'},{n:6,l:'6 × semana'},{n:7,l:'Todos los días'}];
+    opciones.forEach(function(o){
+      var b=chip(o.l,o.n===0?'pausa':'');
+      b.addEventListener('click',function(){
+        sel.enabled = o.n>0;
+        sel.per_week = o.n;
+        sel.days = SUB.DAYS_FOR[o.n].slice();
+        sincronizar();
+      });
+      c.appendChild(b);
+    });
+    c.dataset.opts=JSON.stringify(opciones.map(function(o){return o.n}));
+  }
+
+  function pintarDias(){
+    var c=$('dias'); c.innerHTML='';
+    for(var d=1; d<=7; d++){
+      (function(d){
+        var b=chip(SUB.DIA_CORTO[d],'dia');
+        b.addEventListener('click',function(){
+          var i=sel.days.indexOf(d);
+          if(i>=0) sel.days.splice(i,1); else sel.days.push(d);
+          sel.days.sort();
+          sel.per_week=sel.days.length;
+          sel.enabled=sel.days.length>0;
+          sincronizar();
+        });
+        c.appendChild(b);
+      })(d);
+    }
+  }
+
+  function sincronizar(){
+    var opts=JSON.parse($('frec').dataset.opts||'[]');
+    marcar($('frec'),function(b,i){return opts[i]===sel.days.length});
+    marcar($('dias'),function(b,i){return sel.days.indexOf(i+1)>=0});
+    var r=$('resumen');
+    if(!sel.days.length){
+      r.innerHTML='<b>En pausa.</b> No te va a llegar ninguna ficha de libro hasta que vuelvas acá. Las que se escriban igual quedan guardadas en el cajón.';
+    } else {
+      r.innerHTML='<b>'+sel.days.length+(sel.days.length===1?' ficha':' fichas')+' por semana</b> — '+
+        SUB.esc(SUB.listaDias(sel.days))+', alrededor de las 19:00.';
+    }
+  }
+
+  function cargarVigente(){
+    var dev = sel.scope==='stream' ? null : sel.device;
+    var ef = SUB.effective(prefs, STREAM, dev);
+    sel.enabled=ef.enabled; sel.per_week=ef.per_week; sel.days=ef.days.slice();
+    sincronizar();
+    $('vigente').textContent = ef.updated_at
+      ? 'Vigente ahora: '+(ef.enabled? ef.days.length+'/semana ('+SUB.listaDias(ef.days)+')' : 'en pausa')+
+        ' · elegido el '+SUB.fechaCorta(ef.updated_at)+' · alcance: '+ef.scope
+      : 'Vigente ahora: '+(ef.enabled? ef.days.length+'/semana ('+SUB.listaDias(ef.days)+')' : 'en pausa')+
+        ' · todavía sin elección explícita (valor por defecto de la casa).';
+  }
+
+  window.guardar=function(){
+    var btn=$('guardar'); btn.disabled=true;
+    $('save-status').textContent='Guardando…'; $('save-status').className='status';
+    SUB.save({stream:STREAM, scope:sel.scope, device:sel.scope==='device'?sel.device:null,
+              enabled:sel.days.length>0, per_week:sel.days.length, days:sel.days})
+      .then(function(out){
+        var msg = out.repo
+          ? '✓ Guardado y aplicado ya mismo en el repo.'
+          : '✓ Guardado. Se aplica en la próxima corrida del despachador (≤10 minutos).';
+        $('save-status').textContent=msg; $('save-status').className='status ok';
+        return SUB.loadPrefs().then(function(p){ prefs=p; cargarVigente(); });
+      })
+      .catch(function(e){
+        $('save-status').textContent='⚠️ No se pudo guardar: '+e.message+'\nProbá de nuevo con señal; nada se rompió.';
+        $('save-status').className='status err';
+      })
+      .then(function(){ btn.disabled=false; });
+  };
+
+  function pintarUltimo(){
+    var envs=SUB.sentOf(queue,STREAM);
+    if(!envs.length){ $('ultimo').textContent='Todavía no hay ningún envío registrado en este canal.'; return; }
+    var u=envs[0], dias=SUB.diasAtras(u.sent_at||u.send_at);
+    $('ultimo').innerHTML='Última enviada: <strong>'+SUB.esc(u.title||u.id)+'</strong><br>'+
+      SUB.fechaLarga(u.sent_at||u.send_at)+
+      (u.to?' · para '+SUB.esc([].concat(u.to).join(', ')):' · para toda la casa')+
+      (dias!==null? ' · hace '+(dias===0?'unas horas':dias+(dias===1?' día':' días')) : '')+
+      '<br><span style="opacity:.75">'+envs.length+' envíos registrados en total.</span>';
+  }
+
+  function canal(){
+    var l=[];
+    l.push('Permiso de notificaciones en este navegador: '+
+      (('Notification' in window)? Notification.permission : 'no soportado'));
+    l.push(SUB.hasPat()? 'Token de GitHub presente: los cambios se aplican al instante.'
+                       : 'Sin token en este teléfono: los cambios viajan por el relay y se aplican en ≤10 min.');
+    $('canal').textContent=l.join(' · ');
+  }
+
+  pintarFrec(); pintarDias(); canal();
+  Promise.all([SUB.loadPrefs(), SUB.loadQueue().catch(function(){return null})])
+    .then(function(r){
+      prefs=r[0]; queue=r[1];
+      pintarQuien(); cargarVigente();
+      if(queue) pintarUltimo(); else $('ultimo').textContent='No pude leer el registro de envíos ahora mismo.';
+    });
+})();
+</script>
+</body>
+</html>

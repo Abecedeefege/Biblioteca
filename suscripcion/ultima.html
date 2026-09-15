@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>📬 Lo último enviado — Bibliotequeando</title>
+<meta name="description" content="La última ficha de libro y la última función de cine que salieron del canal, con el registro de envíos real.">
+<meta name="theme-color" content="#241811">
+<link rel="icon" href="../icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;800&display=swap">
+<style>
+  :root{
+    --room:#241811; --card:#f4ead0; --card2:#efe2c2; --ink:#33291f; --ink-soft:#5c4f3e;
+    --brass:#c9a227; --brass2:#e6c86a; --red:#b3372e; --blue:#2b4a8a; --green:#2e6b45;
+    --type:'Special Elite','Courier New',monospace; --sans:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 3rem;background:var(--room);color:var(--card);
+    font-family:var(--type);font-size:15px;line-height:1.6;
+    background-image:radial-gradient(1000px 500px at 50% -100px,rgba(201,162,39,.07),transparent),
+      repeating-linear-gradient(90deg,rgba(0,0,0,.12) 0 2px,transparent 2px 90px)}
+  a{color:var(--brass2)}
+  .back{display:block;padding:.8rem 1rem;background:#1a110c;color:#c9b48e;
+    text-decoration:none;font-family:var(--sans);font-size:.85rem;font-weight:600}
+  .back:hover{color:var(--brass2)}
+  main{max-width:40rem;margin:0 auto;padding:1.2rem 1rem}
+
+  .plaque{background:linear-gradient(180deg,#e8ca74,#b8912e 55%,#d9b856);color:#3a2a08;border-radius:8px;
+    padding:.8rem 1.1rem;text-align:center;border:1px solid #8a6b1d;
+    box-shadow:0 4px 14px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.55)}
+  .plaque h1{font-family:var(--type);font-weight:400;font-size:1.4rem;letter-spacing:.09em;text-transform:uppercase;margin:.15rem 0}
+  .plaque .s{font-family:var(--sans);font-size:.58rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+
+  nav.tabs{display:flex;justify-content:center;gap:.5rem;margin:1rem 0 1.2rem;flex-wrap:wrap}
+  nav.tabs a{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:#c9b48e;text-decoration:none;padding:.45rem .9rem;border:1px solid rgba(201,162,39,.35);border-radius:3px}
+  nav.tabs a[aria-current="page"]{background:rgba(201,162,39,.18);border-color:var(--brass2);color:var(--brass2)}
+
+  .ficha{background:var(--card);color:var(--ink);border-radius:3px;padding:1.1rem 1.15rem 1.6rem;
+    position:relative;box-shadow:0 6px 18px rgba(0,0,0,.45);
+    background-image:repeating-linear-gradient(0deg,transparent 0 24px,rgba(43,74,138,.14) 24px 25px)}
+  .ficha::before{content:'';position:absolute;left:0;right:0;top:2.5rem;height:2px;background:rgba(179,55,46,.45)}
+  .cn{font-size:.68rem;color:var(--red);letter-spacing:.09em}
+  .ficha h2{font-family:var(--type);font-weight:400;font-size:1.25rem;line-height:1.3;
+    text-transform:uppercase;margin:1.1rem 0 .25rem}
+  .ficha .cuerpo{font-size:.95rem;color:var(--ink-soft);margin:.35rem 0 .1rem}
+  .meta{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.06em;
+    color:var(--ink-soft);margin-top:.8rem;line-height:1.7}
+  .abrir{display:inline-block;margin-top:1rem;padding:.7rem 1.15rem;background:var(--blue);color:#fff;
+    font-family:var(--sans);font-size:.92rem;font-weight:600;text-decoration:none;border-radius:4px}
+  .holes{position:absolute;bottom:.5rem;left:50%;transform:translateX(-50%);width:14px;height:14px;
+    border-radius:50%;background:var(--room);box-shadow:inset 0 2px 4px rgba(0,0,0,.7)}
+
+  .aviso{background:rgba(179,55,46,.16);border-left:4px solid var(--red);padding:.75rem .85rem;
+    font-family:var(--sans);font-size:.85rem;line-height:1.6;margin:1rem 0 0;border-radius:0 4px 4px 0}
+
+  h3.sec{font-family:var(--sans);font-size:.66rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;
+    color:#8a785f;margin:1.8rem 0 .6rem}
+  ul.prev{list-style:none;margin:0;padding:0}
+  ul.prev li{border-bottom:1px dashed rgba(201,162,39,.25);padding:.55rem 0;font-size:.9rem}
+  ul.prev li a{text-decoration:none}
+  ul.prev .f{font-family:var(--sans);font-size:.7rem;color:#8a785f;display:block;letter-spacing:.06em}
+
+  .links{font-family:var(--sans);font-size:.85rem;line-height:2;margin-top:1.6rem;text-align:center}
+  #estado{padding:3rem 1rem;text-align:center;color:#c9b48e}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+<main>
+  <div class="plaque">
+    <div class="s">Bibliotequeando · registro de envíos</div>
+    <h1 id="titulo">Lo último enviado</h1>
+    <div class="s" id="subtitulo">&nbsp;</div>
+  </div>
+
+  <nav class="tabs">
+    <a href="ultima.html?de=libros" id="tab-libros">📚 Último libro</a>
+    <a href="ultima.html?de=cine" id="tab-cine">🎬 Última función</a>
+  </nav>
+
+  <div id="estado">Abriendo el registro…</div>
+  <div id="app" hidden></div>
+
+  <div class="links">
+    <a href="libros.html">Suscripción de libros</a> ·
+    <a href="cine.html">Suscripción de cine</a> ·
+    <a href="../recs/">Todas las recomendaciones</a>
+  </div>
+</main>
+
+<script src="suscripcion.js"></script>
+<script>
+(function(){
+  'use strict';
+  var $=function(id){return document.getElementById(id)};
+  var de=(new URLSearchParams(location.search).get('de')||'libros').toLowerCase();
+  if(de!=='cine') de='libros';
+  var TITULO={libros:{h:'La última ficha enviada',s:'Libros recomendados'},
+              cine:{h:'La última función enviada',s:'La Sala · películas y series'}};
+
+  $('titulo').textContent=TITULO[de].h;
+  $('subtitulo').textContent=TITULO[de].s;
+  $('tab-'+de).setAttribute('aria-current','page');
+  document.title=(de==='cine'?'🎬 ':'📚 ')+TITULO[de].h+' — Bibliotequeando';
+
+  function tarjeta(n, rec){
+    var url=n.url||'';
+    var dias=SUB.diasAtras(n.sent_at||n.send_at);
+    var para = n.to ? [].concat(n.to).join(' y ') : 'toda la casa';
+    var html='<div class="ficha">'+
+      '<span class="cn">'+(de==='cine'?'SALA':'REC')+'/'+SUB.esc(String(n.id||'').slice(0,10).replace(/-/g,'.'))+'</span>'+
+      '<h2>'+SUB.esc(n.title||n.id)+'</h2>'+
+      (n.body?'<div class="cuerpo">'+SUB.esc(n.body)+'</div>':'')+
+      '<div class="meta">Enviada el '+SUB.fechaLarga(n.sent_at||n.send_at)+
+        (dias!==null?' · hace '+(dias===0?'unas horas':dias+(dias===1?' día':' días')):'')+
+        '<br>Para: '+SUB.esc(para)+
+        (rec&&rec.title?'<br>Ficha: '+SUB.esc(rec.title)+(rec.author?' — '+SUB.esc(rec.author):''):'')+
+        '<br>ID de envío: '+SUB.esc(n.id)+'</div>'+
+      (url?'<a class="abrir" href="'+SUB.esc(url)+'">Abrir lo que te llegó →</a>':'')+
+      '<div class="holes"></div></div>';
+    if(dias!==null && dias>=14){
+      html+='<div class="aviso"><strong>Hace '+dias+' días de esto.</strong> '+
+        (de==='cine'
+          ? 'La pista de cine dejó de mandar funciones: no es un problema del canal de avisos, es que no se armó la siguiente. Se reclama desde <a href="cine.html">la suscripción de cine</a>.'
+          : 'Hace más de dos semanas que no sale una ficha de libro por este canal.')+
+        '</div>';
+    }
+    return html;
+  }
+
+  function lista(envs){
+    if(envs.length<2) return '';
+    var h='<h3 class="sec">Envíos anteriores</h3><ul class="prev">';
+    envs.slice(1,9).forEach(function(n){
+      h+='<li><a href="'+SUB.esc(n.url||'#')+'">'+SUB.esc(n.title||n.id)+'</a>'+
+         '<span class="f">'+SUB.fechaCorta(n.sent_at||n.send_at)+
+         (n.to?' · '+SUB.esc([].concat(n.to).join(', ')):' · toda la casa')+'</span></li>';
+    });
+    return h+'</ul>';
+  }
+
+  Promise.all([SUB.loadQueue(), SUB.loadRecs()])
+    .then(function(r){
+      var queue=r[0], recs=(r[1]&&r[1].recommendations)||[];
+      var envs=SUB.sentOf(queue,de);
+      $('estado').hidden=true; $('app').hidden=false;
+      if(!envs.length){
+        $('app').innerHTML='<div class="ficha"><span class="cn">SIN REGISTRO</span>'+
+          '<h2>Todavía no salió ninguna</h2>'+
+          '<div class="cuerpo">No hay ningún envío marcado como <em>enviado</em> en este canal.</div>'+
+          '<div class="holes"></div></div>';
+        return;
+      }
+      var u=envs[0];
+      var rec=null;
+      for(var i=0;i<recs.length;i++){ if(recs[i].notified_by===u.id){ rec=recs[i]; break; } }
+      $('app').innerHTML=tarjeta(u,rec)+lista(envs);
+    })
+    .catch(function(e){
+      $('estado').innerHTML='No pude leer el registro de envíos.<br><span style="font-family:Inter,sans-serif;font-size:.8rem">'+
+        SUB.esc(e.message)+'</span>';
+    });
+})();
+</script>
+</body>
+</html>

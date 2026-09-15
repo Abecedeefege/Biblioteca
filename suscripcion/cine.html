@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>🎬 Suscripción — La Sala (películas y series)</title>
+<meta name="description" content="La función semanal de películas y series de Bibliotequeando: cuándo llega y en qué estado está.">
+<meta name="theme-color" content="#14100e">
+<link rel="icon" href="../icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;800&display=swap">
+<style>
+  :root{
+    --sala:#14100e; --sala2:#1e1815; --terciopelo:#5d1518; --marquesina:#e8c15c;
+    --marquesina2:#f6dd9b; --crema:#f2e9d4; --crema-soft:#c3b49a; --verde:#7fd18f;
+    --type:'Special Elite','Courier New',monospace; --sans:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 3rem;background:var(--sala);color:var(--crema);
+    font-family:Georgia,'Times New Roman',serif;line-height:1.55;
+    background-image:radial-gradient(900px 420px at 50% -80px,rgba(232,193,92,.09),transparent),
+      repeating-linear-gradient(90deg,rgba(0,0,0,.22) 0 2px,transparent 2px 96px)}
+  a{color:var(--marquesina2)}
+  .back{display:block;padding:.8rem 1rem;background:#0c0908;color:var(--crema-soft);
+    text-decoration:none;font-family:var(--sans);font-size:.85rem;font-weight:600}
+  .back:hover{color:var(--marquesina)}
+  main{max-width:40rem;margin:0 auto;padding:1.2rem 1rem}
+
+  .marq{background:linear-gradient(180deg,#f0d489,#c79a2e 55%,#e5c164);color:#2b1d05;
+    border:1px solid #8a6b1d;border-radius:8px;padding:.85rem 1.1rem;text-align:center;
+    box-shadow:0 4px 18px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.6)}
+  .marq .s{font-family:var(--sans);font-size:.58rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;opacity:.78}
+  .marq h1{font-family:var(--type);font-weight:400;font-size:1.55rem;letter-spacing:.06em;margin:.2rem 0 .1rem;text-transform:uppercase}
+  .sub{font-style:italic;color:var(--crema-soft);margin:1rem 0 1.3rem;font-size:.95rem;text-align:center}
+
+  section{background:var(--sala2);border:1px solid rgba(232,193,92,.3);border-radius:8px;
+    padding:1rem 1.05rem 1.15rem;margin:0 0 1.1rem}
+  h2{font-family:var(--type);font-weight:400;font-size:1.08rem;color:var(--marquesina2);margin:0 0 .5rem}
+  p{margin:.45rem 0;font-size:.95rem}
+  .hint{font-size:.84rem;color:var(--crema-soft);line-height:1.5}
+  .etiqueta{display:block;font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.14em;
+    text-transform:uppercase;color:#8e7f68;margin:1rem 0 .45rem}
+
+  .fila{display:flex;flex-wrap:wrap;gap:.4rem}
+  .chip{font-family:var(--sans);font-size:.82rem;font-weight:600;cursor:pointer;background:transparent;
+    color:var(--crema-soft);border:1.5px solid rgba(232,193,92,.4);border-radius:999px;padding:.42rem .8rem;transition:all .12s}
+  .chip:hover{border-color:var(--marquesina);color:var(--marquesina2)}
+  .chip[aria-pressed="true"]{background:rgba(232,193,92,.9);border-color:var(--marquesina);color:#2b1d05}
+  .chip.pausa[aria-pressed="true"]{background:var(--terciopelo);border-color:#8d2327;color:var(--crema)}
+  .chip.dia{min-width:3.1rem;text-align:center;padding:.42rem .5rem}
+
+  .resumen{margin-top:1rem;padding:.75rem .85rem;border-left:4px solid var(--marquesina);
+    background:rgba(232,193,92,.09);font-size:.93rem}
+  .resumen b{font-family:var(--type);font-weight:400}
+
+  .alerta{border-left:4px solid var(--terciopelo);background:rgba(93,21,24,.28);
+    padding:.75rem .85rem;font-size:.92rem;margin:.2rem 0 .3rem}
+  .alerta b{font-family:var(--type);font-weight:400;color:#ffb3b3}
+
+  button.accion{display:inline-block;margin:.9rem .4rem 0 0;padding:.68rem 1.1rem;font-family:var(--sans);
+    font-size:.95rem;font-weight:600;cursor:pointer;background:var(--terciopelo);color:var(--crema);
+    border:1px solid #8d2327;border-radius:4px}
+  button.accion.oro{background:var(--marquesina);border-color:#8a6b1d;color:#2b1d05}
+  button.accion:disabled{opacity:.45;cursor:default}
+  textarea{width:100%;box-sizing:border-box;resize:vertical;min-height:4.2em;padding:.65rem .75rem;
+    border-radius:6px;border:1px solid rgba(232,193,92,.35);background:rgba(255,255,255,.04);
+    color:inherit;font-family:inherit;font-size:.93rem;margin-top:.5rem}
+  .status{font-size:.88rem;margin-top:.6rem;white-space:pre-line;min-height:1.1em}
+  .ok{color:var(--verde)} .err{color:#ffb3b3}
+  .vigente{font-family:var(--sans);font-size:.78rem;color:#8e7f68;margin-top:.5rem}
+  .links{font-size:.92rem;line-height:1.9;margin:.3rem 0 0}
+  footer{max-width:40rem;margin:0 auto;padding:.4rem 1rem;font-size:.8rem;color:#8e7f68;text-align:center;font-style:italic}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+<main>
+  <div class="marq">
+    <div class="s">Bibliotequeando · función para ver de a dos</div>
+    <h1>La Sala</h1>
+    <div class="s">Películas y series · viernes</div>
+  </div>
+  <p class="sub">La pista de cine es una sola para la casa: la misma función les llega a los dos, para elegir juntos qué ver.</p>
+
+  <section>
+    <h2>Estado del canal</h2>
+    <div id="estado" class="hint">Revisando el registro de envíos…</div>
+  </section>
+
+  <section>
+    <h2>1 · ¿Cada cuánto querés función?</h2>
+    <span class="etiqueta">Frecuencia</span>
+    <div class="fila" id="frec"></div>
+    <span class="etiqueta">Día (ajuste fino — manda este)</span>
+    <div class="fila" id="dias"></div>
+    <div class="resumen" id="resumen">…</div>
+    <button class="accion oro" id="guardar" onclick="guardar()">Guardar la cadencia</button>
+    <div class="status" id="save-status"></div>
+    <div class="vigente" id="vigente"></div>
+  </section>
+
+  <section>
+    <h2>2 · Reclamar la función que falta</h2>
+    <p class="hint">Esto va directo al recomendador por el canal que está obligado a leer antes de cada corrida (<code>rec-nota</code>). Es el camino más rápido para que vuelva a haber Función Nº 2.</p>
+    <textarea id="nota" rows="3" placeholder="Opcional: qué querés ver, qué evitar, con quién…"></textarea>
+    <button class="accion" id="reclamo" onclick="reclamar()">🎟️ Quiero la próxima función</button>
+    <div class="status" id="nota-status"></div>
+  </section>
+
+  <section>
+    <h2>3 · Lo último que salió</h2>
+    <div id="ultimo" class="hint">…</div>
+    <p class="links">
+      <a href="ultima.html?de=cine">🎞️ Ver la última función enviada →</a><br>
+      <a href="libros.html">📚 Suscripción de libros recomendados →</a><br>
+      <a href="../engage/setup.html">🔔 Ajustes de notificaciones →</a>
+    </p>
+  </section>
+</main>
+<footer>La cadencia decide cuándo se manda. Si el teléfono no suena nunca, el problema es el permiso de avisos, no la frecuencia.</footer>
+
+<script src="suscripcion.js"></script>
+<script>
+(function(){
+  'use strict';
+  var STREAM='cine';
+  var $=function(id){return document.getElementById(id)};
+  var prefs=null, queue=null;
+  /* La Sala nace en viernes: el mapa de días es propio, no el genérico. */
+  var DIAS_CINE={0:[],1:[5],2:[2,5],3:[1,3,5]};
+  var sel={enabled:true, per_week:1, days:[5]};
+
+  function chip(label,cls){
+    var b=document.createElement('button');
+    b.type='button'; b.className='chip'+(cls?' '+cls:''); b.textContent=label;
+    b.setAttribute('aria-pressed','false');
+    return b;
+  }
+  function marcar(cont,pred){
+    Array.prototype.forEach.call(cont.children,function(b,i){
+      b.setAttribute('aria-pressed', pred(b,i)?'true':'false');
+    });
+  }
+
+  function pintarFrec(){
+    var c=$('frec'); c.innerHTML='';
+    var ops=[{n:0,l:'Pausar'},{n:1,l:'1 × semana'},{n:2,l:'2 × semana'},{n:3,l:'3 × semana'}];
+    ops.forEach(function(o){
+      var b=chip(o.l,o.n===0?'pausa':'');
+      b.addEventListener('click',function(){
+        sel.enabled=o.n>0; sel.per_week=o.n; sel.days=DIAS_CINE[o.n].slice(); sincronizar();
+      });
+      c.appendChild(b);
+    });
+    c.dataset.opts=JSON.stringify(ops.map(function(o){return o.n}));
+  }
+  function pintarDias(){
+    var c=$('dias'); c.innerHTML='';
+    for(var d=1; d<=7; d++){
+      (function(d){
+        var b=chip(SUB.DIA_CORTO[d],'dia');
+        b.addEventListener('click',function(){
+          var i=sel.days.indexOf(d);
+          if(i>=0) sel.days.splice(i,1); else sel.days.push(d);
+          sel.days.sort(); sel.per_week=sel.days.length; sel.enabled=sel.days.length>0;
+          sincronizar();
+        });
+        c.appendChild(b);
+      })(d);
+    }
+  }
+  function sincronizar(){
+    var opts=JSON.parse($('frec').dataset.opts||'[]');
+    marcar($('frec'),function(b,i){return opts[i]===sel.days.length});
+    marcar($('dias'),function(b,i){return sel.days.indexOf(i+1)>=0});
+    var r=$('resumen');
+    if(!sel.days.length){
+      r.innerHTML='<b>La Sala queda cerrada.</b> No se manda ninguna función hasta que vuelvas acá.';
+    } else {
+      r.innerHTML='<b>'+sel.days.length+(sel.days.length===1?' función':' funciones')+' por semana</b> — '+
+        SUB.esc(SUB.listaDias(sel.days))+', alrededor de las 19:00, para los dos.';
+    }
+  }
+  function cargarVigente(){
+    var ef=SUB.effective(prefs,STREAM,null);
+    sel.enabled=ef.enabled; sel.per_week=ef.per_week; sel.days=ef.days.slice();
+    sincronizar();
+    $('vigente').textContent='Vigente ahora: '+
+      (ef.enabled? ef.days.length+'/semana ('+SUB.listaDias(ef.days)+')' : 'en pausa')+
+      (ef.updated_at? ' · elegido el '+SUB.fechaCorta(ef.updated_at) : ' · valor por defecto, sin elección explícita todavía.');
+  }
+
+  window.guardar=function(){
+    var btn=$('guardar'); btn.disabled=true;
+    $('save-status').textContent='Guardando…'; $('save-status').className='status';
+    SUB.save({stream:STREAM, scope:'stream', device:SUB.deviceName()||null,
+              enabled:sel.days.length>0, per_week:sel.days.length, days:sel.days})
+      .then(function(out){
+        $('save-status').textContent = out.repo
+          ? '✓ Guardado y aplicado ya mismo en el repo.'
+          : '✓ Guardado. Se aplica en la próxima corrida del despachador (≤10 minutos).';
+        $('save-status').className='status ok';
+        return SUB.loadPrefs().then(function(p){ prefs=p; cargarVigente(); });
+      })
+      .catch(function(e){
+        $('save-status').textContent='⚠️ No se pudo guardar: '+e.message;
+        $('save-status').className='status err';
+      })
+      .then(function(){ btn.disabled=false; });
+  };
+
+  window.reclamar=function(){
+    var btn=$('reclamo'); btn.disabled=true;
+    var extra=($('nota').value||'').trim();
+    var envs=queue? SUB.sentOf(queue,STREAM):[];
+    var desde=envs.length? SUB.fechaCorta(envs[0].sent_at||envs[0].send_at):'siempre';
+    var txt='RECLAMO DE LA SALA (desde suscripcion/cine.html): la pista de cine no manda función desde '+desde+
+            '. La quiero de vuelta en la cadencia elegida en notifications/preferences.json (stream "cine"). '+
+            'Armá la próxima Función y encolá su push.'+(extra? ' Pedido del dueño: '+extra : '');
+    $('nota-status').textContent='Mandando…'; $('nota-status').className='status';
+    SUB.nota('rec-nota:suscripcion-cine', txt)
+      .then(function(){
+        $('nota-status').textContent='✓ Anotado. El recomendador lo lee al empezar su próxima corrida.';
+        $('nota-status').className='status ok';
+        $('nota').disabled=true; $('nota').style.opacity='.5';
+      })
+      .catch(function(e){
+        $('nota-status').textContent='⚠️ No se pudo mandar: '+e.message;
+        $('nota-status').className='status err'; btn.disabled=false;
+      });
+  };
+
+  function pintarEstado(){
+    var envs=SUB.sentOf(queue,STREAM);
+    var e=$('estado');
+    if(!envs.length){ e.textContent='No hay ninguna función registrada como enviada.'; return; }
+    var u=envs[0], dias=SUB.diasAtras(u.sent_at||u.send_at);
+    var semanas=dias!==null? Math.floor(dias/7) : null;
+    var html='Funciones enviadas: <strong>'+envs.length+'</strong> · la última, el '+
+      SUB.fechaLarga(u.sent_at||u.send_at)+'.';
+    if(semanas!==null && semanas>=2){
+      html+='<div class="alerta"><b>Hace '+dias+' días que no sale una función.</b> '+
+        'Van '+semanas+' viernes sin Sala. El canal de avisos está bien (los pushes de libros salen todos los días): '+
+        'lo que falta es que el recomendador arme la próxima. Reclamala en el paso 2 de abajo.</div>';
+    }
+    e.innerHTML=html;
+  }
+  function pintarUltimo(){
+    var envs=SUB.sentOf(queue,STREAM);
+    if(!envs.length){ $('ultimo').textContent='Todavía no hay envíos en este canal.'; return; }
+    var u=envs[0];
+    $('ultimo').innerHTML='<strong>'+SUB.esc(u.title||u.id)+'</strong><br>'+
+      SUB.esc(u.body||'')+'<br><span style="opacity:.75">'+SUB.fechaLarga(u.sent_at||u.send_at)+'</span>';
+  }
+
+  pintarFrec(); pintarDias();
+  Promise.all([SUB.loadPrefs(), SUB.loadQueue().catch(function(){return null})])
+    .then(function(r){
+      prefs=r[0]; queue=r[1];
+      cargarVigente();
+      if(queue){ pintarEstado(); pintarUltimo(); }
+      else { $('estado').textContent='No pude leer el registro de envíos ahora mismo.'; $('ultimo').textContent='—'; }
+    });
+})();
+</script>
+</body>
+</html>

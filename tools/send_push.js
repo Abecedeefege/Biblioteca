@@ -20,6 +20,7 @@ const ROOT = path.join(__dirname, '..');            // raíz del repo = dir publ
 const QUEUE_PATH    = path.join(ROOT, 'notifications/queue.json');
 const SEND_LOG_PATH = path.join(ROOT, 'notifications/send_log.json');
 const SUB_PATH      = path.join(ROOT, 'notifications/subscription.json');
+const PREFS_PATH    = path.join(ROOT, 'notifications/preferences.json');
 const VAPID_PUB     = path.join(ROOT, 'notifications/vapid_public.txt');
 // El subject VAPID admite mailto: o URL; se usa la URL del sitio para no
 // publicar un email en el repo.
@@ -62,6 +63,60 @@ function pastFloorFor(dev, date) {
   return localHour(date, tz) >= floor;
 }
 
+/* ---- Cadencia elegida por el dueño (notifications/preferences.json) ----
+   El dispatcher sigue siendo tonto con el CONTENIDO, pero sí respeta CUÁNDO
+   quiere cada uno que le suene el teléfono: eso lo elige el dueño en
+   suscripcion/libros.html y suscripcion/cine.html, no el agente que fabrica
+   la ficha. Si el día local del destinatario no está entre los elegidos, la
+   notificación se marca 'skipped' y no se manda (la ficha igual queda
+   archivada en el cajón). Regla de seguridad: sin archivo, sin stream o sin
+   entrada para ese dispositivo NO hay puerta — se manda como siempre. */
+const STREAM_PATTERNS = [
+  ['cine',   /(^|-)cine(-|$)/],
+  ['libros', /^\d{4}-\d{2}-\d{2}-rec(-|$)/],
+];
+function streamOf(n) {
+  const id = String((n && n.id) || '');
+  for (const [name, re] of STREAM_PATTERNS) if (re.test(id)) return name;
+  return null;                                      // pruebas, bienvenidas, viaje: sin puerta
+}
+const WEEKDAY_ISO = { Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6, Sun: 7 };
+function isoWeekday(date, tz) {
+  return WEEKDAY_ISO[new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short' }).format(date)] || null;
+}
+function pickDevicePref(prefs, devName, stream) {
+  if (!prefs || !prefs.devices || !devName) return null;
+  const want = String(devName).toLowerCase();
+  for (const key of Object.keys(prefs.devices)) {
+    if (String(key).toLowerCase() === want) {
+      const entry = prefs.devices[key];
+      return (entry && entry[stream]) || null;
+    }
+  }
+  return null;
+}
+// override del dispositivo sobre el default de la casa; null = sin puerta.
+function prefFor(prefs, stream, devName) {
+  if (!prefs || !stream) return null;
+  const byStream = (prefs.streams && prefs.streams[stream]) || null;
+  const byDevice = pickDevicePref(prefs, devName, stream);
+  if (!byStream && !byDevice) return null;
+  return Object.assign({}, byStream || {}, byDevice || {});
+}
+function allowedByPrefs(prefs, n, dev, date) {
+  if (n.ignore_floor === true) return true;         // confirmación pedida con un tap: siempre sale
+  const stream = streamOf(n);
+  if (!stream) return true;
+  const pref = prefFor(prefs, stream, (dev && dev.device) || null);
+  if (!pref) return true;
+  if (pref.enabled === false) return false;
+  if (!Array.isArray(pref.days)) return true;
+  if (!pref.days.length) return false;
+  const tz = (dev && dev.tz) || DEVICE_TZ[String((dev && dev.device) || '').toLowerCase()] || DEFAULT_TZ;
+  const wd = isoWeekday(date, tz);
+  return wd === null ? true : pref.days.indexOf(wd) !== -1;
+}
+
 function deviceList(subDoc) {
   if (!subDoc) return [];
   if (Array.isArray(subDoc.devices)) return subDoc.devices;
@@ -90,6 +145,7 @@ async function main() {
 
   const subDoc = readJson(SUB_PATH, null);
   const devices = deviceList(subDoc);
+  const prefs = readJson(PREFS_PATH, null);
 
   const nowDate = new Date(now);
   const vencidas = queue.notifications.filter(
@@ -107,7 +163,13 @@ async function main() {
   const due = vencidas.filter((n) => {
     if (n.ignore_floor === true) return true;
     const targets = targetsFor(n, activesNow);
-    return !targets.length || targets.every((d) => pastFloorFor(d, nowDate));
+    if (!targets.length) return true;
+    // Los bloqueados por cadencia no cuentan para el piso horario: si NO queda
+    // ninguno elegible, la notificación entra igual para cerrarse como
+    // 'skipped' abajo, en vez de quedar pending hasta que expire.
+    const elegibles = targets.filter((d) => allowedByPrefs(prefs, n, d, nowDate));
+    if (!elegibles.length) return true;
+    return elegibles.every((d) => pastFloorFor(d, nowDate));
   });
   if (vencidas.length > due.length) {
     console.log(`${vencidas.length - due.length} vencidas pero antes del piso horario local de su destinatario — se posponen.`);
@@ -121,7 +183,17 @@ async function main() {
     const log = readJson(SEND_LOG_PATH, { events: [] });
     for (const n of due) {
       const actives = devices.filter((d) => d.status === 'active' && d.subscription);
-      const targets = targetsFor(n, actives);
+      const candidatos = targetsFor(n, actives);
+      const targets = candidatos.filter((d) => allowedByPrefs(prefs, n, d, nowDate));
+      if (candidatos.length && !targets.length) {
+        const stream = streamOf(n);
+        n.status = 'skipped';
+        n.fail_reason = `fuera de la cadencia elegida para "${stream}" (notifications/preferences.json)`;
+        queueChanged = true;
+        log.events.push({ type: 'skipped', nid: n.id, device: null, ts: new Date().toISOString(), stream });
+        console.log(`[${n.id}] fuera de cadencia (${stream}) — no se manda`);
+        continue;                                   // la ficha igual queda archivada en el cajón
+      }
       if (!targets.length) {
         console.log(`[${n.id}] sin dispositivos activos para ${n.to ? JSON.stringify(n.to) : 'todos'} — queda pending`);
         continue;                                   // reintenta la próxima corrida; expires_at acota

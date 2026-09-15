@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>🔔 Suscripciones — Bibliotequeando</title>
+<meta name="description" content="Las dos suscripciones de la casa: libros recomendados y La Sala. Cadencia, estado y lo último enviado.">
+<meta name="theme-color" content="#4a3524">
+<link rel="icon" href="../icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;800&display=swap">
+<style>
+  :root{--papel:#f1e8d4;--papel-claro:#faf5e8;--tinta:#2a1f12;--tinta-suave:#6b5b45;
+    --bordo:#7a1f23;--dorado:#b89348;--madera:#4a3524;
+    --type:'Special Elite','Courier New',monospace;--sans:'Inter',system-ui,sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 0 3rem;background:var(--papel);color:var(--tinta);
+    font-family:Georgia,'Times New Roman',serif;line-height:1.55}
+  a{color:var(--bordo)}
+  .back{display:block;padding:.8rem 1rem;background:var(--madera);color:var(--papel);
+    text-decoration:none;font-family:var(--sans);font-size:.85rem;font-weight:600}
+  main{max-width:40rem;margin:0 auto;padding:1.4rem 1rem}
+  h1{font-family:var(--type);font-weight:400;font-size:1.65rem;color:var(--madera);margin:0 0 .3rem}
+  .sub{font-style:italic;opacity:.75;margin:0 0 1.5rem}
+  .tarjeta{display:block;background:var(--papel-claro);border:1px solid var(--dorado);border-radius:6px;
+    padding:1rem 1.05rem;margin:0 0 1rem;text-decoration:none;color:inherit;
+    box-shadow:0 2px 10px rgba(42,31,18,.07)}
+  .tarjeta:hover{border-color:var(--bordo)}
+  .tarjeta h2{font-family:var(--type);font-weight:400;font-size:1.15rem;color:var(--bordo);margin:0 0 .25rem}
+  .tarjeta p{margin:.3rem 0;font-size:.92rem}
+  .estado{font-family:var(--sans);font-size:.75rem;font-weight:600;color:var(--tinta-suave);margin-top:.5rem}
+  .flecha{font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--bordo);margin-top:.6rem;display:block}
+  .pie{font-family:var(--sans);font-size:.82rem;line-height:2;margin-top:1.5rem;text-align:center}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+<main>
+  <h1>Suscripciones de la casa</h1>
+  <p class="sub">Dos canales, cada uno con su cadencia. Todo lo que elijas acá lo aplica el despachador antes de mandar.</p>
+
+  <a class="tarjeta" href="libros.html">
+    <h2>📚 Libros recomendados</h2>
+    <p>Una ficha = un libro elegido para vos, con su experiencia y su veredicto. Elegís cuántas por semana y qué días — y cada lector de la casa tiene la suya.</p>
+    <div class="estado" id="e-libros">…</div>
+    <span class="flecha">Elegir mi frecuencia →</span>
+  </a>
+
+  <a class="tarjeta" href="cine.html">
+    <h2>🎬 La Sala — películas y series</h2>
+    <p>La función para ver de a dos. Una sola para la casa, pensada para los viernes.</p>
+    <div class="estado" id="e-cine">…</div>
+    <span class="flecha">Ver el estado y la cadencia →</span>
+  </a>
+
+  <p class="pie">
+    <a href="ultima.html?de=libros">📬 Última ficha enviada</a> ·
+    <a href="ultima.html?de=cine">🎞️ Última función enviada</a><br>
+    <a href="../engage/setup.html">🔔 Ajustes de notificaciones (permiso del teléfono)</a> ·
+    <a href="../recs/">📚 Todas las recomendaciones</a>
+  </p>
+</main>
+
+<script src="suscripcion.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  Promise.all([SUB.loadPrefs(), SUB.loadQueue().catch(function(){return null})])
+    .then(function(r){
+      var prefs=r[0], queue=r[1];
+      ['libros','cine'].forEach(function(s){
+        var ef=SUB.effective(prefs,s,s==='libros'?(SUB.deviceName()||null):null);
+        var envs=queue? SUB.sentOf(queue,s):[];
+        var partes=[ ef.enabled? ef.days.length+' × semana ('+SUB.listaDias(ef.days)+')' : 'en pausa' ];
+        if(envs.length){
+          var d=SUB.diasAtras(envs[0].sent_at||envs[0].send_at);
+          partes.push('último envío: '+SUB.fechaCorta(envs[0].sent_at||envs[0].send_at)+
+            (d!==null&&d>=14? ' — hace '+d+' días ⚠️':''));
+        } else partes.push('sin envíos registrados');
+        $('e-'+s).textContent=partes.join(' · ');
+      });
+    })
+    .catch(function(){ $('e-libros').textContent=''; $('e-cine').textContent=''; });
+})();
+</script>
+</body>
+</html>

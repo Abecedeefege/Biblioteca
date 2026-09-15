@@ -7,6 +7,8 @@
      - dispositivos nuevos → notifications/subscription.json (devices[])
      - la primera vez que aparece "Sofi" → encola su push de bienvenida
      - eventos de feedback → sync/engagement.json (merge por id)
+     - eventos de cadencia (type:'pref', los manda suscripcion/*.html desde un
+       teléfono sin PAT) → notifications/preferences.json
    La anon/publishable key es pública por diseño (RLS limita a insert+select).
    Best effort: si Supabase no responde, avisa y sigue (los envíos del día no
    se bloquean). */
@@ -17,6 +19,7 @@ const ROOT = path.join(__dirname, '..');
 const SUB_PATH   = path.join(ROOT, 'notifications/subscription.json');
 const QUEUE_PATH = path.join(ROOT, 'notifications/queue.json');
 const SYNC_PATH  = path.join(ROOT, 'sync/engagement.json');
+const PREFS_PATH = path.join(ROOT, 'notifications/preferences.json');
 
 const SUPA = 'https://jhdwpxttgnravhlnmdgg.supabase.co';
 const KEY  = 'sb_publishable_phJdQOO7PUdidexaeUI4vQ_WJpKOgDM';
@@ -156,6 +159,47 @@ async function main() {
       writeJson(SYNC_PATH, doc);
       console.log(n + ' evento(s) de feedback bajados del relay.');
     }
+
+    /* ---- cadencia de las suscripciones ----
+       Los eventos type:'pref' los manda suscripcion/libros.html y
+       suscripcion/cine.html desde cualquier teléfono, con o sin PAT. Se
+       aplican por ts: uno más viejo que lo que ya está guardado se ignora, así
+       este script es idempotente y no ensucia el repo con un commit por
+       corrida. */
+    applyPrefs(events);
+  }
+}
+
+function applyPrefs(rows) {
+  const prefs = readJson(PREFS_PATH, null);
+  if (!prefs) { console.log('Sin preferences.json — no aplico cadencias.'); return; }
+  prefs.streams = prefs.streams || {};
+  prefs.devices = prefs.devices || {};
+  let changed = 0;
+  for (const row of rows) {
+    const ev = row && row.payload;
+    if (!ev || ev.type !== 'pref' || !ev.stream || !Array.isArray(ev.days)) continue;
+    const porDispositivo = ev.scope === 'device' && ev.target;
+    const slot = porDispositivo
+      ? (prefs.devices[ev.target] = prefs.devices[ev.target] || {})
+      : prefs.streams;
+    const prev = slot[ev.stream] || {};
+    if (prev.updated_at && ev.ts && Date.parse(prev.updated_at) >= Date.parse(ev.ts)) continue;
+    slot[ev.stream] = Object.assign({}, prev, {
+      enabled: ev.enabled !== false,
+      per_week: typeof ev.per_week === 'number' ? ev.per_week : ev.days.length,
+      days: ev.days.slice().sort((a, b) => a - b),
+      updated_at: ev.ts || new Date().toISOString(),
+      updated_by: (ev.device || 'sin-nombre') + ' · ' + (ev.page || 'suscripcion') + ' (relay)',
+    });
+    changed++;
+    console.log('Cadencia de "' + ev.stream + '" actualizada desde el relay (' +
+      (porDispositivo ? ev.target : 'la casa') + '): ' +
+      (ev.enabled !== false ? ev.days.join(',') || 'sin días' : 'en pausa'));
+  }
+  if (changed) {
+    prefs._updated_at = new Date().toISOString();
+    writeJson(PREFS_PATH, prefs);
   }
 }
 main().catch((e) => { console.error('sync_devices:', e.message); });
