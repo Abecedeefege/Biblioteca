@@ -4335,7 +4335,16 @@
       "device": "Andy",
       "slug": "2026-07-31-sala-01",
       "value": "like"
+    },
+    {
+      "id": "mu307f8u-j2lkcj",
+      "type": "dwell",
+      "ts": "2026-09-15T18:27:05.070Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "dwell_s": 201,
+      "scroll_pct": 100
     }
   ],
-  "_updated_at": "2026-09-15T18:27:02.305Z"
+  "_updated_at": "2026-09-15T18:27:06.634Z"
 }
