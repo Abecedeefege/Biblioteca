@@ -4440,7 +4440,16 @@
       "device": "Andy",
       "qid": "cine-veredicto:upload",
       "value": "me_tienta"
+    },
+    {
+      "id": "mu32uh34-u2cql5",
+      "type": "dwell",
+      "ts": "2026-09-15T19:40:59.776Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "dwell_s": 37,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-09-15T19:40:46.711Z"
+  "_updated_at": "2026-09-15T19:41:01.363Z"
 }
