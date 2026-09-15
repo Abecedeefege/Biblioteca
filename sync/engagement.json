@@ -4377,7 +4377,16 @@
       "ts": "2026-09-15T19:23:04.486Z",
       "page": "2026-09-18-sala-02.html",
       "device": "Andy"
+    },
+    {
+      "id": "mu328jsl-cv188h",
+      "type": "dwell",
+      "ts": "2026-09-15T19:23:56.853Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "dwell_s": 52,
+      "scroll_pct": 29
     }
   ],
-  "_updated_at": "2026-09-15T19:23:05.623Z"
+  "_updated_at": "2026-09-15T19:23:58.495Z"
 }
