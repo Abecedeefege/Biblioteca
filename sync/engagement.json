@@ -4422,7 +4422,16 @@
       "device": "Andy",
       "dwell_s": 58,
       "scroll_pct": 0
+    },
+    {
+      "id": "mu32srg2-ffaymx",
+      "type": "dwell",
+      "ts": "2026-09-15T19:39:39.890Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "dwell_s": 16,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-09-15T19:39:24.651Z"
+  "_updated_at": "2026-09-15T19:39:41.265Z"
 }
