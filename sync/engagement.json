@@ -4236,7 +4236,16 @@
       "page": "2026-07-31-sala-01.html",
       "device": "Andy",
       "nid": "confirm-sala-20260915-1521"
+    },
+    {
+      "id": "mu3049ni-z5dfbo",
+      "type": "dwell",
+      "ts": "2026-09-15T18:24:37.854Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "dwell_s": 73,
+      "scroll_pct": 14
     }
   ],
-  "_updated_at": "2026-09-15T18:23:26.109Z"
+  "_updated_at": "2026-09-15T18:24:39.614Z"
 }
