@@ -4326,7 +4326,16 @@
       "device": "Andy",
       "qid": "rec-nota:2026-07-31-sala-01",
       "value": "Buenas recomendación. Pero las vimos todas.  Parti de esas para más recomendaciónes similares"
+    },
+    {
+      "id": "mu307byi-hjg0bb",
+      "type": "reaction",
+      "ts": "2026-09-15T18:27:00.810Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "slug": "2026-07-31-sala-01",
+      "value": "like"
     }
   ],
-  "_updated_at": "2026-09-15T18:26:58.335Z"
+  "_updated_at": "2026-09-15T18:27:02.305Z"
 }
