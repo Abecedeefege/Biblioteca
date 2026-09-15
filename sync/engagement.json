@@ -4272,7 +4272,16 @@
       "device": "Andy",
       "qid": "cine-noche:2026-07-31-sala-01",
       "value": "largo"
+    },
+    {
+      "id": "mu305h6d-jrss5s",
+      "type": "answer",
+      "ts": "2026-09-15T18:25:34.261Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "cine-veredicto:omitb",
+      "value": "ya_la_vimos"
     }
   ],
-  "_updated_at": "2026-09-15T18:25:17.229Z"
+  "_updated_at": "2026-09-15T18:25:35.434Z"
 }
