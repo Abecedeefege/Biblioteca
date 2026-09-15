@@ -4386,7 +4386,16 @@
       "device": "Andy",
       "dwell_s": 52,
       "scroll_pct": 29
+    },
+    {
+      "id": "mu328nqi-2040kg",
+      "type": "dwell",
+      "ts": "2026-09-15T19:24:01.962Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "dwell_s": 55,
+      "scroll_pct": 30
     }
   ],
-  "_updated_at": "2026-09-15T19:23:58.495Z"
+  "_updated_at": "2026-09-15T19:24:02.985Z"
 }
