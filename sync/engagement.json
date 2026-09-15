@@ -4219,7 +4219,24 @@
       "type": "answer",
       "value": "RECLAMO DE LA SALA (desde suscripcion/cine.html): la pista de cine no manda función desde 31/7/2026. La quiero de vuelta en la cadencia elegida en notifications/preferences.json (stream \"cine\"). Armá la próxima Función y encolá su push.",
       "device": "Andy"
+    },
+    {
+      "id": "mu302pbg-wkqhtv",
+      "type": "notification_clicked",
+      "ts": "2026-09-15T18:23:24.844Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "nid": "confirm-sala-20260915-1521",
+      "src": "push"
+    },
+    {
+      "id": "mu302pbg-xjpepk",
+      "type": "page_visit",
+      "ts": "2026-09-15T18:23:24.844Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "nid": "confirm-sala-20260915-1521"
     }
   ],
-  "_updated_at": "2026-09-15T18:22:30.941Z"
+  "_updated_at": "2026-09-15T18:23:26.109Z"
 }
