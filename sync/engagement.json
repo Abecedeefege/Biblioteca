@@ -4413,7 +4413,16 @@
       "device": "Andy",
       "dwell_s": 55,
       "scroll_pct": 0
+    },
+    {
+      "id": "mu32sbxr-269n96",
+      "type": "dwell",
+      "ts": "2026-09-15T19:39:19.791Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "dwell_s": 58,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-09-15T19:37:35.578Z"
+  "_updated_at": "2026-09-15T19:39:24.651Z"
 }
