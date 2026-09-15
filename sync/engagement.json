@@ -4361,7 +4361,23 @@
       "page": "2026-09-14-carroll-gran-cuadro.html",
       "device": "Andy",
       "nid": "confirm-fichas-20260915-1521"
+    },
+    {
+      "id": "mu30f3g0-b0btly",
+      "type": "dwell",
+      "ts": "2026-09-15T18:33:03.024Z",
+      "page": "2026-09-14-carroll-gran-cuadro.html",
+      "device": "Andy",
+      "dwell_s": 5,
+      "scroll_pct": 16
+    },
+    {
+      "id": "mu327fdy-x0gcx1",
+      "type": "page_visit",
+      "ts": "2026-09-15T19:23:04.486Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy"
     }
   ],
-  "_updated_at": "2026-09-15T18:32:59.789Z"
+  "_updated_at": "2026-09-15T19:23:05.623Z"
 }
