@@ -4449,7 +4449,16 @@
       "device": "Andy",
       "dwell_s": 37,
       "scroll_pct": 0
+    },
+    {
+      "id": "mu32vfh9-yo0vcw",
+      "type": "dwell",
+      "ts": "2026-09-15T19:41:44.349Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "dwell_s": 13,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-09-15T19:41:01.363Z"
+  "_updated_at": "2026-09-15T19:41:46.210Z"
 }
