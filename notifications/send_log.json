@@ -839,6 +839,20 @@
       "device": "Sofi",
       "ts": "2026-09-14T22:46:57.433Z",
       "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "confirm-fichas-20260915-1521",
+      "device": "Andy",
+      "ts": "2026-09-15T18:22:31.216Z",
+      "status_code": 201
+    },
+    {
+      "type": "sent",
+      "nid": "confirm-sala-20260915-1521",
+      "device": "Andy",
+      "ts": "2026-09-15T18:22:31.289Z",
+      "status_code": 201
     }
   ]
 }

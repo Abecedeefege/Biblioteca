@@ -4179,7 +4179,47 @@
       "device": "Andy",
       "dwell_s": 86,
       "scroll_pct": 43
+    },
+    {
+      "id": "mu2zk9y4-tkz20n",
+      "ts": "2026-09-15T18:09:05.116Z",
+      "days": [
+        3,
+        7
+      ],
+      "page": "libros.html",
+      "type": "pref",
+      "scope": "device",
+      "device": "Andy",
+      "stream": "libros",
+      "target": "Andy",
+      "enabled": true,
+      "per_week": 2
+    },
+    {
+      "id": "mu2zkon1-ntbz2i",
+      "ts": "2026-09-15T18:09:24.157Z",
+      "days": [
+        5
+      ],
+      "page": "cine.html",
+      "type": "pref",
+      "scope": "stream",
+      "device": "Andy",
+      "stream": "cine",
+      "target": null,
+      "enabled": true,
+      "per_week": 1
+    },
+    {
+      "id": "mu2zkvye-963bub",
+      "ts": "2026-09-15T18:09:33.638Z",
+      "qid": "rec-nota:suscripcion-cine",
+      "page": "cine.html",
+      "type": "answer",
+      "value": "RECLAMO DE LA SALA (desde suscripcion/cine.html): la pista de cine no manda función desde 31/7/2026. La quiero de vuelta en la cadencia elegida en notifications/preferences.json (stream \"cine\"). Armá la próxima Función y encolá su push.",
+      "device": "Andy"
     }
   ],
-  "_updated_at": "2026-09-12T00:42:34.820Z"
+  "_updated_at": "2026-09-15T18:22:30.941Z"
 }
