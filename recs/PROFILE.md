@@ -129,6 +129,16 @@ Abbott). La Nº3 se arma sobre SUS votos, no los de la Nº1.
   TV+ NO.
 - Descartado: `Fallout` encaja con Andy pero es el corte de gore de
   Sofi — sirve si algún día se pide algo solo para él.
+- `La llegada` NO es semilla: Sofi la marcó `no_va`. Las semillas vivas
+  son Only Murders (comedia con crimen) y Separación (rarezas con reglas).
+- **FORMATO VIGENTE DE LAS FICHAS DE CINE = STORIES** (pedido de Andy el
+  15/09: "muchísimo más breve, andá directo a las recomendaciones, menos
+  relleno, más datos e info, estilo insta stories"). Patrón: portada + una
+  pantalla por título + cierre, se pasa con el dedo. Cada título = rejilla
+  de datos (plataforma / duración / temporadas / estado / creador) + chips
+  de puntajes + trama en 3 líneas + elenco + 3 líneas de match (Sofi /
+  Andy / Ojo) + links + voto. **Nada de ensayo antes de los títulos**: el
+  porqué va en el badge del poster. Copiar `recs/2026-09-18-sala-02.html`.
 
 ## 🧭 Sugerencias hub
 `recs/index.html` lee `recommended.json` por fetch — cero mantenimiento
