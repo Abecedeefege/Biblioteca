@@ -8,6 +8,7 @@ teléfono, y qué días?**
 | --- | --- |
 | `suscripcion/` | hub de los dos canales, con su estado real |
 | `suscripcion/libros.html` | cadencia de las fichas de libro, **por lector** |
+| `suscripcion/libros.html?quien=sofi` | el mismo, ya apuntando a un lector (`sofi` / `andy` / `casa`) — para compartir el link |
 | `suscripcion/cine.html` | cadencia de La Sala (películas y series), para la casa |
 | `suscripcion/ultima.html?de=libros` | la última ficha que salió de verdad |
 | `suscripcion/ultima.html?de=cine` | la última función que salió de verdad |
@@ -73,6 +74,18 @@ El stream se deduce del `id` de la notificación, no de un campo aparte:
 | `libros` | `^\d{4}-\d{2}-\d{2}-rec(-\|$)` | `2026-09-14-rec-andy` |
 | `cine` | `(^\|-)cine(-\|$)` | `2026-07-31-cine` |
 | — (sin puerta) | todo lo demás | `test-…`, `sofi-bienvenida`, `…-viaje` |
+
+## Links para compartir
+
+`libros.html` acepta `?quien=sofi|andy|casa`. Sirve para mandarle a cada uno
+**su** link sin depender de lo que tenga guardado ese navegador. Solo
+**preselecciona**: nunca escribe `biblioteca_device_name`, así abrir el link de
+Sofi desde otro teléfono no le cambia la identidad a ese teléfono ni ensucia su
+feedback. Sin parámetro, la página usa el nombre del dispositivo
+(`sofi.html` se lo deja guardado al teléfono de Sofi) y, si no hay ninguno,
+cae en Andy.
+
+`cine.html` y `ultima.html` son de la casa: el mismo link sirve para los dos.
 
 ## La cadencia no es el permiso
 

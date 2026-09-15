@@ -122,6 +122,17 @@
   var prefs=null, queue=null;
   var sel={scope:'device', device:SUB.deviceName()||'Andy', enabled:true, per_week:7, days:[1,2,3,4,5,6,7]};
 
+  /* ?quien=sofi|andy|casa — para poder COMPARTIR un link que ya venga
+     apuntando a la persona correcta, sin depender de lo que tenga guardado
+     ese navegador. Solo preselecciona: no pisa el nombre del dispositivo
+     (eso lo hace únicamente tocar el chip, que es un acto deliberado; si no,
+     abrir el link de Sofi desde otro teléfono le cambiaría la identidad a
+     ese teléfono y ensuciaría su feedback). */
+  var quien=(new URLSearchParams(location.search).get('quien')||'').toLowerCase();
+  if(quien==='casa'||quien==='todos'){ sel.scope='stream'; }
+  else if(quien==='sofi'){ sel.scope='device'; sel.device='Sofi'; }
+  else if(quien==='andy'){ sel.scope='device'; sel.device='Andy'; }
+
   var QUIENES=[{v:'Andy',l:'Andy'},{v:'Sofi',l:'Sofi'},{v:'__casa__',l:'Toda la casa'}];
 
   function chip(label,cls){
@@ -220,7 +231,8 @@
   window.guardar=function(){
     var btn=$('guardar'); btn.disabled=true;
     $('save-status').textContent='Guardando…'; $('save-status').className='status';
-    SUB.save({stream:STREAM, scope:sel.scope, device:sel.scope==='device'?sel.device:null,
+    SUB.save({stream:STREAM, scope:sel.scope,
+              device:sel.scope==='device'? sel.device : (SUB.deviceName()||null),
               enabled:sel.days.length>0, per_week:sel.days.length, days:sel.days})
       .then(function(out){
         var msg = out.repo
