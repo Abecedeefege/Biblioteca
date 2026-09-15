@@ -4245,7 +4245,16 @@
       "device": "Andy",
       "dwell_s": 73,
       "scroll_pct": 14
+    },
+    {
+      "id": "mu304t6i-7ptvy4",
+      "type": "answer",
+      "ts": "2026-09-15T18:25:03.162Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "cine-noche:2026-07-31-sala-01",
+      "value": "corto"
     }
   ],
-  "_updated_at": "2026-09-15T18:24:39.614Z"
+  "_updated_at": "2026-09-15T18:25:04.574Z"
 }
