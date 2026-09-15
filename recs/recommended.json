@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-15T15:55:05-03:00",
-  "_feedback_cutoff": "2026-09-12T00:42:32.857Z",
+  "_updated_at": "2026-09-15T16:11:32-03:00",
+  "_feedback_cutoff": "2026-09-15T18:32:58.403Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -652,7 +652,7 @@
         "clicked": true,
         "dwell_s": 168
       },
-      "learning": "Feedback real de ambos el 31/07 (22:26-22:38 UTC), vía la caja cine-veredicto de la propia ficha (no son botones rec-veredicto:* — esta pieza usa su propia convencion cine-*). Andy: OMitB y Arrival 'ya_la_vimos' (las conocia de antes, guardia de 'ya la vi' funciono para evitar el bochorno de recomendar algo repetido), Severance 'me_tienta' (unica sin ver), dia preferido 'viernes_si', dwell 137s/92%. Sofi: OMitB 'ya_la_vimos' tambien (coincide con Andy - la vieron juntos), Arrival 'no_va' (unico rechazo explicito de la funcion), noche 'medio', plataformas 'netflix_prime', dwell hasta 168s/100% (la mas alta registrada en esta pieza). Aprendizaje para la proxima Sala: 2/3 titulos ya vistos por ambos - antes de armar la Nº2 conviene preguntar que vieron recientemente o ir a estrenos mas nuevos en vez de clasicos ya consumidos; Arrival no convencio a Sofi (ciencia dura sin el enganche narrativo que ella pide) - anotar para no repetir el angulo 'asombro cientifico puro' sin trama humana fuerte cuando el destinatario es ella. Severance queda como candidata confirmada para la proxima funcion (unica con interes real de alguien)."
+      "learning": "Feedback real de ambos el 31/07 (22:26-22:38 UTC), vía la caja cine-veredicto de la propia ficha (no son botones rec-veredicto:* — esta pieza usa su propia convencion cine-*). Andy: OMitB y Arrival 'ya_la_vimos' (las conocia de antes, guardia de 'ya la vi' funciono para evitar el bochorno de recomendar algo repetido), Severance 'me_tienta' (unica sin ver), dia preferido 'viernes_si', dwell 137s/92%. Sofi: OMitB 'ya_la_vimos' tambien (coincide con Andy - la vieron juntos), Arrival 'no_va' (unico rechazo explicito de la funcion), noche 'medio', plataformas 'netflix_prime', dwell hasta 168s/100% (la mas alta registrada en esta pieza). Aprendizaje para la proxima Sala: 2/3 titulos ya vistos por ambos - antes de armar la Nº2 conviene preguntar que vieron recientemente o ir a estrenos mas nuevos en vez de clasicos ya consumidos; Arrival no convencio a Sofi (ciencia dura sin el enganche narrativo que ella pide) - anotar para no repetir el angulo 'asombro cientifico puro' sin trama humana fuerte cuando el destinatario es ella. Severance queda como candidata confirmada para la proxima funcion (unica con interes real de alguien). ACTUALIZACION 15/09: Andy volvio a abrir la ficha (push de confirmacion de suscripcion) y esta vez marco 'severance' tambien como 'ya_la_vimos' (antes 'me_tienta', unica sin ver de la Nº1) -- las tres quedan vistas. Motiva la Función Nº2 (15/09), armada explicitamente a partir de las dos semillas vivas (Only Murders, Separación) por pedido de Andy via rec-nota."
     },
     {
       "id": "2026-07-28-tyson-astrofisica-prisa",
@@ -2473,7 +2473,7 @@
       "feedback": {
         "veredicto": null,
         "reaccion": null,
-        "clicked": false,
+        "clicked": true,
         "dwell_s": 0
       },
       "learning": null
@@ -2521,6 +2521,33 @@
       "page": "recs/2026-09-18-sala-02.html",
       "notified_by": "2026-09-18-cine",
       "why": "Pedido directo de Andy (15/09): reactivar La Sala con el feedback ya dado. REESCRITA el mismo día, porque mientras se construía el relay bajó feedback nuevo que invalidaba media función: Andy marcó cine-veredicto:severance = ya_la_vimos y dejó la nota 'Buenas recomendación. Pero las vimos todas. Partí de esas para más recomendaciones similares.' O sea: las TRES de la Nº 1 estaban vistas, no dos, y Severance dejó de ser un 'me tienta' pendiente. Se cayó la sección que preguntaba si pagar Apple TV+ (habría sido exactamente el error que la función critica) y se cayó Fallout, que era el tercer título y no descendía de ninguna de las tres. Versión final: los tres títulos DESCIENDEN de lo que sobrevivió. (1) Un hombre infiltrado ← Only Murders: misma familia exacta, comedia con crimen y gente grande, Netflix, 27-38 min. (2) Upload ← Separación: la misma pregunta (una empresa que administra quién sos) en clave de comedia, con un asesinato investigado a lo largo de la serie, Prime Video, 24-46 min, TERMINADA en agosto de 2025 — responde también a la queja implícita de que Severance no cierra hasta 2027. Bonus verificado: la creó Greg Daniels, que adaptó The Office y co-creó Parks and Rec, igual que Mike Schur en el título 1; las dos están en la lista de 'amaste' de Andy. (3) Colegio Abbott como la liviana, 22 min, falso documental (el formato de The Office y Modern Family). La llegada NO se usa como semilla y se dice por qué: Sofi la marcó 'no va'. Las tres pasan los cortes de los dos y están en las cuatro plataformas comunes; Fallout quedó explícitamente descartada en el texto por el corte de gore de Sofi. Dos preguntas nuevas: cine-vistas (texto libre con lo que ya vieron, la guardia que faltaba) y cine-semilla (de cuál de las dos semillas quieren más, para que la Nº 3 no reparta). Datos verificados uno por uno; los dos tráilers confirmados por oEmbed como canales oficiales (Netflix Latinoamérica y Prime Video México); IMDb no se linkea porque dio 202 en el chequeo en vivo.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-15-chambers-monje-robot",
+      "date": "2026-09-15",
+      "kind": "nuevo",
+      "title": "Monje y Robot (A Psalm for the Wild-Built)",
+      "author": "Becky Chambers",
+      "language": "es",
+      "topics": [
+        "fantasia",
+        "solarpunk",
+        "found-family",
+        "filosofia",
+        "cozy"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-09-15-chambers-monje-robot.html",
+      "notified_by": "2026-09-15-rec-sofi",
+      "why": "Régimen del día: la cadencia de Andy cambió hoy (15/09, via suscripcion/libros.html) a solo miercoles y domingo -- hoy martes no le toca a el, solo a Sofi (streams.libros general sigue siendo diario). Por alternancia nuevo/redescub de Sofi, ayer (14/09) tuvo redescubrimiento (El Instituto) asi que hoy le toca 'nuevo'. Con el banco de misterio/cozy/oscuro casi agotado de nombres frescos (Osman, Dicker, Hill, Katzenbach, Carlisle, Benavent, Coyle, Klune, Bennett, canon Doyle, Delany, Haig, Christie, Peters, Backman, Flynn, French, Hawkins, Mandanna, Fawcett todos ya usados), se sigue el pivot hacia found-family calido iniciado con Mandanna (11/09) y Fawcett (13/09) -- ambas aun sin veredicto -- con el nombre que el PROFILE tenia anotado como proximo: Becky Chambers. Verificado titulo+autora (variantes 'Psalm for the Wild-Built', 'Monje y Robot') contra el catalogo completo (331 vol., re-extraido hoy) y contra los cien registros de recommended.json: sin coincidencias. Edicion en español (Crononauta, omnibus con los 2 tomos) confirmada EN STOCK en Buscalibre Uruguay en vivo (45% dcto, $1.334 UYU ~= USD 33) -- a diferencia de otras fichas recientes, esta vez no hubo que recurrir a la edicion en ingles. Dos citas verificadas contra Goodreads; una tercera muy repetida en internet sobre 'ganarse el descanso' se descarto por no poder confirmarla textual. Audiolibro en ingles (Em Grosland, Macmillan Audio) confirmado por Audible/Amazon; Google Play no devolvio resultado verificable en el chequeo en vivo, asi que no se linkeo ningun URL de audiolibro. Se repite la micro-pregunta rec-canal: su canal sigue en cero desde el 05/08, manana (16/09) es la fecha limite que el PROFILE se puso para escalar el tema en la ficha de Andy si sigue sin señal.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,

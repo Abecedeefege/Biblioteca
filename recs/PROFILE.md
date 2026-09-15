@@ -1,169 +1,134 @@
 # Perfil de gustos — recomendador de Bibliotequeando
 
-## ⚖️ MEZCLA + RÉGIMEN — DIARIO desde 20/08 (reemplaza el semanal del 05/08)
-**DOS fichas por día**: UNA para Andy y UNA para Sofi, cada una según SU
-perfil y SU feedback. Entre las dos: UNA nueva y UNA de la biblioteca de
-la casa, alternando quién recibe la nueva (mirá en `recommended.json` qué
-recibió cada uno ayer — un `kind:"encuesta"` no cuenta como nuevo ni
-redescub, se salta esa persona ese día sin romper la alternancia del día
-siguiente). Push personal a cada uno, ambos ~19:00 -03:00
+## ⚖️ RÉGIMEN — 🚨 15/09: Andy pasó a Miércoles+Domingo, Sofi sigue diaria
+Cambio real de cadencia (no mío): Andy entró a `suscripcion/libros.html`
+el 15/09 (15:09 -03:00) y puso su dispositivo en `days:[3,7]`
+(miércoles/domingo), `per_week:2` — `notifications/preferences.json →
+devices.Andy.libros`, SOLO LECTURA, manda sobre cualquier régimen previo
+(incluido el diario del 20/08). Sofi no tiene override: sigue heredando
+`streams.libros` (diario). **Los días que NO son miércoles ni domingo,
+la ficha es SOLO de Sofi** — no fabricar una de Andy que el despachador
+va a marcar `skipped`. Miércoles/domingo vuelven las DOS fichas (par
+nuevo+biblioteca por persona). Push personal ~19:00 -03:00
 (`"to":"Andy"`/`"to":"Sofi"`). Fichas pre-armadas cuentan para su
-destinatario; construir solo lo que falte, manteniendo el par
-nuevo+biblioteca. Cine/series no cambia (viernes ~19:00, `todos`).
-**⚠️ Sin sincronizar**: `.claude/commands/recomendacion.md` sigue
-describiendo el régimen semanal del 05/08 (Gate domingo) — esta sección
-manda hasta que alguien lo actualice; no es territorio mío.
+destinatario. Cine: viernes ~19:00 `todos`, vía `streams.cine`.
+**Sin sincronizar**: `.claude/commands/recomendacion.md` sigue con el
+régimen semanal del 05/08 — esta sección manda; no es territorio mío.
 
 ## 🎧 Audio 30s + Google Play, en TODA ficha (desde 04/09)
-Toda ficha (nueva o redescub) suma botón de resumen en audio (Web Speech
-API, cliente puro) y audiolibro de Google Play si existe, por
-título+autor(+narrador) — 403 a bots es bloqueo conocido; si otra fuente
-(WebFetch directo, Audible/Amazon) confirma el contenido, se declara igual,
-pero solo se LINKEA el URL de Google Play si el chequeo en vivo dio 200.
+Botón de resumen en audio (Web Speech API, cliente puro) + audiolibro de
+Google Play si existe, por título+autor(+narrador). Si Google Play no da
+200 en vivo pero otra fuente (Audible/Amazon) confirma el contenido, se
+declara igual pero SIN linkear el URL.
 
-## 🚨 09/14 — canal de Sofi: sigue en cero, 2 días para el umbral del 16/09
-Sigue sin NINGÚN evento de Sofi (ni de Andy) desde 2026-08-05 — cero
-eventos nuevos desde el 12/09 00:42 UTC, otra vez. `subscription.json`
-en `active` para ambos. **Quedan 2 días para el umbral del 16/09**: si
-sigue en cero ahí, re-escalar fuerte en la ficha de Andy. Se repitió hoy
-la micro-pregunta `rec-canal` en ambas fichas (ya se había probado con
-Sofi el 12-13/09, sin respuesta todavía; hoy se sumó también a la de
-Andy — ver abajo). Se sigue eligiendo con la misma disciplina de guardia.
+## 🚨 Canal de Sofi: cero desde 05/08 — mañana 16/09 es el umbral
+`sync/engagement.json` sin ningún evento de Sofi desde 2026-08-05 (5+
+semanas). `subscription.json` en `active`. Si la corrida del 16/09 sigue
+en cero, escalar fuerte en la ficha de Andy. `rec-canal` repetida hoy en
+su ficha, sin respuesta desde el 12/09. Guardia sin relajar pese al silencio.
 
-## ✅ Canal de Andy — activo pero sin cerrar veredicto hace 9 fichas
-Última vez que votó: Kiyosaki `ya_lo_lei` (05/09). Desde entonces, 8
-fichas seguidas sin veredicto (Buenos/Malos Hábitos, Frontiers of
-Astronomy, Compórtate, Principito, Mack, Hábitos Atómicos, Milagro de
-Mindfulness, Doidge) — con la de hoy (Carroll), 9 en juego. Click/dwell
-siguen apareciendo (abre y a veces queda rato), pero no cierra. Primer
-cambio real hoy: en vez de seguir ajustando la estructura de página a
-ciegas, se sumó una micro-pregunta directa `rec-canal` (3 opciones: notis
-ok pero no vota / notis tarde-mal / ficha muy larga) para diagnosticar en
-vez de adivinar. Revisar respuesta en la próxima corrida antes de decidir
-el siguiente ajuste.
+## ✅ Canal de Andy: activo, pero 9 fichas de libro sin veredicto
+Última vez que votó un libro: Kiyosaki `ya_lo_lei` (05/09). Desde
+entonces 9 sin veredicto (última: Carroll 14/09). Hoy SÍ hubo actividad
+real: cambió su cadencia, resolvió a fondo la pista de cine (ver abajo)
+y reabrió la ficha de Carroll (click+visita, sin dwell/veredicto) desde
+el push de confirmación — no es silencio de canal, es que no cierra
+veredicto en libros. `rec-canal` de Carroll (14/09) sigue sin respuesta.
 
-## 📅 09/14 — hoy
-Cero eventos nuevos de feedback desde el cutoff (2026-09-12T00:42:32Z) —
-tercer día seguido sin ninguna señal de ninguno de los dos (ni Hanh/Delany
-del 12/09, ni Doidge/Fawcett del 13/09 alcanzaron a votarse todavía; son
-fichas muy recientes, no se interpreta aún como fallo). Ambos pushes del
-13/09 salieron 201 (confirmado en `send_log.json`). Régimen: ayer Andy
-tuvo redescub (Doidge) → hoy le toca la nueva; Sofi tuvo nueva (Fawcett)
-→ hoy le toca la biblioteca. **Andy → *El Gran Cuadro* (The Big Picture),
-Sean Carroll (2016, nuevo)**: repone el banco de astronomía tras Mack
-(10/09, sin señal aún) con el nombre que ya estaba anotado para reponer,
-pero cruzándolo con la otra veta fuerte de Andy (sentido: Frankl, Bucay,
-Haig) en vez de ser "otro libro de física" más — Carroll dedica el libro
-entero a esa intersección. Rota fuera de neurociencia (turno anterior,
-Doidge). Cuatro citas verificadas contra Goodreads. Edición en español
-agotada en Buscalibre UY (declarado en la ficha); se ofreció la edición
-en inglés en su lugar (HTTP 200 en vivo, ~USD 20), coherente con que
-lee indistinto es/en. Audiolibro en inglés (narrado por el propio autor)
-declarado sin linkear — Google Play dio error en el chequeo en vivo.
-**Sofi → *El Instituto* (The Institute), Stephen King (2019,
-redescub, R5-025)**: de sus 50 King, ninguno ofrecido hasta hoy salvo
-R5-018 (18/07, resultó `ya_lo_lei`). Se evitó a propósito volver a canon
-Doyle (M5-034 quedaba de candidato, pero ya van dos redescub seguidos con
-sabor Sherlock: Regreso 10/09 y Delany 12/09) y volver a autoras ya
-falladas (Carlisle, `ya_lo_lei`+`meh` el 22/07). El Instituto pega en el
-punto medio entre sus dos vetas ganadoras — investigación (Osman, Dicker)
-y oscuro (Hill) — sin ser terror sobrenatural puro, para variar el
-registro. Verificado contra catálogo (437 vol.) y `recommended.json`
-completo: sin coincidencias. Dato del Goodreads Choice Award 2019
-(75.717 votos, 9° premio de King) verificado contra la página oficial.
-Audiolibro en español (Alberto Santillán) declarado sin linkear por el
-mismo motivo que arriba.
+## 📅 09/15 — hoy
+Gate de día: MARTES → solo Sofi. Cero feedback nuevo de libros (Hanh,
+Delany, Doidge, Fawcett, Carroll, Instituto siguen sin veredicto).
+**Cine ya resuelto al empezar la corrida** (lo hizo una sesión anterior
+hoy mismo): Función Nº 2 construida a pedido de Andy, `severance`
+marcada `ya_la_vimos` — solo se verificó que página y push estén en
+orden, no se tocó de nuevo.
+**Sofi → *Monje y Robot* (A Psalm for the Wild-Built), Becky Chambers
+(2021, Hugo a mejor novela corta, nuevo)**: banco de misterio/cozy casi
+agotado de nombres frescos → se sigue el pivot found-family cálido que
+abrieron Mandanna (11/09) y Fawcett (13/09) — ninguna de las tres tiene
+veredicto todavía; la próxima señal real decide si seguir por acá o
+volver al oscuro calibrado (Dicker/Hill). Verificado contra catálogo
+(331 vol., recontado hoy — la cifra de 437 que circulaba estaba vieja)
+y los 100 registros de `recommended.json`: sin coincidencias. A
+diferencia de Carroll, la edición en español (Crononauta, ómnibus con
+los 2 tomos) SÍ está en stock en Buscalibre UY (45% dcto., ~USD 33).
+Audiolibro en inglés (Em Grosland) confirmado sin linkear. `rec-canal`
+repetida.
 
 ## 📚 Contexto fijo
-Catálogo: 437 volúmenes (re-extraer `/tmp/catalog.json` cada corrida).
-Suscripción: Andy y Sofi `active` — el silencio de Sofi no es un
-problema de `subscription.json` (ver arriba).
+Catálogo: 331 volúmenes reales (re-extraer `/tmp/catalog.json` cada
+corrida). Suscripción: Andy y Sofi `active`.
 
 ### Sofi — vetas confirmadas
-Salas: King (R4+R5, 50 libros — usados: R5-018 `ya_lo_lei`, R5-025 hoy).
-Aciertos duros (todos pre-20/08, previos al silencio): **Dicker HQ**
-`lo_quiero`+`love`; **Klune-mar-azul** `me_tienta`+`love`; **Haig
-*Medianoche*** `lo_quiero`+`love` (única `todos`). Romance contemporáneo
-(Henry x2): descartado. Guardia máxima misterio/cozy: `ya_lo_lei` en
-King R5-018, Katzenbach, Carlisle, Benavent, Henry.
-- Quemados: ver log completo en `recommended.json` (autoridad única).
-  Resumen rápido de autores/series ya gastados en M5/M6: Osman, Dicker,
-  Hill, Katzenbach, Carlisle, Benavent, Coyle, Klune, Heap House,
-  Bennett, canon Doyle (Baskerville/Aventuras/Memorias/Regreso), Delany,
-  Haig, Christie, Peters, Backman, Flynn, French, Hawkins, Mandanna,
-  Fawcett. En R4/R5: solo King R5-018 (`ya_lo_lei`) y R5-025 (hoy).
-- Banco redescub M5: queda M5-034 *Su Último Saludo* (canon Doyle, con
-  cautela — dos redescub seguidos ya con sabor Sherlock) y M5-033
-  (compendio DK). Los 49 King restantes son el banco más seguro ahora
-  (autor con 2/2 aciertos contando a Hill). Reponer M5 con 2-3 autoras
-  de nicho antes de la próxima vez que le toque ese estante.
-- Banco nuevo: Becky Chambers (Monk & Robot) sigue como próximo nombre de
-  fantasía cálida found-family — reponer con 2-3 más antes de que se
-  agote. Círculo cozy clásico y Klune siguen agotados.
+Salas: King (R4+R5, 50 libros — usados: R5-018 `ya_lo_lei`, R5-025
+14/09). Aciertos duros (pre-20/08): Dicker HQ `lo_quiero`+`love`;
+Klune-mar-azul `me_tienta`+`love`; Haig *Medianoche* `lo_quiero`+`love`
+(única `todos`). Romance contemporáneo (Henry x2): descartado. Guardia
+máxima misterio/cozy: `ya_lo_lei` en King R5-018, Katzenbach, Carlisle,
+Benavent, Henry.
+- Quemados (autoridad única: `recommended.json`): Osman, Dicker, Hill,
+  Katzenbach, Carlisle, Benavent, Coyle, Klune, Heap House, Bennett,
+  canon Doyle, Delany, Haig, Christie, Peters, Backman, Flynn, French,
+  Hawkins, Mandanna, Fawcett, Chambers (15/09).
+- Banco redescub M5: M5-034 *Su Último Saludo* (Doyle, con cautela) y
+  M5-033 (compendio DK). Los 49 King restantes son el banco más seguro.
+  Reponer M5 con 2-3 autoras de nicho.
+- Banco nuevo found-family: EN CERO tras Chambers — reponer 2-3 nombres
+  (línea Chambers/Klune: cozy sci-fi o fantasía suave, sin gore) antes
+  del próximo turno "nuevo" de Sofi.
 
 ### Andy — datos duros
 Estante L4 (28+5), L5 astronomía (33). Gustos: wellness, autosuperación,
 positividad, astronomía, neurociencia, oriental, finanzas, fábulas.
-Idioma indistinto. Regla confirmada: autor identitario > clásico sin
-dueño; fábula corta sigue siendo el combo más seguro.
+Idioma indistinto. Autor identitario > clásico sin dueño; fábula corta
+sigue siendo el combo más seguro.
 - Botón cerrado: Rovelli, Bach Ilusiones, Holiday, Coelho, Kiyosaki.
-  Sin veredicto (9 en juego, ver alerta arriba): Haidt, Chodron,
-  Seligman, Wood, Hoyle, Sapolsky, Saint-Exupéry, Mack, Hábitos Atómicos,
-  Milagro de Mindfulness, Doidge, Carroll (hoy).
-- Astronomía: Rovelli (ACIERTO PLENO) y Cosmos (acierto redescub) siguen
-  siendo lo único con señal real; Hawking y Mack sin veredicto. Hoy se
-  cruza la veta con "sentido" vía Carroll en vez de sumar un tercer
-  nombre suelto de física. Banco nuevo corto tras esto — reponer.
-- Espiritualidad oriental: tocada de frente con Hanh (12/09), banco
-  mindfulness con solo Kabat-Zinn — reponer. Neurociencia: retomada con
-  Doidge (13/09, redescub); pausa por ahora, no sumar un tercer nombre
-  sin señal de los dos anteriores.
+  Sin veredicto (9): Haidt, Chodron, Seligman, Wood, Hoyle, Sapolsky,
+  Saint-Exupéry, Mack, Hábitos Atómicos, Milagro de Mindfulness, Doidge,
+  Carroll.
+- Astronomía: Rovelli (ACIERTO PLENO) y Cosmos (acierto redescub) únicos
+  con señal real; Hawking/Mack sin veredicto. Banco nuevo corto —
+  reponer. Oriental: tocada con Hanh (12/09), banco mindfulness solo
+  Kabat-Zinn — reponer. Neurociencia: pausa tras Doidge (13/09).
 
 ## 🛡️ Guardia
 Título+autor contra catálogo (sin tildes) y `recommended.json` —
-incluir variantes de nombre. Campo `to` obligatorio en `queue.json`.
-Revisar `subscription.json` cada corrida. `read_status` de enrichment
-no confiable para Sofi (Kindle paralelo); para Andy sí. Si TODAS las
-ediciones de Buscalibre figuran agotadas, declararlo y sumar
-alternativa verificada en vez de ocultarlo (hoy: Carroll es, edición ES).
+variantes de nombre incluidas. Campo `to` obligatorio en `queue.json`.
+Revisar `subscription.json` cada corrida. `read_status` de enrichment no
+confiable para Sofi (Kindle paralelo); para Andy sí. Si TODAS las
+ediciones de Buscalibre figuran agotadas, declararlo y sumar alternativa
+verificada en vez de ocultarlo.
 
 ## 🔭 Qué mirar (próxima corrida)
-(1) ¿Llegó señal nueva de Sofi o Andy? 2 días para el umbral del 16/09 de
-Sofi — si sigue en cero, escalar fuerte en la ficha de Andy. (2)
-Respuesta a `rec-canal` de Andy (nueva hoy) y de Sofi (repetida) — es la
-señal más importante a revisar. (3) Veredicto de Carroll/Instituto (hoy)
-y de Doidge/Fawcett (13/09, todavía sin tiempo de votar). (4) Confirmar
-201 en `send_log.json` de los dos pushes de hoy (09/14). (5) Reponer
-banco nuevo de astronomía y mindfulness para Andy (Kabat-Zinn); sumar
-Becky Chambers al banco found-family de Sofi y 2-3 autoras de nicho al
-banco redescub de M5 (fuera de los 49 King disponibles).
+(1) ¿Señal nueva de Sofi? Umbral 16/09 — si sigue en cero, escalar en la
+ficha de Andy. (2) Respuestas a `rec-canal` (Andy y Sofi) — prioridad
+máxima. (3) Veredictos pendientes: Carroll/Instituto (14/09),
+Doidge/Fawcett (13/09), Hanh/Delany (12/09). (4) Confirmar 201 en
+`send_log.json` del push de Sofi de hoy. (5) Reponer banco nuevo de
+astronomía/mindfulness (Andy) y found-family (Sofi, en cero); 2-3
+autoras de nicho al banco redescub M5.
 
 ## 🎬 CINE + 🧳 viaje (fuera del ciclo)
-Cine: viernes ~19:00, `todos` (= `to:["Andy","Sofi"]`; C-test NO es de la
-casa). La cadencia ahora la manda `notifications/preferences.json`
-(`streams.cine`), elegida por Andy el 15/09. **Función Nº 2 publicada el
-15/09 por pedido directo de Andy**, encolada para el viernes 18/09:
+Cine: viernes ~19:00, `todos` (`to:["Andy","Sofi"]`; C-test no es de la
+casa), cadencia en `streams.cine` (elegida por Andy 15/09). Función Nº2
+publicada 15/09, encolada para el viernes 18/09:
 `recs/2026-09-18-sala-02.html` (Un hombre infiltrado / Upload / Colegio
-Abbott). La Nº 3 se arma sobre SUS votos, no sobre los de la Nº 1.
-- **🚨 LAS TRES DE LA Nº 1 ESTÁN VISTAS**: omitb, arrival y severance con
-  `ya_la_vimos` (severance lo marcó Andy el 15/09). Nunca más ofrecerlas.
-- **Instrucción vigente de Andy (15/09, `rec-nota:2026-07-31-sala-01`)**:
-  *"Buenas recomendación. Pero las vimos todas. Partí de esas para más
-  recomendaciones similares."* → la Nº 2 hace exactamente eso: cada título
-  desciende de una de las dos semillas vivas. Seguir así hasta que diga otra.
-- **Semillas**: Only Murders (comedia con crimen) y Separación (rarezas con
-  reglas). `La llegada` NO es semilla: Sofi la marcó `no_va`.
-  La Nº 2 pregunta `cine-semilla:<id>` (only_murders / severance / las_dos /
-  otra_cosa) — **si contestan, la Nº 3 sale entera de ahí, sin repartir.**
-- El error de la Nº 1 fue de INFORMACIÓN, no de gusto. La Nº 2 abre una caja
-  `cine-vistas:<id>` — **leerla siempre antes de elegir títulos**; cada
-  título que escriban queda vetado para siempre.
-- Sofi pidió UNA por función, Andy TRES: se dan tres pero UNA es el plan, y
-  las tres con capítulos ≤46 min para que le sirvan a ella.
-- Intersección de géneros: comedia, histórico, animación, biopic.
-  Plataformas de ambas: Netflix, Prime, Disney+, Max. **Apple TV+ NO.**
-- Descartado y anotado: `Fallout` encajaba con Andy pero es el corte de gore
-  de Sofi. Sirve si alguna vez se pide algo solo para él.
+Abbott). La Nº3 se arma sobre SUS votos, no los de la Nº1.
+- **LAS TRES DE LA Nº1 ESTÁN VISTAS**: omitb, arrival y severance con
+  `ya_la_vimos` (severance marcada por Andy el 15/09). Nunca reofrecerlas.
+- Instrucción vigente de Andy (15/09, `rec-nota:2026-07-31-sala-01`):
+  "vimos todas, partí de esas para más recomendaciones similares" → la
+  Nº2 desciende de las dos semillas vivas (Only Murders, Separación).
+  Seguir así hasta que diga otra cosa.
+- La Nº2 pregunta `cine-semilla:<id>` — si contestan, la Nº3 sale entera
+  de ahí. `cine-vistas:<id>` se lee siempre antes de elegir títulos;
+  cada título que escriban queda vetado para siempre.
+- Sofi pidió UNA por función, Andy TRES (se dan tres, una es el plan,
+  capítulos ≤46 min). Intersección de géneros: comedia, histórico,
+  animación, biopic. Plataformas: Netflix, Prime, Disney+, Max. Apple
+  TV+ NO.
+- Descartado: `Fallout` encaja con Andy pero es el corte de gore de
+  Sofi — sirve si algún día se pide algo solo para él.
 
 ## 🧭 Sugerencias hub
 `recs/index.html` lee `recommended.json` por fetch — cero mantenimiento

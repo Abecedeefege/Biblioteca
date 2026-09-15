@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-15T18:47:33.224574Z",
+  "_updated_at": "2026-09-15T16:11:32-03:00",
   "notifications": [
     {
       "id": "2026-09-11-rec-andy",
@@ -1550,6 +1550,19 @@
         "Andy",
         "Sofi"
       ]
+    },
+    {
+      "id": "2026-09-15-rec-sofi",
+      "title": "🍵🤖 Un libro sin un solo crimen",
+      "body": "Monje y Robot (Becky Chambers): calidez sin misterio, la pregunta que te va a quedar dando vueltas. Nuevo, para vos.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-15-chambers-monje-robot.html",
+      "to": "Sofi",
+      "send_at": "2026-09-15T19:00:00-03:00",
+      "expires_at": "2026-09-15T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "recomendacion-agent 2026-09-15"
     }
   ]
 }
