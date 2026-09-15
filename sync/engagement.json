@@ -4431,7 +4431,16 @@
       "device": "Andy",
       "dwell_s": 16,
       "scroll_pct": 0
+    },
+    {
+      "id": "mu32u62s-ltagae",
+      "type": "answer",
+      "ts": "2026-09-15T19:40:45.508Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "qid": "cine-veredicto:upload",
+      "value": "me_tienta"
     }
   ],
-  "_updated_at": "2026-09-15T19:39:41.265Z"
+  "_updated_at": "2026-09-15T19:40:46.711Z"
 }
