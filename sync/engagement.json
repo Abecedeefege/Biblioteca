@@ -4458,7 +4458,24 @@
       "device": "Andy",
       "dwell_s": 13,
       "scroll_pct": 0
+    },
+    {
+      "id": "mu33m2b9-ssvwvw",
+      "type": "notification_clicked",
+      "ts": "2026-09-15T20:02:26.997Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "nid": "2026-09-18-cine",
+      "src": "push"
+    },
+    {
+      "id": "mu33m2ba-mmefvm",
+      "type": "page_visit",
+      "ts": "2026-09-15T20:02:26.998Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "nid": "2026-09-18-cine"
     }
   ],
-  "_updated_at": "2026-09-15T19:41:46.210Z"
+  "_updated_at": "2026-09-15T20:02:28.858Z"
 }
