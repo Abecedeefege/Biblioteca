@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-15T16:11:32-03:00",
+  "_updated_at": "2026-09-15T19:42:53.255958Z",
   "notifications": [
     {
       "id": "2026-09-11-rec-andy",
@@ -1540,16 +1540,17 @@
       "title": "🎬 La Sala vuelve: Función Nº 2",
       "body": "Tres series que no vieron, en fichas cortas: plataforma, duración, elenco y puntajes. Se pasa con el dedo.",
       "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-18-sala-02.html",
-      "send_at": "2026-09-18T19:00:00-03:00",
-      "expires_at": "2026-09-18T23:00:00-03:00",
+      "send_at": "2026-09-15T16:41:53-03:00",
+      "expires_at": "2026-09-15T20:42:53-03:00",
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "sala-02 (pedido de Andy 2026-09-15)",
+      "created_by": "sala-02 · adelantado a pedido de Andy (2026-09-15)",
       "to": [
         "Andy",
         "Sofi"
-      ]
+      ],
+      "ignore_floor": true
     },
     {
       "id": "2026-09-15-rec-sofi",
