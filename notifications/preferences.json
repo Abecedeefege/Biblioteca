@@ -1,13 +1,21 @@
 {
   "_comment": "Cadencia de las suscripciones de la casa. La escribe el browser (suscripcion/libros.html y suscripcion/cine.html) — directo por GitHub API si el dispositivo tiene PAT, o por el relay público, que tools/sync_devices.js baja acá en la corrida siguiente. La APLICA tools/send_push.js antes de enviar: si el día local del destinatario no está en 'days' (o el stream está en enabled:false para él), esa notificación se marca 'skipped' y no suena. Un stream sin entrada, o un dispositivo sin override, NO tiene puerta: se manda como siempre. Los agentes la leen para no fabricar fichas que nadie va a recibir.",
-  "_updated_at": "2026-09-15T14:30:00-03:00",
+  "_updated_at": "2026-09-15T18:09:07.169Z",
   "_dias": "ISO: 1=lunes … 7=domingo. 'per_week' es lo que eligió el dueño; 'days' es lo que se aplica (el mapa por defecto está en suscripcion/README.md, pero se pueden elegir días a mano).",
   "streams": {
     "libros": {
       "label": "Libros recomendados",
       "enabled": true,
       "per_week": 7,
-      "days": [1, 2, 3, 4, 5, 6, 7],
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
       "hour_local": 19,
       "updated_at": null,
       "updated_by": "default (régimen diario del 20/08, sin elección explícita todavía)"
@@ -16,11 +24,26 @@
       "label": "La Sala — películas y series",
       "enabled": true,
       "per_week": 1,
-      "days": [5],
+      "days": [
+        5
+      ],
       "hour_local": 19,
       "updated_at": null,
       "updated_by": "default (viernes, régimen del 26/07)"
     }
   },
-  "devices": {}
+  "devices": {
+    "Andy": {
+      "libros": {
+        "enabled": true,
+        "per_week": 2,
+        "days": [
+          3,
+          7
+        ],
+        "updated_at": "2026-09-15T18:09:07.169Z",
+        "updated_by": "Andy · suscripcion/libros.html"
+      }
+    }
+  }
 }
