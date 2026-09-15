@@ -143,19 +143,27 @@ Cine: viernes ~19:00, `todos` (= `to:["Andy","Sofi"]`; C-test NO es de la
 casa). La cadencia ahora la manda `notifications/preferences.json`
 (`streams.cine`), elegida por Andy el 15/09. **Función Nº 2 publicada el
 15/09 por pedido directo de Andy**, encolada para el viernes 18/09:
-`recs/2026-09-18-sala-02.html` (Un hombre infiltrado / Colegio Abbott /
-Fallout). La Nº 3 se arma sobre SUS votos, no sobre los de la Nº 1.
-Aprendizajes aplicados en la Nº 2, no repetir:
-- El error de la Nº 1 fue de INFORMACIÓN: 2 de 3 ya vistas. La Nº 2 abre
-  una caja de texto libre `cine-vistas:<id>` — **leerla siempre antes de
-  elegir títulos**; cada título que escriban queda vetado para siempre.
-- Sofi pidió UNA por función, Andy TRES. Resuelto con roles explícitos:
-  plan para los dos (~30 min/cap) + reserva para los dos + una de Andy solo.
-- Intersección de géneros de las dos listas: comedia, histórico, animación,
-  biopic. Plataformas de ambas: Netflix, Prime, Disney+, Max.
-- Severance NO se vuelve a recomendar a ciegas: está en Apple TV+, fuera de
-  las dos listas. La Nº 2 lo puso como decisión (`cine-apple:<id>` →
-  un_mes / mas_adelante / sacala). **Respetar lo que voten.**
+`recs/2026-09-18-sala-02.html` (Un hombre infiltrado / Upload / Colegio
+Abbott). La Nº 3 se arma sobre SUS votos, no sobre los de la Nº 1.
+- **🚨 LAS TRES DE LA Nº 1 ESTÁN VISTAS**: omitb, arrival y severance con
+  `ya_la_vimos` (severance lo marcó Andy el 15/09). Nunca más ofrecerlas.
+- **Instrucción vigente de Andy (15/09, `rec-nota:2026-07-31-sala-01`)**:
+  *"Buenas recomendación. Pero las vimos todas. Partí de esas para más
+  recomendaciones similares."* → la Nº 2 hace exactamente eso: cada título
+  desciende de una de las dos semillas vivas. Seguir así hasta que diga otra.
+- **Semillas**: Only Murders (comedia con crimen) y Separación (rarezas con
+  reglas). `La llegada` NO es semilla: Sofi la marcó `no_va`.
+  La Nº 2 pregunta `cine-semilla:<id>` (only_murders / severance / las_dos /
+  otra_cosa) — **si contestan, la Nº 3 sale entera de ahí, sin repartir.**
+- El error de la Nº 1 fue de INFORMACIÓN, no de gusto. La Nº 2 abre una caja
+  `cine-vistas:<id>` — **leerla siempre antes de elegir títulos**; cada
+  título que escriban queda vetado para siempre.
+- Sofi pidió UNA por función, Andy TRES: se dan tres pero UNA es el plan, y
+  las tres con capítulos ≤46 min para que le sirvan a ella.
+- Intersección de géneros: comedia, histórico, animación, biopic.
+  Plataformas de ambas: Netflix, Prime, Disney+, Max. **Apple TV+ NO.**
+- Descartado y anotado: `Fallout` encajaba con Andy pero es el corte de gore
+  de Sofi. Sirve si alguna vez se pide algo solo para él.
 
 ## 🧭 Sugerencias hub
 `recs/index.html` lee `recommended.json` por fetch — cero mantenimiento

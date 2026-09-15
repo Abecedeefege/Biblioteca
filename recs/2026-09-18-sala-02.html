@@ -82,11 +82,11 @@ button{font-family:var(--sans);cursor:pointer}
 .tc-poster::before{content:"";position:absolute;inset:0;opacity:.5;background-image:radial-gradient(circle at 20% 20%,rgba(255,255,255,.12) 0,transparent 40%),radial-gradient(circle at 85% 75%,rgba(255,255,255,.08) 0,transparent 45%)}
 #card-infiltrado .tc-poster{background:linear-gradient(155deg,#16212E 0%,#2C4A5E 52%,#87B5B0 100%)}
 #card-abbott .tc-poster{background:linear-gradient(155deg,#2A2110 0%,#6B4E12 52%,#D8B04A 100%)}
-#card-fallout .tc-poster{background:linear-gradient(155deg,#1B1508 0%,#5C3A10 50%,#C2913A 100%)}
+#card-upload .tc-poster{background:linear-gradient(155deg,#0E1A24 0%,#1F4A5C 50%,#7FD1D8 100%)}
 .tc-badges{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:auto}
 .tc-forma{display:inline-block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--sala);background:var(--oro);border-radius:999px;padding:.3rem .85rem;white-space:nowrap}
-.tc-badges{gap:.6rem}
-.tc-rating{white-space:nowrap}
+.tc-badges{gap:.6rem;flex-wrap:wrap}
+.tc-rating{min-width:0}
 .titulo-card:not(.destacada) .tc-forma{background:rgba(10,10,12,.55);color:var(--oro-hi);border:1px solid rgba(232,180,74,.5)}
 .tc-rating{font-size:.78rem;font-weight:700;color:var(--sala);background:var(--hueso);border-radius:999px;padding:.3rem .8rem;white-space:nowrap}
 .tc-poster h3{position:relative;z-index:2;font-size:clamp(1.7rem,1.3rem + 2vw,2.4rem);line-height:1.08;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.4);margin-top:1.4rem}
@@ -163,7 +163,7 @@ footer em{font-family:var(--serif)}
     <div class="bombillas"><i></i><i></i><i></i><i></i><i></i></div>
     <p class="num-funcion">La Sala · Función Nº 2</p>
     <h1>Seis viernes <em>tarde</em></h1>
-    <p class="sub">La Nº 1 fue el 31 de julio. No hay excusa buena, así que empiezo por lo que esa función me enseñó — que fue bastante.</p>
+    <p class="sub">La Nº 1 fue el 31 de julio. No hay excusa buena — así que esta función está armada con la instrucción que Andy dejó hoy, palabra por palabra.</p>
   </div>
   <p class="hero-hint">Bajá ↓</p>
 </header>
@@ -176,7 +176,7 @@ footer em{font-family:var(--serif)}
     <p class="bajada rev d2">Votaron las tres. Eso fue lo mejor que pasó: sin esos votos esta función sería otra vez a ciegas.</p>
 
     <div class="aviso rev d2">
-      <p><b>Dos de las tres ya las habían visto.</b> <em>Only Murders</em> la marcaron los dos, <em>La llegada</em> la marcó Andy. Les recomendé cosas que ya estaban vistas: ese fue el error grande, y no fue de gusto sino de información — yo no tenía forma de saber qué habían visto. Abajo de todo hay una caja para arreglar eso de una vez.</p>
+      <p><b>Las tres ya las habían visto.</b> Arrancó en dos —<em>Only Murders</em> y <em>La llegada</em>— y el 15 de setiembre Andy marcó también <em>Separación</em>: tres de tres. Les recomendé una función entera de cosas ya vistas. No fue un error de gusto sino de información: yo no tenía forma de saber qué habían visto. Abajo de todo hay una caja para que no vuelva a pasar.</p>
     </div>
 
     <div class="aviso rev d2">
@@ -184,7 +184,7 @@ footer em{font-family:var(--serif)}
     </div>
 
     <div class="aviso rev d2">
-      <p><b><em>Separación</em> fue lo único que despertó interés real</b> — «me tienta», de Andy. Y ahí me equivoqué feo en otra cosa: está en Apple TV+, que no está en ninguna de las dos listas de plataformas que me dieron. Les recomendé algo que no pueden ver. Más abajo lo pongo sobre la mesa en vez de repetirlo.</p>
+      <p><b>Y después llegó la instrucción que importa.</b> Andy, el 15 de setiembre, en la caja de la Nº 1: <em>«Buenas recomendación. Pero las vimos todas. Partí de esas para más recomendaciones similares.»</em> Eso es exactamente lo que hace esta función — no es un cambio de rumbo, es seguir el que ya funcionaba con títulos que todavía no vieron.</p>
     </div>
   </div>
 </section>
@@ -194,28 +194,28 @@ footer em{font-family:var(--serif)}
   <div class="centro">
     <p class="kicker rev">El cambio de fondo</p>
     <h2 class="titulo rev d1">Sofi quiere una. Andy quiere tres.</h2>
-    <p class="bajada rev d2">Está en la entrevista de julio, textual: Sofi puso <b>una</b>, Andy puso <b>tres</b>. La Nº 1 tiró tres títulos parejos y los trató a los dos igual. Esta función se parte al medio.</p>
+    <p class="bajada rev d2">Está en la entrevista de julio, textual: Sofi puso <b>una</b>, Andy puso <b>tres</b>. Esta función da tres, pero una sola es el plan — y las tres tienen capítulos de media hora o menos, que es el rato que Sofi dijo que tiene. Ninguna es relleno y ninguna pide una plataforma que no tengan.</p>
 
     <div class="reparto rev d2">
       <div class="fila">
-        <span class="quien">Uno · para los dos</span>
-        <div class="que">El plan del viernes.</div>
-        <div class="det">Una sola. Capítulos de media hora, que es lo que Sofi dijo que tiene. Si esta noche eligen algo, es esta.</div>
+        <span class="quien">Uno · el plan del viernes</span>
+        <div class="que">Sale de <em>Only Murders</em>.</div>
+        <div class="det">Misma familia: comedia con un crimen adentro y gente grande resolviéndolo. La diferencia es que esta no la vieron.</div>
       </div>
       <div class="fila">
-        <span class="quien">Dos · para los dos</span>
-        <div class="que">La reserva.</div>
-        <div class="det">Por si la primera ya la vieron, o por si quieren algo todavía más liviano. No compite con el plan: lo cubre.</div>
+        <span class="quien">Dos · la otra semilla</span>
+        <div class="que">Sale de <em>Separación</em>.</div>
+        <div class="det">La misma pregunta —una empresa que te maneja quién sos— pero en comedia y con un asesinato para resolver. Y está terminada: no hay que esperar a 2027.</div>
       </div>
       <div class="fila">
-        <span class="quien">Tres · solo Andy</span>
-        <div class="que">La tuya, para cuando estés solo.</div>
-        <div class="det">Andy pidió tres y su lista de géneros es más ancha. Esta no es para ver de a dos, y digo abiertamente por qué.</div>
+        <span class="quien">Tres · la liviana</span>
+        <div class="que">Para una noche sin ganas de nada.</div>
+        <div class="det">Veintidós minutos, cero trama que seguir. La red de seguridad de la función.</div>
       </div>
     </div>
 
     <div class="cortes rev d3">
-      <div><b>Los cortes de Sofi:</b> nada de gore, sexo explícito, violencia a chicos ni a animales. El título 3 rompe el primero — por eso es solo de Andy, y está avisado en su tarjeta.</div>
+      <div><b>Los cortes de Sofi:</b> nada de gore, sexo explícito, violencia a chicos ni a animales. Las tres pasan. Quedó afuera más de un candidato por esto — entre ellos <em>Fallout</em>, que encajaba con Andy y era exactamente el primer corte de ella.</div>
       <div><b>Los cortes de Andy:</b> nada triste, nada de política. Donde algo roza lo primero, lo digo en la letra chica y no lo escondo.</div>
       <div><b>Plataformas:</b> solo Netflix, Prime Video, Disney+ y Max — las cuatro que están en las dos listas. Nada de pedirles una suscripción nueva sin preguntar.</div>
       <div><b>Idioma:</b> los dos pusieron subtítulos siempre. Ninguna de estas hace falta verla doblada.</div>
@@ -233,7 +233,7 @@ footer em{font-family:var(--serif)}
       <div class="opciones">
         <button type="button" data-t="corto">⏱️ Veinte minutos y a dormir</button>
         <button type="button" data-t="medio">🕐 Media hora larga</button>
-        <button type="button" data-t="solo">🌙 Estoy solo, Andy</button>
+        <button type="button" data-t="solo">🌙 Queremos engancharnos con algo</button>
       </div>
       <div class="salida" id="salida">Tocá una opción.</div>
     </div>
@@ -298,8 +298,64 @@ footer em{font-family:var(--serif)}
 <!-- ============ TÍTULO 2 ============ -->
 <section class="seccion" style="background:var(--sala2)">
   <div class="centro">
-    <p class="kicker rev">Dos · la reserva</p>
-    <h2 class="titulo rev d1">Si la primera ya la vieron</h2>
+    <p class="kicker rev">Dos · la que sale de Separación</p>
+    <h2 class="titulo rev d1">La misma pregunta, pero en comedia y con un muerto</h2>
+    <p class="bajada rev d2">Andy dijo «partí de esas». <em>Separación</em> es una de las dos que sobrevivieron, y esto es lo más parecido que hay fuera de Apple TV+: una empresa que decide quién sos, un misterio con reglas — y risa.</p>
+
+    <article class="titulo-card destacada rev d1" id="card-upload">
+      <div class="tc-poster">
+        <div class="tc-badges">
+          <span class="tc-forma">Para los dos</span>
+          <span class="tc-rating">88–100% · Rotten Tomatoes</span>
+        </div>
+        <h3>Upload</h3>
+        <p class="tc-tag">Ciencia ficción · comedia · sátira · 2020–2025</p>
+      </div>
+      <p class="tc-meta">Serie · cuatro temporadas, 29 capítulos · 24 a 46 minutos · Prime Video · <b>terminada</b></p>
+      <div class="tc-cuerpo">
+        <p>En 2033 se puede subir la conciencia a una vida después de la muerte, administrada por empresas. Nathan, programador, se muere joven y despierta en Lakeview, un resort virtual de lujo donde todo —hasta cuánta comida podés comer— depende del plan que alguien esté pagando por vos.</p>
+        <p>Nora, la empleada de atención al cliente que lo asiste desde el mundo real, empieza a sospechar que la muerte de Nathan no fue un accidente.</p>
+      </div>
+      <div class="tc-cast">
+        <span>🎭 Robbie Amell</span><span>🎭 Andy Allo</span><span>🎭 Allegra Edwards</span><span>🎭 Zainab Johnson</span><span>🎭 Kevin Bigley</span>
+      </div>
+      <div class="tc-parecidos">
+        <span class="et">Se parece a</span>
+        <div class="chips"><span>Separación, en clave de comedia</span><span>The Good Place</span><span>Black Mirror, pero amable</span></div>
+      </div>
+      <details class="tc-larga">
+        <summary>Sinopsis larga, sin spoilers</summary>
+        <div class="larga-cuerpo">La creó <b>Greg Daniels</b> — el que adaptó <em>The Office</em> a los Estados Unidos y co-creó <em>Parks and Recreation</em>. Es el mismo linaje que el título de arriba, y las dos series de Daniels están en la lista de amadas de Andy. Son cuatro temporadas: 10, 7, 8 y 4 capítulos. <b>Terminó el 25 de agosto de 2025</b>, así que empieza y cierra. Rotten Tomatoes le dio 88% a la primera temporada, 100% a la segunda y 88% a la tercera; Metacritic, 67, 72 y 65.</div>
+      </details>
+      <div class="tc-links">
+        <a class="trailer" href="https://www.youtube.com/watch?v=zlBpjvyC4b8" target="_blank" rel="noopener">▶ Tráiler oficial (Prime Video México)</a>
+        <a class="imdb" href="https://www.rottentomatoes.com/tv/upload" target="_blank" rel="noopener">Críticas ↗</a>
+      </div>
+      <div class="porque">
+        <span class="et">Por qué esta, para ustedes</span>
+        <p><b>Andy:</b> es la pregunta de <em>Separación</em> —si una empresa maneja quién sos, ¿seguís siendo vos?— pero contada con chistes en vez de con angustia. Pusiste ciencia ficción, comedia y «pensar» entre lo que buscás: acá están los tres sin pelearse. Y es de Greg Daniels, que es de dónde salió <em>The Office</em>.</p>
+        <p><b>Sofi:</b> abajo de la comedia hay un asesinato que se investiga durante toda la serie, con reglas claras y pistas que se pueden ir juntando. Policial y misterio son dos de tus géneros, y los capítulos son cortos.</p>
+      </div>
+      <div class="franqueza"><b>La letra chica:</b> la cuarta temporada son solo cuatro capítulos — se nota que la cerraron con lo que tenían. Igual cierra de verdad, que es más de lo que puede decir <em>Separación</em>. Y la primera media hora parece una comedia romántica liviana: la trama pesada arranca después.</div>
+      <div class="tc-voto">
+        <p class="pregunta">¿Qué hacemos con esta?</p>
+        <div>
+          <button onclick="engageAnswer('cine-veredicto:upload','la_vemos',this)">🍿 Esta vemos</button>
+          <button onclick="engageAnswer('cine-veredicto:upload','me_tienta',this)">🤔 Me tienta</button>
+          <button onclick="engageAnswer('cine-veredicto:upload','ya_la_vimos',this)">✔️ Ya la vimos</button>
+          <button onclick="engageAnswer('cine-veredicto:upload','no_va',this)">🙅 No va</button>
+          <span class="q-hint"></span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ TÍTULO 3 ============ -->
+<section class="seccion">
+  <div class="centro">
+    <p class="kicker rev">Tres · la liviana</p>
+    <h2 class="titulo rev d1">Para una noche sin ganas de nada</h2>
 
     <article class="titulo-card rev d1" id="card-abbott">
       <div class="tc-poster">
@@ -349,77 +405,23 @@ footer em{font-family:var(--serif)}
   </div>
 </section>
 
-<!-- ============ TÍTULO 3 ============ -->
-<section class="seccion">
-  <div class="centro">
-    <p class="kicker rev">Tres · solo para Andy</p>
-    <h2 class="titulo rev d1">Esta no es para ver de a dos, y no es un descuido</h2>
-    <p class="bajada rev d2">Sofi puso «gore» como primer corte de la lista. Esta serie es sangrienta a propósito. Así que no entra como plan de viernes: entra como la tercera que Andy pidió, para una noche suya.</p>
-
-    <article class="titulo-card rev d1" id="card-fallout">
-      <div class="tc-poster">
-        <div class="tc-badges">
-          <span class="tc-forma">Solo Andy</span>
-          <span class="tc-rating">93% y 96% · Rotten Tomatoes</span>
-        </div>
-        <h3>Fallout</h3>
-        <p class="tc-tag">Ciencia ficción · acción · western posapocalíptico · 2024–presente</p>
-      </div>
-      <p class="tc-meta">Serie · dos temporadas, 8 capítulos cada una · 45 a 74 minutos · Prime Video</p>
-      <div class="tc-cuerpo">
-        <p>Doscientos diecinueve años después de una guerra nuclear, una chica criada en un búnker sale por primera vez a la superficie a buscar a su padre secuestrado. Afuera encuentra un Los Ángeles arrasado, un cazarrecompensas que lleva doscientos años dando vueltas y una orden de soldados con armadura.</p>
-      </div>
-      <div class="tc-cast">
-        <span>🎭 Ella Purnell</span><span>🎭 Walton Goggins</span><span>🎭 Aaron Moten</span><span>🎭 Kyle MacLachlan</span><span>🎭 Moisés Arias</span>
-      </div>
-      <div class="tc-parecidos">
-        <span class="et">Se parece a</span>
-        <div class="chips"><span>Mad Max</span><span>El Renacido, pero con chistes</span><span>Un western con traje espacial</span></div>
-      </div>
-      <details class="tc-larga">
-        <summary>Sinopsis larga, sin spoilers</summary>
-        <div class="larga-cuerpo">Está basada en la saga de videojuegos del mismo nombre, pero no hace falta haber jugado nada: es una historia nueva en ese mundo. La crearon Graham Wagner y Geneva Robertson-Dworet. El tono es raro y funciona: apocalipsis, humor negro y estética de los años cincuenta en la misma escena. La segunda temporada se estrenó entre diciembre de 2025 y febrero de 2026, así que están las dos completas. Rotten Tomatoes 93% y 96%; Metacritic 73 en las dos.</div>
-      </details>
-      <div class="tc-links">
-        <a class="trailer" href="https://www.youtube.com/watch?v=LMr-gHyBZrY" target="_blank" rel="noopener">▶ Tráiler oficial T2 (Prime Video Latinoamérica)</a>
-        <a class="imdb" href="https://www.rottentomatoes.com/tv/fallout" target="_blank" rel="noopener">Críticas ↗</a>
-      </div>
-      <div class="porque">
-        <span class="et">Por qué esta, para vos</span>
-        <p><b>Andy:</b> ciencia ficción y acción son dos de tus ocho géneros, y esta las cruza con humor, que es lo que pediste para desconectar. Nada de política y nada de bajón: es una aventura grande, rara y divertida. De paso, es lo más lejos que hay de un policial cómico — si la Nº 1 te quedó toda en el mismo tono, esta es el contrapeso.</p>
-      </div>
-      <div class="franqueza"><b>Por qué no es para Sofi:</b> la violencia gráfica es parte del tono, no un accidente — hay sangre, mutilaciones y humor negro alrededor de eso. Es exactamente el corte que ella puso primero en su lista. Si igual la quieren probar juntos, que sea una decisión de ustedes, no una recomendación mía.</div>
-      <div class="tc-voto">
-        <p class="pregunta">Andy, ¿qué hacemos con esta?</p>
-        <div>
-          <button onclick="engageAnswer('cine-veredicto:fallout','la_vemos',this)">🍿 Esta veo</button>
-          <button onclick="engageAnswer('cine-veredicto:fallout','me_tienta',this)">🤔 Me tienta</button>
-          <button onclick="engageAnswer('cine-veredicto:fallout','ya_la_vimos',this)">✔️ Ya la vi</button>
-          <button onclick="engageAnswer('cine-veredicto:fallout','no_va',this)">🙅 No va</button>
-          <span class="q-hint"></span>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ============ SEVERANCE ============ -->
+<!-- ============ DE CUÁL MÁS ============ -->
 <section class="seccion" style="background:var(--sala2)">
   <div class="centro">
-    <p class="kicker rev">El asunto pendiente</p>
-    <h2 class="titulo rev d1">Separación sigue ahí, y hay que decidir</h2>
+    <p class="kicker rev">Para afinar la Nº 3</p>
+    <h2 class="titulo rev d1">¿De cuál de las dos querés más?</h2>
 
     <div class="pendiente rev d2">
-      <h3>Lo que sé hoy</h3>
-      <p><span class="dato">Fue lo único de la Nº 1 que te tentó de verdad, Andy.</span> Y es la única que no puedo poner como plan, porque está en <b>Apple TV+</b> — que no está en tu lista de plataformas ni en la de Sofi.</p>
-      <p>Las dos temporadas que existen están completas: 19 capítulos. <span class="dato">La tercera empezó a filmarse en julio de 2026</span> y la prensa especializada la ubica entre mediados y fines de 2027. O sea: si arrancan ahora, terminan las dos y esperan más de un año.</p>
-      <p>No la voy a volver a poner en una función como si nada. Decidan ustedes y yo obedezco:</p>
+      <h3>Cómo leí tu nota</h3>
+      <p><span class="dato">«Partí de esas para más recomendaciones similares.»</span> De las tres de la Nº 1 tomé dos como semilla: <em>Only Murders</em> y <em>Separación</em>. <b>Dejé afuera <em>La llegada</em></b> — no porque no te haya gustado a vos, sino porque Sofi la marcó «no va», y la función es para los dos.</p>
+      <p>Si me decís de cuál querés más, la Nº 3 sale entera de ahí en vez de repartir.</p>
       <div class="cta" style="margin-top:1.2rem">
-        ¿Qué hacemos con Apple TV+?
+        ¿Por dónde sigo?
         <div>
-          <button onclick="engageAnswer('cine-apple:2026-09-18-sala-02','un_mes',this)">📺 Un mes y la hacemos</button>
-          <button onclick="engageAnswer('cine-apple:2026-09-18-sala-02','mas_adelante',this)">⏳ Más adelante</button>
-          <button onclick="engageAnswer('cine-apple:2026-09-18-sala-02','sacala',this)">🗑️ Sacala del radar</button>
+          <button onclick="engageAnswer('cine-semilla:2026-09-18-sala-02','only_murders',this)">🔍 Más comedia con crimen</button>
+          <button onclick="engageAnswer('cine-semilla:2026-09-18-sala-02','severance',this)">🌀 Más rarezas con reglas</button>
+          <button onclick="engageAnswer('cine-semilla:2026-09-18-sala-02','las_dos',this)">🤝 Las dos, mitad y mitad</button>
+          <button onclick="engageAnswer('cine-semilla:2026-09-18-sala-02','otra_cosa',this)">↩️ Ninguna, cambiá de rumbo</button>
           <span class="q-hint"></span>
         </div>
       </div>
@@ -432,7 +434,7 @@ footer em{font-family:var(--serif)}
   <div class="centro">
     <p class="kicker rev">Para que no se repita</p>
     <h2 class="titulo rev d1">¿Qué vieron últimamente?</h2>
-    <p class="bajada rev d2">Esta es la caja que faltaba. Dos de los tres títulos de la Nº 1 fallaron por esto y nada más: no tengo cómo saber qué ya vieron. Tirá lo que se les venga a la cabeza — series, películas, lo que sea, sin orden ni formato. Cada título que escriban acá es uno que no les vuelvo a ofrecer.</p>
+    <p class="bajada rev d2">Esta es la caja que faltaba. Los tres títulos de la Nº 1 fallaron por esto y nada más: no tengo cómo saber qué ya vieron. Tirá lo que se les venga a la cabeza — series, películas, lo que sea, sin orden ni formato. Cada título que escriban acá es uno que no les vuelvo a ofrecer.</p>
     <div class="cta rev d2">
       <label for="vistas-2026-09-18-sala-02" style="display:block;margin-bottom:.6rem;font-family:var(--sans);font-size:.95rem;color:var(--bruma)">Lo que vieron en el último año, más o menos</label>
       <textarea id="vistas-2026-09-18-sala-02" rows="4" placeholder="The Bear, Succession, la de los Menéndez, Duna 2, la de Ted Lasso…"></textarea>
@@ -447,7 +449,7 @@ footer em{font-family:var(--serif)}
 <!-- ============ CIERRE ============ -->
 <section class="seccion cierre">
   <div class="centro">
-    <p class="frase rev">La Nº 1 falló por falta de datos, no por falta de gusto. <b>Esta función existe para arreglar eso.</b></p>
+    <p class="frase rev">«Partí de esas para más recomendaciones similares.» <b>Eso hice.</b></p>
 
     <div class="react rev d1">
       ¿Te gustó esta función?
@@ -476,8 +478,8 @@ footer em{font-family:var(--serif)}
 
 <footer>
   <em>La Sala</em> · Función Nº 2 · viernes 18 de setiembre de 2026<br>
-  Datos verificados contra las fichas oficiales de cada serie y su recepción crítica.<br>
-  Los votos de acá arriba arman la Nº 3.
+  Armada con la entrevista del 26/07 y los votos de la Nº 1, incluida la nota del 15/09.<br>
+  Datos verificados contra las fichas de cada serie y su recepción crítica. Los votos de acá arriba arman la Nº 3.
 </footer>
 
 <script>
@@ -494,7 +496,7 @@ footer em{font-family:var(--serif)}
   var SALIDA={
     corto:'Entonces es <b>Colegio Abbott</b>. Veintidós minutos, empieza y termina, y si se duermen no perdieron ningún hilo. <em>Está en Disney+, en la sección Star.</em>',
     medio:'Entonces es <b>Un hombre infiltrado</b> — el plan de la noche. Media hora por capítulo y ocho en total. <em>Netflix, y el tráiler está en su tarjeta.</em>',
-    solo:'Entonces <b>Fallout</b>, Andy. Capítulos largos y una aventura grande. <em>Ojo: es sangrienta de verdad, por eso no es para ver con Sofi.</em>'
+    solo:'Entonces <b>Upload</b>. Veintinueve capítulos, cuatro temporadas y un final que ya existe. <em>Empieza como comedia y a los dos capítulos hay un asesinato que resolver.</em>'
   };
   $$('.selector .opciones button').forEach(function(b){
     b.addEventListener('click',function(){

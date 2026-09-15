@@ -1,6 +1,6 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-15T15:47:33-03:00",
+  "_updated_at": "2026-09-15T15:55:05-03:00",
   "_feedback_cutoff": "2026-09-12T00:42:32.857Z",
   "recommendations": [
     {
@@ -2508,8 +2508,8 @@
       "id": "2026-09-18-sala-02",
       "date": "2026-09-18",
       "kind": "cine",
-      "title": "La Sala — Función Nº 2: el plan, la reserva y la de Andy",
-      "author": "Un hombre infiltrado · Colegio Abbott · Fallout",
+      "title": "La Sala — Función Nº 2: tres que salen de las que ya vieron",
+      "author": "Un hombre infiltrado · Upload · Colegio Abbott",
       "language": "es",
       "topics": [
         "cine",
@@ -2520,7 +2520,7 @@
       "audience": "todos",
       "page": "recs/2026-09-18-sala-02.html",
       "notified_by": "2026-09-18-cine",
-      "why": "Pedido directo de Andy (15/09): reactivar La Sala con el feedback ya dado. Reconstruida desde los dos cuerpos de feedback que estaban sin usar: la entrevista del 26/07 (14 respuestas de Andy, 13 de Sofi) y los votos de la Nº 1 del 31/07. Tres decisiones de fondo. (1) El error de la Nº 1 fue de INFORMACIÓN, no de gusto: 2 de 3 títulos ya los habían visto (OMitB los dos, Arrival Andy) — por eso la función abre reconociéndolo y cierra con una caja de texto libre 'qué vieron últimamente' (qid cine-vistas), que es la guardia que faltaba. (2) Se resuelve el choque Sofi=1 / Andy=3 partiendo la función en tres roles explícitos en vez de tres títulos parejos: uno es EL plan para los dos (capítulos de ~30 min, que es el rato que declaró Sofi), otro es la reserva para los dos, y el tercero es de Andy solo. (3) El tercero (Fallout) es sangriento y 'gore' es el primer corte de Sofi: en vez de omitirlo o disimularlo, se publica etiquetado 'Solo Andy' con el motivo escrito — la guardia de ella funcionando a la vista. Intersección de géneros de las dos listas: comedia, histórico, animación y biopic; comedia es la única que sirve un viernes. Plataformas acotadas a las cuatro que están en ambas listas (Netflix, Prime, Disney+, Max). Severance, único 'me tienta' de la Nº 1, NO se repite como recomendación: está en Apple TV+, que no figura en ninguna de las dos listas — se pone como decisión explícita (qid cine-apple: un mes / más adelante / sacala) con el dato verificado de que la T3 se empezó a filmar en julio de 2026 y la prensa la ubica en 2027. Datos verificados contra las fichas de cada serie: temporadas, capítulos, duración, elenco, plataforma y porcentajes de Rotten Tomatoes y Metacritic. Los dos tráilers linkeados se confirmaron por la API de oEmbed como oficiales (Netflix Latinoamérica y Prime Video Latinoamérica); no se linkea IMDb porque devolvió 202 al chequeo en vivo y la regla de la casa es linkear solo lo que da 200.",
+      "why": "Pedido directo de Andy (15/09): reactivar La Sala con el feedback ya dado. REESCRITA el mismo día, porque mientras se construía el relay bajó feedback nuevo que invalidaba media función: Andy marcó cine-veredicto:severance = ya_la_vimos y dejó la nota 'Buenas recomendación. Pero las vimos todas. Partí de esas para más recomendaciones similares.' O sea: las TRES de la Nº 1 estaban vistas, no dos, y Severance dejó de ser un 'me tienta' pendiente. Se cayó la sección que preguntaba si pagar Apple TV+ (habría sido exactamente el error que la función critica) y se cayó Fallout, que era el tercer título y no descendía de ninguna de las tres. Versión final: los tres títulos DESCIENDEN de lo que sobrevivió. (1) Un hombre infiltrado ← Only Murders: misma familia exacta, comedia con crimen y gente grande, Netflix, 27-38 min. (2) Upload ← Separación: la misma pregunta (una empresa que administra quién sos) en clave de comedia, con un asesinato investigado a lo largo de la serie, Prime Video, 24-46 min, TERMINADA en agosto de 2025 — responde también a la queja implícita de que Severance no cierra hasta 2027. Bonus verificado: la creó Greg Daniels, que adaptó The Office y co-creó Parks and Rec, igual que Mike Schur en el título 1; las dos están en la lista de 'amaste' de Andy. (3) Colegio Abbott como la liviana, 22 min, falso documental (el formato de The Office y Modern Family). La llegada NO se usa como semilla y se dice por qué: Sofi la marcó 'no va'. Las tres pasan los cortes de los dos y están en las cuatro plataformas comunes; Fallout quedó explícitamente descartada en el texto por el corte de gore de Sofi. Dos preguntas nuevas: cine-vistas (texto libre con lo que ya vieron, la guardia que faltaba) y cine-semilla (de cuál de las dos semillas quieren más, para que la Nº 3 no reparta). Datos verificados uno por uno; los dos tráilers confirmados por oEmbed como canales oficiales (Netflix Latinoamérica y Prime Video México); IMDb no se linkea porque dio 202 en el chequeo en vivo.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
