@@ -4395,7 +4395,25 @@
       "device": "Andy",
       "dwell_s": 55,
       "scroll_pct": 30
+    },
+    {
+      "id": "mu32q21z-dourf7",
+      "type": "answer",
+      "ts": "2026-09-15T19:37:33.671Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "qid": "cine-veredicto:upload",
+      "value": "me_tienta"
+    },
+    {
+      "id": "mu32q3gd-jtj25w",
+      "type": "dwell",
+      "ts": "2026-09-15T19:37:35.485Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "dwell_s": 55,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-09-15T19:24:02.985Z"
+  "_updated_at": "2026-09-15T19:37:35.578Z"
 }
