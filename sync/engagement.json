@@ -4299,7 +4299,16 @@
       "device": "Andy",
       "qid": "cine-veredicto:severance",
       "value": "ya_la_vimos"
+    },
+    {
+      "id": "mu306biq-mebhjv",
+      "type": "answer",
+      "ts": "2026-09-15T18:26:13.586Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "cine-plataformas-rapido",
+      "value": "netflix_prime"
     }
   ],
-  "_updated_at": "2026-09-15T18:26:09.071Z"
+  "_updated_at": "2026-09-15T18:26:14.793Z"
 }
