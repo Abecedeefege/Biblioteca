@@ -4475,7 +4475,16 @@
       "page": "2026-09-18-sala-02.html",
       "device": "Andy",
       "nid": "2026-09-18-cine"
+    },
+    {
+      "id": "mu33moj4-vyxpi3",
+      "type": "dwell",
+      "ts": "2026-09-15T20:02:55.792Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "dwell_s": 29,
+      "scroll_pct": 0
     }
   ],
-  "_updated_at": "2026-09-15T20:02:28.858Z"
+  "_updated_at": "2026-09-15T20:02:57.629Z"
 }
