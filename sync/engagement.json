@@ -4317,7 +4317,16 @@
       "device": "Andy",
       "qid": "cine-dia-rapido",
       "value": "viernes_si"
+    },
+    {
+      "id": "mu3078pg-5lya5w",
+      "type": "answer",
+      "ts": "2026-09-15T18:26:56.596Z",
+      "page": "2026-07-31-sala-01.html",
+      "device": "Andy",
+      "qid": "rec-nota:2026-07-31-sala-01",
+      "value": "Buenas recomendación. Pero las vimos todas.  Parti de esas para más recomendaciónes similares"
     }
   ],
-  "_updated_at": "2026-09-15T18:26:23.869Z"
+  "_updated_at": "2026-09-15T18:26:58.335Z"
 }
