@@ -139,9 +139,23 @@ Becky Chambers al banco found-family de Sofi y 2-3 autoras de nicho al
 banco redescub de M5 (fuera de los 49 King disponibles).
 
 ## 🎬 CINE + 🧳 viaje (fuera del ciclo)
-Cine: 1/semana, `todos`, viernes ~19:00. Sofi evita gore/subtítulos;
-Andy evita "triste", nunca doblado. Severance "me tienta" Andy —
-candidata fuerte. Sin Función Nº2 desde 31/07.
+Cine: viernes ~19:00, `todos` (= `to:["Andy","Sofi"]`; C-test NO es de la
+casa). La cadencia ahora la manda `notifications/preferences.json`
+(`streams.cine`), elegida por Andy el 15/09. **Función Nº 2 publicada el
+15/09 por pedido directo de Andy**, encolada para el viernes 18/09:
+`recs/2026-09-18-sala-02.html` (Un hombre infiltrado / Colegio Abbott /
+Fallout). La Nº 3 se arma sobre SUS votos, no sobre los de la Nº 1.
+Aprendizajes aplicados en la Nº 2, no repetir:
+- El error de la Nº 1 fue de INFORMACIÓN: 2 de 3 ya vistas. La Nº 2 abre
+  una caja de texto libre `cine-vistas:<id>` — **leerla siempre antes de
+  elegir títulos**; cada título que escriban queda vetado para siempre.
+- Sofi pidió UNA por función, Andy TRES. Resuelto con roles explícitos:
+  plan para los dos (~30 min/cap) + reserva para los dos + una de Andy solo.
+- Intersección de géneros de las dos listas: comedia, histórico, animación,
+  biopic. Plataformas de ambas: Netflix, Prime, Disney+, Max.
+- Severance NO se vuelve a recomendar a ciegas: está en Apple TV+, fuera de
+  las dos listas. La Nº 2 lo puso como decisión (`cine-apple:<id>` →
+  un_mes / mas_adelante / sacala). **Respetar lo que voten.**
 
 ## 🧭 Sugerencias hub
 `recs/index.html` lee `recommended.json` por fetch — cero mantenimiento

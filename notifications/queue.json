@@ -1,6 +1,6 @@
 {
   "_comment": "Cola de pushes. La escribe la fuente de contenido (el agente /engagement o el dueño); el dispatcher (GitHub Actions) solo actualiza status/sent_at/fail_reason y _updated_at.",
-  "_updated_at": "2026-09-15T18:22:31.290Z",
+  "_updated_at": "2026-09-15T18:47:33.224574Z",
   "notifications": [
     {
       "id": "2026-09-11-rec-andy",
@@ -1534,6 +1534,22 @@
       "fail_reason": null,
       "ignore_floor": true,
       "created_by": "suscripcion (confirmación pedida por Andy, 2026-09-15)"
+    },
+    {
+      "id": "2026-09-18-cine",
+      "title": "🎬 La Sala vuelve: Función Nº 2",
+      "body": "Seis viernes tarde, y con lo que votaron la vez pasada. Una para ver juntos esta noche — y esta no la vieron.",
+      "url": "https://abecedeefege.github.io/Biblioteca/recs/2026-09-18-sala-02.html",
+      "send_at": "2026-09-18T19:00:00-03:00",
+      "expires_at": "2026-09-18T23:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "sala-02 (pedido de Andy 2026-09-15)",
+      "to": [
+        "Andy",
+        "Sofi"
+      ]
     }
   ]
 }

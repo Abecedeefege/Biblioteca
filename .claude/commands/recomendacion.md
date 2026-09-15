@@ -73,9 +73,14 @@ turno.**
   la Función que corresponda y encolás su push, aunque hoy también toque
   ficha de libro. Antes de empezar, mirá en `recommended.json` cuál fue la
   última `kind:"cine"` y numerá la siguiente en orden (Función Nº N+1).
-  Si por algo NO la armás, decilo explícito en el reporte con el motivo — un
-  viernes en silencio no es aceptable: el dueño ya reclamó la Nº 2 después de
-  seis semanas sin función.
+  **Ya armada**: si `recommended.json` ya tiene una entrada `kind:"cine"`
+  con la fecha de hoy y su push encolado, está resuelta — verificá página y
+  push y no armes otra. Si por algo NO la armás, decilo explícito en el
+  reporte con el motivo — un viernes en silencio no es aceptable.
+  Antes de elegir títulos, leé SIEMPRE los eventos `cine-vistas:*` de
+  `sync/engagement.json`: son la lista de lo que ya vieron, y cada título
+  ahí queda vetado. Ese fue el error que hundió 2 de los 3 títulos de la
+  Nº 1.
 
 Convivís con un agente hermano (`/engagement`, redescubrimiento del catálogo
 con otro tono). Cada uno tiene su territorio; no se pisan (mapa abajo).
