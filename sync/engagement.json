@@ -4484,7 +4484,42 @@
       "device": "Andy",
       "dwell_s": 29,
       "scroll_pct": 0
+    },
+    {
+      "id": "mu33mtau-ill1iz",
+      "type": "reaction",
+      "ts": "2026-09-15T20:03:01.974Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "slug": "2026-09-18-sala-02",
+      "value": "like"
+    },
+    {
+      "id": "mu33muk5-v9kx17",
+      "type": "dwell",
+      "ts": "2026-09-15T20:03:03.605Z",
+      "page": "2026-09-18-sala-02.html",
+      "device": "Andy",
+      "dwell_s": 36,
+      "scroll_pct": 0
+    },
+    {
+      "id": "mu4rhzub-s8n6tv",
+      "type": "notification_clicked",
+      "ts": "2026-09-16T23:58:54.131Z",
+      "page": "2026-09-16-gawdat-solve-for-happy.html",
+      "device": "Andy",
+      "nid": "2026-09-16-rec-andy",
+      "src": "push"
+    },
+    {
+      "id": "mu4rhzuc-4ztd2h",
+      "type": "page_visit",
+      "ts": "2026-09-16T23:58:54.132Z",
+      "page": "2026-09-16-gawdat-solve-for-happy.html",
+      "device": "Andy",
+      "nid": "2026-09-16-rec-andy"
     }
   ],
-  "_updated_at": "2026-09-15T20:02:57.629Z"
+  "_updated_at": "2026-09-16T23:58:55.825Z"
 }
