@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🧮 Solve for Happy · Para Andy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#201607;
+  --fondo2:#2B1F0D;
+  --texto:#F6EFE1;
+  --bruma:#B7A98A;
+  --sol:#F0B23D;
+  --sol-hi:#FFD37A;
+  --calc:#5FA8A0;
+  --calc-hi:#8FD2C9;
+  --linea:rgba(246,239,225,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--sol);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--sol-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(246,239,225,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--calc),var(--sol-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(32,22,7,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--sol-hi);border-color:var(--sol)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sol-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: un sol calculando, cálido y metódico ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 10%,#3D2C10 0%,var(--fondo) 62%)}
+.halo{position:absolute;top:9%;left:50%;transform:translateX(-50%);width:min(70vw,260px);height:min(70vw,260px);border-radius:50%;background:radial-gradient(circle,rgba(240,178,61,.32) 0%,rgba(240,178,61,0) 70%);animation:respirar 5.5s ease-in-out infinite}
+@keyframes respirar{0%,100%{opacity:.5;transform:translateX(-50%) scale(.92)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+.silueta{position:absolute;top:14%;left:50%;transform:translateX(-50%);font-size:min(9vw,2.6rem);opacity:.9}
+.hero-int{position:relative;z-index:2;max-width:660px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--calc-hi);border:1px solid rgba(95,168,160,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.4rem,1rem + 2.8vw,2.15rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--sol-hi)}
+.hero .en{color:var(--bruma);font-size:.86rem;margin-top:.3rem}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:50ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--calc);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+.audio{background:rgba(95,168,160,.14);border:1px solid rgba(95,168,160,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--calc);color:#201607;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--calc-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--sol-hi);font-weight:500}
+
+.abox{background:rgba(240,178,61,.12);border:1px solid rgba(240,178,61,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0}
+.abox p{font-size:.9rem;color:var(--bruma)}
+.abox p + p{margin-top:.6rem}
+
+.escala{background:rgba(217,90,60,.14);border:1px solid rgba(217,90,60,.45);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0}
+.escala .et{display:block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:#F0A487;font-weight:700;margin-bottom:.5rem}
+.escala p{font-size:.92rem;color:var(--texto);line-height:1.6}
+.escala p + p{margin-top:.7rem}
+
+/* ---------- seis piezas del libro (corazón interactivo) ---------- */
+.entradas{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(246,239,225,.03)}
+.entGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem}
+.ent{background:rgba(246,239,225,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.ent:hover:not(.abierta){border-color:var(--calc);transform:translateY(-2px)}
+.ent .ico{font-size:1.5rem;display:block;margin-bottom:.35rem}
+.ent .nombre{font-size:.82rem;color:var(--bruma);font-weight:600}
+.ent.abierta{background:rgba(95,168,160,.16);border-color:var(--calc)}
+.ent .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--calc-hi);font-size:.84rem;margin-top:.5rem;line-height:1.44}
+.ent.abierta .obs{display:block}
+.ent.abierta .nombre{display:none}
+.ent-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(246,239,225,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--sol-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(240,178,61,.1);border:1px solid rgba(240,178,61,.4);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--sol-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.cta,.react{background:rgba(246,239,225,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(246,239,225,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--calc);color:var(--calc-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--sol-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:42ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--sol-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--sol);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="halo" aria-hidden="true"></div>
+  <div class="silueta" aria-hidden="true">🧮☀️</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Andy · veta nueva: positividad con lápiz y papel</span>
+    <h1>Solve for Happy</h1>
+    <p class="autor">Mo Gawdat</p>
+    <p class="en"><em>Engineering Your Path to Joy</em> (2017)</p>
+    <p class="sub">El ex Chief Business Officer de Google X — el laboratorio que intentó construir ascensores espaciales y autos que se manejan solos — se puso a tratar la felicidad como un problema de ingeniería: variables, ecuación, algoritmo. Lo escribió procesando la muerte de su hijo de 21 años. Está en tu propio L4, sin abrir.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Un ingeniero le pone una ecuación a la felicidad</h2>
+    <p class="bajada rev d2">Mo Gawdat pasó treinta años en ingeniería y negocios de tecnología (IBM, Microsoft y, por último, Chief Business Officer de Google X) tratando la felicidad como lo que él creía que era: un tema secundario, para "cuando el trabajo esté resuelto". Empezó a estudiarla en serio como proyecto de ingeniería personal después de una racha de infelicidad propia — y terminó de escribir el libro tras la muerte repentina de su hijo Ali, a los 21 años, durante una cirugía de rutina. La ecuación que arma en el libro es la misma que había desarrollado con Ali años antes.</p>
+    <p class="parr rev d2">Su tesis central, antes de cualquier técnica: la felicidad no es algo que se persigue ni se fabrica, es tu <b>estado por defecto</b> — el que tenías de bebé, antes de que las expectativas ajenas y los espejismos del propio cerebro se le metieran en el medio. El trabajo del libro es sacar esos obstáculos de encima, no construir la felicidad desde cero.</p>
+    <div class="cita rev d3">"For human beings, simply put, the default state is happiness. If you don't believe me, spend a little time with a human fresh from the factory, an infant or toddler."<span>("Para los seres humanos, dicho simple, el estado por defecto es la felicidad. Si no me creés, pasá un rato con un humano recién salido de fábrica: un bebé o un niño pequeño." — Mo Gawdat. Cita verificada contra la página de citas del libro en Goodreads; traducción propia.)</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="entradas-sec">
+  <div class="centro">
+    <p class="kicker rev">El corazón del libro</p>
+    <h2 class="titulo rev d1">Seis piezas de la ecuación — tocá cada una</h2>
+    <p class="bajada rev d2">No es un libro de frases motivacionales: es una estructura, pieza por pieza, con nombres y listas concretas.</p>
+    <div class="entradas rev d3">
+      <div class="entGrid" id="entBox">
+        <div class="ent abierta" data-obs="Gawdat desarrolló la ecuación original con su hijo Ali, ingeniero como él, en conversaciones sobre por qué la gente exitosa seguía infeliz. Cuando Ali murió en 2014, este libro se convirtió en el modo de Gawdat de seguir esa conversación y dejarle algo al mundo."><span class="ico">💔</span><span class="nombre">El origen: Ali</span><span class="obs"></span></div>
+        <div class="ent" data-obs="Felicidad = tu Percepción de los Eventos − tus Expectativas de la Vida. No se gestiona cambiando el mundo, se gestiona cambiando cómo interpretás lo que pasa y qué esperabas que pasara. La misma fórmula que Gawdat usaba en Google X para modelar sistemas, aplicada a la propia cabeza."><span class="ico">🧮</span><span class="nombre">La ecuación</span><span class="obs"></span></div>
+        <div class="ent" data-obs="Seis creencias que Gawdat llama 'espejismos' porque las tratamos como hechos sin serlo: el Pensamiento (esa voz interna no sos vos, es tu cerebro hablándote), el Yo, el Conocimiento, el Tiempo (solo existe el ahora), el Control y el Miedo (sobre todo, el miedo a la muerte que evitamos nombrar)."><span class="ico">👻</span><span class="nombre">Los 6 espejismos</span><span class="obs"></span></div>
+        <div class="ent" data-obs="Antes de los espejismos, el cerebro ya filtra lo que ves: completa huecos con suposiciones, hace predicciones que trata como certezas, guarda recuerdos que no son fieles a lo que pasó, pega etiquetas que simplifican de más, y deja que la emoción del momento le cambie el color a los hechos."><span class="ico">🕶️</span><span class="nombre">Los 7 puntos ciegos</span><span class="obs"></span></div>
+        <div class="ent" data-obs="Cinco certezas que, según Gawdat, sostienen a cualquiera cuando los espejismos caen: que Ahora es lo único real, que el Cambio es constante, que el Amor y la Muerte son ineludibles, y que hay un Diseño (no necesariamente religioso) detrás de cómo funciona todo."><span class="ico">🌱</span><span class="nombre">Las 5 verdades finales</span><span class="obs"></span></div>
+        <div class="ent" data-obs="Cero misticismo, cero 'solo pensá positivo': cada capítulo tiene la estructura de un problema técnico — variables, causa, solución — porque así es como Gawdat sabe pensar después de treinta años en tecnología. Si a vos te funcionan los sistemas y los frameworks, este es un libro de autoayuda con esa lógica."><span class="ico">🛠️</span><span class="nombre">Ingeniería, no fe</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="ent-hint">Hay más en el libro (ejercicios puntuales para cada espejismo, la sección final sobre el legado de Ali) pero estas seis son la columna vertebral.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="porque">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo este, justo ahora</p>
+    <h2 class="titulo rev d1">Rotando de veta, sin repetir el sabor de anteayer</h2>
+    <p class="bajada rev d2">Tu última ficha (14/09) fue astronomía con <em>El Gran Cuadro</em> de Carroll, y la anterior (13/09) fue neurociencia con Doidge — ambas todavía sin veredicto. Hoy toca redescubrimiento por alternancia (a Sofi le toca la novedad del día), así que en vez de sumar una tercera veta sin cerrar, te devuelvo algo que ya tenías en el estante y que encaja de lleno en tu gusto declarado por positividad: <em>Solve for Happy</em>, comprado en algún momento y, según <code>data/enrichment.json</code>, nunca marcado como leído.</p>
+    <p class="parr rev d2">Lo que lo distingue de otros libros de felicidad que ya recorriste (Kabat-Zinn, Chodron, Seligman) es el ángulo: viene de un ingeniero de sistemas, no de un terapeuta ni un monje, y trata la ecuación como una fórmula literal, no como metáfora. Si "fábula corta" es tu combo más seguro, esto es lo opuesto — un libro largo y estructurado — así que sirve también como dato: ¿te funciona mejor el formato ensayo/framework, o preferís que seguamos por el lado de la fábula?</p>
+  </div>
+</section>
+
+<section class="seccion escala rev" id="escala-sofi" style="margin-left:auto;margin-right:auto;max-width:770px">
+  <span class="et">Un aparte, directo para vos</span>
+  <p><b>El canal de Sofi sigue en cero desde el 5 de agosto</b> — más de seis semanas sin un solo click, reacción o veredicto en ninguna de sus fichas, mientras <code>notifications/subscription.json</code> la sigue marcando como suscripción activa. Le repetí la pregunta de canal (<code>rec-canal</code>) en varias fichas seguidas — la última, la de ayer con Chambers — sin respuesta. No es que no le guste lo que le mando: es que no tengo ninguna señal de que las notificaciones le estén llegando o abriendo en absoluto.</p>
+  <p>Hoy es el día que el propio perfil se puso como límite para escalarlo con vos en vez de seguir insistiéndole a ella en silencio. Si tenés forma de preguntarle directamente si le están llegando los avisos al celular (o si simplemente no le interesan y prefiere bajar la cadencia), decime qué te contesta en el cuadro de texto de esta misma ficha — lo leo en la próxima corrida.</p>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de agarrarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Tu ejemplar</dt><dd>L4-007, edición en inglés (paperback, Simon &amp; Schuster/Gallery Books, 2017, ~336 páginas). En tu estante, sin lectura registrada.</dd>
+        <dt>Original</dt><dd><em>Solve for Happy: Engineering Your Path to Joy</em>, Mo Gawdat. Gallery Books / North Star Way, 2017.</dd>
+        <dt>En español</dt><dd><em>El algoritmo de la felicidad</em>. Zenith, enero 2018, traducción de Antonio Francisco Rodríguez Esteban. Por si alguna vez preferís releerlo en español — vos ya tenés la edición en inglés.</dd>
+        <dt>Reconocimiento</dt><dd>Bestseller internacional; Gawdat fundó luego "One Billion Happy", proyecto que salió directamente de este libro.</dd>
+        <dt>En tu catálogo</dt><dd>Verificado título+autor contra el catálogo completo (437 vol. en 20 estantes con libros) y contra los 101 registros de <code>recommended.json</code>: nunca recomendado antes, sin coincidencias.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La estructura de los seis espejismos, los siete puntos ciegos y las cinco verdades finales está verificada cruzando SuperSummary, Blinkist y un resumen independiente (Four Minute Books) que coinciden en los mismos nombres y conteos. La historia de Ali y el origen de la ecuación están confirmados por la página oficial del libro (Pan Macmillan, Simon & Schuster) y por notas de prensa sobre Gawdat y "One Billion Happy". La cita textual está verificada palabra por palabra contra la página de citas del libro en Goodreads; la traducción es propia, así lo aviso.</p>
+      <p>El audiolibro en inglés existe y está narrado por el propio Mo Gawdat (Simon & Schuster Audio, ~11h) — lo confirmé por su ficha en Audible y en la tienda de Google Play, pero el enlace directo de Google Play me devolvió error al intentar abrirlo en vivo recién, así que no lo linkeo (regla: sin URL verificado en el momento, no se publica el link). No encontré confirmación de un audiolibro en español.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Y? ¿Vale la pena sacarlo del estante?</h2>
+
+    <div class="cta rev d1">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:L4-007','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-007','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:L4-007','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">¿Y? ¿Vale la pena sacarlo del estante?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-16-gawdat-solve-for-happy','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-16-gawdat-solve-for-happy','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-16-gawdat-solve-for-happy','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">🧮 De las seis piezas, ¿cuál te interesa más?
+      <div>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-gawdat-solve-for-happy','ali',this)">💔 El origen: Ali</button>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-gawdat-solve-for-happy','ecuacion',this)">🧮 La ecuación</button>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-gawdat-solve-for-happy','espejismos',this)">👻 Los espejismos</button>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-gawdat-solve-for-happy','puntosciegos',this)">🕶️ Puntos ciegos</button>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-gawdat-solve-for-happy','verdades',this)">🌱 Las 5 verdades</button>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-gawdat-solve-for-happy','ingenieria',this)">🛠️ Ingeniería, no fe</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">¿Te funciona mejor este formato (ensayo/framework) o preferís la fábula corta?
+      <div>
+        <button onclick="engageAnswer('rec-formato:2026-09-16-gawdat-solve-for-happy','framework',this)">🧮 Framework, seguí así</button>
+        <button onclick="engageAnswer('rec-formato:2026-09-16-gawdat-solve-for-happy','fabula',this)">🦉 Prefiero la fábula corta</button>
+        <button onclick="engageAnswer('rec-formato:2026-09-16-gawdat-solve-for-happy','indistinto',this)">🤷 Me da igual</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-16-gawdat-solve-for-happy','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-16-gawdat-solve-for-happy','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-16-gawdat-solve-for-happy','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-16-gawdat-solve-for-happy','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-16-gawdat-solve-for-happy','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-16-gawdat-solve-for-happy','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-16-gawdat-solve-for-happy','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">
+      <label for="nota-2026-09-16-gawdat-solve-for-happy" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-16-gawdat-solve-for-happy" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no… (o contame qué te dijo Sofi sobre las notis)"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-16-gawdat-solve-for-happy',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"For human beings, simply put, the default state is happiness."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:46ch">("Para los seres humanos, dicho simple, el estado por defecto es la felicidad." — Mo Gawdat. Cita verificada contra la página de citas del libro en Goodreads.)</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · veta positividad/felicidad, nueva para vos desde este libro, para Andy · datos verificados contra Goodreads, SuperSummary, Blinkist, Pan Macmillan/Simon & Schuster y catálogo propio, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#entBox .ent').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#entBox .ent').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "Solve for Happy, de Mo Gawdat, dos mil diecisiete. El ex jefe de negocios de Google X trató la felicidad como un problema de ingeniería después de la muerte de su hijo Ali. Su ecuación central: felicidad es tu percepción de los eventos, menos tus expectativas de la vida. El libro identifica seis espejismos que nos alejan de la felicidad, que según Gawdat es nuestro estado por defecto: el pensamiento, el yo, el conocimiento, el tiempo, el control y el miedo. Y siete puntos ciegos con los que el cerebro filtra la realidad antes de que la pensemos. Cierra con cinco verdades finales: ahora, cambio, amor, muerte y diseño. Cero misticismo, todo estructura, como corresponde a un ingeniero.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

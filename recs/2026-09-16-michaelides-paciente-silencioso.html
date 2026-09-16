@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🖌️ El Paciente Silencioso · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#15121A;
+  --fondo2:#1E1824;
+  --texto:#EDE9F0;
+  --bruma:#9C93AB;
+  --sangre:#B23A48;
+  --sangre-hi:#DD6D78;
+  --clinico:#5B7C8A;
+  --clinico-hi:#8FB4C0;
+  --linea:rgba(237,233,240,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--sangre);color:var(--texto)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--sangre-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(237,233,240,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--clinico),var(--sangre-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(21,18,26,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--sangre-hi);border-color:var(--sangre)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sangre-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: un lienzo a oscuras, una sola pincelada roja ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:radial-gradient(120% 80% at 50% 10%,#2A1E2C 0%,var(--fondo) 62%)}
+.halo{position:absolute;top:9%;left:50%;transform:translateX(-50%);width:min(70vw,260px);height:min(70vw,260px);border-radius:50%;background:radial-gradient(circle,rgba(178,58,72,.28) 0%,rgba(178,58,72,0) 70%);animation:respirar 6s ease-in-out infinite}
+@keyframes respirar{0%,100%{opacity:.5;transform:translateX(-50%) scale(.92)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+.silueta{position:absolute;top:14%;left:50%;transform:translateX(-50%);font-size:min(9vw,2.6rem);opacity:.9}
+.hero-int{position:relative;z-index:2;max-width:660px}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--clinico-hi);border:1px solid rgba(91,124,138,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.4rem,1rem + 2.8vw,2.15rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--sangre-hi)}
+.hero .en{color:var(--bruma);font-size:.86rem;margin-top:.3rem}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:50ch}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--sangre);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+.audio{background:rgba(91,124,138,.16);border:1px solid rgba(91,124,138,.45);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--clinico);color:#15121A;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--clinico-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--sangre-hi);font-weight:500}
+
+.abox{background:rgba(178,58,72,.12);border:1px solid rgba(178,58,72,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0}
+.abox p{font-size:.9rem;color:var(--bruma)}
+.abox p + p{margin-top:.6rem}
+
+/* ---------- seis piezas del caso (corazón interactivo) ---------- */
+.entradas{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(237,233,240,.03)}
+.entGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem}
+.ent{background:rgba(237,233,240,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.ent:hover:not(.abierta){border-color:var(--sangre);transform:translateY(-2px)}
+.ent .ico{font-size:1.5rem;display:block;margin-bottom:.35rem}
+.ent .nombre{font-size:.82rem;color:var(--bruma);font-weight:600}
+.ent.abierta{background:rgba(178,58,72,.16);border-color:var(--sangre)}
+.ent .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--sangre-hi);font-size:.84rem;margin-top:.5rem;line-height:1.44}
+.ent.abierta .obs{display:block}
+.ent.abierta .nombre{display:none}
+.ent-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(237,233,240,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--clinico-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(91,124,138,.1);border:1px solid rgba(91,124,138,.4);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--clinico-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.cta,.react{background:rgba(237,233,240,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(237,233,240,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--sangre);color:var(--sangre-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--sangre-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.comprar{display:inline-block;margin-top:1.15rem;background:linear-gradient(90deg,var(--sangre),var(--clinico));color:#15121A;text-decoration:none;font-weight:700;font-family:var(--serif);padding:.9rem 1.5rem;border-radius:999px;font-size:.98rem;transition:transform .2s ease,filter .2s ease}
+.comprar:hover{transform:translateY(-2px);filter:brightness(1.1)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:42ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--clinico-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--clinico);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="halo" aria-hidden="true"></div>
+  <div class="silueta" aria-hidden="true">🖌️🤐</div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · volvemos al oscuro calibrado, sin repetir autor</span>
+    <h1>El Paciente Silencioso</h1>
+    <p class="autor">Alex Michaelides</p>
+    <p class="en"><em>The Silent Patient</em> (2019)</p>
+    <p class="sub">Alicia Berenson, pintora reconocida, le pega cinco tiros en la cara a su marido una noche cualquiera. Después no vuelve a decir una sola palabra — nunca más. Seis años después, un psicoterapeuta forense se obsesiona con hacerla hablar, y consigue el único trabajo que se lo permite: tratarla en el hospital psiquiátrico donde está encerrada.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">La premisa</p>
+    <h2 class="titulo rev d1">Un thriller psicológico que se lee como un caso clínico</h2>
+    <p class="bajada rev d2">Alex Michaelides es chipriota-británico, se formó como psicoterapeuta antes de escribir y trabajó años en un hospital psiquiátrico de seguridad en el norte de Londres — la misma clase de institución donde transcurre casi toda la novela. <em>The Silent Patient</em> fue su primera novela (2019): best-seller número uno del New York Times, traducida a más de cincuenta idiomas, con una adaptación al cine ya confirmada.</p>
+    <p class="parr rev d2">La estructura es la que te viene funcionando con Dicker: dos líneas de tiempo que convergen. Theo Faber, el psicoterapeuta, narra el presente en primera persona, consumido por el caso. Intercalado, aparecen fragmentos del diario que Alicia escribía en las semanas antes del crimen — su propia voz, la única que queda de ella, porque en el presente no habla. Las dos líneas chocan en un giro que conecta a Theo con Alicia de una forma mucho más personal de lo que el libro deja ver al principio. No lo arruino acá.</p>
+    <div class="cita rev d3">"Unexpressed emotions will never die. They are buried alive, and will come forth later, in uglier ways."<span>("Las emociones no expresadas nunca mueren. Quedan enterradas vivas, y vuelven a salir después, de formas más feas." Cita verificada contra la página de citas del libro en Goodreads.)</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="entradas-sec">
+  <div class="centro">
+    <p class="kicker rev">El caso</p>
+    <h2 class="titulo rev d1">Seis piezas del expediente — tocá cada una</h2>
+    <p class="bajada rev d2">Sin spoilear el giro: esto es lo que sabés desde las primeras páginas.</p>
+    <div class="entradas rev d3">
+      <div class="entGrid" id="entBox">
+        <div class="ent abierta" data-obs="Pintora exitosa, casada con un fotógrafo de moda. Una noche le dispara cinco veces en la cara a su marido Gabriel y después no vuelve a hablar — ni en el juicio, ni en los seis años que lleva internada. Su silencio es literal: no dice una palabra en toda la novela."><span class="ico">🎨</span><span class="nombre">Alicia Berenson</span><span class="obs"></span></div>
+        <div class="ent" data-obs="Psicoterapeuta forense, narrador de casi todo el libro. Consigue trabajo en The Grove específicamente para tratar a Alicia — una obsesión que el libro deja cada vez más clara que no es solo profesional."><span class="ico">🧠</span><span class="nombre">Theo Faber</span><span class="obs"></span></div>
+        <div class="ent" data-obs="El hospital psiquiátrico de seguridad donde Alicia está internada, y donde transcurre casi toda la acción del presente. Michaelides trabajó en un lugar muy similar antes de escribir el libro — el ambiente clínico está sacado de la experiencia real del autor."><span class="ico">🏥</span><span class="nombre">The Grove</span><span class="obs"></span></div>
+        <div class="ent" data-obs="Intercalado con la narración de Theo, el libro incluye el diario que Alicia escribía en las semanas antes del crimen. Es la única voz directa que tenemos de ella — la técnica que sostiene todo el misterio: leemos su cabeza de antes, mientras alguien más investiga su silencio de ahora."><span class="ico">📖</span><span class="nombre">El diario</span><span class="obs"></span></div>
+        <div class="ent" data-obs="El último cuadro que pintó Alicia antes del crimen se llama 'Alcestis', por la heroína de la tragedia griega de Eurípides que se sacrifica en lugar de su marido y, según la reinterpretación de Michaelides, elige no volver a hablar tras ser rescatada de la muerte. El título no es decorativo: es la clave temática de todo el libro."><span class="ico">🏛️</span><span class="nombre">El cuadro: Alcestis</span><span class="obs"></span></div>
+        <div class="ent" data-obs="Las dos líneas de tiempo —el presente de Theo y el diario de Alicia— convergen en una revelación que cambia el sentido de todo lo anterior. Es el tipo de giro que te hace querer releer el libro desde la primera página. No cuento más: arruinarlo es el peor pecado posible con este título."><span class="ico">🔀</span><span class="nombre">El giro</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="ent-hint">Nada de gore explícito ni persecución física: la tensión es toda psicológica, de a poco, hasta la última página.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="porque">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo este, justo ahora</p>
+    <h2 class="titulo rev d1">Volvemos al oscuro calibrado — con nombre nuevo</h2>
+    <p class="bajada rev d2">Tus últimas tres fichas de "nuevo" —Mandanna (11/09), Fawcett (13/09) y Chambers (15/09)— fueron todas found-family cálido, siguiendo el único acierto pleno que tenías en esa línea (Klune). Ninguna de las tres juntó un solo veredicto. El perfil ya había anotado que, sin señal real, tocaba volver al terreno con historial: el thriller psicológico calibrado que te funcionó de lleno con Dicker (<em>Si te gusta la oscuridad</em>, tu único "lo_quiero" + "love" hasta ahora fuera de Haig). No repito a Dicker —ya está recomendado— así que te traigo el nombre que más se le parece en mecánica: giro estructural, narrador poco fiable, un solo escenario cerrado, cero necesidad de saga.</p>
+    <p class="parr rev d2">Hoy también te toca la novedad por alternancia (ayer, con Andy en cero, la única ficha del día fue tuya y de biblioteca — hoy es él quien redescubre y vos quien estrena). Guardia hecha a fondo, con el cuidado extra que pediste para tus 50 King: verificado título y autora contra el catálogo completo (437 vol., recontados hoy) y contra los 101 registros de <code>recommended.json</code> — sin ninguna coincidencia, ni en inglés ni en la edición en español.</p>
+    <p class="parr suave rev d3">Honestidad: tu canal sigue sin registrar ni un solo evento desde el 5 de agosto — hoy se cumplen las seis semanas que el perfil se había puesto como límite. Le pedí a Andy en su propia ficha de hoy que te pregunte directamente si te están llegando los avisos. No es un reproche: es que no tengo ninguna forma de saber si esto te está llegando al celular.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de pedirlo</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Original</dt><dd><em>The Silent Patient</em>, Alex Michaelides. Celadon Books, 5 de febrero de 2019. ~336 páginas.</dd>
+        <dt>En español</dt><dd><em>El paciente silencioso</em>, Duomo Ediciones / Suma de Letras, 2019, traducción de Aleix Montoto.</dd>
+        <dt>Reconocimiento</dt><dd>N.º 1 en la lista de ficción del New York Times; libro más vendido de 2019 según Goodreads (Choice Awards, mejor misterio y suspenso); adaptación al cine en desarrollo.</dd>
+        <dt>Vetas que cruza</dt><dd>Thriller psicológico de giro estructural (tu veta Dicker), narrador poco fiable, un solo escenario cerrado — sin gore explícito.</dd>
+        <dt>Guardia</dt><dd>Verificado título y autor (variantes "Michaelides", "Silent Patient", "El paciente silencioso") contra el catálogo completo (437 vol.) y contra los 101 registros de <code>recommended.json</code>: sin coincidencias.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La premisa, la estructura de doble línea temporal, The Grove y la conexión con el mito de Alcestis están verificadas cruzando Wikipedia, LitCharts, SuperSummary y una reseña temática específica sobre la referencia a Eurípides (The Classic Critic) que coinciden en los mismos datos. Las dos citas textuales están verificadas palabra por palabra contra la página de citas del libro en Goodreads; las traducciones al español son propias, así lo aviso. No uso ninguna cita ni dato sobre el giro final: cualquier detalle ahí es el que más fácil arruina la lectura.</p>
+      <p>🎧 <b>¿Audiolibro?</b> Sí, en inglés: narrado por Jack Hawkins y Louise Brealey (Macmillan Audio) — confirmado en vivo en Google Play (HTTP 200) y en Audible. No encontré confirmación de una narración en español.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Qué hacemos con este libro?</h2>
+
+    <div class="cta rev d1">
+      ¿Qué hacemos con este libro?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-16-michaelides-paciente-silencioso','lo_quiero',this)">📚 Lo quiero</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-16-michaelides-paciente-silencioso','me_tienta',this)">🤔 Me tienta</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-16-michaelides-paciente-silencioso','ya_lo_tengo',this)">🏠 Ya lo tengo</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-16-michaelides-paciente-silencioso','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-16-michaelides-paciente-silencioso','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <a class="comprar rev d2" href="https://www.buscalibre.uy/libros/search/?q=El+Paciente+Silencioso+Alex+Michaelides" target="_blank" rel="noopener">Conseguilo (precio y stock actual en el link) →</a>
+
+    <div class="abox rev d3">
+      <p>🎧 Audiolibro en inglés confirmado (Jack Hawkins / Louise Brealey, Macmillan Audio) — <a href="https://play.google.com/store/audiobooks/details/The_Silent_Patient?id=AQAAAEBM8H6wIM&hl=en_US&gl=US" target="_blank" rel="noopener">verlo en Google Play →</a> (link verificado en vivo, HTTP 200).</p>
+    </div>
+
+    <div class="cta rev d2">🗂️ De las seis piezas, ¿cuál te enganchó más?
+      <div>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-michaelides-paciente-silencioso','alicia',this)">🎨 Alicia</button>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-michaelides-paciente-silencioso','theo',this)">🧠 Theo</button>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-michaelides-paciente-silencioso','grove',this)">🏥 The Grove</button>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-michaelides-paciente-silencioso','diario',this)">📖 El diario</button>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-michaelides-paciente-silencioso','alcestis',this)">🏛️ Alcestis</button>
+        <button onclick="engageAnswer('rec-entrada-favorita:2026-09-16-michaelides-paciente-silencioso','giro',this)">🔀 El giro</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-16-michaelides-paciente-silencioso','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-16-michaelides-paciente-silencioso','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-16-michaelides-paciente-silencioso','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">Un dato más, para afinar la próxima
+      <div>
+        <button onclick="engageAnswer('rec-canal:2026-09-16-michaelides-paciente-silencioso','llegando_bien',this)">📱 Me están llegando bien las notis</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-16-michaelides-paciente-silencioso','fallando',this)">⚠️ Están fallando / llegan tarde</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-16-michaelides-paciente-silencioso','primera_vez',this)">👋 Primera vez que veo una de estas fichas</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-16-michaelides-paciente-silencioso','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-16-michaelides-paciente-silencioso','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-16-michaelides-paciente-silencioso','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-16-michaelides-paciente-silencioso','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">
+      <label for="nota-2026-09-16-michaelides-paciente-silencioso" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-16-michaelides-paciente-silencioso" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-16-michaelides-paciente-silencioso',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"Real love is very quiet, very still. It's boring, if seen from the perspective of high drama. Love is deep and calm — and constant."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:48ch">("El amor de verdad es muy silencioso, muy quieto. Es aburrido, visto desde la perspectiva del gran drama. El amor es profundo y calmo — y constante." Cita verificada contra la página de citas del libro en Goodreads.)</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · pivot de vuelta al oscuro calibrado tras Mandanna/Fawcett/Chambers sin señal, para Sofi · datos verificados contra Wikipedia, LitCharts, SuperSummary, Goodreads, Google Play y Buscalibre Uruguay, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#entBox .ent').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#entBox .ent').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "El Paciente Silencioso, de Alex Michaelides, dos mil diecinueve. Alicia Berenson, una pintora reconocida, le dispara cinco veces en la cara a su marido y después no vuelve a hablar nunca más. Seis años después, un psicoterapeuta forense consigue trabajo en el hospital psiquiátrico donde está internada, obsesionado con hacerla hablar. La novela cruza su narración en el presente con fragmentos del diario que Alicia escribía antes del crimen, hasta un giro final que conecta a los dos personajes de una forma mucho más personal de lo que parece al principio. El título de su último cuadro, Alcestis, por la heroína griega que deja de hablar después de volver de la muerte, es la clave de todo el libro. Fue número uno en ventas del New York Times.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "_comment": "Log de recomendaciones de Bibliotequeando. Lo escribe SOLO el agente /recomendacion (comando .claude/commands/recomendacion.md). Anti-repetición + feedback por libro.",
-  "_updated_at": "2026-09-15T16:32:53-03:00",
-  "_feedback_cutoff": "2026-09-15T18:32:58.403Z",
+  "_updated_at": "2026-09-16T16:15:00-03:00",
+  "_feedback_cutoff": "2026-09-15T20:02:55.792Z",
   "recommendations": [
     {
       "id": "2026-07-15-frankl-sentido",
@@ -2548,6 +2548,58 @@
       "page": "recs/2026-09-15-chambers-monje-robot.html",
       "notified_by": "2026-09-15-rec-sofi",
       "why": "Régimen del día: la cadencia de Andy cambió hoy (15/09, via suscripcion/libros.html) a solo miercoles y domingo -- hoy martes no le toca a el, solo a Sofi (streams.libros general sigue siendo diario). Por alternancia nuevo/redescub de Sofi, ayer (14/09) tuvo redescubrimiento (El Instituto) asi que hoy le toca 'nuevo'. Con el banco de misterio/cozy/oscuro casi agotado de nombres frescos (Osman, Dicker, Hill, Katzenbach, Carlisle, Benavent, Coyle, Klune, Bennett, canon Doyle, Delany, Haig, Christie, Peters, Backman, Flynn, French, Hawkins, Mandanna, Fawcett todos ya usados), se sigue el pivot hacia found-family calido iniciado con Mandanna (11/09) y Fawcett (13/09) -- ambas aun sin veredicto -- con el nombre que el PROFILE tenia anotado como proximo: Becky Chambers. Verificado titulo+autora (variantes 'Psalm for the Wild-Built', 'Monje y Robot') contra el catalogo completo (331 vol., re-extraido hoy) y contra los cien registros de recommended.json: sin coincidencias. Edicion en español (Crononauta, omnibus con los 2 tomos) confirmada EN STOCK en Buscalibre Uruguay en vivo (45% dcto, $1.334 UYU ~= USD 33) -- a diferencia de otras fichas recientes, esta vez no hubo que recurrir a la edicion en ingles. Dos citas verificadas contra Goodreads; una tercera muy repetida en internet sobre 'ganarse el descanso' se descarto por no poder confirmarla textual. Audiolibro en ingles (Em Grosland, Macmillan Audio) confirmado por Audible/Amazon; Google Play no devolvio resultado verificable en el chequeo en vivo, asi que no se linkeo ningun URL de audiolibro. Se repite la micro-pregunta rec-canal: su canal sigue en cero desde el 05/08, manana (16/09) es la fecha limite que el PROFILE se puso para escalar el tema en la ficha de Andy si sigue sin señal.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-16-gawdat-solve-for-happy",
+      "date": "2026-09-16",
+      "kind": "redescubrimiento",
+      "title": "Solve for Happy",
+      "author": "Mo Gawdat",
+      "language": "en",
+      "topics": [
+        "positividad",
+        "wellness",
+        "autosuperacion",
+        "psicologia"
+      ],
+      "book_ref": "L4-007",
+      "audience": "andy",
+      "page": "recs/2026-09-16-gawdat-solve-for-happy.html",
+      "notified_by": "2026-09-16-rec-andy",
+      "why": "Miercoles = dia doble segun devices.Andy.libros (days:[3,7]). Alternancia nuevo/redescub por persona: la ultima ficha de Andy (14/09, Carroll) fue nuevo, asi que hoy toca redescubrimiento; a nivel del dia, ayer (15/09, solo Sofi) la unica ficha fue nuevo, asi que hoy el par del dia cierra con Sofi=nuevo y Andy=redescubrimiento. Rotacion de veta: evita astronomia (Carroll, 14/09) y neurociencia (Doidge, 13/09), abre positividad/felicidad con enfoque de ingenieria (ex Chief Business Officer de Google X), fresco para el perfil. Elegido de L4 (L4-007), sin read_status en enrichment.json, nunca antes recomendado -- verificado titulo+autor contra el catalogo completo (437 vol. en estantes con libros) y los 101 registros previos de recommended.json. Estructura (6 espejismos, 7 puntos ciegos, 5 verdades finales) verificada cruzando SuperSummary, Blinkist y Four Minute Books; origen del libro (muerte de su hijo Ali) confirmado por paginas oficiales de la editorial. Cita textual verificada contra Goodreads. Audiolibro en ingles (narrado por el propio autor) confirmado por Audible y ficha de Google Play, pero el link de Google Play devolvio error 403 en el chequeo en vivo asi que no se publico ese URL. Se aprovecha la ficha para escalar ante Andy el silencio del canal de Sofi (cero eventos desde 05/08, hoy se cumple el limite de 6 semanas que el PROFILE se puso), pidiendole que le pregunte directamente si le llegan las notificaciones.",
+      "feedback": {
+        "veredicto": null,
+        "reaccion": null,
+        "clicked": false,
+        "dwell_s": 0
+      },
+      "learning": null
+    },
+    {
+      "id": "2026-09-16-michaelides-paciente-silencioso",
+      "date": "2026-09-16",
+      "kind": "nuevo",
+      "title": "El Paciente Silencioso",
+      "author": "Alex Michaelides",
+      "language": "en",
+      "topics": [
+        "thriller_psicologico",
+        "misterio",
+        "giro_narrativo",
+        "narrador_no_fiable"
+      ],
+      "book_ref": null,
+      "audience": "sofi",
+      "page": "recs/2026-09-16-michaelides-paciente-silencioso.html",
+      "notified_by": "2026-09-16-rec-sofi",
+      "why": "Miercoles = dia doble (Andy vuelve a tener ficha por devices.Andy.libros). Alternancia nuevo/redescub: ayer (15/09) la unica ficha del dia fue de Sofi=nuevo (Chambers); a nivel del par del dia, para cerrar con uno nuevo y uno de biblioteca hoy corresponde Sofi=nuevo, Andy=redescubrimiento. Pivot de vuelta al oscuro calibrado: tres 'nuevo' seguidos de found-family (Mandanna 11/09, Fawcett 13/09, Chambers 15/09) sin un solo veredicto -- se vuelve al thriller psicologico de giro estructural que dio el unico acierto pleno de Sofi fuera de Haig (Dicker, lo_quiero+love), con un autor nuevo (Michaelides) para no repetir. Guardia reforzada por los 50 King: verificado titulo y autor (variantes 'Michaelides', 'Silent Patient', 'El paciente silencioso') contra el catalogo completo (437 vol.) y los 101 registros previos de recommended.json, sin coincidencias. Premisa, estructura de doble linea temporal y la referencia al mito de Alcestis verificadas cruzando Wikipedia, LitCharts, SuperSummary y una resena tematica sobre Euripides. Dos citas textuales verificadas contra Goodreads. Audiolibro en ingles (Jack Hawkins / Louise Brealey) y link de Google Play verificados en vivo (HTTP 200); precio en Buscalibre Uruguay no se pudo extraer en vivo (pagina con render JS) asi que el CTA de compra no afirma un precio fijo, solo linkea la busqueda verificada (HTTP 200). Se repite micro-pregunta rec-canal: su canal sigue en cero desde 05/08 -- hoy se cumple el limite de 6 semanas; la escalacion real se hizo en la ficha de Andy de hoy.",
       "feedback": {
         "veredicto": null,
         "reaccion": null,
