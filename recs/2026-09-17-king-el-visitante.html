@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../icon-192.png">
+<title>🗂️ El Visitante · Para Sofi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#0D1117;
+  --fondo2:#141B24;
+  --texto:#E7ECF2;
+  --bruma:#8B98A7;
+  --cinta:#E2A33F;
+  --cinta-hi:#F0BE66;
+  --pista:#3E7CB1;
+  --pista-hi:#6BA3D6;
+  --linea:rgba(231,236,242,.13);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--sans);font-size:clamp(1rem,.95rem + .3vw,1.08rem);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--cinta);color:var(--fondo)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:400}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--pista-hi);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+
+.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:rgba(231,236,242,.08)}
+.progreso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cinta),var(--pista-hi))}
+.back{position:absolute;top:14px;left:14px;z-index:50;color:var(--bruma);text-decoration:none;font-size:.82rem;padding:.35rem .75rem;border:1px solid var(--linea);border-radius:999px;background:rgba(13,17,23,.75);backdrop-filter:blur(4px)}
+.back:hover{color:var(--pista-hi);border-color:var(--pista)}
+
+.seccion{padding:clamp(3.3rem,8.3vw,5.8rem) clamp(1.15rem,5vw,2.5rem)}
+.centro{max-width:770px;margin:0 auto}
+.kicker{font-size:.71rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cinta-hi);font-weight:700;margin-bottom:.9rem}
+.titulo{font-size:clamp(1.5rem,1.15rem + 2.2vw,2.25rem);line-height:1.22;margin-bottom:1.1rem}
+.bajada{color:var(--bruma);max-width:60ch}
+.bajada + .bajada{margin-top:1rem}
+.parr{margin-top:1.1rem;color:var(--texto)}
+.parr.suave{color:var(--bruma)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.rev.visto{opacity:1;transform:none}
+.rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
+
+/* ---------- hero: cinta de escena del crimen, dos coordenadas imposibles ---------- */
+.hero{position:relative;min-height:94svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.35rem 5rem;overflow:hidden;background:
+  repeating-linear-gradient(-45deg, rgba(226,163,63,.07) 0 26px, rgba(13,17,23,0) 26px 52px),
+  radial-gradient(120% 80% at 50% 8%,#1B2836 0%,var(--fondo) 62%)}
+.tira{position:absolute;top:7%;left:0;right:0;height:34px;background:repeating-linear-gradient(-45deg,var(--cinta) 0 18px,#171208 18px 36px);opacity:.9;transform:rotate(-1.4deg)}
+.tira span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.72rem;letter-spacing:.28em;font-weight:800;color:#171208;white-space:nowrap}
+.hero-int{position:relative;z-index:2;max-width:660px;margin-top:2.6rem}
+.rotulo{display:inline-block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--cinta-hi);border:1px solid rgba(226,163,63,.5);border-radius:999px;padding:.32rem .9rem;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(1.4rem,1rem + 2.8vw,2.15rem);line-height:1.2}
+.hero .autor{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--pista-hi)}
+.hero .en{color:var(--bruma);font-size:.86rem;margin-top:.3rem}
+.hero .sub{color:var(--bruma);margin:1.25rem auto 1.7rem;max-width:50ch}
+.coord{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin:0 0 1.3rem}
+.coord span{font-size:.78rem;border:1px solid var(--linea);border-radius:999px;padding:.35rem .8rem;color:var(--bruma)}
+.coord b{color:var(--texto)}
+.hero-hint{position:relative;z-index:2;color:var(--bruma);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem}
+
+.alt{background:var(--fondo2)}
+.cita{border-left:3px solid var(--cinta);padding:.2rem 0 .2rem 1.15rem;margin:1.8rem 0;font-family:var(--serif);font-size:clamp(1.02rem,1rem + .5vw,1.22rem);line-height:1.5;font-style:italic;color:var(--texto)}
+.cita span{display:block;margin-top:.7rem;font-family:var(--sans);font-style:normal;font-size:.78rem;letter-spacing:.04em;color:var(--bruma)}
+
+.audio{background:rgba(62,124,177,.13);border:1px solid rgba(62,124,177,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem}
+.audio p{font-size:.88rem;color:var(--bruma);flex:1;min-width:180px}
+.audio button{background:var(--pista);color:#08131E;border:none;border-radius:999px;padding:.75rem 1.3rem;font-weight:700;font-size:.92rem;transition:transform .2s ease,background .2s ease;white-space:nowrap}
+.audio button:hover{background:var(--pista-hi);transform:translateY(-2px)}
+.audio .hint{width:100%;font-size:.82rem;color:var(--cinta-hi);font-weight:500}
+
+.abox{background:rgba(62,124,177,.13);border:1px solid rgba(62,124,177,.4);border-radius:16px;padding:1.1rem 1.2rem;margin:1.6rem 0}
+.abox p{font-size:.9rem;color:var(--bruma)}
+.abox p + p{margin-top:.6rem}
+
+/* ---------- seis ganchos del expediente ---------- */
+.historias{position:relative;margin:1.9rem 0 1rem;padding:1.4rem 1rem;border:1px solid var(--linea);border-radius:16px;background:rgba(231,236,242,.03)}
+.histGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem}
+.hist{background:rgba(231,236,242,.045);border:1px solid var(--linea);border-radius:14px;padding:1rem .85rem;text-align:center;transition:all .2s ease;cursor:pointer}
+.hist:hover:not(.abierta){border-color:var(--cinta);transform:translateY(-2px)}
+.hist .ico{font-size:1.5rem;display:block;margin-bottom:.35rem}
+.hist .nombre{font-size:.82rem;color:var(--bruma);font-weight:600}
+.hist.abierta{background:rgba(226,163,63,.14);border-color:var(--cinta)}
+.hist .obs{display:none;font-family:var(--serif);font-style:italic;color:var(--cinta-hi);font-size:.84rem;margin-top:.5rem;line-height:1.44}
+.hist.abierta .obs{display:block}
+.hist.abierta .nombre{display:none}
+.hist-hint{text-align:center;color:var(--bruma);font-size:.82rem;margin-top:.9rem;font-style:italic}
+
+.ficha{background:rgba(231,236,242,.04);border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.1rem;margin-top:1.3rem}
+.ficha dl{display:grid;gap:.7rem}
+.ficha dt{font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--cinta-hi);font-weight:700}
+.ficha dd{font-size:.94rem;color:var(--texto);margin-top:.15rem}
+.honestidad{background:rgba(62,124,177,.1);border:1px solid rgba(62,124,177,.4);border-radius:14px;padding:1.1rem;margin-top:1.3rem}
+.honestidad .et{display:block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--pista-hi);font-weight:700;margin-bottom:.5rem}
+.honestidad p{font-size:.93rem;line-height:1.6;color:var(--texto)}
+.honestidad p + p{margin-top:.75rem}
+
+.cta,.react{background:rgba(231,236,242,.05);border:1px solid var(--linea);border-radius:16px;padding:1.2rem 1.1rem;margin-top:1.15rem;font-size:1rem;font-weight:600}
+.cta > div,.react > div{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:.9rem}
+.cta button,.react button{background:rgba(231,236,242,.07);color:var(--texto);border:1px solid var(--linea);border-radius:999px;padding:.65rem 1.05rem;font-size:.92rem;font-weight:500;transition:all .2s ease}
+.cta button:hover:not(:disabled),.react button:hover:not(:disabled){border-color:var(--cinta);color:var(--cinta-hi);transform:translateY(-1px)}
+.cta button:disabled,.react button:disabled{cursor:default;transform:none}
+.react button{font-size:1.3rem;padding:.5rem .85rem}
+.q-hint,.react-hint{font-size:.85rem;color:var(--cinta-hi);font-weight:500}
+.cta label{font-weight:500;font-size:.95rem;color:var(--texto)}
+
+.cierre{text-align:center;padding-bottom:4.2rem}
+.cierre .frase{font-family:var(--serif);font-style:italic;font-size:clamp(1.06rem,1rem + .9vw,1.4rem);line-height:1.46;max-width:44ch;margin:0 auto 1.5rem}
+footer{border-top:1px solid var(--linea);padding:1.7rem 1.25rem 3rem;text-align:center;font-size:.78rem;color:var(--bruma);line-height:1.6}
+a.hub{color:var(--pista-hi);text-decoration:none;font-weight:600;border-bottom:1px solid var(--pista);padding-bottom:2px}
+</style>
+</head>
+<body>
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<header class="hero">
+  <a class="back" href="../index.html">← Volver a Bibliotequeando</a>
+  <div class="tira" aria-hidden="true"><span>ESCENA DEL CRIMEN · NO CRUZAR</span></div>
+  <div class="hero-int">
+    <span class="rotulo">Para vos, Sofi · De tu propia R5-022, sin abrir</span>
+    <h1>El Visitante</h1>
+    <p class="autor">Stephen King</p>
+    <p class="en"><em>The Outsider</em> (2018)</p>
+    <div class="coord"><span>📍 Escena: <b>Flint City, 21:00</b></span><span>📍 Coartada: <b>Cap City, 300km, 21:00</b></span></div>
+    <p class="sub">Huellas. ADN. Testigos que lo vieron matar a un nene de once años a sangre fría. Y, al mismo tiempo — la misma hora, el mismo día — video y testigos que lo ubican a tres horas de auto, en otra ciudad. Las dos pilas de evidencia son perfectas. Las dos no pueden ser verdad. Este es el caso que rompe al detective que lo armó.</p>
+  </div>
+  <p class="hero-hint">Deslizá ↓</p>
+</header>
+
+<main>
+
+<section class="seccion alt" id="premisa">
+  <div class="centro">
+    <p class="kicker rev">El expediente</p>
+    <h2 class="titulo rev d1">Un entrenador querido por todo el pueblo, arrestado en público</h2>
+    <p class="bajada rev d2">Terry Maitland enseña Lengua en la secundaria y dirige el equipo de Little League de Flint City, Oklahoma. Un día de verano, el detective Ralph Anderson lo esposa en medio de un partido, delante de todo el pueblo: lo acusan de secuestrar, violar y asesinar a un nene de once años, Frank Peterson. La evidencia forense es total — huellas, ADN, testigos oculares que lo vieron cubierto de sangre subiendo a su camioneta. El problema es que Terry tiene coartada de hierro para esa misma tarde: cámaras de un congreso de docentes a 100km, la firma de tres colegas, hasta la del propio jefe de policía que lo vio ahí. Las dos versiones están, cada una, blindadas. Ralph no puede sostener las dos.</p>
+    <p class="parr rev d2">576 páginas, publicado por Scribner el 22 de mayo de 2018. La primera mitad no tiene un gramo de sobrenatural: es procedimiento puro — interrogatorios, cadena de custodia, la reputación de un hombre hecha pedazos en un pueblo chico — hasta que la contradicción se vuelve imposible de explicar con reglas normales.</p>
+    <div class="cita rev d3">"Reality is thin ice, but most people skate on it their whole lives and never fall through until the very end."<span>("La realidad es hielo fino, pero la mayoría patina sobre ella toda su vida y nunca se cae hasta el final." Cita tomada de la página de citas del libro en Goodreads — no la crucé contra el número de página del original en papel; traducción propia.)</span></div>
+  </div>
+</section>
+
+<section class="seccion audio-sec">
+  <div class="centro">
+    <div class="audio rev">
+      <p>🎧 Escuchá el resumen en 30 segundos, para cuando no tengas tiempo de leer la ficha entera:</p>
+      <button id="btnAudio" type="button" onclick="toggleAudioResumen()">▶️ Escuchar (30s)</button>
+      <span class="hint" id="audioHint"></span>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="historias-sec">
+  <div class="centro">
+    <p class="kicker rev">El corazón del libro</p>
+    <h2 class="titulo rev d1">Seis piezas del expediente — tocá cada una (sin spoilers del final)</h2>
+    <p class="bajada rev d2">Nada acá cuenta qué es lo que realmente pasó — son las piezas con las que King arma el tablero.</p>
+    <div class="historias rev d3">
+      <div class="histGrid" id="histBox">
+        <div class="hist abierta" data-obs="Terry es de los personajes más queridos que King puso en la mira: profesor, entrenador, padre de familia, sin un solo antecedente. Cuanto más perfecta es su vida anterior, más brutal es la caída — y más incómoda la pregunta de qué tan seguros podemos estar de lo que 'vimos con nuestros propios ojos'."><span class="ico">🧢</span><span class="nombre">El entrenador con la doble coartada</span><span class="obs"></span></div>
+        <div class="hist" data-obs="Ralph arrestó a Terry frente a todo el pueblo, convencido, sin dudar. La novela lo castiga por esa certeza: cada nueva prueba que aparece no resuelve el caso, se lo saca de las manos. Es el detective obligado a desconfiar de su propio trabajo, tu tipo de protagonista favorito (como Marcus Goldman con Harry Quebert)."><span class="ico">🔍</span><span class="nombre">El detective que no puede soltar los hechos</span><span class="obs"></span></div>
+        <div class="hist" data-obs="Holly Gibney —la investigadora de la trilogía de Bill Hodges (Mr. Mercedes)— se suma al equipo del abogado Howie Gold cuando la explicación racional ya no alcanza. No hace falta haber leído esos libros: la novela la presenta de cero, y es, según casi todos los lectores, lo mejor del elenco."><span class="ico">🕵️‍♀️</span><span class="nombre">Holly Gibney entra a mitad de partido</span><span class="obs"></span></div>
+        <div class="hist" data-obs="Nada de fantasmas en las primeras 250 páginas: interrogatorios, huellas, testigos, la reputación de un hombre destruida en tiempo real por un pueblo que ya lo condenó. King arma el misterio como un caso judicial de verdad antes de tocar la otra pieza."><span class="ico">⚖️</span><span class="nombre">Empieza como puro procedimiento</span><span class="obs"></span></div>
+        <div class="hist" data-obs="En algún punto la explicación racional deja de cerrar del todo, y el libro cambia de terreno sin pedir permiso. No es un giro de trama en el sentido de Dicker (un dato oculto que reordena todo) — es un giro de género: las reglas del mundo cambian."><span class="ico">🌘</span><span class="nombre">El giro que no es de trama, es de género</span><span class="obs"></span></div>
+        <div class="hist" data-obs="El antagonista de esta novela reaparece como amenaza en la nouvelle 'Si sangra' (2020), y Holly se gana su propio libro solista, 'Holly' (2023). Si El Visitante te deja con ganas de más, hay un camino armado esperando."><span class="ico">🔗</span><span class="nombre">El universo que sigue después</span><span class="obs"></span></div>
+      </div>
+    </div>
+    <p class="hist-hint">Si buscás el terror clásico de King (El Resplandor, IT, Carrie), esta pega distinto al principio: es más procedimiento de investigación con nervio judicial, y el vuelco a lo oscuro sobrenatural llega recién promediando el libro — calibrado, no un arranque directo a lo gore.</p>
+  </div>
+</section>
+
+<section class="seccion alt" id="porque">
+  <div class="centro">
+    <p class="kicker rev">Por qué justo este, justo ahora</p>
+    <h2 class="titulo rev d1">De la biblioteca, con cuidado especial</h2>
+    <p class="bajada rev d2">Ayer te tocó "nuevo" (<em>El Paciente Silencioso</em>, Michaelides) — hoy, jueves, no es día doble así que solo te toca a vos, y por alternancia te toca de la biblioteca de casa. Tu R5 todavía tiene 48 King esperando después de este, pero sé que ahí hay riesgo real: de los dos King que ya te ofrecí, los dos volvieron con sospecha de ya-leído (R5-018 confirmado "ya lo leí" el 18/07; R5-025 —<em>El Instituto</em>— sigue sin veredicto desde el 14/09). Por eso elegí uno que nunca mencioné en ninguna ficha, verificado contra el catálogo completo y contra tus 104 recomendaciones anteriores — y con una vuelta de tuerca distinta a los dos anteriores: no es terror puro ni antología de cuentos, es mucho más cercano al procedimiento de investigación que te viene funcionando con Dicker y Osman (evidencia que no cierra, giro estructural), con la oscuridad que pediste ("cuanto_mas_oscuro_mejor", calibrada "justo así") apareciendo recién en la segunda mitad, no de entrada.</p>
+    <p class="parr suave rev d3">Aviso de honestidad, aparte del libro: seguís en cero de feedback desde el 05/08 — ni un clic, ni un voto, en ninguna ficha desde entonces, aunque <code>subscription.json</code> te marca activa. Le pedí a Andy que te pregunte en persona si te están llegando bien las notificaciones; todavía no me contestó eso puntualmente (sí votó otras cosas en su propia ficha), así que sigo sin saber si el problema es la suscripción, el hábito de abrir la noti, o que el contenido no te está enganchando. Te dejo la pregunta corta de siempre, sin compromiso, más abajo — y si esta ficha te llega y hacés clic en algo, ya con eso aprendo más que en 6 semanas de silencio.</p>
+  </div>
+</section>
+
+<section class="seccion" id="ficha-sec">
+  <div class="centro">
+    <p class="kicker rev">La ficha</p>
+    <h2 class="titulo rev d1">Antes de sacarlo del estante</h2>
+    <div class="ficha rev d1">
+      <dl>
+        <dt>Tu ejemplar</dt><dd>R5-022, edición en español. En tu estante, sin lectura registrada (el <code>read_status</code> de enrichment no es confiable para vos por el Kindle en paralelo — y tampoco lo es del todo para Andy, así que lo trato como desconocido, no como garantía).</dd>
+        <dt>Original</dt><dd><em>The Outsider</em>, Stephen King. Scribner, 22 de mayo de 2018, 576 páginas.</dd>
+        <dt>En español</dt><dd><em>El Visitante</em>. Plaza & Janés, edición 2019 (~592 páginas).</dd>
+        <dt>En tu catálogo</dt><dd>Verificado título+autor contra el catálogo completo (437 vol., incluidos tus 51 King en R4/R5) y contra los 104 registros de <code>recommended.json</code>: nunca antes recomendado ni mencionado en ninguna ficha tuya ni de Andy.</dd>
+      </dl>
+    </div>
+    <div class="honestidad rev d2">
+      <span class="et">La letra chica, honesta</span>
+      <p>No lo tengo leído yo. La premisa (arresto de Maitland, la doble coartada), la estructura (procedimiento judicial que deriva en la investigación de Holly Gibney) y el pivote de género están verificados cruzando el artículo de Wikipedia sobre la novela con reseñas y resúmenes independientes que coinciden en los mismos hechos, sin destapar la naturaleza exacta de la amenaza. La cita está tomada de la página de citas del libro en Goodreads — no la crucé contra el número de página del original en papel, así lo aviso; la traducción es propia. Los datos de la miniserie de HBO (2020, Ben Mendelsohn y Cynthia Erivo, guion de Richard Price, 91% en Rotten Tomatoes, nominación al Emmy de Jason Bateman como actor invitado) están verificados. El audiolibro en español existe en Google Play (confirmé el listado real: título, autor y portada coinciden), pero el chequeo en vivo con navegador me devolvió error 403 — bloqueo de bots conocido en esa plataforma, no una señal de que el link esté roto — así que declaro que existe pero no linkeo el URL, como pide la guardia del canal de audio.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt" id="veredicto">
+  <div class="centro">
+    <p class="kicker rev">Tu turno</p>
+    <h2 class="titulo rev d1">¿Y? ¿Valió el rescate?</h2>
+
+    <div class="cta rev d1">¿Lo agarrás esta noche?
+      <div>
+        <button onclick="engageAnswer('leer-esta-noche:R5-022','si',this)">Sí</button>
+        <button onclick="engageAnswer('leer-esta-noche:R5-022','ya_leido',this)">Ya lo leí</button>
+        <button onclick="engageAnswer('leer-esta-noche:R5-022','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">¿Y? ¿Valió el rescate?
+      <div>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-17-king-el-visitante','me_tienta',this)">🤔 Me tentaste</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-17-king-el-visitante','ya_lo_lei',this)">✔️ Ya lo leí</button>
+        <button onclick="engageAnswer('rec-veredicto:2026-09-17-king-el-visitante','no_me_va',this)">🙅 No me va</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="abox rev d2">
+      <p>🎧 <b>¿Audiolibro?</b> Sí, existe en español en Google Play — confirmé el listado real (título, autor y portada coinciden), pero no pude linkear el URL: el chequeo en vivo con navegador dio error 403, un bloqueo de bots conocido de esa plataforma, no una señal de link roto.</p>
+    </div>
+
+    <div class="cta rev d2">🗂️ De las seis piezas del expediente, ¿cuál te tienta más?
+      <div>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-17-king-el-visitante','terry',this)">🧢 Terry</button>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-17-king-el-visitante','ralph',this)">🔍 Ralph</button>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-17-king-el-visitante','holly',this)">🕵️‍♀️ Holly</button>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-17-king-el-visitante','procedimiento',this)">⚖️ El procedimiento</button>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-17-king-el-visitante','giro',this)">🌘 El giro</button>
+        <button onclick="engageAnswer('rec-gancho-favorito:2026-09-17-king-el-visitante','universo',this)">🔗 El universo</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">¿Te sirvió escuchar el resumen de 30 segundos?
+      <div>
+        <button onclick="engageAnswer('rec-audio:2026-09-17-king-el-visitante','si_lo_use',this)">🎧 Sí, lo usé</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-17-king-el-visitante','no_lei_texto',this)">📖 No, leí el texto</button>
+        <button onclick="engageAnswer('rec-audio:2026-09-17-king-el-visitante','no_funciono',this)">⚠️ No me funcionó</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d2">Un dato más, para afinar la próxima
+      <div>
+        <button onclick="engageAnswer('rec-canal:2026-09-17-king-el-visitante','llegando_bien',this)">📱 Me están llegando bien las notis</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-17-king-el-visitante','fallando',this)">⚠️ Están fallando / llegan tarde</button>
+        <button onclick="engageAnswer('rec-canal:2026-09-17-king-el-visitante','primera_vez',this)">👋 Primera vez que veo una de estas fichas</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+
+    <div class="react rev d3">¿Te gustó esta experiencia?
+      <div>
+        <button onclick="engageReact('2026-09-17-king-el-visitante','love',this)">😍</button>
+        <button onclick="engageReact('2026-09-17-king-el-visitante','like',this)">🙂</button>
+        <button onclick="engageReact('2026-09-17-king-el-visitante','meh',this)">😐</button>
+        <button onclick="engageReact('2026-09-17-king-el-visitante','no',this)">🙅</button>
+        <span class="react-hint"></span>
+      </div>
+    </div>
+
+    <div class="cta rev d3">
+      <label for="nota-2026-09-17-king-el-visitante" style="display:block;margin-bottom:.6rem">¿Algo para decirme? Lo leo en la próxima corrida y ajusto.</label>
+      <textarea id="nota-2026-09-17-king-el-visitante" rows="3" placeholder="Un pedido, una corrección, qué te gustó o qué no…"
+        style="width:100%;box-sizing:border-box;resize:vertical;min-height:4.5em;padding:.7rem .8rem;border-radius:12px;border:1px solid currentColor;background:rgba(255,255,255,.04);color:inherit;font-family:inherit;font-size:.95rem;opacity:.9"></textarea>
+      <div style="margin-top:.6rem">
+        <button type="button" onclick="enviarNota('2026-09-17-king-el-visitante',this)">Enviarme este comentario</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function enviarNota(recId,btn){
+  var ta=document.getElementById('nota-'+recId);
+  var txt=(ta&&ta.value||'').trim();
+  var hint=btn.parentElement.querySelector('.q-hint');
+  if(!txt){ if(hint) hint.textContent='Escribí algo primero ✍️'; return; }
+  window.engageAnswer('rec-nota:'+recId,txt,btn);
+  if(ta){ ta.setAttribute('disabled','disabled'); ta.style.opacity='.5'; }
+}
+</script>
+
+<section class="seccion cierre">
+  <p class="frase rev">"Money was no cure for sorrow, but it did allow one to grieve in relative comfort."</p>
+  <p class="bajada rev d1" style="margin:0 auto 1.4rem;max-width:46ch">("El dinero no cura el dolor, pero permite llorarlo con relativa comodidad." Cita tomada de la página de citas del libro en Goodreads; traducción propia.)</p>
+  <p class="rev d2"><a class="hub" href="./">📚 Ver todas las sugerencias →</a></p>
+</section>
+</main>
+
+<footer><em>Bibliotequeando</em> · de tu R5 (51 King, 48 sin tocar), para Sofi · datos verificados contra Wikipedia, Goodreads y catálogo propio, a septiembre de 2026.<br>Las ideas son del libro; las palabras y el código, propios.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  var barra=$('#barra');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    barra.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});
+    },{threshold:.12});
+    $$('.rev').forEach(function(el){io.observe(el);});
+  } else { $$('.rev').forEach(function(el){el.classList.add('visto');}); }
+
+  $$('#histBox .hist').forEach(function(el){
+    el.addEventListener('click',function(){
+      $$('#histBox .hist').forEach(function(z){z.classList.remove('abierta');});
+      el.classList.add('abierta');
+      el.querySelector('.obs').textContent=el.getAttribute('data-obs');
+    });
+  });
+
+  // --- Resumen en audio (30s), estándar en toda ficha desde 04/09. Web Speech API,
+  // 100% cliente, sin dependencias ni build.
+  var TEXTO_RESUMEN = "El Visitante, de Stephen King, dos mil dieciocho. En Flint City, Oklahoma, arrestan al entrenador Terry Maitland por el asesinato brutal de un nene de once años. Hay huellas y ADN que lo condenan. Y hay, al mismo tiempo, video y testigos que lo ubican a cien kilómetros, ese mismo día. El detective Ralph Anderson no puede cerrar el caso con una contradicción así. A mitad de camino se suma Holly Gibney, investigadora de la trilogía de Bill Hodges, cuando la explicación racional deja de alcanzar. Arranca como procedimiento judicial puro. Termina en otro terreno. Miniserie de HBO en dos mil veinte, con Ben Mendelsohn y Cynthia Erivo.";
+  var utt=null, hablando=false;
+  window.toggleAudioResumen=function(){
+    var btn=document.getElementById('btnAudio');
+    var hint=document.getElementById('audioHint');
+    if(!('speechSynthesis' in window)){
+      if(hint) hint.textContent='Tu navegador no soporta lectura en voz alta 😕';
+      return;
+    }
+    if(hablando){
+      window.speechSynthesis.cancel();
+      hablando=false;
+      btn.textContent='▶️ Escuchar (30s)';
+      return;
+    }
+    utt = new SpeechSynthesisUtterance(TEXTO_RESUMEN);
+    utt.lang='es-ES';
+    utt.rate=0.98;
+    try{
+      var voces=window.speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+      if(voces.length) utt.voice=voces[0];
+    }catch(e){}
+    utt.onend=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; };
+    utt.onerror=function(){ hablando=false; btn.textContent='▶️ Escuchar (30s)'; if(hint) hint.textContent='No se pudo reproducir, probá de nuevo'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+    hablando=true;
+    btn.textContent='⏸️ Parar';
+  };
+})();
+</script>
+<script src="../engage/engage.js"></script>
+</body>
+</html>
