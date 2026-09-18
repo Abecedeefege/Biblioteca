@@ -4546,7 +4546,22 @@
       "device": "Andy",
       "slug": "2026-09-16-gawdat-solve-for-happy",
       "value": "like"
+    },
+    {
+      "id": "mu71mymo-2bjz99",
+      "ts": "2026-09-18T14:18:14.352Z",
+      "days": [
+        7
+      ],
+      "page": "libros.html",
+      "type": "pref",
+      "scope": "device",
+      "device": "Sofi",
+      "stream": "libros",
+      "target": "Sofi",
+      "enabled": true,
+      "per_week": 1
     }
   ],
-  "_updated_at": "2026-09-17T00:01:13.598Z"
+  "_updated_at": "2026-09-18T17:04:52.758Z"
 }

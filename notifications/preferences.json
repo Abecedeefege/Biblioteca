@@ -1,6 +1,6 @@
 {
   "_comment": "Cadencia de las suscripciones de la casa. La escribe el browser (suscripcion/libros.html y suscripcion/cine.html) — directo por GitHub API si el dispositivo tiene PAT, o por el relay público, que tools/sync_devices.js baja acá en la corrida siguiente. La APLICA tools/send_push.js antes de enviar: si el día local del destinatario no está en 'days' (o el stream está en enabled:false para él), esa notificación se marca 'skipped' y no suena. Un stream sin entrada, o un dispositivo sin override, NO tiene puerta: se manda como siempre. Los agentes la leen para no fabricar fichas que nadie va a recibir.",
-  "_updated_at": "2026-09-15T18:09:24.983Z",
+  "_updated_at": "2026-09-18T17:04:52.759Z",
   "_dias": "ISO: 1=lunes … 7=domingo. 'per_week' es lo que eligió el dueño; 'days' es lo que se aplica (el mapa por defecto está en suscripcion/README.md, pero se pueden elegir días a mano).",
   "streams": {
     "libros": {
@@ -43,6 +43,17 @@
         ],
         "updated_at": "2026-09-15T18:09:07.169Z",
         "updated_by": "Andy · suscripcion/libros.html"
+      }
+    },
+    "Sofi": {
+      "libros": {
+        "enabled": true,
+        "per_week": 1,
+        "days": [
+          7
+        ],
+        "updated_at": "2026-09-18T14:18:14.352Z",
+        "updated_by": "Sofi · libros.html (relay)"
       }
     }
   }
